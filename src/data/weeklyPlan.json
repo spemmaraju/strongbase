@@ -1,0 +1,149 @@
+{
+  "planName": "StrongBase Week 1",
+  "days": [
+    {
+      "day": 1,
+      "theme": "Full Body Foundation",
+      "emoji": "🏗️",
+      "focusArea": "Mobility, stability, and light full-body activation",
+      "durationMinutes": 40,
+      "exerciseIds": [
+        "arm-circles",
+        "hip-circles",
+        "cat-cow",
+        "glute-bridge",
+        "wall-sit",
+        "push-up",
+        "bird-dog",
+        "dead-bug",
+        "childs-pose",
+        "supine-figure-4",
+        "hip-flexor-stretch"
+      ]
+    },
+    {
+      "day": 2,
+      "theme": "Push Day",
+      "emoji": "👊",
+      "focusArea": "Upper body push — chest, shoulders, and triceps",
+      "durationMinutes": 45,
+      "exerciseIds": [
+        "arm-circles",
+        "thoracic-rotation",
+        "leg-swings",
+        "chest-press-mat",
+        "shoulder-press",
+        "lateral-raise",
+        "tricep-kickback",
+        "push-up",
+        "doorway-chest-stretch",
+        "childs-pose",
+        "seated-hamstring-stretch"
+      ]
+    },
+    {
+      "day": 3,
+      "theme": "Hinge & Glutes",
+      "emoji": "🍑",
+      "focusArea": "Hip-dominant movements — zero lumbar load",
+      "durationMinutes": 45,
+      "exerciseIds": [
+        "hip-circles",
+        "leg-swings",
+        "cat-cow",
+        "banded-glute-bridge",
+        "clamshell",
+        "single-leg-glute-bridge",
+        "banded-lateral-walk",
+        "goblet-squat",
+        "step-back-lunge",
+        "modified-pigeon",
+        "supine-figure-4",
+        "hip-flexor-stretch"
+      ]
+    },
+    {
+      "day": 4,
+      "theme": "Active Recovery",
+      "emoji": "🧘",
+      "focusArea": "Gentle mobility and flexibility — keep heart rate low",
+      "durationMinutes": 30,
+      "exerciseIds": [
+        "cat-cow",
+        "thoracic-rotation",
+        "hip-circles",
+        "bird-dog",
+        "dead-bug",
+        "modified-pigeon",
+        "childs-pose",
+        "seated-hamstring-stretch",
+        "supine-figure-4",
+        "hip-flexor-stretch"
+      ]
+    },
+    {
+      "day": 5,
+      "theme": "Pull Day",
+      "emoji": "💪",
+      "focusArea": "Upper body pull — back, biceps, and rear delts",
+      "durationMinutes": 45,
+      "exerciseIds": [
+        "arm-circles",
+        "thoracic-rotation",
+        "leg-swings",
+        "bent-over-row",
+        "bicep-curl",
+        "banded-pull-apart",
+        "banded-face-pull",
+        "reverse-fly",
+        "seated-hamstring-stretch",
+        "doorway-chest-stretch",
+        "childs-pose"
+      ]
+    },
+    {
+      "day": 6,
+      "theme": "Core & Stability",
+      "emoji": "🎯",
+      "focusArea": "Anti-extension and anti-rotation core work only",
+      "durationMinutes": 40,
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "leg-swings",
+        "dead-bug",
+        "bird-dog",
+        "side-plank",
+        "pallof-press",
+        "glute-bridge-hold",
+        "forearm-plank",
+        "childs-pose",
+        "supine-figure-4",
+        "hip-flexor-stretch"
+      ]
+    },
+    {
+      "day": 7,
+      "theme": "Full Body Circuit",
+      "emoji": "🔥",
+      "focusArea": "Three timed circuits — strength meets stamina",
+      "durationMinutes": 50,
+      "exerciseIds": [
+        "arm-circles",
+        "leg-swings",
+        "hip-circles",
+        "push-up",
+        "goblet-squat",
+        "bent-over-row",
+        "dead-bug",
+        "glute-bridge",
+        "lateral-raise",
+        "bird-dog",
+        "bodyweight-squat",
+        "childs-pose",
+        "seated-hamstring-stretch",
+        "modified-pigeon"
+      ]
+    }
+  ]
+}

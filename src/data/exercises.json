@@ -1,0 +1,1016 @@
+[
+  {
+    "id": "arm-circles",
+    "name": "Arm Circles",
+    "category": "warm-up",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["shoulders", "rotator cuff", "upper back"],
+    "sets": 2,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand with your feet shoulder-width apart and extend both arms straight out to your sides at shoulder height, forming a T-shape with your body.",
+      "Begin making small, controlled circles with both arms simultaneously, moving forward. Keep your core lightly engaged and your shoulders relaxed — do not shrug them up toward your ears.",
+      "Gradually increase the size of the circles over 8 reps until you are making large, sweeping circles that challenge your shoulder range of motion.",
+      "After completing 15 forward circles, reverse direction and perform 15 backward circles, again starting small and gradually getting larger.",
+      "Keep your breathing steady throughout. If you feel tension in your neck, drop your chin slightly and relax your jaw."
+    ],
+    "cues": [
+      "Keep your arms as straight as possible throughout — avoid bending the elbows",
+      "Stand tall: chest lifted, core lightly braced, feet grounded",
+      "Start small and build bigger — do not start with large swings"
+    ],
+    "youtubeId": "EkRO_CKuR3w",
+    "modification": "If shoulder discomfort occurs, reduce the circle size or bend your elbows slightly to reduce lever length.",
+    "backSafe": true
+  },
+  {
+    "id": "hip-circles",
+    "name": "Hip Circles",
+    "category": "warm-up",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["hip flexors", "glutes", "lower back mobility"],
+    "sets": 2,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand with feet shoulder-width apart and place both hands on your hips. Slightly bend your knees to soften the joints.",
+      "Begin rotating your hips in a large, slow circle — push them forward, then to the right, then back, then to the left, creating a smooth circular motion.",
+      "Think of drawing a big oval on the floor with your hips. Keep your upper body as still as possible — the movement comes purely from the hips and pelvis.",
+      "Complete 10 full circles in one direction, then reverse and perform 10 circles in the opposite direction.",
+      "Breathe normally throughout and move at a pace that lets you feel the full range of motion in each direction."
+    ],
+    "cues": [
+      "Let your hips drive the movement — your shoulders should barely move",
+      "Move slowly and deliberately to warm up the hip joint fully",
+      "Relax your belly — gripping your abs tightly will restrict the range of motion"
+    ],
+    "youtubeId": "9TvTJjfL6RU",
+    "modification": "Hold onto a wall or chair with one hand for balance if needed.",
+    "backSafe": true
+  },
+  {
+    "id": "leg-swings",
+    "name": "Leg Swings",
+    "category": "warm-up",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["hip flexors", "hamstrings", "glutes", "adductors"],
+    "sets": 2,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand sideways next to a wall or sturdy surface. Place your right hand lightly on the wall for balance. Shift your weight onto your right foot.",
+      "Swing your left leg forward and backward in a controlled pendulum motion. Start with a small range of motion and gradually increase the swing height over the first few reps.",
+      "Your leg should swing naturally — do not force it higher than your comfortable range. Your standing leg stays slightly soft, not locked.",
+      "After 12 front-to-back swings, turn to face the wall and swing your leg side to side (across your body and out to the side) for 12 more reps.",
+      "Switch legs and repeat both directions on the right leg."
+    ],
+    "cues": [
+      "Let momentum do the work — do not muscle the leg higher than it naturally goes",
+      "Keep your torso upright and avoid leaning to compensate for the swing",
+      "This is a mobility drill, not a stretch — do not hold at the top"
+    ],
+    "youtubeId": "WBKiDG4oFBE",
+    "modification": "Hold the wall with both hands and reduce the swing height if balance is challenging.",
+    "backSafe": true
+  },
+  {
+    "id": "cat-cow",
+    "name": "Cat-Cow Stretch",
+    "category": "warm-up",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["spine", "core", "neck", "thoracic extensors"],
+    "sets": 2,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Start on all fours on your mat — hands directly under your shoulders and knees directly under your hips. Your spine is in a neutral, flat position (tabletop).",
+      "For Cow: Inhale slowly. As you breathe in, let your belly drop toward the floor, lift your chest and chin gently upward, and allow your tailbone to rise slightly. Your back arches gently downward.",
+      "For Cat: Exhale slowly. As you breathe out, round your spine up toward the ceiling like an angry cat. Tuck your chin toward your chest and tuck your tailbone under. Your back arches upward.",
+      "Flow between these two positions smoothly and continuously, letting your breath guide the movement — inhale into Cow, exhale into Cat.",
+      "Move through 10 full breath cycles. This is about spinal mobility, not stretching hard — find a comfortable range and breathe into it."
+    ],
+    "cues": [
+      "Let your breath lead the movement — each position should be timed with an inhale or exhale",
+      "Move through your entire spine from tailbone to neck, not just one spot",
+      "Keep your arms straight and weight evenly distributed between hands and knees"
+    ],
+    "youtubeId": "kqnua4rHVVA",
+    "modification": "If wrist discomfort occurs, make fists or use forearms on the mat instead of flat hands.",
+    "backSafe": true
+  },
+  {
+    "id": "thoracic-rotation",
+    "name": "Thoracic Rotation (Thread the Needle)",
+    "category": "warm-up",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["thoracic spine", "upper back", "obliques", "rotator cuff"],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Start on all fours on your mat — hands under shoulders, knees under hips, spine neutral.",
+      "Place your right hand behind your head, elbow pointing out to the side. Keep your left hand firmly planted on the mat for support.",
+      "Inhale to prepare. As you exhale, rotate your right elbow downward, threading it under your left arm across your body. Let your right shoulder drop toward the mat as far as comfortable.",
+      "Inhale and reverse the movement, rotating your right elbow up toward the ceiling, opening your chest and following it with your eyes. This is the full rotation — feel it in your mid and upper back.",
+      "Complete all reps on the right side, then switch: left hand behind head, right hand planted, repeat the threading motion on the left side."
+    ],
+    "cues": [
+      "The rotation comes from your upper back (thoracic spine), not your lower back or hips",
+      "Keep your hips level and square — do not let them rotate or shift",
+      "Follow your elbow with your eyes to encourage the full rotational range"
+    ],
+    "youtubeId": "KRfXFV2y6p0",
+    "modification": "Reduce the rotation range if you feel tightness — even a small range of motion is beneficial for warm-up purposes.",
+    "backSafe": true
+  },
+  {
+    "id": "push-up",
+    "name": "Push-Up",
+    "category": "strength",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["chest", "triceps", "front deltoids", "core"],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Start in a high plank position — hands slightly wider than shoulder-width apart, arms straight, core tight, body in a straight line from head to heels. Do not let your hips sag or pike up.",
+      "Take a breath in. Begin lowering your body toward the floor by bending your elbows at roughly a 45-degree angle away from your torso (not flared wide, not pinned to your sides).",
+      "Lower until your chest is approximately 1–2 inches from the floor or as low as you can control. Your whole body should move as one unit — do not lead with your hips.",
+      "Press through your palms to push back up to the starting position, fully extending your arms. Exhale as you press up.",
+      "Reset your form at the top before the next rep — check that your hips are neither sagging nor raised and your core is still engaged."
+    ],
+    "cues": [
+      "Keep your body in a rigid plank — imagine a broomstick resting along your spine, hips, and head",
+      "Elbows at roughly 45 degrees — not straight out like a T or pressed tight to your ribs",
+      "Full range of motion: lower with control, press with power"
+    ],
+    "youtubeId": "IODxDxX7oi4",
+    "modification": "Drop to your knees for a kneeling push-up, keeping the same straight line from knees to head. This reduces the load significantly while maintaining the movement pattern.",
+    "backSafe": true
+  },
+  {
+    "id": "glute-bridge",
+    "name": "Glute Bridge",
+    "category": "strength",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["glutes", "hamstrings", "core"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Lie on your back on the mat with your knees bent and feet flat on the floor, hip-width apart. Your feet should be close enough that you can just graze your heels with your fingertips when arms are at your sides.",
+      "Press your lower back gently into the mat to engage your core. Take a breath in to prepare.",
+      "As you exhale, press through both heels and squeeze your glutes to lift your hips off the floor. Drive your hips upward until your body forms a straight line from your knees to your shoulders.",
+      "Squeeze your glutes firmly at the top — hold for 1–2 seconds. Do not overextend by pushing your lower back into an arch; the movement should end when your hips are in line with your torso.",
+      "Inhale and slowly lower your hips back to the floor with control. Lightly touch the floor and immediately begin the next rep without relaxing fully."
+    ],
+    "cues": [
+      "Drive through your heels, not your toes — if you wiggle your toes, you should still be able to lift",
+      "Squeeze your glutes hard at the top — the hip height is secondary to the glute contraction",
+      "Do not arch your lower back at the top: the goal is a straight line, not a big curve"
+    ],
+    "youtubeId": "pJ7gbV7QKZU",
+    "modification": "Place a folded blanket or pillow under your hips and use a smaller range of motion if you feel any discomfort.",
+    "backSafe": true
+  },
+  {
+    "id": "bodyweight-squat",
+    "name": "Bodyweight Squat",
+    "category": "strength",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "core"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with your feet shoulder-width apart (or slightly wider), toes turned out 15–30 degrees. Arms can be extended in front of you for balance or crossed at your chest.",
+      "Take a breath in. Begin the squat by pushing your hips back first (as if reaching for a chair behind you), then bend your knees to lower down.",
+      "Descend until your thighs are as close to parallel to the floor as comfortable — or lower if mobility allows. Keep your chest tall, spine neutral, and knees tracking over your second toe (not caving inward).",
+      "At the bottom, pause briefly. Then press through your full foot — heel, mid-foot, and ball — to drive back up to standing.",
+      "Exhale on the way up. Fully extend your hips and knees at the top before beginning the next rep."
+    ],
+    "cues": [
+      "Hips back first, then knees bend — this keeps your weight back over your heels",
+      "Chest stays tall throughout — if you are rounding forward, squat to a shallower depth",
+      "Knees track over your toes — actively push them out if they tend to collapse inward"
+    ],
+    "youtubeId": "YaXPRqUwItQ",
+    "modification": "Squat to a chair or box behind you — touch the surface lightly and stand back up. This limits depth and gives you a target.",
+    "backSafe": true
+  },
+  {
+    "id": "forward-lunge",
+    "name": "Forward Lunge",
+    "category": "strength",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "hip flexors"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand tall with feet together and hands on your hips or hanging at your sides.",
+      "Take a large step forward with your right foot — roughly 2–3 feet, depending on your height. Your right foot should land flat on the floor.",
+      "Lower your back (left) knee toward the floor by bending both knees simultaneously. Your right thigh should reach parallel to the floor and your right knee should be directly over your right ankle, not shooting forward past your toes.",
+      "Push through your right heel to drive yourself back up to the starting standing position. Bring your right foot back next to your left.",
+      "Repeat on the left side. Alternate legs for each rep, counting each side as one rep."
+    ],
+    "cues": [
+      "Stay tall through your torso — avoid leaning forward over your front thigh",
+      "Front knee stays behind or directly above your front ankle — do not let it drift forward",
+      "Control the descent — do not let your back knee crash into the floor"
+    ],
+    "youtubeId": "L8fvypPrzzs",
+    "modification": "Perform a shorter step and reduce the depth of the lunge. Hold onto a wall or chair for balance support.",
+    "backSafe": true
+  },
+  {
+    "id": "wall-sit",
+    "name": "Wall Sit",
+    "category": "strength",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 60,
+    "instructions": [
+      "Find a flat, clear wall. Stand with your back flat against the wall, feet about 2 feet in front of you and shoulder-width apart.",
+      "Slide your back down the wall by bending your knees until your thighs are parallel to the floor — as if sitting in an invisible chair. Your knees should be directly above your ankles, not pushed forward past your feet.",
+      "Keep your entire back flat against the wall throughout — do not let your lower back peel away from the wall or arch. Your head, shoulders, and entire back should maintain contact.",
+      "Hold this position for the full 30 seconds. Breathe steadily — do not hold your breath. Keep your core lightly engaged.",
+      "To come out of the position, simply slide back up the wall to standing. Do not push off your thighs with your hands."
+    ],
+    "cues": [
+      "Keep your back fully flat on the wall — this is what makes it back-safe",
+      "90-degree angle at the knees is ideal, but go shallower (less bend) if needed",
+      "Breathe steadily and keep your hands resting on your thighs, not pushing"
+    ],
+    "youtubeId": "y-wV4Venusw",
+    "modification": "Slide down to only a 45-degree knee bend instead of 90 degrees — this significantly reduces the quad load.",
+    "backSafe": true
+  },
+  {
+    "id": "step-back-lunge",
+    "name": "Step-Back Lunge",
+    "category": "strength",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["glutes", "hamstrings", "quadriceps", "hip flexors"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand tall with feet together and hands on your hips. This is the safer alternative to a forward lunge for the lower back because the torso stays more upright.",
+      "Take a large step backward with your right foot. Land on the ball of your right foot, keeping your right heel off the floor throughout the movement.",
+      "Bend both knees to lower yourself toward the floor. Your left (front) thigh should approach parallel to the floor and your left knee should stay directly above your left ankle.",
+      "Keep your torso completely upright — the step-back lunge naturally encourages this. Your chest should face forward, not tilt down.",
+      "Drive through your left heel to step your right foot back to the starting position. Repeat on the other side. Alternate for each rep."
+    ],
+    "cues": [
+      "Step back far enough that your front knee stays over your ankle — not pushed forward",
+      "Keep your torso completely vertical throughout — this is the key advantage of step-back lunges",
+      "Control the lowering phase — 2 seconds down, 1 second up"
+    ],
+    "youtubeId": "QOVaHwm-Q6U",
+    "modification": "Hold onto a wall or countertop for balance support, or reduce the depth of the lunge.",
+    "backSafe": true
+  },
+  {
+    "id": "bird-dog",
+    "name": "Bird Dog",
+    "category": "stability",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["core", "glutes", "lower back stabilizers", "shoulders"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Start on all fours on your mat — hands directly under your shoulders, knees directly under your hips, spine in a neutral flat position (not arched or rounded). This is your tabletop position.",
+      "Take a breath in. As you exhale, simultaneously extend your right arm straight forward (thumb pointing up) and your left leg straight back behind you. Keep both limbs parallel to the floor.",
+      "Hold this extended position for 2 seconds. Your hips must stay perfectly level — do not let the side with the raised leg tilt or rotate. Think of balancing a cup of water on your lower back.",
+      "Inhale and return both limbs slowly to the starting position. Your hand and knee should hover just above the floor before the next rep.",
+      "Repeat on the opposite side (left arm + right leg). Each pair of extensions counts as one rep."
+    ],
+    "cues": [
+      "Keep your hips perfectly square and level — this is the hardest and most important part",
+      "Extend long through your fingertips and heel, not just lifting the limbs",
+      "Brace your core before you move — pretend you're about to be poked in the belly"
+    ],
+    "youtubeId": "7nNNY0_1l2E",
+    "modification": "Instead of extending the arm and leg simultaneously, extend only the leg while keeping both hands on the floor. Master leg-only first, then add the arm.",
+    "backSafe": true
+  },
+  {
+    "id": "dead-bug",
+    "name": "Dead Bug",
+    "category": "stability",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["core", "transverse abdominis", "hip flexors"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Lie flat on your back on the mat with arms pointing straight up toward the ceiling and knees bent at 90 degrees directly above your hips (tabletop position).",
+      "Take a deep breath in. As you exhale, slowly lower your right arm overhead toward the floor while simultaneously straightening and lowering your left leg toward the floor.",
+      "Lower both limbs until they are just above the floor — do not let your lower back arch away from the mat. If it arches, don't go as low.",
+      "Inhale and return both limbs to the starting position in a controlled manner.",
+      "Repeat on the opposite side (left arm + right leg) — that is one full rep."
+    ],
+    "cues": [
+      "Press your lower back firmly into the mat throughout the entire movement",
+      "Move slowly — this is not a speed exercise, it is a control exercise",
+      "Breathe out as you lower, breathe in as you return"
+    ],
+    "youtubeId": "4XLEnwUr1d8",
+    "modification": "Instead of fully extending your leg, only lower it halfway down and keep a slight bend in the knee.",
+    "backSafe": true
+  },
+  {
+    "id": "bicep-curl",
+    "name": "Bicep Curl",
+    "category": "strength",
+    "equipment": ["10lb-dumbbells"],
+    "targetMuscles": ["biceps", "forearms"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand tall with feet shoulder-width apart, holding a dumbbell in each hand at your sides, palms facing forward. Keep your shoulders back and down — do not let them round forward.",
+      "Keeping your elbows pinned close to your sides and your upper arms completely still, exhale and curl both dumbbells upward by bending at the elbow.",
+      "Curl until the dumbbells are at shoulder height and you feel a strong contraction in your biceps. Your elbows should not drift forward past your torso.",
+      "Pause at the top for one second, then inhale and slowly lower the dumbbells back to the starting position over 2–3 seconds. Control the descent — do not let gravity drop them.",
+      "Repeat for all reps. If you cannot keep your upper arms still, the weight is too heavy — switch to the 10lb dumbbells."
+    ],
+    "cues": [
+      "Upper arms stay pinned to your sides — only your forearms should move",
+      "Squeeze the bicep hard at the top before lowering",
+      "Lower slowly — the downward phase builds as much strength as the upward phase"
+    ],
+    "youtubeId": "ykJmrZ5v0Oo",
+    "modification": "Curl one arm at a time (alternating curls) to reduce total load and focus on each arm individually.",
+    "backSafe": true
+  },
+  {
+    "id": "shoulder-press",
+    "name": "Dumbbell Shoulder Press",
+    "category": "strength",
+    "equipment": ["15lb-dumbbells"],
+    "targetMuscles": ["front deltoids", "lateral deltoids", "triceps", "upper traps"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand or sit tall. Hold a 15lb dumbbell in each hand at shoulder height with palms facing forward. Your elbows should be at roughly 90 degrees, just below or at ear level.",
+      "Take a breath in. As you exhale, press both dumbbells straight up overhead until your arms are fully extended but not locked. The dumbbells should travel in a slight inward arc as they meet near the top.",
+      "At the top, your arms should be directly overhead (not leaning forward). Pause briefly.",
+      "Inhale and lower the dumbbells slowly back to the starting position at shoulder height. Control the weight — do not let it fall.",
+      "Keep your core braced throughout and avoid arching your lower back by tucking your pelvis slightly. If you feel lower back strain, sit on a bench or switch to 10lb dumbbells."
+    ],
+    "cues": [
+      "Keep your core braced — do not arch your lower back to get the weight up",
+      "Press the weights straight up — avoid pressing forward in front of your head",
+      "Control the lowering phase — 2 seconds down keeps the muscles working"
+    ],
+    "youtubeId": "qEwKCR5JCog",
+    "modification": "Use 10lb dumbbells and perform seated with your back supported against a wall for extra spinal support.",
+    "backSafe": true
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Lateral Raise",
+    "category": "strength",
+    "equipment": ["10lb-dumbbells"],
+    "targetMuscles": ["lateral deltoids", "upper traps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand tall with feet shoulder-width apart. Hold a 10lb dumbbell in each hand at your sides, palms facing inward. Keep a very slight bend in your elbows throughout the movement.",
+      "Take a breath in. As you exhale, raise both arms out to your sides simultaneously, leading with your elbows (not your hands). Think of pouring water out of a jug — your pinky side leads slightly.",
+      "Raise until your arms are at shoulder height — parallel to the floor. Do not raise above shoulder level, as this adds unnecessary shoulder impingement risk.",
+      "Pause for one second at the top, then inhale and slowly lower the dumbbells back to your sides over 2 seconds.",
+      "Do not use momentum or shrug your shoulders to help the weight up. If you cannot maintain control, use lighter weight or perform one arm at a time."
+    ],
+    "cues": [
+      "Lead with your elbows, not your hands — this targets the lateral deltoid more effectively",
+      "Stop at shoulder height — higher is not better and can stress the shoulder joint",
+      "No swinging — if you are swinging your body to get the weight up, go lighter"
+    ],
+    "youtubeId": "3VcKaXpzqRo",
+    "modification": "Perform one arm at a time while bracing the other hand against your thigh for control. Reduce to lighter resistance if 10lb is too heavy.",
+    "backSafe": true
+  },
+  {
+    "id": "bent-over-row",
+    "name": "Bent-Over Dumbbell Row",
+    "category": "strength",
+    "equipment": ["15lb-dumbbells"],
+    "targetMuscles": ["lats", "rhomboids", "rear deltoids", "biceps"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with feet hip-width apart. Hinge at your hips (push them back, not down) to bring your torso to roughly 45 degrees — keep your spine completely neutral, not rounded. Hold a 15lb dumbbell in each hand with arms hanging straight down.",
+      "Take a breath in and brace your core firmly. As you exhale, drive both elbows back and up, rowing the dumbbells toward your lower ribcage.",
+      "At the top of the row, your elbows should be close to your torso and pulled behind your back. Squeeze your shoulder blades together firmly.",
+      "Inhale and lower the dumbbells with control back to the starting hanging position. Do not let them drop.",
+      "Maintain your hip-hinge position for all reps — do not stand up between reps. If you feel your lower back, re-brace your core and ensure your hips are truly hinged, not squatting."
+    ],
+    "cues": [
+      "Spine must stay neutral — round back under load is the risk to avoid; brace hard before each rep",
+      "Drive elbows back, not up — think of putting your elbows in your back pockets",
+      "Keep the dumbbells close to your body, not swinging wide away from your torso"
+    ],
+    "youtubeId": "FWJR5Ve8qqQ",
+    "modification": "Perform a single-arm row with your free hand resting on a table or chair for spinal support. This allows you to keep a more neutral spine more easily.",
+    "backSafe": true
+  },
+  {
+    "id": "goblet-squat",
+    "name": "Goblet Squat",
+    "category": "strength",
+    "equipment": ["10lb-dumbbells", "yoga-mat"],
+    "targetMuscles": ["quadriceps", "glutes", "core", "upper back"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with feet slightly wider than shoulder-width, toes turned out 30–45 degrees. Hold a 10lb dumbbell vertically at your chest with both hands cupped around one end, elbows pointing down.",
+      "Take a breath in and brace your core. Begin the squat by pushing your hips back and out, then bend your knees to lower yourself between your legs.",
+      "Descend as deep as comfortable — aiming for thighs parallel to the floor or lower. Your elbows should track inside your knees as you descend; use them to gently push your knees outward.",
+      "Keep your chest tall and the dumbbell close to your body throughout the entire movement. Your heels must stay flat on the floor.",
+      "Drive through your heels to press back up to standing, exhaling on the way up. Squeeze your glutes at the top."
+    ],
+    "cues": [
+      "Use your elbows to push your knees out — this opens the hips and protects the knees",
+      "Keep the dumbbell close to your chest — letting it drift forward pulls you forward",
+      "Heels stay down — if they rise, you need to work on ankle mobility or widen your stance"
+    ],
+    "youtubeId": "MeIiIdhvXT4",
+    "modification": "Reduce the squat depth and hold the dumbbell at your chest with two hands close to your body, squatting to a chair for reference.",
+    "backSafe": true
+  },
+  {
+    "id": "tricep-kickback",
+    "name": "Tricep Kickback",
+    "category": "strength",
+    "equipment": ["10lb-dumbbells"],
+    "targetMuscles": ["triceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand next to a sturdy surface (chair or table) for support. Hinge at the hips to bring your torso to roughly 45 degrees, keeping your spine neutral and core braced. Place your free hand on the support surface.",
+      "Hold a 10lb dumbbell in your working hand. Bring your upper arm up until it is parallel to the floor and pinned close to your side. Your elbow is bent at 90 degrees — this is the starting position.",
+      "Take a breath in. As you exhale, extend your forearm backward by straightening your elbow until your entire arm is parallel to the floor and straight.",
+      "Squeeze your tricep hard at the fully extended position for one second. Do not let your upper arm drop — it stays parallel to the floor throughout.",
+      "Inhale and slowly return your forearm to the 90-degree bent starting position. Complete all reps on one side, then switch arms."
+    ],
+    "cues": [
+      "Upper arm stays parallel to the floor and does not swing — only your forearm moves",
+      "Squeeze the tricep hard at full extension before returning",
+      "Keep your core braced to protect your spine in the hinge position"
+    ],
+    "youtubeId": "6SS6K3lAwZ8",
+    "modification": "Use a lighter resistance band or perform with no weight first to learn the movement pattern.",
+    "backSafe": true
+  },
+  {
+    "id": "chest-press-mat",
+    "name": "Floor Chest Press",
+    "category": "strength",
+    "equipment": ["15lb-dumbbells", "yoga-mat"],
+    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Lie on your back on the mat. Hold a 15lb dumbbell in each hand at chest level, elbows bent at 90 degrees and resting on the floor. Feet are flat on the floor, knees bent. The floor limits how far your elbows can drop, which actually protects your shoulders.",
+      "Take a breath in. As you exhale, press both dumbbells straight up toward the ceiling, extending your arms fully. The dumbbells should travel on a slight inward arc and nearly touch at the top.",
+      "Hold briefly at the top — arms extended, dumbbells over your chest.",
+      "Inhale and lower the dumbbells slowly back down until your elbows touch the floor lightly. Control this descent — do not let the weights drop with gravity.",
+      "Touch the floor briefly and immediately begin the next press without relaxing your chest. That contact point is just a depth reference."
+    ],
+    "cues": [
+      "Press up and slightly inward — imagine pushing the dumbbells together at the top",
+      "Lower until elbows touch the floor — this is your natural stopping point on the floor",
+      "Keep your shoulder blades pressed into the mat throughout"
+    ],
+    "youtubeId": "VmB1G1K7v94",
+    "modification": "Use 10lb dumbbells and a narrower grip width if shoulder discomfort occurs.",
+    "backSafe": true
+  },
+  {
+    "id": "single-leg-rdl",
+    "name": "Single-Leg Romanian Deadlift (Light)",
+    "category": "strength",
+    "equipment": ["10lb-dumbbells"],
+    "targetMuscles": ["hamstrings", "glutes", "core", "hip stabilizers"],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand tall holding a 10lb dumbbell in your right hand at your side. Shift your weight onto your left foot. Soften your left knee slightly — do not lock it.",
+      "Take a breath in and brace your core. Hinge forward at the hips — push your hips straight back as you lower the dumbbell down your left shin. Your right leg lifts behind you as a counterbalance, staying in line with your torso.",
+      "Lower until you feel a stretch in your left hamstring or your torso is parallel to the floor — whichever comes first. Keep your spine completely neutral throughout; do not round your back.",
+      "Exhale and drive through your left heel to return to standing, squeezing your left glute at the top. Bring your right foot back to the floor for balance.",
+      "Complete all reps on the left side, then switch — hold the dumbbell in your left hand and balance on your right foot."
+    ],
+    "cues": [
+      "Hinge at the hip, not the waist — your spine stays long and neutral as your hips push back",
+      "Think of your torso and raised leg as a seesaw — they should move in sync",
+      "This is a balance exercise too — slow down if you are wobbling"
+    ],
+    "youtubeId": "UN73xGdV0UY",
+    "modification": "Hold onto a wall lightly with your free hand for balance, or keep both feet on the ground and hinge to a moderate depth (not a full single-leg RDL).",
+    "backSafe": true
+  },
+  {
+    "id": "reverse-fly",
+    "name": "Dumbbell Reverse Fly",
+    "category": "strength",
+    "equipment": ["10lb-dumbbells"],
+    "targetMuscles": ["rear deltoids", "rhomboids", "middle trapezius"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with feet hip-width apart. Hinge at your hips to bring your torso to roughly 45 degrees — spine neutral, core braced. Hold a 10lb dumbbell in each hand hanging straight down with palms facing each other.",
+      "Take a breath in. As you exhale, raise both arms out to your sides simultaneously, leading with your elbows. Keep a slight bend in your elbows throughout.",
+      "Raise until your arms are parallel to the floor or as high as you can comfortably go. Squeeze your shoulder blades together at the top.",
+      "Inhale and slowly lower the dumbbells back to the starting hanging position with full control.",
+      "Maintain your hinge position throughout all reps. If you feel your lower back fatiguing, reduce your torso angle (stand more upright) or rest between reps."
+    ],
+    "cues": [
+      "Lead with your elbows, not your hands — this better targets the rear deltoids",
+      "Squeeze your shoulder blades together at the top of each rep",
+      "Keep the movement smooth and controlled — do not swing or use momentum"
+    ],
+    "youtubeId": "ttvASbqe9YA",
+    "modification": "Perform seated, leaning forward with chest resting on thighs — this removes the hip-hinge hold and allows you to focus purely on the arm movement.",
+    "backSafe": true
+  },
+  {
+    "id": "pallof-press",
+    "name": "Pallof Press",
+    "category": "stability",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["core", "obliques", "transverse abdominis", "glutes"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a resistance band at chest height to a door frame or sturdy post. Stand sideways to the anchor point about 2–3 feet away. Hold the band with both hands at your chest, fingers interlaced.",
+      "Stand with feet shoulder-width apart, knees slightly bent, core braced. The band will be pulling you toward the anchor — your job is to resist that pull throughout the exercise.",
+      "Take a breath in. As you exhale, press both hands straight out in front of you until your arms are fully extended. The band will try to rotate your torso toward the anchor — resist this completely by keeping your hips and shoulders square.",
+      "Hold the extended position for 2 seconds, then inhale and bring your hands back to your chest. This is one rep.",
+      "Complete all reps on one side, then turn around to work the other side. The challenge should feel equal on both sides."
+    ],
+    "cues": [
+      "Your torso should not rotate at all — this anti-rotation is the entire point of the exercise",
+      "Brace your core like you are bracing for a punch before you press out",
+      "Keep your hips level and feet grounded — do not let one heel lift"
+    ],
+    "youtubeId": "AH_QZLm_0-s",
+    "modification": "Use a lighter resistance band and stand closer to the anchor point to reduce the rotational pull.",
+    "backSafe": true
+  },
+  {
+    "id": "banded-glute-bridge",
+    "name": "Banded Glute Bridge",
+    "category": "strength",
+    "equipment": ["resistance-band", "yoga-mat"],
+    "targetMuscles": ["glutes", "hip abductors", "hamstrings"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Place a resistance loop band just above your knees. Lie on your back with knees bent, feet flat on the floor hip-width apart, and arms at your sides.",
+      "Press your knees gently outward against the band so they track directly over your ankles (not caving inward). Maintain this outward pressure throughout the entire exercise.",
+      "Press your lower back gently into the mat, then drive through both heels and squeeze your glutes to lift your hips off the floor.",
+      "Rise until your hips form a straight line with your knees and shoulders. Squeeze your glutes hard at the top and keep pressing your knees out against the band.",
+      "Hold for 1–2 seconds at the top, then slowly lower your hips back to the mat with control. The band adds continuous hip abductor activation throughout the movement."
+    ],
+    "cues": [
+      "Push your knees outward against the band throughout — this activates your glute medius",
+      "Squeeze your glutes hard at the top, not just lift your hips",
+      "Drive through your heels — wiggling your toes should not affect your ability to lift"
+    ],
+    "youtubeId": "kv9gCv6Uzdk",
+    "modification": "Use a lighter resistance band or remove the band and perform a standard glute bridge if the abductor demand is too high.",
+    "backSafe": true
+  },
+  {
+    "id": "clamshell",
+    "name": "Clamshell",
+    "category": "stability",
+    "equipment": ["resistance-band", "yoga-mat"],
+    "targetMuscles": ["glute medius", "glute minimus", "hip external rotators"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Place a resistance loop band just above your knees. Lie on your side on the mat with your hips stacked, knees bent to about 45 degrees, feet together. Support your head with your lower arm.",
+      "Keep your feet together throughout the movement. Take a breath in. As you exhale, lift your top knee upward toward the ceiling, rotating from the hip — like a clamshell opening.",
+      "Open as far as you can without your hips rolling backward. Your pelvis should stay completely still — place your top hand on your hip to monitor for rocking.",
+      "Pause at the top for one second, feeling the outer glute working. Then inhale and slowly lower your knee back to the starting position.",
+      "Complete all reps on one side, then switch sides."
+    ],
+    "cues": [
+      "Keep your feet together — the rotation comes from the hip, not the foot separating",
+      "Pelvis stays still — if your hips rock back, you have gone too far",
+      "You should feel this in the outer glute, not your hip flexors or lower back"
+    ],
+    "youtubeId": "SB2bMRYUflE",
+    "modification": "Remove the resistance band and perform with bodyweight only, focusing on perfect form before adding resistance.",
+    "backSafe": true
+  },
+  {
+    "id": "banded-lateral-walk",
+    "name": "Banded Lateral Walk",
+    "category": "stability",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["glute medius", "hip abductors", "quadriceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Place a resistance loop band just above your ankles. Stand with feet shoulder-width apart with slight tension already in the band. Soften your knees into a mini-squat position — about a quarter-squat depth.",
+      "Keep your chest up and core braced. Take a step to the right with your right foot — about shoulder-width plus a few inches. Maintain the quarter-squat position throughout.",
+      "Bring your left foot in to follow, but do not let it come all the way in — keep enough distance to maintain band tension. Never let your feet come together.",
+      "Continue stepping right for the full set (12 steps right = one set), then reverse direction and walk left for another 12 steps.",
+      "Stay low in the squat position for the entire set. The moment you stand tall, the exercise becomes much easier and less effective."
+    ],
+    "cues": [
+      "Stay low throughout — do not stand up and re-squat with each step",
+      "Keep toes pointing forward — do not let your feet angle outward as you tire",
+      "Control each step — do not snap the band by stepping too fast"
+    ],
+    "youtubeId": "9wvFYhLH0yY",
+    "modification": "Use a lighter band or place the band above the knees instead of above the ankles to reduce resistance.",
+    "backSafe": true
+  },
+  {
+    "id": "banded-pull-apart",
+    "name": "Banded Pull-Apart",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["rear deltoids", "rhomboids", "middle trapezius"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand tall with feet shoulder-width apart. Hold a resistance band in front of you at chest height with both hands, palms facing down. Your hands should be shoulder-width apart with slight tension already in the band.",
+      "Keep your arms straight. Take a breath in. As you exhale, pull the band apart by moving your hands outward and backward, squeezing your shoulder blades together.",
+      "Pull until the band touches your chest (or as far as your range of motion allows) and your arms are out to your sides. Squeeze your shoulder blades together firmly at this end position.",
+      "Hold for one second, feeling the contraction in your upper back and rear delts. Then inhale and slowly return to the starting position with control.",
+      "Keep your arms as straight as possible throughout — avoid bending the elbows to compensate."
+    ],
+    "cues": [
+      "Keep arms straight and initiate the pull from your shoulder blades, not your biceps",
+      "Squeeze your shoulder blades together at the end range — that is where the benefit is",
+      "Stand tall — do not lean back or shrug your shoulders to pull the band"
+    ],
+    "youtubeId": "HtCStFlFWWI",
+    "modification": "Use a lighter band or widen your grip (hands further apart) to reduce resistance.",
+    "backSafe": true
+  },
+  {
+    "id": "banded-face-pull",
+    "name": "Banded Face Pull",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["rear deltoids", "rotator cuff", "upper traps", "rhomboids"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a resistance band at face height (around a door handle, post, or loop it over a door). Stand facing the anchor, holding the band with both hands, palms facing down. Step back until there is good tension in the band.",
+      "Start with arms extended in front of you. Take a breath in. As you exhale, pull the band directly toward your face, separating your hands as you pull (pull to ear level, not chin level).",
+      "As you pull, externally rotate your shoulders so your elbows flare out to the sides and slightly upward, and your hands come to either side of your face with palms facing forward at the end.",
+      "Squeeze your shoulder blades together and hold for one second at the end position. Your elbows should be higher than your wrists.",
+      "Inhale and slowly return to the starting position with full control."
+    ],
+    "cues": [
+      "Pull toward your ears (or nose level), not your chin — too low loses the rear delt benefit",
+      "Elbows flare out and up — your upper arms should be roughly parallel to the floor at the end",
+      "Keep your torso still — no leaning back to help pull the band"
+    ],
+    "youtubeId": "V8dZ3x-mg0k",
+    "modification": "Use a lighter band or stand closer to the anchor point. Perform seated if balance is a challenge.",
+    "backSafe": true
+  },
+  {
+    "id": "side-plank",
+    "name": "Side Plank",
+    "category": "stability",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["obliques", "core", "glute medius", "shoulder stabilizers"],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 20,
+    "restSeconds": 45,
+    "instructions": [
+      "Lie on your right side with your legs straight and stacked on top of each other. Place your right forearm on the mat, elbow directly under your right shoulder.",
+      "Engage your core and lift your hips off the floor, creating a straight diagonal line from your head through your hips to your feet. Your body should form a plank — do not let your hips sag toward the floor.",
+      "Stack your feet or place the top foot slightly in front of the bottom foot for balance. Your top arm can rest on your hip or extend toward the ceiling.",
+      "Hold this position for 20 seconds. Breathe steadily — do not hold your breath. Keep your hips up and your core braced throughout.",
+      "Lower with control and repeat on the left side. Each side counts as one set."
+    ],
+    "cues": [
+      "Keep hips lifted — hip sag removes the anti-lateral flexion challenge",
+      "Press your forearm into the mat and think of pushing the floor away to engage your shoulder",
+      "Breathe normally — holding your breath increases internal pressure unnecessarily"
+    ],
+    "youtubeId": "welt7KX3mKA",
+    "modification": "Perform with knees bent and stacked — the bottom knee acts as a kickstand reducing the load significantly.",
+    "backSafe": true
+  },
+  {
+    "id": "forearm-plank",
+    "name": "Forearm Plank",
+    "category": "stability",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["core", "transverse abdominis", "shoulders", "glutes"],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 25,
+    "restSeconds": 60,
+    "instructions": [
+      "Start by kneeling on the mat. Place your forearms on the mat shoulder-width apart, elbows directly under your shoulders. Clasp your hands together or keep forearms parallel.",
+      "Step your feet back, one at a time, until your body forms a straight line from head to heels. Your toes are curled under on the mat.",
+      "Brace your core by drawing your belly button in slightly and squeezing your glutes. Your hips should be level — not raised into the air or sagging toward the floor.",
+      "Hold this position for 25 seconds, breathing steadily through your nose. Keep your head neutral — do not look up or drop your chin into your chest.",
+      "Lower to your knees with control when the time is up. Rest and repeat."
+    ],
+    "cues": [
+      "Squeeze your glutes — this protects your lower back and stabilizes your pelvis",
+      "Straight line from head to heels — use a mirror or ask someone to check your form",
+      "Push your forearms into the floor — this activates your shoulder stabilizers and prevents sagging"
+    ],
+    "youtubeId": "ASdvN_XEl_c",
+    "modification": "Drop to your knees for a forearm plank from knees. Keep your hips in line with your knees and shoulders.",
+    "backSafe": true
+  },
+  {
+    "id": "single-leg-glute-bridge",
+    "name": "Single-Leg Glute Bridge",
+    "category": "stability",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["glutes", "hamstrings", "core", "hip stabilizers"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Lie on your back with knees bent and feet flat on the floor, hip-width apart. Extend your right leg straight up toward the ceiling (or keep a slight bend in the knee).",
+      "Press your lower back into the mat and brace your core. Drive through your left heel and squeeze your left glute to lift your hips off the floor.",
+      "Rise until your body forms a straight line from your left knee through your hips to your shoulders. Your hips should stay level — resist the temptation to let the right side drop lower.",
+      "Hold at the top for 2 seconds, squeezing your glute. Then lower your hips slowly back to the mat with control.",
+      "Complete all reps on the left side, then switch: right foot drives, left leg extends. Count each side separately."
+    ],
+    "cues": [
+      "Keep your hips level — the raised-leg side will want to dip, so consciously push both hips to the same height",
+      "Drive through the planted heel, not the ball of the foot",
+      "This is much harder than a standard bridge — reduce reps if needed to maintain perfect form"
+    ],
+    "youtubeId": "0saDv7HoexA",
+    "modification": "Keep the extended leg bent at 90 degrees (foot toward ceiling) rather than straight to reduce the balance challenge.",
+    "backSafe": true
+  },
+  {
+    "id": "glute-bridge-hold",
+    "name": "Glute Bridge Isometric Hold",
+    "category": "stability",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["glutes", "hamstrings", "core"],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 45,
+    "instructions": [
+      "Lie on your back with knees bent and feet flat on the floor, hip-width apart. Arms rest at your sides.",
+      "Press your lower back gently into the mat. Drive through both heels and squeeze your glutes to lift your hips off the floor until you form a straight line from knees to shoulders.",
+      "Hold this top position for the full 30 seconds. Keep squeezing your glutes continuously — do not relax them mid-hold. Breathe steadily.",
+      "Keep your hips level throughout — do not let one side drop. Your core should be actively engaged.",
+      "Lower slowly after the hold. Rest and repeat."
+    ],
+    "cues": [
+      "Keep squeezing your glutes for the entire hold — this is an active contraction, not a passive hang",
+      "Breathe — inhale through your nose, exhale through your mouth, do not hold your breath",
+      "If your hips start to shake or drop, you have reached your limit — lower with control"
+    ],
+    "youtubeId": "MSen4TeImC0",
+    "modification": "Reduce the hold to 15 seconds and build up over time.",
+    "backSafe": true
+  },
+  {
+    "id": "modified-pigeon",
+    "name": "Modified Pigeon Pose",
+    "category": "flexibility",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["piriformis", "glutes", "hip external rotators", "hip flexors"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie on your back with both knees bent and feet flat on the floor. This is the supine (lying-down) version of pigeon, which is safer for the lower back than the traditional floor version.",
+      "Cross your right ankle over your left thigh, just above the knee. Flex your right foot (point toes toward your shin) to protect your knee joint.",
+      "Reach both hands behind your left thigh and gently draw your left leg toward your chest. You will feel a deep stretch in the outer right hip and glute.",
+      "Hold this position for 40 seconds, breathing slowly and deeply. With each exhale, allow your body to relax into the stretch a little more — do not force it.",
+      "Lower both feet back to the floor slowly and repeat on the other side (left ankle over right thigh)."
+    ],
+    "cues": [
+      "Keep your right foot flexed throughout to protect the knee joint — do not let the foot go limp",
+      "Breathe into the stretch — tension in your breath creates tension in the muscle",
+      "If you cannot reach your thigh comfortably, loop a towel or strap around it"
+    ],
+    "youtubeId": "aJwODZn0aMM",
+    "modification": "Keep the bottom foot on the floor (without pulling the leg in) to reduce the intensity of the stretch.",
+    "backSafe": true
+  },
+  {
+    "id": "supine-figure-4",
+    "name": "Supine Figure-4 Stretch",
+    "category": "flexibility",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["piriformis", "glutes", "IT band", "hip rotators"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie on your back with both knees bent, feet flat on the floor. Cross your right ankle over your left knee to form a figure-4 shape. Flex your right foot.",
+      "Let your right knee fall gently to the right — you should feel an immediate stretch in the outer right hip. If this is already deep enough, stay here.",
+      "For a deeper stretch: Reach your right hand through the gap between your legs and your left hand around the outside of your left thigh. Clasp your hands behind your left thigh and gently pull it toward your chest.",
+      "Hold for 40 seconds, breathing deeply. Your entire back stays flat on the mat throughout — do not let your hips rock to one side.",
+      "Release and switch sides: left ankle over right knee."
+    ],
+    "cues": [
+      "Flex your top foot (toes toward shin) to protect the knee joint",
+      "Your back stays flat on the mat — do not let your hips twist",
+      "This targets the piriformis — a small muscle deep in the glute that can contribute to sciatic irritation"
+    ],
+    "youtubeId": "L_xrDAtykMI",
+    "modification": "Keep the bottom foot on the floor without pulling in and just let the crossed-knee drop open passively.",
+    "backSafe": true
+  },
+  {
+    "id": "childs-pose",
+    "name": "Child's Pose",
+    "category": "flexibility",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["lower back", "hips", "thoracic spine", "shoulders"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Kneel on your mat with your big toes touching and knees apart (wider for a hip-opening variation, together for a lower back focus). Sit back onto your heels.",
+      "Walk your hands forward as far as you can, lowering your chest toward the floor between your thighs. Let your forehead rest on the mat.",
+      "Extend your arms as far forward as comfortable, feeling a lengthening through your spine and a gentle opening through your hips and lower back.",
+      "Hold for 40 seconds, breathing deeply. Each exhale, allow your hips to sink a little heavier toward your heels and your chest a little lower toward the floor.",
+      "To come out, walk your hands back and slowly rise up, supporting yourself with your hands."
+    ],
+    "cues": [
+      "Allow gravity to do the work — this is a passive, restful stretch, not an active effort",
+      "Breathe into your back body — try to feel your back ribs expand with each inhale",
+      "Wider knees gives more hip opening; narrower knees focuses the stretch more on the spine"
+    ],
+    "youtubeId": "qZ_KAHnAKuo",
+    "modification": "Place a folded blanket or pillow between your thighs and calves if sitting back onto heels is uncomfortable.",
+    "backSafe": true
+  },
+  {
+    "id": "doorway-chest-stretch",
+    "name": "Doorway Chest Stretch",
+    "category": "flexibility",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["pectorals", "front deltoids", "biceps"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand in a doorway. Raise both arms to shoulder height and bend your elbows to 90 degrees, placing your forearms vertically against the door frame on each side.",
+      "Step one foot forward through the doorway so you are in a staggered stance. Keep your core lightly engaged and spine tall.",
+      "Gently lean your body forward through the doorway until you feel a stretch across your chest and the front of your shoulders. Do not push aggressively — let the stretch come gradually.",
+      "Hold for 30 seconds. Breathe steadily and relax into the stretch with each exhale. Your forearms stay on the door frame throughout.",
+      "Step back to release. You can also perform this one arm at a time for a unilateral variation."
+    ],
+    "cues": [
+      "Keep your elbows at shoulder height — lower elbows target the lower pec, higher elbows target the upper pec",
+      "Lean forward gently — this is not a stretch you force; let gravity and your lean do the work",
+      "Stand tall — do not let your lower back arch excessively as you lean"
+    ],
+    "youtubeId": "YbX7Iu8sq9c",
+    "modification": "Perform with one arm at a time using a wall corner if a full doorway is not available.",
+    "backSafe": true
+  },
+  {
+    "id": "seated-hamstring-stretch",
+    "name": "Seated Hamstring Stretch",
+    "category": "flexibility",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["hamstrings", "calves", "lower back (gentle)"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Sit on the floor on your mat with both legs extended straight out in front of you. Sit up as tall as possible — if your back rounds heavily, sit on a folded blanket or towel to tilt your pelvis forward.",
+      "Flex both feet so your toes point toward the ceiling. Take a breath in and sit even taller through your spine.",
+      "As you exhale, hinge forward from your hips (not by rounding your back) to reach your hands toward your feet. Reach as far as comfortable — your shins, ankles, or feet.",
+      "Hold this position for 40 seconds, keeping a long spine. Breathe steadily — with each exhale, try to hinge a little further forward from the hip.",
+      "To come out, press your hands into the floor beside you and sit up slowly."
+    ],
+    "cues": [
+      "Hinge from your hips, not your back — think of your torso tilting forward as a unit, spine long",
+      "If you can barely reach your shins, that is perfectly fine — hamstring flexibility takes weeks to build",
+      "Flex your feet actively — pointing toes reduces the hamstring stretch"
+    ],
+    "youtubeId": "aORjXDqSxS4",
+    "modification": "Loop a towel or resistance band around your feet and hold the ends to bridge the gap if you cannot reach your feet.",
+    "backSafe": true
+  },
+  {
+    "id": "hip-flexor-stretch",
+    "name": "Kneeling Hip Flexor Stretch",
+    "category": "flexibility",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["hip flexors", "iliopsoas", "rectus femoris", "quadriceps"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Kneel on your mat with your right knee on the floor directly under your right hip. Step your left foot forward so your left knee is at 90 degrees directly over your left ankle — a half-kneeling position. Use a folded blanket under your right knee if it is uncomfortable.",
+      "Sit tall, lengthen your spine, and gently tuck your pelvis slightly under (posterior pelvic tilt) — this is the key step that actually creates the hip flexor stretch. Without the tuck, the stretch is minimal.",
+      "Shift your hips slightly forward (not by leaning your torso, but by sliding your hips) until you feel a stretch in the front of your right hip.",
+      "Hold for 40 seconds. Breathe steadily and try to deepen the pelvic tuck slightly with each exhale to intensify the stretch.",
+      "Switch sides: left knee on floor, right foot forward."
+    ],
+    "cues": [
+      "Tuck your pelvis under (flatten your lower back) — this is what creates the stretch, not just leaning forward",
+      "Keep your torso upright — do not lean your chest toward your front knee",
+      "The stretch should be felt in the front of the back-leg hip, not in the front knee"
+    ],
+    "youtubeId": "YQmpFpnGiYY",
+    "modification": "Place a folded towel under your kneeling knee for cushioning. Reduce the forward shift if the stretch is too intense.",
+    "backSafe": true
+  },
+  {
+    "id": "standing-quad-stretch",
+    "name": "Standing Quad Stretch",
+    "category": "flexibility",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["quadriceps", "hip flexors", "knee joint"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand tall near a wall or chair for balance support. Shift your weight onto your left foot.",
+      "Bend your right knee and bring your right heel toward your right glute. Reach back with your right hand and hold your right ankle or the top of your foot. If you cannot reach, loop a towel around your ankle.",
+      "Keep your knees together — your right knee should point straight down toward the floor, not out to the side. Keep your torso upright and core lightly engaged.",
+      "Hold for 30 seconds. You should feel a stretch along the front of your right thigh. Avoid pulling so hard that your knee lifts or your foot pulls away from center.",
+      "Lower your foot and switch sides."
+    ],
+    "cues": [
+      "Keep both knees side by side — pulling your knee out to the side changes the stretch target",
+      "Stand tall — do not lean forward or arch your lower back",
+      "Use a wall for balance; wobbling reduces the quality of the stretch"
+    ],
+    "youtubeId": "KaqTQ9MjbEA",
+    "modification": "Lie face-down on the mat and bend one knee, reaching back to hold the ankle — this removes the balance challenge entirely.",
+    "backSafe": true
+  }
+]
