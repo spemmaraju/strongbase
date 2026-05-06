@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import confetti from 'canvas-confetti'
 import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
+import useStreak from '../hooks/useStreak'
 import CircularTimer from '../components/CircularTimer'
 import ExerciseModal from '../components/ExerciseModal'
 
@@ -19,12 +21,15 @@ const CATEGORY_EMOJI = {
   cardio: '🏃',
 }
 
+// 7 messages indexed by (day.day - 1) % 7 as specified in Phase 3
 const DONE_MESSAGES = [
-  "You showed up and crushed it. That's the whole game.",
-  "Every rep you just did is a brick in your StrongBase.",
-  "Consistency is a superpower. You just used yours.",
-  "Rest well. Tomorrow you come back even stronger.",
-  "Your body did something today your past self couldn't. That's progress.",
+  "Every rep is a vote for the person you're becoming.",
+  "Your back is safer and your body is stronger. Day by day.",
+  "Consistency beats intensity every time. You showed up.",
+  "The hardest part was starting. You did it.",
+  "Small actions, compounded daily, become transformation.",
+  "Your future self is grateful for what you did today.",
+  "Seven days. One habit. One stronger you.",
 ]
 
 // ── Sub-components ─────────────────────────────────────────────────────────
@@ -351,39 +356,85 @@ function RestScreen({ workout }) {
 
 function CompletionScreen({ workout, navigate }) {
   const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds } = workout
-  const msg = DONE_MESSAGES[(day.day - 1) % DONE_MESSAGES.length]
+  const msg = DONE_MESSAGES[(day.day - 1) % 7]
+
+  // Read streak AFTER the log has been saved (saveWorkoutLog runs before setPhase('complete'))
+  const { currentStreak, totalWorkouts } = useStreak()
+
+  const [showToast, setShowToast] = useState(false)
+  const [toastMsg, setToastMsg] = useState('')
+
+  // Fire confetti on mount
+  useEffect(() => {
+    confetti({
+      particleCount: 130,
+      spread: 80,
+      origin: { y: 0.35 },
+      colors: ['#14B8A6', '#F8FAFC', '#F59E0B'],
+    })
+  }, [])
+
+  // Show streak toast after 1 s, auto-dismiss after 3 s
+  useEffect(() => {
+    let msg
+    if (totalWorkouts <= 1) msg = '🎉 First workout complete!'
+    else if (currentStreak === 7) msg = '🏆 Full week crushed!'
+    else if (currentStreak >= 1) msg = `🔥 ${currentStreak} day streak!`
+    else msg = '✅ Great workout!'
+    setToastMsg(msg)
+
+    const t1 = setTimeout(() => setShowToast(true), 1000)
+    const t2 = setTimeout(() => setShowToast(false), 4000) // 1 s delay + 3 s visible
+    return () => { clearTimeout(t1); clearTimeout(t2) }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen px-6 text-center pb-12"
       style={{ backgroundColor: '#0F172A' }}
     >
+      {/* Streak toast — slides in from top */}
+      <div
+        style={{
+          position: 'fixed', top: 0, left: 0, right: 0,
+          padding: '16px 20px',
+          backgroundColor: '#14B8A6',
+          color: '#fff',
+          fontWeight: 700,
+          fontSize: 17,
+          textAlign: 'center',
+          transform: showToast ? 'translateY(0)' : 'translateY(-110%)',
+          transition: 'transform 0.35s cubic-bezier(0.34,1.56,0.64,1)',
+          zIndex: 100,
+        }}
+      >
+        {toastMsg}
+      </div>
+
       <div className="text-7xl mb-4">🎉</div>
       <h1 className="text-3xl font-extrabold text-white mb-2">Workout Complete!</h1>
-      <p className="text-lg font-bold mb-8" style={{ color: '#14B8A6' }}>
+      <p className="text-lg font-bold mb-6" style={{ color: '#14B8A6' }}>
         Day {day.day} — {day.theme}
       </p>
 
       {/* Stats */}
       <div
-        className="w-full rounded-2xl p-5 mb-6 space-y-4"
+        className="w-full rounded-2xl p-5 mb-5 space-y-4"
         style={{ backgroundColor: '#1E293B', border: '1px solid #334155', maxWidth: 360 }}
       >
+        <Stat label="Time Elapsed" value={formatTime(elapsedSeconds)} />
+        <div style={{ height: 1, backgroundColor: '#334155' }} />
         <Stat label="Exercises Completed" value={completedExerciseIds.length} />
         <div style={{ height: 1, backgroundColor: '#334155' }} />
-        <Stat label="Total Sets" value={totalSetsCompleted} />
+        <Stat label="Sets Completed" value={totalSetsCompleted} />
         <div style={{ height: 1, backgroundColor: '#334155' }} />
-        <Stat label="Time Elapsed" value={formatTime(elapsedSeconds)} />
+        <Stat label="Current Streak" value={`${currentStreak} day${currentStreak !== 1 ? 's' : ''} 🔥`} />
       </div>
 
       {/* Motivational message */}
       <div
-        className="w-full rounded-xl p-4 mb-8 text-left"
-        style={{
-          backgroundColor: '#1E293B',
-          borderLeft: '3px solid #14B8A6',
-          maxWidth: 360,
-        }}
+        className="w-full rounded-xl p-4 mb-6 text-left"
+        style={{ backgroundColor: '#1E293B', borderLeft: '3px solid #14B8A6', maxWidth: 360 }}
       >
         <p className="text-sm font-medium text-white leading-relaxed italic">"{msg}"</p>
       </div>
