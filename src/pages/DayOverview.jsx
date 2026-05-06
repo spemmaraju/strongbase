@@ -141,7 +141,7 @@ export default function DayOverview() {
                   return (
                     <div
                       key={ex.id}
-                      className="rounded-xl p-4 flex items-center gap-3"
+                      className="rounded-xl p-4 flex items-start gap-3"
                       style={{
                         backgroundColor: '#1E293B',
                         border: '1px solid #334155',
@@ -153,7 +153,7 @@ export default function DayOverview() {
                         <p className="text-sm font-semibold mt-0.5" style={{ color: '#14B8A6' }}>
                           {setsReps}
                         </p>
-                        <p className="text-xs mt-1 truncate" style={{ color: '#64748B' }}>
+                        <p className="text-xs mt-1 leading-relaxed" style={{ color: '#64748B' }}>
                           {ex.targetMuscles.join(' · ')}
                         </p>
                         {/* Equipment badges */}
