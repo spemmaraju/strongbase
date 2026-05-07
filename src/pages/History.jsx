@@ -21,8 +21,8 @@ function HeatmapCell({ day, onTap }) {
     <div
       onClick={() => day.logs.length > 0 && onTap(day)}
       style={{
-        width: 26, height: 26,
-        borderRadius: 4,
+        width: 32, height: 32,
+        borderRadius: 5,
         backgroundColor: bg,
         cursor: day.logs.length > 0 ? 'pointer' : 'default',
         flexShrink: 0,
@@ -83,15 +83,15 @@ function CalendarHeatmap({ weeks, onCellTap }) {
         {/* Day labels (sticky left) */}
         <div
           style={{
-            display: 'flex', flexDirection: 'column', gap: 3,
-            paddingTop: MONTH_ROW_H + 3,
+            display: 'flex', flexDirection: 'column', gap: 4,
+            paddingTop: MONTH_ROW_H + 4, // matches month-row height + gap before first cell
             position: 'sticky', left: 0,
             backgroundColor: '#0F172A', zIndex: 1,
             marginRight: 2,
           }}
         >
           {DAY_LABELS.map((d, i) => (
-            <div key={i} style={{ height: 26, display: 'flex', alignItems: 'center' }}>
+            <div key={i} style={{ height: 32, display: 'flex', alignItems: 'center' }}>
               <span style={{ fontSize: 10, fontWeight: 700, color: '#475569', width: 10 }}>{d}</span>
             </div>
           ))}
@@ -101,7 +101,7 @@ function CalendarHeatmap({ weeks, onCellTap }) {
         {weeks.map((week, wi) => {
           const showMonth = wi === 0 || getMonthIdx(week.weekStart) !== getMonthIdx(weeks[wi - 1].weekStart)
           return (
-            <div key={week.weekStart} style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <div key={week.weekStart} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
               {/* Month label row */}
               <div style={{ height: MONTH_ROW_H, display: 'flex', alignItems: 'flex-end' }}>
                 <span style={{
@@ -127,29 +127,27 @@ function CalendarHeatmap({ weeks, onCellTap }) {
 // ── Stats summary bar ──────────────────────────────────────────────────────
 
 function StatBar({ totalWorkouts, currentStreak, longestStreak, thisMonthCount }) {
-  const chips = [
-    { emoji: '📅', value: totalWorkouts, label: 'Total' },
-    { emoji: '🔥', value: currentStreak,  label: 'Streak' },
-    { emoji: '🏆', value: longestStreak,  label: 'Best' },
-    { emoji: '⚡', value: thisMonthCount, label: 'Month' },
+  const stats = [
+    { value: totalWorkouts, label: 'Total' },
+    { value: currentStreak, label: 'Streak' },
+    { value: longestStreak, label: 'Best' },
+    { value: thisMonthCount, label: 'Month' },
   ]
   return (
     <div
-      className="flex rounded-xl overflow-hidden"
-      style={{ border: '1px solid #334155' }}
+      className="grid grid-cols-4 rounded-2xl overflow-hidden"
+      style={{ border: '1px solid rgba(255,255,255,0.06)', backgroundColor: '#1E293B' }}
     >
-      {chips.map((c, i) => (
+      {stats.map((s, i) => (
         <div
           key={i}
-          className="flex-1 flex flex-col items-center py-3"
+          className="flex flex-col items-center py-4"
           style={{
-            backgroundColor: '#1E293B',
-            borderRight: i < chips.length - 1 ? '1px solid #334155' : 'none',
+            borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
           }}
         >
-          <span style={{ fontSize: 16 }}>{c.emoji}</span>
-          <span style={{ fontSize: 20, fontWeight: 800, color: '#F8FAFC', lineHeight: 1.2 }}>{c.value}</span>
-          <span style={{ fontSize: 10, color: '#64748B', fontWeight: 600 }}>{c.label}</span>
+          <span style={{ fontSize: 22, fontWeight: 800, color: '#F8FAFC', lineHeight: 1 }}>{s.value}</span>
+          <span style={{ fontSize: 10, color: '#94A3B8', fontWeight: 600, marginTop: 4 }}>{s.label}</span>
         </div>
       ))}
     </div>
@@ -242,8 +240,8 @@ function WeeklyCard({ weekStart, weekEnd, logs, navigate }) {
 
   return (
     <div
-      className="rounded-xl overflow-hidden"
-      style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
+      className="rounded-2xl overflow-hidden"
+      style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.06)' }}
     >
       {/* Card header — tap to expand */}
       <button
@@ -267,11 +265,15 @@ function WeeklyCard({ weekStart, weekEnd, logs, navigate }) {
           <span className="text-xs font-semibold" style={{ color: '#94A3B8' }}>
             ⏱ {formatDuration(totalTime)}
           </span>
-          {topMuscles.length > 0 && (
-            <span className="text-xs font-semibold" style={{ color: '#64748B' }}>
-              💪 {topMuscles.join(' · ')}
+          {topMuscles.map(m => (
+            <span
+              key={m}
+              className="text-xs font-semibold px-2 py-0.5 rounded-full"
+              style={{ backgroundColor: '#14B8A620', color: '#14B8A6', border: '1px solid #14B8A640' }}
+            >
+              {m}
             </span>
-          )}
+          ))}
         </div>
       </button>
 
@@ -351,13 +353,13 @@ export default function History() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
-      {/* Header */}
+      {/* Header — flat dark background */}
       <div
-        className="px-5 pt-12 pb-6"
-        style={{ background: 'linear-gradient(180deg, #0D9488 0%, #0F172A 100%)' }}
+        className="px-5 pt-12 pb-5"
+        style={{ backgroundColor: '#0F172A', borderBottom: '2px solid #14B8A6' }}
       >
-        <h1 className="text-4xl font-extrabold text-white tracking-tight">My History</h1>
-        <p className="mt-1 text-base font-medium" style={{ color: '#99F6E4' }}>
+        <h1 className="text-3xl font-bold text-white">My History</h1>
+        <p className="mt-1 text-sm" style={{ color: '#94A3B8' }}>
           {loading ? '…' : `${totalWorkouts} workout${totalWorkouts !== 1 ? 's' : ''} completed`}
         </p>
       </div>

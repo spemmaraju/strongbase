@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 const SOUND_KEY = 'strongbase_sound'
 
@@ -30,6 +30,18 @@ export function useSound() {
       return val
     } catch { return true }
   })
+
+  // iOS Safari fix: resume AudioContext on first user touch before any sound plays
+  useEffect(() => {
+    function handleFirstTouch() {
+      if (acRef.current && acRef.current.state === 'suspended') {
+        acRef.current.resume().catch(() => {})
+      }
+      document.removeEventListener('touchstart', handleFirstTouch)
+    }
+    document.addEventListener('touchstart', handleFirstTouch, { passive: true })
+    return () => document.removeEventListener('touchstart', handleFirstTouch)
+  }, [])
 
   function getAC() {
     if (!acRef.current) {

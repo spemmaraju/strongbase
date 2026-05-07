@@ -4,7 +4,7 @@
     {
       "day": 1,
       "theme": "Full Body Foundation",
-      "emoji": "🏗️",
+      "emoji": "🌟",
       "focusArea": "Mobility, stability, and light full-body activation",
       "durationMinutes": 40,
       "exerciseIds": [
@@ -24,7 +24,7 @@
     {
       "day": 2,
       "theme": "Push Day",
-      "emoji": "👊",
+      "emoji": "🤜",
       "focusArea": "Upper body push — chest, shoulders, and triceps",
       "durationMinutes": 45,
       "exerciseIds": [
@@ -84,7 +84,7 @@
     {
       "day": 5,
       "theme": "Pull Day",
-      "emoji": "💪",
+      "emoji": "🦾",
       "focusArea": "Upper body pull — back, biceps, and rear delts",
       "durationMinutes": 45,
       "exerciseIds": [
@@ -125,7 +125,7 @@
     {
       "day": 7,
       "theme": "Full Body Circuit",
-      "emoji": "🔥",
+      "emoji": "⚡",
       "focusArea": "Three timed circuits — strength meets stamina",
       "durationMinutes": 50,
       "exerciseIds": [

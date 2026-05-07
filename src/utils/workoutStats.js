@@ -81,6 +81,7 @@ export function getUniqueEquipment(exerciseIds) {
 // ── Formatting helpers ─────────────────────────────────────────────────────
 export function formatDuration(seconds) {
   if (!seconds) return '0 min'
+  if (seconds < 60) return '< 1 min'
   const h = Math.floor(seconds / 3600)
   const m = Math.floor((seconds % 3600) / 60)
   if (h > 0 && m > 0) return `${h} hr ${m} min`

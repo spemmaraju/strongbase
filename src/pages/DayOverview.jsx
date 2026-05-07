@@ -6,14 +6,6 @@ import quotesData from '../data/quotes.json'
 import ExerciseModal from '../components/ExerciseModal'
 import { randomQuote } from '../utils/workoutStats'
 
-const SECTION_ORDER = ['warm-up', 'strength', 'stability', 'cardio', 'flexibility']
-const SECTION_LABELS = {
-  'warm-up': 'Warm-Up',
-  'strength': 'Main Workout',
-  'stability': 'Main Workout',
-  'cardio': 'Main Workout',
-  'flexibility': 'Cool-Down'
-}
 // Map category → display group
 function getGroup(category) {
   if (category === 'warm-up') return 'Warm-Up'
@@ -22,11 +14,11 @@ function getGroup(category) {
 }
 
 const EQUIPMENT_COLORS = {
-  'bodyweight': { bg: '#1E293B', text: '#94A3B8', border: '#334155' },
-  'yoga-mat': { bg: '#1E293B', text: '#94A3B8', border: '#334155' },
-  'resistance-band': { bg: '#14B8A615', text: '#2DD4BF', border: '#14B8A640' },
-  '10lb-dumbbells': { bg: '#7C3AED15', text: '#A78BFA', border: '#7C3AED40' },
-  '15lb-dumbbells': { bg: '#DC262615', text: '#FCA5A5', border: '#DC262640' },
+  'bodyweight':       { bg: '#1E293B', text: '#94A3B8', border: '#334155' },
+  'yoga-mat':         { bg: '#1E293B', text: '#94A3B8', border: '#334155' },
+  'resistance-band':  { bg: '#14B8A615', text: '#2DD4BF', border: '#14B8A640' },
+  '10lb-dumbbells':   { bg: '#7C3AED15', text: '#A78BFA', border: '#7C3AED40' },
+  '15lb-dumbbells':   { bg: '#DC262615', text: '#FCA5A5', border: '#DC262640' },
 }
 
 function getEqStyle(eq) {
@@ -38,7 +30,7 @@ export default function DayOverview() {
   const navigate = useNavigate()
   const [selectedExercise, setSelectedExercise] = useState(null)
 
-  // Pick a random quote on mount; rest-day category for Day 4, starting for others
+  // Pick a random quote on mount
   const [quote] = useState(() => {
     const parsedDay = parseInt(dayNumber)
     const cat = parsedDay === 4 ? 'rest-day' : 'starting'
@@ -55,7 +47,7 @@ export default function DayOverview() {
           <button
             onClick={() => navigate('/')}
             className="mt-4 px-6 py-3 rounded-xl font-bold"
-            style={{ backgroundColor: '#14B8A6', color: '#fff' }}
+            style={{ backgroundColor: '#14B8A6', color: '#fff', border: 'none', cursor: 'pointer' }}
           >
             Go Home
           </button>
@@ -64,13 +56,9 @@ export default function DayOverview() {
     )
   }
 
-  // Build ordered exercise objects for this day
   const exerciseMap = Object.fromEntries(exercises.map((e) => [e.id, e]))
-  const dayExercises = day.exerciseIds
-    .map((id) => exerciseMap[id])
-    .filter(Boolean)
+  const dayExercises = day.exerciseIds.map((id) => exerciseMap[id]).filter(Boolean)
 
-  // Group into Warm-Up / Main Workout / Cool-Down
   const sections = {}
   dayExercises.forEach((ex) => {
     const group = getGroup(ex.category)
@@ -81,13 +69,13 @@ export default function DayOverview() {
   const sectionOrder = ['Warm-Up', 'Main Workout', 'Cool-Down']
 
   return (
-    <div className="min-h-screen pb-32" style={{ backgroundColor: '#0F172A' }}>
-      {/* Header */}
+    <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
+      {/* Header — flat, no gradient, no emoji */}
       <div
-        className="px-5 pt-10 pb-6"
+        className="px-5 pt-10 pb-5"
         style={{
-          background: 'linear-gradient(180deg, #1E293B 0%, #0F172A 100%)',
-          borderBottom: '1px solid #334155'
+          backgroundColor: '#0F172A',
+          borderBottom: '1px solid #1E293B',
         }}
       >
         <button
@@ -98,47 +86,42 @@ export default function DayOverview() {
           ← Back
         </button>
 
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1">
-            <span
-              className="text-xs font-bold uppercase tracking-widest"
-              style={{ color: '#14B8A6' }}
-            >
-              Day {day.day}
-            </span>
-            <h1 className="text-2xl font-extrabold text-white mt-1 leading-tight">
-              {day.theme}
-            </h1>
-            <p className="text-sm mt-1 leading-snug" style={{ color: '#94A3B8' }}>
-              {day.focusArea}
-            </p>
-          </div>
-          <div className="flex flex-col items-end gap-2 flex-shrink-0">
-            <span className="text-4xl">{day.emoji}</span>
-            <span
-              className="text-xs font-semibold px-3 py-1 rounded-full"
-              style={{ backgroundColor: '#1E293B', color: '#94A3B8', border: '1px solid #334155' }}
-            >
-              ⏱ {day.durationMinutes} min
-            </span>
-          </div>
-        </div>
+        <span
+          className="text-xs font-semibold uppercase tracking-widest"
+          style={{ color: '#14B8A6' }}
+        >
+          Day {day.day}
+        </span>
+        <h1 className="text-2xl font-bold text-white mt-1 leading-tight">
+          {day.theme}
+        </h1>
+        {/* Time badge below theme name */}
+        <p className="text-sm mt-1" style={{ color: '#94A3B8' }}>
+          ⏱ {day.durationMinutes} min
+        </p>
+        <p className="text-sm mt-0.5" style={{ color: '#64748B' }}>
+          {day.focusArea}
+        </p>
       </div>
 
-      {/* Exercise Sections */}
-      <div className="px-5 pt-5 space-y-6">
+      {/* Exercise Sections — pb-24 so last card clears the fixed Start button */}
+      <div className="px-5 pt-5 pb-24 space-y-6">
         {sectionOrder.map((sectionName) => {
           const exList = sections[sectionName]
           if (!exList || exList.length === 0) return null
           return (
             <div key={sectionName}>
-              {/* Section Header */}
-              <div className="flex items-center gap-3 mb-3">
-                <h2 className="text-sm font-bold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
-                  {sectionName}
-                </h2>
-                <div className="flex-1 h-px" style={{ backgroundColor: '#334155' }} />
-              </div>
+              {/* Section Header — teal left border style */}
+              <h2
+                className="text-xs font-semibold tracking-widest uppercase mb-4"
+                style={{
+                  color: '#94A3B8',
+                  borderLeft: '2px solid #14B8A6',
+                  paddingLeft: 8,
+                }}
+              >
+                {sectionName}
+              </h2>
 
               {/* Exercise Cards */}
               <div className="space-y-3">
@@ -150,19 +133,19 @@ export default function DayOverview() {
                   return (
                     <div
                       key={ex.id}
-                      className="rounded-xl p-4 flex items-start gap-3"
+                      className="rounded-2xl p-4 flex items-start gap-3"
                       style={{
                         backgroundColor: '#1E293B',
-                        border: '1px solid #334155',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+                        border: '1px solid rgba(255,255,255,0.06)',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
                       }}
                     >
                       <div className="flex-1 min-w-0">
-                        <p className="font-bold text-white leading-snug">{ex.name}</p>
-                        <p className="text-sm font-semibold mt-0.5" style={{ color: '#14B8A6' }}>
+                        <p className="text-base font-semibold text-white leading-snug">{ex.name}</p>
+                        <p className="text-sm font-medium mt-0.5" style={{ color: '#14B8A6' }}>
                           {setsReps}
                         </p>
-                        <p className="text-xs mt-1 leading-relaxed" style={{ color: '#64748B' }}>
+                        <p className="text-xs mt-1 leading-relaxed" style={{ color: '#94A3B8' }}>
                           {ex.targetMuscles.join(' · ')}
                         </p>
                         {/* Equipment badges */}
@@ -182,17 +165,20 @@ export default function DayOverview() {
                         </div>
                       </div>
 
-                      {/* Info button */}
+                      {/* Info button — min 44×44 touch target, mr-1 so never clipped */}
                       <button
                         onClick={() => setSelectedExercise(ex)}
                         className="flex-shrink-0 flex items-center justify-center rounded-full font-bold text-lg transition-all active:scale-90"
                         style={{
+                          minWidth: 44,
+                          minHeight: 44,
                           width: 44,
                           height: 44,
                           backgroundColor: '#334155',
                           color: '#14B8A6',
                           border: 'none',
-                          cursor: 'pointer'
+                          cursor: 'pointer',
+                          marginRight: 4,
                         }}
                         aria-label={`Info for ${ex.name}`}
                       >
@@ -205,56 +191,66 @@ export default function DayOverview() {
             </div>
           )
         })}
+
+        {/* Motivational Quote */}
+        {quote && (
+          <div
+            className="rounded-2xl p-4"
+            style={{
+              backgroundColor: '#1E293B',
+              borderLeft: '3px solid #14B8A650',
+              border: '1px solid rgba(255,255,255,0.06)',
+            }}
+          >
+            <p className="text-sm font-medium leading-relaxed italic" style={{ color: '#94A3B8' }}>
+              "{quote.text}"
+            </p>
+            {quote.author !== 'StrongBase' && (
+              <p className="text-xs mt-1 font-semibold" style={{ color: '#475569' }}>
+                — {quote.author}
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Motivational Quote */}
-      {quote && (
-        <div
-          className="mx-5 mt-4 rounded-xl p-4"
-          style={{
-            backgroundColor: '#1E293B',
-            borderLeft: '3px solid #14B8A650',
-            marginBottom: 8,
-          }}
-        >
-          <p className="text-sm font-medium leading-relaxed italic" style={{ color: '#94A3B8' }}>
-            "{quote.text}"
-          </p>
-          {quote.author !== 'StrongBase' && (
-            <p className="text-xs mt-1 font-semibold" style={{ color: '#475569' }}>
-              — {quote.author}
-            </p>
-          )}
-        </div>
-      )}
-
-      {/* Start Workout Button (fixed bottom) */}
+      {/* Gradient fade + fixed Start Workout button */}
       <div
-        className="fixed bottom-0 left-0 right-0 px-5 pb-8 pt-4"
         style={{
-          background: 'linear-gradient(0deg, #0F172A 60%, transparent 100%)',
-          maxWidth: 600,
-          margin: '0 auto',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '100%'
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 10,
         }}
       >
-        <button
-          onClick={() => navigate(`/workout/${day.day}`)}
-          className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
+        {/* Gradient fade above button */}
+        <div
           style={{
-            backgroundColor: '#14B8A6',
-            minHeight: 56,
-            padding: '16px 20px',
-            border: 'none',
-            cursor: 'pointer'
+            height: 40,
+            background: 'linear-gradient(to bottom, transparent, #0F172A)',
+            pointerEvents: 'none',
           }}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+        />
+        <div
+          className="px-5 pb-8"
+          style={{ backgroundColor: '#0F172A' }}
         >
-          ▶ Start Workout
-        </button>
+          <button
+            onClick={() => navigate(`/workout/${day.day}`)}
+            className="w-full rounded-2xl font-bold text-base text-white transition-all active:scale-95"
+            style={{
+              backgroundColor: '#14B8A6',
+              height: 56,
+              border: 'none',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+          >
+            ▶ Start Workout
+          </button>
+        </div>
       </div>
 
       {/* Exercise Modal */}

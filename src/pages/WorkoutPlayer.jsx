@@ -38,7 +38,7 @@ const ANIM_STYLES = `
 function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
   return (
     <div
-      className="flex items-center justify-between px-4 py-3"
+      className="flex items-center justify-between px-5 py-3"
       style={{ borderBottom: '1px solid #1E293B' }}
     >
       <div>
@@ -201,7 +201,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
   const canGoBack = !(workout.exerciseIndex === 0 && currentSet === 1)
 
   return (
-    <div className="flex flex-col min-h-screen" style={{ backgroundColor: '#0F172A' }}>
+    <div className="flex flex-col min-h-screen pb-36" style={{ backgroundColor: '#0F172A' }}>
       <ProgressBar completed={completedExerciseIds.length} total={dayExercises.length} />
 
       {/* Exercise info */}
@@ -229,6 +229,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             border: 'none',
             cursor: 'pointer',
             marginTop: 4,
+            marginRight: 20,
           }}
           aria-label="Exercise info"
         >
@@ -275,14 +276,27 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
         )}
       </div>
 
-      {/* Bottom actions */}
-      <div className="px-5 pb-8 space-y-3">
+      {/* Fixed footer — Done / Skip button always fully visible */}
+      <div
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 20,
+          backgroundColor: '#0F172A',
+          paddingLeft: 20,
+          paddingRight: 20,
+          paddingTop: 12,
+          paddingBottom: 'env(safe-area-inset-bottom, 24px)',
+        }}
+      >
         {isTimed ? (
           <button
             onClick={onSkipToRest}
-            className="w-full rounded-xl font-semibold text-base transition-all active:scale-95"
+            className="w-full rounded-2xl font-semibold text-base transition-all active:scale-95"
             style={{
-              minHeight: 52,
+              height: 56,
               backgroundColor: '#1E293B',
               color: '#94A3B8',
               border: '1px solid #334155',
@@ -294,9 +308,9 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
         ) : (
           <button
             onClick={onCompleteSet}
-            className="w-full rounded-xl font-bold text-lg text-white transition-all active:scale-95"
+            className="w-full rounded-2xl font-bold text-lg text-white transition-all active:scale-95"
             style={{
-              minHeight: 64,
+              height: 64,
               backgroundColor: '#14B8A6',
               border: 'none',
               cursor: 'pointer',
@@ -313,11 +327,12 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             onClick={onBack}
             className="w-full font-medium text-sm transition-all active:scale-95"
             style={{
-              minHeight: 44,
+              height: 40,
               background: 'none',
               border: 'none',
               color: '#64748B',
               cursor: 'pointer',
+              marginTop: 4,
             }}
           >
             ← Previous
@@ -545,12 +560,12 @@ function Stat({ label, value }) {
 function ExitConfirmDialog({ onCancel, onExit }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center pb-8 px-5"
+      className="fixed inset-0 z-50 flex items-center justify-center px-5"
       style={{ backgroundColor: 'rgba(0,0,0,0.7)' }}
     >
       <div
         className="w-full rounded-2xl p-6"
-        style={{ backgroundColor: '#1E293B', border: '1px solid #334155', maxWidth: 420 }}
+        style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.08)', maxWidth: 420 }}
       >
         <h3 className="text-lg font-bold text-white mb-2">Exit Workout?</h3>
         <p className="text-sm mb-6" style={{ color: '#94A3B8' }}>
@@ -593,12 +608,12 @@ function ExitConfirmDialog({ onCancel, onExit }) {
 function PreviousConfirmDialog({ exerciseName, onConfirm, onCancel }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center pb-8 px-5"
+      className="fixed inset-0 z-50 flex items-center justify-center px-5"
       style={{ backgroundColor: 'rgba(0,0,0,0.7)' }}
     >
       <div
         className="w-full rounded-2xl p-6"
-        style={{ backgroundColor: '#1E293B', border: '1px solid #334155', maxWidth: 420 }}
+        style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.08)', maxWidth: 420 }}
       >
         <h3 className="text-lg font-bold text-white mb-2">Go Back?</h3>
         <p className="text-sm mb-6" style={{ color: '#94A3B8' }}>
