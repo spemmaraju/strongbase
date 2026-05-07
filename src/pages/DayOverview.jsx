@@ -105,7 +105,7 @@ export default function DayOverview() {
       </div>
 
       {/* Exercise Sections — pb-24 so last card clears the fixed Start button */}
-      <div className="px-5 pt-5 pb-24 space-y-6">
+      <div className="px-5 pt-5 pb-32 space-y-6">
         {sectionOrder.map((sectionName) => {
           const exList = sections[sectionName]
           if (!exList || exList.length === 0) return null

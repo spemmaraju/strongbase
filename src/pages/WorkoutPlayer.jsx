@@ -38,16 +38,16 @@ const ANIM_STYLES = `
 function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
   return (
     <div
-      className="flex items-center justify-between px-5 py-3"
-      style={{ borderBottom: '1px solid #1E293B' }}
+      className="flex items-center justify-between py-3"
+      style={{ borderBottom: '1px solid #1E293B', paddingLeft: 20, paddingRight: 20 }}
     >
-      <div>
+      <div className="flex-1 min-w-0 pr-3">
         <p className="text-xs font-bold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
           Day {day.day}
         </p>
-        <p className="text-sm font-semibold text-white leading-tight">{day.theme}</p>
+        <p className="text-sm font-semibold text-white leading-tight truncate">{day.theme}</p>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-shrink-0">
         {/* Sound toggle */}
         <button
           onClick={onToggleSound}
@@ -65,13 +65,16 @@ function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
         </button>
         <button
           onClick={onExit}
-          className="flex items-center gap-1 rounded-lg px-3 font-semibold text-sm transition-all active:scale-95"
+          className="flex items-center gap-1 rounded-lg font-semibold text-sm transition-all active:scale-95"
           style={{
             minHeight: 44,
+            paddingLeft: 12,
+            paddingRight: 12,
             backgroundColor: '#1E293B',
             color: '#94A3B8',
             border: '1px solid #334155',
             cursor: 'pointer',
+            whiteSpace: 'nowrap',
           }}
         >
           ✕ Exit
@@ -356,10 +359,10 @@ function RestScreen({ workout }) {
 
   return (
     <div
-      className="flex flex-col items-center justify-between min-h-screen px-5 pb-8 pt-10 text-center"
+      className="flex flex-col items-center min-h-screen px-5 pt-10 pb-36 text-center"
       style={{ backgroundColor: '#0F172A' }}
     >
-      <div className="w-full">
+      <div className="w-full mb-8">
         <h2 className="text-3xl font-extrabold text-white mb-2">{heading}</h2>
         {isBetweenExercises && nextExercise && (
           <p className="text-lg font-bold" style={{ color: '#14B8A6' }}>
@@ -386,21 +389,36 @@ function RestScreen({ workout }) {
         </p>
       </div>
 
-      <button
-        onClick={skipRest}
-        className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
+      {/* Fixed footer — same treatment as Done button */}
+      <div
         style={{
-          minHeight: 64,
-          backgroundColor: '#14B8A6',
-          border: 'none',
-          cursor: 'pointer',
-          maxWidth: 400,
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 20,
+          backgroundColor: '#0F172A',
+          paddingLeft: 20,
+          paddingRight: 20,
+          paddingTop: 12,
+          paddingBottom: 'env(safe-area-inset-bottom, 24px)',
         }}
-        onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-        onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
       >
-        Skip Rest →
-      </button>
+        <button
+          onClick={skipRest}
+          className="w-full rounded-2xl font-bold text-base text-white transition-all active:scale-95"
+          style={{
+            height: 64,
+            backgroundColor: '#14B8A6',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+          onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
+          onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+        >
+          Skip Rest →
+        </button>
+      </div>
     </div>
   )
 }

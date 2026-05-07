@@ -392,9 +392,9 @@ export default function Home() {
             <div className="flex items-center gap-6">
               <WeeklyRing count={thisWeekCount} />
               <div className="flex flex-col gap-4 flex-1">
-                <StatRow value={`${currentStreak}d`} label="Current streak" />
+                <StatRow value={`${currentStreak} day${currentStreak !== 1 ? 's' : ''}`} label="Current streak" />
                 <StatRow value={totalWorkouts} label="Total workouts" />
-                <StatRow value={`${longestStreak}d`} label="Best streak" />
+                <StatRow value={`${longestStreak} day${longestStreak !== 1 ? 's' : ''}`} label="Best streak" />
               </div>
             </div>
           </section>
@@ -647,8 +647,9 @@ export default function Home() {
                 logs.slice(0, 3).map((log, i) => (
                   <div
                     key={log.id}
-                    className="flex items-center justify-between px-4"
+                    className="flex items-center justify-between"
                     style={{
+                      paddingLeft: 16, paddingRight: 16,
                       paddingTop: 14, paddingBottom: 14,
                       borderBottom: i < Math.min(logs.length, 3) - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                     }}
@@ -659,7 +660,10 @@ export default function Home() {
                         Day {log.dayNumber} · {formatDate(log.date)}
                       </p>
                     </div>
-                    <span className="text-xs font-semibold flex-shrink-0 ml-3" style={{ color: '#94A3B8' }}>
+                    <span
+                      className="text-xs font-semibold"
+                      style={{ color: '#94A3B8', flexShrink: 0, marginLeft: 12, whiteSpace: 'nowrap' }}
+                    >
                       {formatDuration(log.totalTimeSeconds)}
                     </span>
                   </div>
