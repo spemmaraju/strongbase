@@ -338,7 +338,7 @@ function LoadingState() {
 
 export default function History() {
   const navigate = useNavigate()
-  const { logs, loading } = useWorkoutLogs()
+  const { logs, loading, error: logsError, refetch: refetchLogs } = useWorkoutLogs()
   const [activeCell, setActiveCell] = useState(null)
 
   const { currentStreak, longestStreak, totalWorkouts } = useStreak(logs)
@@ -361,6 +361,25 @@ export default function History() {
           {loading ? '…' : `${totalWorkouts} workout${totalWorkouts !== 1 ? 's' : ''} completed`}
         </p>
       </div>
+
+      {/* Error banner */}
+      {logsError && (
+        <div
+          className="mx-5 mb-4 rounded-xl px-4 py-3 flex items-center justify-between gap-3"
+          style={{ backgroundColor: '#EF444415', border: '1px solid #EF444430' }}
+        >
+          <p className="text-sm font-medium" style={{ color: '#FCA5A5' }}>
+            ⚠️ Couldn't load your data. Check your connection.
+          </p>
+          <button
+            onClick={refetchLogs}
+            className="text-xs font-bold px-3 py-1 rounded-lg flex-shrink-0"
+            style={{ backgroundColor: '#EF444425', color: '#FCA5A5', border: '1px solid #EF444440', cursor: 'pointer' }}
+          >
+            Retry
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <LoadingState />

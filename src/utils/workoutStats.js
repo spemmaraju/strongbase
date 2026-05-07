@@ -113,3 +113,57 @@ export function getMonthIdx(dateStr) {
 }
 
 export const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+// ── Today's Focus card helpers ─────────────────────────────────────────────
+
+export const CAT_COLORS = {
+  'warm-up':    '#F59E0B',
+  'strength':   '#14B8A6',
+  'stability':  '#7C3AED',
+  'flexibility':'#22C55E',
+  'cardio':     '#3B82F6',
+}
+
+export const CAT_LABELS = {
+  'warm-up':    'Warm-up',
+  'strength':   'Strength',
+  'stability':  'Stability',
+  'flexibility':'Flexibility',
+  'cardio':     'Cardio',
+}
+
+export const EQUIP_DISPLAY = {
+  'bodyweight':       { icon: '💪', label: 'Bodyweight' },
+  'yoga-mat':         { icon: '🧘', label: 'Mat' },
+  'resistance-band':  { icon: '🎗️', label: 'Bands' },
+  '10lb-dumbbells':   { icon: '🏋️', label: '10 lb' },
+  '15lb-dumbbells':   { icon: '🏋️', label: '15 lb' },
+}
+
+// Returns { counts: { category: n, ... }, total: n }
+export function getDayComposition(day) {
+  const counts = {}
+  day.exerciseIds.forEach(id => {
+    const ex = EX_MAP[id]
+    if (ex) counts[ex.category] = (counts[ex.category] || 0) + 1
+  })
+  const total = Object.values(counts).reduce((s, v) => s + v, 0)
+  return { counts, total }
+}
+
+// Returns array of unique equipment strings for the day
+export function getDayEquipment(day) {
+  const eq = new Set()
+  day.exerciseIds.forEach(id => {
+    const ex = EX_MAP[id]
+    if (ex) ex.equipment.forEach(e => eq.add(e))
+  })
+  return [...eq]
+}
+
+// Pick a random quote by category from a quotes array
+export function randomQuote(quotesArr, category) {
+  const filtered = quotesArr.filter(q => q.category === category)
+  if (!filtered.length) return null
+  return filtered[Math.floor(Math.random() * filtered.length)]
+}

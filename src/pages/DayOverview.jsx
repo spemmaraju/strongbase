@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import weeklyPlan from '../data/weeklyPlan.json'
 import exercises from '../data/exercises.json'
+import quotesData from '../data/quotes.json'
 import ExerciseModal from '../components/ExerciseModal'
+import { randomQuote } from '../utils/workoutStats'
 
 const SECTION_ORDER = ['warm-up', 'strength', 'stability', 'cardio', 'flexibility']
 const SECTION_LABELS = {
@@ -35,6 +37,13 @@ export default function DayOverview() {
   const { dayNumber } = useParams()
   const navigate = useNavigate()
   const [selectedExercise, setSelectedExercise] = useState(null)
+
+  // Pick a random quote on mount; rest-day category for Day 4, starting for others
+  const [quote] = useState(() => {
+    const parsedDay = parseInt(dayNumber)
+    const cat = parsedDay === 4 ? 'rest-day' : 'starting'
+    return randomQuote(quotesData, cat)
+  })
 
   const day = weeklyPlan.days.find((d) => d.day === parseInt(dayNumber))
 
@@ -197,6 +206,27 @@ export default function DayOverview() {
           )
         })}
       </div>
+
+      {/* Motivational Quote */}
+      {quote && (
+        <div
+          className="mx-5 mt-4 rounded-xl p-4"
+          style={{
+            backgroundColor: '#1E293B',
+            borderLeft: '3px solid #14B8A650',
+            marginBottom: 8,
+          }}
+        >
+          <p className="text-sm font-medium leading-relaxed italic" style={{ color: '#94A3B8' }}>
+            "{quote.text}"
+          </p>
+          {quote.author !== 'StrongBase' && (
+            <p className="text-xs mt-1 font-semibold" style={{ color: '#475569' }}>
+              — {quote.author}
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Start Workout Button (fixed bottom) */}
       <div

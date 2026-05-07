@@ -5,7 +5,8 @@ import useStreak from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useAuth from '../hooks/useAuth'
-import { formatDuration, formatDate } from '../utils/workoutStats'
+import { formatDuration, formatDate, getDayComposition, getDayEquipment, CAT_COLORS, CAT_LABELS, EQUIP_DISPLAY } from '../utils/workoutStats'
+import exercisesData from '../data/exercises.json'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const QUOTES = [
@@ -274,7 +275,15 @@ export default function Home() {
   const quote = getDailyQuote()
   const [tooltipBadge, setTooltipBadge] = useState(null)
 
-  const { logs, loading, syncing } = useWorkoutLogs()
+  const { logs, loading, syncing, error: logsError, refetch: refetchLogs } = useWorkoutLogs()
+
+  // Today's Focus card data
+  const todayDay = weeklyPlan.days[todayDayNumber - 1]
+  const todayComp = getDayComposition(todayDay)
+  const todayEquip = getDayEquipment(todayDay)
+  const todayISODate = new Date().toISOString().slice(0, 10)
+  const todayDone = logs.some(l => l.date === todayISODate && l.dayNumber === todayDayNumber)
+  const nextDayNumber = (todayDayNumber % 7) + 1
 
   const {
     currentStreak,
@@ -307,6 +316,25 @@ export default function Home() {
         </div>
         {user && <UserMenu user={user} onSignOut={handleSignOut} />}
       </div>
+
+      {/* Error banner */}
+      {logsError && (
+        <div
+          className="px-5 py-2 flex items-center justify-between gap-3"
+          style={{ backgroundColor: '#EF444415', borderBottom: '1px solid #EF444430' }}
+        >
+          <p className="text-sm font-medium" style={{ color: '#FCA5A5' }}>
+            ⚠️ Couldn't load your data. Check your connection.
+          </p>
+          <button
+            onClick={refetchLogs}
+            className="text-xs font-bold px-3 py-1 rounded-lg flex-shrink-0"
+            style={{ backgroundColor: '#EF444425', color: '#FCA5A5', border: '1px solid #EF444440', cursor: 'pointer' }}
+          >
+            Retry
+          </button>
+        </div>
+      )}
 
       {/* Offline sync banner */}
       {syncing && (
@@ -427,35 +455,112 @@ export default function Home() {
             </div>
           </section>
 
-          {/* ── Today's CTA ───────────────────────────────────────────────── */}
-          <section
-            className="rounded-xl p-5"
-            style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
-          >
-            <div className="flex items-center justify-between mb-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
-                  Today's Workout
-                </p>
-                <p className="text-lg font-bold text-white mt-0.5">
-                  Day {todayDayNumber} — {weeklyPlan.days[todayDayNumber - 1].theme}
-                </p>
-                <p className="text-sm mt-0.5" style={{ color: '#94A3B8' }}>
-                  ⏱ {weeklyPlan.days[todayDayNumber - 1].durationMinutes} min
-                </p>
-              </div>
-              <span className="text-4xl">{weeklyPlan.days[todayDayNumber - 1].emoji}</span>
-            </div>
-            <button
-              onClick={() => navigate(`/day/${todayDayNumber}`)}
-              className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
-              style={{ backgroundColor: '#14B8A6', minHeight: 52, padding: '14px 20px', border: 'none', cursor: 'pointer' }}
-              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-              onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+          {/* ── Today's Focus ─────────────────────────────────────────────── */}
+          {todayDone ? (
+            /* ── Workout already done today ── */
+            <section
+              className="rounded-xl p-5"
+              style={{
+                backgroundColor: '#0D948820',
+                border: '2px solid #14B8A640',
+                boxShadow: '0 0 16px 2px #14B8A620',
+              }}
             >
-              ▶ Start Today's Workout
-            </button>
-          </section>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#14B8A6' }}>
+                ✅ Today's workout done!
+              </p>
+              <p className="text-lg font-bold text-white mb-1">
+                Day {todayDayNumber} — {todayDay.theme}
+              </p>
+              <p className="text-2xl font-extrabold mb-4" style={{ color: '#14B8A6' }}>
+                🔥 {currentStreak} day streak
+              </p>
+              <button
+                onClick={() => navigate(`/day/${nextDayNumber}`)}
+                className="w-full rounded-xl font-semibold text-base text-white transition-all active:scale-95"
+                style={{ minHeight: 52, backgroundColor: '#1E293B', border: '1px solid #334155', cursor: 'pointer' }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = '#14B8A6'}
+                onMouseLeave={e => e.currentTarget.style.borderColor = '#334155'}
+              >
+                👀 Preview Day {nextDayNumber}
+              </button>
+            </section>
+          ) : (
+            /* ── Start today's workout ── */
+            <section
+              className="rounded-xl p-5"
+              style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
+            >
+              {/* Header row */}
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
+                    Today's Focus
+                  </p>
+                  <p className="text-lg font-bold text-white mt-0.5 leading-tight">
+                    Day {todayDayNumber} — {todayDay.theme}
+                  </p>
+                  <p className="text-xs mt-0.5" style={{ color: '#64748B' }}>{todayDay.focusArea}</p>
+                </div>
+                <span className="text-4xl flex-shrink-0 ml-3">{todayDay.emoji}</span>
+              </div>
+
+              {/* Workout composition bar */}
+              {todayComp.total > 0 && (
+                <div className="mb-3">
+                  <div style={{ display: 'flex', height: 6, borderRadius: 4, overflow: 'hidden', gap: 2 }}>
+                    {Object.entries(todayComp.counts)
+                      .filter(([, n]) => n > 0)
+                      .map(([cat, n]) => (
+                        <div
+                          key={cat}
+                          title={CAT_LABELS[cat]}
+                          style={{ flex: n / todayComp.total, backgroundColor: CAT_COLORS[cat] || '#475569', borderRadius: 2 }}
+                        />
+                      ))
+                    }
+                  </div>
+                  <div className="flex flex-wrap gap-3 mt-1.5">
+                    {Object.entries(todayComp.counts).filter(([, n]) => n > 0).map(([cat, n]) => (
+                      <span key={cat} className="text-xs font-medium flex items-center gap-1">
+                        <span style={{ width: 8, height: 8, borderRadius: 2, backgroundColor: CAT_COLORS[cat], display: 'inline-block' }} />
+                        <span style={{ color: '#64748B' }}>{CAT_LABELS[cat]} ({n})</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Duration + Equipment */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  className="text-xs font-semibold px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: '#334155', color: '#94A3B8' }}
+                >
+                  ⏱ ~{todayDay.durationMinutes} min
+                </span>
+                {todayEquip.map(eq => (
+                  <span
+                    key={eq}
+                    className="text-xs font-semibold px-2.5 py-1 rounded-full"
+                    style={{ backgroundColor: '#334155', color: '#94A3B8' }}
+                  >
+                    {EQUIP_DISPLAY[eq]?.icon || '🏋️'} {EQUIP_DISPLAY[eq]?.label || eq}
+                  </span>
+                ))}
+              </div>
+
+              <button
+                onClick={() => navigate(`/day/${todayDayNumber}`)}
+                className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
+                style={{ backgroundColor: '#14B8A6', minHeight: 52, border: 'none', cursor: 'pointer' }}
+                onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
+                onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+              >
+                ▶ Start Today's Workout
+              </button>
+            </section>
+          )}
 
           {/* ── Badges ────────────────────────────────────────────────────── */}
           <section>

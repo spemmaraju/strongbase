@@ -1,0 +1,182 @@
+[
+  {
+    "id": "s1",
+    "text": "The body follows the mind. Decide first. Move second.",
+    "author": "StrongBase",
+    "category": "starting"
+  },
+  {
+    "id": "s2",
+    "text": "Every strong person was once a beginner who kept going.",
+    "author": "StrongBase",
+    "category": "starting"
+  },
+  {
+    "id": "s3",
+    "text": "The secret of getting ahead is getting started.",
+    "author": "Mark Twain",
+    "category": "starting"
+  },
+  {
+    "id": "s4",
+    "text": "You don't have to feel ready. You just have to begin.",
+    "author": "StrongBase",
+    "category": "starting"
+  },
+  {
+    "id": "s5",
+    "text": "Discipline is choosing between what you want now and what you want most.",
+    "author": "StrongBase",
+    "category": "starting"
+  },
+  {
+    "id": "d1",
+    "text": "Discomfort is the currency of growth. You're paying right now.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d2",
+    "text": "The impediment to action advances action. What stands in the way becomes the way.",
+    "author": "Marcus Aurelius",
+    "category": "during"
+  },
+  {
+    "id": "d3",
+    "text": "The goal is not to feel good during the set. The goal is to get better.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d4",
+    "text": "Focus on the next rep, not the last one.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d5",
+    "text": "Your effort right now is silent progress. Trust the process.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d6",
+    "text": "Comfort zones don't build strength. You're exactly where you need to be.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d7",
+    "text": "One more. Then one more after that.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d8",
+    "text": "You have been doing hard things your whole life. This is just one more.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d9",
+    "text": "Excellence is not a destination. It's a standard you practice daily.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "d10",
+    "text": "The mind quits long before the body does. Stay in it.",
+    "author": "StrongBase",
+    "category": "during"
+  },
+  {
+    "id": "c1",
+    "text": "You showed up. That is always enough to start, and often enough to finish.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c2",
+    "text": "Every workout is a vote for the person you are becoming.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c3",
+    "text": "Effort spent never goes to waste. It compounds quietly.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c4",
+    "text": "You made time for yourself today. That is not a small thing.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c5",
+    "text": "Strength isn't built in a single session. It's built in the decision to return.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c6",
+    "text": "You didn't wait for motivation. You showed up anyway. That's the real skill.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c7",
+    "text": "Rest now. The work is done. Let it become part of you.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c8",
+    "text": "Tomorrow's version of you is grateful for what you did today.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c9",
+    "text": "The discipline to finish is rarer than the desire to start. You have both.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "c10",
+    "text": "You are not the same person who started this session. Good.",
+    "author": "StrongBase",
+    "category": "complete"
+  },
+  {
+    "id": "r1",
+    "text": "Recovery is not weakness. It is where adaptation happens.",
+    "author": "StrongBase",
+    "category": "rest-day"
+  },
+  {
+    "id": "r2",
+    "text": "The body repairs in rest what effort breaks down. This is the plan working.",
+    "author": "StrongBase",
+    "category": "rest-day"
+  },
+  {
+    "id": "r3",
+    "text": "Active recovery is not a compromise. It is a strategy.",
+    "author": "StrongBase",
+    "category": "rest-day"
+  },
+  {
+    "id": "r4",
+    "text": "Rest with intention. You are not skipping — you are building.",
+    "author": "StrongBase",
+    "category": "rest-day"
+  },
+  {
+    "id": "r5",
+    "text": "Even Marcus Aurelius slept. Let that be enough permission to recover.",
+    "author": "StrongBase",
+    "category": "rest-day"
+  }
+]

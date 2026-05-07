@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import confetti from 'canvas-confetti'
 import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
 import useStreak from '../hooks/useStreak'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
+import { useSound } from '../hooks/useSound'
 import CircularTimer from '../components/CircularTimer'
 import ExerciseModal from '../components/ExerciseModal'
+import quotesData from '../data/quotes.json'
+import { randomQuote } from '../utils/workoutStats'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function formatTime(seconds) {
@@ -22,20 +25,17 @@ const CATEGORY_EMOJI = {
   cardio: '🏃',
 }
 
-// 7 messages indexed by (day.day - 1) % 7 as specified in Phase 3
-const DONE_MESSAGES = [
-  "Every rep is a vote for the person you're becoming.",
-  "Your back is safer and your body is stronger. Day by day.",
-  "Consistency beats intensity every time. You showed up.",
-  "The hardest part was starting. You did it.",
-  "Small actions, compounded daily, become transformation.",
-  "Your future self is grateful for what you did today.",
-  "Seven days. One habit. One stronger you.",
-]
+// Shared CSS animation keyframes injected once at module level via a style tag in App
+const ANIM_STYLES = `
+@keyframes slideInRight { from { transform: translateX(40px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes scaleIn      { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes bouncePop    { 0%{transform:scale(0)} 60%{transform:scale(1.22)} 100%{transform:scale(1)} }
+@keyframes greenFlash   { 0%{opacity:1} 100%{opacity:0} }
+`
 
 // ── Sub-components ─────────────────────────────────────────────────────────
 
-function TopBar({ day, onExit }) {
+function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
   return (
     <div
       className="flex items-center justify-between px-4 py-3"
@@ -47,19 +47,36 @@ function TopBar({ day, onExit }) {
         </p>
         <p className="text-sm font-semibold text-white leading-tight">{day.theme}</p>
       </div>
-      <button
-        onClick={onExit}
-        className="flex items-center gap-1 rounded-lg px-3 font-semibold text-sm transition-all active:scale-95"
-        style={{
-          minHeight: 44,
-          backgroundColor: '#1E293B',
-          color: '#94A3B8',
-          border: '1px solid #334155',
-          cursor: 'pointer',
-        }}
-      >
-        ✕ Exit
-      </button>
+      <div className="flex items-center gap-2">
+        {/* Sound toggle */}
+        <button
+          onClick={onToggleSound}
+          className="flex items-center justify-center rounded-lg transition-all active:scale-90"
+          style={{
+            minHeight: 44, width: 44,
+            backgroundColor: '#1E293B',
+            border: '1px solid #334155',
+            cursor: 'pointer',
+            fontSize: 18,
+          }}
+          aria-label={soundEnabled ? 'Mute sounds' : 'Enable sounds'}
+        >
+          {soundEnabled ? '🔊' : '🔇'}
+        </button>
+        <button
+          onClick={onExit}
+          className="flex items-center gap-1 rounded-lg px-3 font-semibold text-sm transition-all active:scale-95"
+          style={{
+            minHeight: 44,
+            backgroundColor: '#1E293B',
+            color: '#94A3B8',
+            border: '1px solid #334155',
+            cursor: 'pointer',
+          }}
+        >
+          ✕ Exit
+        </button>
+      </div>
     </div>
   )
 }
@@ -73,7 +90,7 @@ function ProgressBar({ completed, total }) {
           height: '100%',
           backgroundColor: '#14B8A6',
           width: `${pct}%`,
-          transition: 'width 0.6s ease',
+          transition: 'width 0.4s ease',
         }}
       />
     </div>
@@ -113,6 +130,9 @@ function ReadyScreen({ day, onStart }) {
 function TransitionCard({ exercise }) {
   if (!exercise) return null
   const emoji = CATEGORY_EMOJI[exercise.category] || '💪'
+  // New random "during" quote each time this card mounts
+  const [quote] = useState(() => randomQuote(quotesData, 'during'))
+
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen px-6 text-center"
@@ -131,8 +151,17 @@ function TransitionCard({ exercise }) {
       <p className="text-sm" style={{ color: '#94A3B8' }}>
         {exercise.targetMuscles.join(' · ')}
       </p>
+      {/* Motivational quote */}
+      {quote && (
+        <p className="text-xs font-medium italic mt-6 px-4 leading-relaxed" style={{ color: '#475569', maxWidth: 280 }}>
+          "{quote.text}"
+          {quote.author !== 'StrongBase' && (
+            <span style={{ color: '#334155' }}> — {quote.author}</span>
+          )}
+        </p>
+      )}
       {/* Pulsing indicator */}
-      <div className="mt-10 flex gap-2">
+      <div className="mt-8 flex gap-2">
         {[0, 1, 2].map(i => (
           <div
             key={i}
@@ -155,7 +184,7 @@ function TransitionCard({ exercise }) {
   )
 }
 
-function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest }) {
+function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onCompleteSet }) {
   const {
     currentExercise: ex,
     dayExercises,
@@ -181,7 +210,11 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest }) {
           <p className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#94A3B8' }}>
             {setsLabel}
           </p>
-          <h2 className="text-2xl font-extrabold text-white leading-tight">{ex.name}</h2>
+          <h2
+            key={workout.exerciseIndex}
+            className="text-2xl font-extrabold text-white leading-tight"
+            style={{ animation: 'slideInRight 300ms ease-out' }}
+          >{ex.name}</h2>
           <p className="text-sm mt-1 leading-relaxed" style={{ color: '#64748B' }}>
             {ex.targetMuscles.join(' · ')}
           </p>
@@ -260,7 +293,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest }) {
           </button>
         ) : (
           <button
-            onClick={() => workout.completeSet()}
+            onClick={onCompleteSet}
             className="w-full rounded-xl font-bold text-lg text-white transition-all active:scale-95"
             style={{
               minHeight: 64,
@@ -326,11 +359,13 @@ function RestScreen({ workout }) {
       </div>
 
       <div className="flex flex-col items-center gap-4">
-        <CircularTimer
-          secondsRemaining={secondsRemaining}
-          totalSeconds={totalSeconds}
-          ringColor="#64748B"
-        />
+        <div style={{ animation: 'scaleIn 200ms ease-out' }}>
+          <CircularTimer
+            secondsRemaining={secondsRemaining}
+            totalSeconds={totalSeconds}
+            ringColor="#64748B"
+          />
+        </div>
         <p className="text-base font-semibold" style={{ color: '#94A3B8' }}>
           Rest: {secondsRemaining}s
         </p>
@@ -378,7 +413,8 @@ function SavingScreen() {
 
 function CompletionScreen({ workout, navigate, logs }) {
   const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds, logSaveStatus } = workout
-  const msg = DONE_MESSAGES[(day.day - 1) % 7]
+  // Pick a random "complete" category quote on mount
+  const [quote] = useState(() => randomQuote(quotesData, 'complete'))
 
   // Compute live streak from the logs passed in from Home/parent
   const { currentStreak, totalWorkouts } = useStreak(logs)
@@ -435,7 +471,7 @@ function CompletionScreen({ workout, navigate, logs }) {
         {toastMsg}
       </div>
 
-      <div className="text-7xl mb-4">🎉</div>
+      <div className="text-7xl mb-4" style={{ animation: 'bouncePop 500ms ease-out' }}>🎉</div>
       <h1 className="text-3xl font-extrabold text-white mb-2">Workout Complete!</h1>
       <p className="text-lg font-bold mb-6" style={{ color: '#14B8A6' }}>
         Day {day.day} — {day.theme}
@@ -455,13 +491,18 @@ function CompletionScreen({ workout, navigate, logs }) {
         <Stat label="Current Streak" value={`${currentStreak} day${currentStreak !== 1 ? 's' : ''} 🔥`} />
       </div>
 
-      {/* Motivational message */}
-      <div
-        className="w-full rounded-xl p-4 mb-6 text-left"
-        style={{ backgroundColor: '#1E293B', borderLeft: '3px solid #14B8A6', maxWidth: 360 }}
-      >
-        <p className="text-sm font-medium text-white leading-relaxed italic">"{msg}"</p>
-      </div>
+      {/* Motivational quote */}
+      {quote && (
+        <div
+          className="w-full rounded-xl p-4 mb-6 text-left"
+          style={{ backgroundColor: '#1E293B', borderLeft: '3px solid #14B8A6', maxWidth: 360 }}
+        >
+          <p className="text-sm font-medium text-white leading-relaxed italic">"{quote.text}"</p>
+          {quote.author !== 'StrongBase' && (
+            <p className="text-xs mt-1 font-semibold" style={{ color: '#475569' }}>— {quote.author}</p>
+          )}
+        </div>
+      )}
 
       {/* Buttons */}
       <div className="w-full space-y-3" style={{ maxWidth: 360 }}>
@@ -603,6 +644,7 @@ export default function WorkoutPlayer() {
   const navigate = useNavigate()
   const workout = useWorkoutPlayer(dayNumber)
   const { logs, refetch: refetchLogs } = useWorkoutLogs()
+  const { playSound, soundEnabled, toggleSound } = useSound()
 
   // Refresh logs once the workout is saved so CompletionScreen shows the updated streak
   useEffect(() => {
@@ -612,6 +654,63 @@ export default function WorkoutPlayer() {
   const [selectedExercise, setSelectedExercise] = useState(null)
   const [showExitConfirm, setShowExitConfirm] = useState(false)
   const [showPrevConfirm, setShowPrevConfirm] = useState(false)
+  const [flashComplete, setFlashComplete] = useState(false)
+
+  // ── Sound & haptic effects ────────────────────────────────────────────────
+  const prevExIdxRef = useRef(-1)
+  const prevPhaseRef = useRef('idle')
+  const halfwayFiredRef = useRef(false)
+
+  useEffect(() => {
+    const { phase, exerciseIndex } = workout
+    const prevPhase = prevPhaseRef.current
+
+    // New exercise started
+    if (phase === 'exercise' && exerciseIndex !== prevExIdxRef.current) {
+      prevExIdxRef.current = exerciseIndex
+      playSound('start')
+    }
+    // Rest period began
+    if (phase === 'rest' && prevPhase !== 'rest') {
+      playSound('rest')
+    }
+    // Workout complete
+    if (phase === 'complete' && prevPhase !== 'complete') {
+      playSound('complete')
+      navigator.vibrate?.([50, 30, 50, 30, 100])
+    }
+    // Reset halfway flag on new workout
+    if (phase === 'idle') halfwayFiredRef.current = false
+
+    prevPhaseRef.current = phase
+  }, [workout.phase, workout.exerciseIndex]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Tick sound + haptic on last 3 seconds
+  useEffect(() => {
+    const { phase, secondsRemaining } = workout
+    if ((phase === 'exercise' || phase === 'rest') && secondsRemaining > 0 && secondsRemaining <= 3) {
+      playSound('tick')
+      navigator.vibrate?.(10)
+    }
+  }, [workout.secondsRemaining]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Halfway chime
+  useEffect(() => {
+    const total = workout.dayExercises.length
+    const done  = workout.completedExerciseIds.length
+    if (total > 0 && done >= Math.ceil(total / 2) && !halfwayFiredRef.current && workout.phase !== 'idle') {
+      halfwayFiredRef.current = true
+      playSound('halfway')
+    }
+  }, [workout.completedExerciseIds.length]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Set completion handler (flash + haptic + advance) ────────────────────
+  function handleCompleteSet() {
+    navigator.vibrate?.([10, 50, 10])
+    setFlashComplete(true)
+    setTimeout(() => setFlashComplete(false), 200)
+    workout.completeSet()
+  }
 
   const { day, phase, currentExercise, nextExercise } = workout
 
@@ -657,8 +756,28 @@ export default function WorkoutPlayer() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
+      {/* Inject animation keyframes once */}
+      <style>{ANIM_STYLES}</style>
+
+      {/* Green flash overlay on set completion */}
+      {flashComplete && (
+        <div
+          style={{
+            position: 'fixed', inset: 0, zIndex: 40,
+            backgroundColor: '#22C55E25',
+            animation: 'greenFlash 200ms ease-out forwards',
+            pointerEvents: 'none',
+          }}
+        />
+      )}
+
       {showTopBar && (
-        <TopBar day={day} onExit={() => setShowExitConfirm(true)} />
+        <TopBar
+          day={day}
+          onExit={() => setShowExitConfirm(true)}
+          soundEnabled={soundEnabled}
+          onToggleSound={toggleSound}
+        />
       )}
 
       {/* Phase screens */}
@@ -674,6 +793,7 @@ export default function WorkoutPlayer() {
           onOpenModal={handleOpenModal}
           onBack={handleBack}
           onSkipToRest={handleSkipToRest}
+          onCompleteSet={handleCompleteSet}
         />
       )}
       {phase === 'rest' && (
