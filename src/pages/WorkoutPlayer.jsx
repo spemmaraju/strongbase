@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import confetti from 'canvas-confetti'
 import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
 import useStreak from '../hooks/useStreak'
+import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import CircularTimer from '../components/CircularTimer'
 import ExerciseModal from '../components/ExerciseModal'
 
@@ -354,12 +355,33 @@ function RestScreen({ workout }) {
   )
 }
 
-function CompletionScreen({ workout, navigate }) {
-  const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds } = workout
+function SavingScreen() {
+  return (
+    <div
+      className="min-h-screen flex flex-col items-center justify-center gap-5"
+      style={{ backgroundColor: '#0F172A' }}
+    >
+      <div
+        style={{
+          width: 56, height: 56, borderRadius: '50%',
+          border: '5px solid #334155',
+          borderTopColor: '#14B8A6',
+          animation: 'spin 0.8s linear infinite',
+        }}
+      />
+      <p className="text-lg font-bold text-white">Saving your workout…</p>
+      <p className="text-sm" style={{ color: '#64748B' }}>Just a moment</p>
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+    </div>
+  )
+}
+
+function CompletionScreen({ workout, navigate, logs }) {
+  const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds, logSaveStatus } = workout
   const msg = DONE_MESSAGES[(day.day - 1) % 7]
 
-  // Read streak AFTER the log has been saved (saveWorkoutLog runs before setPhase('complete'))
-  const { currentStreak, totalWorkouts } = useStreak()
+  // Compute live streak from the logs passed in from Home/parent
+  const { currentStreak, totalWorkouts } = useStreak(logs)
 
   const [showToast, setShowToast] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
@@ -374,17 +396,19 @@ function CompletionScreen({ workout, navigate }) {
     })
   }, [])
 
-  // Show streak toast after 1 s, auto-dismiss after 3 s
+  // Show toast after 1 s — "Saved ✓" if just saved, else streak/milestone
   useEffect(() => {
-    let msg
-    if (totalWorkouts <= 1) msg = '🎉 First workout complete!'
-    else if (currentStreak === 7) msg = '🏆 Full week crushed!'
-    else if (currentStreak >= 1) msg = `🔥 ${currentStreak} day streak!`
-    else msg = '✅ Great workout!'
-    setToastMsg(msg)
+    let toastText
+    if (logSaveStatus === 'done') toastText = '✅ Saved!'
+    else if (logSaveStatus === 'error') toastText = '⚠️ Saved offline — will sync later'
+    else if (totalWorkouts <= 1) toastText = '🎉 First workout complete!'
+    else if (currentStreak === 7) toastText = '🏆 Full week crushed!'
+    else if (currentStreak >= 1) toastText = `🔥 ${currentStreak} day streak!`
+    else toastText = '✅ Great workout!'
+    setToastMsg(toastText)
 
     const t1 = setTimeout(() => setShowToast(true), 1000)
-    const t2 = setTimeout(() => setShowToast(false), 4000) // 1 s delay + 3 s visible
+    const t2 = setTimeout(() => setShowToast(false), 4000)
     return () => { clearTimeout(t1); clearTimeout(t2) }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -578,6 +602,12 @@ export default function WorkoutPlayer() {
   const { dayNumber } = useParams()
   const navigate = useNavigate()
   const workout = useWorkoutPlayer(dayNumber)
+  const { logs, refetch: refetchLogs } = useWorkoutLogs()
+
+  // Refresh logs once the workout is saved so CompletionScreen shows the updated streak
+  useEffect(() => {
+    if (workout.logSaveStatus === 'done') refetchLogs()
+  }, [workout.logSaveStatus]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const [selectedExercise, setSelectedExercise] = useState(null)
   const [showExitConfirm, setShowExitConfirm] = useState(false)
@@ -649,8 +679,11 @@ export default function WorkoutPlayer() {
       {phase === 'rest' && (
         <RestScreen workout={workout} />
       )}
-      {phase === 'complete' && (
-        <CompletionScreen workout={workout} navigate={navigate} />
+      {phase === 'complete' && workout.logSaveStatus === 'saving' && (
+        <SavingScreen />
+      )}
+      {phase === 'complete' && workout.logSaveStatus !== 'saving' && (
+        <CompletionScreen workout={workout} navigate={navigate} logs={logs} />
       )}
 
       {/* Overlays */}

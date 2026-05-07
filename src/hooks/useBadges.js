@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { readLogs, computeStreakStats, getMondayStr, dateAddDays } from './useStreak'
+import { useMemo } from 'react'
+import { computeStreakStats, getMondayStr } from './useStreak'
 
 // ── Badge definitions ──────────────────────────────────────────────────────
 export const BADGE_DEFS = [
@@ -42,6 +42,7 @@ export const BADGE_DEFS = [
 ]
 
 // ── Pure badge computation ─────────────────────────────────────────────────
+// Accepts logs array from useWorkoutLogs.
 export function computeBadges(logs) {
   const earned = new Set()
 
@@ -90,14 +91,7 @@ export function computeBadges(logs) {
 }
 
 // ── Hook ───────────────────────────────────────────────────────────────────
-export default function useBadges() {
-  const [badges, setBadges] = useState(() => computeBadges(readLogs()))
-
-  useEffect(() => {
-    const refresh = () => setBadges(computeBadges(readLogs()))
-    window.addEventListener('storage', refresh)
-    return () => window.removeEventListener('storage', refresh)
-  }, [])
-
-  return badges
+// Accepts logs array directly from useWorkoutLogs — pure computation, no side effects.
+export default function useBadges(logs = []) {
+  return useMemo(() => computeBadges(logs), [logs])
 }

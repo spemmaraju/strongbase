@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-
 // ── Shared date helpers (UTC-consistent, matches how logs are saved) ────────
 export function dateAddDays(dateStr, n) {
   const d = new Date(dateStr + 'T12:00:00Z')
@@ -14,15 +12,9 @@ export function getMondayStr(dateStr) {
   return dateAddDays(dateStr, -offset)
 }
 
-export function readLogs() {
-  try {
-    return JSON.parse(localStorage.getItem('strongbase_logs') || '[]')
-  } catch {
-    return []
-  }
-}
-
-// ── Pure stats computation (exported so useBadges can reuse it) ─────────────
+// ── Pure stats computation ───────────────────────────────────────────────────
+// Accepts a logs array (from Supabase via useWorkoutLogs).
+// Each log must have: { date: 'YYYY-MM-DD', dayNumber: number }
 export function computeStreakStats(logs) {
   const today = new Date().toISOString().slice(0, 10)
 
@@ -75,16 +67,10 @@ export function computeStreakStats(logs) {
   }
 }
 
-// ── Hook ───────────────────────────────────────────────────────────────────
-export default function useStreak() {
-  const [stats, setStats] = useState(() => computeStreakStats(readLogs()))
+// ── Convenience hook (used by CompletionScreen to read live streak) ──────────
+// Accepts logs array directly from useWorkoutLogs — pure computation, no side effects.
+import { useMemo } from 'react'
 
-  useEffect(() => {
-    // Recompute when another tab writes to localStorage
-    const refresh = () => setStats(computeStreakStats(readLogs()))
-    window.addEventListener('storage', refresh)
-    return () => window.removeEventListener('storage', refresh)
-  }, [])
-
-  return stats
+export default function useStreak(logs = []) {
+  return useMemo(() => computeStreakStats(logs), [logs])
 }

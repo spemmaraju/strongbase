@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import weeklyPlan from '../data/weeklyPlan.json'
 import useStreak from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
+import useWorkoutLogs from '../hooks/useWorkoutLogs'
+import useAuth from '../hooks/useAuth'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const QUOTES = [
@@ -35,6 +37,46 @@ function getStreakBannerProps(streak) {
   if (streak === 7)
     return { text: '🏆 7-day streak — you crushed the whole week!', borderColor: '#F59E0B', glow: 'gold' }
   return { text: `🔥 ${streak} day streak — unstoppable!`, borderColor: '#14B8A6', glow: 'teal' }
+}
+
+// ── Skeleton components ────────────────────────────────────────────────────
+const pulseStyle = {
+  backgroundColor: '#1E293B',
+  borderRadius: 8,
+  animation: 'sbPulse 1.5s ease-in-out infinite',
+}
+
+function SkeletonBlock({ height, width = '100%', radius = 8, style = {} }) {
+  return (
+    <div style={{ height, width, borderRadius: radius, ...pulseStyle, ...style }} />
+  )
+}
+
+function SkeletonHome() {
+  return (
+    <div className="px-5 pb-12 space-y-5">
+      <style>{`@keyframes sbPulse { 0%,100%{opacity:1} 50%{opacity:0.45} }`}</style>
+      {/* Streak banner skeleton */}
+      <SkeletonBlock height={64} radius={12} />
+      {/* Ring + stats skeleton */}
+      <div className="rounded-xl p-5" style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}>
+        <div className="flex items-center gap-5">
+          <div style={{ width: 130, height: 130, borderRadius: '50%', flexShrink: 0, ...pulseStyle }} />
+          <div className="flex flex-col gap-4 flex-1">
+            <SkeletonBlock height={20} width="60%" />
+            <SkeletonBlock height={20} width="70%" />
+            <SkeletonBlock height={20} width="50%" />
+          </div>
+        </div>
+      </div>
+      {/* Day strip skeleton */}
+      <div className="flex gap-3">
+        {[1,2,3,4,5].map(i => <SkeletonBlock key={i} height={96} width={80} radius={12} />)}
+      </div>
+      {/* CTA skeleton */}
+      <SkeletonBlock height={130} radius={12} />
+    </div>
+  )
 }
 
 // ── Sub-components ─────────────────────────────────────────────────────────
@@ -105,9 +147,7 @@ function BadgeCard({ badge, onTap }) {
         {badge.name}
       </span>
       {!badge.earned && (
-        <span style={{
-          position: 'absolute', top: 6, right: 6, fontSize: 10, opacity: 0.7,
-        }}>🔒</span>
+        <span style={{ position: 'absolute', top: 6, right: 6, fontSize: 10, opacity: 0.7 }}>🔒</span>
       )}
     </button>
   )
@@ -160,12 +200,80 @@ function BadgeTooltip({ badge, onClose }) {
   )
 }
 
+// ── User avatar / sign-out menu ────────────────────────────────────────────
+function UserMenu({ user, onSignOut }) {
+  const [open, setOpen] = useState(false)
+  const initials = (user.email || '?').slice(0, 2).toUpperCase()
+
+  return (
+    <div style={{ position: 'relative' }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="flex items-center justify-center rounded-full font-bold text-sm transition-all active:scale-95"
+        style={{
+          width: 40, height: 40,
+          backgroundColor: '#14B8A620',
+          color: '#14B8A6',
+          border: '2px solid #14B8A660',
+          cursor: 'pointer',
+          letterSpacing: '0.05em',
+        }}
+        aria-label="Account menu"
+      >
+        {initials}
+      </button>
+
+      {open && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setOpen(false)}
+          />
+          {/* Dropdown */}
+          <div
+            className="absolute right-0 rounded-xl z-50 overflow-hidden"
+            style={{
+              top: 48,
+              minWidth: 180,
+              backgroundColor: '#1E293B',
+              border: '1px solid #334155',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+            }}
+          >
+            <div className="px-4 py-3 border-b" style={{ borderColor: '#334155' }}>
+              <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#64748B' }}>
+                Signed in as
+              </p>
+              <p className="text-sm font-semibold text-white mt-0.5 truncate">
+                {user.email}
+              </p>
+            </div>
+            <button
+              onClick={() => { setOpen(false); onSignOut() }}
+              className="w-full text-left px-4 py-3 text-sm font-semibold transition-all"
+              style={{ color: '#FCA5A5', background: 'none', border: 'none', cursor: 'pointer' }}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#EF444415'}
+              onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
+            >
+              Sign Out
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+
 // ── Main component ─────────────────────────────────────────────────────────
 export default function Home() {
   const navigate = useNavigate()
+  const { user, signOut } = useAuth()
   const todayDayNumber = getTodayDayNumber()
   const quote = getDailyQuote()
   const [tooltipBadge, setTooltipBadge] = useState(null)
+
+  const { logs, loading, syncing } = useWorkoutLogs()
 
   const {
     currentStreak,
@@ -173,188 +281,210 @@ export default function Home() {
     totalWorkouts,
     thisWeekCount,
     completedThisWeekDayNumbers,
-  } = useStreak()
+  } = useStreak(logs)
 
-  const badges = useBadges()
+  const badges = useBadges(logs)
   const bannerProps = getStreakBannerProps(currentStreak)
+
+  async function handleSignOut() {
+    await signOut()
+    navigate('/login')
+  }
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
       {/* Header */}
       <div
-        className="px-5 pt-12 pb-6"
+        className="px-5 pt-12 pb-6 flex items-end justify-between"
         style={{ background: 'linear-gradient(180deg, #0D9488 0%, #0F172A 100%)' }}
       >
-        <h1 className="text-4xl font-extrabold text-white tracking-tight">StrongBase 💪</h1>
-        <p className="mt-1 text-base font-medium" style={{ color: '#99F6E4' }}>
-          Build the habit. Own the week.
-        </p>
-      </div>
-
-      <div className="px-5 pb-12 space-y-5">
-
-        {/* ── Streak Banner ──────────────────────────────────────────────── */}
-        <section
-          className="rounded-xl px-5 py-4"
-          style={{
-            backgroundColor: '#1E293B',
-            border: `2px solid ${bannerProps.borderColor}`,
-            boxShadow: bannerProps.glow === 'gold'
-              ? '0 0 16px 2px #F59E0B40'
-              : bannerProps.glow === 'teal'
-              ? '0 0 16px 2px #14B8A640'
-              : 'none',
-          }}
-        >
-          <p className="text-base font-bold text-white">{bannerProps.text}</p>
-          {currentStreak === 0 && (
-            <p className="text-sm mt-1" style={{ color: '#64748B' }}>
-              Complete today's workout to begin.
-            </p>
-          )}
-        </section>
-
-        {/* ── Weekly Ring + Stats ────────────────────────────────────────── */}
-        <section
-          className="rounded-xl p-5"
-          style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
-        >
-          <div className="flex items-center gap-5">
-            <WeeklyRing count={thisWeekCount} />
-            <div className="flex flex-col gap-4 flex-1">
-              <StatChip emoji="🔥" value={currentStreak} label="day streak" />
-              <StatChip emoji="✅" value={totalWorkouts} label="workouts done" />
-              <StatChip emoji="🏆" value={longestStreak} label="best streak" />
-            </div>
-          </div>
-        </section>
-
-        {/* ── 7-Day Strip ───────────────────────────────────────────────── */}
-        <section>
-          <h2 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
-            This Week
-          </h2>
-          <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1">
-            {weeklyPlan.days.map((day) => {
-              const isToday = day.day === todayDayNumber
-              const isPast = day.day < todayDayNumber
-              const isCompleted = completedThisWeekDayNumbers.has(day.day)
-
-              let bgColor = '#1E293B'
-              let borderColor = '#334155'
-              let cardOpacity = 1
-
-              if (isToday) {
-                bgColor = '#14B8A6'
-                borderColor = '#14B8A6'
-              } else if (isCompleted) {
-                bgColor = '#14B8A615'
-                borderColor = '#14B8A650'
-              } else if (isPast) {
-                cardOpacity = 0.6
-              }
-
-              return (
-                <button
-                  key={day.day}
-                  onClick={() => navigate(`/day/${day.day}`)}
-                  className="flex-shrink-0 rounded-xl flex flex-col items-center justify-center transition-all active:scale-95"
-                  style={{
-                    width: 80,
-                    minHeight: 96,
-                    padding: '10px 8px',
-                    backgroundColor: bgColor,
-                    border: `2px solid ${borderColor}`,
-                    cursor: 'pointer',
-                    opacity: cardOpacity,
-                    position: 'relative',
-                  }}
-                >
-                  {/* Completion checkmark badge */}
-                  {isCompleted && (
-                    <div style={{
-                      position: 'absolute', top: 5, right: 5,
-                      width: 16, height: 16, borderRadius: '50%',
-                      backgroundColor: '#14B8A6',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}>
-                      <span style={{ fontSize: 9, color: '#fff', fontWeight: 800 }}>✓</span>
-                    </div>
-                  )}
-                  <span className="text-xl mb-1">{day.emoji}</span>
-                  <span className="text-xs font-bold" style={{ color: isToday ? '#fff' : '#94A3B8' }}>
-                    Day {day.day}
-                  </span>
-                  <span className="text-center mt-1" style={{
-                    fontSize: 9, color: isToday ? '#CCFBF1' : '#64748B',
-                    fontWeight: 600, lineHeight: '1.2',
-                  }}>
-                    {day.theme}
-                  </span>
-                </button>
-              )
-            })}
-          </div>
-        </section>
-
-        {/* ── Today's CTA ───────────────────────────────────────────────── */}
-        <section
-          className="rounded-xl p-5"
-          style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
-        >
-          <div className="flex items-center justify-between mb-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
-                Today's Workout
-              </p>
-              <p className="text-lg font-bold text-white mt-0.5">
-                Day {todayDayNumber} — {weeklyPlan.days[todayDayNumber - 1].theme}
-              </p>
-              <p className="text-sm mt-0.5" style={{ color: '#94A3B8' }}>
-                ⏱ {weeklyPlan.days[todayDayNumber - 1].durationMinutes} min
-              </p>
-            </div>
-            <span className="text-4xl">{weeklyPlan.days[todayDayNumber - 1].emoji}</span>
-          </div>
-          <button
-            onClick={() => navigate(`/day/${todayDayNumber}`)}
-            className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
-            style={{ backgroundColor: '#14B8A6', minHeight: 52, padding: '14px 20px', border: 'none', cursor: 'pointer' }}
-            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
-          >
-            ▶ Start Today's Workout
-          </button>
-        </section>
-
-        {/* ── Badges ────────────────────────────────────────────────────── */}
-        <section>
-          <h2 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
-            Badges
-          </h2>
-          <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1">
-            {badges.map(b => (
-              <BadgeCard key={b.id} badge={b} onTap={setTooltipBadge} />
-            ))}
-          </div>
-        </section>
-
-        {/* ── Daily Quote ───────────────────────────────────────────────── */}
-        <section
-          className="rounded-xl p-5"
-          style={{
-            backgroundColor: '#1E293B',
-            border: '1px solid #334155',
-            borderLeft: '3px solid #14B8A6',
-          }}
-        >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#14B8A6' }}>
-            Daily Motivation
+        <div>
+          <h1 className="text-4xl font-extrabold text-white tracking-tight">StrongBase 💪</h1>
+          <p className="mt-1 text-base font-medium" style={{ color: '#99F6E4' }}>
+            Build the habit. Own the week.
           </p>
-          <p className="text-base font-medium text-white leading-relaxed italic">"{quote}"</p>
-        </section>
-
+        </div>
+        {user && <UserMenu user={user} onSignOut={handleSignOut} />}
       </div>
+
+      {/* Offline sync banner */}
+      {syncing && (
+        <div
+          className="px-5 py-2 text-sm font-semibold text-center"
+          style={{ backgroundColor: '#F59E0B20', color: '#F59E0B', borderBottom: '1px solid #F59E0B30' }}
+        >
+          ☁️ Syncing offline workouts…
+        </div>
+      )}
+
+      {/* Main content */}
+      {loading ? (
+        <SkeletonHome />
+      ) : (
+        <div className="px-5 pb-12 space-y-5">
+
+          {/* ── Streak Banner ──────────────────────────────────────────────── */}
+          <section
+            className="rounded-xl px-5 py-4"
+            style={{
+              backgroundColor: '#1E293B',
+              border: `2px solid ${bannerProps.borderColor}`,
+              boxShadow: bannerProps.glow === 'gold'
+                ? '0 0 16px 2px #F59E0B40'
+                : bannerProps.glow === 'teal'
+                ? '0 0 16px 2px #14B8A640'
+                : 'none',
+            }}
+          >
+            <p className="text-base font-bold text-white">{bannerProps.text}</p>
+            {currentStreak === 0 && (
+              <p className="text-sm mt-1" style={{ color: '#64748B' }}>
+                Complete today's workout to begin.
+              </p>
+            )}
+          </section>
+
+          {/* ── Weekly Ring + Stats ────────────────────────────────────────── */}
+          <section
+            className="rounded-xl p-5"
+            style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
+          >
+            <div className="flex items-center gap-5">
+              <WeeklyRing count={thisWeekCount} />
+              <div className="flex flex-col gap-4 flex-1">
+                <StatChip emoji="🔥" value={currentStreak} label="day streak" />
+                <StatChip emoji="✅" value={totalWorkouts} label="workouts done" />
+                <StatChip emoji="🏆" value={longestStreak} label="best streak" />
+              </div>
+            </div>
+          </section>
+
+          {/* ── 7-Day Strip ───────────────────────────────────────────────── */}
+          <section>
+            <h2 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
+              This Week
+            </h2>
+            <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+              {weeklyPlan.days.map((day) => {
+                const isToday = day.day === todayDayNumber
+                const isPast = day.day < todayDayNumber
+                const isCompleted = completedThisWeekDayNumbers.has(day.day)
+
+                let bgColor = '#1E293B'
+                let borderColor = '#334155'
+                let cardOpacity = 1
+
+                if (isToday) {
+                  bgColor = '#14B8A6'
+                  borderColor = '#14B8A6'
+                } else if (isCompleted) {
+                  bgColor = '#14B8A615'
+                  borderColor = '#14B8A650'
+                } else if (isPast) {
+                  cardOpacity = 0.6
+                }
+
+                return (
+                  <button
+                    key={day.day}
+                    onClick={() => navigate(`/day/${day.day}`)}
+                    className="flex-shrink-0 rounded-xl flex flex-col items-center justify-center transition-all active:scale-95"
+                    style={{
+                      width: 80,
+                      minHeight: 96,
+                      padding: '10px 8px',
+                      backgroundColor: bgColor,
+                      border: `2px solid ${borderColor}`,
+                      cursor: 'pointer',
+                      opacity: cardOpacity,
+                      position: 'relative',
+                    }}
+                  >
+                    {isCompleted && (
+                      <div style={{
+                        position: 'absolute', top: 5, right: 5,
+                        width: 16, height: 16, borderRadius: '50%',
+                        backgroundColor: '#14B8A6',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}>
+                        <span style={{ fontSize: 9, color: '#fff', fontWeight: 800 }}>✓</span>
+                      </div>
+                    )}
+                    <span className="text-xl mb-1">{day.emoji}</span>
+                    <span className="text-xs font-bold" style={{ color: isToday ? '#fff' : '#94A3B8' }}>
+                      Day {day.day}
+                    </span>
+                    <span className="text-center mt-1" style={{
+                      fontSize: 9, color: isToday ? '#CCFBF1' : '#64748B',
+                      fontWeight: 600, lineHeight: '1.2',
+                    }}>
+                      {day.theme}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+          </section>
+
+          {/* ── Today's CTA ───────────────────────────────────────────────── */}
+          <section
+            className="rounded-xl p-5"
+            style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
+                  Today's Workout
+                </p>
+                <p className="text-lg font-bold text-white mt-0.5">
+                  Day {todayDayNumber} — {weeklyPlan.days[todayDayNumber - 1].theme}
+                </p>
+                <p className="text-sm mt-0.5" style={{ color: '#94A3B8' }}>
+                  ⏱ {weeklyPlan.days[todayDayNumber - 1].durationMinutes} min
+                </p>
+              </div>
+              <span className="text-4xl">{weeklyPlan.days[todayDayNumber - 1].emoji}</span>
+            </div>
+            <button
+              onClick={() => navigate(`/day/${todayDayNumber}`)}
+              className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
+              style={{ backgroundColor: '#14B8A6', minHeight: 52, padding: '14px 20px', border: 'none', cursor: 'pointer' }}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
+              onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+            >
+              ▶ Start Today's Workout
+            </button>
+          </section>
+
+          {/* ── Badges ────────────────────────────────────────────────────── */}
+          <section>
+            <h2 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
+              Badges
+            </h2>
+            <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+              {badges.map(b => (
+                <BadgeCard key={b.id} badge={b} onTap={setTooltipBadge} />
+              ))}
+            </div>
+          </section>
+
+          {/* ── Daily Quote ───────────────────────────────────────────────── */}
+          <section
+            className="rounded-xl p-5"
+            style={{
+              backgroundColor: '#1E293B',
+              border: '1px solid #334155',
+              borderLeft: '3px solid #14B8A6',
+            }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#14B8A6' }}>
+              Daily Motivation
+            </p>
+            <p className="text-base font-medium text-white leading-relaxed italic">"{quote}"</p>
+          </section>
+
+        </div>
+      )}
 
       {/* Badge tooltip overlay */}
       {tooltipBadge && <BadgeTooltip badge={tooltipBadge} onClose={() => setTooltipBadge(null)} />}

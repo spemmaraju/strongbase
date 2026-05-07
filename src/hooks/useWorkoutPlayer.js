@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import exerciseData from '../data/exercises.json'
 import weeklyPlan from '../data/weeklyPlan.json'
+import { supabase } from '../lib/supabase'
+import { logToRow } from './useWorkoutLogs'
 
 export default function useWorkoutPlayer(dayNumber) {
   const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
@@ -18,6 +20,7 @@ export default function useWorkoutPlayer(dayNumber) {
   const [elapsedSeconds, setElapsedSeconds] = useState(0)
   const [completedExerciseIds, setCompletedExerciseIds] = useState([])
   const [totalSetsCompleted, setTotalSetsCompleted] = useState(0)
+  const [logSaveStatus, setLogSaveStatus] = useState('idle') // idle|saving|done|error
 
   // ── Rest metadata ─────────────────────────────────────────────────────────
   const [isBetweenExercises, setIsBetweenExercises] = useState(false)
@@ -209,9 +212,11 @@ export default function useWorkoutPlayer(dayNumber) {
   function pauseTimer() { isModalOpenRef.current = true }
   function resumeTimer() { isModalOpenRef.current = false }
 
-  // ── Persist workout log ───────────────────────────────────────────────────
-  function saveWorkoutLog(completedIds, totalSets) {
+  // ── Persist workout log (Supabase with offline fallback) ─────────────────
+  async function saveWorkoutLog(completedIds, totalSets) {
     if (!day) return
+    setLogSaveStatus('saving')
+
     const log = {
       dayNumber: day.day,
       date: new Date().toISOString().slice(0, 10),
@@ -221,12 +226,27 @@ export default function useWorkoutPlayer(dayNumber) {
       totalTimeSeconds: elapsedRef.current,
       completedAt: new Date().toISOString(),
     }
+
     try {
-      const existing = JSON.parse(localStorage.getItem('strongbase_logs') || '[]')
-      existing.push(log)
-      localStorage.setItem('strongbase_logs', JSON.stringify(existing))
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) throw new Error('not authenticated')
+
+      const { error } = await supabase
+        .from('workout_logs')
+        .insert(logToRow(log, user.id))
+
+      if (error) throw error
+
+      setLogSaveStatus('done')
     } catch (e) {
-      console.error('Failed to save workout log', e)
+      console.error('Supabase save failed — storing offline:', e)
+      // Offline fallback: queue in localStorage
+      try {
+        const pending = JSON.parse(localStorage.getItem('strongbase_pending_logs') || '[]')
+        pending.push(log)
+        localStorage.setItem('strongbase_pending_logs', JSON.stringify(pending))
+      } catch {}
+      setLogSaveStatus('error')
     }
   }
 
@@ -246,6 +266,7 @@ export default function useWorkoutPlayer(dayNumber) {
     completedExerciseIds,
     totalSetsCompleted,
     isBetweenExercises,
+    logSaveStatus,
     // Actions
     startWorkout,
     completeSet: () => completeSet(exerciseIndex, currentSet),
