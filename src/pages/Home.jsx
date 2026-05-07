@@ -5,6 +5,7 @@ import useStreak from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useAuth from '../hooks/useAuth'
+import { formatDuration, formatDate } from '../utils/workoutStats'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const QUOTES = [
@@ -481,6 +482,50 @@ export default function Home() {
               Daily Motivation
             </p>
             <p className="text-base font-medium text-white leading-relaxed italic">"{quote}"</p>
+          </section>
+
+          {/* ── Recent Activity ───────────────────────────────────────────── */}
+          <section>
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
+                Recent Activity
+              </h2>
+              <button
+                onClick={() => navigate('/history')}
+                className="text-xs font-semibold"
+                style={{ color: '#14B8A6', background: 'none', border: 'none', cursor: 'pointer' }}
+              >
+                See all →
+              </button>
+            </div>
+            <div
+              className="rounded-xl overflow-hidden"
+              style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
+            >
+              {logs.length === 0 ? (
+                <p className="text-sm text-center py-5" style={{ color: '#64748B' }}>
+                  No workouts yet — start today! 💪
+                </p>
+              ) : (
+                logs.slice(0, 3).map((log, i) => (
+                  <div
+                    key={log.id}
+                    className="flex items-center justify-between px-4 py-3"
+                    style={{ borderBottom: i < Math.min(logs.length, 3) - 1 ? '1px solid #334155' : 'none' }}
+                  >
+                    <div className="min-w-0">
+                      <p className="text-sm font-bold text-white leading-tight truncate">{log.theme}</p>
+                      <p className="text-xs mt-0.5" style={{ color: '#64748B' }}>
+                        Day {log.dayNumber} · {formatDate(log.date)}
+                      </p>
+                    </div>
+                    <span className="text-xs font-semibold flex-shrink-0 ml-3" style={{ color: '#94A3B8' }}>
+                      {formatDuration(log.totalTimeSeconds)}
+                    </span>
+                  </div>
+                ))
+              )}
+            </div>
           </section>
 
         </div>
