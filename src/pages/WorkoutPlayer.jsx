@@ -12,9 +12,10 @@ import { randomQuote } from '../utils/workoutStats'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function formatTime(seconds) {
+  if (seconds < 60) return `${seconds} sec`
   const m = Math.floor(seconds / 60)
   const s = seconds % 60
-  return `${m} min ${s.toString().padStart(2, '0')} sec`
+  return s > 0 ? `${m}m ${s}s` : `${m}m`
 }
 
 const CATEGORY_EMOJI = {
@@ -112,7 +113,7 @@ function ProgressBar({ completed, total }) {
 
 function ReadyScreen({ day, onStart }) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center pb-12"
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center"
       style={{ backgroundColor: '#0F172A' }}>
       <div className="text-6xl mb-6">{day.emoji}</div>
       <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#14B8A6' }}>
@@ -134,7 +135,7 @@ function ReadyScreen({ day, onStart }) {
         onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
         onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
       >
-        ▶ Begin Workout
+        Begin Workout
       </button>
     </div>
   )
@@ -214,39 +215,22 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
   const canGoBack = !(workout.exerciseIndex === 0 && currentSet === 1)
 
   return (
-    <div className="flex flex-col min-h-screen pb-36" style={{ backgroundColor: '#0F172A' }}>
+    <div className="flex flex-col min-h-screen" style={{ backgroundColor: '#0F172A' }}>
       <ProgressBar completed={completedExerciseIds.length} total={dayExercises.length} />
 
-      {/* Exercise info */}
-      <div className="px-5 pt-6 pb-4 flex items-start justify-between gap-3">
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: '#94A3B8' }}>
-            {setsLabel}
-          </p>
-          <h2
-            key={workout.exerciseIndex}
-            className="text-white leading-tight"
-            style={{
-              animation: 'slideInRight 300ms ease-out',
-              fontSize: 32,
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 800,
-            }}
-          >{ex.name}</h2>
-          <p className="text-sm mt-1 leading-relaxed" style={{ color: '#64748B' }}>
-            {ex.targetMuscles.join(' · ')}
-          </p>
-        </div>
+      {/* Centered content block — everything in one vertically-centered container */}
+      <div className="flex-1 flex flex-col items-center justify-center px-5 text-center" style={{ position: 'relative', paddingBottom: 120 }}>
+
+        {/* ⓘ button — absolute top-right so it doesn't affect centering */}
         <button
           onClick={() => onOpenModal(ex)}
-          className="flex-shrink-0 flex items-center justify-center transition-all active:scale-90"
+          className="flex items-center justify-center transition-all active:scale-90"
           style={{
+            position: 'absolute', top: 12, right: 20,
             width: 44, height: 44,
             backgroundColor: 'transparent',
             border: 'none',
             cursor: 'pointer',
-            marginTop: 4,
-            marginRight: 20,
           }}
           aria-label="Exercise info"
         >
@@ -256,10 +240,31 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             <line x1="12" y1="8" x2="12.01" y2="8"/>
           </svg>
         </button>
-      </div>
 
-      {/* Timer / Rep area */}
-      <div className="flex-1 flex flex-col items-center justify-center px-5">
+        {/* Set label */}
+        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
+          {setsLabel}
+        </p>
+
+        {/* Exercise name — centered, large */}
+        <h2
+          key={workout.exerciseIndex}
+          className="text-white leading-tight mb-2"
+          style={{
+            animation: 'slideInRight 300ms ease-out',
+            fontSize: 30,
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontWeight: 800,
+            maxWidth: 300,
+          }}
+        >{ex.name}</h2>
+
+        {/* Target muscles */}
+        <p className="text-sm mb-8" style={{ color: '#64748B' }}>
+          {ex.targetMuscles.join(' · ')}
+        </p>
+
+        {/* Timer or rep display */}
         {isTimed ? (
           <>
             <CircularTimer
@@ -267,12 +272,12 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
               totalSeconds={totalSeconds}
               ringColor="#14B8A6"
             />
-            <p className="mt-4 text-base font-semibold" style={{ color: '#94A3B8' }}>
+            <p className="mt-4 text-sm font-medium" style={{ color: '#94A3B8' }}>
               Hold steady. You've got this.
             </p>
           </>
         ) : (
-          <div className="flex flex-col items-center">
+          <>
             <div
               className="flex items-center justify-center rounded-full"
               style={{
@@ -290,10 +295,10 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
                 </p>
               </div>
             </div>
-            <p className="mt-5 text-sm font-medium text-center" style={{ color: '#94A3B8' }}>
+            <p className="mt-5 text-sm font-medium" style={{ color: '#94A3B8' }}>
               Complete your reps, then tap Done
             </p>
-          </div>
+          </>
         )}
       </div>
 
@@ -377,32 +382,37 @@ function RestScreen({ workout }) {
 
   return (
     <div
-      className="flex flex-col items-center min-h-screen px-5 pt-10 pb-36 text-center"
+      className="flex flex-col min-h-screen"
       style={{ backgroundColor: '#0F172A' }}
     >
-      <div className="w-full mb-8">
-        <h2 className="text-3xl font-extrabold text-white mb-2">{heading}</h2>
+      {/* All content vertically centered */}
+      <div className="flex-1 flex flex-col items-center justify-center px-5 text-center" style={{ paddingBottom: 100 }}>
+        <h2
+          className="text-white mb-1 uppercase tracking-widest"
+          style={{ fontSize: 18, fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", color: '#94A3B8' }}
+        >{heading}</h2>
         {isBetweenExercises && nextExercise && (
-          <p className="text-lg font-bold" style={{ color: '#14B8A6' }}>
+          <p
+            className="mb-1 leading-tight"
+            style={{ fontSize: 26, fontWeight: 800, color: '#F8FAFC', fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
             {nextExercise.name}
           </p>
         )}
         {isBetweenExercises && nextExercise && (
-          <p className="text-sm mt-1" style={{ color: '#64748B' }}>
+          <p className="text-sm mb-6" style={{ color: '#64748B' }}>
             {nextExercise.targetMuscles.join(' · ')}
           </p>
         )}
-      </div>
 
-      <div className="flex flex-col items-center gap-4">
-        <div style={{ animation: 'scaleIn 200ms ease-out' }}>
+        <div style={{ marginTop: isBetweenExercises ? 8 : 0, animation: 'scaleIn 200ms ease-out' }}>
           <CircularTimer
             secondsRemaining={secondsRemaining}
             totalSeconds={totalSeconds}
             ringColor="#64748B"
           />
         </div>
-        <p className="text-base font-semibold" style={{ color: '#94A3B8' }}>
+        <p className="mt-4 text-sm font-semibold" style={{ color: '#94A3B8' }}>
           Rest: {secondsRemaining}s
         </p>
       </div>
