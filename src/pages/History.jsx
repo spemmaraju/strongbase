@@ -146,7 +146,7 @@ function StatBar({ totalWorkouts, currentStreak, longestStreak, thisMonthCount }
             borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
           }}
         >
-          <span style={{ fontSize: 22, fontWeight: 800, color: '#F8FAFC', lineHeight: 1 }}>{s.value}</span>
+          <span style={{ fontSize: 22, fontWeight: 800, color: '#F8FAFC', lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.value}</span>
           <span style={{ fontSize: 10, color: '#94A3B8', fontWeight: 600, marginTop: 4 }}>{s.label}</span>
         </div>
       ))}
@@ -348,7 +348,8 @@ export default function History() {
   const currentMonth = new Date().toISOString().slice(0, 7)
   const thisMonthCount = logs.filter(l => l.date.startsWith(currentMonth)).length
 
-  const heatmapWeeks = buildHeatmapWeeks(logs)
+  const weeksToShow = totalWorkouts < 7 ? 4 : totalWorkouts < 20 ? 8 : 12
+  const heatmapWeeks = buildHeatmapWeeks(logs).slice(-weeksToShow)
   const weeklyGroups = groupLogsByWeek(logs)
 
   return (
@@ -358,7 +359,7 @@ export default function History() {
         className="px-5 pt-12 pb-5"
         style={{ backgroundColor: '#0F172A', borderBottom: '2px solid #14B8A6' }}
       >
-        <h1 className="text-3xl font-bold text-white">My History</h1>
+        <h1 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 36, color: '#F8FAFC', margin: 0 }}>My History</h1>
         <p className="mt-1 text-sm" style={{ color: '#94A3B8' }}>
           {loading ? '…' : `${totalWorkouts} workout${totalWorkouts !== 1 ? 's' : ''} completed`}
         </p>
@@ -396,7 +397,7 @@ export default function History() {
             style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
           >
             <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
-              Last 12 Weeks
+              Last {weeksToShow} Weeks
             </p>
             <CalendarHeatmap weeks={heatmapWeeks} onCellTap={setActiveCell} />
             {/* Legend */}

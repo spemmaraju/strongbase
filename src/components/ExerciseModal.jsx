@@ -25,130 +25,260 @@ export default function ExerciseModal({ exercise, onClose }) {
   return (
     <div
       className="fixed inset-0 z-50 flex flex-col"
-      style={{ backgroundColor: 'rgba(0,0,0,0.85)' }}
-      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
+      style={{ backgroundColor: '#0F172A' }}
     >
       <div
         className="relative flex flex-col w-full h-full overflow-y-auto"
         style={{ backgroundColor: '#0F172A', maxWidth: 600, margin: '0 auto' }}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 flex items-center justify-center rounded-full font-bold text-xl transition-all active:scale-95"
+        {/* Sticky Header */}
+        <div
           style={{
-            width: 44,
-            height: 44,
-            backgroundColor: '#334155',
-            color: '#F8FAFC',
-            border: 'none',
-            cursor: 'pointer'
+            position: 'sticky',
+            top: 0,
+            backgroundColor: '#0F172A',
+            zIndex: 10,
+            borderBottom: '1px solid #1E293B',
+            paddingBottom: 16,
+            paddingLeft: 20,
+            paddingRight: 20,
+            paddingTop: 16,
           }}
-          aria-label="Close modal"
         >
-          ×
-        </button>
+          <h2
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 700,
+              fontSize: 20,
+              color: '#F8FAFC',
+              paddingRight: 60,
+              margin: 0,
+            }}
+          >
+            {exercise.name}
+          </h2>
 
-        {/* YouTube Embed */}
-        <div style={{ position: 'relative', paddingTop: '56.25%', backgroundColor: '#000', flexShrink: 0 }}>
-          <iframe
-            src={`https://www.youtube.com/embed/${exercise.youtubeId}`}
-            title={exercise.name}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+          {/* Close Button */}
+          <button
+            onClick={onClose}
             style={{
               position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              border: 'none'
+              top: 16,
+              right: 20,
+              width: 44,
+              height: 44,
+              backgroundColor: '#1E293B',
+              border: 'none',
+              borderRadius: '50%',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
-          />
+            aria-label="Close modal"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        {/* YouTube Embed */}
+        <div style={{ paddingLeft: 20, paddingRight: 20, marginTop: 16 }}>
+          <div
+            style={{
+              position: 'relative',
+              paddingTop: '56.25%',
+              borderRadius: 12,
+              overflow: 'hidden',
+              border: '1px solid #1E293B',
+            }}
+          >
+            <iframe
+              src={`https://www.youtube.com/embed/${exercise.youtubeId}?rel=0&modestbranding=1&playsinline=1`}
+              title={exercise.name}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+            />
+          </div>
         </div>
 
         {/* Content */}
-        <div className="p-5 space-y-5 pb-10">
-          {/* Exercise name + meta */}
-          <div>
-            <h2 className="text-2xl font-bold text-white">{exercise.name}</h2>
-            <p className="text-sm mt-1 font-semibold" style={{ color: '#14B8A6' }}>
-              {setsRepsLabel}
-            </p>
-            {/* Badges */}
-            <div className="flex flex-wrap gap-2 mt-3">
-              {exercise.targetMuscles.map((m) => (
-                <span
-                  key={m}
-                  className="text-xs font-medium px-2 py-1 rounded-full"
-                  style={{ backgroundColor: '#1E293B', color: '#94A3B8', border: '1px solid #334155' }}
-                >
-                  {m}
-                </span>
-              ))}
-              {exercise.equipment.map((eq) => (
-                <span
-                  key={eq}
-                  className="text-xs font-medium px-2 py-1 rounded-full"
-                  style={{ backgroundColor: '#14B8A630', color: '#14B8A6', border: '1px solid #14B8A650' }}
-                >
-                  {eq.replace(/-/g, ' ')}
-                </span>
-              ))}
-            </div>
+        <div style={{ paddingLeft: 20, paddingRight: 20, paddingBottom: 40 }}>
+          {/* Sets/Reps */}
+          <p style={{ fontSize: 14, fontWeight: 600, color: '#14B8A6', marginTop: 16 }}>
+            {setsRepsLabel}
+          </p>
+
+          {/* Badges */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 12 }}>
+            {exercise.targetMuscles.map((m) => (
+              <span
+                key={m}
+                style={{
+                  backgroundColor: '#1E293B',
+                  borderRadius: 999,
+                  paddingLeft: 12,
+                  paddingRight: 12,
+                  paddingTop: 4,
+                  paddingBottom: 4,
+                  fontSize: 12,
+                  color: '#94A3B8',
+                }}
+              >
+                {m}
+              </span>
+            ))}
+            {exercise.equipment.map((eq) => (
+              <span
+                key={eq}
+                style={{
+                  backgroundColor: '#134E4A',
+                  borderRadius: 999,
+                  paddingLeft: 12,
+                  paddingRight: 12,
+                  paddingTop: 4,
+                  paddingBottom: 4,
+                  fontSize: 12,
+                  color: '#2DD4BF',
+                }}
+              >
+                {eq.replace(/-/g, ' ')}
+              </span>
+            ))}
           </div>
 
-          {/* Instructions */}
-          <div>
-            <h3 className="text-base font-bold text-white mb-3">How to do it</h3>
-            <ol className="space-y-3">
-              {exercise.instructions.map((step, i) => (
-                <li key={i} className="flex gap-3">
-                  <span
-                    className="flex-shrink-0 flex items-center justify-center rounded-full text-xs font-bold"
-                    style={{
-                      width: 24,
-                      height: 24,
-                      backgroundColor: '#14B8A6',
-                      color: '#fff',
-                      marginTop: 1
-                    }}
-                  >
-                    {i + 1}
-                  </span>
-                  <p className="text-sm leading-relaxed" style={{ color: '#CBD5E1' }}>
-                    {step}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          {/* Coaching Cues */}
-          <div>
-            <h3 className="text-base font-bold text-white mb-3">Coaching Cues</h3>
-            <ul className="space-y-2">
-              {exercise.cues.map((cue, i) => (
-                <li key={i} className="flex gap-2 items-start">
-                  <span style={{ color: '#14B8A6', fontSize: 16, lineHeight: '20px', flexShrink: 0 }}>✓</span>
-                  <p className="text-sm leading-relaxed" style={{ color: '#CBD5E1' }}>{cue}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Modification */}
-          <div
-            className="rounded-xl p-4"
-            style={{ backgroundColor: '#FEF3C7', border: '1px solid #FCD34D' }}
+          {/* HOW TO DO IT */}
+          <p
+            style={{
+              fontWeight: 600,
+              fontSize: 11,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: '#64748B',
+              marginTop: 24,
+              marginBottom: 12,
+              borderLeft: '2px solid #14B8A6',
+              paddingLeft: 8,
+            }}
           >
-            <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#92400E' }}>
-              Easier Modification
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: '#92400E' }}>
-              {exercise.modification}
-            </p>
-          </div>
+            HOW TO DO IT
+          </p>
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            {exercise.instructions.map((step, i) => (
+              <li key={i} style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
+                <span
+                  style={{
+                    flexShrink: 0,
+                    width: 24,
+                    height: 24,
+                    borderRadius: '50%',
+                    backgroundColor: '#14B8A6',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: 700,
+                    fontSize: 11,
+                    color: '#fff',
+                    marginTop: 1,
+                  }}
+                >
+                  {i + 1}
+                </span>
+                <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+                  {step}
+                </p>
+              </li>
+            ))}
+          </ol>
+
+          {/* COACHING CUES */}
+          <p
+            style={{
+              fontWeight: 600,
+              fontSize: 11,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: '#64748B',
+              marginTop: 24,
+              marginBottom: 12,
+              borderLeft: '2px solid #14B8A6',
+              paddingLeft: 8,
+            }}
+          >
+            COACHING CUES
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            {exercise.cues.map((cue, i) => (
+              <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12 }}>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#14B8A6"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ flexShrink: 0, marginTop: 2 }}
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+                  {cue}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          {/* EASIER MODIFICATION */}
+          {exercise.modification && (
+            <div
+              style={{
+                backgroundColor: '#451A03',
+                border: '1px solid rgba(217,119,6,0.3)',
+                borderRadius: 16,
+                paddingLeft: 16,
+                paddingRight: 16,
+                paddingTop: 16,
+                paddingBottom: 16,
+                marginTop: 24,
+                marginBottom: 32,
+              }}
+            >
+              <p
+                style={{
+                  fontWeight: 600,
+                  fontSize: 11,
+                  color: '#FCD34D',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: 8,
+                }}
+              >
+                EASIER MODIFICATION
+              </p>
+              <p
+                style={{
+                  fontSize: 14,
+                  color: 'rgba(253,230,138,0.8)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                {exercise.modification}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

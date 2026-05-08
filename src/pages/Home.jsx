@@ -359,8 +359,9 @@ export default function Home() {
             className="rounded-2xl px-5 py-4"
             style={{
               backgroundColor: '#1E293B',
-              border: '1px solid rgba(255,255,255,0.06)',
-              borderLeft: '4px solid #14B8A6',
+              border: currentStreak >= 7
+                ? '1px solid rgba(245,158,11,0.3)'
+                : '1px solid rgba(255,255,255,0.06)',
               boxShadow: bannerProps.glow === 'gold'
                 ? '0 0 16px 2px #F59E0B40'
                 : bannerProps.glow === 'teal'
@@ -368,11 +369,31 @@ export default function Home() {
                 : '0 2px 8px rgba(0,0,0,0.3)',
             }}
           >
-            <p className="text-lg font-semibold text-white">{bannerProps.text}</p>
-            {currentStreak === 0 && (
-              <p className="text-sm mt-1" style={{ color: '#64748B' }}>
-                Complete today's workout to begin.
+            {currentStreak === 0 ? (
+              <p className="text-base text-center" style={{ color: '#64748B' }}>
+                Start your streak
               </p>
+            ) : (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 800,
+                      fontSize: 48,
+                      color: '#F8FAFC',
+                      lineHeight: 1,
+                      margin: 0,
+                    }}
+                  >
+                    {currentStreak}
+                  </p>
+                  <p style={{ fontSize: 14, color: '#94A3B8', marginTop: 4 }}>day streak</p>
+                </div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" strokeWidth="0">
+                  <path d="M12 2C12 2 6 8 6 13a6 6 0 0012 0c0-5-6-11-6-11zm0 17a4 4 0 01-4-4c0-2.5 2-5.5 4-8 2 2.5 4 5.5 4 8a4 4 0 01-4 4z"/>
+                </svg>
+              </div>
             )}
           </section>
 
@@ -386,15 +407,20 @@ export default function Home() {
             }}
           >
             <p className="text-xs font-semibold uppercase tracking-widest mb-4"
-              style={{ color: '#94A3B8', borderLeft: '2px solid #14B8A6', paddingLeft: 8 }}>
+              style={{ color: '#94A3B8', borderLeft: '2px solid #0D9488', paddingLeft: 8 }}>
               Weekly Progress
             </p>
-            <div className="flex items-center gap-6">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
               <WeeklyRing count={thisWeekCount} />
-              <div className="flex flex-col gap-4 flex-1">
-                <StatRow value={`${currentStreak} day${currentStreak !== 1 ? 's' : ''}`} label="Current streak" />
-                <StatRow value={totalWorkouts} label="Total workouts" />
-                <StatRow value={`${longestStreak} day${longestStreak !== 1 ? 's' : ''}`} label="Best streak" />
+              <div style={{ display: 'flex', flex: 1, justifyContent: 'space-around' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 24, fontWeight: 700, color: '#F8FAFC', lineHeight: 1 }}>{totalWorkouts}</span>
+                  <span style={{ fontSize: 10, color: '#64748B', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4 }}>Total</span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 24, fontWeight: 700, color: '#F8FAFC', lineHeight: 1 }}>{longestStreak}</span>
+                  <span style={{ fontSize: 10, color: '#64748B', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 4 }}>Best</span>
+                </div>
               </div>
             </div>
           </section>
@@ -403,7 +429,7 @@ export default function Home() {
           <section>
             <h2
               className="text-xs font-semibold uppercase tracking-widest mb-3"
-              style={{ color: '#94A3B8', borderLeft: '2px solid #14B8A6', paddingLeft: 8 }}
+              style={{ color: '#94A3B8', borderLeft: '2px solid #0D9488', paddingLeft: 8 }}
             >
               This Week
             </h2>
@@ -454,7 +480,16 @@ export default function Home() {
                         <span style={{ fontSize: 9, color: '#fff', fontWeight: 800 }}>✓</span>
                       </div>
                     )}
-                    <span className="text-xl mb-1">{day.emoji}</span>
+                    {/* Color category dot */}
+                    <div style={{
+                      width: 6, height: 6, borderRadius: '50%', marginBottom: 4,
+                      backgroundColor: [1, 7].includes(day.day) ? '#14B8A6'
+                        : day.day === 2 ? '#8B5CF6'
+                        : day.day === 3 ? '#F59E0B'
+                        : day.day === 4 ? '#22C55E'
+                        : day.day === 5 ? '#14B8A6'
+                        : '#8B5CF6',
+                    }} />
                     <span className="text-xs font-bold" style={{ color: isToday ? '#fff' : '#94A3B8' }}>
                       Day {day.day}
                     </span>
@@ -520,7 +555,7 @@ export default function Home() {
               {/* Header row */}
               <div className="flex items-center justify-between mb-3">
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8' }}>
+                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8', borderLeft: '2px solid #0D9488', paddingLeft: 8 }}>
                     Today's Focus
                   </p>
                   <p className="text-lg font-bold text-white mt-0.5 leading-tight">
@@ -571,7 +606,7 @@ export default function Home() {
                     className="text-xs font-semibold px-2.5 py-1 rounded-full"
                     style={{ backgroundColor: '#334155', color: '#94A3B8' }}
                   >
-                    {EQUIP_DISPLAY[eq]?.icon || '🏋️'} {EQUIP_DISPLAY[eq]?.label || eq}
+                    {EQUIP_DISPLAY[eq]?.label || eq.replace(/-/g, ' ')}
                   </span>
                 ))}
               </div>
@@ -583,7 +618,7 @@ export default function Home() {
                 onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
                 onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
               >
-                ▶ Start Today's Workout
+                Start Workout
               </button>
             </section>
           )}
@@ -592,7 +627,7 @@ export default function Home() {
           <section>
             <h2
               className="text-xs font-semibold uppercase tracking-widest mb-3"
-              style={{ color: '#94A3B8', borderLeft: '2px solid #14B8A6', paddingLeft: 8 }}
+              style={{ color: '#94A3B8', borderLeft: '2px solid #0D9488', paddingLeft: 8 }}
             >
               Badges
             </h2>
@@ -604,26 +639,16 @@ export default function Home() {
           </section>
 
           {/* ── Daily Quote ───────────────────────────────────────────────── */}
-          <section
-            className="rounded-2xl p-5"
-            style={{
-              backgroundColor: '#1E293B',
-              border: '1px solid rgba(255,255,255,0.06)',
-              borderLeft: '4px solid #14B8A6',
-            }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#14B8A6' }}>
-              Daily Motivation
-            </p>
+          <div style={{ paddingLeft: 20, paddingRight: 20, paddingTop: 16, paddingBottom: 16, borderLeft: '2px solid #134E4A', marginLeft: 20, marginRight: 20 }}>
             <p className="text-base font-medium text-white leading-relaxed italic">"{quote}"</p>
-          </section>
+          </div>
 
           {/* ── Recent Activity ───────────────────────────────────────────── */}
           <section>
             <div className="flex items-center justify-between mb-3">
               <h2
                 className="text-xs font-semibold uppercase tracking-widest"
-                style={{ color: '#94A3B8', borderLeft: '2px solid #14B8A6', paddingLeft: 8 }}
+                style={{ color: '#94A3B8', borderLeft: '2px solid #0D9488', paddingLeft: 8 }}
               >
                 Recent Activity
               </h2>

@@ -57,11 +57,21 @@ function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
             backgroundColor: '#1E293B',
             border: '1px solid #334155',
             cursor: 'pointer',
-            fontSize: 18,
           }}
           aria-label={soundEnabled ? 'Mute sounds' : 'Enable sounds'}
         >
-          {soundEnabled ? '🔊' : '🔇'}
+          {soundEnabled ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <line x1="23" y1="9" x2="17" y2="15"/>
+              <line x1="17" y1="9" x2="23" y2="15"/>
+            </svg>
+          )}
         </button>
         <button
           onClick={onExit}
@@ -77,7 +87,7 @@ function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
             whiteSpace: 'nowrap',
           }}
         >
-          ✕ Exit
+          Exit
         </button>
       </div>
     </div>
@@ -215,8 +225,13 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
           </p>
           <h2
             key={workout.exerciseIndex}
-            className="text-2xl font-extrabold text-white leading-tight"
-            style={{ animation: 'slideInRight 300ms ease-out' }}
+            className="text-white leading-tight"
+            style={{
+              animation: 'slideInRight 300ms ease-out',
+              fontSize: 32,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 800,
+            }}
           >{ex.name}</h2>
           <p className="text-sm mt-1 leading-relaxed" style={{ color: '#64748B' }}>
             {ex.targetMuscles.join(' · ')}
@@ -224,11 +239,10 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
         </div>
         <button
           onClick={() => onOpenModal(ex)}
-          className="flex-shrink-0 flex items-center justify-center rounded-full font-bold text-lg transition-all active:scale-90"
+          className="flex-shrink-0 flex items-center justify-center transition-all active:scale-90"
           style={{
             width: 44, height: 44,
-            backgroundColor: '#334155',
-            color: '#14B8A6',
+            backgroundColor: 'transparent',
             border: 'none',
             cursor: 'pointer',
             marginTop: 4,
@@ -236,7 +250,11 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
           }}
           aria-label="Exercise info"
         >
-          ⓘ
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
         </button>
       </div>
 
@@ -264,7 +282,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
               }}
             >
               <div className="text-center">
-                <p style={{ fontSize: 56, fontWeight: 800, color: '#F8FAFC', lineHeight: 1 }}>
+                <p style={{ fontSize: 80, fontWeight: 800, color: '#F8FAFC', lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   {ex.reps}
                 </p>
                 <p style={{ fontSize: 16, color: '#94A3B8', fontWeight: 600, marginTop: 4 }}>
@@ -321,7 +339,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
             onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
           >
-            ✓ Done
+            Done
           </button>
         )}
 
@@ -406,15 +424,12 @@ function RestScreen({ workout }) {
       >
         <button
           onClick={skipRest}
-          className="w-full rounded-2xl font-bold text-base text-white transition-all active:scale-95"
           style={{
-            height: 64,
-            backgroundColor: '#14B8A6',
-            border: 'none',
+            width: '100%', height: 56, backgroundColor: 'transparent',
+            border: '1px solid #334155', borderRadius: 16,
+            color: '#14B8A6', fontSize: 15, fontWeight: 600,
             cursor: 'pointer',
           }}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
         >
           Skip Rest →
         </button>
@@ -504,24 +519,29 @@ function CompletionScreen({ workout, navigate, logs }) {
         {toastMsg}
       </div>
 
-      <div className="text-7xl mb-4" style={{ animation: 'bouncePop 500ms ease-out' }}>🎉</div>
+      <div style={{ width: 80, height: 80, backgroundColor: '#134E4A', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', animation: 'bouncePop 500ms ease-out', marginBottom: 16 }}>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
       <h1 className="text-3xl font-extrabold text-white mb-2">Workout Complete!</h1>
       <p className="text-lg font-bold mb-6" style={{ color: '#14B8A6' }}>
         Day {day.day} — {day.theme}
       </p>
 
-      {/* Stats */}
-      <div
-        className="w-full rounded-2xl p-5 mb-5 space-y-4"
-        style={{ backgroundColor: '#1E293B', border: '1px solid #334155', maxWidth: 360 }}
-      >
-        <Stat label="Time Elapsed" value={formatTime(elapsedSeconds)} />
-        <div style={{ height: 1, backgroundColor: '#334155' }} />
-        <Stat label="Exercises Completed" value={completedExerciseIds.length} />
-        <div style={{ height: 1, backgroundColor: '#334155' }} />
-        <Stat label="Sets Completed" value={totalSetsCompleted} />
-        <div style={{ height: 1, backgroundColor: '#334155' }} />
-        <Stat label="Current Streak" value={`${currentStreak} day${currentStreak !== 1 ? 's' : ''} 🔥`} />
+      {/* Stats — 2×2 grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, width: '100%', maxWidth: 360, marginTop: 28 }}>
+        {[
+          { label: 'TIME', value: formatTime(elapsedSeconds) },
+          { label: 'EXERCISES', value: completedExerciseIds.length },
+          { label: 'SETS', value: totalSetsCompleted },
+          { label: 'STREAK', value: `${currentStreak}d` },
+        ].map(s => (
+          <div key={s.label} style={{ backgroundColor: '#1E293B', borderRadius: 16, padding: 16, textAlign: 'center', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <p style={{ fontSize: 28, fontWeight: 800, color: '#F8FAFC', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.value}</p>
+            <p style={{ fontSize: 10, color: '#64748B', fontWeight: 600, letterSpacing: '0.08em', marginTop: 4 }}>{s.label}</p>
+          </div>
+        ))}
       </div>
 
       {/* Motivational quote */}
@@ -546,7 +566,7 @@ function CompletionScreen({ workout, navigate, logs }) {
           onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
           onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
         >
-          🏠 Back to Home
+          Back to Home
         </button>
         <button
           onClick={() => navigate(`/day/${day.day}`)}
@@ -559,18 +579,9 @@ function CompletionScreen({ workout, navigate, logs }) {
             cursor: 'pointer',
           }}
         >
-          📋 View Summary
+          View Summary
         </button>
       </div>
-    </div>
-  )
-}
-
-function Stat({ label, value }) {
-  return (
-    <div className="flex items-center justify-between">
-      <span className="text-sm font-medium" style={{ color: '#94A3B8' }}>{label}</span>
-      <span className="text-base font-bold text-white">{value}</span>
     </div>
   )
 }

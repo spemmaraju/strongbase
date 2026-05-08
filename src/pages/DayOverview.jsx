@@ -116,7 +116,7 @@ export default function DayOverview() {
                 className="text-xs font-semibold tracking-widest uppercase mb-4"
                 style={{
                   color: '#94A3B8',
-                  borderLeft: '2px solid #14B8A6',
+                  borderLeft: '2px solid #0D9488',
                   paddingLeft: 8,
                 }}
               >
@@ -130,60 +130,72 @@ export default function DayOverview() {
                     ? `${ex.sets} × ${ex.durationSeconds} sec hold`
                     : `${ex.sets} × ${ex.reps} reps`
 
+                  const accentColor = ex.category === 'warm-up' ? '#F59E0B'
+                    : ex.category === 'strength' ? '#14B8A6'
+                    : ex.category === 'stability' ? '#8B5CF6'
+                    : '#22C55E'
+
                   return (
                     <div
                       key={ex.id}
-                      className="rounded-2xl p-4 flex items-start gap-3"
+                      className="rounded-2xl overflow-hidden flex"
                       style={{
                         backgroundColor: '#1E293B',
                         border: '1px solid rgba(255,255,255,0.06)',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
                       }}
                     >
-                      <div className="flex-1 min-w-0">
-                        <p className="text-base font-semibold text-white leading-snug">{ex.name}</p>
-                        <p className="text-sm font-medium mt-0.5" style={{ color: '#14B8A6' }}>
-                          {setsReps}
-                        </p>
-                        <p className="text-xs mt-1 leading-relaxed" style={{ color: '#94A3B8' }}>
-                          {ex.targetMuscles.join(' · ')}
-                        </p>
-                        {/* Equipment badges */}
-                        <div className="flex flex-wrap gap-1.5 mt-2">
-                          {ex.equipment.map((eq) => {
-                            const s = getEqStyle(eq)
-                            return (
-                              <span
-                                key={eq}
-                                className="text-xs font-medium px-2 py-0.5 rounded-full"
-                                style={{ backgroundColor: s.bg, color: s.text, border: `1px solid ${s.border}` }}
-                              >
-                                {eq.replace(/-/g, ' ')}
-                              </span>
-                            )
-                          })}
+                      {/* Left accent strip */}
+                      <div style={{ width: 4, flexShrink: 0, alignSelf: 'stretch', backgroundColor: accentColor }} />
+                      {/* Content */}
+                      <div className="flex-1 px-4 py-4 flex items-start gap-3">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-base font-semibold text-white leading-snug">{ex.name}</p>
+                          <p className="text-sm font-medium mt-0.5" style={{ color: '#14B8A6' }}>
+                            {setsReps}
+                          </p>
+                          <p className="text-xs mt-1 leading-relaxed" style={{ color: '#94A3B8' }}>
+                            {ex.targetMuscles.join(' · ')}
+                          </p>
+                          {/* Equipment badges */}
+                          <div className="flex flex-wrap gap-1.5 mt-2">
+                            {ex.equipment.map((eq) => {
+                              const s = getEqStyle(eq)
+                              return (
+                                <span
+                                  key={eq}
+                                  className="text-xs font-medium px-2 py-0.5 rounded-full"
+                                  style={{ backgroundColor: s.bg, color: s.text, border: `1px solid ${s.border}` }}
+                                >
+                                  {eq.replace(/-/g, ' ')}
+                                </span>
+                              )
+                            })}
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Info button — min 44×44 touch target, mr-1 so never clipped */}
-                      <button
-                        onClick={() => setSelectedExercise(ex)}
-                        className="flex-shrink-0 flex items-center justify-center rounded-full font-bold text-lg transition-all active:scale-90"
-                        style={{
-                          minWidth: 44,
-                          minHeight: 44,
-                          width: 44,
-                          height: 44,
-                          backgroundColor: '#334155',
-                          color: '#14B8A6',
-                          border: 'none',
-                          cursor: 'pointer',
-                          marginRight: 4,
-                        }}
-                        aria-label={`Info for ${ex.name}`}
-                      >
-                        ⓘ
-                      </button>
+                        {/* Info button — SVG, 44×44 touch target */}
+                        <button
+                          onClick={() => setSelectedExercise(ex)}
+                          className="flex-shrink-0 flex items-center justify-center transition-all active:scale-90"
+                          style={{
+                            minWidth: 44,
+                            minHeight: 44,
+                            width: 44,
+                            height: 44,
+                            backgroundColor: 'transparent',
+                            border: 'none',
+                            cursor: 'pointer',
+                          }}
+                          aria-label={`Info for ${ex.name}`}
+                        >
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   )
                 })}
@@ -248,7 +260,7 @@ export default function DayOverview() {
             onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
             onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
           >
-            ▶ Start Workout
+            Start Workout
           </button>
         </div>
       </div>
