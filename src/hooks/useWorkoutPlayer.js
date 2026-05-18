@@ -31,6 +31,8 @@ export default function useWorkoutPlayer(dayNumber) {
   const transitionRef = useRef(null)       // setTimeout id for transition
   const onCompleteRef = useRef(null)       // what to call when countdown hits 0
   const isModalOpenRef = useRef(false)     // pause countdown when modal is open
+  const isPausedRef = useRef(false)        // explicit user pause
+  const [isPaused, setIsPaused] = useState(false)
   const phaseRef = useRef('idle')
   const wasCountingRef = useRef(false)     // paused by visibility change?
   const totalSetsRef = useRef(0)           // mutable copy (avoids stale state in callbacks)
@@ -76,6 +78,7 @@ export default function useWorkoutPlayer(dayNumber) {
   // ── Core timer tick ───────────────────────────────────────────────────────
   function tickCountdown() {
     if (isModalOpenRef.current) return   // paused while modal is open
+    if (isPausedRef.current) return      // paused by user
     setSecondsRemaining(prev => {
       if (prev <= 1) {
         clearInterval(countdownRef.current)
@@ -109,6 +112,8 @@ export default function useWorkoutPlayer(dayNumber) {
   function enterExercise(exIdx, set) {
     const ex = dayExercises[exIdx]
     if (!ex) return
+    isPausedRef.current = false
+    setIsPaused(false)
     setExerciseIndex(exIdx)
     setCurrentSet(set)
     setPhase('exercise')
@@ -212,6 +217,15 @@ export default function useWorkoutPlayer(dayNumber) {
   function pauseTimer() { isModalOpenRef.current = true }
   function resumeTimer() { isModalOpenRef.current = false }
 
+  function pauseWorkout() {
+    isPausedRef.current = true
+    setIsPaused(true)
+  }
+  function resumeWorkout() {
+    isPausedRef.current = false
+    setIsPaused(false)
+  }
+
   // ── Persist workout log (Supabase with offline fallback) ─────────────────
   async function saveWorkoutLog(completedIds, totalSets) {
     if (!day) return
@@ -274,5 +288,8 @@ export default function useWorkoutPlayer(dayNumber) {
     goBack,
     pauseTimer,
     resumeTimer,
+    isPaused,
+    pauseWorkout,
+    resumeWorkout,
   }
 }

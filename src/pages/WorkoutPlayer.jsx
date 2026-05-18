@@ -198,7 +198,7 @@ function TransitionCard({ exercise }) {
   )
 }
 
-function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onCompleteSet }) {
+function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onCompleteSet, onPause, onResume }) {
   const {
     currentExercise: ex,
     dayExercises,
@@ -206,6 +206,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
     completedExerciseIds,
     secondsRemaining,
     totalSeconds,
+    isPaused,
   } = workout
 
   if (!ex) return null
@@ -267,14 +268,21 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
         {/* Timer or rep display */}
         {isTimed ? (
           <>
-            <CircularTimer
-              secondsRemaining={secondsRemaining}
-              totalSeconds={totalSeconds}
-              ringColor="#14B8A6"
-            />
-            <p className="mt-4 text-sm font-medium" style={{ color: '#94A3B8' }}>
-              Hold steady. You've got this.
-            </p>
+            <div style={{ position: 'relative' }}>
+              <CircularTimer
+                secondsRemaining={secondsRemaining}
+                totalSeconds={totalSeconds}
+                ringColor={isPaused ? '#475569' : '#14B8A6'}
+              />
+              {isPaused && (
+                <div style={{
+                  position: 'absolute', inset: 0,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <p style={{ fontSize: 13, fontWeight: 700, color: '#64748B', letterSpacing: '0.1em' }}>PAUSED</p>
+                </div>
+              )}
+            </div>
           </>
         ) : (
           <>
@@ -300,6 +308,30 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             </p>
           </>
         )}
+
+        {/* Inline coaching cues — always visible, no tap needed */}
+        {ex.cues && ex.cues.length > 0 && (
+          <div style={{
+            marginTop: 20,
+            width: '100%',
+            maxWidth: 340,
+            backgroundColor: '#1E293B',
+            borderRadius: 12,
+            padding: '10px 14px',
+            borderLeft: '3px solid #0D948840',
+          }}>
+            {ex.cues.map((cue, i) => (
+              <p key={i} style={{
+                fontSize: 12,
+                color: '#64748B',
+                lineHeight: 1.5,
+                marginTop: i > 0 ? 6 : 0,
+              }}>
+                · {cue}
+              </p>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Fixed footer — Done / Skip button always fully visible */}
@@ -318,19 +350,35 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
         }}
       >
         {isTimed ? (
-          <button
-            onClick={onSkipToRest}
-            className="w-full rounded-2xl font-semibold text-base transition-all active:scale-95"
-            style={{
-              height: 56,
-              backgroundColor: '#1E293B',
-              color: '#94A3B8',
-              border: '1px solid #334155',
-              cursor: 'pointer',
-            }}
-          >
-            Skip
-          </button>
+          <div style={{ display: 'flex', gap: 10 }}>
+            <button
+              onClick={isPaused ? onResume : onPause}
+              className="flex-1 rounded-2xl font-bold text-base text-white transition-all active:scale-95"
+              style={{
+                height: 56,
+                backgroundColor: isPaused ? '#14B8A6' : '#1E3A5F',
+                border: isPaused ? 'none' : '1px solid #2563EB40',
+                color: isPaused ? '#fff' : '#60A5FA',
+                cursor: 'pointer',
+              }}
+            >
+              {isPaused ? 'Resume' : 'Pause'}
+            </button>
+            <button
+              onClick={onSkipToRest}
+              className="rounded-2xl font-semibold text-sm transition-all active:scale-95"
+              style={{
+                height: 56,
+                width: 80,
+                backgroundColor: 'transparent',
+                border: '1px solid #334155',
+                color: '#475569',
+                cursor: 'pointer',
+              }}
+            >
+              Skip
+            </button>
+          </div>
         ) : (
           <button
             onClick={onCompleteSet}
@@ -848,6 +896,8 @@ export default function WorkoutPlayer() {
           onBack={handleBack}
           onSkipToRest={handleSkipToRest}
           onCompleteSet={handleCompleteSet}
+          onPause={workout.pauseWorkout}
+          onResume={workout.resumeWorkout}
         />
       )}
       {phase === 'rest' && (
