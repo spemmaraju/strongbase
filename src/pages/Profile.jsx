@@ -246,15 +246,17 @@ export default function Profile() {
           onClick={handleSignOut}
           style={{
             width: '100%',
-            height: 48,
+            minHeight: 52,
             backgroundColor: '#1E293B',
             borderRadius: 16,
-            border: '1px solid rgba(255,255,255,0.08)',
-            color: '#94A3B8',
+            border: '1px solid rgba(239,68,68,0.2)',
+            color: '#FCA5A5',
             fontSize: 14,
             fontWeight: 600,
             cursor: 'pointer',
           }}
+          onMouseEnter={e => e.currentTarget.style.backgroundColor = '#EF444415'}
+          onMouseLeave={e => e.currentTarget.style.backgroundColor = '#1E293B'}
         >
           Sign Out
         </button>

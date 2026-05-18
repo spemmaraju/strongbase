@@ -31,6 +31,11 @@ export default function ExerciseModal({ exercise, onClose }) {
         className="relative flex flex-col w-full h-full overflow-y-auto"
         style={{ backgroundColor: '#0F172A', maxWidth: 600, margin: '0 auto' }}
       >
+        {/* Drag handle — visual affordance for dismissibility */}
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 12, paddingBottom: 4 }}>
+          <div style={{ width: 36, height: 4, borderRadius: 2, backgroundColor: '#334155' }} />
+        </div>
+
         {/* Sticky Header */}
         <div
           style={{
@@ -42,7 +47,7 @@ export default function ExerciseModal({ exercise, onClose }) {
             paddingBottom: 16,
             paddingLeft: 20,
             paddingRight: 20,
-            paddingTop: 16,
+            paddingTop: 12,
           }}
         >
           <h2

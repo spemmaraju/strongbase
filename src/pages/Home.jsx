@@ -352,7 +352,7 @@ export default function Home() {
       {loading ? (
         <SkeletonHome />
       ) : (
-        <div className="px-5 pb-12 space-y-5">
+        <div className="px-5 pt-5 pb-12 space-y-5">
 
           {/* ── Streak Banner ──────────────────────────────────────────────── */}
           <section
@@ -370,9 +370,15 @@ export default function Home() {
             }}
           >
             {currentStreak === 0 ? (
-              <p className="text-base text-center" style={{ color: '#64748B' }}>
-                Start your streak
-              </p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <p style={{ fontSize: 15, fontWeight: 700, color: '#F8FAFC', marginBottom: 2 }}>
+                    Day 1 starts today
+                  </p>
+                  <p style={{ fontSize: 13, color: '#64748B' }}>Complete a workout to begin your streak</p>
+                </div>
+                <span style={{ fontSize: 32 }}>🔥</span>
+              </div>
             ) : (
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
@@ -639,7 +645,7 @@ export default function Home() {
           </section>
 
           {/* ── Daily Quote ───────────────────────────────────────────────── */}
-          <div style={{ paddingLeft: 20, paddingRight: 20, paddingTop: 16, paddingBottom: 16, borderLeft: '2px solid #134E4A', marginLeft: 20, marginRight: 20 }}>
+          <div style={{ paddingTop: 16, paddingBottom: 16, borderLeft: '2px solid #134E4A', paddingLeft: 16 }}>
             <p className="text-base font-medium text-white leading-relaxed italic">"{quote}"</p>
           </div>
 

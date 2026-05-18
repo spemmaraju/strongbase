@@ -21,14 +21,14 @@ function HeatmapCell({ day, onTap }) {
     <div
       onClick={() => day.logs.length > 0 && onTap(day)}
       style={{
-        width: 32, height: 32,
-        borderRadius: 5,
+        width: 36, height: 36,
+        borderRadius: 6,
         backgroundColor: bg,
         cursor: day.logs.length > 0 ? 'pointer' : 'default',
         flexShrink: 0,
         transition: 'transform 0.1s',
       }}
-      onMouseEnter={e => { if (day.logs.length > 0) e.currentTarget.style.transform = 'scale(1.15)' }}
+      onMouseEnter={e => { if (day.logs.length > 0) e.currentTarget.style.transform = 'scale(1.12)' }}
       onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
     />
   )
@@ -64,7 +64,7 @@ function HeatmapTooltip({ day, onClose }) {
         <button
           onClick={onClose}
           className="w-full mt-3 text-sm font-semibold rounded-lg"
-          style={{ minHeight: 40, color: '#64748B', background: 'none', border: 'none', cursor: 'pointer' }}
+          style={{ minHeight: 44, color: '#64748B', background: 'none', border: 'none', cursor: 'pointer' }}
         >
           Close
         </button>
@@ -91,7 +91,7 @@ function CalendarHeatmap({ weeks, onCellTap }) {
           }}
         >
           {DAY_LABELS.map((d, i) => (
-            <div key={i} style={{ height: 32, display: 'flex', alignItems: 'center' }}>
+            <div key={i} style={{ height: 36, display: 'flex', alignItems: 'center' }}>
               <span style={{ fontSize: 10, fontWeight: 700, color: '#475569', width: 10 }}>{d}</span>
             </div>
           ))}
@@ -251,9 +251,13 @@ function WeeklyCard({ weekStart, weekEnd, logs, navigate }) {
       >
         <div className="flex items-center justify-between mb-3">
           <p className="text-sm font-bold text-white">{weekLabel}</p>
-          <span style={{ fontSize: 12, color: '#64748B', transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
-            ▾
-          </span>
+          <svg
+            width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s', flexShrink: 0 }}
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </div>
 
         <MiniDayStrip completedDayNumbers={completedDayNumbers} />
@@ -389,7 +393,7 @@ export default function History() {
       ) : logs.length === 0 ? (
         <EmptyState navigate={navigate} />
       ) : (
-        <div className="px-5 space-y-5">
+        <div className="px-5 pt-5 space-y-5">
 
           {/* ── Calendar Heatmap ─────────────────────────────────────────── */}
           <section

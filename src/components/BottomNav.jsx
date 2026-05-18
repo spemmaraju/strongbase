@@ -63,16 +63,18 @@ export default function BottomNav() {
           <button
             key={path}
             onClick={() => navigate(path)}
-            className="flex-1 flex flex-col items-center justify-center transition-all active:scale-90"
+            className="flex-1 flex flex-col items-center justify-center transition-all active:scale-95"
             style={{
               minHeight: 64,
               background: 'none',
               border: 'none',
+              borderTop: active ? '2px solid #14B8A6' : '2px solid transparent',
               cursor: 'pointer',
-              paddingTop: 10,
+              paddingTop: 8,
               paddingBottom: 6,
               gap: 4,
               position: 'relative',
+              transition: 'border-color 0.15s',
             }}
             aria-label={label}
           >
@@ -80,7 +82,7 @@ export default function BottomNav() {
             <span
               style={{
                 fontSize: 10,
-                fontWeight: 600,
+                fontWeight: active ? 700 : 600,
                 letterSpacing: '0.03em',
                 color,
                 transition: 'color 0.15s',
@@ -88,17 +90,6 @@ export default function BottomNav() {
             >
               {label}
             </span>
-            {active && (
-              <div
-                style={{
-                  width: 4,
-                  height: 4,
-                  borderRadius: '50%',
-                  backgroundColor: '#14B8A6',
-                  marginTop: 2,
-                }}
-              />
-            )}
           </button>
         )
       })}

@@ -80,8 +80,8 @@ export default function DayOverview() {
       >
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 mb-4 font-medium transition-opacity hover:opacity-70"
-          style={{ color: '#14B8A6', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+          className="flex items-center gap-2 mb-4 font-medium transition-opacity hover:opacity-70 active:opacity-60"
+          style={{ color: '#14B8A6', background: 'none', border: 'none', cursor: 'pointer', padding: '8px 0', minHeight: 44 }}
         >
           ← Back
         </button>

@@ -98,13 +98,14 @@ function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
 function ProgressBar({ completed, total }) {
   const pct = total > 0 ? (completed / total) * 100 : 0
   return (
-    <div style={{ height: 4, backgroundColor: '#1E293B', width: '100%' }}>
+    <div style={{ height: 6, backgroundColor: '#1E293B', width: '100%' }}>
       <div
         style={{
           height: '100%',
           backgroundColor: '#14B8A6',
           width: `${pct}%`,
           transition: 'width 0.4s ease',
+          borderRadius: '0 3px 3px 0',
         }}
       />
     </div>
@@ -167,10 +168,10 @@ function TransitionCard({ exercise }) {
       </p>
       {/* Motivational quote */}
       {quote && (
-        <p className="text-xs font-medium italic mt-6 px-4 leading-relaxed" style={{ color: '#475569', maxWidth: 280 }}>
+        <p className="text-xs font-medium italic mt-6 px-4 leading-relaxed" style={{ color: '#94A3B8', maxWidth: 280 }}>
           "{quote.text}"
           {quote.author !== 'StrongBase' && (
-            <span style={{ color: '#334155' }}> — {quote.author}</span>
+            <span style={{ color: '#64748B' }}> — {quote.author}</span>
           )}
         </p>
       )}
@@ -318,7 +319,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             backgroundColor: '#1E293B',
             borderRadius: 12,
             padding: '10px 14px',
-            borderLeft: '3px solid #0D948840',
+            borderLeft: '3px solid #0D9488',
           }}>
             {ex.cues.map((cue, i) => (
               <p key={i} style={{
@@ -342,13 +343,21 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
           left: 0,
           right: 0,
           zIndex: 20,
+        }}
+      >
+        {/* Gradient fade — masks content scrolling under the footer */}
+        <div style={{
+          height: 32,
+          background: 'linear-gradient(to bottom, transparent, #0F172A)',
+          pointerEvents: 'none',
+        }} />
+        <div style={{
           backgroundColor: '#0F172A',
           paddingLeft: 20,
           paddingRight: 20,
-          paddingTop: 12,
+          paddingTop: 4,
           paddingBottom: 'env(safe-area-inset-bottom, 24px)',
-        }}
-      >
+        }}>
         {isTimed ? (
           <div style={{ display: 'flex', gap: 10 }}>
             <button
@@ -412,6 +421,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             ← Previous
           </button>
         )}
+        </div>
       </div>
     </div>
   )
@@ -460,9 +470,6 @@ function RestScreen({ workout }) {
             ringColor="#64748B"
           />
         </div>
-        <p className="mt-4 text-sm font-semibold" style={{ color: '#94A3B8' }}>
-          Rest: {secondsRemaining}s
-        </p>
       </div>
 
       {/* Fixed footer — same treatment as Done button */}
@@ -473,24 +480,32 @@ function RestScreen({ workout }) {
           left: 0,
           right: 0,
           zIndex: 20,
+        }}
+      >
+        <div style={{
+          height: 32,
+          background: 'linear-gradient(to bottom, transparent, #0F172A)',
+          pointerEvents: 'none',
+        }} />
+        <div style={{
           backgroundColor: '#0F172A',
           paddingLeft: 20,
           paddingRight: 20,
-          paddingTop: 12,
+          paddingTop: 4,
           paddingBottom: 'env(safe-area-inset-bottom, 24px)',
-        }}
-      >
-        <button
-          onClick={skipRest}
-          style={{
-            width: '100%', height: 56, backgroundColor: 'transparent',
-            border: '1px solid #334155', borderRadius: 16,
-            color: '#14B8A6', fontSize: 15, fontWeight: 600,
-            cursor: 'pointer',
-          }}
-        >
-          Skip Rest →
-        </button>
+        }}>
+          <button
+            onClick={skipRest}
+            style={{
+              width: '100%', height: 56, backgroundColor: 'transparent',
+              border: '1px solid #334155', borderRadius: 16,
+              color: '#14B8A6', fontSize: 15, fontWeight: 600,
+              cursor: 'pointer',
+            }}
+          >
+            Skip Rest →
+          </button>
+        </div>
       </div>
     </div>
   )
@@ -605,12 +620,12 @@ function CompletionScreen({ workout, navigate, logs }) {
       {/* Motivational quote */}
       {quote && (
         <div
-          className="w-full rounded-xl p-4 mb-6 text-left"
-          style={{ backgroundColor: '#1E293B', borderLeft: '3px solid #14B8A6', maxWidth: 360 }}
+          className="w-full rounded-xl p-4 text-left"
+          style={{ backgroundColor: '#1E293B', borderLeft: '3px solid #14B8A6', maxWidth: 360, marginTop: 16, marginBottom: 20 }}
         >
           <p className="text-sm font-medium text-white leading-relaxed italic">"{quote.text}"</p>
           {quote.author !== 'StrongBase' && (
-            <p className="text-xs mt-1 font-semibold" style={{ color: '#475569' }}>— {quote.author}</p>
+            <p className="text-xs mt-1 font-semibold" style={{ color: '#64748B' }}>— {quote.author}</p>
           )}
         </div>
       )}
