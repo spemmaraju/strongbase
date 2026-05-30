@@ -1012,5 +1012,161 @@
     "youtubeId": "zi5__zBRzYc",
     "modification": "Lie face-down on the mat and bend one knee, reaching back to hold the ankle — this removes the balance challenge entirely.",
     "backSafe": true
+  },
+  {
+    "id": "banded-lat-pulldown",
+    "name": "Banded Lat Pulldown",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["lats", "lower trapezius", "rear deltoids", "biceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a resistance band overhead — loop it over a door frame, pull-up bar, or secure it at the top of a door. Kneel or sit on the floor far enough away that there is good tension in the band with arms extended overhead.",
+      "Grip the band with both hands slightly wider than shoulder-width, palms facing forward. Kneel or sit tall with your spine neutral and core lightly engaged.",
+      "Take a breath in. As you exhale, drive both elbows down and back toward your hips — imagine trying to put your elbows in your back pockets. Pull the band toward your upper chest or collarbone.",
+      "At the bottom of the movement, squeeze your lats (the muscles just under your armpits) firmly and hold for one second. Your shoulder blades should be depressed (pulled down) and pulled together.",
+      "Inhale and slowly return your arms overhead with control — do not let the band yank your arms up. Reach full extension at the top before beginning the next rep."
+    ],
+    "cues": [
+      "Drive elbows down toward your hips — not backward behind your body",
+      "Think of pulling your shoulder blades into your back pockets at the bottom",
+      "Lean back very slightly (10–15 degrees) — this puts your lats in a better pulling angle"
+    ],
+    "youtubeId": "",
+    "modification": "Widen your grip on the band or anchor it lower to reduce resistance. Alternatively, perform one arm at a time.",
+    "backSafe": true
+  },
+  {
+    "id": "prone-y-t-w",
+    "name": "Prone Y-T-W",
+    "category": "strength",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["lower trapezius", "serratus anterior", "rear deltoids", "rotator cuff"],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Lie face down on your mat with your forehead resting on a folded towel or your hands. Engage your core lightly to protect your lower back throughout all three positions.",
+      "Y position: Raise both arms overhead in a wide V shape with thumbs pointing toward the ceiling. Lift just your arms off the mat 2–3 inches, hold 2 seconds, lower. This targets the lower trapezius.",
+      "T position: Bring your arms straight out to your sides at shoulder height, forming a T shape with thumbs up. Lift both arms 2–3 inches, hold 2 seconds, lower. This targets the middle trapezius and rear deltoids.",
+      "W position: Bend your elbows to 90 degrees and raise them beside your head in a W shape with elbows wide. Squeeze your shoulder blades together as you lift. Hold 2 seconds, lower. This targets the rotator cuff and lower trap.",
+      "Complete 8 reps of each shape (Y then T then W) in sequence — that is one full set. Move slowly and with control. The range of motion is small; only lift as high as you can without straining your neck."
+    ],
+    "cues": [
+      "Thumbs point toward the ceiling in each position — this externally rotates the shoulder",
+      "Only lift your arms — do not arch your lower back or lift your chest off the mat",
+      "Movements are small and controlled — this is shoulder activation work, not a power exercise"
+    ],
+    "youtubeId": "",
+    "modification": "Perform one arm at a time, resting the other at your side. Reduce the hold time to 1 second if your shoulder fatigues quickly.",
+    "backSafe": true
+  },
+  {
+    "id": "supine-twist",
+    "name": "Supine Spinal Twist",
+    "category": "flexibility",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["thoracic spine", "obliques", "lower back", "piriformis"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie on your back on the mat with both legs straight. Draw your right knee in toward your chest and hold it briefly.",
+      "Cross your right knee over your body to the left side, guiding it gently with your left hand. Aim to bring your right knee toward the floor on the left side — it does not need to touch the floor.",
+      "Extend your right arm straight out to the right at shoulder height, palm facing up. Turn your head to look toward your right hand. This is the full twist position.",
+      "Hold for 40 seconds, breathing slowly and deeply. With each exhale, allow the twist to deepen slightly. Your right shoulder should remain in contact with the mat — if it lifts, reduce how far the knee crosses.",
+      "Release slowly and switch sides: left knee crosses to the right, left arm extends, head turns left."
+    ],
+    "cues": [
+      "Keep both shoulders flat on the mat — if one lifts, reduce the depth of the twist",
+      "Breathe into the twist — tension in your breath creates tension in the muscle",
+      "Let gravity do the work — do not force the knee down with your hand"
+    ],
+    "youtubeId": "",
+    "modification": "Place a pillow or folded blanket under your crossed knee to reduce the depth of the twist if it feels too intense in the lower back.",
+    "backSafe": true
+  },
+  {
+    "id": "hip-90-90",
+    "name": "90/90 Hip Stretch",
+    "category": "flexibility",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["hip external rotators", "hip internal rotators", "glutes", "hip capsule"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Sit on the floor on your mat. Bend your right leg in front of you with your shin roughly at a 90-degree angle to your thigh. Bend your left leg to the side with your shin also at 90 degrees behind you. Both hips should be on or close to the floor.",
+      "Sit as tall as possible. You will feel a stretch in the outside of your front hip (right glute and external rotators) and across the inside of your back hip (left hip flexor and internal rotators).",
+      "Place your hands on the floor beside you for support. Take a breath in and sit even taller through your spine. As you exhale, hinge slightly forward at the hip over your front leg — lean from your hip, not by rounding your back.",
+      "Hold for 40 seconds, breathing steadily. Focus on sitting tall and gradually relaxing into the stretch rather than forcing a deep fold.",
+      "To switch sides, lift both knees, pivot, and place your left shin in front and your right shin behind. Repeat on the other side."
+    ],
+    "cues": [
+      "Keep both sit bones in contact with the floor — if one hip floats up, reduce the angle of the back leg",
+      "Sit tall before folding — rounding your lower back early takes the stretch away from the hips",
+      "This stretch targets both internal and external hip rotation simultaneously — normal to feel it in different spots"
+    ],
+    "youtubeId": "",
+    "modification": "Sit with your back against a wall for posture support. Place folded blankets under both thighs if your hips are very tight.",
+    "backSafe": true
+  },
+  {
+    "id": "single-leg-balance-hold",
+    "name": "Single-Leg Balance Hold",
+    "category": "stability",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["ankle stabilizers", "glute medius", "core", "proprioception"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 20,
+    "instructions": [
+      "Stand tall near a wall or stable surface within arm's reach for safety. Shift your weight onto your right foot and stand with your right knee very slightly soft — never fully locked.",
+      "Lift your left foot off the floor, bending the left knee to about 90 degrees so your left thigh is roughly parallel to the floor. Keep your hips level — resist the urge to let your left hip drop lower than your right.",
+      "Fix your gaze on a single stationary point at eye level. This focal point dramatically improves balance. Keep your arms relaxed at your sides.",
+      "Hold for 30 seconds without touching the wall. If you feel yourself tipping, allow a brief fingertip touch — the goal is to need it less and less over time. Breathe normally throughout.",
+      "Switch feet and repeat on the left leg. Both sides count as one set."
+    ],
+    "cues": [
+      "Pick a focal point and do not look down — eyes down is the most common cause of wobbling",
+      "Keep your hips level — the raised-leg hip wants to drop, actively hold it even",
+      "Small ankle adjustments are normal and healthy — your ankle is supposed to be working"
+    ],
+    "youtubeId": "",
+    "modification": "Keep your fingertips lightly on the wall throughout. Progress to fingertip touch only, then no contact. For an advanced challenge, close your eyes.",
+    "backSafe": true
+  },
+  {
+    "id": "bodyweight-calf-raise",
+    "name": "Bodyweight Calf Raise",
+    "category": "strength",
+    "equipment": ["bodyweight"],
+    "targetMuscles": ["gastrocnemius", "soleus", "Achilles tendon"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Stand with your feet hip-width apart near a wall or stable surface for light balance support. Place your fingertips lightly on the surface — do not hold or press, just use it for balance.",
+      "Press through the balls of both feet to rise onto your toes as high as possible. Pause at the top for one full second, feeling the contraction in your calves.",
+      "Slowly lower your heels back to the floor over 2–3 seconds. This slow lowering is the most important part — eccentric loading of the Achilles tendon is the primary strengthening stimulus.",
+      "Your heels should fully return to the floor between reps — do not bounce or spring from the bottom. A brief pause at the floor before each rep ensures full range of motion.",
+      "Complete 15 reps per set. As this becomes easy, progress to single-leg calf raises: same movement on one foot at a time with the other foot lightly resting against your ankle."
+    ],
+    "cues": [
+      "Rise as high as you can — maximum height engages the full calf and Achilles range",
+      "Lower slowly — 2–3 seconds on the way down is where the real strengthening happens",
+      "Keep your knees straight throughout — bending them shifts the load from gastrocnemius to soleus"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce to 10 reps per set. For greater range of motion, stand on the edge of a step with heels hanging slightly off.",
+    "backSafe": true
   }
 ]

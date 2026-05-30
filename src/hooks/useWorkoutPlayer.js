@@ -214,6 +214,10 @@ export default function useWorkoutPlayer(dayNumber) {
     }
   }
 
+  function adjustRest(delta) {
+    setSecondsRemaining(prev => Math.max(5, prev + delta))
+  }
+
   function pauseTimer() { isModalOpenRef.current = true }
   function resumeTimer() { isModalOpenRef.current = false }
 
@@ -291,5 +295,6 @@ export default function useWorkoutPlayer(dayNumber) {
     isPaused,
     pauseWorkout,
     resumeWorkout,
+    adjustRest,
   }
 }

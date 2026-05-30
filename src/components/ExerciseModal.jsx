@@ -89,33 +89,49 @@ export default function ExerciseModal({ exercise, onClose }) {
           </button>
         </div>
 
-        {/* YouTube Embed */}
-        <div style={{ paddingLeft: 20, paddingRight: 20, marginTop: 16 }}>
-          <div
-            style={{
-              position: 'relative',
-              paddingTop: '56.25%',
-              borderRadius: 12,
-              overflow: 'hidden',
-              border: '1px solid #1E293B',
-            }}
-          >
-            <iframe
-              src={`https://www.youtube.com/embed/${exercise.youtubeId}?rel=0&modestbranding=1&playsinline=1`}
-              title={exercise.name}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+        {/* YouTube Embed — only shown when a video ID exists */}
+        {exercise.youtubeId ? (
+          <div style={{ paddingLeft: 20, paddingRight: 20, marginTop: 16 }}>
+            <div
               style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
+                position: 'relative',
+                paddingTop: '56.25%',
+                borderRadius: 12,
+                overflow: 'hidden',
+                border: '1px solid #1E293B',
               }}
-            />
+            >
+              <iframe
+                src={`https://www.youtube.com/embed/${exercise.youtubeId}?rel=0&modestbranding=1&playsinline=1`}
+                title={exercise.name}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                }}
+              />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div style={{ paddingLeft: 20, paddingRight: 20, marginTop: 16 }}>
+            <div style={{
+              height: 48,
+              borderRadius: 12,
+              backgroundColor: '#1E293B',
+              border: '1px solid #334155',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <p style={{ fontSize: 13, color: '#475569', margin: 0 }}>Video guide coming soon</p>
+            </div>
+          </div>
+        )}
 
         {/* Content */}
         <div style={{ paddingLeft: 20, paddingRight: 20, paddingBottom: 40 }}>

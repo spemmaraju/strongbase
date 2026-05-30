@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { computeBadges } from '../hooks/useBadges'
 import { useParams, useNavigate } from 'react-router-dom'
 import confetti from 'canvas-confetti'
 import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
@@ -434,6 +435,7 @@ function RestScreen({ workout }) {
     secondsRemaining,
     totalSeconds,
     skipRest,
+    adjustRest,
   } = workout
 
   const heading = isBetweenExercises ? 'Next Up' : 'Rest'
@@ -469,6 +471,38 @@ function RestScreen({ workout }) {
             totalSeconds={totalSeconds}
             ringColor="#64748B"
           />
+        </div>
+
+        {/* Rest time adjustment */}
+        <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
+          <button
+            onClick={() => adjustRest(-15)}
+            style={{
+              height: 36, paddingLeft: 16, paddingRight: 16,
+              backgroundColor: 'transparent',
+              border: '1px solid #334155',
+              borderRadius: 99,
+              color: '#64748B',
+              fontSize: 13, fontWeight: 600,
+              cursor: 'pointer',
+            }}
+          >
+            −15s
+          </button>
+          <button
+            onClick={() => adjustRest(30)}
+            style={{
+              height: 36, paddingLeft: 16, paddingRight: 16,
+              backgroundColor: '#1E293B',
+              border: '1px solid #334155',
+              borderRadius: 99,
+              color: '#94A3B8',
+              fontSize: 13, fontWeight: 600,
+              cursor: 'pointer',
+            }}
+          >
+            +30s
+          </button>
         </div>
       </div>
 
@@ -543,6 +577,11 @@ function CompletionScreen({ workout, navigate, logs }) {
   const [showToast, setShowToast] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
 
+  // Badge unlock ceremony
+  const [newBadges, setNewBadges] = useState([])
+  const [badgeIdx, setBadgeIdx] = useState(0)
+  const [showBadgeModal, setShowBadgeModal] = useState(false)
+
   // Fire confetti on mount
   useEffect(() => {
     confetti({
@@ -552,6 +591,26 @@ function CompletionScreen({ workout, navigate, logs }) {
       colors: ['#14B8A6', '#F8FAFC', '#F59E0B'],
     })
   }, [])
+
+  // Detect newly earned badges (compare before vs. after this workout)
+  useEffect(() => {
+    if (logs.length < 1) return
+    const prevBadges = computeBadges(logs.slice(1))  // logs[0] = most recent (this workout)
+    const currBadges = computeBadges(logs)
+    const earned = currBadges.filter(b => b.earned && !prevBadges.find(p => p.id === b.id)?.earned)
+    if (earned.length > 0) {
+      setNewBadges(earned)
+      setTimeout(() => setShowBadgeModal(true), 2200)
+    }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  function dismissBadge() {
+    if (badgeIdx < newBadges.length - 1) {
+      setBadgeIdx(i => i + 1)
+    } else {
+      setShowBadgeModal(false)
+    }
+  }
 
   // Show toast after 1 s — "Saved ✓" if just saved, else streak/milestone
   useEffect(() => {
@@ -655,6 +714,50 @@ function CompletionScreen({ workout, navigate, logs }) {
           View Summary
         </button>
       </div>
+
+      {/* Badge unlock modal */}
+      {showBadgeModal && newBadges[badgeIdx] && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center px-6"
+          style={{ backgroundColor: 'rgba(0,0,0,0.75)' }}
+        >
+          <div
+            className="w-full rounded-2xl p-7 text-center"
+            style={{
+              backgroundColor: '#1E293B',
+              border: '1px solid #14B8A650',
+              maxWidth: 320,
+              boxShadow: '0 0 40px 4px #14B8A630',
+              animation: 'bouncePop 400ms ease-out',
+            }}
+          >
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: '#14B8A6', textTransform: 'uppercase', marginBottom: 16 }}>
+              Badge Unlocked!
+            </p>
+            <div style={{ fontSize: 64, marginBottom: 12, animation: 'bouncePop 500ms ease-out' }}>
+              {newBadges[badgeIdx].emoji}
+            </div>
+            <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 20, color: '#F8FAFC', marginBottom: 6 }}>
+              {newBadges[badgeIdx].name}
+            </p>
+            <p style={{ fontSize: 13, color: '#94A3B8', marginBottom: 24, lineHeight: 1.5 }}>
+              {newBadges[badgeIdx].condition}
+            </p>
+            <button
+              onClick={dismissBadge}
+              style={{
+                width: '100%', height: 48,
+                backgroundColor: '#14B8A6',
+                border: 'none', borderRadius: 12,
+                color: '#fff', fontSize: 15, fontWeight: 700,
+                cursor: 'pointer',
+              }}
+            >
+              {badgeIdx < newBadges.length - 1 ? 'Next →' : 'Awesome!'}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
