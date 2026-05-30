@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { computeBadges } from '../hooks/useBadges'
 import { useParams, useNavigate } from 'react-router-dom'
 import confetti from 'canvas-confetti'
+import { supabase } from '../lib/supabase'
 import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
 import useStreak from '../hooks/useStreak'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
@@ -599,11 +600,27 @@ function SavingScreen() {
 
 function CompletionScreen({ workout, navigate, logs, prevLogs }) {
   const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds, logSaveStatus, setPerformance } = workout
+  const isWeekComplete = day.day === 7  // last day of the 7-day program
+
   // Pick a random "complete" category quote on mount
   const [quote] = useState(() => randomQuote(quotesData, 'complete'))
 
   // Compute live streak from the logs passed in from Home/parent
   const { currentStreak, totalWorkouts } = useStreak(logs)
+
+  const [restarting, setRestarting] = useState(false)
+
+  async function handleRestartWeek() {
+    setRestarting(true)
+    const today = new Date().toISOString().slice(0, 10)
+    try {
+      await supabase.auth.updateUser({ data: { programStartDate: today } })
+    } catch (e) {
+      console.error('Failed to update program start date:', e)
+    }
+    setRestarting(false)
+    navigate('/', { replace: true })
+  }
 
   const [showToast, setShowToast] = useState(false)
   const [toastMsg, setToastMsg] = useState('')
@@ -693,15 +710,32 @@ function CompletionScreen({ workout, navigate, logs, prevLogs }) {
         {toastMsg}
       </div>
 
-      <div style={{ width: 80, height: 80, backgroundColor: '#134E4A', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', animation: 'bouncePop 500ms ease-out', marginBottom: 16 }}>
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-      </div>
-      <h1 className="text-3xl font-extrabold text-white mb-2">Workout Complete!</h1>
-      <p className="text-lg font-bold mb-6" style={{ color: '#14B8A6' }}>
-        Day {day.day} — {day.theme}
-      </p>
+      {isWeekComplete ? (
+        <>
+          <div style={{ width: 96, height: 96, background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', animation: 'bouncePop 500ms ease-out', marginBottom: 16, boxShadow: '0 0 40px #F59E0B50' }}>
+            <span style={{ fontSize: 48 }}>🏆</span>
+          </div>
+          <h1 className="text-3xl font-extrabold text-white mb-2">Week 1 Complete!</h1>
+          <p className="text-lg font-bold mb-1" style={{ color: '#F59E0B' }}>
+            You finished the full 7-day program.
+          </p>
+          <p className="text-sm mb-6" style={{ color: '#64748B' }}>
+            That's a real foundation. Build on it.
+          </p>
+        </>
+      ) : (
+        <>
+          <div style={{ width: 80, height: 80, backgroundColor: '#134E4A', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', animation: 'bouncePop 500ms ease-out', marginBottom: 16 }}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h1 className="text-3xl font-extrabold text-white mb-2">Workout Complete!</h1>
+          <p className="text-lg font-bold mb-6" style={{ color: '#14B8A6' }}>
+            Day {day.day} — {day.theme}
+          </p>
+        </>
+      )}
 
       {/* Stats — 2×2 grid */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, width: '100%', maxWidth: 360, marginTop: 28 }}>
@@ -756,15 +790,45 @@ function CompletionScreen({ workout, navigate, logs, prevLogs }) {
 
       {/* Buttons */}
       <div className="w-full space-y-3" style={{ maxWidth: 360 }}>
-        <button
-          onClick={() => navigate('/')}
-          className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
-          style={{ minHeight: 56, backgroundColor: '#14B8A6', border: 'none', cursor: 'pointer' }}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
-        >
-          Back to Home
-        </button>
+        {isWeekComplete ? (
+          <>
+            {/* Week 2 locked teaser */}
+            <div style={{ backgroundColor: '#1E293B', borderRadius: 16, padding: '14px 18px', border: '1px solid rgba(245,158,11,0.2)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 12 }}>
+              <span style={{ fontSize: 28 }}>🔒</span>
+              <div style={{ textAlign: 'left' }}>
+                <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 14, color: '#F8FAFC', margin: 0 }}>Week 2 — Progressive Load</p>
+                <p style={{ fontSize: 12, color: '#64748B', margin: 0, marginTop: 2 }}>Coming soon — same movements, +1 set, more challenge</p>
+              </div>
+            </div>
+            <button
+              onClick={handleRestartWeek}
+              disabled={restarting}
+              className="w-full rounded-xl font-bold text-base transition-all active:scale-95"
+              style={{ minHeight: 56, backgroundColor: restarting ? '#334155' : '#F59E0B', color: restarting ? '#64748B' : '#0F172A', border: 'none', cursor: restarting ? 'default' : 'pointer' }}
+            >
+              {restarting ? 'Saving…' : 'Restart Week 1 →'}
+            </button>
+            <button
+              onClick={() => navigate('/')}
+              className="w-full rounded-xl font-semibold text-base transition-all active:scale-95"
+              style={{ minHeight: 52, backgroundColor: '#1E293B', color: '#F8FAFC', border: '1px solid #334155', cursor: 'pointer' }}
+            >
+              Back to Home
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={() => navigate('/')}
+              className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
+              style={{ minHeight: 56, backgroundColor: '#14B8A6', border: 'none', cursor: 'pointer' }}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
+              onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+            >
+              Back to Home
+            </button>
+          </>
+        )}
         <button
           onClick={() => navigate(`/day/${day.day}`)}
           className="w-full rounded-xl font-semibold text-base transition-all active:scale-95"

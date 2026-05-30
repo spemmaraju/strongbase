@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 import weeklyPlan from '../data/weeklyPlan.json'
 import useStreak from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
@@ -317,6 +318,31 @@ export default function Home() {
   const badges = useBadges(logs)
   const bannerProps = getStreakBannerProps(currentStreak)
 
+  // Program-complete detection: all 7 days logged since this cycle's start date
+  const programStartDate = user?.user_metadata?.programStartDate
+    || user?.created_at?.slice(0, 10)
+    || null
+  const logsThisCycle = programStartDate
+    ? logs.filter(l => l.date >= programStartDate)
+    : logs
+  const isProgramComplete = [1, 2, 3, 4, 5, 6, 7].every(
+    n => logsThisCycle.some(l => l.dayNumber === n)
+  )
+
+  const [restarting, setRestarting] = useState(false)
+  async function handleRestartProgram() {
+    setRestarting(true)
+    const today = new Date().toISOString().slice(0, 10)
+    try {
+      await supabase.auth.updateUser({ data: { programStartDate: today } })
+      // onAuthStateChange will fire USER_UPDATED and refresh user in useAuth,
+      // which will cause getProgramDayNumber to return 1. No reload needed.
+    } catch (e) {
+      console.error('Failed to reset program start date:', e)
+    }
+    setRestarting(false)
+  }
+
   async function handleSignOut() {
     await signOut()
     navigate('/login')
@@ -538,7 +564,40 @@ export default function Home() {
           </section>
 
           {/* ── Today's Focus — context-aware states ──────────────────────── */}
-          {todayDone ? (
+          {isProgramComplete ? (
+            /* STATE 0: Full 7-day program complete — show restart + Week 2 teaser */
+            <section className="rounded-2xl p-5" style={{ backgroundColor: '#1E293B', border: '1px solid rgba(245,158,11,0.25)', borderLeft: '4px solid #F59E0B', boxShadow: '0 0 20px 2px #F59E0B20' }}>
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#F59E0B', borderLeft: '2px solid #F59E0B', paddingLeft: 8 }}>Program Complete</p>
+                  <p className="text-xl font-extrabold text-white leading-tight" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Week 1 — Done! 🏆</p>
+                  <p className="text-xs mt-1" style={{ color: '#64748B' }}>You completed all 7 days. That's the foundation built.</p>
+                </div>
+                <span className="text-4xl flex-shrink-0 ml-3">🏆</span>
+              </div>
+
+              {/* Week 2 teaser */}
+              <div style={{ backgroundColor: '#0F172A', borderRadius: 12, padding: '12px 14px', marginBottom: 14, border: '1px solid #334155', display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ fontSize: 22 }}>🔒</span>
+                <div>
+                  <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 13, color: '#94A3B8', margin: 0 }}>Week 2 — Progressive Load</p>
+                  <p style={{ fontSize: 11, color: '#475569', margin: 0, marginTop: 2 }}>+1 set per exercise · coming soon</p>
+                </div>
+              </div>
+
+              <button
+                onClick={handleRestartProgram}
+                disabled={restarting}
+                className="w-full rounded-xl font-bold text-base transition-all active:scale-95"
+                style={{ minHeight: 52, backgroundColor: restarting ? '#334155' : '#F59E0B', color: restarting ? '#64748B' : '#0F172A', border: 'none', cursor: restarting ? 'default' : 'pointer' }}
+                onMouseEnter={e => { if (!restarting) e.currentTarget.style.backgroundColor = '#D97706' }}
+                onMouseLeave={e => { if (!restarting) e.currentTarget.style.backgroundColor = '#F59E0B' }}
+              >
+                {restarting ? 'Updating…' : 'Restart Week 1 →'}
+              </button>
+            </section>
+
+          ) : todayDone ? (
             /* STATE 1: Already done today */
             <section className="rounded-2xl p-5" style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.06)', borderLeft: '4px solid #14B8A6', boxShadow: '0 0 16px 2px #14B8A620' }}>
               <p className="text-sm font-semibold mb-2" style={{ color: '#14B8A6' }}>✅ Workout Complete</p>
