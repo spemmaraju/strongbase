@@ -17,6 +17,21 @@ const QUOTES = [
   "Consistency beats intensity. Show up, do the work.",
 ]
 
+// Derive the accent colour for a day from its exercise categories
+function getDayAccentColor(day) {
+  const exMap = Object.fromEntries(exercisesData.map(e => [e.id, e]))
+  const exercises = day.exerciseIds.map(id => exMap[id]).filter(Boolean)
+  const counts = {}
+  exercises.forEach(ex => {
+    if (ex.category !== 'warm-up' && ex.category !== 'flexibility') {
+      counts[ex.category] = (counts[ex.category] || 0) + 1
+    }
+  })
+  if (Object.keys(counts).length === 0) return CAT_COLORS['flexibility'] || '#22C55E'
+  const primary = Object.entries(counts).sort(([, a], [, b]) => b - a)[0][0]
+  return CAT_COLORS[primary] || '#14B8A6'
+}
+
 function getTodayDayNumber() {
   const jsDay = new Date().getDay() // 0=Sun
   return jsDay === 0 ? 7 : jsDay
@@ -486,15 +501,10 @@ export default function Home() {
                         <span style={{ fontSize: 9, color: '#fff', fontWeight: 800 }}>✓</span>
                       </div>
                     )}
-                    {/* Color category dot */}
+                    {/* Color category dot — derived from day's exercise categories */}
                     <div style={{
                       width: 6, height: 6, borderRadius: '50%', marginBottom: 4,
-                      backgroundColor: [1, 7].includes(day.day) ? '#14B8A6'
-                        : day.day === 2 ? '#8B5CF6'
-                        : day.day === 3 ? '#F59E0B'
-                        : day.day === 4 ? '#22C55E'
-                        : day.day === 5 ? '#14B8A6'
-                        : '#8B5CF6',
+                      backgroundColor: isToday ? '#fff' : getDayAccentColor(day),
                     }} />
                     <span className="text-xs font-bold" style={{ color: isToday ? '#fff' : '#94A3B8' }}>
                       Day {day.day}

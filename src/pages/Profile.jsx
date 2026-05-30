@@ -14,8 +14,13 @@ export default function Profile() {
     navigate('/login')
   }
 
-  const athleteName = user?.email ? user.email.split('@')[0] : '—'
-  const initials = (user?.email || '?').slice(0, 2).toUpperCase()
+  const displayName = user?.user_metadata?.display_name
+    || user?.user_metadata?.full_name
+    || null
+  const athleteName = displayName || 'Athlete'
+  const initials = displayName
+    ? displayName.slice(0, 2).toUpperCase()
+    : (user?.email || '?').slice(0, 2).toUpperCase()
 
   let memberSince = '—'
   if (user?.created_at) {

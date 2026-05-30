@@ -367,7 +367,7 @@
     "id": "shoulder-press",
     "name": "Dumbbell Shoulder Press",
     "category": "strength",
-    "equipment": ["15lb-dumbbells"],
+    "equipment": ["10lb-dumbbells"],
     "targetMuscles": ["front deltoids", "lateral deltoids", "triceps", "upper traps"],
     "sets": 3,
     "reps": 10,
