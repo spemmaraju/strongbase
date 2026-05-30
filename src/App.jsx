@@ -9,6 +9,7 @@ import WorkoutDetail from './pages/WorkoutDetail'
 import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Onboarding from './pages/Onboarding'
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         {/* Public routes */}
         <Route path="/login"  element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+
+        {/* Onboarding — auth-protected, no nav shell */}
+        <Route path="/onboarding" element={<AuthGuard skipOnboardingCheck><Onboarding /></AuthGuard>} />
 
         {/* Protected routes with bottom nav */}
         <Route path="/"        element={<AuthGuard><Layout><Home /></Layout></AuthGuard>} />

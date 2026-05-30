@@ -24,7 +24,8 @@ function LoadingScreen() {
   )
 }
 
-export default function AuthGuard({ children }) {
+// skipOnboardingCheck: set on the /onboarding route itself to avoid redirect loop
+export default function AuthGuard({ children, skipOnboardingCheck = false }) {
   const { user, loading } = useAuth()
   const location = useLocation()
 
@@ -33,6 +34,11 @@ export default function AuthGuard({ children }) {
   if (!user) {
     // Remember where the user was trying to go
     return <Navigate to="/login" state={{ from: location }} replace />
+  }
+
+  // New users (no onboardingComplete flag) → send to onboarding once
+  if (!skipOnboardingCheck && !user.user_metadata?.onboardingComplete) {
+    return <Navigate to="/onboarding" replace />
   }
 
   return children
