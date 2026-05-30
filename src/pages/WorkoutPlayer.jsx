@@ -597,7 +597,7 @@ function SavingScreen() {
   )
 }
 
-function CompletionScreen({ workout, navigate, logs }) {
+function CompletionScreen({ workout, navigate, logs, prevLogs }) {
   const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds, logSaveStatus, setPerformance } = workout
   // Pick a random "complete" category quote on mount
   const [quote] = useState(() => randomQuote(quotesData, 'complete'))
@@ -623,17 +623,28 @@ function CompletionScreen({ workout, navigate, logs }) {
     })
   }, [])
 
-  // Detect newly earned badges (compare before vs. after this workout)
+  // Detect newly earned badges.
+  // prevLogs = snapshot captured before this workout started (passed from parent).
+  // logs = refreshed after save completes. Re-run when logs changes so we catch
+  // the update even if refetch finishes after this component mounts.
+  const badgeDiffFiredRef = useRef(false)
   useEffect(() => {
-    if (logs.length < 1) return
-    const prevBadges = computeBadges(logs.slice(1))  // logs[0] = most recent (this workout)
+    if (badgeDiffFiredRef.current) return   // only fire once
+    if (logs.length < 1) return             // wait for refetch
+    // If logs already includes this workout (length grew), run the diff
+    const prev = prevLogs ?? []
+    const prevBadges = computeBadges(prev)
     const currBadges = computeBadges(logs)
     const earned = currBadges.filter(b => b.earned && !prevBadges.find(p => p.id === b.id)?.earned)
     if (earned.length > 0) {
+      badgeDiffFiredRef.current = true
       setNewBadges(earned)
       setTimeout(() => setShowBadgeModal(true), 2200)
+    } else if (logs.length > prev.length) {
+      // Logs refreshed and no new badges — mark as done so we stop checking
+      badgeDiffFiredRef.current = true
     }
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [logs]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function dismissBadge() {
     if (badgeIdx < newBadges.length - 1) {
@@ -920,6 +931,16 @@ export default function WorkoutPlayer() {
   const { logs, refetch: refetchLogs } = useWorkoutLogs()
   const { playSound, soundEnabled, toggleSound } = useSound()
 
+  // Snapshot of logs captured the moment the workout begins (before it's saved).
+  // Passed to CompletionScreen so the badge diff compares "before this session"
+  // vs "after refetch" — avoids the race where logs.slice(1) is empty pre-refetch.
+  const prevLogsRef = useRef(null)
+  useEffect(() => {
+    if (workout.phase === 'exercise' && prevLogsRef.current === null) {
+      prevLogsRef.current = logs
+    }
+  }, [workout.phase]) // eslint-disable-line react-hooks/exhaustive-deps
+
   // Refresh logs once the workout is saved so CompletionScreen shows the updated streak
   useEffect(() => {
     if (workout.logSaveStatus === 'done') refetchLogs()
@@ -1032,7 +1053,10 @@ export default function WorkoutPlayer() {
   }
 
   const handleSkipToRest = () => {
-    workout.completeSet()
+    // For timed exercises: cleanly clear the interval and fire the completion callback
+    // (same as the timer running out naturally). Do NOT call completeSet() directly —
+    // that leaves the countdown interval orphaned.
+    workout.skipRest()
   }
 
   const showTopBar = phase !== 'idle' && phase !== 'complete'
@@ -1089,7 +1113,7 @@ export default function WorkoutPlayer() {
         <SavingScreen />
       )}
       {phase === 'complete' && workout.logSaveStatus !== 'saving' && (
-        <CompletionScreen workout={workout} navigate={navigate} logs={logs} />
+        <CompletionScreen workout={workout} navigate={navigate} logs={logs} prevLogs={prevLogsRef.current ?? []} />
       )}
 
       {/* Overlays */}

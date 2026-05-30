@@ -36,8 +36,11 @@ export default function AuthGuard({ children, skipOnboardingCheck = false }) {
     return <Navigate to="/login" state={{ from: location }} replace />
   }
 
-  // New users (no onboardingComplete flag) → send to onboarding once
-  if (!skipOnboardingCheck && !user.user_metadata?.onboardingComplete) {
+  // New users (no onboardingComplete flag) → send to onboarding once.
+  // Also check localStorage as a fallback for the case where Supabase save failed
+  // but the user completed the flow (prevents infinite redirect loop).
+  const localFallback = localStorage.getItem('strongbase_onboarding_complete') === 'true'
+  if (!skipOnboardingCheck && !user.user_metadata?.onboardingComplete && !localFallback) {
     return <Navigate to="/onboarding" replace />
   }
 

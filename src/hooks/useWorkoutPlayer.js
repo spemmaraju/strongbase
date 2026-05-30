@@ -220,6 +220,7 @@ export default function useWorkoutPlayer(dayNumber) {
 
   function adjustRest(delta) {
     setSecondsRemaining(prev => Math.max(5, prev + delta))
+    setTotalSeconds(prev => Math.max(5, prev + delta))
   }
 
   function logSetPerformance(exerciseId, setNumber, targetReps, actualReps) {

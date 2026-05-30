@@ -399,7 +399,12 @@ export default function Onboarding() {
       if (error) throw error
     } catch (e) {
       console.error('Failed to save onboarding data:', e)
-      // Don't block — let them in anyway; they can redo settings from Profile
+      // Supabase save failed — write a localStorage flag so AuthGuard doesn't
+      // loop the user back to onboarding on the next page visit. The data will
+      // re-sync next time they open the app and Supabase is reachable.
+      try {
+        localStorage.setItem('strongbase_onboarding_complete', 'true')
+      } catch {}
     }
 
     setSaving(false)

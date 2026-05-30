@@ -293,13 +293,7 @@ export default function Home() {
   const todayDone = logs.some(l => l.date === todayISODate && l.dayNumber === todayDayNumber)
   const nextDayNumber = (todayDayNumber % 7) + 1
 
-  // Context-aware card state
-  const isRestDay = todayDayNumber === 4
-  const isOverdue = !todayDone && !isRestDay && totalWorkouts > 0 && currentStreak === 0
-  const daysSinceLast = logs.length > 0
-    ? Math.round((new Date() - new Date(logs[0].date + 'T12:00:00')) / 86400000)
-    : 0
-
+  // Streak/workout counts must come BEFORE the card-state derivations below
   const {
     currentStreak,
     longestStreak,
@@ -307,6 +301,18 @@ export default function Home() {
     thisWeekCount,
     completedThisWeekDayNumbers,
   } = useStreak(logs)
+
+  // Context-aware card state
+  // No day is a true "rest day" — Day 4 is active recovery (it still has exercises)
+  const isRestDay = false
+  const isOverdue = !todayDone && !isRestDay && totalWorkouts > 0 && currentStreak === 0
+  // Use reduce so we aren't assuming logs are sorted newest-first
+  const latestLogDate = logs.length > 0
+    ? logs.reduce((max, l) => (l.date > max ? l.date : max), logs[0].date)
+    : null
+  const daysSinceLast = latestLogDate
+    ? Math.round((new Date() - new Date(latestLogDate + 'T12:00:00')) / 86400000)
+    : 0
 
   const badges = useBadges(logs)
   const bannerProps = getStreakBannerProps(currentStreak)
