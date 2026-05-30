@@ -162,6 +162,28 @@ export function getDayEquipment(day) {
   return [...eq]
 }
 
+// ── Program day logic ─────────────────────────────────────────────────────
+// Returns which day of the 7-day program the user is currently on (1–7).
+// Priority: user_metadata.programStartDate → user.created_at → calendar fallback.
+// New users start on Day 1 from their sign-up date and cycle through Days 1-7.
+export function getProgramDayNumber(user) {
+  const startStr = user?.user_metadata?.programStartDate
+    || user?.created_at?.slice(0, 10)
+    || null
+
+  if (!startStr) {
+    // Fallback: Mon=1 … Sun=7 (original behavior)
+    const d = new Date().getDay()
+    return d === 0 ? 7 : d
+  }
+
+  const today = new Date().toISOString().slice(0, 10)
+  const daysSince = Math.round(
+    (new Date(today + 'T12:00:00') - new Date(startStr + 'T12:00:00')) / 86400000
+  )
+  return ((daysSince % 7) + 7) % 7 + 1
+}
+
 // Pick a random quote by category from a quotes array
 export function randomQuote(quotesArr, category) {
   const filtered = quotesArr.filter(q => q.category === category)

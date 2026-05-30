@@ -5,7 +5,7 @@ import useStreak from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useAuth from '../hooks/useAuth'
-import { formatDuration, formatDate, getDayComposition, getDayEquipment, CAT_COLORS, CAT_LABELS, EQUIP_DISPLAY } from '../utils/workoutStats'
+import { formatDuration, formatDate, getDayComposition, getDayEquipment, CAT_COLORS, CAT_LABELS, EQUIP_DISPLAY, getProgramDayNumber } from '../utils/workoutStats'
 import exercisesData from '../data/exercises.json'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
@@ -17,7 +17,7 @@ const QUOTES = [
   "Consistency beats intensity. Show up, do the work.",
 ]
 
-// Derive the accent colour for a day from its exercise categories
+// getDayAccentColor — derives the category dot colour for a day card
 function getDayAccentColor(day) {
   const exMap = Object.fromEntries(exercisesData.map(e => [e.id, e]))
   const exercises = day.exerciseIds.map(id => exMap[id]).filter(Boolean)
@@ -30,11 +30,6 @@ function getDayAccentColor(day) {
   if (Object.keys(counts).length === 0) return CAT_COLORS['flexibility'] || '#22C55E'
   const primary = Object.entries(counts).sort(([, a], [, b]) => b - a)[0][0]
   return CAT_COLORS[primary] || '#14B8A6'
-}
-
-function getTodayDayNumber() {
-  const jsDay = new Date().getDay() // 0=Sun
-  return jsDay === 0 ? 7 : jsDay
 }
 
 function getDailyQuote() {
@@ -284,7 +279,7 @@ function UserMenu({ user, onSignOut }) {
 export default function Home() {
   const navigate = useNavigate()
   const { user, signOut } = useAuth()
-  const todayDayNumber = getTodayDayNumber()
+  const todayDayNumber = getProgramDayNumber(user)
   const quote = getDailyQuote()
   const [tooltipBadge, setTooltipBadge] = useState(null)
 
