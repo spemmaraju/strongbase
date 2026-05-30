@@ -298,6 +298,13 @@ export default function Home() {
   const todayDone = logs.some(l => l.date === todayISODate && l.dayNumber === todayDayNumber)
   const nextDayNumber = (todayDayNumber % 7) + 1
 
+  // Context-aware card state
+  const isRestDay = todayDayNumber === 4
+  const isOverdue = !todayDone && !isRestDay && totalWorkouts > 0 && currentStreak === 0
+  const daysSinceLast = logs.length > 0
+    ? Math.round((new Date() - new Date(logs[0].date + 'T12:00:00')) / 86400000)
+    : 0
+
   const {
     currentStreak,
     longestStreak,
@@ -529,73 +536,89 @@ export default function Home() {
             </div>
           </section>
 
-          {/* ── Today's Focus ─────────────────────────────────────────────── */}
+          {/* ── Today's Focus — context-aware states ──────────────────────── */}
           {todayDone ? (
-            /* ── Workout already done today ── */
-            <section
-              className="rounded-2xl p-5"
-              style={{
-                backgroundColor: '#1E293B',
-                border: '1px solid rgba(255,255,255,0.06)',
-                borderLeft: '4px solid #14B8A6',
-                boxShadow: '0 0 16px 2px #14B8A620',
-              }}
-            >
-              <p className="text-sm font-semibold mb-2" style={{ color: '#14B8A6' }}>
-                ✅ Workout Complete
-              </p>
-              <p className="text-lg font-bold text-white mb-1">
-                Day {todayDayNumber} — {todayDay.theme}
-              </p>
-              <p className="text-3xl font-extrabold mb-5" style={{ color: '#14B8A6' }}>
-                🔥 {currentStreak} day streak!
-              </p>
-              <button
-                onClick={() => navigate(`/day/${nextDayNumber}`)}
-                className="text-sm font-semibold"
-                style={{ color: '#14B8A6', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-              >
+            /* STATE 1: Already done today */
+            <section className="rounded-2xl p-5" style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.06)', borderLeft: '4px solid #14B8A6', boxShadow: '0 0 16px 2px #14B8A620' }}>
+              <p className="text-sm font-semibold mb-2" style={{ color: '#14B8A6' }}>✅ Workout Complete</p>
+              <p className="text-lg font-bold text-white mb-1">Day {todayDayNumber} — {todayDay.theme}</p>
+              <p className="text-3xl font-extrabold mb-5" style={{ color: '#14B8A6' }}>🔥 {currentStreak} day streak!</p>
+              <button onClick={() => navigate(`/day/${nextDayNumber}`)} className="text-sm font-semibold" style={{ color: '#14B8A6', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
                 → Preview Day {nextDayNumber}
               </button>
             </section>
+
+          ) : isRestDay ? (
+            /* STATE 2: Active recovery day */
+            <section className="rounded-2xl p-5" style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.06)', borderLeft: '4px solid #22C55E', boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#22C55E', borderLeft: '2px solid #22C55E', paddingLeft: 8 }}>Rest & Recover</p>
+                  <p className="text-lg font-bold text-white leading-tight">Day 4 — Active Recovery</p>
+                  <p className="text-xs mt-0.5" style={{ color: '#64748B' }}>Light mobility only — your muscles are rebuilding</p>
+                </div>
+                <span className="text-4xl flex-shrink-0 ml-3">🧘</span>
+              </div>
+              <div className="flex gap-2 mt-4">
+                <button
+                  onClick={() => navigate('/day/4')}
+                  className="flex-1 rounded-xl font-bold text-sm text-white transition-all active:scale-95"
+                  style={{ minHeight: 48, backgroundColor: '#22C55E', border: 'none', cursor: 'pointer' }}
+                >
+                  Start Recovery
+                </button>
+                <button
+                  onClick={() => navigate(`/day/${nextDayNumber}`)}
+                  className="rounded-xl font-semibold text-sm transition-all active:scale-95"
+                  style={{ minHeight: 48, paddingLeft: 16, paddingRight: 16, backgroundColor: '#1E3A2E', color: '#22C55E', border: '1px solid #22C55E40', cursor: 'pointer', whiteSpace: 'nowrap' }}
+                >
+                  Preview Day {nextDayNumber} →
+                </button>
+              </div>
+            </section>
+
+          ) : isOverdue ? (
+            /* STATE 3: Comeback — streak broken, hasn't worked out in 2+ days */
+            <section className="rounded-2xl p-5" style={{ backgroundColor: '#1E293B', border: '1px solid rgba(245,158,11,0.2)', borderLeft: '4px solid #F59E0B', boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#F59E0B', borderLeft: '2px solid #F59E0B', paddingLeft: 8 }}>
+                    {daysSinceLast === 1 ? 'Back at it?' : `${daysSinceLast} days since your last workout`}
+                  </p>
+                  <p className="text-lg font-bold text-white leading-tight">Day {todayDayNumber} — {todayDay.theme}</p>
+                  <p className="text-xs mt-0.5" style={{ color: '#64748B' }}>Pick up where you left off — every rep counts</p>
+                </div>
+                <span className="text-4xl flex-shrink-0 ml-3">⚡</span>
+              </div>
+              <button
+                onClick={() => navigate(`/day/${todayDayNumber}`)}
+                className="w-full rounded-xl font-bold text-base text-white transition-all active:scale-95"
+                style={{ minHeight: 52, backgroundColor: '#F59E0B', border: 'none', cursor: 'pointer', marginTop: 4 }}
+                onMouseEnter={e => e.currentTarget.style.backgroundColor = '#D97706'}
+                onMouseLeave={e => e.currentTarget.style.backgroundColor = '#F59E0B'}
+              >
+                Get Back to It
+              </button>
+            </section>
+
           ) : (
-            /* ── Start today's workout ── */
-            <section
-              className="rounded-2xl p-5"
-              style={{
-                backgroundColor: '#1E293B',
-                border: '1px solid rgba(255,255,255,0.06)',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
-              }}
-            >
-              {/* Header row */}
+            /* STATE 4: Normal — start today's workout */
+            <section className="rounded-2xl p-5" style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
               <div className="flex items-center justify-between mb-3">
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8', borderLeft: '2px solid #0D9488', paddingLeft: 8 }}>
-                    Today's Focus
-                  </p>
-                  <p className="text-lg font-bold text-white mt-0.5 leading-tight">
-                    Day {todayDayNumber} — {todayDay.theme}
-                  </p>
+                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#94A3B8', borderLeft: '2px solid #0D9488', paddingLeft: 8 }}>Today's Focus</p>
+                  <p className="text-lg font-bold text-white mt-0.5 leading-tight">Day {todayDayNumber} — {todayDay.theme}</p>
                   <p className="text-xs mt-0.5" style={{ color: '#64748B' }}>{todayDay.focusArea}</p>
                 </div>
                 <span className="text-4xl flex-shrink-0 ml-3">{todayDay.emoji}</span>
               </div>
 
-              {/* Workout composition bar */}
               {todayComp.total > 0 && (
                 <div className="mb-3">
                   <div style={{ display: 'flex', height: 6, borderRadius: 4, overflow: 'hidden', gap: 2 }}>
-                    {Object.entries(todayComp.counts)
-                      .filter(([, n]) => n > 0)
-                      .map(([cat, n]) => (
-                        <div
-                          key={cat}
-                          title={CAT_LABELS[cat]}
-                          style={{ flex: n / todayComp.total, backgroundColor: CAT_COLORS[cat] || '#475569', borderRadius: 2 }}
-                        />
-                      ))
-                    }
+                    {Object.entries(todayComp.counts).filter(([, n]) => n > 0).map(([cat, n]) => (
+                      <div key={cat} title={CAT_LABELS[cat]} style={{ flex: n / todayComp.total, backgroundColor: CAT_COLORS[cat] || '#475569', borderRadius: 2 }} />
+                    ))}
                   </div>
                   <div className="flex flex-wrap gap-3 mt-1.5">
                     {Object.entries(todayComp.counts).filter(([, n]) => n > 0).map(([cat, n]) => (
@@ -608,20 +631,10 @@ export default function Home() {
                 </div>
               )}
 
-              {/* Duration + Equipment */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span
-                  className="text-xs font-semibold px-2.5 py-1 rounded-full"
-                  style={{ backgroundColor: '#334155', color: '#94A3B8' }}
-                >
-                  ⏱ ~{todayDay.durationMinutes} min
-                </span>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ backgroundColor: '#334155', color: '#94A3B8' }}>⏱ ~{todayDay.durationMinutes} min</span>
                 {todayEquip.map(eq => (
-                  <span
-                    key={eq}
-                    className="text-xs font-semibold px-2.5 py-1 rounded-full"
-                    style={{ backgroundColor: '#334155', color: '#94A3B8' }}
-                  >
+                  <span key={eq} className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ backgroundColor: '#334155', color: '#94A3B8' }}>
                     {EQUIP_DISPLAY[eq]?.label || eq.replace(/-/g, ' ')}
                   </span>
                 ))}

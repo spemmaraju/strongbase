@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useStreak from '../hooks/useStreak'
+import { getTopMuscles, formatDuration } from '../utils/workoutStats'
 
 export default function Profile() {
   const navigate = useNavigate()
@@ -62,6 +63,11 @@ export default function Profile() {
   }
 
   const weekProgress = Math.min(thisWeekCount / 7, 1)
+
+  // Muscles worked + total time — derived from logs
+  const allCompletedIds = logs.flatMap(l => l.completedExerciseIds || [])
+  const topMuscles = getTopMuscles(allCompletedIds, 8)
+  const totalTimeSeconds = logs.reduce((sum, l) => sum + (l.totalTimeSeconds || 0), 0)
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
@@ -179,20 +185,50 @@ export default function Profile() {
           </div>
         </div>
 
+        <div style={{ borderBottom: '1px solid rgba(51,65,85,0.3)' }}>
+          <div style={STAT_ROW_STYLE}>
+            <span style={{ fontSize: 14, color: '#94A3B8' }}>Total Time Trained</span>
+            <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, color: '#F8FAFC' }}>
+              {formatDuration(totalTimeSeconds)}
+            </span>
+          </div>
+        </div>
+
         <div style={STAT_ROW_STYLE}>
           <span style={{ fontSize: 14, color: '#94A3B8' }}>Member Since</span>
-          <span
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 600,
-              fontSize: 14,
-              color: '#F8FAFC',
-            }}
-          >
+          <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, color: '#F8FAFC' }}>
             {memberSince}
           </span>
         </div>
       </div>
+
+      {/* MUSCLES WORKED CARD */}
+      {topMuscles.length > 0 && (
+        <div style={CARD_STYLE}>
+          <span style={SECTION_LABEL_STYLE}>MUSCLES WORKED</span>
+          <p style={{ fontSize: 12, color: '#64748B', marginBottom: 12 }}>
+            Based on your {logs.length} completed workout{logs.length !== 1 ? 's' : ''}
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {topMuscles.map((muscle, i) => (
+              <span
+                key={muscle}
+                style={{
+                  paddingLeft: 12, paddingRight: 12,
+                  paddingTop: 6, paddingBottom: 6,
+                  borderRadius: 999,
+                  fontSize: 12, fontWeight: 600,
+                  backgroundColor: i < 3 ? '#134E4A' : '#1E293B',
+                  color: i < 3 ? '#2DD4BF' : '#64748B',
+                  border: `1px solid ${i < 3 ? '#14B8A640' : '#33415540'}`,
+                }}
+              >
+                {muscle}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* PLAN CARD */}
       <div style={CARD_STYLE}>
