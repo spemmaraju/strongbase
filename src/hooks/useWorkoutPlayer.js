@@ -22,6 +22,10 @@ export default function useWorkoutPlayer(dayNumber) {
   const [totalSetsCompleted, setTotalSetsCompleted] = useState(0)
   const [logSaveStatus, setLogSaveStatus] = useState('idle') // idle|saving|done|error
 
+  // ── Set performance tracking ───────────────────────────────────────────────
+  const [setPerformance, setSetPerformance] = useState([])
+  const setPerformanceRef = useRef([])
+
   // ── Rest metadata ─────────────────────────────────────────────────────────
   const [isBetweenExercises, setIsBetweenExercises] = useState(false)
   const [nextExIdx, setNextExIdx] = useState(0)
@@ -218,6 +222,13 @@ export default function useWorkoutPlayer(dayNumber) {
     setSecondsRemaining(prev => Math.max(5, prev + delta))
   }
 
+  function logSetPerformance(exerciseId, setNumber, targetReps, actualReps) {
+    const entry = { exerciseId, setNumber, targetReps, actualReps }
+    const updated = [...setPerformanceRef.current, entry]
+    setPerformanceRef.current = updated
+    setSetPerformance(updated)
+  }
+
   function pauseTimer() { isModalOpenRef.current = true }
   function resumeTimer() { isModalOpenRef.current = false }
 
@@ -235,15 +246,22 @@ export default function useWorkoutPlayer(dayNumber) {
     if (!day) return
     setLogSaveStatus('saving')
 
+    const date = new Date().toISOString().slice(0, 10)
     const log = {
       dayNumber: day.day,
-      date: new Date().toISOString().slice(0, 10),
+      date,
       theme: day.theme,
       completedExerciseIds: completedIds,
       totalSets,
       totalTimeSeconds: elapsedRef.current,
       completedAt: new Date().toISOString(),
     }
+
+    // Save set performance locally (no DB column needed)
+    try {
+      const perfKey = `strongbase_perf_${date}_d${day.day}`
+      localStorage.setItem(perfKey, JSON.stringify(setPerformanceRef.current))
+    } catch (e) { /* storage full — ignore */ }
 
     try {
       const { data: { user } } = await supabase.auth.getUser()
@@ -296,5 +314,7 @@ export default function useWorkoutPlayer(dayNumber) {
     pauseWorkout,
     resumeWorkout,
     adjustRest,
+    setPerformance,
+    logSetPerformance,
   }
 }

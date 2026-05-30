@@ -211,6 +211,9 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
     isPaused,
   } = workout
 
+  // Actual reps counter for rep-based exercises — initialised from target
+  const [actualReps, setActualReps] = useState(() => ex?.reps ?? 0)
+
   if (!ex) return null
   const isTimed = !!ex.durationSeconds
   const setsLabel = `Set ${currentSet} of ${ex.sets}`
@@ -288,25 +291,53 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
           </>
         ) : (
           <>
-            <div
-              className="flex items-center justify-center rounded-full"
-              style={{
-                width: 200, height: 200,
-                border: '8px solid #14B8A6',
-                backgroundColor: '#14B8A610',
-              }}
-            >
-              <div className="text-center">
-                <p style={{ fontSize: 80, fontWeight: 800, color: '#F8FAFC', lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  {ex.reps}
-                </p>
-                <p style={{ fontSize: 16, color: '#94A3B8', fontWeight: 600, marginTop: 4 }}>
-                  reps
-                </p>
+            {/* Interactive rep counter */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+              <button
+                onClick={() => setActualReps(r => Math.max(0, r - 1))}
+                className="flex items-center justify-center rounded-full transition-all active:scale-90"
+                style={{
+                  width: 48, height: 48, flexShrink: 0,
+                  backgroundColor: '#1E293B',
+                  border: '1px solid #334155',
+                  color: '#94A3B8', fontSize: 24, fontWeight: 700,
+                  cursor: 'pointer',
+                }}
+              >−</button>
+
+              <div
+                className="flex items-center justify-center rounded-full"
+                style={{
+                  width: 180, height: 180,
+                  border: `8px solid ${actualReps < ex.reps ? '#F59E0B' : '#14B8A6'}`,
+                  backgroundColor: actualReps < ex.reps ? '#F59E0B08' : '#14B8A610',
+                  transition: 'border-color 0.2s, background-color 0.2s',
+                }}
+              >
+                <div className="text-center">
+                  <p style={{ fontSize: 72, fontWeight: 800, color: '#F8FAFC', lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                    {actualReps}
+                  </p>
+                  <p style={{ fontSize: 12, color: actualReps < ex.reps ? '#F59E0B' : '#94A3B8', fontWeight: 600, marginTop: 4 }}>
+                    {actualReps < ex.reps ? `of ${ex.reps}` : 'reps'}
+                  </p>
+                </div>
               </div>
+
+              <button
+                onClick={() => setActualReps(r => r + 1)}
+                className="flex items-center justify-center rounded-full transition-all active:scale-90"
+                style={{
+                  width: 48, height: 48, flexShrink: 0,
+                  backgroundColor: '#1E293B',
+                  border: '1px solid #334155',
+                  color: '#94A3B8', fontSize: 24, fontWeight: 700,
+                  cursor: 'pointer',
+                }}
+              >+</button>
             </div>
-            <p className="mt-5 text-sm font-medium" style={{ color: '#94A3B8' }}>
-              Complete your reps, then tap Done
+            <p className="mt-4 text-sm font-medium" style={{ color: '#64748B' }}>
+              Adjust if needed, then tap Done
             </p>
           </>
         )}
@@ -391,7 +422,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
           </div>
         ) : (
           <button
-            onClick={onCompleteSet}
+            onClick={() => onCompleteSet(actualReps)}
             className="w-full rounded-2xl font-bold text-lg text-white transition-all active:scale-95"
             style={{
               height: 64,
@@ -567,7 +598,7 @@ function SavingScreen() {
 }
 
 function CompletionScreen({ workout, navigate, logs }) {
-  const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds, logSaveStatus } = workout
+  const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds, logSaveStatus, setPerformance } = workout
   // Pick a random "complete" category quote on mount
   const [quote] = useState(() => randomQuote(quotesData, 'complete'))
 
@@ -675,6 +706,29 @@ function CompletionScreen({ workout, navigate, logs }) {
           </div>
         ))}
       </div>
+
+      {/* Performance highlights — sets where user adjusted reps */}
+      {setPerformance && setPerformance.length > 0 && (() => {
+        const highlights = setPerformance.filter(s => s.actualReps !== s.targetReps)
+        if (highlights.length === 0) return null
+        return (
+          <div style={{ width: '100%', maxWidth: 360, marginTop: 16, marginBottom: 4 }}>
+            <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', color: '#64748B', textTransform: 'uppercase', marginBottom: 8, borderLeft: '2px solid #0D9488', paddingLeft: 8 }}>
+              Your reps
+            </p>
+            {highlights.slice(0, 4).map((s, i) => (
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 6, paddingBottom: 6, borderBottom: i < highlights.length - 1 ? '1px solid #1E293B' : 'none' }}>
+                <p style={{ fontSize: 12, color: '#94A3B8', margin: 0 }}>
+                  {s.exerciseId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())} · Set {s.setNumber}
+                </p>
+                <p style={{ fontSize: 13, fontWeight: 700, color: s.actualReps < s.targetReps ? '#F59E0B' : '#14B8A6', margin: 0 }}>
+                  {s.actualReps} <span style={{ color: '#475569', fontWeight: 400 }}>/ {s.targetReps}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+        )
+      })()}
 
       {/* Motivational quote */}
       {quote && (
@@ -925,10 +979,19 @@ export default function WorkoutPlayer() {
   }, [workout.completedExerciseIds.length]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Set completion handler (flash + haptic + advance) ────────────────────
-  function handleCompleteSet() {
+  function handleCompleteSet(actualReps) {
     navigator.vibrate?.([10, 50, 10])
     setFlashComplete(true)
     setTimeout(() => setFlashComplete(false), 200)
+    // Log actual reps performed (rep-based exercises only)
+    if (actualReps !== undefined && workout.currentExercise && !workout.currentExercise.durationSeconds) {
+      workout.logSetPerformance(
+        workout.currentExercise.id,
+        workout.currentSet,
+        workout.currentExercise.reps,
+        actualReps
+      )
+    }
     workout.completeSet()
   }
 
@@ -1009,6 +1072,7 @@ export default function WorkoutPlayer() {
       )}
       {phase === 'exercise' && (
         <ExerciseScreen
+          key={`${workout.exerciseIndex}-${workout.currentSet}`}
           workout={workout}
           onOpenModal={handleOpenModal}
           onBack={handleBack}
