@@ -121,15 +121,32 @@ export default function ExerciseModal({ exercise, onClose }) {
         ) : (
           <div style={{ paddingLeft: 20, paddingRight: 20, marginTop: 16 }}>
             <div style={{
-              height: 48,
+              position: 'relative',
+              paddingTop: '56.25%',   /* same 16:9 ratio as the real embed */
               borderRadius: 12,
-              backgroundColor: '#1E293B',
-              border: '1px solid #334155',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              overflow: 'hidden',
+              backgroundColor: '#0F1D2E',
+              border: '1px solid #1E3A5F',
             }}>
-              <p style={{ fontSize: 13, color: '#475569', margin: 0 }}>Video guide coming soon</p>
+              <div style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', flexDirection: 'column',
+                alignItems: 'center', justifyContent: 'center', gap: 10,
+              }}>
+                {/* Play icon outline */}
+                <div style={{
+                  width: 52, height: 52, borderRadius: '50%',
+                  border: '2px solid rgba(148,163,184,0.25)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(148,163,184,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                  </svg>
+                </div>
+                <p style={{ fontSize: 12, fontWeight: 600, color: 'rgba(148,163,184,0.5)', margin: 0, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                  Video guide coming soon
+                </p>
+              </div>
             </div>
           </div>
         )}
