@@ -2,53 +2,52 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import weeklyPlan from '../data/weeklyPlan.json'
 import exercises from '../data/exercises.json'
-import quotesData from '../data/quotes.json'
 import ExerciseModal from '../components/ExerciseModal'
-import { randomQuote } from '../utils/workoutStats'
 
-// Map category → display group
+const BG   = '#0F172A'
+const SURF = '#1E293B'
+const TEAL = '#14B8A6'
+const FONT = "'Plus Jakarta Sans', sans-serif"
+
+const CAT_ACCENT = {
+  'warm-up':    '#F59E0B',
+  'strength':   '#14B8A6',
+  'stability':  '#7C3AED',
+  'flexibility':'#22C55E',
+  'cardio':     '#3B82F6',
+}
+
 function getGroup(category) {
-  if (category === 'warm-up') return 'Warm-Up'
+  if (category === 'warm-up')    return 'Warm-Up'
   if (category === 'flexibility') return 'Cool-Down'
   return 'Main Workout'
 }
 
-const EQUIPMENT_COLORS = {
-  'bodyweight':       { bg: '#1E293B', text: '#94A3B8', border: '#334155' },
-  'yoga-mat':         { bg: '#1E293B', text: '#94A3B8', border: '#334155' },
-  'resistance-band':  { bg: '#14B8A615', text: '#2DD4BF', border: '#14B8A640' },
-  '10lb-dumbbells':   { bg: '#7C3AED15', text: '#A78BFA', border: '#7C3AED40' },
-  '15lb-dumbbells':   { bg: '#DC262615', text: '#FCA5A5', border: '#DC262640' },
+function formatSetsReps(ex) {
+  if (ex.durationSeconds) {
+    const t = ex.durationSeconds >= 60
+      ? `${Math.floor(ex.durationSeconds / 60)}m ${ex.durationSeconds % 60 > 0 ? ex.durationSeconds % 60 + 's' : ''}`.trim()
+      : `${ex.durationSeconds}s`
+    return `${ex.sets} × ${t}`
+  }
+  return `${ex.sets} × ${ex.reps} reps`
 }
 
-function getEqStyle(eq) {
-  return EQUIPMENT_COLORS[eq] || { bg: '#1E293B', text: '#94A3B8', border: '#334155' }
-}
+const SECTION_ORDER = ['Warm-Up', 'Main Workout', 'Cool-Down']
 
 export default function DayOverview() {
   const { dayNumber } = useParams()
   const navigate = useNavigate()
   const [selectedExercise, setSelectedExercise] = useState(null)
 
-  // Pick a random quote on mount
-  const [quote] = useState(() => {
-    const parsedDay = parseInt(dayNumber)
-    const cat = parsedDay === 4 ? 'rest-day' : 'starting'
-    return randomQuote(quotesData, cat)
-  })
-
-  const day = weeklyPlan.days.find((d) => d.day === parseInt(dayNumber))
+  const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
 
   if (!day) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0F172A' }}>
-        <div className="text-center p-6">
-          <p className="text-xl font-bold text-white">Day not found.</p>
-          <button
-            onClick={() => navigate('/')}
-            className="mt-4 px-6 py-3 rounded-xl font-bold"
-            style={{ backgroundColor: '#14B8A6', color: '#fff', border: 'none', cursor: 'pointer' }}
-          >
+      <div style={{ backgroundColor: BG, minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center', padding: 24 }}>
+          <p style={{ fontSize: 18, fontWeight: 700, color: '#F8FAFC' }}>Day not found.</p>
+          <button onClick={() => navigate('/')} style={{ marginTop: 16, padding: '12px 24px', backgroundColor: TEAL, color: BG, borderRadius: 12, border: 'none', fontWeight: 700, cursor: 'pointer' }}>
             Go Home
           </button>
         </div>
@@ -56,221 +55,140 @@ export default function DayOverview() {
     )
   }
 
-  const exerciseMap = Object.fromEntries(exercises.map((e) => [e.id, e]))
-  const dayExercises = day.exerciseIds.map((id) => exerciseMap[id]).filter(Boolean)
+  const exMap = Object.fromEntries(exercises.map(e => [e.id, e]))
+  const dayExercises = day.exerciseIds.map(id => exMap[id]).filter(Boolean)
 
   const sections = {}
-  dayExercises.forEach((ex) => {
-    const group = getGroup(ex.category)
-    if (!sections[group]) sections[group] = []
-    sections[group].push(ex)
+  dayExercises.forEach(ex => {
+    const g = getGroup(ex.category)
+    if (!sections[g]) sections[g] = []
+    sections[g].push(ex)
   })
 
-  const sectionOrder = ['Warm-Up', 'Main Workout', 'Cool-Down']
+  // Flat numbered list for display
+  let counter = 0
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
-      {/* Header — flat, no gradient, no emoji */}
-      <div
-        className="px-5 pt-10 pb-5"
-        style={{
-          backgroundColor: '#0F172A',
-          borderBottom: '1px solid #1E293B',
-        }}
-      >
+    <div style={{ backgroundColor: BG, minHeight: '100svh' }}>
+
+      {/* ── Header ─────────────────────────────────────────────────────────── */}
+      <div style={{ padding: '48px 20px 24px', borderBottom: `1px solid rgba(51,65,85,0.4)` }}>
         <button
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 mb-4 font-medium transition-opacity hover:opacity-70 active:opacity-60"
-          style={{ color: '#14B8A6', background: 'none', border: 'none', cursor: 'pointer', padding: '8px 0', minHeight: 44 }}
+          style={{ color: TEAL, background: 'none', border: 'none', cursor: 'pointer', fontSize: 15, fontWeight: 600, padding: '4px 0', marginBottom: 16, minHeight: 44, display: 'flex', alignItems: 'center' }}
         >
           ← Back
         </button>
 
-        <span
-          className="text-xs font-semibold uppercase tracking-widest"
-          style={{ color: '#14B8A6' }}
-        >
+        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', color: TEAL, textTransform: 'uppercase', marginBottom: 4 }}>
           Day {day.day}
-        </span>
-        <h1 className="text-2xl font-bold text-white mt-1 leading-tight">
+        </p>
+        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 26, color: '#F8FAFC', lineHeight: 1.15, margin: 0 }}>
           {day.theme}
         </h1>
-        {/* Time badge below theme name */}
-        <p className="text-sm mt-1" style={{ color: '#94A3B8' }}>
-          ⏱ {day.durationMinutes} min
-        </p>
-        <p className="text-sm mt-0.5" style={{ color: '#64748B' }}>
-          {day.focusArea}
+        <p style={{ fontSize: 14, color: '#94A3B8', marginTop: 6 }}>
+          ⏱ {day.durationMinutes} min · {day.focusArea}
         </p>
       </div>
 
-      {/* Exercise Sections — pb-24 so last card clears the fixed Start button */}
-      <div className="px-5 pt-5 pb-32 space-y-6">
-        {sectionOrder.map((sectionName) => {
+      {/* ── Exercise list ───────────────────────────────────────────────────── */}
+      <div style={{ padding: '8px 0', paddingBottom: 120 }}>
+        {SECTION_ORDER.map(sectionName => {
           const exList = sections[sectionName]
-          if (!exList || exList.length === 0) return null
+          if (!exList?.length) return null
           return (
-            <div key={sectionName}>
-              {/* Section Header — teal left border style */}
-              <h2
-                className="text-xs font-semibold tracking-widest uppercase mb-4"
-                style={{
-                  color: '#94A3B8',
-                  borderLeft: '2px solid #0D9488',
-                  paddingLeft: 8,
-                }}
-              >
+            <div key={sectionName} style={{ marginTop: 24 }}>
+              {/* Section label — minimal */}
+              <p style={{
+                fontSize: 10, fontWeight: 700, letterSpacing: '0.14em',
+                color: '#475569', textTransform: 'uppercase',
+                padding: '0 20px', marginBottom: 4,
+              }}>
                 {sectionName}
-              </h2>
+              </p>
 
-              {/* Exercise Cards */}
-              <div className="space-y-3">
-                {exList.map((ex) => {
-                  const setsReps = ex.durationSeconds
-                    ? `${ex.sets} × ${ex.durationSeconds} sec hold`
-                    : `${ex.sets} × ${ex.reps} reps`
-
-                  const accentColor = ex.category === 'warm-up' ? '#F59E0B'
-                    : ex.category === 'strength' ? '#14B8A6'
-                    : ex.category === 'stability' ? '#8B5CF6'
-                    : '#22C55E'
-
-                  return (
-                    <div
-                      key={ex.id}
-                      className="rounded-2xl overflow-hidden flex"
-                      style={{
-                        backgroundColor: '#1E293B',
-                        border: '1px solid rgba(255,255,255,0.06)',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
-                      }}
-                    >
-                      {/* Left accent strip */}
-                      <div style={{ width: 4, flexShrink: 0, alignSelf: 'stretch', backgroundColor: accentColor }} />
-                      {/* Content */}
-                      <div className="flex-1 px-4 py-4 flex items-start gap-3">
-                        <div className="flex-1 min-w-0">
-                          <p className="text-base font-semibold text-white leading-snug">{ex.name}</p>
-                          <p className="text-sm font-medium mt-0.5" style={{ color: '#14B8A6' }}>
-                            {setsReps}
-                          </p>
-                          <p className="text-xs mt-1 leading-relaxed" style={{ color: '#94A3B8' }}>
-                            {ex.targetMuscles.join(' · ')}
-                          </p>
-                          {/* Equipment badges */}
-                          <div className="flex flex-wrap gap-1.5 mt-2">
-                            {ex.equipment.map((eq) => {
-                              const s = getEqStyle(eq)
-                              return (
-                                <span
-                                  key={eq}
-                                  className="text-xs font-medium px-2 py-0.5 rounded-full"
-                                  style={{ backgroundColor: s.bg, color: s.text, border: `1px solid ${s.border}` }}
-                                >
-                                  {eq.replace(/-/g, ' ')}
-                                </span>
-                              )
-                            })}
-                          </div>
-                        </div>
-
-                        {/* Info button — SVG, 44×44 touch target */}
-                        <button
-                          onClick={() => setSelectedExercise(ex)}
-                          className="flex-shrink-0 flex items-center justify-center transition-all active:scale-90"
-                          style={{
-                            minWidth: 44,
-                            minHeight: 44,
-                            width: 44,
-                            height: 44,
-                            backgroundColor: 'transparent',
-                            border: 'none',
-                            cursor: 'pointer',
-                          }}
-                          aria-label={`Info for ${ex.name}`}
-                        >
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="16" x2="12" y2="12"/>
-                            <line x1="12" y1="8" x2="12.01" y2="8"/>
-                          </svg>
-                        </button>
-                      </div>
+              {exList.map(ex => {
+                counter++
+                const num = counter
+                const accent = CAT_ACCENT[ex.category] || TEAL
+                return (
+                  <div
+                    key={ex.id}
+                    style={{
+                      display: 'flex', alignItems: 'center',
+                      padding: '13px 20px',
+                      borderBottom: '1px solid rgba(51,65,85,0.35)',
+                    }}
+                  >
+                    {/* Number dot */}
+                    <div style={{
+                      width: 30, height: 30, borderRadius: '50%', flexShrink: 0,
+                      backgroundColor: SURF,
+                      border: `1.5px solid rgba(51,65,85,0.6)`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      marginRight: 14,
+                    }}>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: '#64748B' }}>{num}</span>
                     </div>
-                  )
-                })}
-              </div>
+
+                    {/* Name + sets×reps */}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <p style={{ fontSize: 16, fontWeight: 600, color: '#F8FAFC', margin: 0, lineHeight: 1.2 }}>
+                        {ex.name}
+                      </p>
+                      <p style={{ fontSize: 13, fontWeight: 600, color: accent, margin: 0, marginTop: 3 }}>
+                        {formatSetsReps(ex)}
+                      </p>
+                    </div>
+
+                    {/* Info button */}
+                    <button
+                      onClick={() => setSelectedExercise(ex)}
+                      style={{
+                        width: 44, height: 44, flexShrink: 0,
+                        background: 'none', border: 'none', cursor: 'pointer',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        marginLeft: 4,
+                      }}
+                      aria-label={`Info: ${ex.name}`}
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#475569" strokeWidth="1.8" strokeLinecap="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                      </svg>
+                    </button>
+                  </div>
+                )
+              })}
             </div>
           )
         })}
-
-        {/* Motivational Quote */}
-        {quote && (
-          <div
-            className="rounded-2xl p-4"
-            style={{
-              backgroundColor: '#1E293B',
-              borderLeft: '3px solid #14B8A650',
-              border: '1px solid rgba(255,255,255,0.06)',
-            }}
-          >
-            <p className="text-sm font-medium leading-relaxed italic" style={{ color: '#94A3B8' }}>
-              "{quote.text}"
-            </p>
-            {quote.author !== 'StrongBase' && (
-              <p className="text-xs mt-1 font-semibold" style={{ color: '#475569' }}>
-                — {quote.author}
-              </p>
-            )}
-          </div>
-        )}
       </div>
 
-      {/* Gradient fade + fixed Start Workout button */}
-      <div
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 10,
-        }}
-      >
-        {/* Gradient fade above button */}
-        <div
-          style={{
-            height: 40,
-            background: 'linear-gradient(to bottom, transparent, #0F172A)',
-            pointerEvents: 'none',
-          }}
-        />
-        <div
-          className="px-5 pb-8"
-          style={{ backgroundColor: '#0F172A' }}
-        >
+      {/* ── Fixed Start button ──────────────────────────────────────────────── */}
+      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 10 }}>
+        <div style={{ height: 32, background: `linear-gradient(to bottom, transparent, ${BG})`, pointerEvents: 'none' }} />
+        <div style={{ backgroundColor: BG, padding: '0 16px', paddingBottom: 'max(env(safe-area-inset-bottom), 24px)', paddingTop: 4 }}>
           <button
             onClick={() => navigate(`/workout/${day.day}`)}
-            className="w-full rounded-2xl font-bold text-base text-white transition-all active:scale-95"
             style={{
-              backgroundColor: '#14B8A6',
-              height: 56,
-              border: 'none',
+              width: '100%', minHeight: 56,
+              backgroundColor: TEAL, color: BG,
+              borderRadius: 16, border: 'none',
+              fontFamily: FONT, fontWeight: 700, fontSize: 16,
               cursor: 'pointer',
             }}
             onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = TEAL}
           >
-            Start Workout
+            Start Workout →
           </button>
         </div>
       </div>
 
-      {/* Exercise Modal */}
       {selectedExercise && (
-        <ExerciseModal
-          exercise={selectedExercise}
-          onClose={() => setSelectedExercise(null)}
-        />
+        <ExerciseModal exercise={selectedExercise} onClose={() => setSelectedExercise(null)} />
       )}
     </div>
   )

@@ -71,82 +71,35 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
-      {/* Header */}
-      <div
-        style={{
-          paddingLeft: 20,
-          paddingRight: 20,
-          paddingTop: 48,
-          paddingBottom: 20,
-          borderBottom: '2px solid #14B8A6',
-          backgroundColor: '#0F172A',
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontWeight: 800,
-            fontSize: 36,
-            color: '#F8FAFC',
-            margin: 0,
-          }}
-        >
+      {/* Header — compact */}
+      <div style={{ padding: '44px 20px 16px', borderBottom: '1px solid rgba(51,65,85,0.4)', backgroundColor: '#0F172A' }}>
+        <h1 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 24, color: '#F8FAFC', margin: 0 }}>
           Profile
         </h1>
       </div>
 
-      {/* ACCOUNT CARD */}
-      <div style={CARD_STYLE}>
-        {/* Avatar */}
-        <div
-          style={{
-            width: 56,
-            height: 56,
-            borderRadius: '50%',
-            backgroundColor: '#134E4A',
-            border: '2px solid #14B8A6',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: 20,
-              color: '#14B8A6',
-            }}
-          >
+      {/* ACCOUNT CARD — horizontal */}
+      <div style={{ ...CARD_STYLE, display: 'flex', alignItems: 'center', gap: 16 }}>
+        <div style={{
+          width: 52, height: 52, borderRadius: '50%', flexShrink: 0,
+          backgroundColor: '#134E4A', border: '2px solid #14B8A6',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 18, color: '#14B8A6' }}>
             {initials}
           </span>
         </div>
-
-        {/* Athlete name */}
-        <p
-          style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontWeight: 600,
-            fontSize: 18,
-            color: '#F8FAFC',
-            marginTop: 12,
-            marginBottom: 0,
-          }}
-        >
-          {athleteName}
-        </p>
-
-        {/* Email */}
-        <p
-          style={{
-            fontSize: 14,
-            color: '#94A3B8',
-            marginTop: 2,
-            marginBottom: 0,
-          }}
-        >
-          {user?.email}
-        </p>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 16, color: '#F8FAFC', margin: 0 }}>
+            {athleteName}
+          </p>
+          <p style={{ fontSize: 13, color: '#64748B', margin: 0, marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {user?.email}
+          </p>
+          <p style={{ fontSize: 12, color: '#475569', margin: 0, marginTop: 3 }}>
+            Member since {memberSince}
+          </p>
+        </div>
       </div>
 
       {/* STATS CARD */}
@@ -194,12 +147,6 @@ export default function Profile() {
           </div>
         </div>
 
-        <div style={STAT_ROW_STYLE}>
-          <span style={{ fontSize: 14, color: '#94A3B8' }}>Member Since</span>
-          <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600, fontSize: 14, color: '#F8FAFC' }}>
-            {memberSince}
-          </span>
-        </div>
       </div>
 
       {/* MUSCLES WORKED CARD */}

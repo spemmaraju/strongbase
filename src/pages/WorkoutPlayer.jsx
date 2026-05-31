@@ -343,7 +343,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
           </>
         )}
 
-        {/* Inline coaching cues — always visible, no tap needed */}
+        {/* Inline coaching cues — always visible, left-aligned */}
         {ex.cues && ex.cues.length > 0 && (
           <div style={{
             marginTop: 20,
@@ -351,18 +351,21 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             maxWidth: 340,
             backgroundColor: '#1E293B',
             borderRadius: 12,
-            padding: '10px 14px',
+            padding: '12px 16px',
             borderLeft: '3px solid #0D9488',
+            textAlign: 'left',
           }}>
             {ex.cues.map((cue, i) => (
-              <p key={i} style={{
-                fontSize: 12,
-                color: '#64748B',
-                lineHeight: 1.5,
-                marginTop: i > 0 ? 6 : 0,
-              }}>
-                · {cue}
-              </p>
+              <div key={i} style={{ display: 'flex', gap: 10, marginTop: i > 0 ? 8 : 0 }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: '#0D9488', flexShrink: 0, marginTop: 1 }}>
+                  {i + 1}
+                </span>
+                <p style={{
+                  fontSize: 12, color: '#94A3B8', lineHeight: 1.5, margin: 0,
+                }}>
+                  {cue}
+                </p>
+              </div>
             ))}
           </div>
         )}
