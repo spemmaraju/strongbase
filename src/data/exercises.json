@@ -3,8 +3,14 @@
     "id": "arm-circles",
     "name": "Arm Circles",
     "category": "warm-up",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["shoulders", "rotator cuff", "upper back"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "shoulders",
+      "rotator cuff",
+      "upper back"
+    ],
     "sets": 2,
     "reps": 15,
     "durationSeconds": null,
@@ -29,8 +35,14 @@
     "id": "hip-circles",
     "name": "Hip Circles",
     "category": "warm-up",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["hip flexors", "glutes", "lower back mobility"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "glutes",
+      "lower back mobility"
+    ],
     "sets": 2,
     "reps": 10,
     "durationSeconds": null,
@@ -55,8 +67,15 @@
     "id": "leg-swings",
     "name": "Leg Swings",
     "category": "warm-up",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["hip flexors", "hamstrings", "glutes", "adductors"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "hamstrings",
+      "glutes",
+      "adductors"
+    ],
     "sets": 2,
     "reps": 12,
     "durationSeconds": null,
@@ -81,8 +100,16 @@
     "id": "cat-cow",
     "name": "Cat-Cow Stretch",
     "category": "warm-up",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["spine", "core", "neck", "thoracic extensors"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "spine",
+      "core",
+      "neck",
+      "thoracic extensors"
+    ],
     "sets": 2,
     "reps": 10,
     "durationSeconds": null,
@@ -107,8 +134,16 @@
     "id": "thoracic-rotation",
     "name": "Thoracic Rotation (Thread the Needle)",
     "category": "warm-up",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["thoracic spine", "upper back", "obliques", "rotator cuff"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "thoracic spine",
+      "upper back",
+      "obliques",
+      "rotator cuff"
+    ],
     "sets": 2,
     "reps": 8,
     "durationSeconds": null,
@@ -133,8 +168,16 @@
     "id": "push-up",
     "name": "Push-Up",
     "category": "strength",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["chest", "triceps", "front deltoids", "core"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "chest",
+      "triceps",
+      "front deltoids",
+      "core"
+    ],
     "sets": 3,
     "reps": 8,
     "durationSeconds": null,
@@ -159,8 +202,15 @@
     "id": "glute-bridge",
     "name": "Glute Bridge",
     "category": "strength",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["glutes", "hamstrings", "core"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -185,8 +235,15 @@
     "id": "bodyweight-squat",
     "name": "Bodyweight Squat",
     "category": "strength",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "core"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -211,8 +268,15 @@
     "id": "forward-lunge",
     "name": "Forward Lunge",
     "category": "strength",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "hip flexors"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings",
+      "hip flexors"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -237,8 +301,14 @@
     "id": "wall-sit",
     "name": "Wall Sit",
     "category": "strength",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings"
+    ],
     "sets": 3,
     "reps": null,
     "durationSeconds": 30,
@@ -263,8 +333,15 @@
     "id": "step-back-lunge",
     "name": "Step-Back Lunge",
     "category": "strength",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["glutes", "hamstrings", "quadriceps", "hip flexors"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "quadriceps",
+      "hip flexors"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -289,8 +366,16 @@
     "id": "bird-dog",
     "name": "Bird Dog",
     "category": "stability",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["core", "glutes", "lower back stabilizers", "shoulders"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "glutes",
+      "lower back stabilizers",
+      "shoulders"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -315,8 +400,15 @@
     "id": "dead-bug",
     "name": "Dead Bug",
     "category": "stability",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["core", "transverse abdominis", "hip flexors"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "transverse abdominis",
+      "hip flexors"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -341,8 +433,13 @@
     "id": "bicep-curl",
     "name": "Bicep Curl",
     "category": "strength",
-    "equipment": ["10lb-dumbbells"],
-    "targetMuscles": ["biceps", "forearms"],
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "biceps",
+      "forearms"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -367,8 +464,15 @@
     "id": "shoulder-press",
     "name": "Dumbbell Shoulder Press",
     "category": "strength",
-    "equipment": ["10lb-dumbbells"],
-    "targetMuscles": ["front deltoids", "lateral deltoids", "triceps", "upper traps"],
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "front deltoids",
+      "lateral deltoids",
+      "triceps",
+      "upper traps"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -393,8 +497,13 @@
     "id": "lateral-raise",
     "name": "Lateral Raise",
     "category": "strength",
-    "equipment": ["10lb-dumbbells"],
-    "targetMuscles": ["lateral deltoids", "upper traps"],
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "lateral deltoids",
+      "upper traps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -419,8 +528,15 @@
     "id": "bent-over-row",
     "name": "Bent-Over Dumbbell Row",
     "category": "strength",
-    "equipment": ["15lb-dumbbells"],
-    "targetMuscles": ["lats", "rhomboids", "rear deltoids", "biceps"],
+    "equipment": [
+      "15lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "lats",
+      "rhomboids",
+      "rear deltoids",
+      "biceps"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -445,8 +561,16 @@
     "id": "goblet-squat",
     "name": "Goblet Squat",
     "category": "strength",
-    "equipment": ["10lb-dumbbells", "yoga-mat"],
-    "targetMuscles": ["quadriceps", "glutes", "core", "upper back"],
+    "equipment": [
+      "10lb-dumbbells",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "core",
+      "upper back"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -471,8 +595,12 @@
     "id": "tricep-kickback",
     "name": "Tricep Kickback",
     "category": "strength",
-    "equipment": ["10lb-dumbbells"],
-    "targetMuscles": ["triceps"],
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "triceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -497,8 +625,15 @@
     "id": "chest-press-mat",
     "name": "Floor Chest Press",
     "category": "strength",
-    "equipment": ["15lb-dumbbells", "yoga-mat"],
-    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "equipment": [
+      "15lb-dumbbells",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "chest",
+      "front deltoids",
+      "triceps"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -523,8 +658,15 @@
     "id": "single-leg-rdl",
     "name": "Single-Leg Romanian Deadlift (Light)",
     "category": "strength",
-    "equipment": ["10lb-dumbbells"],
-    "targetMuscles": ["hamstrings", "glutes", "core", "hip stabilizers"],
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "glutes",
+      "core",
+      "hip stabilizers"
+    ],
     "sets": 3,
     "reps": 8,
     "durationSeconds": null,
@@ -549,8 +691,14 @@
     "id": "reverse-fly",
     "name": "Dumbbell Reverse Fly",
     "category": "strength",
-    "equipment": ["10lb-dumbbells"],
-    "targetMuscles": ["rear deltoids", "rhomboids", "middle trapezius"],
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "rhomboids",
+      "middle trapezius"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -575,8 +723,15 @@
     "id": "pallof-press",
     "name": "Pallof Press",
     "category": "stability",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["core", "obliques", "transverse abdominis", "glutes"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "core",
+      "obliques",
+      "transverse abdominis",
+      "glutes"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -601,8 +756,15 @@
     "id": "banded-glute-bridge",
     "name": "Banded Glute Bridge",
     "category": "strength",
-    "equipment": ["resistance-band", "yoga-mat"],
-    "targetMuscles": ["glutes", "hip abductors", "hamstrings"],
+    "equipment": [
+      "resistance-band",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hip abductors",
+      "hamstrings"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -627,8 +789,15 @@
     "id": "clamshell",
     "name": "Clamshell",
     "category": "stability",
-    "equipment": ["resistance-band", "yoga-mat"],
-    "targetMuscles": ["glute medius", "glute minimus", "hip external rotators"],
+    "equipment": [
+      "resistance-band",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glute medius",
+      "glute minimus",
+      "hip external rotators"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -653,8 +822,14 @@
     "id": "banded-lateral-walk",
     "name": "Banded Lateral Walk",
     "category": "stability",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["glute medius", "hip abductors", "quadriceps"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "glute medius",
+      "hip abductors",
+      "quadriceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -679,8 +854,14 @@
     "id": "banded-pull-apart",
     "name": "Banded Pull-Apart",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["rear deltoids", "rhomboids", "middle trapezius"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "rhomboids",
+      "middle trapezius"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -705,8 +886,15 @@
     "id": "banded-face-pull",
     "name": "Banded Face Pull",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["rear deltoids", "rotator cuff", "upper traps", "rhomboids"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "rotator cuff",
+      "upper traps",
+      "rhomboids"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -731,8 +919,16 @@
     "id": "side-plank",
     "name": "Side Plank",
     "category": "stability",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["obliques", "core", "glute medius", "shoulder stabilizers"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "core",
+      "glute medius",
+      "shoulder stabilizers"
+    ],
     "sets": 3,
     "reps": null,
     "durationSeconds": 20,
@@ -757,8 +953,16 @@
     "id": "forearm-plank",
     "name": "Forearm Plank",
     "category": "stability",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["core", "transverse abdominis", "shoulders", "glutes"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "transverse abdominis",
+      "shoulders",
+      "glutes"
+    ],
     "sets": 3,
     "reps": null,
     "durationSeconds": 25,
@@ -783,8 +987,16 @@
     "id": "single-leg-glute-bridge",
     "name": "Single-Leg Glute Bridge",
     "category": "stability",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["glutes", "hamstrings", "core", "hip stabilizers"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "core",
+      "hip stabilizers"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -809,8 +1021,15 @@
     "id": "glute-bridge-hold",
     "name": "Glute Bridge Isometric Hold",
     "category": "stability",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["glutes", "hamstrings", "core"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
     "sets": 3,
     "reps": null,
     "durationSeconds": 30,
@@ -835,8 +1054,16 @@
     "id": "modified-pigeon",
     "name": "Modified Pigeon Pose",
     "category": "flexibility",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["piriformis", "glutes", "hip external rotators", "hip flexors"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "piriformis",
+      "glutes",
+      "hip external rotators",
+      "hip flexors"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 40,
@@ -861,8 +1088,16 @@
     "id": "supine-figure-4",
     "name": "Supine Figure-4 Stretch",
     "category": "flexibility",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["piriformis", "glutes", "IT band", "hip rotators"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "piriformis",
+      "glutes",
+      "IT band",
+      "hip rotators"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 40,
@@ -887,8 +1122,16 @@
     "id": "childs-pose",
     "name": "Child's Pose",
     "category": "flexibility",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["lower back", "hips", "thoracic spine", "shoulders"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "lower back",
+      "hips",
+      "thoracic spine",
+      "shoulders"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 40,
@@ -913,8 +1156,14 @@
     "id": "doorway-chest-stretch",
     "name": "Doorway Chest Stretch",
     "category": "flexibility",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["pectorals", "front deltoids", "biceps"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "pectorals",
+      "front deltoids",
+      "biceps"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 30,
@@ -939,8 +1188,15 @@
     "id": "seated-hamstring-stretch",
     "name": "Seated Hamstring Stretch",
     "category": "flexibility",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["hamstrings", "calves", "lower back (gentle)"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "calves",
+      "lower back (gentle)"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 40,
@@ -965,8 +1221,16 @@
     "id": "hip-flexor-stretch",
     "name": "Kneeling Hip Flexor Stretch",
     "category": "flexibility",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["hip flexors", "iliopsoas", "rectus femoris", "quadriceps"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "iliopsoas",
+      "rectus femoris",
+      "quadriceps"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 40,
@@ -991,8 +1255,14 @@
     "id": "standing-quad-stretch",
     "name": "Standing Quad Stretch",
     "category": "flexibility",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["quadriceps", "hip flexors", "knee joint"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "hip flexors",
+      "knee joint"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 30,
@@ -1017,8 +1287,15 @@
     "id": "banded-lat-pulldown",
     "name": "Banded Lat Pulldown",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["lats", "lower trapezius", "rear deltoids", "biceps"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "lats",
+      "lower trapezius",
+      "rear deltoids",
+      "biceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1035,7 +1312,7 @@
       "Think of pulling your shoulder blades into your back pockets at the bottom",
       "Lean back very slightly (10–15 degrees) — this puts your lats in a better pulling angle"
     ],
-    "youtubeId": "",
+    "youtubeId": "sHcSxFHwJdE",
     "modification": "Widen your grip on the band or anchor it lower to reduce resistance. Alternatively, perform one arm at a time.",
     "backSafe": true
   },
@@ -1043,8 +1320,16 @@
     "id": "prone-y-t-w",
     "name": "Prone Y-T-W",
     "category": "strength",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["lower trapezius", "serratus anterior", "rear deltoids", "rotator cuff"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "lower trapezius",
+      "serratus anterior",
+      "rear deltoids",
+      "rotator cuff"
+    ],
     "sets": 2,
     "reps": 8,
     "durationSeconds": null,
@@ -1061,7 +1346,7 @@
       "Only lift your arms — do not arch your lower back or lift your chest off the mat",
       "Movements are small and controlled — this is shoulder activation work, not a power exercise"
     ],
-    "youtubeId": "",
+    "youtubeId": "ZpZEQ2JCXyc",
     "modification": "Perform one arm at a time, resting the other at your side. Reduce the hold time to 1 second if your shoulder fatigues quickly.",
     "backSafe": true
   },
@@ -1069,8 +1354,16 @@
     "id": "supine-twist",
     "name": "Supine Spinal Twist",
     "category": "flexibility",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["thoracic spine", "obliques", "lower back", "piriformis"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "thoracic spine",
+      "obliques",
+      "lower back",
+      "piriformis"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 40,
@@ -1087,7 +1380,7 @@
       "Breathe into the twist — tension in your breath creates tension in the muscle",
       "Let gravity do the work — do not force the knee down with your hand"
     ],
-    "youtubeId": "",
+    "youtubeId": "mNdJti7ZwKI",
     "modification": "Place a pillow or folded blanket under your crossed knee to reduce the depth of the twist if it feels too intense in the lower back.",
     "backSafe": true
   },
@@ -1095,8 +1388,16 @@
     "id": "hip-90-90",
     "name": "90/90 Hip Stretch",
     "category": "flexibility",
-    "equipment": ["bodyweight", "yoga-mat"],
-    "targetMuscles": ["hip external rotators", "hip internal rotators", "glutes", "hip capsule"],
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hip external rotators",
+      "hip internal rotators",
+      "glutes",
+      "hip capsule"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 40,
@@ -1113,7 +1414,7 @@
       "Sit tall before folding — rounding your lower back early takes the stretch away from the hips",
       "This stretch targets both internal and external hip rotation simultaneously — normal to feel it in different spots"
     ],
-    "youtubeId": "",
+    "youtubeId": "t4Zz6-aG8Iw",
     "modification": "Sit with your back against a wall for posture support. Place folded blankets under both thighs if your hips are very tight.",
     "backSafe": true
   },
@@ -1121,8 +1422,15 @@
     "id": "single-leg-balance-hold",
     "name": "Single-Leg Balance Hold",
     "category": "stability",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["ankle stabilizers", "glute medius", "core", "proprioception"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "ankle stabilizers",
+      "glute medius",
+      "core",
+      "proprioception"
+    ],
     "sets": 2,
     "reps": null,
     "durationSeconds": 30,
@@ -1139,7 +1447,7 @@
       "Keep your hips level — the raised-leg hip wants to drop, actively hold it even",
       "Small ankle adjustments are normal and healthy — your ankle is supposed to be working"
     ],
-    "youtubeId": "",
+    "youtubeId": "Dtgh2_LFkBQ",
     "modification": "Keep your fingertips lightly on the wall throughout. Progress to fingertip touch only, then no contact. For an advanced challenge, close your eyes.",
     "backSafe": true
   },
@@ -1147,8 +1455,14 @@
     "id": "bodyweight-calf-raise",
     "name": "Bodyweight Calf Raise",
     "category": "strength",
-    "equipment": ["bodyweight"],
-    "targetMuscles": ["gastrocnemius", "soleus", "Achilles tendon"],
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "gastrocnemius",
+      "soleus",
+      "Achilles tendon"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -1165,7 +1479,7 @@
       "Lower slowly — 2–3 seconds on the way down is where the real strengthening happens",
       "Keep your knees straight throughout — bending them shifts the load from gastrocnemius to soleus"
     ],
-    "youtubeId": "",
+    "youtubeId": "Wh8EXjjr6JU",
     "modification": "Reduce to 10 reps per set. For greater range of motion, stand on the edge of a step with heels hanging slightly off.",
     "backSafe": true
   },
@@ -1173,8 +1487,16 @@
     "id": "trx-row",
     "name": "TRX Row",
     "category": "strength",
-    "equipment": ["trx"],
-    "targetMuscles": ["lats", "rhomboids", "rear deltoids", "biceps", "core"],
+    "equipment": [
+      "trx"
+    ],
+    "targetMuscles": [
+      "lats",
+      "rhomboids",
+      "rear deltoids",
+      "biceps",
+      "core"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -1191,7 +1513,7 @@
       "Drive your elbows toward your back pockets, not straight up toward the ceiling",
       "Walk your feet in (more horizontal) to make it harder; walk feet back (more upright) to make it easier"
     ],
-    "youtubeId": "",
+    "youtubeId": "N_14s8zFOms",
     "modification": "Walk your feet back toward vertical to reduce difficulty. Beginners should start at a 60-70 degree angle from the floor.",
     "backSafe": true
   },
@@ -1199,8 +1521,16 @@
     "id": "trx-push-up",
     "name": "TRX Push-Up",
     "category": "strength",
-    "equipment": ["trx"],
-    "targetMuscles": ["chest", "triceps", "front deltoids", "core", "shoulder stabilizers"],
+    "equipment": [
+      "trx"
+    ],
+    "targetMuscles": [
+      "chest",
+      "triceps",
+      "front deltoids",
+      "core",
+      "shoulder stabilizers"
+    ],
     "sets": 3,
     "reps": 8,
     "durationSeconds": null,
@@ -1217,7 +1547,7 @@
       "Elbows at 45 degrees, not flared wide — same mechanics as a floor push-up",
       "Walk your feet further from the anchor (more upright) to make it easier if the instability is too great"
     ],
-    "youtubeId": "",
+    "youtubeId": "OlUqeytSoxE",
     "modification": "Walk your feet back away from the anchor to a more upright position, reducing the load significantly. Master floor push-ups first and use TRX as a progression.",
     "backSafe": true
   },
@@ -1225,8 +1555,14 @@
     "id": "band-chest-press",
     "name": "Resistance Band Chest Press",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "chest",
+      "front deltoids",
+      "triceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1243,7 +1579,7 @@
       "Press forward and slightly inward — bringing hands toward the center activates the chest more fully",
       "Step further from the anchor for more resistance; step closer to reduce it"
     ],
-    "youtubeId": "",
+    "youtubeId": "6-86jEAXA08",
     "modification": "Use a lighter band or stand closer to the anchor. Single-arm press is a good option to reduce total load while maintaining stability.",
     "backSafe": true
   },
@@ -1251,8 +1587,14 @@
     "id": "band-overhead-press",
     "name": "Resistance Band Overhead Press",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["front deltoids", "lateral deltoids", "triceps"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "front deltoids",
+      "lateral deltoids",
+      "triceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1269,7 +1611,7 @@
       "Press directly overhead, not forward — your arms should finish directly above your ears",
       "Stand on more of the band (feet wider apart) for more resistance; less for a lighter load"
     ],
-    "youtubeId": "",
+    "youtubeId": "SoKGZpyXUMY",
     "modification": "Spread your feet wider on the band to reduce working length and resistance. Perform seated to remove lower back stability demands.",
     "backSafe": true
   },
@@ -1277,8 +1619,13 @@
     "id": "band-lateral-raise",
     "name": "Resistance Band Lateral Raise",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["lateral deltoids", "upper trapezius"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "lateral deltoids",
+      "upper trapezius"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -1295,7 +1642,7 @@
       "Stop at shoulder height — higher adds impingement risk without extra benefit",
       "No shrugging or swinging; if you cannot control the movement, shorten the band length"
     ],
-    "youtubeId": "",
+    "youtubeId": "gfEyrmxbCbw",
     "modification": "Stand on less of the band (near one end) to reduce resistance. Perform one arm at a time if needed for control.",
     "backSafe": true
   },
@@ -1303,8 +1650,13 @@
     "id": "band-bicep-curl",
     "name": "Resistance Band Bicep Curl",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["biceps", "forearms"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "biceps",
+      "forearms"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1321,7 +1673,7 @@
       "Squeeze the bicep hard at the top before lowering",
       "Slow on the way down — 2-3 seconds on the descent builds serious strength"
     ],
-    "youtubeId": "",
+    "youtubeId": "1-QRzbPL2Bw",
     "modification": "Stand on less of the band for lighter resistance. Perform one arm at a time to focus on each side individually.",
     "backSafe": true
   },
@@ -1329,8 +1681,15 @@
     "id": "band-squat",
     "name": "Resistance Band Squat",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "core"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1347,7 +1706,7 @@
       "Elbows stay up — if they drop, your torso will fall forward",
       "Push your knees actively outward as you squat — do not let them cave inward"
     ],
-    "youtubeId": "",
+    "youtubeId": "duP-UZsfOaQ",
     "modification": "Squat to a chair or bench behind you for a depth reference. Hold the band at chest level with crossed arms if the front-rack position is uncomfortable.",
     "backSafe": true
   },
@@ -1355,8 +1714,15 @@
     "id": "band-rdl",
     "name": "Resistance Band Romanian Deadlift",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["hamstrings", "glutes", "lower back stabilizers", "core"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "glutes",
+      "lower back stabilizers",
+      "core"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1373,7 +1739,7 @@
       "Keep the band dragging along your legs — letting it drift away shifts load to your lower back",
       "Squeeze your glutes hard at the top — full hip extension is what makes this an RDL"
     ],
-    "youtubeId": "",
+    "youtubeId": "NaKsZos0bIY",
     "modification": "Reduce the range of motion to where you can comfortably maintain a neutral spine. Place a hand lightly on a wall for balance support if needed.",
     "backSafe": true
   },
@@ -1381,8 +1747,12 @@
     "id": "band-tricep-pushdown",
     "name": "Resistance Band Tricep Pushdown",
     "category": "strength",
-    "equipment": ["resistance-band"],
-    "targetMuscles": ["triceps"],
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "triceps"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -1399,7 +1769,7 @@
       "Fully extend for the complete tricep contraction — partial reps reduce the benefit",
       "Stand closer to the anchor to reduce resistance; step back to increase it"
     ],
-    "youtubeId": "",
+    "youtubeId": "Y3CDzx-oj3k",
     "modification": "Use a lighter band or perform one arm at a time. Anchor the band lower if needed.",
     "backSafe": true
   },
@@ -1407,8 +1777,15 @@
     "id": "db-bench-press",
     "name": "Dumbbell Bench Press",
     "category": "strength",
-    "equipment": ["gym-dumbbells", "gym-bench"],
-    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "chest",
+      "front deltoids",
+      "triceps"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -1425,7 +1802,7 @@
       "Elbows at 45-50 degrees — not flared wide (AC joint stress) or tucked too tight",
       "Press up and slightly inward — the inward arc at the top increases chest activation"
     ],
-    "youtubeId": "",
+    "youtubeId": "SHsUIZiNdeY",
     "modification": "Use lighter dumbbells (10-15 lb) to start. Perform a floor chest press if you are not comfortable loading heavy dumbbells on a bench alone.",
     "backSafe": true
   },
@@ -1433,8 +1810,14 @@
     "id": "machine-chest-press",
     "name": "Chest Press Machine",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "chest",
+      "front deltoids",
+      "triceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1451,7 +1834,7 @@
       "Control the return — 2-3 seconds back maximizes chest engagement",
       "Squeeze your shoulder blades together before pressing — this creates a stable base and protects the shoulder joint"
     ],
-    "youtubeId": "",
+    "youtubeId": "gNBU7hmW2EU",
     "modification": "Reduce the machine weight and use a limited range of motion if shoulder discomfort occurs. Ask gym staff to help set the seat position on your first use.",
     "backSafe": true
   },
@@ -1459,8 +1842,14 @@
     "id": "machine-shoulder-press",
     "name": "Machine Shoulder Press",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["front deltoids", "lateral deltoids", "triceps"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "front deltoids",
+      "lateral deltoids",
+      "triceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1477,7 +1866,7 @@
       "Press directly overhead, not forward of your ears",
       "2-second lowering phase doubles the effectiveness — resist the urge to let it drop"
     ],
-    "youtubeId": "",
+    "youtubeId": "BAZkFGeUy5U",
     "modification": "Reduce the weight. Raise the seat if shoulder discomfort occurs at the starting position — higher seat reduces the external rotation demand.",
     "backSafe": true
   },
@@ -1485,8 +1874,15 @@
     "id": "lat-pulldown-machine",
     "name": "Lat Pulldown Machine",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["lats", "lower trapezius", "rear deltoids", "biceps"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "lats",
+      "lower trapezius",
+      "rear deltoids",
+      "biceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1503,7 +1899,7 @@
       "Do not lean back more than 15 degrees — excessive lean turns it into a row",
       "Full extension at the top matters — the lat stretch at the top is where development happens"
     ],
-    "youtubeId": "",
+    "youtubeId": "CAwf7n6Luuc",
     "modification": "Reduce the weight. A neutral-grip (palms facing each other) bar attachment is more comfortable for beginners and equally effective.",
     "backSafe": true
   },
@@ -1511,8 +1907,16 @@
     "id": "single-arm-db-row",
     "name": "Single-Arm Dumbbell Row",
     "category": "strength",
-    "equipment": ["gym-dumbbells", "gym-bench"],
-    "targetMuscles": ["lats", "rhomboids", "rear deltoids", "biceps"],
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "lats",
+      "rhomboids",
+      "rear deltoids",
+      "biceps"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -1529,7 +1933,7 @@
       "Squeeze your shoulder blade at the top — if you don't feel your back, the bicep is doing all the work",
       "Keep your torso parallel to the floor — rotating your shoulders to help the weight up is cheating"
     ],
-    "youtubeId": "",
+    "youtubeId": "pYcpY20QaE8",
     "modification": "Use a lighter dumbbell. Brace one hand on a countertop or rack with both feet on the floor if no bench is available.",
     "backSafe": true
   },
@@ -1537,8 +1941,15 @@
     "id": "cable-face-pull",
     "name": "Cable Face Pull",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["rear deltoids", "rotator cuff", "upper trapezius", "rhomboids"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "rotator cuff",
+      "upper trapezius",
+      "rhomboids"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -1555,7 +1966,7 @@
       "Elbows flare out and UP at the end, not straight back",
       "Keep your torso still throughout — no leaning backward to help the weight"
     ],
-    "youtubeId": "",
+    "youtubeId": "eTCBSFlCJ_s",
     "modification": "Reduce the cable weight. Stand closer to the machine to reduce effective resistance. A rope attachment is strongly preferred over a straight bar.",
     "backSafe": true
   },
@@ -1563,8 +1974,15 @@
     "id": "db-rdl",
     "name": "Dumbbell Romanian Deadlift",
     "category": "strength",
-    "equipment": ["gym-dumbbells"],
-    "targetMuscles": ["hamstrings", "glutes", "lower back stabilizers", "core"],
+    "equipment": [
+      "gym-dumbbells"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "glutes",
+      "lower back stabilizers",
+      "core"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -1581,7 +1999,7 @@
       "Keep the dumbbells dragging along your legs — drifting forward shifts dangerous load to the lumbar spine",
       "Squeeze your glutes hard at the top — this is what completes the movement and protects the lower back"
     ],
-    "youtubeId": "",
+    "youtubeId": "hQgFixeXdZo",
     "modification": "Use lighter dumbbells and reduce range of motion to where you can perfectly maintain spinal alignment. Perform in front of a mirror to check your form.",
     "backSafe": true
   },
@@ -1589,8 +2007,13 @@
     "id": "machine-leg-curl",
     "name": "Lying Leg Curl Machine",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["hamstrings", "calves"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "calves"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1607,7 +2030,7 @@
       "Full range: straight to fully bent — partial curls significantly reduce effectiveness",
       "Slow on the way down — the controlled lowering phase builds hamstring resilience"
     ],
-    "youtubeId": "",
+    "youtubeId": "i6m3Vp9H40Y",
     "modification": "Reduce the machine weight significantly on your first session — leg curl machines vary widely between brands. A seated leg curl machine is an alternative if lying face-down causes discomfort.",
     "backSafe": true
   },
@@ -1615,8 +2038,14 @@
     "id": "leg-press",
     "name": "Leg Press Machine",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1633,7 +2062,7 @@
       "Keep your back pressed against the pad throughout — if it peels away, you have gone too deep",
       "Press through your full foot, heels included — this better targets the glutes"
     ],
-    "youtubeId": "",
+    "youtubeId": "K5n2vg3oZa4",
     "modification": "Start with a very light weight to find your comfortable range. Wider foot placement targets glutes more; closer/lower placement targets quads.",
     "backSafe": true
   },
@@ -1641,8 +2070,16 @@
     "id": "kb-swing",
     "name": "Kettlebell Swing",
     "category": "strength",
-    "equipment": ["kettlebell"],
-    "targetMuscles": ["glutes", "hamstrings", "core", "lats", "forearms"],
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "core",
+      "lats",
+      "forearms"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -1659,7 +2096,7 @@
       "Hinge, do not squat — on the backswing your hips go back, not down",
       "Stand completely tall and squeeze your glutes hard at the top of each swing"
     ],
-    "youtubeId": "",
+    "youtubeId": "pA6o-a3y1Vo",
     "modification": "Use a lighter kettlebell (8-12 kg for beginners). Practice the hip hinge first: stand arm's length from a wall, push your glutes back to touch it, then drive forward.",
     "backSafe": true
   },
@@ -1667,8 +2104,15 @@
     "id": "kb-goblet-squat",
     "name": "Kettlebell Goblet Squat",
     "category": "strength",
-    "equipment": ["kettlebell"],
-    "targetMuscles": ["quadriceps", "glutes", "core", "upper back"],
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "core",
+      "upper back"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -1685,7 +2129,7 @@
       "Use your elbows to push your knees outward as you descend — this opens the hips",
       "Heels stay flat on the floor throughout — if they rise, widen your stance or work on ankle mobility"
     ],
-    "youtubeId": "",
+    "youtubeId": "aNDUbH_Uv4g",
     "modification": "Squat to a bench or box behind you as a depth reference. Use a lighter kettlebell (8-12 kg for beginners).",
     "backSafe": true
   },
@@ -1693,8 +2137,16 @@
     "id": "db-walking-lunge",
     "name": "Dumbbell Walking Lunge",
     "category": "strength",
-    "equipment": ["gym-dumbbells"],
-    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "hip flexors", "core"],
+    "equipment": [
+      "gym-dumbbells"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings",
+      "hip flexors",
+      "core"
+    ],
     "sets": 3,
     "reps": 10,
     "durationSeconds": null,
@@ -1711,7 +2163,7 @@
       "Front knee over ankle — step far enough forward that your knee does not go past your toes",
       "Control the descent — 2 seconds down prevents the back knee from crashing to the floor"
     ],
-    "youtubeId": "",
+    "youtubeId": "I_rMQRrwseI",
     "modification": "Perform static lunges (step forward and drive back to start) instead of walking lunges. Reduce dumbbell weight or use bodyweight only.",
     "backSafe": true
   },
@@ -1719,8 +2171,14 @@
     "id": "seated-calf-raise",
     "name": "Seated Calf Raise Machine",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["soleus", "gastrocnemius", "Achilles tendon"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "soleus",
+      "gastrocnemius",
+      "Achilles tendon"
+    ],
     "sets": 3,
     "reps": 15,
     "durationSeconds": null,
@@ -1737,7 +2195,7 @@
       "Slow on the way down — 2-3 seconds on the lowering phase is where the Achilles strengthening occurs",
       "Keep your knee angle constant — do not let your knees rise or dip as you move"
     ],
-    "youtubeId": "",
+    "youtubeId": "smyXy_dhXo8",
     "modification": "Perform bodyweight standing calf raises on the edge of a step if no machine is available.",
     "backSafe": true
   },
@@ -1745,8 +2203,12 @@
     "id": "tricep-pushdown",
     "name": "Cable Tricep Pushdown",
     "category": "strength",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["triceps"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "triceps"
+    ],
     "sets": 3,
     "reps": 12,
     "durationSeconds": null,
@@ -1763,7 +2225,7 @@
       "Full extension: lock out at the bottom for maximum tricep contraction",
       "Stand closer to the stack if the cable is pulling you onto your toes"
     ],
-    "youtubeId": "",
+    "youtubeId": "_w-HpW70nSQ",
     "modification": "Reduce the cable weight. A rope attachment (where you can flare the ends out at the bottom) is preferred for achieving full extension.",
     "backSafe": true
   },
@@ -1771,8 +2233,14 @@
     "id": "treadmill-walk",
     "name": "Treadmill Walk / Run",
     "category": "cardio",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["cardiovascular system", "legs", "glutes"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "cardiovascular system",
+      "legs",
+      "glutes"
+    ],
     "sets": 1,
     "reps": null,
     "durationSeconds": 600,
@@ -1789,7 +2257,7 @@
       "Do not hold the handrails — it significantly reduces the workout and disrupts natural movement",
       "Add incline to increase intensity without increasing impact if joint discomfort is a concern"
     ],
-    "youtubeId": "",
+    "youtubeId": "8i3Vrd95o2k",
     "modification": "Walk at a slower pace (2.5-3.5 mph) or reduce to 5 minutes if 10 feels too challenging. Flat setting is fine — incline is optional.",
     "backSafe": true
   },
@@ -1797,8 +2265,13 @@
     "id": "rowing-machine-warmup",
     "name": "Rowing Machine Warm-Up",
     "category": "warm-up",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["full body", "cardiovascular system"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "full body",
+      "cardiovascular system"
+    ],
     "sets": 1,
     "reps": null,
     "durationSeconds": 300,
@@ -1815,7 +2288,7 @@
       "Legs generate most of the power (about 60%) — do not skip straight to pulling with your arms",
       "Keep your grip relaxed — squeezing too tight fatigues the forearms quickly"
     ],
-    "youtubeId": "",
+    "youtubeId": "4zWu1yuJ0_g",
     "modification": "Row at a slower pace (16-18 SPM) if 5 minutes feels challenging. Focus entirely on learning the stroke sequence rather than the pace.",
     "backSafe": true
   },
@@ -1823,8 +2296,14 @@
     "id": "elliptical-warmup",
     "name": "Elliptical Warm-Up",
     "category": "warm-up",
-    "equipment": ["gym-machine"],
-    "targetMuscles": ["cardiovascular system", "legs", "glutes"],
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "cardiovascular system",
+      "legs",
+      "glutes"
+    ],
     "sets": 1,
     "reps": null,
     "durationSeconds": 600,
@@ -1841,7 +2320,7 @@
       "Keep your chest lifted and core lightly engaged throughout",
       "This is active recovery — keep the intensity genuinely low; today is about movement, not training"
     ],
-    "youtubeId": "",
+    "youtubeId": "tbChqvQ4LHQ",
     "modification": "Reduce to 5 minutes at an even lower resistance. A stationary bike is a fine alternative if the elliptical is unavailable.",
     "backSafe": true
   }
