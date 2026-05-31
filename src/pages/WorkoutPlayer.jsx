@@ -7,6 +7,7 @@ import { C, CARD, LABEL } from '../styles/tokens'
 import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
 import useStreak from '../hooks/useStreak'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
+import useAuth from '../hooks/useAuth'
 import { useSound } from '../hooks/useSound'
 import CircularTimer from '../components/CircularTimer'
 import ExerciseModal from '../components/ExerciseModal'
@@ -990,7 +991,10 @@ function PreviousConfirmDialog({ exerciseName, onConfirm, onCancel }) {
 export default function WorkoutPlayer() {
   const { dayNumber } = useParams()
   const navigate = useNavigate()
-  const workout = useWorkoutPlayer(dayNumber)
+  const { user } = useAuth()
+  const mode = localStorage.getItem('strongbase_workout_mode') || 'home'
+  const fitnessLevel = user?.user_metadata?.fitnessLevel || 'intermediate'
+  const workout = useWorkoutPlayer(dayNumber, mode, fitnessLevel)
   const { logs, refetch: refetchLogs } = useWorkoutLogs()
   const { playSound, soundEnabled, toggleSound } = useSound()
 

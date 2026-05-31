@@ -41,7 +41,7 @@ function StepWelcome({ onNext }) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 40, width: '100%' }}>
         {[
           { icon: '⏱', text: '20 minutes a day, 5 days a week' },
-          { icon: '🏠', text: 'No gym required — just your body and a few basics' },
+          { icon: '🏠', text: 'Home or gym — your plan adapts to where you train' },
           { icon: '📈', text: 'Designed around your real movement patterns' },
         ].map(({ icon, text }) => (
           <div key={text} style={{
@@ -132,11 +132,12 @@ function StepFitness({ value, onChange, onNext }) {
 
 // ── Step 3: Equipment ─────────────────────────────────────────────────────────
 const EQUIP_OPTIONS = [
-  { id: 'bodyweight',      icon: '💪', label: 'Just my body', sub: 'Always available' },
-  { id: 'yoga-mat',        icon: '🧘', label: 'Exercise mat', sub: 'For floor work' },
-  { id: 'resistance-band', icon: '🎗️', label: 'Resistance bands', sub: 'Light to medium' },
-  { id: '10lb-dumbbells',  icon: '🏋️', label: '10 lb dumbbells', sub: 'Pair' },
-  { id: '15lb-dumbbells',  icon: '🏋️', label: '15 lb dumbbells', sub: 'Pair' },
+  { id: 'bodyweight',      icon: '💪', label: 'Just my body',            sub: 'Always available' },
+  { id: 'yoga-mat',        icon: '🧘', label: 'Exercise mat',            sub: 'For floor work' },
+  { id: 'resistance-band', icon: '🎗️', label: 'Resistance bands',        sub: 'Loop bands or long band' },
+  { id: 'trx',             icon: '🪢', label: 'TRX / Suspension trainer', sub: 'Anchored to wall or door' },
+  { id: '10lb-dumbbells',  icon: '🏋️', label: '10 lb dumbbells',         sub: 'Pair' },
+  { id: '15lb-dumbbells',  icon: '🏋️', label: '15 lb dumbbells',         sub: 'Pair' },
 ]
 
 function StepEquipment({ value, onChange, onNext }) {

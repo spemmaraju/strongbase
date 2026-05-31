@@ -1168,5 +1168,681 @@
     "youtubeId": "",
     "modification": "Reduce to 10 reps per set. For greater range of motion, stand on the edge of a step with heels hanging slightly off.",
     "backSafe": true
+  },
+  {
+    "id": "trx-row",
+    "name": "TRX Row",
+    "category": "strength",
+    "equipment": ["trx"],
+    "targetMuscles": ["lats", "rhomboids", "rear deltoids", "biceps", "core"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Set TRX straps to mid-length. Stand facing the anchor point and hold both handles with an overhand grip, palms facing down. Walk your feet toward the anchor until your body is at about 45 degrees to the floor — the more horizontal, the harder the row.",
+      "Hang with arms fully extended, body in a straight line from heels to shoulders. Your heels are on the floor. Brace your core and squeeze your glutes to keep your body rigid like a plank.",
+      "Take a breath in. As you exhale, drive both elbows back toward your hips, rowing your chest up toward the handles. Keep your body in a straight plank throughout — do not let your hips sag or pike.",
+      "Pull until your chest reaches the handles and your elbows are behind your torso. Squeeze your shoulder blades together firmly at this top position and hold for one second.",
+      "Inhale and lower yourself back to the fully extended starting position with control. Your body stays rigid throughout — only your arms and shoulder blades should move."
+    ],
+    "cues": [
+      "Keep your body in a rigid plank — if your hips drop, you lose the core challenge and reduce back activation",
+      "Drive your elbows toward your back pockets, not straight up toward the ceiling",
+      "Walk your feet in (more horizontal) to make it harder; walk feet back (more upright) to make it easier"
+    ],
+    "youtubeId": "",
+    "modification": "Walk your feet back toward vertical to reduce difficulty. Beginners should start at a 60-70 degree angle from the floor.",
+    "backSafe": true
+  },
+  {
+    "id": "trx-push-up",
+    "name": "TRX Push-Up",
+    "category": "strength",
+    "equipment": ["trx"],
+    "targetMuscles": ["chest", "triceps", "front deltoids", "core", "shoulder stabilizers"],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Set TRX straps to mid-length with handles at about knee height. Face away from the anchor. Place both hands in the TRX handles, arms extended, and step back until you are in a high plank position at roughly 45 degrees to the floor.",
+      "Hands directly below shoulders, wrists neutral, core braced, body in a rigid line from head to heels. The handles will swing slightly — actively resist this instability with your core and shoulder stabilizers.",
+      "Take a breath in. Bend your elbows at roughly 45 degrees and lower your chest toward the handles in a controlled push-up. The straps will oscillate — resist this throughout.",
+      "Lower until your chest is level with the handles or your elbows reach 90 degrees. Do not let your hips sag or elbows flare wide.",
+      "Press forcefully back to the starting position, exhaling as you push. Fully extend your arms without locking your elbows. Reset your form before the next rep."
+    ],
+    "cues": [
+      "Keep your body rigid throughout — TRX push-ups immediately expose any form breakdown",
+      "Elbows at 45 degrees, not flared wide — same mechanics as a floor push-up",
+      "Walk your feet further from the anchor (more upright) to make it easier if the instability is too great"
+    ],
+    "youtubeId": "",
+    "modification": "Walk your feet back away from the anchor to a more upright position, reducing the load significantly. Master floor push-ups first and use TRX as a progression.",
+    "backSafe": true
+  },
+  {
+    "id": "band-chest-press",
+    "name": "Resistance Band Chest Press",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Anchor your resistance band at chest height — loop it around a sturdy door frame post or use a door anchor. Hold one end in each hand. Stand facing away from the anchor, hands at chest height, elbows at 90 degrees at shoulder level.",
+      "Step forward until there is good tension in the band. Take a staggered stance for stability. Brace your core firmly — the band will try to pull your torso backward.",
+      "Take a breath in. As you exhale, press both hands forward, extending your arms straight ahead. Your hands should travel on a slight inward arc, coming closer together at the end of the press.",
+      "Fully extend your arms without locking your elbows. Pause briefly at the end, feeling the contraction across your chest.",
+      "Inhale and slowly return your hands to the starting position at your chest, controlling the band on the return. This is one rep."
+    ],
+    "cues": [
+      "Keep your core braced throughout — the band wants to pull your torso backward; resist it",
+      "Press forward and slightly inward — bringing hands toward the center activates the chest more fully",
+      "Step further from the anchor for more resistance; step closer to reduce it"
+    ],
+    "youtubeId": "",
+    "modification": "Use a lighter band or stand closer to the anchor. Single-arm press is a good option to reduce total load while maintaining stability.",
+    "backSafe": true
+  },
+  {
+    "id": "band-overhead-press",
+    "name": "Resistance Band Overhead Press",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["front deltoids", "lateral deltoids", "triceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand on the middle of your resistance band with feet shoulder-width apart. Hold the band ends at shoulder height, palms facing forward, elbows at 90 degrees just below ear level.",
+      "Take a breath in and brace your core. Tuck your pelvis slightly to prevent your lower back from arching when you press overhead — this is the most important cue.",
+      "As you exhale, press both hands straight up overhead until your arms are nearly fully extended. The band increases resistance as you press — control the movement throughout.",
+      "Your arms should finish directly overhead, not angled forward. Pause briefly without locking your elbows.",
+      "Inhale and slowly lower the band back to shoulder height over 2-3 seconds. This controlled descent works the shoulders equally to the press."
+    ],
+    "cues": [
+      "Core braced and pelvis slightly tucked — do not arch your lower back to complete the press",
+      "Press directly overhead, not forward — your arms should finish directly above your ears",
+      "Stand on more of the band (feet wider apart) for more resistance; less for a lighter load"
+    ],
+    "youtubeId": "",
+    "modification": "Spread your feet wider on the band to reduce working length and resistance. Perform seated to remove lower back stability demands.",
+    "backSafe": true
+  },
+  {
+    "id": "band-lateral-raise",
+    "name": "Resistance Band Lateral Raise",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["lateral deltoids", "upper trapezius"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand on the middle of your resistance band with feet shoulder-width apart. Hold both ends at your sides, palms facing inward. Keep a very slight bend in your elbows throughout.",
+      "Take a breath in. Your starting position has your hands at your sides with light tension already in the band.",
+      "As you exhale, raise both arms out to your sides simultaneously, leading with your elbows. Think of pouring water from a jug — your pinky side leads slightly, which targets the lateral deltoid most effectively.",
+      "Raise until your arms are at shoulder height — parallel to the floor. Do not raise above this level.",
+      "Pause for one second at the top, then inhale and slowly lower your arms back to your sides over 2 seconds."
+    ],
+    "cues": [
+      "Lead with your elbows, not your hands — this targets the lateral deltoid correctly",
+      "Stop at shoulder height — higher adds impingement risk without extra benefit",
+      "No shrugging or swinging; if you cannot control the movement, shorten the band length"
+    ],
+    "youtubeId": "",
+    "modification": "Stand on less of the band (near one end) to reduce resistance. Perform one arm at a time if needed for control.",
+    "backSafe": true
+  },
+  {
+    "id": "band-bicep-curl",
+    "name": "Resistance Band Bicep Curl",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["biceps", "forearms"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand on the middle of your resistance band with feet shoulder-width apart. Hold the band ends at your sides with palms facing forward, upper arms close to your sides.",
+      "Keep your upper arms completely still throughout — the movement comes only from your forearms rotating upward. Shoulders back and down before starting.",
+      "Take a breath in. As you exhale, curl both hands upward toward your shoulders by bending at the elbows. The band resistance increases as you curl — maintain control through the full range.",
+      "Curl until you feel a strong bicep contraction with forearms roughly vertical. Pause and squeeze for one second at the top.",
+      "Inhale and slowly lower the band back to the starting position over 2-3 seconds. The controlled lowering builds as much strength as the curl itself."
+    ],
+    "cues": [
+      "Upper arms stay pinned to your sides throughout — only your forearms should move",
+      "Squeeze the bicep hard at the top before lowering",
+      "Slow on the way down — 2-3 seconds on the descent builds serious strength"
+    ],
+    "youtubeId": "",
+    "modification": "Stand on less of the band for lighter resistance. Perform one arm at a time to focus on each side individually.",
+    "backSafe": true
+  },
+  {
+    "id": "band-squat",
+    "name": "Resistance Band Squat",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "core"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand on the middle of your resistance band with feet shoulder-width apart, toes turned out 15-30 degrees. Hold the band ends at shoulder height with elbows pointing forward — a front-rack position. There should be light tension in the band when standing.",
+      "Take a breath in and brace your core. Begin the squat by pushing your hips back first, then bend your knees to lower yourself. Keep your elbows up and chest tall throughout.",
+      "Descend until your thighs reach parallel to the floor or as deep as comfortable. Your knees should track over your second toe. The band adds peak resistance as you stand back up.",
+      "Pause briefly at the bottom, then press through your full foot to drive back up to standing, exhaling on the way up.",
+      "Fully extend your hips and knees at the top before the next rep. The band provides increasing resistance through the standing phase, training the full range of the movement."
+    ],
+    "cues": [
+      "Hips back first, then knees bend — keep your weight over your heels throughout",
+      "Elbows stay up — if they drop, your torso will fall forward",
+      "Push your knees actively outward as you squat — do not let them cave inward"
+    ],
+    "youtubeId": "",
+    "modification": "Squat to a chair or bench behind you for a depth reference. Hold the band at chest level with crossed arms if the front-rack position is uncomfortable.",
+    "backSafe": true
+  },
+  {
+    "id": "band-rdl",
+    "name": "Resistance Band Romanian Deadlift",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["hamstrings", "glutes", "lower back stabilizers", "core"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand on the middle of your resistance band with feet hip-width apart. Hold the band ends in each hand at your sides, palms facing inward. Stand tall with a neutral spine and core braced.",
+      "Take a breath in. Begin the hinge by pushing your hips straight back — think of reaching your glutes toward the wall behind you. Your spine stays completely long and neutral as your torso tips forward.",
+      "As your hips push back, your torso tips forward and the band travels down the front of your thighs. Keep the band close to your body throughout. The band stretches and increases resistance as you hinge.",
+      "Lower until you feel a strong hamstring stretch — typically when your torso is roughly parallel to the floor. Do not go past where you can maintain a neutral spine. Pause briefly.",
+      "Exhale and drive your hips forward, squeezing your glutes aggressively as you return to standing. Think 'hips forward' not 'lift up' — the power comes from the glutes completing the hip extension."
+    ],
+    "cues": [
+      "Push your hips backward, not your body downward — this is a hinge, not a squat",
+      "Keep the band dragging along your legs — letting it drift away shifts load to your lower back",
+      "Squeeze your glutes hard at the top — full hip extension is what makes this an RDL"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce the range of motion to where you can comfortably maintain a neutral spine. Place a hand lightly on a wall for balance support if needed.",
+    "backSafe": true
+  },
+  {
+    "id": "band-tricep-pushdown",
+    "name": "Resistance Band Tricep Pushdown",
+    "category": "strength",
+    "equipment": ["resistance-band"],
+    "targetMuscles": ["triceps"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor your resistance band at shoulder height or above — loop it over a door frame, hook, or door anchor. Hold both ends of the band with an overhand grip, elbows bent at 90 degrees and pinned to your sides. Stand close enough to maintain tension.",
+      "Pin your upper arms to your sides for the entire exercise — they are the pivot point and must not move. Only your forearms extend downward.",
+      "Take a breath in. As you exhale, push both hands downward by straightening your elbows against the band resistance. Extend until your arms are fully straight alongside your thighs.",
+      "Squeeze your triceps hard at full extension for one second. Full extension is where the tricep contraction is greatest.",
+      "Inhale and slowly allow the band to bring your forearms back up to the 90-degree starting position. Control the return — do not let it snap up. This is one rep."
+    ],
+    "cues": [
+      "Upper arms stay pinned to your sides — only your forearms move from the elbow down",
+      "Fully extend for the complete tricep contraction — partial reps reduce the benefit",
+      "Stand closer to the anchor to reduce resistance; step back to increase it"
+    ],
+    "youtubeId": "",
+    "modification": "Use a lighter band or perform one arm at a time. Anchor the band lower if needed.",
+    "backSafe": true
+  },
+  {
+    "id": "db-bench-press",
+    "name": "Dumbbell Bench Press",
+    "category": "strength",
+    "equipment": ["gym-dumbbells", "gym-bench"],
+    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Lie flat on a gym bench with feet flat on the floor. Hold a dumbbell in each hand at chest level, elbows at roughly 45-50 degrees from your torso. Squeeze your shoulder blades together and press them into the bench before you start.",
+      "Take a breath in and brace your core. Press your feet firmly into the floor to create full-body tension — this protects your shoulders and improves pressing power.",
+      "As you exhale, press both dumbbells upward and slightly inward in a gentle arc, extending your arms until nearly locked out above your chest. The dumbbells should nearly touch at the top.",
+      "Pause briefly at the top. Maintain your shoulder blade squeeze throughout — do not let your shoulders roll forward.",
+      "Inhale and lower the dumbbells with control back to chest level over 2-3 seconds, elbows at 45-50 degrees. Touch the sides of your chest lightly before pressing again."
+    ],
+    "cues": [
+      "Shoulder blades squeezed together and pressed into the bench — this protects your shoulders and increases pressing power",
+      "Elbows at 45-50 degrees — not flared wide (AC joint stress) or tucked too tight",
+      "Press up and slightly inward — the inward arc at the top increases chest activation"
+    ],
+    "youtubeId": "",
+    "modification": "Use lighter dumbbells (10-15 lb) to start. Perform a floor chest press if you are not comfortable loading heavy dumbbells on a bench alone.",
+    "backSafe": true
+  },
+  {
+    "id": "machine-chest-press",
+    "name": "Chest Press Machine",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["chest", "front deltoids", "triceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Sit in the chest press machine. Adjust the seat height so the handles are at chest level — roughly nipple height. Adjust the starting position so your elbows are slightly behind your torso when gripping, creating a stretch across your chest.",
+      "Feet flat on the floor, back pressed firmly against the seat pad. Grip the handles at a comfortable width. Squeeze your shoulder blades back against the pad.",
+      "Take a breath in. As you exhale, press both handles forward by extending your elbows. Push until your arms are nearly fully extended — do not lock your elbows. Keep your back and head against the pad throughout.",
+      "Pause briefly at the extended position, feeling the chest contraction.",
+      "Inhale and slowly return the handles toward you over 2-3 seconds. Lower until you feel a good chest stretch — your elbows should travel slightly behind your torso. This is one rep."
+    ],
+    "cues": [
+      "Keep your back pressed against the pad throughout — avoid arching away from the seat",
+      "Control the return — 2-3 seconds back maximizes chest engagement",
+      "Squeeze your shoulder blades together before pressing — this creates a stable base and protects the shoulder joint"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce the machine weight and use a limited range of motion if shoulder discomfort occurs. Ask gym staff to help set the seat position on your first use.",
+    "backSafe": true
+  },
+  {
+    "id": "machine-shoulder-press",
+    "name": "Machine Shoulder Press",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["front deltoids", "lateral deltoids", "triceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Sit in the shoulder press machine and adjust the seat so the handles are at about ear level with your elbows at 90 degrees. Feet flat on the floor. Sit tall and press your back against the pad.",
+      "Grip the handles with palms facing forward. Take a breath in and brace your core lightly.",
+      "As you exhale, press both handles straight up overhead until your arms are nearly fully extended. The handles should travel directly above your shoulders, not forward in front of your head.",
+      "Pause briefly at the top. Look straight ahead — do not crane your neck upward.",
+      "Inhale and slowly lower the handles back to ear level over 2-3 seconds. Do not let the weight stack touch between reps — maintain constant tension throughout."
+    ],
+    "cues": [
+      "Sit tall throughout — do not let your lower back arch away from the pad",
+      "Press directly overhead, not forward of your ears",
+      "2-second lowering phase doubles the effectiveness — resist the urge to let it drop"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce the weight. Raise the seat if shoulder discomfort occurs at the starting position — higher seat reduces the external rotation demand.",
+    "backSafe": true
+  },
+  {
+    "id": "lat-pulldown-machine",
+    "name": "Lat Pulldown Machine",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["lats", "lower trapezius", "rear deltoids", "biceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Sit at the lat pulldown machine and adjust the knee pad so it rests firmly on your thighs, preventing you from rising when pulling. Grip the bar with an overhand grip, hands slightly wider than shoulder-width. Sit down and secure your knees. Allow your arms to fully extend and your lats to stretch at the top.",
+      "Lean back very slightly — about 10-15 degrees — and brace your core. This slight lean puts your lats in a more efficient pulling angle. Fix your gaze at mid-chest level.",
+      "Take a breath in. As you exhale, drive both elbows down and toward your hips — think of putting your elbows in your back pockets. Pull the bar toward your upper chest.",
+      "Pull until the bar reaches your upper chest or collarbone. Squeeze your lats hard — the muscles just under your armpits — and hold for one second.",
+      "Inhale and slowly let the bar rise back to the start over 2-3 seconds. Allow your arms to fully extend and your lats to stretch at the top before the next rep."
+    ],
+    "cues": [
+      "Drive elbows down toward your hips, not straight back — this maximizes lat engagement over bicep use",
+      "Do not lean back more than 15 degrees — excessive lean turns it into a row",
+      "Full extension at the top matters — the lat stretch at the top is where development happens"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce the weight. A neutral-grip (palms facing each other) bar attachment is more comfortable for beginners and equally effective.",
+    "backSafe": true
+  },
+  {
+    "id": "single-arm-db-row",
+    "name": "Single-Arm Dumbbell Row",
+    "category": "strength",
+    "equipment": ["gym-dumbbells", "gym-bench"],
+    "targetMuscles": ["lats", "rhomboids", "rear deltoids", "biceps"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Place your left knee and left hand on a flat gym bench for support. Torso parallel to the floor, neutral spine. Hold a dumbbell in your right hand at arm's length directly below your right shoulder.",
+      "Squeeze your right shoulder blade inward and down to create initial tension. Take a breath in and brace your core.",
+      "As you exhale, row the dumbbell upward by driving your right elbow toward the ceiling and back. Keep the dumbbell close to your body throughout.",
+      "Pull until your right elbow is clearly above the level of your back and you feel a strong contraction in your lat and upper back. Squeeze your shoulder blade toward your spine at the top.",
+      "Inhale and lower the dumbbell back to the starting position with full control over 2 seconds. Complete all reps on the right side, then switch to the left."
+    ],
+    "cues": [
+      "Drive your elbow up and back — the dumbbell follows the elbow, not the other way around",
+      "Squeeze your shoulder blade at the top — if you don't feel your back, the bicep is doing all the work",
+      "Keep your torso parallel to the floor — rotating your shoulders to help the weight up is cheating"
+    ],
+    "youtubeId": "",
+    "modification": "Use a lighter dumbbell. Brace one hand on a countertop or rack with both feet on the floor if no bench is available.",
+    "backSafe": true
+  },
+  {
+    "id": "cable-face-pull",
+    "name": "Cable Face Pull",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["rear deltoids", "rotator cuff", "upper trapezius", "rhomboids"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set a cable machine pulley with a rope attachment to approximately face height. Stand facing the machine and hold the rope with both hands, thumbs pointing up. Step back until there is tension in the cable with arms extended in front of you.",
+      "Take a light staggered stance for stability. Starting position: arms extended, rope at face height, core lightly braced.",
+      "Take a breath in. As you exhale, pull the rope toward your face by driving both elbows out to the sides and slightly upward. Split your hands apart as you pull — one end toward each side of your face.",
+      "Externally rotate your shoulders as you pull: elbows flare out and hands end up beside your temples with palms facing forward. Your upper arms should be roughly parallel to the floor at the end. Squeeze your rear delts and rhomboids.",
+      "Hold the contracted position for one second. Inhale and slowly return to the starting extended position. This is one rep."
+    ],
+    "cues": [
+      "Pull toward your nose or ears, not your chin — lower trajectory loses the rear delt and rotator cuff benefit",
+      "Elbows flare out and UP at the end, not straight back",
+      "Keep your torso still throughout — no leaning backward to help the weight"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce the cable weight. Stand closer to the machine to reduce effective resistance. A rope attachment is strongly preferred over a straight bar.",
+    "backSafe": true
+  },
+  {
+    "id": "db-rdl",
+    "name": "Dumbbell Romanian Deadlift",
+    "category": "strength",
+    "equipment": ["gym-dumbbells"],
+    "targetMuscles": ["hamstrings", "glutes", "lower back stabilizers", "core"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Stand holding a dumbbell in each hand in front of your thighs, palms facing inward. Feet hip-width apart, knees soft. Shoulders retracted, chest tall, core braced.",
+      "Take a breath in. Begin the hinge by pushing your hips straight back — think of reaching your glutes toward the wall behind you. Your spine stays completely long and neutral throughout.",
+      "As your hips push back, your torso tips forward and the dumbbells travel down the front of your thighs and shins. Keep the dumbbells in contact with or very close to your legs to maintain proper center of gravity.",
+      "Lower until you feel a strong hamstring stretch — typically mid-shin depending on flexibility. Do not go past where you can maintain a neutral spine. Pause briefly.",
+      "Exhale and drive your hips forward, squeezing your glutes aggressively as you stand back up. Think 'hips forward' not 'lift the weight' — the glute squeeze completes the hip extension."
+    ],
+    "cues": [
+      "Hips go backward first — this is a hip hinge, not a squat or a forward bend",
+      "Keep the dumbbells dragging along your legs — drifting forward shifts dangerous load to the lumbar spine",
+      "Squeeze your glutes hard at the top — this is what completes the movement and protects the lower back"
+    ],
+    "youtubeId": "",
+    "modification": "Use lighter dumbbells and reduce range of motion to where you can perfectly maintain spinal alignment. Perform in front of a mirror to check your form.",
+    "backSafe": true
+  },
+  {
+    "id": "machine-leg-curl",
+    "name": "Lying Leg Curl Machine",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["hamstrings", "calves"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Lie face-down on the leg curl machine. Adjust the ankle pad so it rests just above your heels on the lower Achilles area. Your knees should be just off the edge of the bench when legs are straight. Grip the handles under the bench for stability.",
+      "Press your hips firmly into the pad throughout the movement. Starting position: legs fully extended.",
+      "As you exhale, curl both legs simultaneously by bending your knees, pulling your heels toward your glutes against the machine's resistance.",
+      "Curl until your knees are fully bent as far as the machine allows. Squeeze your hamstrings hard at this contracted position for one second.",
+      "Inhale and slowly extend your legs back to the starting position over 2-3 seconds. Do not let the weight stack bang down. Maintain controlled tension throughout the return."
+    ],
+    "cues": [
+      "Keep your hips pressed into the pad — if they lift, the weight is too heavy",
+      "Full range: straight to fully bent — partial curls significantly reduce effectiveness",
+      "Slow on the way down — the controlled lowering phase builds hamstring resilience"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce the machine weight significantly on your first session — leg curl machines vary widely between brands. A seated leg curl machine is an alternative if lying face-down causes discomfort.",
+    "backSafe": true
+  },
+  {
+    "id": "leg-press",
+    "name": "Leg Press Machine",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["quadriceps", "glutes", "hamstrings"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Sit in the leg press machine with your back and hips pressed firmly against the back pad. Feet hip-width apart on the footplate, toes turned out 15-20 degrees, positioned mid-plate. Unlock the safety handles before starting.",
+      "Starting position: knees at roughly 90 degrees. Your lower back should not peel away from the back pad at your working depth — if it does, reduce your range of motion.",
+      "Take a breath in and brace your core. As you exhale, press through your full foot to extend your legs and push the footplate away. Keep a soft bend in your knees at the top — do not fully lock them out.",
+      "Press until your legs are nearly extended (about 170 degrees). Pause briefly.",
+      "Inhale and slowly lower the footplate back to your starting depth over 2-3 seconds. Re-engage the safety handles before exiting the machine."
+    ],
+    "cues": [
+      "Never lock your knees at the top — always maintain a soft, slight bend",
+      "Keep your back pressed against the pad throughout — if it peels away, you have gone too deep",
+      "Press through your full foot, heels included — this better targets the glutes"
+    ],
+    "youtubeId": "",
+    "modification": "Start with a very light weight to find your comfortable range. Wider foot placement targets glutes more; closer/lower placement targets quads.",
+    "backSafe": true
+  },
+  {
+    "id": "kb-swing",
+    "name": "Kettlebell Swing",
+    "category": "strength",
+    "equipment": ["kettlebell"],
+    "targetMuscles": ["glutes", "hamstrings", "core", "lats", "forearms"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with feet shoulder-width apart, toes slightly outward. Place a kettlebell on the floor about a foot in front of you. Hinge at the hips to grip the handle with both hands, arms inside your legs. Back flat, core braced, hips higher than knees.",
+      "Hike the kettlebell back between your legs with a sharp hip hinge — like a center snap in football. This backswing loads your hamstrings and creates the stretch reflex you will convert into power.",
+      "As the kettlebell swings back and your hips are fully loaded, snap your hips forward aggressively and squeeze your glutes. This explosive hip drive is the power source — your arms are just a pendulum.",
+      "The kettlebell floats to chest or shoulder height. At the top, your body is fully upright, glutes squeezed hard, core braced — a standing plank. Do not lean back.",
+      "As the kettlebell descends, hinge your hips back again to receive it and guide it between your legs. This is a continuous, fluid motion. Complete all reps without stopping."
+    ],
+    "cues": [
+      "The power comes from snapping your hips forward, not from swinging your arms — your arms are a rope, your hips are the engine",
+      "Hinge, do not squat — on the backswing your hips go back, not down",
+      "Stand completely tall and squeeze your glutes hard at the top of each swing"
+    ],
+    "youtubeId": "",
+    "modification": "Use a lighter kettlebell (8-12 kg for beginners). Practice the hip hinge first: stand arm's length from a wall, push your glutes back to touch it, then drive forward.",
+    "backSafe": true
+  },
+  {
+    "id": "kb-goblet-squat",
+    "name": "Kettlebell Goblet Squat",
+    "category": "strength",
+    "equipment": ["kettlebell"],
+    "targetMuscles": ["quadriceps", "glutes", "core", "upper back"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with feet slightly wider than shoulder-width, toes turned out 30-45 degrees. Hold a kettlebell by both sides of the handle (the horns) at your chest, close to your sternum. Elbows point down.",
+      "Take a breath in and brace your core. Begin by pushing your hips back and out, then bend your knees to descend between your legs. The kettlebell stays close to your chest throughout.",
+      "Descend as deep as comfortable — ideally thighs parallel or below. As you descend, use your elbows to push your knees outward, opening your hips for depth. Heels stay flat on the floor.",
+      "Pause briefly at the bottom. Drive through your full foot to press back up to standing, exhaling on the way up. Squeeze your glutes at the top.",
+      "The front-loaded kettlebell naturally keeps your torso upright — this is what makes goblet squats excellent for teaching squat mechanics."
+    ],
+    "cues": [
+      "Keep the kettlebell close to your chest — letting it drift forward pulls you forward",
+      "Use your elbows to push your knees outward as you descend — this opens the hips",
+      "Heels stay flat on the floor throughout — if they rise, widen your stance or work on ankle mobility"
+    ],
+    "youtubeId": "",
+    "modification": "Squat to a bench or box behind you as a depth reference. Use a lighter kettlebell (8-12 kg for beginners).",
+    "backSafe": true
+  },
+  {
+    "id": "db-walking-lunge",
+    "name": "Dumbbell Walking Lunge",
+    "category": "strength",
+    "equipment": ["gym-dumbbells"],
+    "targetMuscles": ["quadriceps", "glutes", "hamstrings", "hip flexors", "core"],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand tall holding a dumbbell in each hand at your sides. Find a clear path of about 10 metres. Chest up, shoulders back throughout.",
+      "Step your right foot forward, taking a large step. Land with your right foot flat and your right knee tracking directly over your right ankle — not pushing past your toes.",
+      "Lower your back (left) knee toward the floor by bending both knees simultaneously. Stop when your back knee is about 1-2 inches from the floor. Both knees should reach roughly 90 degrees.",
+      "Drive through your right heel and step your left foot forward past your right foot into the next lunge step. This continuous walking motion continues for the full set.",
+      "Continue alternating legs for 10 steps per side (20 total steps). Keep your torso completely upright throughout — do not lean over your front thigh. Dumbbells hang at your sides."
+    ],
+    "cues": [
+      "Stay completely tall — the most common error is the torso leaning forward over the front thigh",
+      "Front knee over ankle — step far enough forward that your knee does not go past your toes",
+      "Control the descent — 2 seconds down prevents the back knee from crashing to the floor"
+    ],
+    "youtubeId": "",
+    "modification": "Perform static lunges (step forward and drive back to start) instead of walking lunges. Reduce dumbbell weight or use bodyweight only.",
+    "backSafe": true
+  },
+  {
+    "id": "seated-calf-raise",
+    "name": "Seated Calf Raise Machine",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["soleus", "gastrocnemius", "Achilles tendon"],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Sit at the seated calf raise machine. Adjust the knee pad so it rests firmly just above your knees. Place the balls of your feet on the footplate edge with heels hanging off. Starting position: heels lowered as far as comfortable into a full stretch.",
+      "From the fully stretched position, press through the balls of both feet to rise as high as possible, lifting your heels. Rise as high as the machine allows.",
+      "Hold at the top for 1-2 seconds, feeling the full calf contraction. Do not cut the range short.",
+      "Slowly lower your heels back down over 2-3 seconds, allowing the calves to fully stretch at the bottom. The eccentric (lowering) phase is critical for calf and Achilles strengthening.",
+      "Pause briefly in the fully stretched position before the next rep. Do not bounce from the bottom."
+    ],
+    "cues": [
+      "Full range of motion both ways: maximum stretch at the bottom, maximum height at the top",
+      "Slow on the way down — 2-3 seconds on the lowering phase is where the Achilles strengthening occurs",
+      "Keep your knee angle constant — do not let your knees rise or dip as you move"
+    ],
+    "youtubeId": "",
+    "modification": "Perform bodyweight standing calf raises on the edge of a step if no machine is available.",
+    "backSafe": true
+  },
+  {
+    "id": "tricep-pushdown",
+    "name": "Cable Tricep Pushdown",
+    "category": "strength",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["triceps"],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set a cable machine with a straight bar or rope attachment at a high position. Face the machine and hold the attachment with both hands, shoulder-width apart, overhand grip. Step back slightly for cable tension.",
+      "Bring your elbows to your sides, bent at 90 degrees. This is your starting position. Your elbows stay pinned to your sides throughout — they are the pivot point.",
+      "Take a breath in. As you exhale, push the bar or rope downward by extending your elbows against the cable resistance.",
+      "Extend until your arms are fully straight alongside your thighs — elbows locked out. Squeeze your triceps hard at this fully extended position for one second.",
+      "Inhale and slowly allow the weight to bring your forearms back up to the 90-degree starting position over 2 seconds. Do not let your elbows drift forward during the return."
+    ],
+    "cues": [
+      "Elbows stay pinned at your sides throughout — when elbows drift forward, load shifts off the triceps",
+      "Full extension: lock out at the bottom for maximum tricep contraction",
+      "Stand closer to the stack if the cable is pulling you onto your toes"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce the cable weight. A rope attachment (where you can flare the ends out at the bottom) is preferred for achieving full extension.",
+    "backSafe": true
+  },
+  {
+    "id": "treadmill-walk",
+    "name": "Treadmill Walk / Run",
+    "category": "cardio",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["cardiovascular system", "legs", "glutes"],
+    "sets": 1,
+    "reps": null,
+    "durationSeconds": 600,
+    "restSeconds": 0,
+    "instructions": [
+      "Set the treadmill to a moderate pace that gets your heart rate up but still allows short sentences — typically 3.5-4.5 mph for a brisk walk or 5-6 mph for a light jog. For a greater challenge without more speed, add a 2-4% incline.",
+      "Step on, stand tall, and let the belt bring you into your stride. Chest lifted, arms swinging naturally. Avoid holding onto the handrails — it reduces calorie burn and disrupts natural gait.",
+      "Breathe steadily. At a good challenge pace, you should be able to say a short sentence but not hold a full conversation.",
+      "Maintain this pace for the full 10 minutes. This is the cardiovascular finish of your circuit — aim for a satisfying challenge rather than easy movement.",
+      "In the final 1-2 minutes, gradually reduce your speed as a natural cool-down. Step off carefully only when the belt has slowed."
+    ],
+    "cues": [
+      "Look forward, not down at your feet — looking down promotes a hunched, inefficient posture",
+      "Do not hold the handrails — it significantly reduces the workout and disrupts natural movement",
+      "Add incline to increase intensity without increasing impact if joint discomfort is a concern"
+    ],
+    "youtubeId": "",
+    "modification": "Walk at a slower pace (2.5-3.5 mph) or reduce to 5 minutes if 10 feels too challenging. Flat setting is fine — incline is optional.",
+    "backSafe": true
+  },
+  {
+    "id": "rowing-machine-warmup",
+    "name": "Rowing Machine Warm-Up",
+    "category": "warm-up",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["full body", "cardiovascular system"],
+    "sets": 1,
+    "reps": null,
+    "durationSeconds": 300,
+    "restSeconds": 0,
+    "instructions": [
+      "Sit on the rowing machine and strap your feet in securely. Grip the handle with both hands, arms fully extended and relaxed. Sit with a neutral spine, knees bent, shins roughly vertical. This is the catch position.",
+      "Begin with an easy, light row. The stroke has four phases in sequence: push with legs, lean back slightly, pull arms to your lower ribs — then reverse: arms extend, lean forward, knees bend. Follow this sequence every stroke.",
+      "For the warm-up, row at approximately 18-22 strokes per minute — an unhurried, comfortable pace. Focus on smooth technique rather than power: legs push first (60% of power), then hips hinge back slightly, then arms pull.",
+      "Breathe in sync: exhale on the drive (power phase), inhale on the recovery (return phase). Keep your shoulders relaxed and down throughout.",
+      "After 5 minutes your joints should feel warm and loose. Ease off in the final 30 seconds."
+    ],
+    "cues": [
+      "Legs first, then lean, then arms — this stroke sequence is fundamental",
+      "Legs generate most of the power (about 60%) — do not skip straight to pulling with your arms",
+      "Keep your grip relaxed — squeezing too tight fatigues the forearms quickly"
+    ],
+    "youtubeId": "",
+    "modification": "Row at a slower pace (16-18 SPM) if 5 minutes feels challenging. Focus entirely on learning the stroke sequence rather than the pace.",
+    "backSafe": true
+  },
+  {
+    "id": "elliptical-warmup",
+    "name": "Elliptical Warm-Up",
+    "category": "warm-up",
+    "equipment": ["gym-machine"],
+    "targetMuscles": ["cardiovascular system", "legs", "glutes"],
+    "sets": 1,
+    "reps": null,
+    "durationSeconds": 600,
+    "restSeconds": 0,
+    "instructions": [
+      "Step onto the elliptical and place your feet in the pedals. Grip the moving handles lightly. Start pedaling forward at a low resistance level (1-3 on most machines).",
+      "Find a comfortable rhythm — aim for about 60-70 RPM. The elliptical simulates a running motion with zero joint impact, making it ideal for active recovery days.",
+      "Push through your heels and engage your glutes as you pedal — avoid riding entirely on the balls of your feet. Use the moving handles lightly to involve your upper body, or hold the stationary handles if preferred.",
+      "Breathe easily and steadily. On an active recovery day, keep your heart rate low-to-moderate (about 50-65% of your maximum). You should be able to hold a conversation comfortably.",
+      "After 10 minutes, gradually reduce resistance and slow your pace over the final minute as a natural transition into the mobility work that follows."
+    ],
+    "cues": [
+      "Push through your heels to engage your glutes — pedaling from your toes bypasses the glutes entirely",
+      "Keep your chest lifted and core lightly engaged throughout",
+      "This is active recovery — keep the intensity genuinely low; today is about movement, not training"
+    ],
+    "youtubeId": "",
+    "modification": "Reduce to 5 minutes at an even lower resistance. A stationary bike is a fine alternative if the elliptical is unavailable.",
+    "backSafe": true
   }
 ]

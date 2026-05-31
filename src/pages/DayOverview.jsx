@@ -4,10 +4,19 @@ import weeklyPlan from '../data/weeklyPlan.json'
 import exercises from '../data/exercises.json'
 import ExerciseModal from '../components/ExerciseModal'
 import { C, FONT, LABEL } from '../styles/tokens'
+import useAuth from '../hooks/useAuth'
 
 const BG   = C.bg
 const SURF = C.surface
 const TEAL = C.teal
+
+// Equipment that is always available (no user ownership required)
+const ALWAYS_AVAILABLE = new Set(['bodyweight', 'yoga-mat'])
+
+function canShowExercise(ex, mode, userEquipment) {
+  if (mode === 'gym') return true
+  return ex.equipment.every(e => ALWAYS_AVAILABLE.has(e) || userEquipment.includes(e))
+}
 
 const CAT_ACCENT = {
   'warm-up':    '#F59E0B',
@@ -38,7 +47,16 @@ const SECTION_ORDER = ['Warm-Up', 'Main Workout', 'Cool-Down']
 export default function DayOverview() {
   const { dayNumber } = useParams()
   const navigate = useNavigate()
+  const { user } = useAuth()
   const [selectedExercise, setSelectedExercise] = useState(null)
+  const [mode, setMode] = useState(() => localStorage.getItem('strongbase_workout_mode') || 'home')
+
+  function toggleMode(newMode) {
+    setMode(newMode)
+    localStorage.setItem('strongbase_workout_mode', newMode)
+  }
+
+  const userEquipment = user?.user_metadata?.equipment || ['bodyweight']
 
   const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
 
@@ -56,7 +74,12 @@ export default function DayOverview() {
   }
 
   const exMap = Object.fromEntries(exercises.map(e => [e.id, e]))
-  const dayExercises = day.exerciseIds.map(id => exMap[id]).filter(Boolean)
+  const modeIds = mode === 'gym'
+    ? (day.gymExerciseIds || day.exerciseIds)
+    : (day.homeExerciseIds || day.exerciseIds)
+  const allDayExercises = modeIds.map(id => exMap[id]).filter(Boolean)
+  // Filter out exercises the user doesn't have equipment for (home mode only)
+  const dayExercises = allDayExercises.filter(ex => canShowExercise(ex, mode, userEquipment))
 
   const sections = {}
   dayExercises.forEach(ex => {
@@ -89,6 +112,32 @@ export default function DayOverview() {
         <p style={{ fontSize: 14, color: '#94A3B8', marginTop: 6 }}>
           ⏱ {day.durationMinutes} min · {day.focusArea}
         </p>
+
+        {/* Home / Gym toggle */}
+        <div style={{
+          display: 'inline-flex', marginTop: 16,
+          backgroundColor: C.surfaceHi, borderRadius: 10,
+          padding: 3, border: `1px solid ${C.border}`,
+        }}>
+          {[
+            { id: 'home', label: '🏠 Home' },
+            { id: 'gym',  label: '🏋️ Gym'  },
+          ].map(opt => (
+            <button
+              key={opt.id}
+              onClick={() => toggleMode(opt.id)}
+              style={{
+                padding: '7px 18px', borderRadius: 8, border: 'none', cursor: 'pointer',
+                fontFamily: FONT, fontWeight: 700, fontSize: 13,
+                backgroundColor: mode === opt.id ? TEAL : 'transparent',
+                color: mode === opt.id ? C.bg : C.muted,
+                transition: 'all 0.15s ease',
+              }}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* ── Exercise list ───────────────────────────────────────────────────── */}

@@ -4,10 +4,20 @@ import weeklyPlan from '../data/weeklyPlan.json'
 import { supabase } from '../lib/supabase'
 import { logToRow } from './useWorkoutLogs'
 
-export default function useWorkoutPlayer(dayNumber) {
+// Rest adjustment by fitness level (seconds added to every rest interval)
+const REST_ADJUST = { beginner: 30, intermediate: 0, active: -15 }
+
+export default function useWorkoutPlayer(dayNumber, mode = 'home', fitnessLevel = 'intermediate') {
   const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
   const exMap = Object.fromEntries(exerciseData.map(e => [e.id, e]))
-  const dayExercises = day ? day.exerciseIds.map(id => exMap[id]).filter(Boolean) : []
+
+  // Pick home or gym exercise list; fall back to legacy exerciseIds
+  const exerciseIds = mode === 'gym'
+    ? (day?.gymExerciseIds || day?.exerciseIds || [])
+    : (day?.homeExerciseIds || day?.exerciseIds || [])
+  const dayExercises = exerciseIds.map(id => exMap[id]).filter(Boolean)
+
+  const restAdjust = REST_ADJUST[fitnessLevel] ?? 0
 
   // ── Core phase state ──────────────────────────────────────────────────────
   const [phase, setPhase] = useState('idle') // idle|transition|exercise|rest|complete
@@ -135,7 +145,9 @@ export default function useWorkoutPlayer(dayNumber) {
     setPhase('rest')
     setIsBetweenExercises(betweenEx)
     setNextExIdx(targetExIdx)
-    startCountdown(restSecs > 0 ? restSecs : 20, () => enterExercise(targetExIdx, targetSet))
+    const base = restSecs > 0 ? restSecs : 20
+    const adjusted = Math.max(10, base + restAdjust)
+    startCountdown(adjusted, () => enterExercise(targetExIdx, targetSet))
   }
 
   // directToExercise=true  → transition → exercise  (used for very first exercise)
