@@ -12,16 +12,15 @@ import {
   CAT_COLORS,
   getProgramDayNumber,
 } from '../utils/workoutStats'
+import { C, FONT, CARD, LABEL } from '../styles/tokens'
 
-// ── Design tokens ─────────────────────────────────────────────────────────────
-const BG      = '#0F172A'
-const SURF    = '#1E293B'
-const TEAL    = '#14B8A6'
-const MUTED   = '#94A3B8'
-const SUBTLE  = '#475569'
-const BORDER  = 'rgba(255,255,255,0.07)'
-const WHITE   = '#F8FAFC'
-const FONT    = "'Plus Jakarta Sans', sans-serif"
+// Local aliases for brevity
+const BG     = C.bg
+const SURF   = C.surface
+const TEAL   = C.teal
+const MUTED  = C.muted
+const SUBTLE = C.dim
+const WHITE  = C.white
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function getGreeting() {

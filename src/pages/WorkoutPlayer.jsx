@@ -3,6 +3,7 @@ import { computeBadges } from '../hooks/useBadges'
 import { useParams, useNavigate } from 'react-router-dom'
 import confetti from 'canvas-confetti'
 import { supabase } from '../lib/supabase'
+import { C, CARD, LABEL } from '../styles/tokens'
 import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
 import useStreak from '../hooks/useStreak'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
@@ -741,16 +742,16 @@ function CompletionScreen({ workout, navigate, logs, prevLogs }) {
       )}
 
       {/* Stats — 2×2 grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, width: '100%', maxWidth: 360, marginTop: 28 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, width: '100%', maxWidth: 360, marginTop: 28 }}>
         {[
           { label: 'TIME', value: formatTime(elapsedSeconds) },
           { label: 'EXERCISES', value: completedExerciseIds.length },
           { label: 'SETS', value: totalSetsCompleted },
           { label: 'STREAK', value: `${currentStreak}d` },
         ].map(s => (
-          <div key={s.label} style={{ backgroundColor: '#1E293B', borderRadius: 16, padding: 16, textAlign: 'center', border: '1px solid rgba(255,255,255,0.06)' }}>
-            <p style={{ fontSize: 28, fontWeight: 800, color: '#F8FAFC', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.value}</p>
-            <p style={{ fontSize: 10, color: '#64748B', fontWeight: 600, letterSpacing: '0.08em', marginTop: 4 }}>{s.label}</p>
+          <div key={s.label} style={{ ...CARD, padding: 16, textAlign: 'center' }}>
+            <p style={{ fontSize: 28, fontWeight: 800, color: C.white, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.value}</p>
+            <p style={{ ...LABEL, marginBottom: 0, marginTop: 4 }}>{s.label}</p>
           </div>
         ))}
       </div>
@@ -761,9 +762,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs }) {
         if (highlights.length === 0) return null
         return (
           <div style={{ width: '100%', maxWidth: 360, marginTop: 16, marginBottom: 4 }}>
-            <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', color: '#64748B', textTransform: 'uppercase', marginBottom: 8, borderLeft: '2px solid #0D9488', paddingLeft: 8 }}>
-              Your reps
-            </p>
+            <p style={{ ...LABEL, marginBottom: 8 }}>Your reps</p>
             {highlights.slice(0, 4).map((s, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 6, paddingBottom: 6, borderBottom: i < highlights.length - 1 ? '1px solid #1E293B' : 'none' }}>
                 <p style={{ fontSize: 12, color: '#94A3B8', margin: 0 }}>
@@ -780,13 +779,10 @@ function CompletionScreen({ workout, navigate, logs, prevLogs }) {
 
       {/* Motivational quote */}
       {quote && (
-        <div
-          className="w-full rounded-xl p-4 text-left"
-          style={{ backgroundColor: '#1E293B', borderLeft: '3px solid #14B8A6', maxWidth: 360, marginTop: 16, marginBottom: 20 }}
-        >
-          <p className="text-sm font-medium text-white leading-relaxed italic">"{quote.text}"</p>
+        <div style={{ ...CARD, padding: 16, width: '100%', maxWidth: 360, marginTop: 16, marginBottom: 20, textAlign: 'left' }}>
+          <p style={{ fontSize: 14, fontWeight: 500, color: C.white, lineHeight: 1.6, fontStyle: 'italic' }}>"{quote.text}"</p>
           {quote.author !== 'StrongBase' && (
-            <p className="text-xs mt-1 font-semibold" style={{ color: '#64748B' }}>— {quote.author}</p>
+            <p style={{ fontSize: 12, color: C.subtle, marginTop: 4 }}>— {quote.author}</p>
           )}
         </div>
       )}

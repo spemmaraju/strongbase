@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import { C, FONT, CARD, BTN_PRIMARY, INPUT } from '../styles/tokens'
 
 export default function Signup() {
   const navigate = useNavigate()
@@ -66,21 +67,18 @@ export default function Signup() {
       style={{ backgroundColor: '#0F172A' }}
     >
       {/* Logo */}
-      <div className="mb-8 text-center">
-        <div className="text-5xl mb-3">💪</div>
-        <h1 className="text-3xl font-extrabold text-white tracking-tight">StrongBase</h1>
-        <p className="text-sm mt-1 font-medium" style={{ color: '#94A3B8' }}>
-          Build the habit. Own the week.
-        </p>
+      <div style={{ marginBottom: 32, textAlign: 'center' }}>
+        <div style={{ fontSize: 44, marginBottom: 12 }}>💪</div>
+        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: C.white, margin: 0 }}>StrongBase</h1>
+        <p style={{ fontSize: 13, color: C.muted, marginTop: 4 }}>Build the habit. Own the week.</p>
       </div>
 
       {/* Form */}
       <form
         onSubmit={handleSubmit}
-        className="w-full rounded-2xl p-6 space-y-4"
-        style={{ backgroundColor: '#1E293B', border: '1px solid #334155', maxWidth: 400 }}
+        style={{ ...CARD, padding: 24, width: '100%', maxWidth: 400 }}
       >
-        <h2 className="text-xl font-bold text-white mb-2">Create Account</h2>
+        <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 18, color: C.white, marginBottom: 16 }}>Create Account</h2>
 
         {error && (
           <div

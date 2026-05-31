@@ -3,6 +3,7 @@ import useAuth from '../hooks/useAuth'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useStreak from '../hooks/useStreak'
 import { getTopMuscles, formatDuration } from '../utils/workoutStats'
+import { C, FONT, CARD, LABEL, PAGE_HEADER } from '../styles/tokens'
 
 export default function Profile() {
   const navigate = useNavigate()
@@ -32,34 +33,11 @@ export default function Profile() {
     }
   }
 
-  const SECTION_LABEL_STYLE = {
-    fontWeight: 600,
-    fontSize: 11,
-    letterSpacing: '0.1em',
-    textTransform: 'uppercase',
-    color: '#64748B',
-    borderLeft: '2px solid #14B8A6',
-    paddingLeft: 8,
-    marginBottom: 16,
-    display: 'block',
-  }
-
-  const CARD_STYLE = {
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 16,
-    backgroundColor: '#1E293B',
-    borderRadius: 16,
-    padding: 20,
-    border: '1px solid rgba(255,255,255,0.06)',
-  }
-
+  const SECTION_LABEL_STYLE = LABEL
+  const CARD_STYLE = { ...CARD, margin: '16px 20px', padding: 20 }
   const STAT_ROW_STYLE = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingTop: 12,
-    paddingBottom: 12,
+    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+    paddingTop: 12, paddingBottom: 12,
   }
 
   const weekProgress = Math.min(thisWeekCount / 7, 1)

@@ -7,6 +7,7 @@ import {
   formatDuration, formatDate, formatDateTime,
   getMonthIdx, MONTH_NAMES,
 } from '../utils/workoutStats'
+import { C, FONT, CARD, LABEL } from '../styles/tokens'
 
 // ── Heatmap ────────────────────────────────────────────────────────────────
 
@@ -239,10 +240,7 @@ function WeeklyCard({ weekStart, weekEnd, logs, navigate }) {
   const weekLabel = 'Week of ' + formatDate(weekStart)
 
   return (
-    <div
-      className="rounded-2xl overflow-hidden"
-      style={{ backgroundColor: '#1E293B', border: '1px solid rgba(255,255,255,0.06)' }}
-    >
+    <div style={{ ...CARD, overflow: 'hidden' }}>
       {/* Card header — tap to expand */}
       <button
         onClick={() => setExpanded(e => !e)}
@@ -358,13 +356,10 @@ export default function History() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
-      {/* Header — flat dark background */}
-      <div
-        className="px-5 pt-12 pb-5"
-        style={{ backgroundColor: '#0F172A', borderBottom: '2px solid #14B8A6' }}
-      >
-        <h1 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: 36, color: '#F8FAFC', margin: 0 }}>My History</h1>
-        <p className="mt-1 text-sm" style={{ color: '#94A3B8' }}>
+      {/* Header */}
+      <div style={{ padding: '44px 20px 16px', borderBottom: `1px solid ${C.borderMid}`, backgroundColor: C.bg }}>
+        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: C.white, margin: 0 }}>History</h1>
+        <p style={{ marginTop: 4, fontSize: 13, color: C.muted }}>
           {loading ? '…' : `${totalWorkouts} workout${totalWorkouts !== 1 ? 's' : ''} completed`}
         </p>
       </div>
@@ -396,13 +391,8 @@ export default function History() {
         <div className="px-5 pt-5 space-y-5">
 
           {/* ── Calendar Heatmap ─────────────────────────────────────────── */}
-          <section
-            className="rounded-xl p-4"
-            style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
-              Last {weeksToShow} Weeks
-            </p>
+          <section style={{ ...CARD, padding: 16 }}>
+            <p style={{ ...LABEL, marginBottom: 12 }}>Last {weeksToShow} Weeks</p>
             <CalendarHeatmap weeks={heatmapWeeks} onCellTap={setActiveCell} />
             {/* Legend */}
             <div className="flex items-center gap-3 mt-3">
@@ -423,9 +413,7 @@ export default function History() {
 
           {/* ── Weekly summary cards ─────────────────────────────────────── */}
           <section>
-            <h2 className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
-              Weekly Summaries
-            </h2>
+            <p style={LABEL}>Weekly Summaries</p>
             <div className="space-y-3">
               {weeklyGroups.map(wg => (
                 <WeeklyCard

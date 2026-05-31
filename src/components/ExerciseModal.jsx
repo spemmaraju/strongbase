@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { C, FONT, LABEL } from '../styles/tokens'
 
 export default function ExerciseModal({ exercise, onClose }) {
   // Close on Escape key
@@ -179,21 +180,7 @@ export default function ExerciseModal({ exercise, onClose }) {
           </div>
 
           {/* HOW TO DO IT */}
-          <p
-            style={{
-              fontWeight: 600,
-              fontSize: 11,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: '#64748B',
-              marginTop: 24,
-              marginBottom: 12,
-              borderLeft: '2px solid #14B8A6',
-              paddingLeft: 8,
-            }}
-          >
-            HOW TO DO IT
-          </p>
+          <p style={{ ...LABEL, marginTop: 24, marginBottom: 12 }}>How to do it</p>
           <ol style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {exercise.instructions.map((step, i) => (
               <li key={i} style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
@@ -223,21 +210,7 @@ export default function ExerciseModal({ exercise, onClose }) {
           </ol>
 
           {/* COACHING CUES */}
-          <p
-            style={{
-              fontWeight: 600,
-              fontSize: 11,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: '#64748B',
-              marginTop: 24,
-              marginBottom: 12,
-              borderLeft: '2px solid #14B8A6',
-              paddingLeft: 8,
-            }}
-          >
-            COACHING CUES
-          </p>
+          <p style={{ ...LABEL, marginTop: 24, marginBottom: 12 }}>Coaching cues</p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {exercise.cues.map((cue, i) => (
               <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12 }}>

@@ -3,11 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom'
 import weeklyPlan from '../data/weeklyPlan.json'
 import exercises from '../data/exercises.json'
 import ExerciseModal from '../components/ExerciseModal'
+import { C, FONT, LABEL } from '../styles/tokens'
 
-const BG   = '#0F172A'
-const SURF = '#1E293B'
-const TEAL = '#14B8A6'
-const FONT = "'Plus Jakarta Sans', sans-serif"
+const BG   = C.bg
+const SURF = C.surface
+const TEAL = C.teal
 
 const CAT_ACCENT = {
   'warm-up':    '#F59E0B',
@@ -98,14 +98,8 @@ export default function DayOverview() {
           if (!exList?.length) return null
           return (
             <div key={sectionName} style={{ marginTop: 24 }}>
-              {/* Section label — minimal */}
-              <p style={{
-                fontSize: 10, fontWeight: 700, letterSpacing: '0.14em',
-                color: '#475569', textTransform: 'uppercase',
-                padding: '0 20px', marginBottom: 4,
-              }}>
-                {sectionName}
-              </p>
+              {/* Section label */}
+              <p style={{ ...LABEL, padding: '0 20px', marginBottom: 4 }}>{sectionName}</p>
 
               {exList.map(ex => {
                 counter++
