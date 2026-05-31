@@ -391,7 +391,7 @@ export default function Home() {
       {/* ── Hero card ──────────────────────────────────────────────────────── */}
       {loading ? (
         // Skeleton
-        <div style={{ margin: '0 16px', borderRadius: 24, backgroundColor: SURF, border: `1px solid ${BORDER}`, height: 220, animation: 'pulse 1.5s ease-in-out infinite' }}>
+        <div style={{ margin: '0 16px', borderRadius: 24, backgroundColor: SURF, border: `1px solid ${C.border}`, height: 220, animation: 'pulse 1.5s ease-in-out infinite' }}>
           <style>{`@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }`}</style>
         </div>
       ) : (
