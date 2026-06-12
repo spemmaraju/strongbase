@@ -32,13 +32,27 @@ export function computeStreakStats(logs) {
   const dateSet = new Set(logs.map(l => l.date))
   const sortedDates = [...dateSet].sort()
 
-  // ── Current streak (consecutive days ending today or yesterday) ────────────
+  // ── Current streak with forgiveness ────────────────────────────────────────
+  // One missed day per rolling 7 days doesn't break the streak (a single missed
+  // day shouldn't zero weeks of work). Today not being logged yet is never a miss.
   let currentStreak = 0
-  const yesterday = dateAddDays(today, -1)
-  let check = dateSet.has(today) ? today : dateSet.has(yesterday) ? yesterday : null
-  while (check && dateSet.has(check)) {
-    currentStreak++
-    check = dateAddDays(check, -1)
+  let cursor = dateSet.has(today) ? today : dateAddDays(today, -1)
+  let lastForgiven = null
+  while (cursor) {
+    if (dateSet.has(cursor)) {
+      currentStreak++
+      cursor = dateAddDays(cursor, -1)
+    } else {
+      const prev = dateAddDays(cursor, -1)
+      const farEnough = lastForgiven === null ||
+        Math.round((new Date(lastForgiven + 'T12:00:00Z') - new Date(cursor + 'T12:00:00Z')) / 86400000) >= 7
+      if (dateSet.has(prev) && farEnough) {
+        lastForgiven = cursor   // skip this one missed day, streak survives
+        cursor = prev
+      } else {
+        break
+      }
+    }
   }
 
   // ── Longest streak ever ────────────────────────────────────────────────────

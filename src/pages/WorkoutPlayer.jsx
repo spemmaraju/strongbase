@@ -15,6 +15,7 @@ import CircularTimer from '../components/CircularTimer'
 import ExerciseModal from '../components/ExerciseModal'
 import quotesData from '../data/quotes.json'
 import { randomQuote } from '../utils/workoutStats'
+import { getLastReps, compareToLastSession } from '../utils/perfHistory'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function formatTime(seconds) {
@@ -264,6 +265,10 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
   const canGoBack = !(workout.exerciseIndex === 0 && currentSet === 1)
   const showVideo = isWide && !!ex.youtubeId
 
+  // What you did last session — the proof you're getting stronger
+  const todayStr = new Date().toISOString().slice(0, 10)
+  const lastTime = !isTimed ? getLastReps(ex.id, currentSet, todayStr) : null
+
   return (
     <div className="flex flex-col min-h-screen" style={{ backgroundColor: '#0F172A' }}>
       <ProgressBar completed={completedExerciseIds.length} total={dayExercises.length} />
@@ -299,9 +304,16 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
         </button>
 
         {/* Set label */}
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#94A3B8' }}>
+        <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#94A3B8' }}>
           {setsLabel}
         </p>
+        {lastTime ? (
+          <p style={{ fontSize: 13, fontWeight: 600, color: '#14B8A6', marginBottom: 10 }}>
+            Last time: {lastTime.reps} reps
+          </p>
+        ) : (
+          <div style={{ marginBottom: 10 }} />
+        )}
 
         {/* Exercise name — centered, large */}
         <h2
@@ -680,6 +692,24 @@ function CompletionScreen({ workout, navigate, logs, prevLogs }) {
   // Compute live streak from the logs passed in from Home/parent
   const { currentStreak, totalWorkouts } = useStreak(logs)
 
+  // Strength progress vs your previous session (computed once on mount)
+  const [progress] = useState(() => {
+    const today = new Date().toISOString().slice(0, 10)
+    return compareToLastSession(setPerformance || [], today)
+      .filter(p => p.delta !== 0)
+      .sort((a, b) => b.delta - a.delta)
+  })
+
+  // Post-workout effort rating (RPE 1–10), stored locally for future tuning
+  const [rpe, setRpe] = useState(null)
+  function handleRpe(value) {
+    setRpe(value)
+    try {
+      const today = new Date().toISOString().slice(0, 10)
+      localStorage.setItem(`strongbase_rpe_${today}_d${day.day}`, String(value))
+    } catch {}
+  }
+
   const [restarting, setRestarting] = useState(false)
 
   async function handleRestartWeek() {
@@ -822,6 +852,45 @@ function CompletionScreen({ workout, navigate, logs, prevLogs }) {
             <p style={{ ...LABEL, marginBottom: 0, marginTop: 4 }}>{s.label}</p>
           </div>
         ))}
+      </div>
+
+      {/* Strength progress vs previous session */}
+      {progress.length > 0 && (
+        <div style={{ ...CARD, padding: 16, width: '100%', maxWidth: 360, marginTop: 16, textAlign: 'left' }}>
+          <p style={{ ...LABEL, marginBottom: 10 }}>vs last session</p>
+          {progress.slice(0, 4).map((p, i) => (
+            <div key={p.exerciseId} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: i > 0 ? 8 : 0 }}>
+              <p style={{ fontSize: 13, color: '#CBD5E1', margin: 0 }}>
+                {p.exerciseId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
+              </p>
+              <p style={{ fontSize: 13, fontWeight: 700, color: p.delta > 0 ? '#22C55E' : '#F59E0B', margin: 0, fontVariantNumeric: 'tabular-nums' }}>
+                {p.prevTotal} → {p.total} {p.delta > 0 ? '▲' : '▼'}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Effort rating — how hard was that? */}
+      <div style={{ ...CARD, padding: 16, width: '100%', maxWidth: 360, marginTop: 16, textAlign: 'left' }}>
+        <p style={{ ...LABEL, marginBottom: 10 }}>{rpe ? 'Effort noted ✓' : 'How hard was that? (1 = easy, 10 = max)'}</p>
+        <div style={{ display: 'flex', gap: 5 }}>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+            <button
+              key={n}
+              onClick={() => handleRpe(n)}
+              style={{
+                flex: 1, minHeight: 36, borderRadius: 8, cursor: 'pointer',
+                fontSize: 12, fontWeight: 700,
+                backgroundColor: rpe === n ? '#14B8A6' : '#0F172A',
+                color: rpe === n ? '#0F172A' : n <= (rpe ?? 0) ? '#14B8A6' : '#64748B',
+                border: `1px solid ${rpe === n ? '#14B8A6' : '#334155'}`,
+              }}
+            >
+              {n}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Performance highlights — sets where user adjusted reps */}

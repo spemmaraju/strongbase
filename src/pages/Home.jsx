@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import weeklyPlan from '../data/weeklyPlan.json'
 import exercisesData from '../data/exercises.json'
-import useStreak from '../hooks/useStreak'
+import useStreak, { getMondayStr, dateAddDays } from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useAuth from '../hooks/useAuth'
@@ -256,6 +256,46 @@ function WeekDots({ days, todayDayNumber, completedThisWeekDayNumbers, onPress }
   )
 }
 
+// Weekly training volume (total sets per week, last 4 weeks) — the simplest
+// honest "am I doing more than before?" signal
+function VolumeTrend({ logs }) {
+  if (logs.length < 2) return null
+  const today = new Date().toISOString().slice(0, 10)
+  const thisMonday = getMondayStr(today)
+  const weeks = [3, 2, 1, 0].map(n => {
+    const start = dateAddDays(thisMonday, -7 * n)
+    const end = dateAddDays(start, 7)
+    const sets = logs
+      .filter(l => l.date >= start && l.date < end)
+      .reduce((t, l) => t + (l.totalSets || 0), 0)
+    return { start, sets, isCurrent: n === 0 }
+  })
+  if (weeks.every(w => w.sets === 0)) return null
+  const max = Math.max(...weeks.map(w => w.sets), 1)
+
+  return (
+    <div style={{ padding: '20px 20px 0' }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: SUBTLE, textTransform: 'uppercase', margin: 0, marginBottom: 10 }}>
+        Weekly volume · sets
+      </p>
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: 10, height: 56 }}>
+        {weeks.map(w => (
+          <div key={w.start} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+            <span style={{ fontSize: 11, fontWeight: 700, color: w.isCurrent ? TEAL : SUBTLE }}>
+              {w.sets || ''}
+            </span>
+            <div style={{
+              width: '100%', borderRadius: 4,
+              height: Math.max(4, Math.round((w.sets / max) * 36)),
+              backgroundColor: w.isCurrent ? TEAL : '#334155',
+            }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 // Compact earned badges — shown only if any earned
 function BadgesRow({ badges }) {
   if (!badges.some(b => b.earned)) return null
@@ -437,6 +477,9 @@ export default function Home() {
           {totalWorkouts} total · {longestStreak} best
         </span>
       </div>
+
+      {/* ── Weekly volume trend ────────────────────────────────────────────── */}
+      <VolumeTrend logs={logs} />
 
       {/* ── Badges ─────────────────────────────────────────────────────────── */}
       <BadgesRow badges={badges} />
