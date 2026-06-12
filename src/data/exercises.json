@@ -2323,5 +2323,112 @@
     "youtubeId": "tbChqvQ4LHQ",
     "modification": "Reduce to 5 minutes at an even lower resistance. A stationary bike is a fine alternative if the elliptical is unavailable.",
     "backSafe": true
+  },
+  {
+    "id": "sphinx-pose",
+    "name": "Sphinx Pose",
+    "category": "flexibility",
+    "backCare": true,
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["lumbar extensors", "thoracic spine", "hip flexors", "chest"],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 40,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie face down on your mat with your legs extended behind you, tops of the feet on the floor. Place your forearms on the mat with elbows directly under your shoulders, palms flat.",
+      "Press gently through your forearms and lift your chest, letting your lower back settle into a comfortable, supported arch. Your forearms carry the weight — this is a passive, gentle extension, not a push.",
+      "Keep your glutes and legs relaxed. Let gravity and your breath do the work. Your hips and thighs stay in contact with the mat throughout.",
+      "Hold for 40 seconds, breathing slowly and deeply. With each exhale, allow your lower back to relax a little more into the position.",
+      "This gentle spinal extension counterbalances the sitting and forward-bending of daily life. The sensation should be a comfortable stretch or pressure in the lower back — never pain, and never anything radiating into the leg. If you feel leg symptoms, stop and skip this exercise today."
+    ],
+    "cues": [
+      "Elbows under shoulders, forearms carrying the load — this is a supported, passive arch",
+      "Relax your glutes and legs completely — tensing them works against the stretch",
+      "Comfortable pressure in the lower back is fine; any pain or leg tingling means come down immediately"
+    ],
+    "youtubeId": "WTCGYyRJDWg",
+    "modification": "Lower to a smaller arch by sliding your elbows further forward, or rest on a pillow placed under your chest.",
+    "backSafe": true
+  },
+  {
+    "id": "cobra-pose",
+    "name": "Cobra Press-Up (McKenzie)",
+    "category": "flexibility",
+    "backCare": true,
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["lumbar extensors", "thoracic spine", "hip flexors", "abdominals (stretch)"],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie face down on your mat with your hands flat on the floor under your shoulders, as if at the bottom of a push-up. Legs extended, tops of the feet on the floor, glutes and legs fully relaxed.",
+      "Take a breath in. As you exhale, press through your hands to slowly straighten your arms, lifting your chest and upper torso off the mat. Your hips and pelvis remain on the floor — only your spine extends.",
+      "Press up only as far as comfortable. Your lower back relaxes into the extension; your arms do all the work. Full elbow extension is the eventual goal, not a day-one requirement.",
+      "Pause for one breath at your comfortable top position, then slowly lower back down to the mat. That is one repetition.",
+      "This is the classic McKenzie press-up used in disc rehabilitation. The movement should feel like a progressively easier stretch across the front of your torso and gentle pressure in the lower back. Centralizing sensation (moving toward your spine) is good; anything radiating down a leg means stop immediately."
+    ],
+    "cues": [
+      "Hips stay glued to the mat — if they lift, you have turned it into an upward dog, which is a different exercise",
+      "Glutes and legs stay relaxed — let your arms lift and your spine simply extend",
+      "Range of motion grows over weeks; never push through pain or leg symptoms"
+    ],
+    "youtubeId": "tIZppe-RB0g",
+    "modification": "Press up onto your forearms only (Sphinx Pose) until full press-ups feel comfortable. Reduce the range to whatever depth is pain-free.",
+    "backSafe": true
+  },
+  {
+    "id": "pelvic-tilts",
+    "name": "Pelvic Tilts",
+    "category": "flexibility",
+    "backCare": true,
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["deep core", "lumbar mobility", "pelvic control"],
+    "sets": 2,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie on your back with your knees bent and feet flat on the floor, hip-width apart. Arms rest at your sides. Notice the small natural gap between your lower back and the mat.",
+      "As you exhale, gently flatten your lower back into the mat by tilting your pelvis backward — think of drawing your belly button down toward your spine and your tailbone slightly up. Hold for 2 seconds.",
+      "As you inhale, reverse the motion: tilt your pelvis forward to slightly increase the arch in your lower back, creating a small gap under it again. Hold for 2 seconds.",
+      "Rock slowly and smoothly between these two positions — flatten on the exhale, arch on the inhale. The movement is small and entirely within a comfortable range.",
+      "Complete 10 slow cycles. This re-teaches pelvic control and gently mobilizes the lumbar segments — ideal as the very first or very last movement of a session."
+    ],
+    "cues": [
+      "Small, slow, and smooth — this is a control drill, not a strength exercise",
+      "Sync with your breath: exhale to flatten, inhale to arch",
+      "Stay inside the completely pain-free range — even a tiny rocking motion is effective"
+    ],
+    "youtubeId": "TWuR_U9ddcc",
+    "modification": "Reduce the range of motion to a barely visible rock, or perform only the flattening half of the movement.",
+    "backSafe": true
+  },
+  {
+    "id": "mcgill-curlup",
+    "name": "McGill Curl-Up",
+    "category": "stability",
+    "equipment": ["bodyweight", "yoga-mat"],
+    "targetMuscles": ["rectus abdominis", "deep core", "spinal stabilizers"],
+    "sets": 3,
+    "reps": 6,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Lie on your back. Extend your left leg flat and bend your right knee so your right foot is flat on the floor. Slide both hands, palms down, into the natural arch under your lower back — they preserve the spine's neutral curve throughout.",
+      "Keep your elbows resting on the floor. Take a breath in and brace your core lightly, as if preparing for a gentle poke in the stomach.",
+      "Lift your head, shoulders, and upper chest off the floor as ONE rigid unit — just an inch or two. Your spine does not bend or curl; the movement happens by hinging slightly through the upper back. Imagine your head resting on a bathroom scale and just unweighting it.",
+      "Hold the lift for 8 seconds, breathing steadily — do not hold your breath. Then lower back down with control.",
+      "Complete 6 reps, then switch legs (left knee bent, right leg straight) for the next set. Designed by spine researcher Dr. Stuart McGill, this builds core strength with virtually zero load on the discs — the spine never flexes."
+    ],
+    "cues": [
+      "Do NOT curl or crunch — head, shoulders, and chest lift together as one stiff plank",
+      "Hands stay under your lower back to keep its natural arch the whole time",
+      "Small lift, long hold — an inch off the floor held for 8 seconds beats a big sit-up"
+    ],
+    "youtubeId": "RgSnH7tMCoU",
+    "modification": "Shorten the hold to 4 seconds, or simply lift the weight of your head off the floor without raising the shoulders.",
+    "backSafe": true
   }
 ]

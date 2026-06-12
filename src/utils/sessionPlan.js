@@ -29,7 +29,15 @@ export function applySessionLength(exercises, sessionLength) {
     .filter(e => !isWarm(e) && !isCool(e))
     .slice(0, preset.mainCount)
     .map(e => ({ ...e, sets: Math.min(e.sets, preset.setsCap) }))
-  const cool = exercises.filter(isCool).slice(0, preset.cooldowns)
+
+  // Back-care moves are ALWAYS kept; other cooldowns fill the remaining slots
+  const cools = exercises.filter(isCool)
+  const backCare = cools.filter(e => e.backCare)
+  const otherCool = cools.filter(e => !e.backCare)
+  const cool = [
+    ...otherCool.slice(0, Math.max(0, preset.cooldowns - backCare.length)),
+    ...backCare,
+  ]
 
   return [...warm, ...main, ...cool]
 }

@@ -25,9 +25,10 @@ const CAT_ACCENT = {
   'cardio':     '#3B82F6',
 }
 
-function getGroup(category) {
-  if (category === 'warm-up')    return 'Warm-Up'
-  if (category === 'flexibility') return 'Cool-Down'
+function getGroup(ex) {
+  if (ex.backCare)                   return 'Back Care'
+  if (ex.category === 'warm-up')     return 'Warm-Up'
+  if (ex.category === 'flexibility') return 'Cool-Down'
   return 'Main Workout'
 }
 
@@ -41,7 +42,7 @@ function formatSetsReps(ex) {
   return `${ex.sets} × ${ex.reps} reps`
 }
 
-const SECTION_ORDER = ['Warm-Up', 'Main Workout', 'Cool-Down']
+const SECTION_ORDER = ['Warm-Up', 'Main Workout', 'Cool-Down', 'Back Care']
 
 export default function DayOverview() {
   const { dayNumber } = useParams()
@@ -91,7 +92,7 @@ export default function DayOverview() {
 
   const sections = {}
   dayExercises.forEach(ex => {
-    const g = getGroup(ex.category)
+    const g = getGroup(ex)
     if (!sections[g]) sections[g] = []
     sections[g].push(ex)
   })
