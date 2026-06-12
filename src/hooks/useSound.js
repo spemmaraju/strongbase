@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 
-const SOUND_KEY = 'strongbase_sound'
+const AUDIO_KEY = 'strongbase_audio_mode' // 'voice' | 'sound' | 'mute'
+const LEGACY_SOUND_KEY = 'strongbase_sound'
 
 // Play a single oscillator tone into an existing AudioContext
 function oscTone(ac, freq, startTime, duration, gain = 0.12, type = 'sine') {
@@ -18,17 +19,23 @@ function oscTone(ac, freq, startTime, duration, gain = 0.12, type = 'sine') {
   } catch (e) { /* fail silently */ }
 }
 
+function loadInitialMode() {
+  try {
+    const stored = localStorage.getItem(AUDIO_KEY)
+    if (stored === 'voice' || stored === 'sound' || stored === 'mute') return stored
+    // Migrate from the old on/off sound setting
+    return localStorage.getItem(LEGACY_SOUND_KEY) === 'off' ? 'mute' : 'voice'
+  } catch { return 'voice' }
+}
+
 export function useSound() {
   const acRef = useRef(null)
-  // Use a ref so playSound always reads the current value (no stale closure)
-  const enabledRef = useRef(true)
-  const [soundEnabled, setSoundEnabled] = useState(() => {
-    try {
-      const stored = localStorage.getItem(SOUND_KEY)
-      const val = stored !== 'off'
-      enabledRef.current = val
-      return val
-    } catch { return true }
+  // Refs so playSound/speak always read the current value (no stale closures)
+  const modeRef = useRef('voice')
+  const [audioMode, setAudioMode] = useState(() => {
+    const mode = loadInitialMode()
+    modeRef.current = mode
+    return mode
   })
 
   // iOS Safari fix: resume AudioContext on first user touch before any sound plays
@@ -41,6 +48,11 @@ export function useSound() {
     }
     document.addEventListener('touchstart', handleFirstTouch, { passive: true })
     return () => document.removeEventListener('touchstart', handleFirstTouch)
+  }, [])
+
+  // Stop any queued speech when leaving the page that uses this hook
+  useEffect(() => () => {
+    try { window.speechSynthesis?.cancel() } catch {}
   }, [])
 
   function getAC() {
@@ -57,7 +69,7 @@ export function useSound() {
   }
 
   function playSound(type) {
-    if (!enabledRef.current) return
+    if (modeRef.current === 'mute') return
     const ac = getAC()
     if (!ac) return
     try {
@@ -92,14 +104,38 @@ export function useSound() {
     } catch (e) { /* fail silently */ }
   }
 
-  function toggleSound() {
-    setSoundEnabled(prev => {
-      const next = !prev
-      enabledRef.current = next
-      try { localStorage.setItem(SOUND_KEY, next ? 'on' : 'off') } catch {}
+  // Voice coach — only speaks in 'voice' mode. Interrupts any previous line so
+  // announcements never queue up behind each other.
+  function speak(text) {
+    if (modeRef.current !== 'voice') return
+    if (!('speechSynthesis' in window)) return
+    try {
+      window.speechSynthesis.cancel()
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.rate = 1.05
+      window.speechSynthesis.speak(utterance)
+    } catch { /* fail silently */ }
+  }
+
+  function cycleAudioMode() {
+    setAudioMode(prev => {
+      const next = prev === 'voice' ? 'sound' : prev === 'sound' ? 'mute' : 'voice'
+      modeRef.current = next
+      if (next !== 'voice') {
+        try { window.speechSynthesis?.cancel() } catch {}
+      }
+      try { localStorage.setItem(AUDIO_KEY, next) } catch {}
       return next
     })
   }
 
-  return { playSound, soundEnabled, toggleSound }
+  return {
+    playSound,
+    speak,
+    audioMode,
+    cycleAudioMode,
+    // Backward-compatible alias (sounds are on unless muted)
+    soundEnabled: audioMode !== 'mute',
+    toggleSound: cycleAudioMode,
+  }
 }

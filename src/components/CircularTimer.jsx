@@ -1,46 +1,46 @@
 // Animated SVG ring countdown timer.
 // Ring color shifts to amber when ≤ 3 seconds remain.
+// `size` scales the whole component (200 = phone default, ~280 for tablet).
 
-const SIZE = 200
-const STROKE = 8
-const RADIUS = (SIZE - STROKE) / 2                    // 96
-const CIRCUMFERENCE = 2 * Math.PI * RADIUS            // ≈ 603.19
+export default function CircularTimer({ secondsRemaining, totalSeconds, ringColor = '#14B8A6', size = 200 }) {
+  const stroke = Math.max(6, Math.round(size * 0.04))
+  const radius = (size - stroke) / 2
+  const circumference = 2 * Math.PI * radius
 
-export default function CircularTimer({ secondsRemaining, totalSeconds, ringColor = '#14B8A6' }) {
   const progress = totalSeconds > 0 ? secondsRemaining / totalSeconds : 0
-  const dashOffset = CIRCUMFERENCE * (1 - progress)
+  const dashOffset = circumference * (1 - progress)
 
   // Amber when 3 seconds or fewer remain (and timer is actually running)
   const activeColor =
     secondsRemaining > 0 && secondsRemaining <= 3 ? '#F59E0B' : ringColor
 
   return (
-    <div style={{ position: 'relative', width: SIZE, height: SIZE }}>
+    <div style={{ position: 'relative', width: size, height: size }}>
       {/* SVG ring */}
       <svg
-        width={SIZE}
-        height={SIZE}
+        width={size}
+        height={size}
         style={{ transform: 'rotate(-90deg)', display: 'block' }}
       >
         {/* Background track */}
         <circle
-          cx={SIZE / 2}
-          cy={SIZE / 2}
-          r={RADIUS}
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
           fill="none"
           stroke="#334155"
-          strokeWidth={STROKE}
+          strokeWidth={stroke}
         />
         {/* Progress arc */}
         <circle
-          cx={SIZE / 2}
-          cy={SIZE / 2}
-          r={RADIUS}
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
           fill="none"
           stroke={activeColor}
-          strokeWidth={STROKE}
+          strokeWidth={stroke}
           strokeLinecap="round"
-          strokeDasharray={CIRCUMFERENCE}
+          strokeDasharray={circumference}
           strokeDashoffset={dashOffset}
           style={{
             transition: 'stroke-dashoffset 0.85s linear, stroke 0.3s ease',
@@ -61,7 +61,7 @@ export default function CircularTimer({ secondsRemaining, totalSeconds, ringColo
       >
         <span
           style={{
-            fontSize: 52,
+            fontSize: Math.round(size * 0.26),
             fontWeight: 800,
             color: '#F8FAFC',
             lineHeight: 1,
@@ -73,7 +73,7 @@ export default function CircularTimer({ secondsRemaining, totalSeconds, ringColo
         </span>
         <span
           style={{
-            fontSize: 13,
+            fontSize: Math.max(12, Math.round(size * 0.065)),
             color: '#94A3B8',
             marginTop: 6,
             fontWeight: 600,

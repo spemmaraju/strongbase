@@ -8,6 +8,8 @@ import useWorkoutPlayer from '../hooks/useWorkoutPlayer'
 import useStreak from '../hooks/useStreak'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useAuth from '../hooks/useAuth'
+import useWakeLock from '../hooks/useWakeLock'
+import useMediaQuery from '../hooks/useMediaQuery'
 import { useSound } from '../hooks/useSound'
 import CircularTimer from '../components/CircularTimer'
 import ExerciseModal from '../components/ExerciseModal'
@@ -40,7 +42,38 @@ const ANIM_STYLES = `
 
 // ── Sub-components ─────────────────────────────────────────────────────────
 
-function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
+// Autoplaying, muted, looping demo video — shown in the left pane on
+// tablet/iPad widths so you can watch form while doing the exercise.
+function VideoPane({ youtubeId, title }) {
+  if (!youtubeId) return null
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 8px 24px 24px' }}>
+      <div style={{
+        width: '100%', maxWidth: 600,
+        position: 'relative', paddingTop: '56.25%',
+        borderRadius: 16, overflow: 'hidden',
+        border: '1px solid rgba(255,255,255,0.08)',
+        backgroundColor: '#000',
+      }}>
+        <iframe
+          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&playlist=${youtubeId}&controls=1&rel=0&modestbranding=1&playsinline=1`}
+          title={title || 'Exercise demo'}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+        />
+      </div>
+    </div>
+  )
+}
+
+const AUDIO_MODE_META = {
+  voice: { label: 'Voice coach on', next: 'Sounds only' },
+  sound: { label: 'Sounds only', next: 'Mute' },
+  mute:  { label: 'Muted', next: 'Voice coach' },
+}
+
+function TopBar({ day, onExit, audioMode, onCycleAudio }) {
   return (
     <div
       className="flex items-center justify-between py-3"
@@ -53,29 +86,33 @@ function TopBar({ day, onExit, soundEnabled, onToggleSound }) {
         <p className="text-sm font-semibold text-white leading-tight truncate">{day.theme}</p>
       </div>
       <div className="flex items-center gap-2 flex-shrink-0">
-        {/* Sound toggle */}
+        {/* Audio toggle — cycles voice coach → sounds only → mute */}
         <button
-          onClick={onToggleSound}
-          className="flex items-center justify-center rounded-lg transition-all active:scale-90"
+          onClick={onCycleAudio}
+          className="flex items-center justify-center gap-1 rounded-lg transition-all active:scale-90"
           style={{
-            minHeight: 44, width: 44,
+            minHeight: 44, paddingLeft: 10, paddingRight: 10,
             backgroundColor: '#1E293B',
-            border: '1px solid #334155',
+            border: `1px solid ${audioMode === 'voice' ? '#14B8A650' : '#334155'}`,
             cursor: 'pointer',
           }}
-          aria-label={soundEnabled ? 'Mute sounds' : 'Enable sounds'}
+          aria-label={`${AUDIO_MODE_META[audioMode].label}. Tap for ${AUDIO_MODE_META[audioMode].next}.`}
+          title={AUDIO_MODE_META[audioMode].label}
         >
-          {soundEnabled ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-              <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round">
+          {audioMode === 'mute' ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" strokeLinecap="round">
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
               <line x1="23" y1="9" x2="17" y2="15"/>
               <line x1="17" y1="9" x2="23" y2="15"/>
             </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={audioMode === 'voice' ? '#14B8A6' : '#94A3B8'} strokeWidth="2" strokeLinecap="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+            </svg>
+          )}
+          {audioMode === 'voice' && (
+            <span style={{ fontSize: 10, fontWeight: 800, color: '#14B8A6', letterSpacing: '0.08em' }}>VOICE</span>
           )}
         </button>
         <button
@@ -217,18 +254,29 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
   // Actual reps counter for rep-based exercises — initialised from target
   const [actualReps, setActualReps] = useState(() => ex?.reps ?? 0)
 
+  // Tablet/iPad: two-pane layout with demo video on the left
+  const isWide = useMediaQuery('(min-width: 768px)')
+
   if (!ex) return null
   const isTimed = !!ex.durationSeconds
   const setsLabel = `Set ${currentSet} of ${ex.sets}`
   const emoji = CATEGORY_EMOJI[ex.category] || '💪'
   const canGoBack = !(workout.exerciseIndex === 0 && currentSet === 1)
+  const showVideo = isWide && !!ex.youtubeId
 
   return (
     <div className="flex flex-col min-h-screen" style={{ backgroundColor: '#0F172A' }}>
       <ProgressBar completed={completedExerciseIds.length} total={dayExercises.length} />
 
+      {/* Two-pane on tablet (video | exercise), single centered column on phone */}
+      <div style={showVideo
+        ? { flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'stretch', paddingBottom: 120 }
+        : { flex: 1, display: 'flex', flexDirection: 'column' }
+      }>
+      {showVideo && <VideoPane youtubeId={ex.youtubeId} title={ex.name} />}
+
       {/* Centered content block — everything in one vertically-centered container */}
-      <div className="flex-1 flex flex-col items-center justify-center px-5 text-center" style={{ position: 'relative', paddingBottom: 120 }}>
+      <div className="flex-1 flex flex-col items-center justify-center px-5 text-center" style={{ position: 'relative', paddingBottom: showVideo ? 0 : 120 }}>
 
         {/* ⓘ button — absolute top-right so it doesn't affect centering */}
         <button
@@ -261,10 +309,10 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
           className="text-white leading-tight mb-2"
           style={{
             animation: 'slideInRight 300ms ease-out',
-            fontSize: 30,
+            fontSize: isWide ? 40 : 30,
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontWeight: 800,
-            maxWidth: 300,
+            maxWidth: isWide ? 460 : 300,
           }}
         >{ex.name}</h2>
 
@@ -281,6 +329,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
                 secondsRemaining={secondsRemaining}
                 totalSeconds={totalSeconds}
                 ringColor={isPaused ? '#475569' : '#14B8A6'}
+                size={isWide ? 280 : 200}
               />
               {isPaused && (
                 <div style={{
@@ -308,24 +357,27 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
                 }}
               >−</button>
 
-              <div
-                className="flex items-center justify-center rounded-full"
+              <button
+                onClick={() => onCompleteSet(actualReps)}
+                className="flex items-center justify-center rounded-full transition-all active:scale-95"
                 style={{
-                  width: 180, height: 180,
+                  width: isWide ? 240 : 180, height: isWide ? 240 : 180,
                   border: `8px solid ${actualReps < ex.reps ? '#F59E0B' : '#14B8A6'}`,
                   backgroundColor: actualReps < ex.reps ? '#F59E0B08' : '#14B8A610',
                   transition: 'border-color 0.2s, background-color 0.2s',
+                  cursor: 'pointer',
                 }}
+                aria-label="Finish this set"
               >
                 <div className="text-center">
-                  <p style={{ fontSize: 72, fontWeight: 800, color: '#F8FAFC', lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <p style={{ fontSize: isWide ? 92 : 72, fontWeight: 800, color: '#F8FAFC', lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     {actualReps}
                   </p>
-                  <p style={{ fontSize: 12, color: actualReps < ex.reps ? '#F59E0B' : '#94A3B8', fontWeight: 600, marginTop: 4 }}>
+                  <p style={{ fontSize: isWide ? 14 : 12, color: actualReps < ex.reps ? '#F59E0B' : '#94A3B8', fontWeight: 600, marginTop: 4 }}>
                     {actualReps < ex.reps ? `of ${ex.reps}` : 'reps'}
                   </p>
                 </div>
-              </div>
+              </button>
 
               <button
                 onClick={() => setActualReps(r => r + 1)}
@@ -340,7 +392,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
               >+</button>
             </div>
             <p className="mt-4 text-sm font-medium" style={{ color: '#64748B' }}>
-              Adjust if needed, then tap Done
+              Tap the circle when you finish your set
             </p>
           </>
         )}
@@ -371,6 +423,7 @@ function ExerciseScreen({ workout, onOpenModal, onBack, onSkipToRest, onComplete
             ))}
           </div>
         )}
+      </div>
       </div>
 
       {/* Fixed footer — Done / Skip button always fully visible */}
@@ -469,6 +522,7 @@ function RestScreen({ workout }) {
   const {
     isBetweenExercises,
     nextExercise,
+    currentExercise,
     secondsRemaining,
     totalSeconds,
     skipRest,
@@ -477,13 +531,24 @@ function RestScreen({ workout }) {
 
   const heading = isBetweenExercises ? 'Next Up' : 'Rest'
 
+  // Tablet/iPad: preview the upcoming exercise's video while resting
+  const isWide = useMediaQuery('(min-width: 768px)')
+  const videoEx = isBetweenExercises ? nextExercise : currentExercise
+  const showVideo = isWide && !!videoEx?.youtubeId
+
   return (
     <div
       className="flex flex-col min-h-screen"
       style={{ backgroundColor: '#0F172A' }}
     >
+      <div style={showVideo
+        ? { flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'stretch', paddingBottom: 100 }
+        : { flex: 1, display: 'flex', flexDirection: 'column' }
+      }>
+      {showVideo && <VideoPane youtubeId={videoEx.youtubeId} title={videoEx.name} />}
+
       {/* All content vertically centered */}
-      <div className="flex-1 flex flex-col items-center justify-center px-5 text-center" style={{ paddingBottom: 100 }}>
+      <div className="flex-1 flex flex-col items-center justify-center px-5 text-center" style={{ paddingBottom: showVideo ? 0 : 100 }}>
         <h2
           className="text-white mb-1 uppercase tracking-widest"
           style={{ fontSize: 18, fontWeight: 700, fontFamily: "'Plus Jakarta Sans', sans-serif", color: '#94A3B8' }}
@@ -507,6 +572,7 @@ function RestScreen({ workout }) {
             secondsRemaining={secondsRemaining}
             totalSeconds={totalSeconds}
             ringColor="#64748B"
+            size={isWide ? 280 : 200}
           />
         </div>
 
@@ -541,6 +607,7 @@ function RestScreen({ workout }) {
             +30s
           </button>
         </div>
+      </div>
       </div>
 
       {/* Fixed footer — same treatment as Done button */}
@@ -996,7 +1063,10 @@ export default function WorkoutPlayer() {
   const fitnessLevel = user?.user_metadata?.fitnessLevel || 'intermediate'
   const workout = useWorkoutPlayer(dayNumber, mode, fitnessLevel)
   const { logs, refetch: refetchLogs } = useWorkoutLogs()
-  const { playSound, soundEnabled, toggleSound } = useSound()
+  const { playSound, speak, audioMode, cycleAudioMode } = useSound()
+
+  // Keep the iPad/phone screen awake for the whole session
+  useWakeLock(workout.phase !== 'idle' && workout.phase !== 'complete')
 
   // Snapshot of logs captured the moment the workout begins (before it's saved).
   // Passed to CompletionScreen so the badge diff compares "before this session"
@@ -1024,28 +1094,43 @@ export default function WorkoutPlayer() {
   const halfwayFiredRef = useRef(false)
 
   useEffect(() => {
-    const { phase, exerciseIndex } = workout
+    const { phase, exerciseIndex, currentSet, currentExercise, nextExercise, isBetweenExercises } = workout
     const prevPhase = prevPhaseRef.current
 
     // New exercise started
     if (phase === 'exercise' && exerciseIndex !== prevExIdxRef.current) {
       prevExIdxRef.current = exerciseIndex
       playSound('start')
+      if (currentExercise) {
+        const what = currentExercise.durationSeconds
+          ? `${currentExercise.durationSeconds} seconds`
+          : `${currentExercise.reps} reps`
+        speak(`${currentExercise.name}. Set 1 of ${currentExercise.sets}. ${what}.`)
+      }
+    } else if (phase === 'exercise' && prevPhase !== 'exercise' && currentSet > 1 && currentExercise) {
+      // Next set of the same exercise
+      speak(`Set ${currentSet} of ${currentExercise.sets}. Go.`)
     }
     // Rest period began
     if (phase === 'rest' && prevPhase !== 'rest') {
       playSound('rest')
+      if (isBetweenExercises && nextExercise) {
+        speak(`Rest. Next up: ${nextExercise.name}.`)
+      } else {
+        speak('Rest.')
+      }
     }
     // Workout complete
     if (phase === 'complete' && prevPhase !== 'complete') {
       playSound('complete')
+      speak('Workout complete. Great work today.')
       navigator.vibrate?.([50, 30, 50, 30, 100])
     }
     // Reset halfway flag on new workout
     if (phase === 'idle') halfwayFiredRef.current = false
 
     prevPhaseRef.current = phase
-  }, [workout.phase, workout.exerciseIndex]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [workout.phase, workout.exerciseIndex, workout.currentSet]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Tick sound + haptic on last 3 seconds
   useEffect(() => {
@@ -1149,8 +1234,8 @@ export default function WorkoutPlayer() {
         <TopBar
           day={day}
           onExit={() => setShowExitConfirm(true)}
-          soundEnabled={soundEnabled}
-          onToggleSound={toggleSound}
+          audioMode={audioMode}
+          onCycleAudio={cycleAudioMode}
         />
       )}
 
