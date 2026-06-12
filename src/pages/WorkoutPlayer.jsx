@@ -1060,8 +1060,10 @@ export default function WorkoutPlayer() {
   const navigate = useNavigate()
   const { user } = useAuth()
   const mode = localStorage.getItem('strongbase_workout_mode') || 'home'
+  const sessionLength = localStorage.getItem('strongbase_session_length') || 'full'
   const fitnessLevel = user?.user_metadata?.fitnessLevel || 'intermediate'
-  const workout = useWorkoutPlayer(dayNumber, mode, fitnessLevel)
+  const userEquipment = user?.user_metadata?.equipment || ['bodyweight']
+  const workout = useWorkoutPlayer(dayNumber, { mode, fitnessLevel, sessionLength, userEquipment })
   const { logs, refetch: refetchLogs } = useWorkoutLogs()
   const { playSound, speak, audioMode, cycleAudioMode } = useSound()
 

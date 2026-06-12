@@ -5,18 +5,17 @@ import exercises from '../data/exercises.json'
 import ExerciseModal from '../components/ExerciseModal'
 import { C, FONT, LABEL } from '../styles/tokens'
 import useAuth from '../hooks/useAuth'
+import { buildSessionExercises, estimateMinutes } from '../utils/sessionPlan'
 
 const BG   = C.bg
 const SURF = C.surface
 const TEAL = C.teal
 
-// Equipment that is always available (no user ownership required)
-const ALWAYS_AVAILABLE = new Set(['bodyweight', 'yoga-mat'])
-
-function canShowExercise(ex, mode, userEquipment) {
-  if (mode === 'gym') return true
-  return ex.equipment.every(e => ALWAYS_AVAILABLE.has(e) || userEquipment.includes(e))
-}
+const LENGTH_OPTIONS = [
+  { id: 'quick',    label: 'Quick' },
+  { id: 'standard', label: 'Standard' },
+  { id: 'full',     label: 'Full' },
+]
 
 const CAT_ACCENT = {
   'warm-up':    '#F59E0B',
@@ -50,10 +49,16 @@ export default function DayOverview() {
   const { user } = useAuth()
   const [selectedExercise, setSelectedExercise] = useState(null)
   const [mode, setMode] = useState(() => localStorage.getItem('strongbase_workout_mode') || 'home')
+  const [sessionLength, setSessionLength] = useState(() => localStorage.getItem('strongbase_session_length') || 'full')
 
   function toggleMode(newMode) {
     setMode(newMode)
     localStorage.setItem('strongbase_workout_mode', newMode)
+  }
+
+  function pickLength(len) {
+    setSessionLength(len)
+    localStorage.setItem('strongbase_session_length', len)
   }
 
   const userEquipment = user?.user_metadata?.equipment || ['bodyweight']
@@ -74,12 +79,15 @@ export default function DayOverview() {
   }
 
   const exMap = Object.fromEntries(exercises.map(e => [e.id, e]))
-  const modeIds = mode === 'gym'
-    ? (day.gymExerciseIds || day.exerciseIds)
-    : (day.homeExerciseIds || day.exerciseIds)
-  const allDayExercises = modeIds.map(id => exMap[id]).filter(Boolean)
-  // Filter out exercises the user doesn't have equipment for (home mode only)
-  const dayExercises = allDayExercises.filter(ex => canShowExercise(ex, mode, userEquipment))
+  // Same builder the workout player uses — preview matches playback exactly
+  const dayExercises = buildSessionExercises(day, exMap, { mode, userEquipment, sessionLength })
+  const estMinutes = estimateMinutes(dayExercises)
+
+  // Per-chip duration estimates so you can choose with real numbers
+  const chipMinutes = Object.fromEntries(LENGTH_OPTIONS.map(opt => [
+    opt.id,
+    estimateMinutes(buildSessionExercises(day, exMap, { mode, userEquipment, sessionLength: opt.id })),
+  ]))
 
   const sections = {}
   dayExercises.forEach(ex => {
@@ -110,7 +118,7 @@ export default function DayOverview() {
           {day.theme}
         </h1>
         <p style={{ fontSize: 14, color: '#94A3B8', marginTop: 6 }}>
-          ⏱ {day.durationMinutes} min · {day.focusArea}
+          ⏱ ~{estMinutes} min · {day.focusArea}
         </p>
 
         {/* Home / Gym toggle */}
@@ -137,6 +145,37 @@ export default function DayOverview() {
               {opt.label}
             </button>
           ))}
+        </div>
+
+        {/* Session length — how much time do you have today? */}
+        <div style={{ marginTop: 14 }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.dim, marginBottom: 8 }}>
+            How much time today?
+          </p>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {LENGTH_OPTIONS.map(opt => {
+              const selected = sessionLength === opt.id
+              return (
+                <button
+                  key={opt.id}
+                  onClick={() => pickLength(opt.id)}
+                  style={{
+                    flex: 1, padding: '9px 4px', borderRadius: 10, cursor: 'pointer',
+                    backgroundColor: selected ? C.tealSoft : 'transparent',
+                    border: `1.5px solid ${selected ? TEAL : C.borderMid}`,
+                    transition: 'all 0.15s ease',
+                  }}
+                >
+                  <span style={{ display: 'block', fontFamily: FONT, fontWeight: 700, fontSize: 13, color: selected ? C.tealBright : C.muted }}>
+                    {opt.label}
+                  </span>
+                  <span style={{ display: 'block', fontSize: 11, color: selected ? C.teal : C.subtle, marginTop: 1 }}>
+                    ~{chipMinutes[opt.id]} min
+                  </span>
+                </button>
+              )
+            })}
+          </div>
         </div>
       </div>
 

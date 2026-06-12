@@ -4,18 +4,22 @@ import weeklyPlan from '../data/weeklyPlan.json'
 import { supabase } from '../lib/supabase'
 import { logToRow } from './useWorkoutLogs'
 
+import { buildSessionExercises } from '../utils/sessionPlan'
+
 // Rest adjustment by fitness level (seconds added to every rest interval)
 const REST_ADJUST = { beginner: 30, intermediate: 0, active: -15 }
 
-export default function useWorkoutPlayer(dayNumber, mode = 'home', fitnessLevel = 'intermediate') {
+export default function useWorkoutPlayer(dayNumber, options = {}) {
+  const {
+    mode = 'home',
+    fitnessLevel = 'intermediate',
+    sessionLength = 'full',
+    userEquipment = ['bodyweight'],
+  } = options
+
   const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
   const exMap = Object.fromEntries(exerciseData.map(e => [e.id, e]))
-
-  // Pick home or gym exercise list; fall back to legacy exerciseIds
-  const exerciseIds = mode === 'gym'
-    ? (day?.gymExerciseIds || day?.exerciseIds || [])
-    : (day?.homeExerciseIds || day?.exerciseIds || [])
-  const dayExercises = exerciseIds.map(id => exMap[id]).filter(Boolean)
+  const dayExercises = buildSessionExercises(day, exMap, { mode, userEquipment, sessionLength })
 
   const restAdjust = REST_ADJUST[fitnessLevel] ?? 0
 
