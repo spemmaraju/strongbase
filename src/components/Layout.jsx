@@ -1,10 +1,12 @@
 import BottomNav from './BottomNav'
+import useMediaQuery from '../hooks/useMediaQuery'
 
-// Wraps pages that use the bottom navigation bar.
-// Adds bottom padding so content never hides behind the fixed nav.
+// On wide screens (≥768px) BottomNav becomes a left rail — shift content right.
+// On narrow it stays a bottom bar — shift content up to avoid it.
 export default function Layout({ children }) {
+  const isWide = useMediaQuery('(min-width: 768px)')
   return (
-    <div style={{ paddingBottom: 80 }}>
+    <div style={isWide ? { paddingLeft: 80 } : { paddingBottom: 80 }}>
       {children}
       <BottomNav />
     </div>
