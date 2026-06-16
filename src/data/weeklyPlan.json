@@ -4,7 +4,7 @@
     {
       "day": 1,
       "theme": "Full Body Foundation",
-      "emoji": "🌟",
+      "emoji": "\ud83c\udf1f",
       "focusArea": "Mobility, stability, and light full-body activation",
       "durationMinutes": 40,
       "homeExerciseIds": [
@@ -60,8 +60,8 @@
     {
       "day": 2,
       "theme": "Push Day",
-      "emoji": "🤜",
-      "focusArea": "Upper body push — chest, shoulders, and triceps",
+      "emoji": "\ud83e\udd1c",
+      "focusArea": "Upper body push \u2014 chest, shoulders, and triceps",
       "durationMinutes": 45,
       "homeExerciseIds": [
         "arm-circles",
@@ -69,10 +69,10 @@
         "leg-swings",
         "prone-y-t-w",
         "push-up",
-        "band-chest-press",
+        "dumbbell-floor-press",
         "band-overhead-press",
         "band-lateral-raise",
-        "band-tricep-pushdown",
+        "dumbbell-overhead-tricep-extension",
         "banded-pull-apart",
         "doorway-chest-stretch",
         "childs-pose",
@@ -115,8 +115,8 @@
     {
       "day": 3,
       "theme": "Hinge & Glutes",
-      "emoji": "🍑",
-      "focusArea": "Hip-dominant movements — zero lumbar load",
+      "emoji": "\ud83c\udf51",
+      "focusArea": "Hip-dominant movements \u2014 zero lumbar load",
       "durationMinutes": 45,
       "homeExerciseIds": [
         "hip-circles",
@@ -169,8 +169,8 @@
     {
       "day": 4,
       "theme": "Active Recovery",
-      "emoji": "🧘",
-      "focusArea": "Gentle mobility and flexibility — keep heart rate low",
+      "emoji": "\ud83e\uddd8",
+      "focusArea": "Gentle mobility and flexibility \u2014 keep heart rate low",
       "durationMinutes": 30,
       "homeExerciseIds": [
         "cat-cow",
@@ -219,19 +219,19 @@
     {
       "day": 5,
       "theme": "Pull Day",
-      "emoji": "🦾",
-      "focusArea": "Upper body pull — back, biceps, and rear delts",
+      "emoji": "\ud83e\uddbe",
+      "focusArea": "Upper body pull \u2014 back, biceps, and rear delts",
       "durationMinutes": 45,
       "homeExerciseIds": [
         "arm-circles",
         "thoracic-rotation",
         "leg-swings",
         "trx-row",
-        "banded-lat-pulldown",
-        "banded-face-pull",
+        "dumbbell-single-arm-row",
+        "dumbbell-rear-delt-fly",
         "band-bicep-curl",
         "banded-pull-apart",
-        "pallof-press",
+        "plank-dumbbell-pull-through",
         "dead-bug",
         "bird-dog",
         "seated-hamstring-stretch",
@@ -248,7 +248,7 @@
         "cable-face-pull",
         "bicep-curl",
         "reverse-fly",
-        "pallof-press",
+        "plank-dumbbell-pull-through",
         "dead-bug",
         "bird-dog",
         "seated-hamstring-stretch",
@@ -277,7 +277,7 @@
     {
       "day": 6,
       "theme": "Core & Stability",
-      "emoji": "🎯",
+      "emoji": "\ud83c\udfaf",
       "focusArea": "Anti-extension and anti-rotation core work only",
       "durationMinutes": 40,
       "homeExerciseIds": [
@@ -288,7 +288,7 @@
         "bird-dog",
         "mcgill-curlup",
         "side-plank",
-        "pallof-press",
+        "plank-dumbbell-pull-through",
         "glute-bridge-hold",
         "forearm-plank",
         "childs-pose",
@@ -304,7 +304,7 @@
         "bird-dog",
         "mcgill-curlup",
         "side-plank",
-        "pallof-press",
+        "plank-dumbbell-pull-through",
         "glute-bridge-hold",
         "forearm-plank",
         "childs-pose",
@@ -332,8 +332,8 @@
     {
       "day": 7,
       "theme": "Full Body Circuit",
-      "emoji": "⚡",
-      "focusArea": "Three timed circuits — strength meets stamina",
+      "emoji": "\u26a1",
+      "focusArea": "Three timed circuits \u2014 strength meets stamina",
       "durationMinutes": 50,
       "homeExerciseIds": [
         "arm-circles",
