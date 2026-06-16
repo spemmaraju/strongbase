@@ -2,7 +2,7 @@
 // Ring color shifts to amber when ≤ 3 seconds remain.
 // `size` scales the whole component (200 = phone default, ~280 for tablet).
 
-export default function CircularTimer({ secondsRemaining, totalSeconds, ringColor = '#14B8A6', size = 200 }) {
+export default function CircularTimer({ secondsRemaining, totalSeconds, ringColor = '#c084fc', size = 200 }) {
   const stroke = Math.max(6, Math.round(size * 0.04))
   const radius = (size - stroke) / 2
   const circumference = 2 * Math.PI * radius
@@ -28,7 +28,7 @@ export default function CircularTimer({ secondsRemaining, totalSeconds, ringColo
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="#334155"
+          stroke="rgba(255,255,255,0.08)"
           strokeWidth={stroke}
         />
         {/* Progress arc */}

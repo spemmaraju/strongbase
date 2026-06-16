@@ -6,15 +6,15 @@ function LoadingScreen() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center gap-4"
-      style={{ backgroundColor: '#0F172A' }}
+      style={{ backgroundColor: '#0a0e1a' }}
     >
       <div
         style={{
           width: 48,
           height: 48,
           borderRadius: '50%',
-          border: '4px solid #334155',
-          borderTopColor: '#14B8A6',
+          border: '4px solid rgba(255,255,255,0.08)',
+          borderTopColor: '#c084fc',
           animation: 'spin 0.8s linear infinite',
         }}
       />

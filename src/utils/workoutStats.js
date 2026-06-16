@@ -119,7 +119,7 @@ export const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep
 
 export const CAT_COLORS = {
   'warm-up':    '#F59E0B',
-  'strength':   '#14B8A6',
+  'strength':   '#ec4899',
   'stability':  '#7C3AED',
   'flexibility':'#22C55E',
   'cardio':     '#3B82F6',
