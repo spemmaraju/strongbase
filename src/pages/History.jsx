@@ -2,34 +2,55 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useStreak from '../hooks/useStreak'
+import useMediaQuery from '../hooks/useMediaQuery'
+import { Icon } from '../components/Icons'
 import {
   buildHeatmapWeeks, groupLogsByWeek, getTopMuscles, getUniqueEquipment,
   formatDuration, formatDate, formatDateTime,
   getMonthIdx, MONTH_NAMES,
 } from '../utils/workoutStats'
-import { C, FONT, CARD, LABEL } from '../styles/tokens'
+
+const FONT = "'Plus Jakarta Sans', sans-serif"
+const MONO = "'JetBrains Mono', 'Courier New', monospace"
+
+const K = {
+  bg:      '#0a0e1a',
+  card:    '#101828',
+  inset:   '#16233a',
+  border:  'rgba(255,255,255,0.06)',
+  borderSt:'rgba(255,255,255,0.10)',
+  pink:    '#ec4899',
+  purple:  '#8b5cf6',
+  violet:  '#c084fc',
+  grad:    'linear-gradient(90deg, #ec4899, #8b5cf6)',
+  gradD:   'linear-gradient(135deg, #ec4899, #8b5cf6)',
+  amber:   '#f59e0b',
+  teal:    '#2dd4bf',
+  text:    '#f8fafc',
+  muted:   '#94a3b8',
+  subtle:  '#64748b',
+  dim:     '#475569',
+}
 
 // ── Heatmap ────────────────────────────────────────────────────────────────
 
 function HeatmapCell({ day, onTap }) {
-  let bg = '#1E293B'
-  if (day.isFuture) bg = '#0F172A'
-  else if (day.isToday && day.logs.length === 0) bg = '#334155'
-  else if (day.isToday && day.logs.length > 0) bg = '#0D9488'
-  else if (day.logs.length > 0) bg = '#14B8A6'
+  let bg, border
+  if (day.isFuture)            { bg = 'transparent';         border = `1px solid ${K.border}` }
+  else if (day.logs.length > 0){ bg = K.purple;              border = `1px solid rgba(139,92,246,0.5)` }
+  else if (day.isToday)        { bg = K.inset;               border = `1px solid rgba(255,255,255,0.14)` }
+  else                         { bg = K.inset;               border = `1px solid ${K.border}` }
 
   return (
     <div
       onClick={() => day.logs.length > 0 && onTap(day)}
       style={{
-        width: 36, height: 36,
-        borderRadius: 6,
-        backgroundColor: bg,
+        width: 32, height: 32, borderRadius: 6,
+        backgroundColor: bg, border,
         cursor: day.logs.length > 0 ? 'pointer' : 'default',
-        flexShrink: 0,
-        transition: 'transform 0.1s',
+        flexShrink: 0, transition: 'transform 0.1s, opacity 0.1s',
       }}
-      onMouseEnter={e => { if (day.logs.length > 0) e.currentTarget.style.transform = 'scale(1.12)' }}
+      onMouseEnter={e => { if (day.logs.length > 0) e.currentTarget.style.transform = 'scale(1.15)' }}
       onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
     />
   )
@@ -38,36 +59,45 @@ function HeatmapCell({ day, onTap }) {
 function HeatmapTooltip({ day, onClose }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center px-6"
-      style={{ backgroundColor: 'rgba(0,0,0,0.55)' }}
       onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 50,
+        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24,
+        backgroundColor: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)',
+      }}
     >
       <div
-        className="rounded-2xl p-5 w-full"
-        style={{
-          backgroundColor: '#1E293B',
-          border: '1px solid #14B8A6',
-          maxWidth: 280,
-        }}
         onClick={e => e.stopPropagation()}
+        style={{
+          backgroundColor: K.card, borderRadius: 20,
+          border: `1px solid ${K.borderSt}`,
+          padding: 20, width: '100%', maxWidth: 300,
+        }}
       >
-        <p className="text-sm font-bold mb-3" style={{ color: '#14B8A6' }}>
-          📅 {formatDate(day.date)}
-        </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
+          <Icon name="streak" size={16} style={{ color: K.violet }} />
+          <p style={{ fontFamily: MONO, fontSize: 11, fontWeight: 700, color: K.violet, letterSpacing: '0.1em' }}>
+            {formatDate(day.date)}
+          </p>
+        </div>
         {day.logs.map((log, i) => (
-          <div key={log.id || i} className="mb-2">
-            <p className="text-base font-bold text-white">{log.theme}</p>
-            <p className="text-xs" style={{ color: '#64748B' }}>
+          <div key={log.id || i} style={{ marginBottom: 10 }}>
+            <p style={{ fontFamily: FONT, fontSize: 14, fontWeight: 700, color: K.text, margin: 0 }}>{log.theme}</p>
+            <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.dim, letterSpacing: '0.06em', margin: 0, marginTop: 2 }}>
               {formatDateTime(log.completedAt)} · {formatDuration(log.totalTimeSeconds)}
             </p>
           </div>
         ))}
         <button
           onClick={onClose}
-          className="w-full mt-3 text-sm font-semibold rounded-lg"
-          style={{ minHeight: 44, color: '#64748B', background: 'none', border: 'none', cursor: 'pointer' }}
+          style={{
+            width: '100%', marginTop: 10, minHeight: 40,
+            background: K.inset, border: `1px solid ${K.border}`,
+            borderRadius: 10, fontFamily: MONO, fontSize: 10, fontWeight: 700,
+            color: K.subtle, cursor: 'pointer', letterSpacing: '0.1em',
+          }}
         >
-          Close
+          CLOSE
         </button>
       </div>
     </div>
@@ -76,24 +106,21 @@ function HeatmapTooltip({ day, onClose }) {
 
 function CalendarHeatmap({ weeks, onCellTap }) {
   const DAY_LABELS = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
-  const MONTH_ROW_H = 18
+  const MONTH_ROW_H = 16
 
   return (
     <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', paddingBottom: 4 }}>
       <div style={{ display: 'flex', gap: 4, minWidth: 'max-content' }}>
-        {/* Day labels (sticky left) */}
-        <div
-          style={{
-            display: 'flex', flexDirection: 'column', gap: 4,
-            paddingTop: MONTH_ROW_H + 4, // matches month-row height + gap before first cell
-            position: 'sticky', left: 0,
-            backgroundColor: '#0F172A', zIndex: 1,
-            marginRight: 2,
-          }}
-        >
+        {/* Day labels */}
+        <div style={{
+          display: 'flex', flexDirection: 'column', gap: 4,
+          paddingTop: MONTH_ROW_H + 4,
+          position: 'sticky', left: 0,
+          backgroundColor: K.card, zIndex: 1, marginRight: 2,
+        }}>
           {DAY_LABELS.map((d, i) => (
-            <div key={i} style={{ height: 36, display: 'flex', alignItems: 'center' }}>
-              <span style={{ fontSize: 10, fontWeight: 700, color: '#475569', width: 10 }}>{d}</span>
+            <div key={i} style={{ height: 32, display: 'flex', alignItems: 'center' }}>
+              <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, width: 10 }}>{d}</span>
             </div>
           ))}
         </div>
@@ -103,17 +130,15 @@ function CalendarHeatmap({ weeks, onCellTap }) {
           const showMonth = wi === 0 || getMonthIdx(week.weekStart) !== getMonthIdx(weeks[wi - 1].weekStart)
           return (
             <div key={week.weekStart} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              {/* Month label row */}
               <div style={{ height: MONTH_ROW_H, display: 'flex', alignItems: 'flex-end' }}>
                 <span style={{
-                  fontSize: 10, fontWeight: 700,
-                  color: showMonth ? '#64748B' : 'transparent',
+                  fontFamily: MONO, fontSize: 9, fontWeight: 700,
+                  color: showMonth ? K.subtle : 'transparent',
                   whiteSpace: 'nowrap',
                 }}>
                   {MONTH_NAMES[getMonthIdx(week.weekStart)]}
                 </span>
               </div>
-              {/* Day cells */}
               {week.days.map(day => (
                 <HeatmapCell key={day.date} day={day} onTap={onCellTap} />
               ))}
@@ -125,72 +150,60 @@ function CalendarHeatmap({ weeks, onCellTap }) {
   )
 }
 
-// ── Stats summary bar ──────────────────────────────────────────────────────
+// ── Stats bar ──────────────────────────────────────────────────────────────
 
 function StatBar({ totalWorkouts, currentStreak, longestStreak, thisMonthCount }) {
   const stats = [
-    { value: totalWorkouts, label: 'Total' },
-    { value: currentStreak, label: 'Streak' },
-    { value: longestStreak, label: 'Best' },
-    { value: thisMonthCount, label: 'Month' },
+    { value: totalWorkouts,  label: 'Total',   icon: 'trophy' },
+    { value: currentStreak,  label: 'Streak',  icon: 'streak' },
+    { value: longestStreak,  label: 'Best',    icon: 'badge'  },
+    { value: thisMonthCount, label: 'Month',   icon: 'target' },
   ]
   return (
-    <div
-      className="grid grid-cols-4 rounded-2xl overflow-hidden"
-      style={{ border: '1px solid rgba(255,255,255,0.06)', backgroundColor: '#1E293B' }}
-    >
+    <div style={{
+      display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+      backgroundColor: K.card, borderRadius: 18,
+      border: `1px solid ${K.borderSt}`, overflow: 'hidden',
+    }}>
       {stats.map((s, i) => (
-        <div
-          key={i}
-          className="flex flex-col items-center py-4"
-          style={{
-            borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-          }}
-        >
-          <span style={{ fontSize: 22, fontWeight: 800, color: '#F8FAFC', lineHeight: 1, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{s.value}</span>
-          <span style={{ fontSize: 10, color: '#94A3B8', fontWeight: 600, marginTop: 4 }}>{s.label}</span>
+        <div key={i} style={{
+          display: 'flex', flexDirection: 'column', alignItems: 'center',
+          padding: '16px 8px',
+          borderRight: i < stats.length - 1 ? `1px solid ${K.border}` : 'none',
+        }}>
+          <Icon name={s.icon} size={16} style={{ color: K.violet, marginBottom: 6 }} />
+          <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 22, color: K.text, lineHeight: 1 }}>{s.value}</span>
+          <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 5 }}>
+            {s.label}
+          </span>
         </div>
       ))}
     </div>
   )
 }
 
-// ── Weekly summary card ────────────────────────────────────────────────────
+// ── Weekly cards ──────────────────────────────────────────────────────────
 
 const EQUIPMENT_LABEL = {
-  'bodyweight': 'Bodyweight',
-  'yoga-mat': 'Mat',
+  'bodyweight':      'Bodyweight',
+  'yoga-mat':        'Mat',
   'resistance-band': 'Band',
-  '10lb-dumbbells': '10 lb',
-  '15lb-dumbbells': '15 lb',
-}
-
-function EquipBadge({ eq }) {
-  return (
-    <span
-      className="rounded-full px-2 py-0.5 text-xs font-semibold"
-      style={{ backgroundColor: '#334155', color: '#94A3B8', whiteSpace: 'nowrap' }}
-    >
-      {EQUIPMENT_LABEL[eq] || eq}
-    </span>
-  )
+  '10lb-dumbbells':  '10 lb',
+  '15lb-dumbbells':  '15 lb',
 }
 
 function MiniDayStrip({ completedDayNumbers }) {
   return (
-    <div className="flex gap-1.5">
+    <div style={{ display: 'flex', gap: 5 }}>
       {[1, 2, 3, 4, 5, 6, 7].map(d => (
-        <div
-          key={d}
-          style={{
-            width: 28, height: 28, borderRadius: '50%',
-            backgroundColor: completedDayNumbers.has(d) ? '#14B8A6' : 'transparent',
-            border: `2px solid ${completedDayNumbers.has(d) ? '#14B8A6' : '#334155'}`,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}
-        >
+        <div key={d} style={{
+          width: 26, height: 26, borderRadius: '50%',
+          background: completedDayNumbers.has(d) ? K.gradD : 'transparent',
+          border: `1.5px solid ${completedDayNumbers.has(d) ? 'transparent' : K.border}`,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
           {completedDayNumbers.has(d) && (
-            <span style={{ fontSize: 10, color: '#fff', fontWeight: 800 }}>✓</span>
+            <Icon name="check" size={11} strokeWidth={3} style={{ color: '#fff' }} />
           )}
         </div>
       ))}
@@ -199,29 +212,41 @@ function MiniDayStrip({ completedDayNumbers }) {
 }
 
 function WorkoutEntry({ log, navigate }) {
-  const exercises = log.completedExerciseIds?.length || 0
   const equipment = getUniqueEquipment(log.completedExerciseIds || [])
+  const exercises = log.completedExerciseIds?.length || 0
 
   return (
     <button
       onClick={() => navigate(`/history/${log.id}`, { state: { log } })}
-      className="w-full text-left rounded-xl p-4 transition-all active:scale-98"
-      style={{ backgroundColor: '#0F172A', border: '1px solid #1E293B', cursor: 'pointer' }}
-      onMouseEnter={e => e.currentTarget.style.borderColor = '#334155'}
-      onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}
+      style={{
+        width: '100%', textAlign: 'left',
+        backgroundColor: K.inset, border: `1px solid ${K.border}`,
+        borderRadius: 12, padding: '12px 14px', cursor: 'pointer',
+        transition: 'border-color 0.15s',
+      }}
+      onMouseEnter={e => e.currentTarget.style.borderColor = K.borderSt}
+      onMouseLeave={e => e.currentTarget.style.borderColor = K.border}
     >
-      <div className="flex items-start justify-between gap-2 mb-1">
-        <p className="text-sm font-bold text-white">Day {log.dayNumber} — {log.theme}</p>
-        <span className="text-xs font-semibold flex-shrink-0" style={{ color: '#14B8A6' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, marginBottom: 4 }}>
+        <p style={{ fontFamily: FONT, fontSize: 13, fontWeight: 700, color: K.text, margin: 0 }}>
+          Day {log.dayNumber} — {log.theme}
+        </p>
+        <span style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet, flexShrink: 0, letterSpacing: '0.06em' }}>
           {formatDuration(log.totalTimeSeconds)}
         </span>
       </div>
-      <p className="text-xs mb-2" style={{ color: '#64748B' }}>
-        {formatDateTime(log.completedAt)} · {exercises} exercises · {log.totalSets} sets
+      <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.08em', margin: 0, marginBottom: 8 }}>
+        {formatDateTime(log.completedAt)} · {exercises} ex · {log.totalSets} sets
       </p>
       {equipment.length > 0 && (
-        <div className="flex flex-wrap gap-1">
-          {equipment.map(eq => <EquipBadge key={eq} eq={eq} />)}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
+          {equipment.map(eq => (
+            <span key={eq} style={{
+              backgroundColor: K.card, borderRadius: 99, padding: '3px 9px',
+              fontFamily: MONO, fontSize: 9, fontWeight: 700,
+              color: K.subtle, border: `1px solid ${K.border}`, letterSpacing: '0.06em',
+            }}>{EQUIPMENT_LABEL[eq] || eq}</span>
+          ))}
         </div>
       )}
     </button>
@@ -230,64 +255,57 @@ function WorkoutEntry({ log, navigate }) {
 
 function WeeklyCard({ weekStart, weekEnd, logs, navigate }) {
   const [expanded, setExpanded] = useState(false)
-
   const completedDayNumbers = new Set(logs.map(l => l.dayNumber))
-  const totalTime = logs.reduce((s, l) => s + (l.totalTimeSeconds || 0), 0)
-  const allExIds = logs.flatMap(l => l.completedExerciseIds || [])
+  const totalTime  = logs.reduce((s, l) => s + (l.totalTimeSeconds || 0), 0)
+  const allExIds   = logs.flatMap(l => l.completedExerciseIds || [])
   const topMuscles = getTopMuscles(allExIds)
-
-  // "Week of May 5"
-  const weekLabel = 'Week of ' + formatDate(weekStart)
+  const weekLabel  = 'Week of ' + formatDate(weekStart)
 
   return (
-    <div style={{ ...CARD, overflow: 'hidden' }}>
-      {/* Card header — tap to expand */}
+    <div style={{ backgroundColor: K.card, borderRadius: 16, border: `1px solid ${K.borderSt}`, overflow: 'hidden' }}>
       <button
         onClick={() => setExpanded(e => !e)}
-        className="w-full text-left p-4 transition-all active:scale-98"
-        style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+        style={{ width: '100%', textAlign: 'left', padding: 16, background: 'none', border: 'none', cursor: 'pointer' }}
       >
-        <div className="flex items-center justify-between mb-3">
-          <p className="text-sm font-bold text-white">{weekLabel}</p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+          <p style={{ fontFamily: FONT, fontSize: 13, fontWeight: 700, color: K.text, margin: 0 }}>{weekLabel}</p>
           <svg
-            width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke={K.dim} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s', flexShrink: 0 }}
           >
-            <polyline points="6 9 12 15 18 9" />
+            <polyline points="6 9 12 15 18 9"/>
           </svg>
         </div>
 
         <MiniDayStrip completedDayNumbers={completedDayNumbers} />
 
-        <div className="flex items-center gap-4 mt-3 flex-wrap">
-          <span className="text-xs font-semibold" style={{ color: '#94A3B8' }}>
-            {logs.length} of 7 days
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10, flexWrap: 'wrap' }}>
+          <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.08em' }}>
+            {logs.length} OF 7 DAYS
           </span>
-          <span className="text-xs font-semibold" style={{ color: '#94A3B8' }}>
-            ⏱ {formatDuration(totalTime)}
+          <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.08em' }}>
+            {formatDuration(totalTime)}
           </span>
           {topMuscles.map(m => (
-            <span
-              key={m}
-              className="text-xs font-semibold px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: '#14B8A620', color: '#14B8A6', border: '1px solid #14B8A640' }}
-            >
-              {m}
-            </span>
+            <span key={m} style={{
+              fontFamily: MONO, fontSize: 9, fontWeight: 700,
+              backgroundColor: 'rgba(139,92,246,0.1)', color: K.violet,
+              border: '1px solid rgba(139,92,246,0.22)',
+              borderRadius: 99, padding: '2px 8px', letterSpacing: '0.08em',
+            }}>{m}</span>
           ))}
         </div>
       </button>
 
-      {/* Expanded entries */}
       {expanded && (
-        <div className="px-4 pb-4 space-y-2" style={{ borderTop: '1px solid #334155' }}>
-          <p className="text-xs font-semibold uppercase tracking-widest pt-3" style={{ color: '#475569' }}>
+        <div style={{ padding: '0 16px 16px', borderTop: `1px solid ${K.border}` }}>
+          <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', margin: '12px 0 10px' }}>
             Workouts this week
           </p>
-          {logs.map(log => (
-            <WorkoutEntry key={log.id} log={log} navigate={navigate} />
-          ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {logs.map(log => <WorkoutEntry key={log.id} log={log} navigate={navigate} />)}
+          </div>
         </div>
       )}
     </div>
@@ -298,88 +316,84 @@ function WeeklyCard({ weekStart, weekEnd, logs, navigate }) {
 
 function EmptyState({ navigate }) {
   return (
-    <div className="flex flex-col items-center justify-center px-6 text-center" style={{ paddingTop: 80 }}>
-      {/* Simple SVG dumbbell illustration */}
-      <svg width="96" height="64" viewBox="0 0 96 64" fill="none" style={{ marginBottom: 24 }}>
-        <rect x="8" y="24" width="12" height="16" rx="4" stroke="#14B8A6" strokeWidth="2.5" fill="none" />
-        <rect x="76" y="24" width="12" height="16" rx="4" stroke="#14B8A6" strokeWidth="2.5" fill="none" />
-        <rect x="18" y="28" width="60" height="8" rx="3" stroke="#14B8A6" strokeWidth="2.5" fill="none" />
-        <rect x="28" y="20" width="12" height="24" rx="4" stroke="#14B8A660" strokeWidth="2" fill="none" />
-        <rect x="56" y="20" width="12" height="24" rx="4" stroke="#14B8A660" strokeWidth="2" fill="none" />
-      </svg>
-      <h2 className="text-2xl font-extrabold text-white mb-2">No workouts yet</h2>
-      <p className="text-base mb-8" style={{ color: '#64748B', maxWidth: 280 }}>
+    <div style={{
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      justifyContent: 'center', padding: '80px 24px 40px', textAlign: 'center',
+    }}>
+      <div style={{ marginBottom: 24, color: K.purple, opacity: 0.4 }}>
+        <Icon name="trophy" size={72} strokeWidth={1} />
+      </div>
+      <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: K.text, marginBottom: 8 }}>
+        No workouts yet
+      </h2>
+      <p style={{ fontSize: 14, color: K.subtle, maxWidth: 280, lineHeight: 1.6, marginBottom: 28 }}>
         Complete your first workout to start tracking your progress.
       </p>
       <button
         onClick={() => navigate('/workout/1')}
-        className="rounded-xl font-bold text-base text-white px-8 transition-all active:scale-95"
-        style={{ minHeight: 56, backgroundColor: '#14B8A6', border: 'none', cursor: 'pointer' }}
-        onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0D9488'}
-        onMouseLeave={e => e.currentTarget.style.backgroundColor = '#14B8A6'}
+        style={{
+          background: K.gradD, color: '#fff', border: 'none',
+          borderRadius: 14, padding: '0 28px', minHeight: 52,
+          fontFamily: FONT, fontWeight: 700, fontSize: 15, cursor: 'pointer',
+        }}
       >
-        ▶ Start Day 1
+        Start Day 1 →
       </button>
     </div>
   )
 }
 
-// ── Loading skeleton ───────────────────────────────────────────────────────
-
 function LoadingState() {
-  const pulse = { backgroundColor: '#1E293B', borderRadius: 8, animation: 'sbPulse 1.5s ease-in-out infinite' }
+  const pulse = { backgroundColor: K.card, borderRadius: 14, animation: 'kPulse 1.5s ease-in-out infinite' }
   return (
-    <div className="px-5 space-y-5">
-      <style>{`@keyframes sbPulse { 0%,100%{opacity:1} 50%{opacity:0.45} }`}</style>
-      <div style={{ height: 120, ...pulse, borderRadius: 12 }} />
-      <div style={{ height: 72, ...pulse, borderRadius: 12 }} />
-      {[1, 2, 3].map(i => <div key={i} style={{ height: 110, ...pulse, borderRadius: 12 }} />)}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, padding: '20px 20px 0' }}>
+      <style>{`@keyframes kPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }`}</style>
+      <div style={{ height: 140, ...pulse }} />
+      <div style={{ height: 80, ...pulse }} />
+      {[1, 2, 3].map(i => <div key={i} style={{ height: 100, ...pulse }} />)}
     </div>
   )
 }
 
-// ── Main component ─────────────────────────────────────────────────────────
+// ── Main ──────────────────────────────────────────────────────────────────
 
 export default function History() {
-  const navigate = useNavigate()
+  const navigate    = useNavigate()
+  const isWide      = useMediaQuery('(min-width: 768px)')
   const { logs, loading, error: logsError, refetch: refetchLogs } = useWorkoutLogs()
   const [activeCell, setActiveCell] = useState(null)
 
   const { currentStreak, longestStreak, totalWorkouts } = useStreak(logs)
-
-  const currentMonth = new Date().toISOString().slice(0, 7)
+  const currentMonth  = new Date().toISOString().slice(0, 7)
   const thisMonthCount = logs.filter(l => l.date.startsWith(currentMonth)).length
-
-  const weeksToShow = totalWorkouts < 7 ? 4 : totalWorkouts < 20 ? 8 : 12
-  const heatmapWeeks = buildHeatmapWeeks(logs).slice(-weeksToShow)
-  const weeklyGroups = groupLogsByWeek(logs)
+  const weeksToShow   = totalWorkouts < 7 ? 4 : totalWorkouts < 20 ? 8 : 12
+  const heatmapWeeks  = buildHeatmapWeeks(logs).slice(-weeksToShow)
+  const weeklyGroups  = groupLogsByWeek(logs)
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0F172A' }}>
+    <div style={{ backgroundColor: K.bg, minHeight: '100svh', color: K.text }}>
+
       {/* Header */}
-      <div style={{ padding: '44px 20px 16px', borderBottom: `1px solid ${C.borderMid}`, backgroundColor: C.bg }}>
-        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: C.white, margin: 0 }}>History</h1>
-        <p style={{ marginTop: 4, fontSize: 13, color: C.muted }}>
-          {loading ? '…' : `${totalWorkouts} workout${totalWorkouts !== 1 ? 's' : ''} completed`}
+      <div style={{
+        padding: isWide ? '32px 28px 24px' : '52px 20px 20px',
+        borderBottom: `1px solid ${K.border}`,
+      }}>
+        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: K.text, margin: 0 }}>History</h1>
+        <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.dim, letterSpacing: '0.1em', marginTop: 5 }}>
+          {loading ? '…' : `${totalWorkouts} WORKOUT${totalWorkouts !== 1 ? 'S' : ''} COMPLETED`}
         </p>
       </div>
 
-      {/* Error banner */}
+      {/* Error */}
       {logsError && (
-        <div
-          className="mx-5 mb-4 rounded-xl px-4 py-3 flex items-center justify-between gap-3"
-          style={{ backgroundColor: '#EF444415', border: '1px solid #EF444430' }}
-        >
-          <p className="text-sm font-medium" style={{ color: '#FCA5A5' }}>
-            ⚠️ Couldn't load your data. Check your connection.
-          </p>
-          <button
-            onClick={refetchLogs}
-            className="text-xs font-bold px-3 py-1 rounded-lg flex-shrink-0"
-            style={{ backgroundColor: '#EF444425', color: '#FCA5A5', border: '1px solid #EF444440', cursor: 'pointer' }}
-          >
-            Retry
-          </button>
+        <div style={{
+          margin: '12px 20px 0', padding: '10px 14px',
+          backgroundColor: 'rgba(239,68,68,0.08)', borderRadius: 12,
+          border: '1px solid rgba(239,68,68,0.2)',
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        }}>
+          <p style={{ fontSize: 13, color: '#fca5a5', fontWeight: 600, margin: 0 }}>⚠️ Couldn't load data</p>
+          <button onClick={refetchLogs} style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: '#fca5a5', background: 'none', border: 'none', cursor: 'pointer' }}>RETRY</button>
         </div>
       )}
 
@@ -387,50 +401,81 @@ export default function History() {
         <LoadingState />
       ) : logs.length === 0 ? (
         <EmptyState navigate={navigate} />
-      ) : (
-        <div className="px-5 pt-5 space-y-5">
+      ) : isWide ? (
+        /* ── Wide: two-column ──────────────────────────────────────────────── */
+        <div style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: 28, padding: '28px 28px 48px', alignItems: 'start' }}>
 
-          {/* ── Calendar Heatmap ─────────────────────────────────────────── */}
-          <section style={{ ...CARD, padding: 16 }}>
-            <p style={{ ...LABEL, marginBottom: 12 }}>Last {weeksToShow} Weeks</p>
-            <CalendarHeatmap weeks={heatmapWeeks} onCellTap={setActiveCell} />
-            {/* Legend */}
-            <div className="flex items-center gap-3 mt-3">
-              <div style={{ width: 12, height: 12, borderRadius: 3, backgroundColor: '#1E293B', border: '1px solid #334155' }} />
-              <span className="text-xs" style={{ color: '#475569' }}>None</span>
-              <div style={{ width: 12, height: 12, borderRadius: 3, backgroundColor: '#14B8A6' }} />
-              <span className="text-xs" style={{ color: '#475569' }}>Done</span>
+          {/* Left: stats sidebar */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            <StatBar
+              totalWorkouts={totalWorkouts}
+              currentStreak={currentStreak}
+              longestStreak={longestStreak}
+              thisMonthCount={thisMonthCount}
+            />
+
+            {/* Heatmap */}
+            <div style={{ backgroundColor: K.card, borderRadius: 18, border: `1px solid ${K.borderSt}`, padding: 18 }}>
+              <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 14 }}>
+                Last {weeksToShow} Weeks
+              </p>
+              <CalendarHeatmap weeks={heatmapWeeks} onCellTap={setActiveCell} />
+              {/* Legend */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 12 }}>
+                <div style={{ width: 10, height: 10, borderRadius: 3, backgroundColor: K.inset, border: `1px solid ${K.border}` }} />
+                <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim }}>None</span>
+                <div style={{ width: 10, height: 10, borderRadius: 3, backgroundColor: K.purple }} />
+                <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim }}>Done</span>
+              </div>
             </div>
-          </section>
+          </div>
 
-          {/* ── Stats bar ────────────────────────────────────────────────── */}
-          <StatBar
-            totalWorkouts={totalWorkouts}
-            currentStreak={currentStreak}
-            longestStreak={longestStreak}
-            thisMonthCount={thisMonthCount}
-          />
-
-          {/* ── Weekly summary cards ─────────────────────────────────────── */}
-          <section>
-            <p style={LABEL}>Weekly Summaries</p>
-            <div className="space-y-3">
+          {/* Right: weekly cards */}
+          <div>
+            <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 14 }}>
+              Weekly Summaries
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {weeklyGroups.map(wg => (
-                <WeeklyCard
-                  key={wg.weekStart}
-                  weekStart={wg.weekStart}
-                  weekEnd={wg.weekEnd}
-                  logs={wg.logs}
-                  navigate={navigate}
-                />
+                <WeeklyCard key={wg.weekStart} weekStart={wg.weekStart} weekEnd={wg.weekEnd} logs={wg.logs} navigate={navigate} />
               ))}
             </div>
-          </section>
+          </div>
+        </div>
 
+      ) : (
+        /* ── Narrow: single column ─────────────────────────────────────────── */
+        <div style={{ padding: '20px 16px 40px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+
+          {/* Heatmap */}
+          <div style={{ backgroundColor: K.card, borderRadius: 18, border: `1px solid ${K.borderSt}`, padding: 16 }}>
+            <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>
+              Last {weeksToShow} Weeks
+            </p>
+            <CalendarHeatmap weeks={heatmapWeeks} onCellTap={setActiveCell} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 10 }}>
+              <div style={{ width: 10, height: 10, borderRadius: 3, backgroundColor: K.inset, border: `1px solid ${K.border}` }} />
+              <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim }}>None</span>
+              <div style={{ width: 10, height: 10, borderRadius: 3, backgroundColor: K.purple }} />
+              <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim }}>Done</span>
+            </div>
+          </div>
+
+          <StatBar totalWorkouts={totalWorkouts} currentStreak={currentStreak} longestStreak={longestStreak} thisMonthCount={thisMonthCount} />
+
+          <div>
+            <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>
+              Weekly Summaries
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {weeklyGroups.map(wg => (
+                <WeeklyCard key={wg.weekStart} weekStart={wg.weekStart} weekEnd={wg.weekEnd} logs={wg.logs} navigate={navigate} />
+              ))}
+            </div>
+          </div>
         </div>
       )}
 
-      {/* Heatmap cell tooltip */}
       {activeCell && <HeatmapTooltip day={activeCell} onClose={() => setActiveCell(null)} />}
     </div>
   )
