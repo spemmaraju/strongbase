@@ -7,7 +7,7 @@
 // ── Color palette ─────────────────────────────────────────────────────────────
 export const C = {
   // Backgrounds
-  bg:         '#0F172A',   // page background
+  bg:         '#0F172A',   // page background (legacy screens)
   surface:    '#1E293B',   // card / elevated surface
   surfaceHi:  '#243147',   // hover / pressed surface
 
@@ -15,7 +15,7 @@ export const C = {
   border:     'rgba(255,255,255,0.07)',
   borderMid:  'rgba(51,65,85,0.5)',    // slightly stronger separator
 
-  // Primary accent — teal
+  // Primary accent — teal (legacy screens keep this)
   teal:       '#14B8A6',
   tealDim:    '#0D9488',   // hover / pressed
   tealSoft:   '#134E4A',   // teal-tinted background fill
@@ -39,6 +39,34 @@ export const C = {
   subtle:     '#64748B',   // tertiary text
   dim:        '#475569',   // very subtle / disabled
   navy:       '#334155',   // border / divider
+
+  // ── Kinetic Momentum palette (new screens) ─────────────────────────────────
+  // Surfaces
+  kBg:        '#0a0e1a',   // app background
+  kRail:      '#0c1322',   // left nav rail
+  kPanel:     '#0a111e',   // left panel / modal column
+  kCard:      '#101828',   // standard cards
+  kCardAlt:   '#121a2b',   // week pills, secondary cards
+  kInset:     '#16233a',   // control buttons, inset wells
+
+  // Borders
+  kBorder:    'rgba(255,255,255,0.06)',
+  kBorderStr: 'rgba(255,255,255,0.10)',
+
+  // Brand accent — pink→purple
+  accentPink:   '#ec4899',
+  accentPurple: '#8b5cf6',
+  accentViolet: '#c084fc',  // text/icon tint on dark
+  gradPrimary:  'linear-gradient(90deg, #ec4899, #8b5cf6)',
+  gradPrimaryD: 'linear-gradient(135deg, #ec4899, #8b5cf6)',
+  gradHero:     'linear-gradient(130deg, #fb923c 0%, #ec4899 48%, #8b5cf6 100%)',
+
+  // Category semantic colors
+  catWarmup:    '#f59e0b',   // warm-up (amber)
+  catStrength:  '#ec4899',   // strength (pink)
+  catFlex:      '#2dd4bf',   // cool-down / flexibility (teal)
+  catStability: '#8b5cf6',   // stability (purple)
+  catSuccess:   '#22c55e',   // improved vs last session
 }
 
 // ── Typography ────────────────────────────────────────────────────────────────
