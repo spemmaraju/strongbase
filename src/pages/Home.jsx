@@ -188,7 +188,7 @@ function KineticHeroCard({
           backgroundColor: 'rgba(0,0,0,0.32)', border: '1px solid rgba(255,255,255,0.12)',
           display: 'flex', alignItems: 'center', gap: 10,
         }}>
-          <span style={{ fontSize: 16 }}>🔒</span>
+          <Icon name="lock" size={16} style={{ color: 'rgba(255,255,255,0.5)', flexShrink: 0 }} />
           <div>
             <p style={{ fontFamily: FONT, fontWeight: 600, fontSize: 13, color: 'rgba(255,255,255,0.65)', margin: 0 }}>Week 2 — Progressive Load</p>
             <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', margin: 0, marginTop: 1 }}>Same movements · +1 set · coming soon</p>
@@ -369,9 +369,9 @@ function BadgesCard({ badges }) {
               backgroundColor: b.earned ? 'rgba(139,92,246,0.12)' : K.inset,
               border: b.earned ? '1px solid rgba(139,92,246,0.28)' : `1px solid ${K.border}`,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: 22,
+              color: b.earned ? K.violet : K.dim,
             }}>
-              {b.emoji}
+              <Icon name={b.iconName || 'badge'} size={22} />
             </div>
             <span style={{ fontSize: 9, fontWeight: 600, color: b.earned ? K.muted : K.dim, textAlign: 'center', lineHeight: 1.2 }}>
               {b.name}
@@ -696,8 +696,8 @@ export default function Home() {
                     flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5,
                     opacity: b.earned ? 1 : 0.22, filter: b.earned ? 'none' : 'grayscale(1)',
                   }}>
-                    <div style={{ width: 46, height: 46, borderRadius: 12, backgroundColor: b.earned ? 'rgba(139,92,246,0.12)' : K.inset, border: b.earned ? '1px solid rgba(139,92,246,0.28)' : `1px solid ${K.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>
-                      {b.emoji}
+                    <div style={{ width: 46, height: 46, borderRadius: 12, backgroundColor: b.earned ? 'rgba(139,92,246,0.12)' : K.inset, border: b.earned ? '1px solid rgba(139,92,246,0.28)' : `1px solid ${K.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: b.earned ? K.violet : K.dim }}>
+                      <Icon name={b.iconName || 'badge'} size={24} />
                     </div>
                     <span style={{ fontSize: 9, fontWeight: 600, color: b.earned ? K.muted : K.dim, textAlign: 'center', maxWidth: 48 }}>{b.name}</span>
                   </div>

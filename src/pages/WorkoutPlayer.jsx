@@ -1112,8 +1112,8 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
             <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', marginBottom: 16 }}>
               Badge Unlocked
             </p>
-            <div style={{ fontSize: 60, marginBottom: 12, animation: 'bouncePop 500ms ease-out' }}>
-              {newBadges[badgeIdx].emoji}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, animation: 'bouncePop 500ms ease-out', color: '#fff' }}>
+              <Icon name={newBadges[badgeIdx].iconName || 'badge'} size={64} strokeWidth={1.2} />
             </div>
             <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 20, color: '#fff', marginBottom: 6 }}>
               {newBadges[badgeIdx].name}
