@@ -229,7 +229,40 @@
     ],
     "youtubeId": "OUgsJ8-Vi0E",
     "modification": "Place a folded blanket or pillow under your hips and use a smaller range of motion if you feel any discomfort.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "The glutes \u2014 the meat of your backside. It should feel like a squeeze, then a burn.",
+      "notHere": "Your low back, and not mainly your hamstrings.",
+      "firstCue": "Heels close to your butt, tuck your pelvis slightly, then squeeze the glutes to lift.",
+      "wrongSpot": [
+        {
+          "felt": "Hamstrings, or they cramp",
+          "fix": "Your feet are too far away. Walk your heels in until your fingertips can just graze them; shins vertical at the top."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You are lifting too high and arching. Stop when your body forms a straight line from shoulders to knees, no further."
+        },
+        {
+          "felt": "Still the low back",
+          "fix": "Tuck your pelvis and press your ribs down before you lift, and hold that all the way up."
+        },
+        {
+          "felt": "Front of the thighs",
+          "fix": "You are pushing through your toes. Drive through your heels instead."
+        }
+      ],
+      "nextDay": "A deep ache in the glutes for a day or two is exactly right.",
+      "backNote": "One of the safest hip exercises for you, but only if the lift comes from the hips rather than an arched back. Height is not the goal \u2014 the squeeze is.",
+      "stopIf": "You feel anything travel down your leg, or your low back pinches at the top."
+    }
   },
   {
     "id": "bodyweight-squat",
@@ -1314,7 +1347,41 @@
     ],
     "youtubeId": "pYcpY20QaE8",
     "modification": "Use the 10 lb dumbbell or reduce reps to 8 per side while your back strength builds.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lats",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "biceps"
+    ],
+    "sensation": {
+      "feelHere": "The side and middle of your back, under and behind the armpit on the working side.",
+      "notHere": "Your biceps, your forearm, or your low back. All three mean the back is being bypassed.",
+      "firstCue": "Pull your shoulder blade back first. Let the elbow follow, not lead.",
+      "wrongSpot": [
+        {
+          "felt": "Biceps",
+          "fix": "You are curling. Start each rep by sliding the shoulder blade toward your spine, then bend the elbow."
+        },
+        {
+          "felt": "Forearm and grip",
+          "fix": "You are gripping too hard, or the weight is too heavy. Loosen the hand and go lighter."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Your torso is twisting or rounding. Set your ribs down, square your shoulders, and lower the weight."
+        },
+        {
+          "felt": "Front of the shoulder",
+          "fix": "You are letting the shoulder roll forward at the bottom. Stop the lowering a little earlier."
+        }
+      ],
+      "nextDay": "Soreness under the armpit and along the side of the back for 1\u20132 days is a good sign.",
+      "backNote": "Keep your spine still \u2014 the arm moves, the back does not. If your torso twists to finish a rep, that rep was too heavy.",
+      "stopIf": "You get pain travelling down your leg, or any electric or burning sensation in the back."
+    }
   },
   {
     "id": "prone-y-t-w",
@@ -1581,7 +1648,40 @@
     ],
     "youtubeId": "qHCI9rK7HqM",
     "modification": "Use 10 lb dumbbells or reduce reps to 8 while building pressing strength. Focus on the pause at the bottom.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "triceps"
+    ],
+    "sensation": {
+      "feelHere": "The middle and outer part of your chest, plus the back of your upper arms.",
+      "notHere": "The bony front point of your shoulder. That means the wrong muscle is doing the work.",
+      "firstCue": "Pin your shoulder blades down into the floor. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the shoulders",
+          "fix": "Your shoulder blades are rolling forward. Squeeze them back and down into the floor and hold them there the whole set."
+        },
+        {
+          "felt": "Still the shoulders",
+          "fix": "Bring your elbows closer to your ribs \u2014 roughly 45 degrees, not straight out sideways."
+        },
+        {
+          "felt": "Sharp or pinching at the shoulder",
+          "fix": "That is the joint, not the muscle. Stop the set. Drop the weight and shorten the range."
+        },
+        {
+          "felt": "Wrists or elbows",
+          "fix": "Turn your palms to face each other and keep your wrists stacked straight over your elbows."
+        }
+      ],
+      "nextDay": "A broad ache across the chest is normal for 1\u20133 days. Sharp pinpoint pain is not.",
+      "backNote": "This one is deliberately spine-friendly \u2014 the floor stops you arching. Keep your low back lightly touching the floor; do not arch to press more weight.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    }
   },
   {
     "id": "band-overhead-press",

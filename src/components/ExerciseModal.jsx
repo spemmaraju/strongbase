@@ -1,6 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { Icon } from './Icons'
+import MuscleMap from './MuscleMap'
+import { resolveMuscles } from '../data/muscleGroups'
 
 const FONT = "'Plus Jakarta Sans', sans-serif"
 const MONO = "'JetBrains Mono', 'Courier New', monospace"
@@ -32,6 +34,101 @@ const CAT_COLORS = {
   cardio:      '#3b82f6',
 }
 
+// ── Sensation card ──────────────────────────────────────────────────────────
+// Collapsed by default to the two lines that matter mid-set (feel here / not
+// here). Everything else — the wrong-spot diagnostics, soreness expectation,
+// back note, stop rule — is one tap away, read between sets.
+function SensationCard({ s }) {
+  const [open, setOpen] = useState(false)
+
+  const Row = ({ dot, label, text }) => (
+    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
+      <div style={{ width: 7, height: 7, borderRadius: '50%', backgroundColor: dot, flexShrink: 0, marginTop: 6 }} />
+      <p style={{ fontSize: 13.5, lineHeight: 1.55, margin: 0, color: '#cbd5e1', maxWidth: '68ch' }}>
+        <span style={{ color: K.text, fontWeight: 700 }}>{label} </span>{text}
+      </p>
+    </div>
+  )
+
+  return (
+    <div style={{
+      backgroundColor: 'rgba(139,92,246,0.06)',
+      border: '1px solid rgba(139,92,246,0.22)',
+      borderRadius: 14, padding: 16, marginBottom: 16,
+    }}>
+      <p style={{
+        fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.violet,
+        letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 12,
+      }}>Where you should feel it</p>
+
+      <Row dot="#22c55e" label="Feel it here —" text={s.feelHere} />
+      <Row dot="#f59e0b" label="Not here —"     text={s.notHere} />
+
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          display: 'flex', alignItems: 'center', gap: 7, marginTop: 4,
+          background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+          fontFamily: FONT, fontSize: 13, fontWeight: 700, color: K.violet,
+        }}
+      >
+        <span style={{
+          display: 'inline-block', transition: 'transform 0.18s ease',
+          transform: open ? 'rotate(90deg)' : 'none', fontSize: 11,
+        }}>▶</span>
+        {open ? 'Hide details' : 'Feeling it somewhere else?'}
+      </button>
+
+      {open && (
+        <div style={{ marginTop: 14, borderTop: `1px solid ${K.border}`, paddingTop: 14 }}>
+          <p style={{ fontSize: 13.5, lineHeight: 1.55, color: '#cbd5e1', margin: '0 0 14px', maxWidth: '68ch' }}>
+            <span style={{ color: K.text, fontWeight: 700 }}>Try this first — </span>{s.firstCue}
+          </p>
+
+          {s.wrongSpot?.map((w, i) => (
+            <div key={i} style={{
+              backgroundColor: K.inset, borderRadius: 10,
+              padding: '10px 12px', marginBottom: 8,
+            }}>
+              <p style={{ fontSize: 12.5, fontWeight: 700, color: K.amber, margin: '0 0 3px' }}>{w.felt}</p>
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: '#cbd5e1', margin: 0, maxWidth: '66ch' }}>{w.fix}</p>
+            </div>
+          ))}
+
+          {s.nextDay && (
+            <p style={{ fontSize: 13, lineHeight: 1.55, color: K.muted, margin: '14px 0 0', maxWidth: '68ch' }}>
+              <span style={{ color: K.text, fontWeight: 700 }}>Next day — </span>{s.nextDay}
+            </p>
+          )}
+
+          {s.backNote && (
+            <div style={{
+              marginTop: 12, backgroundColor: 'rgba(45,212,191,0.06)',
+              border: '1px solid rgba(45,212,191,0.2)', borderRadius: 10, padding: '10px 12px',
+            }}>
+              <p style={{ fontFamily: MONO, fontSize: 8.5, fontWeight: 700, color: K.teal, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 5px' }}>
+                Your back
+              </p>
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: 'rgba(153,246,228,0.85)', margin: 0, maxWidth: '66ch' }}>{s.backNote}</p>
+            </div>
+          )}
+
+          {s.stopIf && (
+            <div style={{
+              marginTop: 10, backgroundColor: 'rgba(239,68,68,0.07)',
+              border: '1px solid rgba(239,68,68,0.25)', borderRadius: 10, padding: '10px 12px',
+            }}>
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: '#fca5a5', margin: 0, maxWidth: '66ch' }}>
+                <span style={{ fontWeight: 700 }}>Stop if </span>{s.stopIf}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function ExerciseModal({ exercise, onClose }) {
   // Close on Escape
   useEffect(() => {
@@ -47,6 +144,7 @@ export default function ExerciseModal({ exercise, onClose }) {
   }, [])
 
   const isWide = useMediaQuery('(min-width: 768px)')
+  const { primary, secondary, primaryNames, secondaryNames } = resolveMuscles(exercise)
 
   if (!exercise) return null
 
@@ -130,19 +228,35 @@ export default function ExerciseModal({ exercise, onClose }) {
         </div>
       )}
 
-      {/* TARGETS */}
+      {/* MUSCLES WORKED */}
       <p style={{
         fontFamily: MONO, fontSize: 9, fontWeight: 700,
-        color: K.dim, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 10,
-      }}>Targets</p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-        {exercise.targetMuscles.map(m => (
+        color: K.dim, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 12,
+      }}>Muscles worked</p>
+
+      <MuscleMap primary={primary} secondary={secondary} style={{ marginBottom: 14 }} />
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 14 }}>
+        {primaryNames.map(m => (
           <span key={m} style={{
-            backgroundColor: K.inset, borderRadius: 99,
-            padding: '4px 10px', fontSize: 12, color: K.muted,
-            border: `1px solid ${K.border}`,
+            backgroundColor: K.pink, borderRadius: 99,
+            padding: '4px 10px', fontSize: 11, fontWeight: 700, color: '#fff',
           }}>{m}</span>
         ))}
+        {secondaryNames.map(m => (
+          <span key={m} style={{
+            backgroundColor: 'rgba(236,72,153,0.13)', borderRadius: 99,
+            padding: '4px 10px', fontSize: 11, color: '#f9a8d4',
+            border: '1px solid rgba(236,72,153,0.26)',
+          }}>{m}</span>
+        ))}
+      </div>
+
+      <p style={{
+        fontFamily: MONO, fontSize: 9, fontWeight: 700,
+        color: K.dim, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 8,
+      }}>Equipment</p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
         {exercise.equipment.map(eq => (
           <span key={eq} style={{
             backgroundColor: 'rgba(45,212,191,0.08)', borderRadius: 99,
@@ -193,6 +307,9 @@ export default function ExerciseModal({ exercise, onClose }) {
           </li>
         ))}
       </ul>
+
+      {/* WHERE YOU SHOULD FEEL IT */}
+      {exercise.sensation && <SensationCard s={exercise.sensation} />}
 
       {/* EASIER MODIFICATION */}
       {exercise.modification && (
