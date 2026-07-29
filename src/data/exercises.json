@@ -1449,7 +1449,55 @@
     ],
     "youtubeId": "ZX6hAdiDTgk",
     "modification": "Hold onto a wall lightly with your free hand for balance, or keep both feet on the ground and hinge to a moderate depth (not a full single-leg RDL).",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "hip stabilizers"
+    ],
+    "sensation": {
+      "feelHere": "A deep stretch through the hamstring of your standing leg, then a glute squeeze as you rise.",
+      "notHere": "Your low back. Wobbling in the standing ankle is normal balance work, not the target.",
+      "firstCue": "Push hips straight back, not down. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "Hips dropped down instead of back, or you descended past your hamstring's limit. Push hips toward a wall and stop when the hamstring feels tight."
+        },
+        {
+          "felt": "Front of the standing thigh",
+          "fix": "You're squatting the knee instead of hinging. Keep the standing knee softly bent and push the hips back, not down."
+        },
+        {
+          "felt": "Can't feel the hamstring at all",
+          "fix": "You're not going deep enough. Lower until you feel a real stretch before returning, staying within a neutral spine."
+        },
+        {
+          "felt": "Ankle or balance takes over",
+          "fix": "That's stability, not target. Touch a wall lightly with your free hand and focus only on the hip hinge."
+        }
+      ],
+      "nextDay": "A stretch-type ache in the hamstring of the working leg for 1\u20132 days is expected.",
+      "backNote": "This is a hinge, not a bend \u2014 hips travel back toward a wall, not down. Stop the descent the instant your hamstring feels tight, not when the weight nears the floor.",
+      "stopIf": "Anything shoots or tingles down the back of your leg, or your low back sharply pinches."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rounding the back to reach lower",
+        "right": "Stop the descent where your spine stays neutral, even if that means a shorter range than you'd like."
+      },
+      {
+        "wrong": "Squatting instead of hinging",
+        "right": "Keep the standing knee soft but not bending much; push the hips straight back instead of down."
+      },
+      {
+        "wrong": "Torso and raised leg moving separately",
+        "right": "Move them together like a seesaw \u2014 as the torso tips forward, the back leg rises in line with it."
+      }
+    ]
   },
   {
     "id": "reverse-fly",
@@ -1642,7 +1690,54 @@
     ],
     "youtubeId": "6oYSPzZlwL0",
     "modification": "Use a lighter resistance band or remove the band and perform a standard glute bridge if the abductor demand is too high.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hip abductors",
+      "hamstrings"
+    ],
+    "sensation": {
+      "feelHere": "The glutes, plus a burn on the outer hip from pushing your knees out against the band.",
+      "notHere": "Your low back, and not mainly your hamstrings or the front of your thighs.",
+      "firstCue": "Push knees out against the band the whole time, then squeeze glutes to lift. Go slow.",
+      "wrongSpot": [
+        {
+          "felt": "Hamstrings, or they cramp",
+          "fix": "Your feet are too far away. Walk your heels in until your fingertips can just graze them."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You lifted too high and arched. Stop at a straight line from shoulders to knees, no higher."
+        },
+        {
+          "felt": "Front of the hip or knees cave in",
+          "fix": "You relaxed the outward knee pressure. Keep pushing your knees out against the band for the entire rep, not just at the top."
+        },
+        {
+          "felt": "Front of the thighs",
+          "fix": "You're pushing through your toes. Drive through your heels instead and let the band do the abduction work."
+        }
+      ],
+      "nextDay": "A deep glute ache plus soreness on the outer hip for 1\u20132 days is expected.",
+      "backNote": "Same hip-extension exercise as the plain bridge, just with outer-hip work added. Lift from the hips, not an arched back; height is not the goal.",
+      "stopIf": "Anything travels down your leg, or your low back pinches at the top of the lift."
+    },
+    "mistakes": [
+      {
+        "wrong": "Knees caving inward against the band",
+        "right": "Actively push the knees outward against the band for the entire set, not just the lift."
+      },
+      {
+        "wrong": "Arching the low back at the top",
+        "right": "Stop at a straight line from shoulders to knees; tuck the pelvis before you lift."
+      },
+      {
+        "wrong": "Feet too far from the hips",
+        "right": "Walk the heels in until your fingertips can just graze them, shins vertical at the top."
+      }
+    ]
   },
   {
     "id": "clamshell",
@@ -1675,7 +1770,55 @@
     ],
     "youtubeId": "m_ZPapmqeNM",
     "modification": "Remove the resistance band and perform with bodyweight only, focusing on perfect form before adding resistance.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glute medius",
+      "glute minimus"
+    ],
+    "secondaryMuscles": [
+      "hip external rotators",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "A burn on the side of your hip, a hand's width below the top of the hip bone.",
+      "notHere": "The front of your hip crease, or your low back from the pelvis rocking backward.",
+      "firstCue": "Keep your hips stacked and still; lift the knee only from the hip. Go slow.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the hip",
+          "fix": "You're rocking your pelvis backward to fake more range. Keep a hand on your hip to catch any rocking and stop the lift there."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Same pelvis-rocking issue, just felt higher up. Shrink the range until your hips stay completely stacked and still."
+        },
+        {
+          "felt": "Front of the thigh, like a hip flexor",
+          "fix": "You're leading with the knee bending forward instead of rotating from the hip. Keep feet together and rotate only."
+        },
+        {
+          "felt": "Barely feel anything",
+          "fix": "Your range is too small or the band too loose. Open further, right up to where the hip starts to rock, and add tension."
+        }
+      ],
+      "nextDay": "A burn deep on the side of the hip for 1\u20132 days; this muscle is often under-trained.",
+      "backNote": null,
+      "stopIf": "Sharp pinching pain deep in the front of the hip joint itself, not a muscle burn."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rocking the pelvis backward to open wider",
+        "right": "Keep a hand on your hip to monitor rocking; stop the lift the instant it starts."
+      },
+      {
+        "wrong": "Feet separating instead of staying together",
+        "right": "Keep feet together throughout \u2014 the rotation should come entirely from the hip, not the foot."
+      },
+      {
+        "wrong": "Rushing through reps",
+        "right": "Slow down and pause a full second at the top to let the outer glute do the work."
+      }
+    ]
   },
   {
     "id": "banded-lateral-walk",
@@ -1707,7 +1850,54 @@
     ],
     "youtubeId": "Yy7qSkfELFY",
     "modification": "Use a lighter band or place the band above the knees instead of above the ankles to reduce resistance.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glute medius"
+    ],
+    "secondaryMuscles": [
+      "hip abductors",
+      "quadriceps"
+    ],
+    "sensation": {
+      "feelHere": "A burn on the outer hip, a hand's width below the hip bone, on the leading leg.",
+      "notHere": "The front of your hip, your low back, or your knees from the mini-squat position.",
+      "firstCue": "Stay low in the mini-squat and step wide against band tension. Move slow and controlled.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the hip or thigh",
+          "fix": "You're rotating your pelvis or letting your toes turn out instead of isolating the hip. Keep toes forward and hips square."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You stood up out of the squat, or you're leaning your torso to help step. Stay low and keep your chest tall and still."
+        },
+        {
+          "felt": "Knees",
+          "fix": "Your knees are caving inward as you step. Keep pressing them outward against the band the entire time."
+        },
+        {
+          "felt": "Barely feel it in the hip",
+          "fix": "You stood too tall, which removes the band tension and the effort. Sink deeper into the mini-squat and stay there the whole set."
+        }
+      ],
+      "nextDay": "A burn on the outer hip and glute for 1\u20132 days; the front thigh may ache lightly too.",
+      "backNote": null,
+      "stopIf": "Sharp pinching in the hip joint itself, or any knee pain that doesn't ease with a wider stance."
+    },
+    "mistakes": [
+      {
+        "wrong": "Standing tall between steps",
+        "right": "Stay in the mini-squat for the entire set; standing up removes the tension and the point of the exercise."
+      },
+      {
+        "wrong": "Feet coming together between steps",
+        "right": "Keep constant band tension \u2014 never let your feet touch or fully close the gap."
+      },
+      {
+        "wrong": "Toes turning outward as you tire",
+        "right": "Keep toes pointing forward throughout to keep the work in the outer hip, not the front of the hip."
+      }
+    ]
   },
   {
     "id": "banded-pull-apart",
@@ -2065,7 +2255,55 @@
     ],
     "youtubeId": "yFNjwkUNIao",
     "modification": "Keep the extended leg bent at 90 degrees (foot toward ceiling) rather than straight to reduce the balance challenge.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core",
+      "hip stabilizers"
+    ],
+    "sensation": {
+      "feelHere": "The glute of your planted leg, working much harder than the two-leg version, plus core bracing.",
+      "notHere": "Your low back, or the hamstring of the planted leg cramping.",
+      "firstCue": "Press through the planted heel and keep both hips level. Move slow, no rushing.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "You lifted too high, arching to compensate for the missing second leg. Stop at a straight line from shoulders to knee, no higher."
+        },
+        {
+          "felt": "Hip of the raised leg dips or drops",
+          "fix": "You're letting that side sag instead of holding it level. Consciously push both hips to the same height throughout."
+        },
+        {
+          "felt": "Hamstring cramping on the planted leg",
+          "fix": "Your planted foot is too far from your hips. Walk it in closer until shins are near vertical at the top."
+        },
+        {
+          "felt": "Low back twisting",
+          "fix": "You're rotating the pelvis to help lift. Keep your hips square to the ceiling and slow the rep down."
+        }
+      ],
+      "nextDay": "A stronger glute ache than the two-leg bridge, one side more than the other, is expected.",
+      "backNote": "The single-leg version tempts you to arch or twist to make up for the lost support. Lift from the hip only; stop at a straight line, don't overreach for height.",
+      "stopIf": "Anything travels down either leg, or your low back pinches or twists sharply."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging on the raised-leg side",
+        "right": "Push both hips to the same height the entire rep \u2014 check by feel, not a mirror."
+      },
+      {
+        "wrong": "Arching the back to gain height",
+        "right": "Stop at a straight line from shoulders to knee; do not push higher by arching."
+      },
+      {
+        "wrong": "Rushing the reps for balance",
+        "right": "Slow down \u2014 a controlled tempo is what keeps the pelvis from rotating or dropping."
+      }
+    ]
   },
   {
     "id": "glute-bridge-hold",
@@ -2098,7 +2336,54 @@
     ],
     "youtubeId": "cmkMMjo0fRo",
     "modification": "Reduce the hold to 15 seconds and build up over time.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "A building, steady burn in the glutes that intensifies the longer you hold the top position.",
+      "notHere": "Your low back, and not a shaking, cramping feeling in your hamstrings.",
+      "firstCue": "Keep actively squeezing the glutes the whole hold \u2014 don't just hang there. Breathe steadily.",
+      "wrongSpot": [
+        {
+          "felt": "Hamstrings shaking or cramping",
+          "fix": "Your feet are too far from your hips. Walk your heels in until your fingertips can just graze them."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're holding too high and arching instead of extending the hip. Drop to a straight line from shoulders to knees and stay there."
+        },
+        {
+          "felt": "Low back, hips sagging mid-hold",
+          "fix": "You stopped actively squeezing. Keep the glutes contracted hard for the entire hold, not just at the start."
+        },
+        {
+          "felt": "Front of the thighs",
+          "fix": "You're pressing weight into your toes instead of your heels. Shift your weight back onto your heels."
+        }
+      ],
+      "nextDay": "A deep, fatigued glute ache \u2014 like the end of a hard set \u2014 for 1\u20132 days.",
+      "backNote": "An isometric hold is spine-friendly, but only if the hip stays where it started. Do not let fatigue pull you into an arch \u2014 end the hold before that happens.",
+      "stopIf": "Anything travels down your leg, or your low back pinches or arches involuntarily as you fatigue."
+    },
+    "mistakes": [
+      {
+        "wrong": "Letting hips sag mid-hold",
+        "right": "Keep actively squeezing the glutes for the entire duration, not just the first few seconds."
+      },
+      {
+        "wrong": "Holding too high with an arched back",
+        "right": "Settle at a straight line from shoulders to knees and stop there for the whole hold."
+      },
+      {
+        "wrong": "Holding the breath",
+        "right": "Breathe steadily throughout \u2014 inhale through the nose, exhale through the mouth, do not brace by holding air."
+      }
+    ]
   },
   {
     "id": "modified-pigeon",
@@ -3401,7 +3686,55 @@
     ],
     "youtubeId": "NaKsZos0bIY",
     "modification": "Reduce the range of motion to where you can comfortably maintain a neutral spine. Place a hand lightly on a wall for balance support if needed.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "lower back stabilizers"
+    ],
+    "sensation": {
+      "feelHere": "Both hamstrings stretching against band tension, then a strong glute squeeze as you stand tall.",
+      "notHere": "Your low back, or gripping tension in your forearms from holding the band handles too tightly.",
+      "firstCue": "Keep the band pressed against your legs as hips push back. Lower for a slow count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "The band pulled away from your legs as you hinged, shifting load to your spine. Keep it dragging against your thighs the entire way down."
+        },
+        {
+          "felt": "Low back, went too deep",
+          "fix": "You hinged below where your hamstrings run out of length. Stop the descent the moment the hamstring first feels tight."
+        },
+        {
+          "felt": "Front of the thighs",
+          "fix": "You're squatting instead of hinging. Send your hips straight back and keep the knees only softly bent."
+        },
+        {
+          "felt": "Forearms or grip",
+          "fix": "You're gripping the band too hard. Relax your hands \u2014 the band tension is the resistance, not your grip strength."
+        }
+      ],
+      "nextDay": "A stretch-type ache through both hamstrings and a glute ache for 1\u20132 days is expected.",
+      "backNote": "Same hinge risk as any RDL, band tension included. Hips travel back toward a wall, not down; stop the descent the instant the hamstrings feel tight, not at the floor.",
+      "stopIf": "Anything shoots or tingles down either leg, or your low back sharply pinches at any point."
+    },
+    "mistakes": [
+      {
+        "wrong": "Letting the band drift away from the legs",
+        "right": "Keep the band in contact with your thighs and shins throughout the entire hinge."
+      },
+      {
+        "wrong": "Standing up with the arms instead of hips",
+        "right": "Drive your hips forward to finish the rep \u2014 the arms and band are passive, just along for the ride."
+      },
+      {
+        "wrong": "Rounding the back at the bottom",
+        "right": "Stop wherever your spine stays neutral, even if that's a shorter range than the band allows."
+      }
+    ]
   },
   {
     "id": "dumbbell-overhead-tricep-extension",
@@ -3992,7 +4325,55 @@
     ],
     "youtubeId": "hQgFixeXdZo",
     "modification": "Use lighter dumbbells and reduce range of motion to where you can perfectly maintain spinal alignment. Perform in front of a mirror to check your form.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "lower back stabilizers"
+    ],
+    "sensation": {
+      "feelHere": "Both hamstrings stretching, then a hard glute squeeze as your hips drive forward to standing.",
+      "notHere": "Your low back. If it's doing the work, the hinge broke down somewhere in the descent.",
+      "firstCue": "Keep the dumbbells against your legs as hips push back. Lower slowly for 3 counts.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "The weight drifted away from your legs, pulling load into your spine. Keep the dumbbells dragging against your thighs and shins the whole way down."
+        },
+        {
+          "felt": "Low back, and depth feels excessive",
+          "fix": "You hinged past where your hamstrings can hold a neutral spine. Stop the descent when the hamstring first feels tight, not at a fixed height."
+        },
+        {
+          "felt": "Front of the thighs",
+          "fix": "You're bending your knees like a squat instead of hinging. Keep the knees only softly bent and send the hips backward."
+        },
+        {
+          "felt": "Upper traps or shoulders",
+          "fix": "You're shrugging to hold the dumbbells. Let your arms hang heavy and relaxed, gripping only enough to not drop them."
+        }
+      ],
+      "nextDay": "A deep stretch-soreness through both hamstrings and a glute ache for 1\u20132 days is normal.",
+      "backNote": "The hip hinge is where load reaches the low back fastest. Hips travel back, not down; stop the descent the moment the hamstrings feel tight, never when the weight nears the floor.",
+      "stopIf": "Anything shoots, burns, or tingles down either leg, or your low back sharply pinches at any point."
+    },
+    "mistakes": [
+      {
+        "wrong": "Weight drifting forward away from legs",
+        "right": "Keep the dumbbells brushing your thighs and shins throughout the entire hinge, both down and up."
+      },
+      {
+        "wrong": "Standing up by leading with the chest",
+        "right": "Drive your hips forward first \u2014 think 'hips forward,' not 'lift the weight' \u2014 and let the torso follow."
+      },
+      {
+        "wrong": "Locking the knees at the top",
+        "right": "Keep a soft bend in the knees throughout; a hard lockout shifts strain toward the low back."
+      }
+    ]
   },
   {
     "id": "machine-leg-curl",
@@ -4182,7 +4563,56 @@
     ],
     "youtubeId": "pA6o-a3y1Vo",
     "modification": "Use a lighter kettlebell (8-12 kg for beginners). Practice the hip hinge first: stand arm's length from a wall, push your glutes back to touch it, then drive forward.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "lats",
+      "forearms"
+    ],
+    "sensation": {
+      "feelHere": "A sharp glute and hamstring snap at the top of each swing, like an explosive jump.",
+      "notHere": "Your shoulders, arms, or low back. None of them should be doing the lifting here.",
+      "firstCue": "Snap your hips forward hard; keep arms loose like a rope. Start slow and light.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "You're squatting it up or lifting with the back instead of snapping the hips. Practice the wall hip-hinge drill before swinging again."
+        },
+        {
+          "felt": "Shoulders or arms",
+          "fix": "You're lifting the bell with your arms instead of the hips throwing it. Relax your arms \u2014 they only guide it, they never lift it."
+        },
+        {
+          "felt": "Front of the thighs, like a squat",
+          "fix": "You're bending the knees and squatting the weight instead of hinging. Keep the knees soft and push the hips back on the backswing."
+        },
+        {
+          "felt": "Low back on the backswing",
+          "fix": "You're letting the bell pull your spine into a round on the way back. Hike it between your legs like a football snap, chest up."
+        }
+      ],
+      "nextDay": "A deep glute and hamstring ache the next day is normal; low back soreness is not.",
+      "backNote": "You've never used a kettlebell before. This is a hip snap, not a squat or an arm lift \u2014 if the hinge doesn't feel solid, master the RDL and good-morning first.",
+      "stopIf": "Anything shoots down a leg, your low back sharply pinches, or the bell pulls you off balance."
+    },
+    "mistakes": [
+      {
+        "wrong": "Squatting the weight up and down",
+        "right": "This is a hinge, not a squat \u2014 hips travel back and snap forward, knees barely bend."
+      },
+      {
+        "wrong": "Lifting the bell with the arms",
+        "right": "Let the hips throw it; arms only guide the path and stay relaxed the entire swing."
+      },
+      {
+        "wrong": "Leaning back at the top to add height",
+        "right": "Finish standing tall in a straight line \u2014 leaning back overextends the low back for no benefit."
+      }
+    ]
   },
   {
     "id": "kb-goblet-squat",
@@ -4854,6 +5284,498 @@
       {
         "wrong": "Hands not under the low back",
         "right": "Keep both hands under your low back's natural arch the whole time to preserve that curve."
+      }
+    ]
+  },
+  {
+    "id": "kb-deadlift",
+    "name": "Kettlebell Deadlift",
+    "category": "strength",
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "core",
+      "upper back",
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "upper back",
+      "forearms"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Stand with feet shoulder-width apart and set the kettlebell on the floor between your feet, in line with your shoelaces. The handle is the metal loop on top; the two curved sides of that loop are called the horns.",
+      "Push your hips straight back \u2014 not down \u2014 until your hands reach the handle. Your shins stay close to vertical and your knees only bend a little. This backward hip travel is the hip hinge, and it is the one pattern every kettlebell movement is built on.",
+      "Grip the handle with both hands. Flatten your back, pull your shoulders down away from your ears, take a breath in and brace your stomach like you are about to be poked.",
+      "Stand up by driving your feet into the floor and pushing your hips forward. Finish tall with your glutes squeezed. The bell hangs at arm's length \u2014 your arms never pull, they are just hooks.",
+      "Lower by pushing your hips back again, keeping the bell tracking close to your legs. Touch the floor lightly and reset your brace before the next rep."
+    ],
+    "cues": [
+      "Hips go back, not down \u2014 imagine closing a car door with your backside",
+      "Keep the bell close to your shins the whole way; letting it drift forward loads your low back",
+      "Squeeze your glutes to finish, do not lean back at the top"
+    ],
+    "youtubeId": "dmfearjKeUY",
+    "modification": "If you cannot reach the floor with a flat back, stand the kettlebell on a box or a couple of weight plates so it starts higher. Start light \u2014 12-16 kg is plenty for learning the pattern.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong stretch up the back of your thighs on the way down, glutes squeezing at the top.",
+      "notHere": "A tight band of ache across your low back. That means your back is lifting instead of your hips.",
+      "firstCue": "Push your hips straight back and lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back doing the lifting",
+          "fix": "The bell drifted forward. Keep it brushing your shins and start the stand-up by driving your feet down, not by pulling with your back."
+        },
+        {
+          "felt": "Fronts of the thighs burning",
+          "fix": "You are squatting it up. Let your knees stay mostly straight and send your hips further back until you feel your hamstrings load."
+        },
+        {
+          "felt": "Nothing much anywhere",
+          "fix": "Your range is too short or the bell is too light. Go one size heavier and lower until the hamstrings first pull tight."
+        },
+        {
+          "felt": "Shoulders shrugging up",
+          "fix": "Pull your shoulder blades down into your back pockets before you stand, and keep them there for the whole rep."
+        }
+      ],
+      "nextDay": "Hamstrings and glutes ache for 1-3 days. Low-back stiffness on waking is not expected.",
+      "backNote": "The failure mode is your low back rounding at the bottom. Stop lowering the moment your hamstrings feel tight \u2014 not when the bell reaches the floor. Raise the bell on a box if needed.",
+      "stopIf": "Anything shoots, burns or tingles down a leg, or a foot goes numb or feels weak."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rounding the back to reach lower",
+        "right": "Keep your chest proud and your back flat. If you cannot reach the handle flat-backed, raise the bell on a box."
+      },
+      {
+        "wrong": "Squatting instead of hinging",
+        "right": "Knees bend only slightly. The movement is hips travelling backward, then forward \u2014 not up and down."
+      },
+      {
+        "wrong": "Leaning back at the top",
+        "right": "Finish standing straight with glutes squeezed and ribs down. Leaning back jams your lower spine."
+      }
+    ]
+  },
+  {
+    "id": "kb-good-morning",
+    "name": "Kettlebell Good Morning",
+    "category": "strength",
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "glutes",
+      "core",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "upper back"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Hold the kettlebell at your chest in the front rack \u2014 that means one bell held close to your sternum with the ball of the bell resting against your chest and forearms, elbows tucked down at your ribs. Here you can simply hold it by both horns with two hands, like the top of a goblet squat.",
+      "Stand with feet hip-width apart, knees softly unlocked. Take a breath in and brace your stomach.",
+      "Push your hips straight back and let your chest travel forward as one solid piece. Your spine does not change shape \u2014 your whole torso tips like a drawbridge from the hip joints.",
+      "Stop the moment you feel your hamstrings pull tight. For most people that is somewhere between 30 and 45 degrees of forward lean, well above horizontal. Going lower than your hamstrings allow is what makes the back round.",
+      "Drive your hips forward to stand tall and squeeze your glutes. This is step two of the ladder to the kettlebell swing: the deadlift taught you the hinge, this teaches you to hold it under a load that is trying to tip you over."
+    ],
+    "cues": [
+      "Hinge from the hips only \u2014 your spine stays one rigid piece from tailbone to head",
+      "Stop when the hamstrings first feel tight, not when you run out of nerve",
+      "Keep the bell glued to your chest; if it pulls away, your upper back is rounding"
+    ],
+    "youtubeId": "JENidBlddKw",
+    "modification": "Learn it with no weight first, hands crossed over your chest. Stand a fist's distance from a wall and tap it with your backside each rep \u2014 that teaches the hips to go back instead of down.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep stretch up the back of both thighs, and your upper back working to hold the bell in.",
+      "notHere": "A pinching or gripping ache low in the spine. That is flexion, not hamstring load.",
+      "firstCue": "Unlock your knees and push your hips back \u2014 lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back pinching",
+          "fix": "You went past your hamstrings' range and the spine picked up the slack. Cut the depth by a third and stop at first hamstring tension."
+        },
+        {
+          "felt": "Front of the shoulders straining",
+          "fix": "The bell has drifted away from your body. Pull it back into your sternum and keep your elbows pointing down at your ribs."
+        },
+        {
+          "felt": "Only the knees, no hamstrings",
+          "fix": "Your knees are bending too much, turning this into a squat. Keep the shins vertical and send the hips further behind your heels."
+        },
+        {
+          "felt": "Neck straining",
+          "fix": "You are craning to look forward. Let your eyes travel down the floor with your chest so your neck stays in line with your spine."
+        }
+      ],
+      "nextDay": "Hamstring soreness for 1-2 days is expected. Low-back soreness means the depth was too deep.",
+      "backNote": "This loads the spine in front, so any rounding is magnified. Hips go back, not down, and the descent ends at first hamstring tightness \u2014 depth is never the goal here.",
+      "stopIf": "Pain travels from your back down into the buttock or leg, or a leg tingles or goes numb."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bending as low as possible",
+        "right": "Range is set by your hamstrings, not by ambition. A 30-45 degree lean done rigid beats a deep lean done rounded."
+      },
+      {
+        "wrong": "Letting the bell drift forward",
+        "right": "Keep it pinned to your sternum with elbows down. A bell out in front multiplies the load on your spine."
+      },
+      {
+        "wrong": "Bending the knees like a squat",
+        "right": "Knees stay softly unlocked and roughly still. Only the hips move backward."
+      }
+    ]
+  },
+  {
+    "id": "kb-hike-pass",
+    "name": "Kettlebell Hike Pass",
+    "category": "strength",
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "core",
+      "lats",
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "lats",
+      "forearms"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Set the kettlebell on the floor about a foot in front of your toes. Feet shoulder-width, toes slightly out. Push your hips back and reach forward for the handle so your arms are long and your back is flat \u2014 hips higher than knees.",
+      "Tilt the bell back toward you so it is tipped up on its edge and the handle points at you. Pull your shoulders down and squeeze your armpits as if crushing a newspaper under each arm \u2014 this stops the bell yanking your shoulders forward.",
+      "Hike the bell: sharply throw it back and up between your legs, like a football centre snapping the ball. It passes high, close to your groin \u2014 not down near the floor. This is the hike, and it is where a kettlebell behaves nothing like a dumbbell: the weight hangs below the handle so it wants to keep travelling.",
+      "The instant the bell reaches the back of its arc, drive your hips forward and stand tall \u2014 glutes squeezed, ribs down, a standing plank. Let the bell swing forward only to about hip height. Do not try to float it up. There is no swing yet.",
+      "Let it come back down, hinge to receive it between your legs again, then park it on the floor. This is step three of the ladder to the kettlebell swing \u2014 hike plus stand. Once these feel automatic, adding hip snap turns it into the swing."
+    ],
+    "cues": [
+      "The bell passes high between your thighs, close to your groin \u2014 not scraping the floor",
+      "Your arms are ropes; your hips do all the work",
+      "Stand tall and stop \u2014 resist the urge to swing the bell up. That comes later"
+    ],
+    "youtubeId": "QpjJN3I6HLo",
+    "modification": "Practise single hikes: hike back, stand, park the bell, reset. One rep at a time until the hinge is automatic, then link them into continuous reps.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A sharp stretch in the hamstrings at the back of the hike, then a hard glute squeeze standing up.",
+      "notHere": "A jolt or ache in the low back at the back of the hike. That is your spine catching the bell.",
+      "firstCue": "Hike the bell high and close to your groin, then stand tall and pause one full second.",
+      "wrongSpot": [
+        {
+          "felt": "Low back jolts on the backswing",
+          "fix": "The bell is passing too low and dragging you into a round back. Aim it higher, right up against your groin, with the arms tight to your ribs."
+        },
+        {
+          "felt": "Shoulders and arms pulling",
+          "fix": "You are lifting with the arms. Squeeze your armpits down hard so the arms stay connected to your torso and just follow the hips."
+        },
+        {
+          "felt": "Thighs burning instead of hamstrings",
+          "fix": "You are squatting the bell back. Keep the shins vertical and send only the hips backwards."
+        },
+        {
+          "felt": "Grip failing early",
+          "fix": "Normal at first \u2014 the offset weight tugs the handle. Hold with a relaxed hook grip rather than a white-knuckle squeeze, and rest longer."
+        }
+      ],
+      "nextDay": "Hamstrings, glutes and forearms sore for 1-2 days. Low-back soreness is a form signal, not progress.",
+      "backNote": "The one real risk is the spine rounding as the bell travels back. Keep it passing high and close to your groin, and stop the set the moment your back rounds \u2014 not when you run out of reps.",
+      "stopIf": "Anything shoots into the buttock or down a leg, or a leg tingles, goes numb, or feels weak."
+    },
+    "mistakes": [
+      {
+        "wrong": "Letting the bell dip near the floor",
+        "right": "It should pass high and tight to your groin. A low pass forces the back to round to catch it."
+      },
+      {
+        "wrong": "Swinging the bell up with the arms",
+        "right": "Stand tall and let the bell rise no higher than your hips. This drill is deliberately not a swing."
+      },
+      {
+        "wrong": "Standing with a soft, unbraced middle",
+        "right": "Brace your stomach before every hike. A loose middle passes the force straight into your spine."
+      }
+    ]
+  },
+  {
+    "id": "kb-halo",
+    "name": "Kettlebell Halo",
+    "category": "stability",
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "shoulders",
+      "upper back",
+      "core",
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "shoulders"
+    ],
+    "secondaryMuscles": [
+      "upper back",
+      "core",
+      "forearms"
+    ],
+    "sets": 2,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Hold a light kettlebell upside down at chest height, gripping the horns \u2014 the two curved sides of the handle \u2014 so the ball of the bell sits above your hands. Elbows tucked in, bell close to your chest.",
+      "Stand tall with feet hip-width, ribs pulled down, glutes lightly squeezed. Your body from hips to head stays perfectly still \u2014 only your arms move.",
+      "Circle the bell around your head: take it past one ear, behind your head at the base of your skull, past the other ear, and back to the front. Keep it grazing close to you the whole way.",
+      "The bell can clip your head if you let it swing wide or lose the horns, so start with the lightest bell available and go slowly. Keep your elbows tucked in tight, keep the bell touching or nearly touching you throughout, and never let it orbit out at arm's length.",
+      "Complete the reps circling one direction, then reverse. Ten reps means ten circles \u2014 count each full lap."
+    ],
+    "cues": [
+      "Move slowly \u2014 the bell's weight sits above your hands, so it wants to tip and pull",
+      "Only your arms move; your ribcage and hips stay locked in place",
+      "Keep the bell hugging close to your head, never out at arm's length"
+    ],
+    "youtubeId": "LEjVh4scVy4",
+    "modification": "Start with the lightest bell in the rack (6-8 kg) \u2014 this is a mobility drill, not a strength lift. If reaching behind your head is tight, circle in front and only as far back as feels easy, widening the circle over weeks. Kneeling on both knees removes any temptation to lean.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch and light burn across the tops of the shoulders and the muscles between your shoulder blades.",
+      "notHere": "A sharp pinch at the front point of the shoulder as the bell passes behind. That is the joint, not the muscle.",
+      "firstCue": "Keep your ribs pulled down and take a slow 4 count per full circle.",
+      "wrongSpot": [
+        {
+          "felt": "Sharp pinch at the front of the shoulder",
+          "fix": "That is joint, not muscle. Stop the set, drop to a lighter bell and shrink the circle so the bell stays nearer your ears."
+        },
+        {
+          "felt": "Low back arching or aching",
+          "fix": "Your ribs are flaring as the bell goes behind. Pull your ribs down, squeeze your glutes, and reduce how far back you take it."
+        },
+        {
+          "felt": "Neck straining",
+          "fix": "You are ducking to get out of the bell's way. Keep your head still and instead widen your path slightly around the skull."
+        },
+        {
+          "felt": "Wrists bending back",
+          "fix": "Grip the horns lower and keep your knuckles stacked over your forearms. The bell's mass sits above your hands and will fold the wrist if you let it."
+        }
+      ],
+      "nextDay": "Mild tightness across the shoulders and upper back for a day. Sharp shoulder pain is not expected.",
+      "backNote": "Only if you let your ribs flare and arch backwards as the bell passes behind your head. Keep ribs down and glutes lightly squeezed and the spine stays out of it.",
+      "stopIf": "Pain or tingling runs down your arm, or your hand goes numb."
+    },
+    "mistakes": [
+      {
+        "wrong": "Circling the bell at arm's length",
+        "right": "Keep it close \u2014 elbows tucked, bell almost grazing your head. A wide orbit is what makes it hit you."
+      },
+      {
+        "wrong": "Leaning the torso to make room",
+        "right": "Body stays still; only the arms move. If you have to lean, the bell is too heavy or the circle too wide."
+      },
+      {
+        "wrong": "Using a heavy bell",
+        "right": "This is a mobility drill. The lightest bell available is the right bell \u2014 heavier just risks your head and shoulders."
+      }
+    ]
+  },
+  {
+    "id": "kb-single-arm-row",
+    "name": "Kettlebell Single-Arm Row",
+    "category": "strength",
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "lats",
+      "upper back",
+      "biceps",
+      "core"
+    ],
+    "primaryMuscles": [
+      "lats"
+    ],
+    "secondaryMuscles": [
+      "upper back",
+      "biceps",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Place your left hand and left knee on a flat bench, right foot on the floor a little behind you. The kettlebell sits on the floor under your right shoulder. Your back should be flat and roughly parallel to the floor \u2014 supported like this, the bench carries the load instead of your spine.",
+      "Reach down and grip the handle. Pull your right shoulder blade down and back before your elbow bends at all. Brace your stomach.",
+      "Row the bell up to the side of your ribcage, driving your elbow back past your torso rather than flaring it out. Because the weight hangs below the handle, the bell wants to swing \u2014 keep it tracking in a straight line beside your body.",
+      "Pause for a beat at the top with the shoulder blade squeezed toward your spine, then lower for a slow 3 count until your arm is fully straight and you feel the stretch down the side of your back.",
+      "Complete all reps on one side, then swap. Keep your shoulders level with each other throughout \u2014 do not let your torso twist to help the bell up."
+    ],
+    "cues": [
+      "Lead with the elbow, not the hand \u2014 think of your arm as a hook",
+      "Pull the shoulder blade down and back first, then bend the elbow",
+      "Keep your shoulders square to the floor; twisting turns this into a back-strain exercise"
+    ],
+    "youtubeId": "8gg400ddt-g",
+    "modification": "No bench available: stagger your stance and rest your free hand on a rack upright or the top of a heavy dumbbell for support. Start with 12-16 kg and add weight only once your torso stays completely still.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The side of your back under the armpit doing the pulling, plus the muscles between your shoulder blades.",
+      "notHere": "Mostly the front of your upper arm. That means your biceps took over from your back.",
+      "firstCue": "Pull your shoulder blade down and back before bending the elbow. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the upper arm only",
+          "fix": "Your biceps are leading. Start each rep by drawing the shoulder blade toward your spine, then let the elbow follow."
+        },
+        {
+          "felt": "Top of the shoulder or neck",
+          "fix": "You are shrugging the bell up. Pull your shoulder down away from your ear at the start and keep it there the whole rep."
+        },
+        {
+          "felt": "Low back on the working side",
+          "fix": "Your torso is twisting to help. Go lighter and keep both shoulders level with the floor for every rep."
+        },
+        {
+          "felt": "Elbow or forearm aching",
+          "fix": "You are gripping too tight and pulling with the hand. Loosen the grip and think of dragging the elbow toward your back pocket."
+        }
+      ],
+      "nextDay": "The side of your back and between the shoulder blades ache for 1-2 days. Elbow soreness is not expected.",
+      "backNote": "Supported on a bench this barely loads the spine. Keep your back flat and level \u2014 the risk is twisting or letting your low back sag, not the rowing itself.",
+      "stopIf": "Pain or tingling runs down your arm, or your hand goes numb or feels weak."
+    },
+    "mistakes": [
+      {
+        "wrong": "Twisting the torso to lift",
+        "right": "Keep both shoulders level with the floor. If you have to rotate to finish the rep, the bell is too heavy."
+      },
+      {
+        "wrong": "Flaring the elbow wide",
+        "right": "Drive the elbow backwards close to your ribs. A flared elbow shifts the work off your back and onto the shoulder joint."
+      },
+      {
+        "wrong": "Cutting the bottom short",
+        "right": "Let the arm straighten fully each rep. That stretch at the bottom is where most of the back work happens."
+      }
+    ]
+  },
+  {
+    "id": "kb-suitcase-carry",
+    "name": "Kettlebell Suitcase Carry",
+    "category": "stability",
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "core",
+      "obliques",
+      "upper back",
+      "forearms",
+      "glutes"
+    ],
+    "primaryMuscles": [
+      "core",
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "upper back",
+      "forearms",
+      "glutes"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand the kettlebell beside one foot. Pick it up by hinging \u2014 hips back, back flat, one hand on the handle \u2014 exactly as you would in a deadlift. Never stoop down with a rounded back to grab it.",
+      "Stand tall with the bell hanging at your side like a heavy suitcase. Pull your shoulders down and back, ribs down, stomach braced. Both shoulders should be level and both hips should be level.",
+      "Walk at a normal, unhurried pace for the full time. The whole point is that your torso does NOT bend sideways toward the weight \u2014 you should look, from behind, exactly as you would carrying nothing.",
+      "Do not lean away from the bell to counterbalance it either. Stay stacked and let the muscles down the opposite side of your torso do the work of keeping you upright.",
+      "At the end, set the bell down by hinging again, then repeat carrying it in the other hand. One set means one carry per side."
+    ],
+    "cues": [
+      "Stand as tall as if you were carrying nothing \u2014 no side lean either way",
+      "Shoulders level, hips level, ribs down, stomach lightly braced the whole walk",
+      "If your torso starts tipping toward the bell, the set is over \u2014 put it down"
+    ],
+    "youtubeId": "SXf6ePnQMJ8",
+    "modification": "Too heavy to stay upright? Go lighter \u2014 this is a stability drill, and a bell you can only carry crooked teaches the wrong thing. To progress, add time before you add weight: 30 seconds, then 45, then 60 per side.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The side of your waist opposite the bell working hard to hold you upright, plus a burning grip.",
+      "notHere": "The low back on the same side as the bell. That means you are side-bending toward the weight.",
+      "firstCue": "Stand tall with both shoulders level, then walk slowly without letting the bell tip you over.",
+      "wrongSpot": [
+        {
+          "felt": "Low back on the loaded side",
+          "fix": "You are side-bending toward the bell. Go lighter, pull the shoulder on that side down and back, and keep both hips level as you walk."
+        },
+        {
+          "felt": "Leaning away from the bell",
+          "fix": "Also a fail \u2014 you are counterbalancing instead of bracing. Go lighter and stay stacked over your feet."
+        },
+        {
+          "felt": "Neck and top of the shoulder",
+          "fix": "The bell is dragging your shoulder down and you are fighting it with your trap. Pull the shoulder blade down and back and keep it packed."
+        },
+        {
+          "felt": "Grip gives out before time is up",
+          "fix": "That is fine and expected early on. Set it down, rest, and count grip as the limiter rather than reducing the carry time."
+        }
+      ],
+      "nextDay": "Sides of the waist and forearms mildly sore for a day. Low-back soreness means you were side-bending.",
+      "backNote": "This is one of the most back-friendly loaded exercises there is \u2014 it trains your spine to resist bending. The only failure mode is letting your torso tip sideways. Any low-back ache on the loaded side means stop and go lighter.",
+      "stopIf": "Anything shoots into the buttock or down a leg, or a leg tingles or goes numb."
+    },
+    "mistakes": [
+      {
+        "wrong": "Tipping toward the kettlebell",
+        "right": "Stay perfectly upright. Bending toward the bell removes the exercise and puts the load into your low back."
+      },
+      {
+        "wrong": "Letting the shoulder droop",
+        "right": "Keep the loaded shoulder pulled down and back. A dragged-down shoulder collapses that whole side of your torso."
+      },
+      {
+        "wrong": "Stooping to pick it up or set it down",
+        "right": "Hinge at the hips with a flat back both ways. More backs are hurt picking bells up than carrying them."
       }
     ]
   }

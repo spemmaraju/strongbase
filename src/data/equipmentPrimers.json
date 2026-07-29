@@ -1,0 +1,45 @@
+{
+  "kettlebell": {
+    "title": "First time with a kettlebell",
+    "intro": "A kettlebell puts the weight below your hand, which makes it uniquely good at teaching your hips to produce power and your core to resist being pulled around. Learn how it behaves first, and everything after it goes faster.",
+    "points": [
+      {
+        "heading": "The parts of the bell",
+        "body": "The handle is the metal loop on top. Its two curved sides are the horns. The round mass underneath is the bell or ball. Weights are in kilograms."
+      },
+      {
+        "heading": "It is not a dumbbell",
+        "body": "The mass hangs below your hand, not around it. That offset makes the bell pull, tip and keep travelling \u2014 so it must stay close to your body."
+      },
+      {
+        "heading": "Pick it up by hinging",
+        "body": "Push your hips back, keep your back flat, and reach down. Never stoop with a rounded back. Set it down the same way, every single time."
+      },
+      {
+        "heading": "Bailing out of a rep",
+        "body": "Never fight a bell that has gone wrong. Let go and step back \u2014 floors survive dropped bells, backs and wrists do not. Clear your space first."
+      },
+      {
+        "heading": "Picking a starting weight",
+        "body": "Start lighter than feels impressive: 12-16 kg for hinges and rows, 6-8 kg for halos. If your form changes on rep five, the bell is too heavy."
+      },
+      {
+        "heading": "Wrist and grip",
+        "body": "In racked positions the bell should rest gently on the back of your forearm, not bang the wrist bone. Keep knuckles stacked over the forearm."
+      }
+    ],
+    "ladder": [
+      "kb-deadlift",
+      "kb-good-morning",
+      "kb-hike-pass",
+      "kb-swing"
+    ],
+    "ladderNote": "The swing is a fast hinge. Each rung teaches the hinge at a higher speed, so by the time you swing, the pattern is already automatic under load.",
+    "ladderLabels": {
+      "kb-deadlift": "Deadlift",
+      "kb-good-morning": "Good morning",
+      "kb-hike-pass": "Hike pass",
+      "kb-swing": "Swing"
+    }
+  }
+}

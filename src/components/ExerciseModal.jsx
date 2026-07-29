@@ -4,6 +4,7 @@ import { Icon } from './Icons'
 import MuscleMap from './MuscleMap'
 import { resolveMuscles } from '../data/muscleGroups'
 import SafetyCard from './SafetyCard'
+import EquipmentPrimer from './EquipmentPrimer'
 
 const FONT = "'Plus Jakarta Sans', sans-serif"
 const MONO = "'JetBrains Mono', 'Courier New', monospace"
@@ -296,6 +297,9 @@ export default function ExerciseModal({ exercise, onClose }) {
       overflowY: isWide ? 'auto' : 'visible',
       padding: isWide ? '28px 28px 28px 24px' : '20px 20px 40px',
     }}>
+      {/* FIRST-TIME EQUIPMENT PRIMER */}
+      <EquipmentPrimer equipment={exercise.equipment} exerciseId={exercise.id} />
+
       {/* HOW TO DO IT */}
       <p style={{
         fontFamily: MONO, fontSize: 9, fontWeight: 700,
