@@ -29,7 +29,20 @@
     ],
     "youtubeId": "UVMEnIaY8aU",
     "modification": "If shoulder discomfort occurs, reduce the circle size or bend your elbows slightly to reduce lever length.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "shoulders"
+    ],
+    "secondaryMuscles": [
+      "rotator cuff",
+      "upper back"
+    ],
+    "sensation": {
+      "feelHere": "A mild, warming ache around the shoulder joint and across the upper back.",
+      "notHere": "A pinch at the very front point of the shoulder \u2014 that's the joint catching, not warming up.",
+      "backNote": null,
+      "stopIf": "Any sharp catch or clicking with pain, or tingling down either arm."
+    }
   },
   {
     "id": "hip-circles",
@@ -61,7 +74,20 @@
     ],
     "youtubeId": "qkrJXGVj_OQ",
     "modification": "Hold onto a wall or chair with one hand for balance if needed.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hip flexors"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "lower back"
+    ],
+    "sensation": {
+      "feelHere": "A loosening, oiling sensation around the hip socket as it moves through the circle.",
+      "notHere": "A pinch at the front of the hip crease at the top of the circle \u2014 that's a range problem, not warming up.",
+      "backNote": "Keep the motion in your hips, not your low back. If your low back is doing the swaying, shrink the circle.",
+      "stopIf": "Sharp pinching in the front of the hip, or any pain shooting into the leg."
+    }
   },
   {
     "id": "leg-swings",
@@ -94,7 +120,21 @@
     ],
     "youtubeId": "3l31E2cMGMk",
     "modification": "Hold the wall with both hands and reduce the swing height if balance is challenging.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hip flexors"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "glutes",
+      "adductors"
+    ],
+    "sensation": {
+      "feelHere": "A light, springy stretch-and-release feeling at the front and back of the swinging hip.",
+      "notHere": "A sharp tug in the groin at the top of the swing \u2014 that means you're forcing height, not letting momentum swing you.",
+      "backNote": "Keep your torso upright through the swing. Leaning to compensate loads the low back for no reason.",
+      "stopIf": "Any pinch that lingers after the swing stops, or tingling down the leg."
+    }
   },
   {
     "id": "cat-cow",
@@ -128,7 +168,20 @@
     ],
     "youtubeId": "vuyUwtHl694",
     "modification": "If wrist discomfort occurs, make fists or use forearms on the mat instead of flat hands.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "spine"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "neck"
+    ],
+    "sensation": {
+      "feelHere": "A gentle wave of movement rolling up and down your whole spine, rib by rib.",
+      "notHere": "A pinch concentrated in one spot of the low back \u2014 the motion should spread evenly, not hinge at one point.",
+      "backNote": "This is gentle, controlled spinal motion, not a loaded stretch \u2014 both directions should feel easy and free.",
+      "stopIf": "Any sharp catch in the low back, or tingling or numbness anywhere in the legs."
+    }
   },
   {
     "id": "thoracic-rotation",
@@ -162,7 +215,20 @@
     ],
     "youtubeId": "MfUx9FCOb1E",
     "modification": "Reduce the rotation range if you feel tightness \u2014 even a small range of motion is beneficial for warm-up purposes.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "thoracic spine"
+    ],
+    "secondaryMuscles": [
+      "upper back",
+      "obliques"
+    ],
+    "sensation": {
+      "feelHere": "A twisting, opening feeling through your mid and upper back as you thread the arm through.",
+      "notHere": "Rotation happening in your low back or hips instead \u2014 your hips should stay square and still throughout.",
+      "backNote": "Keep the rotation above your waist. If your low back is twisting to make up range, shrink the movement.",
+      "stopIf": "Any sharp low-back pain, or tingling down either arm or leg."
+    }
   },
   {
     "id": "push-up",
@@ -196,7 +262,55 @@
     ],
     "youtubeId": "I9fsqKE5XHo",
     "modification": "Drop to your knees for a kneeling push-up, keeping the same straight line from knees to head. This reduces the load significantly while maintaining the movement pattern.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "front deltoids",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "The middle of your chest and the back of your upper arms.",
+      "notHere": "The front of your shoulders or your lower back. Those mean the wrong area is working.",
+      "firstCue": "Keep elbows at 45 degrees, not flared to a T. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the shoulders",
+          "fix": "Elbows are flaring out to a T. Bring them to about 45 degrees from your ribs and re-set your shoulder blades before each rep."
+        },
+        {
+          "felt": "Lower back",
+          "fix": "Your hips are sagging. Squeeze your glutes and brace your core so your body stays a straight line."
+        },
+        {
+          "felt": "Wrists",
+          "fix": "Spread your fingers wide and stack your wrists directly under your shoulders instead of angled forward."
+        },
+        {
+          "felt": "Neck or traps",
+          "fix": "You're craning your head up. Keep your gaze slightly ahead of your hands and let your neck stay neutral."
+        }
+      ],
+      "nextDay": "A dull ache across the chest and backs of arms for 1-2 days is normal. Sharp pain is not.",
+      "backNote": "If your hips sag, your low back arches to compensate. Keep your core braced and stop the set once you can't hold a straight line.",
+      "stopIf": "Any shooting pain, numbness, or tingling down an arm."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging toward the floor",
+        "right": "Brace your core and squeeze your glutes to keep a straight line from head to heels."
+      },
+      {
+        "wrong": "Flaring elbows to 90 degrees",
+        "right": "Keep elbows at roughly 45 degrees from your torso, not straight out to the sides."
+      },
+      {
+        "wrong": "Partial range of motion",
+        "right": "Lower until your chest is 1-2 inches from the floor, then press to full extension."
+      }
+    ]
   },
   {
     "id": "glute-bridge",
@@ -295,7 +409,55 @@
     ],
     "youtubeId": "eFEVKmp3M4g",
     "modification": "Squat to a chair or box behind you \u2014 touch the surface lightly and stand back up. This limits depth and gives you a target.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "The front of your thighs and your glutes, especially as you stand back up.",
+      "notHere": "Your low back, or a pinching feeling in the front of your knees.",
+      "firstCue": "Sit your hips back like reaching for a chair. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "You're pitching forward. Sit back rather than straight down, brace before descending, and stop a few inches short of full depth."
+        },
+        {
+          "felt": "Front of the knees",
+          "fix": "Your shins are sliding too far forward. Sit back more and let your hips lead the movement, not your knees."
+        },
+        {
+          "felt": "Inner knees or groin",
+          "fix": "Turn your toes out slightly more and actively push your knees out over your toes as you descend."
+        },
+        {
+          "felt": "Only one thigh",
+          "fix": "You're leaning to one side. Check your weight is even between both feet before each rep."
+        }
+      ],
+      "nextDay": "Front-of-thigh and glute soreness for 1\u20133 days is normal. Low back soreness the next day is not.",
+      "backNote": "If your torso pitches forward, load shifts onto your spine. Sit back, reduce depth to what you control, and elevate your heels slightly if needed.",
+      "stopIf": "Any shooting pain, numbness, or tingling down your leg. Stop the set immediately if that happens."
+    },
+    "mistakes": [
+      {
+        "wrong": "Knees caving inward",
+        "right": "Actively push your knees out over your toes throughout the descent and the ascent."
+      },
+      {
+        "wrong": "Chest collapsing forward",
+        "right": "If you're rounding forward, reduce your depth until you can keep your chest tall."
+      },
+      {
+        "wrong": "Rising onto your toes",
+        "right": "Keep weight through your full foot, heel included, as you drive back up."
+      }
+    ]
   },
   {
     "id": "forward-lunge",
@@ -328,7 +490,55 @@
     ],
     "youtubeId": "1cS-6KsJW9g",
     "modification": "Perform a shorter step and reduce the depth of the lunge. Hold onto a wall or chair for balance support.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "hip flexors"
+    ],
+    "sensation": {
+      "feelHere": "Front thigh and glute of your stepping leg, plus a stretch in the back leg's hip.",
+      "notHere": "The front knee of your leading leg \u2014 sharp or pinching pain there is not the target.",
+      "firstCue": "Keep your torso tall over your hips. Lower for a slow 2 count.",
+      "wrongSpot": [
+        {
+          "felt": "Front knee",
+          "fix": "Your knee is traveling past your toes. Take a longer step forward so your shin stays closer to vertical."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're leaning forward over the front thigh. Stay upright \u2014 try step-back lunges instead, they're kinder to your back."
+        },
+        {
+          "felt": "Back knee slamming down",
+          "fix": "Control the descent instead of dropping; stop an inch or two above the floor."
+        },
+        {
+          "felt": "Front ankle or shin",
+          "fix": "Land with your whole front foot flat rather than on your toes."
+        }
+      ],
+      "nextDay": "Front thigh and glute soreness for 1\u20133 days is normal. Front knee soreness the next day is not.",
+      "backNote": "Leaning forward over the front thigh shifts load onto your low back. Stay upright, and if it keeps happening, swap to step-back lunges instead.",
+      "stopIf": "Any shooting pain, numbness, or tingling down a leg, or sharp knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Step too short",
+        "right": "Take a bigger step forward so your front knee doesn't drift past your toes."
+      },
+      {
+        "wrong": "Torso leaning forward",
+        "right": "Keep your chest up and stacked over your hips throughout the movement."
+      },
+      {
+        "wrong": "Back knee crashing to floor",
+        "right": "Lower under control and stop just short of the floor instead of dropping."
+      }
+    ]
   },
   {
     "id": "wall-sit",
@@ -360,7 +570,54 @@
     ],
     "youtubeId": "mDdLC-yKudY",
     "modification": "Slide down to only a 45-degree knee bend instead of 90 degrees \u2014 this significantly reduces the quad load.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "sensation": {
+      "feelHere": "A deep burn in the front of your thighs, building through the hold.",
+      "notHere": "Your knees themselves, or your low back \u2014 both should stay quiet and flat against the wall.",
+      "firstCue": "Keep your entire back flat on the wall. Breathe steadily through the hold.",
+      "wrongSpot": [
+        {
+          "felt": "In the knees",
+          "fix": "You're too low or too far from the wall. Slide up slightly and bring your feet closer until it's your thighs that burn."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Your back is arching off the wall. Press it flat and shorten the hold time until you can maintain that."
+        },
+        {
+          "felt": "One leg more than other",
+          "fix": "Check your feet are evenly spaced and your weight is centered, not shifted to one side."
+        },
+        {
+          "felt": "Ankles or shins",
+          "fix": "Move your feet slightly further from the wall so your shins aren't overly angled."
+        }
+      ],
+      "nextDay": "Quad soreness for 1\u20132 days is normal. Knee soreness the next day is not.",
+      "backNote": null,
+      "stopIf": "Any sharp knee pain, or numbness or tingling in your legs."
+    },
+    "mistakes": [
+      {
+        "wrong": "Knees pushed past the toes",
+        "right": "Walk your feet further from the wall until your knees stack directly over your ankles."
+      },
+      {
+        "wrong": "Back arching off the wall",
+        "right": "Keep your entire back, including your low back, pressed flat against the wall."
+      },
+      {
+        "wrong": "Holding your breath",
+        "right": "Breathe steadily throughout the hold instead of bracing and holding your breath."
+      }
+    ]
   },
   {
     "id": "step-back-lunge",
@@ -393,7 +650,55 @@
     ],
     "youtubeId": "Ry-wqegeKlE",
     "modification": "Hold onto a wall or countertop for balance support, or reduce the depth of the lunge.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "hip flexors"
+    ],
+    "sensation": {
+      "feelHere": "Glute and front thigh of your front leg, plus a stretch through the back leg's hip.",
+      "notHere": "The front knee \u2014 this variation is designed to keep pressure off it compared to forward lunges.",
+      "firstCue": "Keep your torso upright. Lower for a slow 2 count, 1 up.",
+      "wrongSpot": [
+        {
+          "felt": "Front knee",
+          "fix": "Step back further so your front shin stays more vertical and your knee stays above your ankle."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're tilting your chest down. Keep it facing forward and upright the whole rep."
+        },
+        {
+          "felt": "Back foot or ankle",
+          "fix": "Keep your back heel lifted and land softly on the ball of your back foot."
+        },
+        {
+          "felt": "One side more than other",
+          "fix": "Check your step length is equal on both sides; a short step overloads that leg's knee."
+        }
+      ],
+      "nextDay": "Glute and front thigh soreness for 1\u20133 days is normal. Front knee soreness the next day is not.",
+      "backNote": "This version keeps your torso upright by design, so it's easier on your spine than forward lunges. Still, don't let your chest tip forward as you fatigue.",
+      "stopIf": "Any shooting pain, numbness, or tingling down a leg, or sharp knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Torso tipping forward",
+        "right": "Keep your chest facing forward and vertical throughout the step-back and return."
+      },
+      {
+        "wrong": "Short step back",
+        "right": "Step back far enough that your front knee doesn't drift past your toes."
+      },
+      {
+        "wrong": "Rushing the tempo",
+        "right": "Take 2 seconds lowering and 1 second driving back up instead of rushing."
+      }
+    ]
   },
   {
     "id": "bird-dog",
@@ -427,7 +732,55 @@
     ],
     "youtubeId": "QABW99qPiNM",
     "modification": "Instead of extending the arm and leg simultaneously, extend only the leg while keeping both hands on the floor. Master leg-only first, then add the arm.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "core",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "lower back stabilizers",
+      "shoulders"
+    ],
+    "sensation": {
+      "feelHere": "A steady brace across your stomach and the glute of your standing-leg side.",
+      "notHere": "A pinch or ache in the low back itself, especially on the extended-leg side.",
+      "firstCue": "Brace like you're about to be poked in the belly. Move for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back arching",
+          "fix": "You're lifting the leg too high. Only go as high as your hips stay level \u2014 imagine balancing water on your low back."
+        },
+        {
+          "felt": "Hip rotating open",
+          "fix": "Slow down and lift the leg less. Square your hips to the floor before you extend the arm."
+        },
+        {
+          "felt": "Shoulder or wrist ache",
+          "fix": "Stack your hand directly under your shoulder, not out in front, and spread your fingers wide."
+        },
+        {
+          "felt": "Neck strain",
+          "fix": "Keep your gaze down at the floor, not forward \u2014 your neck should stay in line with your spine."
+        }
+      ],
+      "nextDay": "A mild deep-core ache for a day is normal. Low back soreness the next day is not.",
+      "backNote": "This is a core rehab staple, not a spine risk. The only failure mode is the hips rotating or the back arching \u2014 if that happens, lift the leg less, not more.",
+      "stopIf": "Any shooting or electric pain, or numbness or tingling in a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Lifting limbs too high",
+        "right": "Stop the moment your hips start to tilt or the low back arches \u2014 height doesn't matter, level hips do."
+      },
+      {
+        "wrong": "Rushing through reps",
+        "right": "Extend and return slowly, holding the top position for a full 2 seconds each time."
+      },
+      {
+        "wrong": "Sagging through the belly",
+        "right": "Brace your core before each extension, like you're about to be poked in the stomach."
+      }
+    ]
   },
   {
     "id": "dead-bug",
@@ -460,7 +813,54 @@
     ],
     "youtubeId": "psOZS-sVDww",
     "modification": "Instead of fully extending your leg, only lower it halfway down and keep a slight bend in the knee.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "core",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "hip flexors"
+    ],
+    "sensation": {
+      "feelHere": "A deep, constant brace low across your stomach, below the belly button.",
+      "notHere": "Your low back lifting or arching away from the floor \u2014 that means the core let go.",
+      "firstCue": "Press your low back flat into the mat. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back arching up",
+          "fix": "Stop lowering the arm and leg sooner. Only go as far as your low back stays flat on the mat."
+        },
+        {
+          "felt": "Hip flexor cramping",
+          "fix": "Lower the leg only halfway instead of toward the floor, and keep a slight bend in the knee."
+        },
+        {
+          "felt": "Neck or shoulder tension",
+          "fix": "Let your head rest heavy on the mat \u2014 you shouldn't be lifting it to help."
+        },
+        {
+          "felt": "Holding your breath",
+          "fix": "Exhale as you lower the limbs, inhale as you return \u2014 breath-holding spikes belly pressure."
+        }
+      ],
+      "nextDay": "A deep central-ab ache for a day or two is normal. Low back soreness the next day is not.",
+      "backNote": "One of the safest exercises in this program. The only failure mode is the low back arching off the mat \u2014 if it lifts even slightly, shorten the range.",
+      "stopIf": "Any shooting or electric pain, or numbness or tingling in a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Letting the back arch",
+        "right": "Only lower the arm and leg as far as your low back stays pressed flat into the mat."
+      },
+      {
+        "wrong": "Moving fast",
+        "right": "Slow down \u2014 this is a control exercise, not a speed one."
+      },
+      {
+        "wrong": "Both limbs collapsing together",
+        "right": "Keep the opposite arm and leg steady while only the moving side lowers."
+      }
+    ]
   },
   {
     "id": "bicep-curl",
@@ -491,7 +891,53 @@
     ],
     "youtubeId": "iui51E31sX8",
     "modification": "Curl one arm at a time (alternating curls) to reduce total load and focus on each arm individually.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "biceps"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
+    "sensation": {
+      "feelHere": "The front of your upper arm, between your shoulder and elbow, building to a burn.",
+      "notHere": "Your forearm or wrist. That means grip or wrist motion is taking over the work.",
+      "firstCue": "Keep elbows pinned to your sides. Lower slow \u2014 2\u20133 seconds down.",
+      "wrongSpot": [
+        {
+          "felt": "Forearm",
+          "fix": "You're gripping the dumbbells too hard. Hold them lightly \u2014 a firm hold is enough, a death grip is not."
+        },
+        {
+          "felt": "Wrist",
+          "fix": "Your wrist is bending back at the top. Keep it straight, in line with your forearm, throughout the curl."
+        },
+        {
+          "felt": "Shoulders",
+          "fix": "Your elbows are drifting forward or you're swinging the weight up. Pin your elbows to your sides and slow down."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're leaning back to help swing the weight up. Stand tall and keep your torso still."
+        }
+      ],
+      "nextDay": "A burn in the front of the upper arm for 1\u20132 days is normal and expected.",
+      "backNote": null,
+      "stopIf": "Numbness or tingling in your hand, or sharp pain at the elbow or wrist."
+    },
+    "mistakes": [
+      {
+        "wrong": "Swinging the weight with momentum",
+        "right": "Keep your upper arms completely still and let only your forearms move through the full rep."
+      },
+      {
+        "wrong": "Elbows drifting forward",
+        "right": "Keep your elbows pinned close to your sides throughout \u2014 drifting forward shifts work to the shoulders."
+      },
+      {
+        "wrong": "Dropping the weight on the way down",
+        "right": "Lower over 2\u20133 seconds with control \u2014 the descent builds as much strength as the lift."
+      }
+    ]
   },
   {
     "id": "shoulder-press",
@@ -524,7 +970,55 @@
     ],
     "youtubeId": "B-aVuyhvLHU",
     "modification": "Use 10lb dumbbells and perform seated with your back supported against a wall for extra spinal support.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "front deltoids",
+      "lateral deltoids"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "upper traps"
+    ],
+    "sensation": {
+      "feelHere": "The top and side of your shoulders, with the back of your upper arms finishing the press.",
+      "notHere": "Your neck or the top of your traps taking over, or a pinch in your lower back.",
+      "firstCue": "Press straight up, not forward. Lower for a slow 3 count to shoulder height.",
+      "wrongSpot": [
+        {
+          "felt": "Neck or traps dominating",
+          "fix": "You're shrugging to finish the press. Stop a few inches before full lockout and keep your shoulders down away from your ears."
+        },
+        {
+          "felt": "Front of the shoulder only",
+          "fix": "You're pressing forward instead of straight up. Keep the dumbbells stacked directly over your elbows the whole way."
+        },
+        {
+          "felt": "Lower back",
+          "fix": "You're arching to get the weight up. Tuck your pelvis slightly and brace your core, or sit on a bench for support."
+        },
+        {
+          "felt": "Elbow joint",
+          "fix": "You're locking out hard at the top. Stop just short of full extension."
+        }
+      ],
+      "nextDay": "A dull ache across the shoulders for 1-2 days is normal. Sharp pain in the joint or neck is not.",
+      "backNote": "Overhead pressing is where the low back tends to arch to help finish the lift. Tuck your pelvis slightly, brace your core, and sit down if you feel any strain.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    },
+    "mistakes": [
+      {
+        "wrong": "Pressing forward of your head",
+        "right": "Keep the dumbbells stacked directly above your shoulders, not out in front."
+      },
+      {
+        "wrong": "Arching the lower back",
+        "right": "Tuck your pelvis slightly and brace your core, or sit down and switch to lighter dumbbells."
+      },
+      {
+        "wrong": "Shrugging at the top",
+        "right": "Keep your shoulders pulled down away from your ears through the whole press."
+      }
+    ]
   },
   {
     "id": "lateral-raise",
@@ -555,7 +1049,53 @@
     ],
     "youtubeId": "Kl3LEzQ5Zqs",
     "modification": "Perform one arm at a time while bracing the other hand against your thigh for control. Reduce to lighter resistance if 10lb is too heavy.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lateral deltoids"
+    ],
+    "secondaryMuscles": [
+      "upper traps"
+    ],
+    "sensation": {
+      "feelHere": "The side of your shoulder, right at the cap of the arm.",
+      "notHere": "The top of your traps, between your neck and shoulder. That's a shrug, not a raise.",
+      "firstCue": "Push the dumbbells out toward the walls. Raise for a slow 2 count.",
+      "wrongSpot": [
+        {
+          "felt": "Top of the traps or neck",
+          "fix": "You're shrugging the weight up. Keep your shoulders pulled down away from your ears and go lighter if needed."
+        },
+        {
+          "felt": "Still the traps",
+          "fix": "You're raising above shoulder height. Stop the arms once they're parallel to the floor."
+        },
+        {
+          "felt": "Front of the shoulder",
+          "fix": "You're leading with your hands instead of your elbows. Think of pouring water from a jug as you lift."
+        },
+        {
+          "felt": "Lower back or momentum swing",
+          "fix": "You're using body swing to move the weight. Go lighter and keep your torso still throughout."
+        }
+      ],
+      "nextDay": "A light ache on the side of the shoulder for 1-2 days is normal. Trap or neck soreness usually means shrugging happened.",
+      "backNote": null,
+      "stopIf": "Any sharp pinch in the shoulder joint, or numbness or tingling in the hand."
+    },
+    "mistakes": [
+      {
+        "wrong": "Raising above shoulder height",
+        "right": "Stop once your arms are parallel to the floor \u2014 higher adds impingement risk, not benefit."
+      },
+      {
+        "wrong": "Shrugging to lift the weight",
+        "right": "Keep your shoulders down and let the raise come from the side of the shoulder, not the traps."
+      },
+      {
+        "wrong": "Swinging the torso for momentum",
+        "right": "Stand tall and still; go lighter if you need momentum to move the weight."
+      }
+    ]
   },
   {
     "id": "bent-over-row",
@@ -588,7 +1128,56 @@
     ],
     "youtubeId": "z0rtLeSW5Cc",
     "modification": "Perform a single-arm row with your free hand resting on a table or chair for spinal support. This allows you to keep a more neutral spine more easily.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lats",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "biceps",
+      "rhomboids"
+    ],
+    "sensation": {
+      "feelHere": "The middle of your back and the sides under your armpits, on both sides at once.",
+      "notHere": "Your lower back or your biceps. Both mean the back muscles are being bypassed.",
+      "firstCue": "Pull your shoulder blades back first, then bend the elbows. Slow 2-count up.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "Your hips are rising or your torso is rounding. Reset the hinge, brace your core, and lower the weight until your spine stays still."
+        },
+        {
+          "felt": "Biceps doing the work",
+          "fix": "You're curling, not rowing. Start each rep by squeezing the shoulder blades back before the elbows bend."
+        },
+        {
+          "felt": "Forearms burning",
+          "fix": "You're gripping too hard. Loosen your hold \u2014 the hand is just a hook, not the mover."
+        },
+        {
+          "felt": "Front of shoulders",
+          "fix": "You're rounding forward at the bottom. Keep your chest lifted and shoulder blades set before you start pulling."
+        }
+      ],
+      "nextDay": "A dull ache across the upper and mid back for 1\u20132 days is expected. Sharp low-back pain is not.",
+      "backNote": "This exercise loads a bent-over spine directly. If your torso twists, sags, or your low back strains, stop the set \u2014 that's the hinge breaking down, not weakness.",
+      "stopIf": "Any pain shooting down a leg, numbness, tingling, or a sharp pull in the low back."
+    },
+    "mistakes": [
+      {
+        "wrong": "Standing up between reps",
+        "right": "Hold the hinge position for the entire set. Standing up and re-hinging each rep repeatedly strains the low back."
+      },
+      {
+        "wrong": "Rounding the lower back",
+        "right": "Keep your spine neutral by pushing your hips back, not down, and bracing your core before the first pull."
+      },
+      {
+        "wrong": "Yanking the weight up",
+        "right": "Drive the elbows back with control instead of jerking the torso to help \u2014 that shifts load into the spine."
+      }
+    ]
   },
   {
     "id": "goblet-squat",
@@ -622,7 +1211,55 @@
     ],
     "youtubeId": "lRYBbchqxtI",
     "modification": "Reduce the squat depth and hold the dumbbell at your chest with two hands close to your body, squatting to a chair for reference.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "upper back"
+    ],
+    "sensation": {
+      "feelHere": "Front of your thighs and glutes, with a light brace through your midsection and upper back.",
+      "notHere": "Your low back, wrists, or the front of your shoulders holding the weight.",
+      "firstCue": "Keep the weight tight to your chest. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "The weight is drifting away from your chest, pulling you forward. Keep it pinned to your sternum the whole descent."
+        },
+        {
+          "felt": "Front of the knees",
+          "fix": "Sit back more before bending your knees, letting your hips travel back and down, not just down."
+        },
+        {
+          "felt": "Wrists or forearms",
+          "fix": "Cup the dumbbell from underneath rather than gripping it tightly; let your palms support the weight."
+        },
+        {
+          "felt": "Inner knees",
+          "fix": "Use your elbows to gently push your knees outward as you descend."
+        }
+      ],
+      "nextDay": "Thighs and glutes ache for 1\u20133 days. Wrist or low back soreness the next day is not expected.",
+      "backNote": "Letting the weight drift forward pulls your torso and spine forward with it. Keep it tight to your chest and stop the descent once your back starts rounding.",
+      "stopIf": "Sharp or shooting pain, or any numbness or tingling down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Heels rising off the floor",
+        "right": "Widen your stance slightly or work on ankle mobility so your heels stay flat."
+      },
+      {
+        "wrong": "Weight drifting forward",
+        "right": "Keep the dumbbell pinned close to your chest through the entire rep."
+      },
+      {
+        "wrong": "Bouncing at the bottom",
+        "right": "Pause briefly at the bottom before driving back up, instead of springing out of the hole."
+      }
+    ]
   },
   {
     "id": "tricep-kickback",
@@ -652,7 +1289,54 @@
     ],
     "youtubeId": "3Bv1n7-DN7c",
     "modification": "Use a lighter resistance band or perform with no weight first to learn the movement pattern.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "rear deltoids"
+    ],
+    "sensation": {
+      "feelHere": "The back of your upper arm, right above the elbow, as you straighten it.",
+      "notHere": "Your shoulder swinging the weight, or your lower back rounding under load.",
+      "firstCue": "Pin your upper arm to your side. Extend for a slow 2 count.",
+      "wrongSpot": [
+        {
+          "felt": "Shoulder instead of triceps",
+          "fix": "Your upper arm is swinging to help. Pin it against your side and only move your forearm."
+        },
+        {
+          "felt": "Elbow joint",
+          "fix": "You're locking out hard at the end. Stop just short of full extension and squeeze the muscle instead."
+        },
+        {
+          "felt": "Lower back",
+          "fix": "Your hinge is too deep or your core isn't braced. Stand a bit taller and brace before each rep."
+        },
+        {
+          "felt": "Wrist",
+          "fix": "Keep your wrist straight in line with your forearm instead of letting it bend under the weight."
+        }
+      ],
+      "nextDay": "A focused ache on the back of the upper arm for 1-2 days is normal. Elbow joint pain is not.",
+      "backNote": "The hinged position loads your spine under tension. Keep your core braced and your back flat \u2014 stop if you feel it in your low back instead of your arm.",
+      "stopIf": "Sharp elbow pain, or any numbness or tingling in the hand."
+    },
+    "mistakes": [
+      {
+        "wrong": "Swinging the upper arm",
+        "right": "Keep your upper arm pinned parallel to the floor; only the forearm should move."
+      },
+      {
+        "wrong": "Rounding the back in the hinge",
+        "right": "Keep your spine neutral and core braced throughout the hinge position."
+      },
+      {
+        "wrong": "Rushing the squeeze at the top",
+        "right": "Pause and squeeze the triceps for one full second at full extension."
+      }
+    ]
   },
   {
     "id": "chest-press-mat",
@@ -685,7 +1369,54 @@
     ],
     "youtubeId": "uUGDRwge4F8",
     "modification": "Use 10lb dumbbells and a narrower grip width if shoulder discomfort occurs.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "triceps"
+    ],
+    "sensation": {
+      "feelHere": "The middle and outer part of your chest, plus the back of your upper arms.",
+      "notHere": "The front, bony point of your shoulder. That means the wrong muscle is taking over.",
+      "firstCue": "Press up and slightly inward. Lower for a slow 3 count until elbows touch the floor.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the shoulders",
+          "fix": "Your shoulder blades are rolling forward. Press them into the mat and hold that position for the whole set."
+        },
+        {
+          "felt": "Still the shoulders",
+          "fix": "Bring your elbows closer to your ribs, roughly 45 degrees, not flared straight out to the sides."
+        },
+        {
+          "felt": "Sharp pinch at the shoulder",
+          "fix": "That's the joint, not the muscle. Stop the set, drop the weight, and shorten the range."
+        },
+        {
+          "felt": "Wrists",
+          "fix": "Keep your wrists stacked directly above your elbows instead of letting them bend backward under load."
+        }
+      ],
+      "nextDay": "A broad ache across the chest for 1-3 days is normal. Sharp pinpoint pain is not.",
+      "backNote": "This one is spine-friendly \u2014 lying on the floor removes the ability to arch. Keep your low back lightly touching the mat throughout.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    },
+    "mistakes": [
+      {
+        "wrong": "Elbows flared to 90 degrees",
+        "right": "Keep them closer to your ribs, around 45 degrees, to protect the shoulder joint."
+      },
+      {
+        "wrong": "Dropping the weights fast",
+        "right": "Lower with control and let your elbows touch the floor lightly, not drop with gravity."
+      },
+      {
+        "wrong": "Losing the shoulder blade squeeze",
+        "right": "Keep your shoulder blades pressed into the mat for the entire set, not just at setup."
+      }
+    ]
   },
   {
     "id": "single-leg-rdl",
@@ -750,7 +1481,54 @@
     ],
     "youtubeId": "xvEkgGUrGPM",
     "modification": "Perform seated, leaning forward with chest resting on thighs \u2014 this removes the hip-hinge hold and allows you to focus purely on the arm movement.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "rear deltoids"
+    ],
+    "secondaryMuscles": [
+      "rhomboids",
+      "middle trapezius"
+    ],
+    "sensation": {
+      "feelHere": "The back of your shoulders and between your shoulder blades as your arms rise out to the sides.",
+      "notHere": "Your traps shrugging up near your neck. That means the weight is too heavy for this move.",
+      "firstCue": "Lead with your elbows, not your hands. Raise slow, squeeze blades together at the top.",
+      "wrongSpot": [
+        {
+          "felt": "Traps or shoulders near neck",
+          "fix": "You're shrugging to lift the weight. Go lighter and keep shoulders pulled down away from your ears."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Your hinge is breaking down or you're using momentum. Stand more upright or rest between reps."
+        },
+        {
+          "felt": "Biceps or forearms",
+          "fix": "You're gripping hard or bending the elbows too much. Loosen your grip and keep elbows only slightly bent."
+        },
+        {
+          "felt": "Front of shoulder",
+          "fix": "You're swinging the weight up. Slow the raise and stop lifting your arms above shoulder height."
+        }
+      ],
+      "nextDay": "A light ache across the shoulders for a day is normal \u2014 go lighter if it's more than that.",
+      "backNote": "Holding the hip hinge loads your low back over time. If it fatigues or aches, stand more upright or rest between reps rather than pushing through.",
+      "stopIf": "Any pain shooting down a leg, or sharp low-back pain during the hinge. Stop and stand up."
+    },
+    "mistakes": [
+      {
+        "wrong": "Standing upright instead of hinging",
+        "right": "Keep your torso at roughly 45 degrees throughout \u2014 standing tall shifts the work off the rear delts."
+      },
+      {
+        "wrong": "Swinging the weight with momentum",
+        "right": "Raise and lower slowly and smoothly \u2014 momentum means the muscle isn't doing the work."
+      },
+      {
+        "wrong": "Raising arms above shoulder height",
+        "right": "Stop the raise once your arms are parallel to the floor \u2014 higher recruits the traps instead."
+      }
+    ]
   },
   {
     "id": "plank-dumbbell-pull-through",
@@ -783,7 +1561,55 @@
     ],
     "youtubeId": "AHKjUeIy_uI",
     "modification": "Do the pull-through without a dumbbell \u2014 just drag your open hand across the floor. This removes load while you build the movement pattern and core stability.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "core",
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "transverse abdominis",
+      "shoulders"
+    ],
+    "sensation": {
+      "feelHere": "A bracing squeeze through your whole midsection resisting the twist, plus shoulders.",
+      "notHere": "Your low back, or one hip dropping lower than the other as you reach.",
+      "firstCue": "Squeeze your glutes and brace before you reach. Drag the weight for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Hips rocking or twisting",
+          "fix": "That means the exercise isn't being done. Slow way down or switch to no weight until hips stay square."
+        },
+        {
+          "felt": "Low back sagging",
+          "fix": "Squeeze your glutes and brace your abs before you reach, not after."
+        },
+        {
+          "felt": "Shoulder of the planted arm",
+          "fix": "Keep that hand stacked directly under your shoulder and push the floor away."
+        },
+        {
+          "felt": "Neck strain",
+          "fix": "Look straight down at the floor instead of watching your hand move."
+        }
+      ],
+      "nextDay": "A deep ache across the stomach and sides for a day is normal. Low back soreness is not.",
+      "backNote": "This is an anti-rotation drill \u2014 the goal is hips staying dead square. If they rock or twist, slow down or drop the weight rather than pushing through.",
+      "stopIf": "Any shooting or electric pain, or numbness or tingling anywhere."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips rocking side to side",
+        "right": "Slow the reach down and, if needed, use a lighter dumbbell or no weight until hips stay level."
+      },
+      {
+        "wrong": "Rushing the reach",
+        "right": "Move slowly and with control \u2014 speed is what lets the hips twist."
+      },
+      {
+        "wrong": "Sagging hips toward the floor",
+        "right": "Brace your core and squeeze your glutes before each reach, and hold that tension the whole set."
+      }
+    ]
   },
   {
     "id": "banded-glute-bridge",
@@ -913,7 +1739,54 @@
     ],
     "youtubeId": "stwYTTPXubo",
     "modification": "Use a lighter band or widen your grip (hands further apart) to reduce resistance.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "rear deltoids"
+    ],
+    "secondaryMuscles": [
+      "rhomboids",
+      "middle trapezius"
+    ],
+    "sensation": {
+      "feelHere": "Between your shoulder blades and the back of your shoulders as your hands pull apart.",
+      "notHere": "Your biceps or the top of your traps. Those mean the arms or shoulders are compensating.",
+      "firstCue": "Pull from your shoulder blades first, arms stay straight. Hold one second at the end.",
+      "wrongSpot": [
+        {
+          "felt": "Biceps",
+          "fix": "You're bending your elbows to help. Keep your arms straight and start the pull by squeezing the shoulder blades."
+        },
+        {
+          "felt": "Traps or neck",
+          "fix": "You're shrugging or leaning back to pull. Stand tall and keep your shoulders down away from your ears."
+        },
+        {
+          "felt": "Forearms or wrists",
+          "fix": "You're gripping the band too hard. Relax your hands \u2014 they only need to hold the ends."
+        },
+        {
+          "felt": "Front of shoulders",
+          "fix": "You're pulling the band too high, near your face. Keep it at chest height throughout the movement."
+        }
+      ],
+      "nextDay": "A light ache between the shoulder blades for a day, if any at all \u2014 this is a light exercise.",
+      "backNote": null,
+      "stopIf": "Sharp pinching in the shoulder joint, or numbness or tingling anywhere in the arm."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bending the elbows to pull",
+        "right": "Keep your arms straight throughout \u2014 the movement should come entirely from your shoulder blades."
+      },
+      {
+        "wrong": "Leaning back to add force",
+        "right": "Stand tall and stationary. Let your upper back muscles do the pulling, not body lean."
+      },
+      {
+        "wrong": "Rushing the reps",
+        "right": "Slow down and hold the squeeze for a full second at the end of each pull."
+      }
+    ]
   },
   {
     "id": "dumbbell-rear-delt-fly",
@@ -946,7 +1819,55 @@
     ],
     "youtubeId": "lFJBHzGIKIE",
     "modification": "Perform seated at the edge of a chair with your torso folded forward over your thighs \u2014 this removes the hip hinge demand and makes it easier to isolate the rear delts.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "rear deltoids"
+    ],
+    "secondaryMuscles": [
+      "rhomboids",
+      "middle trapezius",
+      "rotator cuff"
+    ],
+    "sensation": {
+      "feelHere": "The back of your shoulders, with a light burn at the top as your thumbs turn up.",
+      "notHere": "Your upper traps near the base of your neck. That's a sign of shrugging, not lifting.",
+      "firstCue": "Lead with your elbows in a wide arc. Lower slow \u2014 2 seconds down.",
+      "wrongSpot": [
+        {
+          "felt": "Traps near neck",
+          "fix": "You're shrugging your shoulders up. Keep them pressed down and go lighter if you can't stop it."
+        },
+        {
+          "felt": "Front of shoulder",
+          "fix": "You're leading with your hands instead of your elbows. Widen the arc and think elbows first."
+        },
+        {
+          "felt": "Forearms",
+          "fix": "You're gripping the dumbbells too hard. Hold them loosely \u2014 the hand is just along for the ride."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Your hinge is sagging under fatigue. Try the seated version, which removes the hip-hinge demand entirely."
+        }
+      ],
+      "nextDay": "A light ache across the back of the shoulders for a day. This exercise should feel light, not heavy.",
+      "backNote": "Holding a hip hinge for high reps can fatigue the low back. Switch to the seated version if it starts to ache.",
+      "stopIf": "Any pain shooting down a leg or arm, or sharp low-back pain during the set."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leading with the hands",
+        "right": "Lead every rep with your elbows moving out wide \u2014 the hands should trail behind them."
+      },
+      {
+        "wrong": "Shrugging at the top",
+        "right": "Keep your shoulders pulled down throughout. Turn thumbs up only at the very top for external rotation."
+      },
+      {
+        "wrong": "Using a weight too heavy to control on the way down",
+        "right": "Go lighter \u2014 the slow lowering phase is where this exercise works the rear delts most."
+      }
+    ]
   },
   {
     "id": "side-plank",
@@ -980,7 +1901,55 @@
     ],
     "youtubeId": "7d-HTp-0vL4",
     "modification": "Perform with knees bent and stacked \u2014 the bottom knee acts as a kickstand reducing the load significantly.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "obliques",
+      "core"
+    ],
+    "secondaryMuscles": [
+      "glute medius",
+      "shoulder stabilizers"
+    ],
+    "sensation": {
+      "feelHere": "A burning squeeze along the side of your torso, from ribs to hip, on the down side.",
+      "notHere": "The point of your bottom shoulder, or your low back.",
+      "firstCue": "Push the floor away through your forearm. Lift your hips for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Bottom shoulder",
+          "fix": "You're sagging into the joint. Actively push your forearm into the mat to lift through the shoulder, not rest on it."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Your hips have dropped or rotated. Stack hips and shoulders vertically and lift them higher before holding."
+        },
+        {
+          "felt": "Neck",
+          "fix": "Keep your head in line with your spine \u2014 don't let it drop toward the floor or crane up."
+        },
+        {
+          "felt": "Nothing on the working side",
+          "fix": "Your hips are likely sagging toward the floor, taking the load off. Lift them until your body forms a straight line."
+        }
+      ],
+      "nextDay": "A burn along the side of the torso for a day or two is normal. Shoulder or low-back soreness is not.",
+      "backNote": "Hips dropping or rotating shifts load into the low back. If you can't keep a straight line, drop to the bent-knee version rather than holding a sagging shape.",
+      "stopIf": "Any shooting or electric pain, or numbness or tingling in an arm or leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging toward the floor",
+        "right": "Lift your hips until head, hips, and feet form one straight diagonal line."
+      },
+      {
+        "wrong": "Resting on the shoulder",
+        "right": "Push your forearm into the mat to actively lift, rather than letting your shoulder collapse."
+      },
+      {
+        "wrong": "Holding your breath",
+        "right": "Breathe steadily throughout the hold instead of bracing by holding air in."
+      }
+    ]
   },
   {
     "id": "forearm-plank",
@@ -1014,7 +1983,55 @@
     ],
     "youtubeId": "A2b2EmIg0dA",
     "modification": "Drop to your knees for a forearm plank from knees. Keep your hips in line with your knees and shoulders.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "core",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "glutes"
+    ],
+    "sensation": {
+      "feelHere": "A deep bracing burn across your stomach, plus your shoulders and glutes working.",
+      "notHere": "An ache across your low back \u2014 that means your hips have sagged.",
+      "firstCue": "Squeeze your glutes and tuck your hips slightly. Breathe steadily through your nose.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "Your hips are sagging. Tuck your pelvis slightly, squeeze your glutes, and pull your ribs down."
+        },
+        {
+          "felt": "Still low back after tucking",
+          "fix": "Shorten the hold to whatever time you can keep that tucked shape \u2014 10\u201320 seconds done well beats 60 seconds sagging."
+        },
+        {
+          "felt": "Shoulders burning early",
+          "fix": "Push your forearms into the floor rather than letting your chest sink between them."
+        },
+        {
+          "felt": "Neck",
+          "fix": "Keep your head neutral, eyes down at the floor \u2014 don't look up or tuck your chin."
+        }
+      ],
+      "nextDay": "A deep ab burn or mild shoulder fatigue for a day is normal. Low back soreness is not.",
+      "backNote": "Sagging hips let the spine hang instead of the abs holding, loading the low back. Tuck the pelvis and squeeze the glutes, or hold for less time with the right shape.",
+      "stopIf": "Any shooting or electric pain, or numbness or tingling in an arm or leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging down",
+        "right": "Tuck your pelvis slightly and squeeze your glutes to keep hips level, even if that shortens your hold time."
+      },
+      {
+        "wrong": "Hips piked up high",
+        "right": "Lower your hips until your body forms one straight line from head to heels."
+      },
+      {
+        "wrong": "Chasing a longer hold time",
+        "right": "Hold only as long as you can keep the tucked, level shape \u2014 a short good hold beats a long sagging one."
+      }
+    ]
   },
   {
     "id": "single-leg-glute-bridge",
@@ -1115,7 +2132,20 @@
     ],
     "youtubeId": "AI5A1PRYX7E",
     "modification": "Keep the bottom foot on the floor (without pulling the leg in) to reduce the intensity of the stretch.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "piriformis",
+      "hip external rotators"
+    ],
+    "sensation": {
+      "feelHere": "A broad, deep pulling stretch across the outer hip and glute of the crossed leg.",
+      "notHere": "Tingling, electric, or burning sensations travelling down the back of the leg \u2014 that's nerve tension, not a stretch.",
+      "backNote": "Your low back stays flat on the floor throughout. If it's arching to compensate, pull the leg in less.",
+      "stopIf": "Any tingling, numbness, or shooting sensation down the leg. Should feel like a firm pull, never a sharp one."
+    }
   },
   {
     "id": "supine-figure-4",
@@ -1149,7 +2179,20 @@
     ],
     "youtubeId": "xVq2-g_leTI",
     "modification": "Keep the bottom foot on the floor without pulling in and just let the crossed-knee drop open passively.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "piriformis"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hip rotators"
+    ],
+    "sensation": {
+      "feelHere": "A broad, deep pulling stretch in the outer hip and glute of the crossed leg.",
+      "notHere": "Tingling or electric sensations running down the back of the leg \u2014 this stretch sits close to the sciatic nerve, so back off if you feel it.",
+      "backNote": "Keep your back flat on the mat and hips square. If your hips rock to one side, pull the leg in less.",
+      "stopIf": "Any tingling, numbness, or shooting pain down the leg. This is not a 'push through it' sensation \u2014 ease off immediately."
+    }
   },
   {
     "id": "childs-pose",
@@ -1183,7 +2226,20 @@
     ],
     "youtubeId": "kH12QrSGedM",
     "modification": "Place a folded blanket or pillow between your thighs and calves if sitting back onto heels is uncomfortable.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lower back"
+    ],
+    "secondaryMuscles": [
+      "hips",
+      "shoulders"
+    ],
+    "sensation": {
+      "feelHere": "A gentle lengthening across your low back and a light opening through your hips and shoulders.",
+      "notHere": "Sharp pinching pain in the low back \u2014 this pose should feel restful, not straining.",
+      "backNote": "This is a passive, supported position \u2014 let gravity do the work rather than actively pushing into it.",
+      "stopIf": "Any sharp back pain, or tingling or numbness in the legs."
+    }
   },
   {
     "id": "doorway-chest-stretch",
@@ -1215,7 +2271,20 @@
     ],
     "youtubeId": "B9uY01NoqBg",
     "modification": "Perform with one arm at a time using a wall corner if a full doorway is not available.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "biceps"
+    ],
+    "sensation": {
+      "feelHere": "A broad pulling stretch across the chest and the front of the shoulders.",
+      "notHere": "A pinch deep inside the shoulder joint \u2014 that means you're leaning too far or too fast, not stretching the muscle.",
+      "backNote": "Stand tall as you lean. Don't let your low back arch to reach further into the doorway.",
+      "stopIf": "Sharp shoulder pain, or tingling or numbness down the arm. Should feel like a firm pull, never a sharp one."
+    }
   },
   {
     "id": "seated-hamstring-stretch",
@@ -1248,7 +2317,20 @@
     ],
     "youtubeId": "u55F2jOzBVI",
     "modification": "Loop a towel or resistance band around your feet and hold the ends to bridge the gap if you cannot reach your feet.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "calves",
+      "lower back"
+    ],
+    "sensation": {
+      "feelHere": "A broad pulling stretch along the back of the thigh, from behind the knee up toward the sit bone.",
+      "notHere": "Tingling, electric, or burning sensation running down the back of the leg \u2014 that's the sciatic nerve, not a hamstring stretch, and it means back off immediately.",
+      "backNote": "Hinge from your hips with a long spine rather than rounding your low back to reach further.",
+      "stopIf": "Any tingling, numbness, or shooting sensation down the leg. Should feel like a firm pull, never a sharp one."
+    }
   },
   {
     "id": "hip-flexor-stretch",
@@ -1282,7 +2364,19 @@
     ],
     "youtubeId": "ktgtEWGhFd8",
     "modification": "Place a folded towel under your kneeling knee for cushioning. Reduce the forward shift if the stretch is too intense.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hip flexors"
+    ],
+    "secondaryMuscles": [
+      "quadriceps"
+    ],
+    "sensation": {
+      "feelHere": "A broad pulling stretch across the front of the hip and upper thigh of the back leg.",
+      "notHere": "Pain in the front of the kneeling knee \u2014 that's the joint being loaded, not the hip flexor stretching.",
+      "backNote": "Tuck your pelvis under and keep your torso upright. Don't arch your low back to lean forward.",
+      "stopIf": "Sharp knee or back pain, or any tingling down the leg. Should feel like a firm pull, never a sharp one."
+    }
   },
   {
     "id": "standing-quad-stretch",
@@ -1314,7 +2408,19 @@
     ],
     "youtubeId": "zi5__zBRzYc",
     "modification": "Lie face-down on the mat and bend one knee, reaching back to hold the ankle \u2014 this removes the balance challenge entirely.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "hip flexors"
+    ],
+    "sensation": {
+      "feelHere": "A broad pulling stretch down the front of the thigh from hip to knee.",
+      "notHere": "Sharp pain at the front of the knee \u2014 that means you're pulling the heel too hard, not lengthening the thigh.",
+      "backNote": "Stand tall. Don't arch your low back to compensate for a tight hip.",
+      "stopIf": "Sharp knee pain, or any tingling down the leg. Should feel like a firm pull, never a sharp one."
+    }
   },
   {
     "id": "dumbbell-single-arm-row",
@@ -1415,7 +2521,55 @@
     ],
     "youtubeId": "ZpZEQ2JCXyc",
     "modification": "Perform one arm at a time, resting the other at your side. Reduce the hold time to 1 second if your shoulder fatigues quickly.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lower trapezius",
+      "rear deltoids"
+    ],
+    "secondaryMuscles": [
+      "rotator cuff",
+      "serratus anterior"
+    ],
+    "sensation": {
+      "feelHere": "A light, targeted burn between your shoulder blades and along the back of your shoulders.",
+      "notHere": "Your neck or lower back straining. Those mean you're lifting your head or arching too much.",
+      "firstCue": "Lift only 2\u20133 inches, thumbs up. Hold 2 seconds \u2014 smaller and slower beats bigger.",
+      "wrongSpot": [
+        {
+          "felt": "Nothing at all",
+          "fix": "You're moving too big or too fast. Shrink the range to 2\u20133 inches and hold each position for a full 2 seconds."
+        },
+        {
+          "felt": "Neck",
+          "fix": "You're lifting your head to help. Keep your forehead down and let only your arms lift."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're arching to lift your chest off the mat. Keep your core lightly braced and your chest down."
+        },
+        {
+          "felt": "Front of shoulders",
+          "fix": "Your thumbs aren't turned up. Rotate them toward the ceiling in each of the three positions."
+        }
+      ],
+      "nextDay": "Little to no soreness is normal \u2014 this is light activation work, not a strength builder.",
+      "backNote": "Light core bracing protects your low back here, but the risk is arching to lift higher. Keep the lift small and let your chest stay on the mat.",
+      "stopIf": "Any pinching in the shoulder joint, or numbness or tingling in your hands or arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Moving too fast through all three shapes",
+        "right": "Slow down. Hold each of the Y, T, and W positions for a full 2 seconds before lowering."
+      },
+      {
+        "wrong": "Lifting the chest or head off the mat",
+        "right": "Keep your forehead and chest down \u2014 only your arms should lift a few inches."
+      },
+      {
+        "wrong": "Lifting too high",
+        "right": "A small 2\u20133 inch range is enough. Higher just recruits your low back instead of your upper back."
+      }
+    ]
   },
   {
     "id": "supine-twist",
@@ -1449,7 +2603,21 @@
     ],
     "youtubeId": "mNdJti7ZwKI",
     "modification": "Place a pillow or folded blanket under your crossed knee to reduce the depth of the twist if it feels too intense in the lower back.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "thoracic spine",
+      "lower back",
+      "piriformis"
+    ],
+    "sensation": {
+      "feelHere": "A broad, gentle stretch through the side of your torso and outer hip as the knee crosses over.",
+      "notHere": "Sharp pinching pain in the low back \u2014 that means the twist has gone deeper than your spine is ready for today.",
+      "backNote": "Keep both shoulders flat on the mat. If one lifts, you've twisted further than your back is ready for \u2014 let it settle less.",
+      "stopIf": "Any sharp low-back pain, or tingling or numbness down either leg."
+    }
   },
   {
     "id": "hip-90-90",
@@ -1483,7 +2651,20 @@
     ],
     "youtubeId": "t4Zz6-aG8Iw",
     "modification": "Sit with your back against a wall for posture support. Place folded blankets under both thighs if your hips are very tight.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hip external rotators"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hip internal rotators"
+    ],
+    "sensation": {
+      "feelHere": "A broad stretch across the outer hip of the front leg and the inner hip of the back leg.",
+      "notHere": "Sharp pinching pain deep in either hip joint \u2014 that's a range problem, not a muscle stretching.",
+      "backNote": "Sit tall before you fold forward. Rounding your low back early pulls the stretch away from the hips.",
+      "stopIf": "Sharp hip joint pain, or any tingling down either leg."
+    }
   },
   {
     "id": "single-leg-balance-hold",
@@ -1516,7 +2697,55 @@
     ],
     "youtubeId": "Dtgh2_LFkBQ",
     "modification": "Keep your fingertips lightly on the wall throughout. Progress to fingertip touch only, then no contact. For an advanced challenge, close your eyes.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "ankle stabilizers",
+      "glute medius"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "proprioception"
+    ],
+    "sensation": {
+      "feelHere": "Small, constant corrections in your standing foot and ankle \u2014 not a burn.",
+      "notHere": "A muscle burn anywhere, or your standing knee aching.",
+      "firstCue": "Pick one still point at eye level and fix your gaze there. Keep hips level.",
+      "wrongSpot": [
+        {
+          "felt": "Standing knee aches",
+          "fix": "Your knee is locked out. Keep it very slightly soft, never fully straight."
+        },
+        {
+          "felt": "Raised-leg hip dropping",
+          "fix": "Actively hold that hip level with the other one \u2014 don't let it sink lower."
+        },
+        {
+          "felt": "Constant wobbling, can't hold it",
+          "fix": "You're likely looking down. Fix your gaze on one still spot at eye level instead."
+        },
+        {
+          "felt": "Feeling nothing at all",
+          "fix": "It's too easy. Close your eyes, or bring fingertip support away from the wall."
+        }
+      ],
+      "nextDay": "No real soreness expected \u2014 maybe mild ankle fatigue. Knee or hip pain the next day is not normal.",
+      "backNote": null,
+      "stopIf": "Sharp pain in the standing knee or ankle, or true dizziness rather than normal wobble."
+    },
+    "mistakes": [
+      {
+        "wrong": "Locking the standing knee straight",
+        "right": "Keep a very slight, soft bend in the standing knee throughout the hold."
+      },
+      {
+        "wrong": "Looking down at your feet",
+        "right": "Fix your eyes on one still point at eye level \u2014 looking down is the top cause of wobbling."
+      },
+      {
+        "wrong": "Letting the raised hip drop",
+        "right": "Actively keep both hips level, resisting the raised-leg side sinking lower."
+      }
+    ]
   },
   {
     "id": "bodyweight-calf-raise",
@@ -1548,7 +2777,54 @@
     ],
     "youtubeId": "Wh8EXjjr6JU",
     "modification": "Reduce to 10 reps per set. For greater range of motion, stand on the edge of a step with heels hanging slightly off.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "gastrocnemius"
+    ],
+    "secondaryMuscles": [
+      "soleus",
+      "Achilles tendon"
+    ],
+    "sensation": {
+      "feelHere": "A burn in the meat of your calf, both the upper bulge and lower toward the ankle.",
+      "notHere": "Your Achilles tendon or the arch of your foot \u2014 sharp pain there is a tendon signal, not muscle work.",
+      "firstCue": "Rise as high as you can. Lower over a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Achilles tendon",
+          "fix": "Reduce your range slightly and rise less explosively; sharp tendon pain means back off, not push through."
+        },
+        {
+          "felt": "Arch of the foot",
+          "fix": "Press through the ball of your foot evenly rather than rolling onto your big toe."
+        },
+        {
+          "felt": "Shin",
+          "fix": "You may be leaning too far forward. Keep your weight stacked over the balls of your feet."
+        },
+        {
+          "felt": "Knee",
+          "fix": "Keep your knees straight but not locked, and make sure you're not bending them to assist."
+        }
+      ],
+      "nextDay": "A deep calf ache for 1\u20132 days is normal, especially after the slow lowering. Achilles soreness is not.",
+      "backNote": null,
+      "stopIf": "Sharp Achilles pain, or any pain that feels like a pull rather than a burn."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bouncing at the bottom",
+        "right": "Pause briefly with heels down before each rep instead of springing up."
+      },
+      {
+        "wrong": "Not rising fully",
+        "right": "Rise as high onto your toes as you can to get the full range."
+      },
+      {
+        "wrong": "Bending the knees",
+        "right": "Keep your knees straight throughout so the calf, not the knee, does the work."
+      }
+    ]
   },
   {
     "id": "trx-row",
@@ -1582,7 +2858,56 @@
     ],
     "youtubeId": "N_14s8zFOms",
     "modification": "Walk your feet back toward vertical to reduce difficulty. Beginners should start at a 60-70 degree angle from the floor.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lats",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "biceps",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "Your mid and upper back, between the shoulder blades, plus your core holding the plank.",
+      "notHere": "Your low back aching. That means the plank is breaking down, not the back working.",
+      "firstCue": "Squeeze shoulder blades together first, then pull. Keep hips locked in a straight line.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "Your hips are sagging. Brace your core and squeeze your glutes to keep a straight line from heels to shoulders."
+        },
+        {
+          "felt": "Biceps",
+          "fix": "You're pulling with the arms first. Initiate by drawing the shoulder blades back before bending the elbows."
+        },
+        {
+          "felt": "Shoulders straining at the top",
+          "fix": "You've walked too close to the anchor for your current strength. Step back toward vertical to lighten the load."
+        },
+        {
+          "felt": "Neck or traps",
+          "fix": "You're shrugging up as you pull. Keep your shoulders pulled down away from your ears."
+        }
+      ],
+      "nextDay": "A broad ache across the upper back and core for 1\u20132 days is normal after this one.",
+      "backNote": "If your hips sag or pike, your low back takes the strain instead of your core. Walk your feet toward vertical until you can hold a straight line.",
+      "stopIf": "Sharp low-back pain, or any pain shooting down a leg. Stop and reset your plank."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging toward the floor",
+        "right": "Brace your core and squeeze your glutes hard to keep a rigid plank throughout every rep."
+      },
+      {
+        "wrong": "Pulling with only the arms",
+        "right": "Drive the elbows back toward your hips and lead the pull with your shoulder blades."
+      },
+      {
+        "wrong": "Feet too close to anchor for your level",
+        "right": "Walk your feet back toward vertical until you can complete all reps with good form."
+      }
+    ]
   },
   {
     "id": "trx-push-up",
@@ -1616,7 +2941,55 @@
     ],
     "youtubeId": "OlUqeytSoxE",
     "modification": "Walk your feet back away from the anchor to a more upright position, reducing the load significantly. Master floor push-ups first and use TRX as a progression.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "triceps",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "The middle of your chest, the back of your upper arms, and a deep core burn from stabilizing.",
+      "notHere": "The front of your shoulder, or a sharp catch in the shoulder joint as the straps swing.",
+      "firstCue": "Keep elbows at 45 degrees and resist the strap sway. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the shoulders",
+          "fix": "Elbows are flaring wide. Bring them to about 45 degrees from your torso, same as a floor push-up."
+        },
+        {
+          "felt": "Shoulder instability or catching",
+          "fix": "The swing is too much to control. Walk your feet back to a more upright angle to reduce the load and the sway."
+        },
+        {
+          "felt": "Lower back",
+          "fix": "Your hips are sagging as the straps move. Brace your core harder and squeeze your glutes throughout."
+        },
+        {
+          "felt": "Wrists",
+          "fix": "Keep your wrists neutral in the handles instead of letting them bend under the swinging load."
+        }
+      ],
+      "nextDay": "A broad ache across the chest and a deep core soreness for 1-2 days is normal. Sharp joint pain is not.",
+      "backNote": "If your hips sag while resisting the sway, your low back arches to compensate. Keep your core braced and go more upright if you lose that line.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging under instability",
+        "right": "Brace your core harder and keep a straight line from head to heels throughout."
+      },
+      {
+        "wrong": "Elbows flared wide",
+        "right": "Keep them at roughly 45 degrees from your torso, same as a standard push-up."
+      },
+      {
+        "wrong": "Fighting the strap swing with speed",
+        "right": "Slow down. A controlled tempo lets your core and shoulders manage the instability."
+      }
+    ]
   },
   {
     "id": "dumbbell-floor-press",
@@ -1713,7 +3086,54 @@
     ],
     "youtubeId": "SoKGZpyXUMY",
     "modification": "Spread your feet wider on the band to reduce working length and resistance. Perform seated to remove lower back stability demands.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "front deltoids",
+      "lateral deltoids"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "sensation": {
+      "feelHere": "The top and side of your shoulders, with the back of your upper arms finishing the press.",
+      "notHere": "Your neck or traps taking over, or a pull in your lower back as you press.",
+      "firstCue": "Tuck your pelvis before you press. Move for a slow 3 count on the way down.",
+      "wrongSpot": [
+        {
+          "felt": "Neck or traps dominating",
+          "fix": "You're shrugging to finish. Stop a few inches short of full extension and keep your shoulders down."
+        },
+        {
+          "felt": "Front of the shoulder only",
+          "fix": "You're pressing forward instead of straight up. Finish with your arms directly above your ears."
+        },
+        {
+          "felt": "Lower back",
+          "fix": "The band's resistance is pulling you into an arch. Tuck your pelvis and brace your core before you press."
+        },
+        {
+          "felt": "Wrists",
+          "fix": "Keep your wrists straight in line with your forearms instead of letting the band bend them backward."
+        }
+      ],
+      "nextDay": "A dull ache across the shoulders for 1-2 days is normal. Sharp joint or lower back pain is not.",
+      "backNote": "The band's resistance increases as your arms rise, which tempts your low back into an arch. Tuck your pelvis and brace your core the whole rep.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    },
+    "mistakes": [
+      {
+        "wrong": "Pressing forward of your ears",
+        "right": "Finish each rep with your arms directly overhead, not angled ahead of you."
+      },
+      {
+        "wrong": "Letting the band snap you down",
+        "right": "Control the lowering phase over 2-3 seconds instead of letting the band pull your arms."
+      },
+      {
+        "wrong": "Standing too narrow for the load",
+        "right": "Adjust your foot width on the band to match a resistance you can control with good form."
+      }
+    ]
   },
   {
     "id": "band-lateral-raise",
@@ -1744,7 +3164,53 @@
     ],
     "youtubeId": "gfEyrmxbCbw",
     "modification": "Stand on less of the band (near one end) to reduce resistance. Perform one arm at a time if needed for control.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lateral deltoids"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius"
+    ],
+    "sensation": {
+      "feelHere": "The side of your shoulder, right at the cap of the arm.",
+      "notHere": "The top of your traps, between your neck and shoulder. That's a shrug, not a raise.",
+      "firstCue": "Push the band out toward the walls. Raise for a slow 2 count.",
+      "wrongSpot": [
+        {
+          "felt": "Top of the traps or neck",
+          "fix": "You're shrugging to move the band. Keep your shoulders down and shorten your stance on the band if it's too heavy."
+        },
+        {
+          "felt": "Still the traps",
+          "fix": "You're raising above shoulder height. Stop the arms once they're parallel to the floor."
+        },
+        {
+          "felt": "Front of the shoulder",
+          "fix": "You're leading with your hands. Lead with your elbows, like pouring water from a jug."
+        },
+        {
+          "felt": "Jerky or uneven tension",
+          "fix": "You're moving too fast through the band's slack. Slow the whole rep down to keep tension even."
+        }
+      ],
+      "nextDay": "A light ache on the side of the shoulder for 1-2 days is normal. Trap or neck soreness usually means shrugging happened.",
+      "backNote": null,
+      "stopIf": "Any sharp pinch in the shoulder joint, or numbness or tingling in the hand."
+    },
+    "mistakes": [
+      {
+        "wrong": "Raising above shoulder height",
+        "right": "Stop once your arms are parallel to the floor."
+      },
+      {
+        "wrong": "Shrugging shoulders up",
+        "right": "Keep your shoulders pulled down; shorten the band if it's pulling you into a shrug."
+      },
+      {
+        "wrong": "Swinging or using body momentum",
+        "right": "Stand tall and still; shorten the band length rather than swinging to move it."
+      }
+    ]
   },
   {
     "id": "band-bicep-curl",
@@ -1775,7 +3241,53 @@
     ],
     "youtubeId": "1-QRzbPL2Bw",
     "modification": "Stand on less of the band for lighter resistance. Perform one arm at a time to focus on each side individually.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "biceps"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
+    "sensation": {
+      "feelHere": "The front of your upper arm, with the burn increasing as your hands rise higher.",
+      "notHere": "Your forearm or wrist strain. That means you're gripping too hard or bending the wrist.",
+      "firstCue": "Elbows pinned at your sides. Lower slow against the band, 2\u20133 seconds.",
+      "wrongSpot": [
+        {
+          "felt": "Forearm",
+          "fix": "You're squeezing the band handles too hard. Loosen your grip \u2014 hold firmly, not tightly."
+        },
+        {
+          "felt": "Wrist",
+          "fix": "Your wrist is bending back as you curl. Keep it straight and let the elbow do the bending."
+        },
+        {
+          "felt": "Shoulders",
+          "fix": "Your elbows are drifting forward or up. Keep them pinned to your sides for the entire rep."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're leaning back to help pull against the band. Stand tall and keep your torso still."
+        }
+      ],
+      "nextDay": "A burn in the front of the upper arm for 1\u20132 days, more noticeable near the top of the range.",
+      "backNote": null,
+      "stopIf": "Numbness or tingling in your hand, or sharp pain at the elbow or wrist."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back against the band tension",
+        "right": "Keep your torso upright and stationary \u2014 let your arms fight the band, not your body weight."
+      },
+      {
+        "wrong": "Letting the band snap back down",
+        "right": "Control the return over 2\u20133 seconds \u2014 the band fights hardest at the top, use that."
+      },
+      {
+        "wrong": "Standing off-center on the band",
+        "right": "Keep your feet centered on the band so both sides feel even resistance throughout."
+      }
+    ]
   },
   {
     "id": "band-squat",
@@ -1808,7 +3320,55 @@
     ],
     "youtubeId": "duP-UZsfOaQ",
     "modification": "Squat to a chair or bench behind you for a depth reference. Hold the band at chest level with crossed arms if the front-rack position is uncomfortable.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "Front of your thighs and glutes, plus your upper back holding the front-rack position.",
+      "notHere": "Your low back, or the front of your shoulders from the band pulling on your arms.",
+      "firstCue": "Keep your elbows up and chest tall. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "Your elbows are dropping and your torso is folding forward. Keep elbows lifted and sit back rather than down."
+        },
+        {
+          "felt": "Front of the knees",
+          "fix": "Sit your hips back first before bending your knees; don't let your shins drive forward."
+        },
+        {
+          "felt": "Front of the shoulders",
+          "fix": "Shorten the band or stand slightly forward on it so tension isn't yanking your arms down."
+        },
+        {
+          "felt": "Inner knees",
+          "fix": "Push your knees outward over your toes as you descend, actively resisting the band's pull."
+        }
+      ],
+      "nextDay": "Thighs and glutes ache for 1\u20133 days. Low back or shoulder soreness the next day is not expected.",
+      "backNote": "If your elbows drop, your torso folds forward and load shifts to your spine. Keep elbows up, chest tall, and stop the descent once you feel that fold starting.",
+      "stopIf": "Sharp pain, or any shooting, numbness, or tingling down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Elbows dropping during descent",
+        "right": "Keep elbows lifted to shoulder height throughout the entire set."
+      },
+      {
+        "wrong": "Knees caving against band tension",
+        "right": "Actively push your knees out over your toes, especially as you stand up."
+      },
+      {
+        "wrong": "Snapping up at the top",
+        "right": "Control the top of the rep instead of jerking to lockout against the band's pull."
+      }
+    ]
   },
   {
     "id": "band-rdl",
@@ -1871,7 +3431,53 @@
     ],
     "youtubeId": "7h3lG2WnLXg",
     "modification": "Sit cross-legged on the floor to remove lower back demand. Or use a single 10 lb dumbbell held with one hand at a time for unilateral tricep work.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "The back of your upper arm, especially the stretch as it lowers behind your head.",
+      "notHere": "Your elbow joint at the bottom, or your lower back arching to help lower the weight.",
+      "firstCue": "Keep upper arms fixed by your ears. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Elbow joint at end range",
+          "fix": "You're lowering too deep into the stretch. Stop a bit higher, before you feel it in the joint, and use a neutral grip if you can."
+        },
+        {
+          "felt": "Front of the shoulder",
+          "fix": "Your upper arms are drifting forward. Keep them vertical, close to your ears, for the whole set."
+        },
+        {
+          "felt": "Lower back",
+          "fix": "You're arching to control the weight overhead. Brace your core and tuck your pelvis slightly."
+        },
+        {
+          "felt": "Elbows flaring outward",
+          "fix": "Keep your elbows pointing forward, close together, instead of winging out to the sides."
+        }
+      ],
+      "nextDay": "A deep stretch-related ache on the back of the arm for 1-3 days is normal. Elbow joint pain is not.",
+      "backNote": "Overhead loading with the arms behind your head is where a low back arch sneaks in. Brace your core and tuck your pelvis; stop if you feel it in your low back.",
+      "stopIf": "Sharp elbow pain, or any numbness or tingling in the hand."
+    },
+    "mistakes": [
+      {
+        "wrong": "Elbows flaring outward",
+        "right": "Keep them pointed forward and close together throughout the movement."
+      },
+      {
+        "wrong": "Upper arms drifting forward",
+        "right": "Keep your upper arms vertical, close to your ears, for the entire set."
+      },
+      {
+        "wrong": "Arching the lower back",
+        "right": "Brace your core and keep your ribs down instead of arching to lower the weight."
+      }
+    ]
   },
   {
     "id": "db-bench-press",
@@ -1904,7 +3510,54 @@
     ],
     "youtubeId": "SHsUIZiNdeY",
     "modification": "Use lighter dumbbells (10-15 lb) to start. Perform a floor chest press if you are not comfortable loading heavy dumbbells on a bench alone.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "triceps"
+    ],
+    "sensation": {
+      "feelHere": "The middle of your chest, with some work in the back of your upper arms.",
+      "notHere": "The front point of your shoulder. If that's where it's loudest, chest isn't doing the work.",
+      "firstCue": "Squeeze your shoulder blades into the bench. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the shoulders",
+          "fix": "Your shoulder blades have rolled forward off the bench. Pin them back and down before you press, and hold that the whole set."
+        },
+        {
+          "felt": "Still the shoulders",
+          "fix": "Your elbows are too wide. Bring them to 45-50 degrees from your torso instead of flared to 90."
+        },
+        {
+          "felt": "Sharp or pinching pain",
+          "fix": "That's the joint, not the muscle. Stop the set, drop the weight, and shorten how deep you lower."
+        },
+        {
+          "felt": "Wrists",
+          "fix": "Keep your wrists straight and stacked over your elbows instead of letting the dumbbells tip backward."
+        }
+      ],
+      "nextDay": "A broad ache across the chest for 1-3 days is expected. Sharp pinpoint pain at the shoulder is not.",
+      "backNote": "Feet pressed into the floor create tension, not an arch. Keep your low back lightly in contact with the bench \u2014 don't overarch to press more weight.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    },
+    "mistakes": [
+      {
+        "wrong": "Elbows flared to 90 degrees",
+        "right": "Keep them at 45-50 degrees from your torso to keep the load off the shoulder joint."
+      },
+      {
+        "wrong": "Shoulders rolling forward at the top",
+        "right": "Keep your shoulder blades squeezed together and pinned to the bench throughout the set."
+      },
+      {
+        "wrong": "Bouncing dumbbells off the chest",
+        "right": "Touch your chest lightly with control, then press again without a rebound."
+      }
+    ]
   },
   {
     "id": "machine-chest-press",
@@ -1936,7 +3589,54 @@
     ],
     "youtubeId": "gNBU7hmW2EU",
     "modification": "Reduce the machine weight and use a limited range of motion if shoulder discomfort occurs. Ask gym staff to help set the seat position on your first use.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "triceps"
+    ],
+    "sensation": {
+      "feelHere": "The middle of your chest as you press, with some burn in the back of your upper arms.",
+      "notHere": "The front of your shoulder. If that's what's loud, your setup or seat height is off.",
+      "firstCue": "Squeeze your shoulder blades against the pad first. Press for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Front of the shoulders",
+          "fix": "Your seat is likely too high or too low. Adjust it so the handles sit at chest height, roughly nipple level."
+        },
+        {
+          "felt": "Still the shoulders",
+          "fix": "You're letting your shoulder blades round forward off the pad. Squeeze them back before every rep."
+        },
+        {
+          "felt": "Sharp pinch when reaching back",
+          "fix": "You're stretching too deep. Stop the return a few inches short of your usual depth."
+        },
+        {
+          "felt": "Neck or upper traps",
+          "fix": "Keep your head resting against the pad instead of craning forward as you press."
+        }
+      ],
+      "nextDay": "A broad ache across the chest for 1-2 days is normal. Sharp pinpoint pain at the shoulder is not.",
+      "backNote": "The seat back supports your spine here \u2014 keep it pressed against the pad and don't arch away from it to move more weight.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    },
+    "mistakes": [
+      {
+        "wrong": "Locking elbows out hard",
+        "right": "Extend until arms are nearly straight, stopping just short of a hard lockout."
+      },
+      {
+        "wrong": "Rushing the return",
+        "right": "Take 2-3 seconds to bring the handles back \u2014 this is where most of the chest work happens."
+      },
+      {
+        "wrong": "Arching away from the seat",
+        "right": "Keep your back pressed against the pad for the entire set."
+      }
+    ]
   },
   {
     "id": "machine-shoulder-press",
@@ -1968,7 +3668,54 @@
     ],
     "youtubeId": "BAZkFGeUy5U",
     "modification": "Reduce the weight. Raise the seat if shoulder discomfort occurs at the starting position \u2014 higher seat reduces the external rotation demand.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "front deltoids",
+      "lateral deltoids"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "sensation": {
+      "feelHere": "The top and side of your shoulders, with the back of your upper arms assisting.",
+      "notHere": "Your neck or upper traps taking over the lift, or your lower back arching off the pad.",
+      "firstCue": "Press straight overhead, not forward. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Neck or traps dominating",
+          "fix": "You're shrugging to finish the press. Stop a few inches short of lockout and keep your shoulders down."
+        },
+        {
+          "felt": "Front of the shoulder only",
+          "fix": "You're pressing forward of your ears instead of straight up. Keep the handles traveling directly above your shoulders."
+        },
+        {
+          "felt": "Lower back arching",
+          "fix": "Sit taller and press your back into the pad. If you have to arch to press, drop the weight."
+        },
+        {
+          "felt": "Elbow joint",
+          "fix": "You're pressing to a hard lockout. Stop just short of full extension at the top."
+        }
+      ],
+      "nextDay": "A dull ache across the shoulders for 1-2 days is normal. Sharp joint or neck pain is not.",
+      "backNote": "The seat back supports your spine here \u2014 keep it pressed against the pad throughout and don't arch away from it to finish a rep.",
+      "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
+    },
+    "mistakes": [
+      {
+        "wrong": "Craning the neck upward",
+        "right": "Keep your gaze level and let the machine track do the overhead work."
+      },
+      {
+        "wrong": "Letting the stack bang between reps",
+        "right": "Keep constant tension \u2014 don't let the weight fully rest between reps."
+      },
+      {
+        "wrong": "Arching away from the pad",
+        "right": "Sit tall and keep your back pressed against the seat for the entire set."
+      }
+    ]
   },
   {
     "id": "lat-pulldown-machine",
@@ -2001,7 +3748,55 @@
     ],
     "youtubeId": "CAwf7n6Luuc",
     "modification": "Reduce the weight. A neutral-grip (palms facing each other) bar attachment is more comfortable for beginners and equally effective.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lats"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "biceps",
+      "upper back"
+    ],
+    "sensation": {
+      "feelHere": "Under your armpits and down the sides of your back, from the top to your ribs.",
+      "notHere": "Your biceps or the top of your shoulders near your neck. That's the wrong muscle taking over.",
+      "firstCue": "Drive elbows down toward your hips first. Control the return over 2\u20133 seconds.",
+      "wrongSpot": [
+        {
+          "felt": "Biceps",
+          "fix": "You're pulling with the arm bending first. Start the pull by driving the elbows down before the hands move much."
+        },
+        {
+          "felt": "Traps or neck",
+          "fix": "You're leaning back too far or shrugging. Sit tall, lean only 10\u201315 degrees, and keep shoulders down."
+        },
+        {
+          "felt": "Forearms",
+          "fix": "You're gripping the bar too hard. Loosen your hands \u2014 they only need to hold the bar, not squeeze it."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're leaning back excessively to move more weight. Reduce the load and keep the lean small."
+        }
+      ],
+      "nextDay": "Soreness under the armpits and along the sides of the back for 1\u20132 days is expected.",
+      "backNote": null,
+      "stopIf": "Any pain shooting down an arm, or numbness or tingling in your hands during the pull."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back excessively",
+        "right": "Keep your lean to about 10\u201315 degrees \u2014 more turns this into a back extension, not a pulldown."
+      },
+      {
+        "wrong": "Pulling behind the neck",
+        "right": "Always pull the bar to your upper chest, never behind your neck \u2014 that strains the shoulder joint."
+      },
+      {
+        "wrong": "Not fully extending at the top",
+        "right": "Let your arms fully straighten and lats stretch between every rep for full range of motion."
+      }
+    ]
   },
   {
     "id": "single-arm-db-row",
@@ -2035,7 +3830,55 @@
     ],
     "youtubeId": "pYcpY20QaE8",
     "modification": "Use a lighter dumbbell. Brace one hand on a countertop or rack with both feet on the floor if no bench is available.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lats",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "biceps"
+    ],
+    "sensation": {
+      "feelHere": "The side of your back under the armpit on the working side, near the shoulder blade.",
+      "notHere": "Your bicep or the front of your shoulder. Those mean the arm is doing what the back should.",
+      "firstCue": "Squeeze the shoulder blade down and back before the elbow bends. Lower on a 2-count.",
+      "wrongSpot": [
+        {
+          "felt": "Bicep",
+          "fix": "You're curling the weight up. Start the pull by drawing the shoulder blade toward your spine, then let the elbow follow."
+        },
+        {
+          "felt": "Forearm or grip",
+          "fix": "You're squeezing the dumbbell too hard. Relax your hand \u2014 it only needs to hold on, not clamp."
+        },
+        {
+          "felt": "Torso twisting to help",
+          "fix": "You're rotating to lift the weight. Keep both shoulders square to the floor throughout the rep."
+        },
+        {
+          "felt": "Neck or trap",
+          "fix": "You're shrugging the shoulder up toward your ear. Keep it pulled down and back instead."
+        }
+      ],
+      "nextDay": "Soreness under the armpit and along the shoulder blade for 1\u20132 days is normal and expected.",
+      "backNote": "Your knee and hand on the bench support your spine, so this is fairly back-friendly \u2014 but don't let your low back sag or twist to finish a rep.",
+      "stopIf": "Any pain shooting down your arm or leg, or numbness or tingling in the hand."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rotating the torso to lift",
+        "right": "Keep your torso square to the floor and let the back muscles pull, not momentum from twisting."
+      },
+      {
+        "wrong": "Letting the elbow drift outward",
+        "right": "Keep the elbow tracking close to your ribs, driving up and back toward the ceiling."
+      },
+      {
+        "wrong": "Rounding through the upper back",
+        "right": "Keep your spine flat from head to tailbone \u2014 a rounded back reduces the pull's effectiveness."
+      }
+    ]
   },
   {
     "id": "cable-face-pull",
@@ -2068,7 +3911,55 @@
     ],
     "youtubeId": "eTCBSFlCJ_s",
     "modification": "Reduce the cable weight. Stand closer to the machine to reduce effective resistance. A rope attachment is strongly preferred over a straight bar.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "rear deltoids"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius",
+      "rhomboids",
+      "rotator cuff"
+    ],
+    "sensation": {
+      "feelHere": "The back of your shoulders and between your shoulder blades, especially as your hands split apart.",
+      "notHere": "The top of your traps near your neck. That means the weight is too heavy or you're shrugging.",
+      "firstCue": "Lead with your elbows, pulling them out and up. Keep it light \u2014 no shrug.",
+      "wrongSpot": [
+        {
+          "felt": "Traps or shoulders shrugging",
+          "fix": "You're going too heavy or leading with your hands. Drop the weight and lead the pull with your elbows instead."
+        },
+        {
+          "felt": "Neck",
+          "fix": "You're straining upward to help pull. Keep your neck relaxed and let your shoulder blades do the squeezing."
+        },
+        {
+          "felt": "Biceps or forearms",
+          "fix": "You're pulling with your arms bent from the start. Drive your elbows sideways before your hands move much."
+        },
+        {
+          "felt": "Front of the shoulder",
+          "fix": "You're not externally rotating enough at the end. Finish with your hands beside your temples, palms forward."
+        }
+      ],
+      "nextDay": "A light ache across the shoulders and upper back for a day is normal \u2014 this should feel light.",
+      "backNote": null,
+      "stopIf": "Sharp pinching in the shoulder joint, or any numbness or tingling down your arm."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back to help pull",
+        "right": "Keep your torso still and upright \u2014 let your shoulder muscles do the work, not body momentum."
+      },
+      {
+        "wrong": "Pulling low toward the chin",
+        "right": "Aim the rope toward your nose or ears \u2014 a lower pull skips the rear delts and rotator cuff."
+      },
+      {
+        "wrong": "Going too heavy",
+        "right": "Use a light weight \u2014 this should feel like a light squeeze and burn, not a grind."
+      }
+    ]
   },
   {
     "id": "db-rdl",
@@ -2132,7 +4023,53 @@
     ],
     "youtubeId": "i6m3Vp9H40Y",
     "modification": "Reduce the machine weight significantly on your first session \u2014 leg curl machines vary widely between brands. A seated leg curl machine is an alternative if lying face-down causes discomfort.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "calves"
+    ],
+    "sensation": {
+      "feelHere": "The back of your thighs, building to a strong contraction as your knees fully bend.",
+      "notHere": "Behind your knee joint itself, or your low back \u2014 neither should be doing the work.",
+      "firstCue": "Press your hips into the pad. Lower for a slow 2\u20133 count.",
+      "wrongSpot": [
+        {
+          "felt": "Behind the knee",
+          "fix": "The ankle pad may sit too low. Reposition it just above your heel, not on the joint."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Your hips are lifting off the pad. Reduce the weight until you can keep your hips pinned down."
+        },
+        {
+          "felt": "Calves cramping",
+          "fix": "Point your toes slightly up rather than pointed, which shifts emphasis off the calf."
+        },
+        {
+          "felt": "Only one leg",
+          "fix": "Check both legs are curling evenly; a stronger leg can take over if you let it."
+        }
+      ],
+      "nextDay": "Deep hamstring soreness for 1\u20133 days is normal, especially after the eccentric lowering. Knee joint soreness is not.",
+      "backNote": "Lying face-down keeps your spine largely out of this one. Just keep your hips pressed into the pad rather than lifting to cheat the weight up.",
+      "stopIf": "Any sharp pain behind the knee, or shooting pain, numbness, or tingling down your leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips lifting off the pad",
+        "right": "Reduce the weight so you can keep your hips pinned down the whole set."
+      },
+      {
+        "wrong": "Partial range of motion",
+        "right": "Curl through the full range, straight to fully bent, rather than short reps."
+      },
+      {
+        "wrong": "Letting the weight stack slam down",
+        "right": "Lower over 2\u20133 seconds under control instead of letting it drop."
+      }
+    ]
   },
   {
     "id": "leg-press",
@@ -2164,7 +4101,54 @@
     ],
     "youtubeId": "K5n2vg3oZa4",
     "modification": "Start with a very light weight to find your comfortable range. Wider foot placement targets glutes more; closer/lower placement targets quads.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings"
+    ],
+    "sensation": {
+      "feelHere": "Front of your thighs and glutes, building to a burn by the last few reps of a set.",
+      "notHere": "Your low back rounding off the pad, or sharp pain in the front of your knees.",
+      "firstCue": "Stop the descent before your back lifts off the pad. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "Your pelvis is tucking under at the bottom. Reduce your range of motion and stop before your back peels off the pad."
+        },
+        {
+          "felt": "Front of the knees",
+          "fix": "Move your feet slightly higher on the platform to shift load toward your hips and glutes."
+        },
+        {
+          "felt": "Only one side",
+          "fix": "Check your feet are evenly placed and pressing evenly; uneven pressure loads one leg more."
+        },
+        {
+          "felt": "Knees at full lockout",
+          "fix": "Stop just short of locking your knees out at the top of each rep."
+        }
+      ],
+      "nextDay": "Front-of-thigh and glute soreness for 1\u20133 days is normal. Low back soreness the next day is not.",
+      "backNote": "The real danger here is your low back rounding off the pad at the bottom under load \u2014 'butt wink.' Stop the descent the instant your back starts to peel away, even if that means less range.",
+      "stopIf": "Any shooting pain, numbness, or tingling down a leg, or sharp low back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Going too deep, hips tucking",
+        "right": "Stop the descent at the point where your back is still flat against the pad."
+      },
+      {
+        "wrong": "Locking knees out hard at the top",
+        "right": "Keep a soft bend in your knees at full extension instead of slamming them straight."
+      },
+      {
+        "wrong": "Letting the plate drop fast",
+        "right": "Lower over 2\u20133 seconds under control instead of letting the weight fall."
+      }
+    ]
   },
   {
     "id": "kb-swing",
@@ -2231,7 +4215,55 @@
     ],
     "youtubeId": "aNDUbH_Uv4g",
     "modification": "Squat to a bench or box behind you as a depth reference. Use a lighter kettlebell (8-12 kg for beginners).",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "upper back"
+    ],
+    "sensation": {
+      "feelHere": "Front of your thighs and glutes, with your midsection and upper back working to stay upright.",
+      "notHere": "Your low back, forearms, or the front of your shoulders under the kettlebell.",
+      "firstCue": "Keep the kettlebell tight to your chest. Lower for a slow 3 count.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "The kettlebell is drifting away from your chest. Pin it to your sternum through the whole descent."
+        },
+        {
+          "felt": "Front of the knees",
+          "fix": "Sit your hips back further before your knees bend, rather than dropping straight down."
+        },
+        {
+          "felt": "Forearms or wrists",
+          "fix": "Let the horns rest in your palms rather than gripping hard; relax your grip between reps."
+        },
+        {
+          "felt": "Inner knees",
+          "fix": "Use your elbows to push your knees outward as you sink into the squat."
+        }
+      ],
+      "nextDay": "Thighs and glutes ache for 1\u20133 days. Low back or forearm soreness the next day is not expected.",
+      "backNote": "The front-loaded kettlebell should keep you upright naturally. If your back rounds, the weight has drifted forward \u2014 reset it against your chest and reduce depth.",
+      "stopIf": "Any shooting pain, numbness, or tingling down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Heels lifting off the floor",
+        "right": "Widen your stance or work on ankle mobility so your heels stay planted."
+      },
+      {
+        "wrong": "Kettlebell drifting from chest",
+        "right": "Keep the kettlebell pinned tight to your sternum for the entire rep."
+      },
+      {
+        "wrong": "Standing up hips-first",
+        "right": "Drive up evenly through hips and knees together rather than shooting your hips up first."
+      }
+    ]
   },
   {
     "id": "db-walking-lunge",
@@ -2265,7 +4297,56 @@
     ],
     "youtubeId": "I_rMQRrwseI",
     "modification": "Perform static lunges (step forward and drive back to start) instead of walking lunges. Reduce dumbbell weight or use bodyweight only.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "hip flexors",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "Front thigh and glute of your leading leg on every step, plus your core staying braced.",
+      "notHere": "Your low back, or the front knee \u2014 sharp knee pain there is not the target.",
+      "firstCue": "Stay tall through your torso. Take 2 seconds to lower each step.",
+      "wrongSpot": [
+        {
+          "felt": "Front knee",
+          "fix": "Step further forward so your knee doesn't push past your toes as you descend."
+        },
+        {
+          "felt": "Low back",
+          "fix": "You're leaning over the front thigh, likely from the dumbbells' weight. Keep your chest stacked over your hips."
+        },
+        {
+          "felt": "Grip or forearms",
+          "fix": "Let the dumbbells hang relaxed at your sides rather than gripping them tightly."
+        },
+        {
+          "felt": "Back knee crashing down",
+          "fix": "Control the descent and stop an inch or two above the floor each step."
+        }
+      ],
+      "nextDay": "Front thigh and glute soreness for 1\u20133 days is normal. Low back or knee soreness the next day is not.",
+      "backNote": "Added weight makes forward lean more tempting as you fatigue. Stay upright through your torso; if your back rounds, reduce the dumbbell weight.",
+      "stopIf": "Any shooting pain, numbness, or tingling down a leg, or sharp knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Torso leaning over front thigh",
+        "right": "Keep your chest tall and stacked over your hips on every step."
+      },
+      {
+        "wrong": "Front knee past the toes",
+        "right": "Take a longer stride so your knee stays above your ankle, not past it."
+      },
+      {
+        "wrong": "Rushing between steps",
+        "right": "Take 2 seconds to lower each step instead of rushing into the next one."
+      }
+    ]
   },
   {
     "id": "seated-calf-raise",
@@ -2297,7 +4378,54 @@
     ],
     "youtubeId": "smyXy_dhXo8",
     "modification": "Perform bodyweight standing calf raises on the edge of a step if no machine is available.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "soleus"
+    ],
+    "secondaryMuscles": [
+      "gastrocnemius",
+      "Achilles tendon"
+    ],
+    "sensation": {
+      "feelHere": "A burn low in your calf, closer to the ankle, more than the upper bulge.",
+      "notHere": "Your Achilles tendon or the arch of your foot \u2014 sharp pain there is a tendon signal, not muscle work.",
+      "firstCue": "Rise as high as the machine allows. Lower over a slow 2\u20133 count.",
+      "wrongSpot": [
+        {
+          "felt": "Achilles tendon",
+          "fix": "You may be going too heavy or too fast. Reduce the weight and slow the lowering phase."
+        },
+        {
+          "felt": "Arch of the foot",
+          "fix": "Reposition your feet so the balls, not your toes, are on the platform edge."
+        },
+        {
+          "felt": "Knees",
+          "fix": "Keep your knee angle constant throughout; don't let your knees rise or dip as you press."
+        },
+        {
+          "felt": "Top of the foot",
+          "fix": "Loosen the knee pad slightly \u2014 it may be pressing too hard on your shin."
+        }
+      ],
+      "nextDay": "A deep, low calf ache for 1\u20132 days is normal. Achilles soreness is not.",
+      "backNote": null,
+      "stopIf": "Sharp Achilles pain, or any pain that feels like a pull rather than a burn."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bouncing at the bottom",
+        "right": "Pause briefly in the full stretch before each rep instead of bouncing out."
+      },
+      {
+        "wrong": "Cutting the range short",
+        "right": "Rise as high as the machine allows and stretch fully at the bottom each rep."
+      },
+      {
+        "wrong": "Letting knees shift",
+        "right": "Keep your knee angle steady under the pad throughout the set."
+      }
+    ]
   },
   {
     "id": "tricep-pushdown",
@@ -2327,7 +4455,54 @@
     ],
     "youtubeId": "_w-HpW70nSQ",
     "modification": "Reduce the cable weight. A rope attachment (where you can flare the ends out at the bottom) is preferred for achieving full extension.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "core"
+    ],
+    "sensation": {
+      "feelHere": "The back of your upper arm, from the elbow up toward your shoulder.",
+      "notHere": "Your shoulder pulling forward, or your wrists straining to hold the bar.",
+      "firstCue": "Pin your elbows to your sides. Lower for a slow 2 count on the return.",
+      "wrongSpot": [
+        {
+          "felt": "Shoulder instead of triceps",
+          "fix": "Your elbows are drifting forward off your sides. Pin them to your ribs and keep them there the whole set."
+        },
+        {
+          "felt": "Elbow joint",
+          "fix": "You're locking out hard at the bottom. Stop just short of a full lockout and squeeze instead."
+        },
+        {
+          "felt": "Wrists",
+          "fix": "You're bending your wrists to control the bar. Keep them straight and let your grip stay neutral."
+        },
+        {
+          "felt": "Leaning body weight into it",
+          "fix": "You're using your torso to help push. Stand tall and let your arms do the work, with lighter weight if needed."
+        }
+      ],
+      "nextDay": "A focused ache on the back of the upper arm for 1-2 days is normal. Elbow joint pain is not.",
+      "backNote": null,
+      "stopIf": "Sharp elbow pain, or any numbness or tingling in the hand."
+    },
+    "mistakes": [
+      {
+        "wrong": "Elbows drifting forward",
+        "right": "Keep your elbows pinned to your sides as the fixed pivot point throughout."
+      },
+      {
+        "wrong": "Using body weight to lean into it",
+        "right": "Stand tall and stationary; let your arms move the weight, not your torso."
+      },
+      {
+        "wrong": "Rushing the return",
+        "right": "Let the weight come back up over 2 seconds instead of letting it snap back."
+      }
+    ]
   },
   {
     "id": "treadmill-walk",
@@ -2359,7 +4534,20 @@
     ],
     "youtubeId": "8i3Vrd95o2k",
     "modification": "Walk at a slower pace (2.5-3.5 mph) or reduce to 5 minutes if 10 feels too challenging. Flat setting is fine \u2014 incline is optional.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "legs"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "cardiovascular system"
+    ],
+    "sensation": {
+      "feelHere": "Steadily rising warmth in your legs and a slightly quickened breath \u2014 nothing more.",
+      "notHere": "Sharp joint pain in the knees, hips, or low back with each step.",
+      "backNote": null,
+      "stopIf": "Sharp joint pain, dizziness, or chest pain. The goal is warm and slightly breathless, not tired."
+    }
   },
   {
     "id": "rowing-machine-warmup",
@@ -2390,7 +4578,20 @@
     ],
     "youtubeId": "4zWu1yuJ0_g",
     "modification": "Row at a slower pace (16-18 SPM) if 5 minutes feels challenging. Focus entirely on learning the stroke sequence rather than the pace.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "legs"
+    ],
+    "secondaryMuscles": [
+      "full body",
+      "cardiovascular system"
+    ],
+    "sensation": {
+      "feelHere": "Steadily rising warmth through your legs and back and a slightly quickened breath.",
+      "notHere": "A rounding, straining pull in the low back at the catch position \u2014 that's a technique issue, not warm-up.",
+      "backNote": "Keep your spine neutral at the catch \u2014 don't let your low back round forward to reach further. Sit tall instead.",
+      "stopIf": "Sharp low-back pain, or tingling down either leg."
+    }
   },
   {
     "id": "elliptical-warmup",
@@ -2422,7 +4623,20 @@
     ],
     "youtubeId": "tbChqvQ4LHQ",
     "modification": "Reduce to 5 minutes at an even lower resistance. A stationary bike is a fine alternative if the elliptical is unavailable.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "legs"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "cardiovascular system"
+    ],
+    "sensation": {
+      "feelHere": "Steadily rising warmth in your legs and a slightly quickened breath \u2014 nothing more.",
+      "notHere": "Sharp pain in the knees or hips with each stride.",
+      "backNote": null,
+      "stopIf": "Sharp joint pain, dizziness, or chest pain. Aim for warm and slightly breathless, not tired."
+    }
   },
   {
     "id": "sphinx-pose",
@@ -2457,7 +4671,20 @@
     ],
     "youtubeId": "WTCGYyRJDWg",
     "modification": "Lower to a smaller arch by sliding your elbows further forward, or rest on a pillow placed under your chest.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lumbar extensors"
+    ],
+    "secondaryMuscles": [
+      "thoracic spine",
+      "hip flexors"
+    ],
+    "sensation": {
+      "feelHere": "A comfortable, supported pressure or gentle stretch across the low back as your chest lifts.",
+      "notHere": "Any sensation radiating down into the buttock or leg \u2014 that's a warning sign, not part of the stretch.",
+      "backNote": "This is a McKenzie-style movement chosen deliberately for your back. If symptoms move toward your spine (centralise), that's good \u2014 keep going. If they move further down the leg, stop.",
+      "stopIf": "Any pain or tingling radiating into the leg. Come down immediately and skip the exercise for today."
+    }
   },
   {
     "id": "cobra-pose",
@@ -2492,7 +4719,21 @@
     ],
     "youtubeId": "tIZppe-RB0g",
     "modification": "Press up onto your forearms only (Sphinx Pose) until full press-ups feel comfortable. Reduce the range to whatever depth is pain-free.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "lumbar extensors"
+    ],
+    "secondaryMuscles": [
+      "thoracic spine",
+      "hip flexors",
+      "abdominals"
+    ],
+    "sensation": {
+      "feelHere": "A progressively easier stretch across the front of the torso and gentle pressure in the low back as you press up.",
+      "notHere": "Any sensation radiating into the buttock or down the leg \u2014 that's a warning sign, not deeper progress.",
+      "backNote": "Hips stay glued to the mat and legs stay relaxed. Watch for centralisation: symptoms moving toward your spine as you press up is good and means keep going; symptoms moving further down the leg is bad and means stop.",
+      "stopIf": "Any pain or tingling radiating into the leg. Stop immediately and try Sphinx Pose instead today."
+    }
   },
   {
     "id": "pelvic-tilts",
@@ -2526,7 +4767,19 @@
     ],
     "youtubeId": "TWuR_U9ddcc",
     "modification": "Reduce the range of motion to a barely visible rock, or perform only the flattening half of the movement.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "deep core"
+    ],
+    "secondaryMuscles": [
+      "lumbar mobility"
+    ],
+    "sensation": {
+      "feelHere": "A small, controlled shift of pressure in your low back as it flattens and arches gently.",
+      "notHere": "Any pain or a hard pinch at the end of either direction \u2014 the whole range should stay comfortable.",
+      "backNote": "This is a deliberately gentle control drill for your back. Keep the whole motion inside a completely pain-free range \u2014 small is correct, not a limitation.",
+      "stopIf": "Any pain, or tingling or numbness anywhere in the legs."
+    }
   },
   {
     "id": "mcgill-curlup",
@@ -2559,6 +4812,49 @@
     ],
     "youtubeId": "RgSnH7tMCoU",
     "modification": "Shorten the hold to 4 seconds, or simply lift the weight of your head off the floor without raising the shoulders.",
-    "backSafe": true
+    "backSafe": true,
+    "primaryMuscles": [
+      "rectus abdominis",
+      "deep core"
+    ],
+    "secondaryMuscles": [
+      "spinal stabilizers"
+    ],
+    "sensation": {
+      "feelHere": "A light bracing tension across your upper stomach, just under the ribs.",
+      "notHere": "Your neck straining, or any bending or rounding sensation in your low back.",
+      "firstCue": "Just unweight your head off the floor, like off a scale. Hold rigid, don't curl.",
+      "wrongSpot": [
+        {
+          "felt": "Neck strain",
+          "fix": "You're pulling with your neck like a sit-up. Lead with your chest lifting as one rigid block, not your chin."
+        },
+        {
+          "felt": "Low back",
+          "fix": "Your spine is bending. Keep your hands under your low back and only lift an inch \u2014 the spine stays still."
+        },
+        {
+          "felt": "Nothing at all",
+          "fix": "You're not bracing before lifting. Tighten your stomach lightly, like bracing for a poke, before you lift."
+        }
+      ],
+      "nextDay": "A light, shallow ab ache for a day is normal. Neck or low-back soreness is not.",
+      "backNote": "This is deliberately a tiny movement \u2014 head and shoulders lift a few centimetres as one rigid unit, spine never bends. That's exactly why it's safe for your discs; treating it like a sit-up defeats the purpose.",
+      "stopIf": "Any shooting or electric pain, or numbness or tingling in a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Curling up like a sit-up",
+        "right": "Lift only an inch or two, keeping head, shoulders, and chest rigid as one block \u2014 the spine never bends."
+      },
+      {
+        "wrong": "Pulling with the neck",
+        "right": "Let your chest lead the small lift; keep your chin at a neutral angle, not tucked to your chest."
+      },
+      {
+        "wrong": "Hands not under the low back",
+        "right": "Keep both hands under your low back's natural arch the whole time to preserve that curve."
+      }
+    ]
   }
 ]

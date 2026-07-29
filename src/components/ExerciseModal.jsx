@@ -3,6 +3,7 @@ import useMediaQuery from '../hooks/useMediaQuery'
 import { Icon } from './Icons'
 import MuscleMap from './MuscleMap'
 import { resolveMuscles } from '../data/muscleGroups'
+import SafetyCard from './SafetyCard'
 
 const FONT = "'Plus Jakarta Sans', sans-serif"
 const MONO = "'JetBrains Mono', 'Courier New', monospace"
@@ -39,7 +40,13 @@ const CAT_COLORS = {
 // here). Everything else — the wrong-spot diagnostics, soreness expectation,
 // back note, stop rule — is one tap away, read between sets.
 function SensationCard({ s }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen]     = useState(false)
+  const [safety, setSafety] = useState(false)
+
+  // Stretches and warm-ups carry a lighter shape — no firstCue/wrongSpot/nextDay.
+  const hasDetail = Boolean(
+    s.firstCue || s.wrongSpot?.length || s.nextDay || s.backNote || s.stopIf
+  )
 
   const Row = ({ dot, label, text }) => (
     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
@@ -64,26 +71,30 @@ function SensationCard({ s }) {
       <Row dot="#22c55e" label="Feel it here —" text={s.feelHere} />
       <Row dot="#f59e0b" label="Not here —"     text={s.notHere} />
 
-      <button
-        onClick={() => setOpen(o => !o)}
-        style={{
-          display: 'flex', alignItems: 'center', gap: 7, marginTop: 4,
-          background: 'none', border: 'none', padding: 0, cursor: 'pointer',
-          fontFamily: FONT, fontSize: 13, fontWeight: 700, color: K.violet,
-        }}
-      >
-        <span style={{
-          display: 'inline-block', transition: 'transform 0.18s ease',
-          transform: open ? 'rotate(90deg)' : 'none', fontSize: 11,
-        }}>▶</span>
-        {open ? 'Hide details' : 'Feeling it somewhere else?'}
-      </button>
+      {hasDetail && (
+        <button
+          onClick={() => setOpen(o => !o)}
+          style={{
+            display: 'flex', alignItems: 'center', gap: 7, marginTop: 4,
+            background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+            fontFamily: FONT, fontSize: 13, fontWeight: 700, color: K.violet,
+          }}
+        >
+          <span style={{
+            display: 'inline-block', transition: 'transform 0.18s ease',
+            transform: open ? 'rotate(90deg)' : 'none', fontSize: 11,
+          }}>▶</span>
+          {open ? 'Hide details' : (s.wrongSpot?.length ? 'Feeling it somewhere else?' : 'More on this one')}
+        </button>
+      )}
 
-      {open && (
+      {open && hasDetail && (
         <div style={{ marginTop: 14, borderTop: `1px solid ${K.border}`, paddingTop: 14 }}>
-          <p style={{ fontSize: 13.5, lineHeight: 1.55, color: '#cbd5e1', margin: '0 0 14px', maxWidth: '68ch' }}>
-            <span style={{ color: K.text, fontWeight: 700 }}>Try this first — </span>{s.firstCue}
-          </p>
+          {s.firstCue && (
+            <p style={{ fontSize: 13.5, lineHeight: 1.55, color: '#cbd5e1', margin: '0 0 14px', maxWidth: '68ch' }}>
+              <span style={{ color: K.text, fontWeight: 700 }}>Try this first — </span>{s.firstCue}
+            </p>
+          )}
 
           {s.wrongSpot?.map((w, i) => (
             <div key={i} style={{
@@ -119,12 +130,22 @@ function SensationCard({ s }) {
               border: '1px solid rgba(239,68,68,0.25)', borderRadius: 10, padding: '10px 12px',
             }}>
               <p style={{ fontSize: 13, lineHeight: 1.5, color: '#fca5a5', margin: 0, maxWidth: '66ch' }}>
-                <span style={{ fontWeight: 700 }}>Stop if </span>{s.stopIf}
+                <span style={{ fontWeight: 700 }}>Stop if </span>{s.stopIf}{' '}
+                <button
+                  onClick={() => setSafety(true)}
+                  style={{
+                    background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+                    color: '#fca5a5', fontSize: 13, fontWeight: 700,
+                    textDecoration: 'underline', textUnderlineOffset: 3,
+                  }}
+                >When to stop →</button>
               </p>
             </div>
           )}
         </div>
       )}
+
+      {safety && <SafetyCard onClose={() => setSafety(false)} />}
     </div>
   )
 }
@@ -310,6 +331,34 @@ export default function ExerciseModal({ exercise, onClose }) {
 
       {/* WHERE YOU SHOULD FEEL IT */}
       {exercise.sensation && <SensationCard s={exercise.sensation} />}
+
+      {/* COMMON MISTAKES */}
+      {exercise.mistakes?.length > 0 && (
+        <div style={{ marginBottom: 16 }}>
+          <p style={{
+            fontFamily: MONO, fontSize: 9, fontWeight: 700,
+            color: K.dim, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 12,
+          }}>Common mistakes</p>
+          {exercise.mistakes.map((m, i) => (
+            <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 12 }}>
+              <span style={{
+                flexShrink: 0, width: 18, height: 18, borderRadius: '50%', marginTop: 2,
+                backgroundColor: 'rgba(239,68,68,0.14)', color: '#f87171',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: 11, fontWeight: 700, lineHeight: 1,
+              }}>✕</span>
+              <div style={{ flex: 1 }}>
+                <p style={{ fontSize: 13.5, fontWeight: 700, color: '#fca5a5', margin: '0 0 3px', lineHeight: 1.45 }}>
+                  {m.wrong}
+                </p>
+                <p style={{ fontSize: 13.5, color: '#cbd5e1', lineHeight: 1.55, margin: 0, maxWidth: '68ch' }}>
+                  {m.right}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* EASIER MODIFICATION */}
       {exercise.modification && (
