@@ -6,6 +6,7 @@ import ExerciseBrowser from '../components/ExerciseBrowser'
 import useAuth from '../hooks/useAuth'
 import useMediaQuery from '../hooks/useMediaQuery'
 import useSessionDraft from '../hooks/useSessionDraft'
+import useDragReorder from '../hooks/useDragReorder'
 import useExerciseLibrary from '../hooks/useExerciseLibrary'
 import useSaveWorkoutLog from '../hooks/useSaveWorkoutLog'
 import useWakeLock from '../hooks/useWakeLock'
@@ -86,6 +87,8 @@ export default function DayOverview() {
   })
 
   const { save, status: saveStatus } = useSaveWorkoutLog()
+
+  const reorder = useDragReorder(session.exercises.length, session.move)
 
   // You now look at this screen for the whole workout, so it must not sleep.
   useWakeLock(!finished)
@@ -318,17 +321,37 @@ export default function DayOverview() {
   const ExerciseList = (
     <div style={{ padding: isWide ? '24px 28px 40px' : '14px 0 190px' }}>
       {dayExercises.map((ex, i) => {
-        const accent = KCAT[ex.category] || K.violet
-        const done   = session.doneSet.has(ex.id)
+        const accent     = KCAT[ex.category] || K.violet
+        const done       = session.doneSet.has(ex.id)
+        const isDragging = reorder.drag?.from === i
+        const showMarker = reorder.drag && reorder.drag.to === i && !isDragging
+        const markerAbove = showMarker && reorder.drag.to < reorder.drag.from
+
+        const DropMarker = (
+          <div style={{
+            height: 2, borderRadius: 2, background: K.grad,
+            margin: isWide ? '0' : '0 16px',
+          }} />
+        )
+
         return (
+          <div key={ex.id} ref={el => reorder.registerRow(i, el)}>
+          {markerAbove && DropMarker}
           <div
-            key={ex.id}
             style={{
               display: 'flex', alignItems: 'center', gap: 12,
               padding: isWide ? '10px 0' : '10px 16px',
               borderBottom: `1px solid ${K.border}`,
-              opacity: done ? 0.55 : 1,
-              transition: 'opacity 0.18s',
+              opacity: done && !isDragging ? 0.55 : 1,
+              transition: isDragging ? 'none' : 'opacity 0.18s',
+              // The lifted row follows the finger; everything else holds still.
+              transform: isDragging ? `translateY(${reorder.drag.dy}px)` : 'none',
+              position: isDragging ? 'relative' : 'static',
+              zIndex: isDragging ? 30 : 'auto',
+              backgroundColor: isDragging ? K.card : 'transparent',
+              borderRadius: isDragging ? 12 : 0,
+              boxShadow: isDragging ? '0 14px 34px rgba(0,0,0,0.55)' : 'none',
+              touchAction: isDragging ? 'none' : 'auto',
             }}
           >
             {/* Tick — the primary interaction */}
@@ -375,25 +398,28 @@ export default function DayOverview() {
               </p>
             </button>
 
-            {/* Reorder */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 2, flexShrink: 0 }}>
-              {[['▲', i - 1, i === 0], ['▼', i + 1, i === dayExercises.length - 1]].map(([glyph, to, disabled]) => (
-                <button
-                  key={glyph}
-                  onClick={() => session.move(i, to)}
-                  disabled={disabled}
-                  aria-label={glyph === '▲' ? `Move ${ex.name} up` : `Move ${ex.name} down`}
-                  style={{
-                    width: 26, height: 17, borderRadius: 5,
-                    backgroundColor: disabled ? 'transparent' : K.inset,
-                    border: `1px solid ${disabled ? 'transparent' : K.border}`,
-                    color: disabled ? K.dim : K.muted,
-                    cursor: disabled ? 'default' : 'pointer',
-                    fontSize: 8, lineHeight: 1, padding: 0,
-                    opacity: disabled ? 0.3 : 1,
-                  }}
-                >{glyph}</button>
-              ))}
+            {/* Drag handle — 44px target, grab it and slide */}
+            <div
+              {...reorder.handleProps(i)}
+              role="button"
+              aria-label={`Reorder ${ex.name}`}
+              title="Drag to reorder"
+              style={{
+                ...reorder.handleProps(i).style,
+                width: 44, height: 44, flexShrink: 0, borderRadius: 10,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                cursor: isDragging ? 'grabbing' : 'grab',
+                backgroundColor: isDragging ? 'rgba(192,132,252,0.16)' : 'transparent',
+                color: isDragging ? K.violet : K.dim,
+                transition: 'background-color 0.15s, color 0.15s',
+                WebkitUserSelect: 'none', userSelect: 'none',
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="9"  cy="6"  r="1.7" /><circle cx="15" cy="6"  r="1.7" />
+                <circle cx="9"  cy="12" r="1.7" /><circle cx="15" cy="12" r="1.7" />
+                <circle cx="9"  cy="18" r="1.7" /><circle cx="15" cy="18" r="1.7" />
+              </svg>
             </div>
 
             {/* Row menu */}
@@ -419,9 +445,12 @@ export default function DayOverview() {
                   }}
                 >
                   {[
-                    { label: 'Details',  fn: () => setSelectedExercise(ex) },
-                    { label: 'Swap out', fn: () => setBrowsing({ replacing: ex }) },
-                    { label: 'Remove',   fn: () => session.remove(ex.id), danger: true },
+                    { label: 'Details',   fn: () => setSelectedExercise(ex) },
+                    { label: 'Swap out',  fn: () => setBrowsing({ replacing: ex }) },
+                    // Dragging is pointer-only; keep a tappable path to reorder too.
+                    ...(i > 0 ? [{ label: 'Move up', fn: () => session.move(i, i - 1) }] : []),
+                    ...(i < dayExercises.length - 1 ? [{ label: 'Move down', fn: () => session.move(i, i + 1) }] : []),
+                    { label: 'Remove',    fn: () => session.remove(ex.id), danger: true },
                   ].map(item => (
                     <button
                       key={item.label}
@@ -440,6 +469,8 @@ export default function DayOverview() {
                 </div>
               )}
             </div>
+          </div>
+          {showMarker && !markerAbove && DropMarker}
           </div>
         )
       })}
