@@ -5,6 +5,7 @@ import { supabase } from '../lib/supabase'
 import { logToRow } from './useWorkoutLogs'
 
 import { buildSessionExercises } from '../utils/sessionPlan'
+import { peekDraftOrder } from './useSessionDraft'
 
 // Rest adjustment by fitness level (seconds added to every rest interval)
 const REST_ADJUST = { beginner: 30, intermediate: 0, active: -15 }
@@ -19,7 +20,14 @@ export default function useWorkoutPlayer(dayNumber, options = {}) {
 
   const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
   const exMap = Object.fromEntries(exerciseData.map(e => [e.id, e]))
-  const dayExercises = buildSessionExercises(day, exMap, { mode, userEquipment, sessionLength })
+
+  // Prefer the session draft the user actually built on the day screen. Without
+  // this the player silently rebuilds the programmed session and throws away
+  // every reorder, swap and removal.
+  const draftOrder = peekDraftOrder(parseInt(dayNumber))
+  const dayExercises = draftOrder?.length
+    ? draftOrder.map(id => exMap[id]).filter(Boolean)
+    : buildSessionExercises(day, exMap, { mode, userEquipment, sessionLength })
 
   const restAdjust = REST_ADJUST[fitnessLevel] ?? 0
 
