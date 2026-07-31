@@ -18,6 +18,7 @@ const K = {
 const TABS = [
   { path: '/',        iconName: 'home',    label: 'Home'    },
   { path: '/history', iconName: 'clock',   label: 'History' },
+  { path: '/library', iconName: 'gym',     label: 'Library' },
   { path: '/profile', iconName: 'badge',   label: 'Profile' },
 ]
 

@@ -1,12 +1,12 @@
-import { useState, useMemo, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import weeklyPlan from '../data/weeklyPlan.json'
-import exercises from '../data/exercises.json'
 import ExerciseModal from '../components/ExerciseModal'
 import ExerciseBrowser from '../components/ExerciseBrowser'
 import useAuth from '../hooks/useAuth'
 import useMediaQuery from '../hooks/useMediaQuery'
 import useSessionDraft from '../hooks/useSessionDraft'
+import useExerciseLibrary from '../hooks/useExerciseLibrary'
 import useSaveWorkoutLog from '../hooks/useSaveWorkoutLog'
 import useWakeLock from '../hooks/useWakeLock'
 import { estimateMinutes } from '../utils/sessionPlan'
@@ -77,8 +77,8 @@ export default function DayOverview() {
 
   const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
 
-  // Memoised — a fresh identity here would rebuild the session seed every render.
-  const exMap = useMemo(() => Object.fromEntries(exercises.map(e => [e.id, e])), [])
+  // From the provider, so your own video links are already merged in.
+  const { exercises, exMap } = useExerciseLibrary()
   const userEquipment = user?.user_metadata?.equipment || ['bodyweight']
 
   const session = useSessionDraft(day, exMap, {

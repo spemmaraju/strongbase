@@ -10,10 +10,13 @@ import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Onboarding from './pages/Onboarding'
+import Library from './pages/Library'
+import { ExerciseLibraryProvider } from './hooks/useExerciseLibrary'
 
 function App() {
   return (
     <BrowserRouter>
+      <ExerciseLibraryProvider>
       <Routes>
         {/* Public routes */}
         <Route path="/login"  element={<Login />} />
@@ -26,12 +29,14 @@ function App() {
         <Route path="/"        element={<AuthGuard><Layout><Home /></Layout></AuthGuard>} />
         <Route path="/history" element={<AuthGuard><Layout><History /></Layout></AuthGuard>} />
         <Route path="/profile" element={<AuthGuard><Layout><Profile /></Layout></AuthGuard>} />
+        <Route path="/library" element={<AuthGuard><Layout><Library /></Layout></AuthGuard>} />
 
         {/* Protected routes without bottom nav (immersive) */}
         <Route path="/day/:dayNumber"      element={<AuthGuard><DayOverview /></AuthGuard>} />
         <Route path="/workout/:dayNumber"  element={<AuthGuard><WorkoutPlayer /></AuthGuard>} />
         <Route path="/history/:logId"      element={<AuthGuard><WorkoutDetail /></AuthGuard>} />
       </Routes>
+      </ExerciseLibraryProvider>
     </BrowserRouter>
   )
 }
