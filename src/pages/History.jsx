@@ -4,6 +4,7 @@ import useWorkoutLogs from '../hooks/useWorkoutLogs'
 import useStreak from '../hooks/useStreak'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { Icon } from '../components/Icons'
+import MobilityCheckCard from '../components/MobilityCheckCard'
 import {
   buildHeatmapWeeks, groupLogsByWeek, getTopMuscles, getUniqueEquipment,
   formatDuration, formatDate, formatDateTime,
@@ -397,6 +398,13 @@ export default function History() {
         </div>
       )}
 
+      {/* Independent of workout history — stays reachable even with no logs yet. */}
+      {!loading && logs.length === 0 && (
+        <div style={{ padding: isWide ? '24px 28px 0' : '16px 16px 0', maxWidth: isWide ? 380 : '100%' }}>
+          <MobilityCheckCard />
+        </div>
+      )}
+
       {loading ? (
         <LoadingState />
       ) : logs.length === 0 ? (
@@ -428,6 +436,8 @@ export default function History() {
                 <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim }}>Done</span>
               </div>
             </div>
+
+            <MobilityCheckCard />
           </div>
 
           {/* Right: weekly cards */}
@@ -462,6 +472,8 @@ export default function History() {
           </div>
 
           <StatBar totalWorkouts={totalWorkouts} currentStreak={currentStreak} longestStreak={longestStreak} thisMonthCount={thisMonthCount} />
+
+          <MobilityCheckCard />
 
           <div>
             <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>

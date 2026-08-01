@@ -94,7 +94,9 @@ export default function useWorkoutLogs() {
   useEffect(() => {
     async function init() {
       const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return
+      // No session: settle rather than leaving `loading` true forever, which
+      // pins every consumer on a spinner it can never leave.
+      if (!user) { setLoading(false); return }
 
       if (!didMigrate.current) {
         didMigrate.current = true

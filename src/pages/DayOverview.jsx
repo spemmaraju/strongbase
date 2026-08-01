@@ -271,6 +271,23 @@ export default function DayOverview() {
           ))}
         </div>
 
+        {/* Stretches get skipped because of where they sit, not because they're
+            hard. Threading them between sets costs no extra time. */}
+        {!session.isInterleaved && (
+          <button
+            onClick={session.interleaveMobility}
+            style={{
+              display: 'flex', alignItems: 'center', gap: 7, width: '100%',
+              minHeight: 40, marginBottom: 10, borderRadius: 12, cursor: 'pointer',
+              justifyContent: 'center',
+              backgroundColor: 'rgba(0,0,0,0.28)', color: 'rgba(255,255,255,0.85)',
+              border: '1px solid rgba(255,255,255,0.18)',
+              fontFamily: FONT, fontWeight: 700, fontSize: 13,
+              backdropFilter: 'blur(4px)',
+            }}
+          >⤵ Mix in the mobility</button>
+        )}
+
         {session.isCustomised && (
           <button
             onClick={session.resetToSuggested}

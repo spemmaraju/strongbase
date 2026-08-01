@@ -124,6 +124,61 @@ export default function useSessionDraft(day, exMap, options) {
     update({ order: suggested, done: [] })
   }, [update, suggested])
 
+  /**
+   * Thread the stretches through the strength work instead of leaving them at
+   * the end.
+   *
+   * Cool-downs get skipped because of where they sit, not because they're hard
+   * — by the time you reach them you're finished and mentally done. Between
+   * sets you're standing around anyway, so the same work costs no extra time
+   * and stops being a thing you can skip.
+   *
+   * Warm-ups deliberately stay at the front: doing them first is their whole
+   * job. Only `flexibility` items move, which includes the back-care moves that
+   * otherwise sit last.
+   */
+  const interleaveMobility = useCallback(() => update(d => {
+    const cat = id => exMap[id]?.category
+
+    const warm   = d.order.filter(id => cat(id) === 'warm-up')
+    const mobile = d.order.filter(id => cat(id) === 'flexibility')
+    const main   = d.order.filter(id => {
+      const c = cat(id)
+      return c && c !== 'warm-up' && c !== 'flexibility'
+    })
+    // Ids whose exercise has gone missing from the library — keep them rather
+    // than silently dropping the row.
+    const unknown = d.order.filter(id => !cat(id))
+
+    if (!mobile.length || !main.length) return d
+
+    // Spread the stretches evenly through the main work rather than clumping
+    // them, and never lead with one — the first thing after the warm-up should
+    // be the actual training.
+    const gap = main.length / mobile.length
+    const woven = []
+    let placed = 0
+    main.forEach((id, i) => {
+      woven.push(id)
+      while (placed < mobile.length && (i + 1) >= (placed + 1) * gap) {
+        woven.push(mobile[placed])
+        placed += 1
+      }
+    })
+    while (placed < mobile.length) woven.push(mobile[placed++])
+
+    return { ...d, order: [...warm, ...woven, ...unknown] }
+  }), [update, exMap])
+
+  /** True when any stretch currently sits between two non-stretch items. */
+  const isInterleaved = useMemo(() => {
+    const cats = draft.order.map(id => exMap[id]?.category)
+    const lastMain = cats.lastIndexOf('strength') >= 0 || cats.lastIndexOf('stability') >= 0
+      ? Math.max(cats.lastIndexOf('strength'), cats.lastIndexOf('stability'))
+      : -1
+    return lastMain > -1 && cats.slice(0, lastMain).includes('flexibility')
+  }, [draft.order, exMap])
+
   // ── Derived ──────────────────────────────────────────────────────────────
   // filter(Boolean) matters: an id can go stale if an exercise is renamed or
   // removed from exercises.json between sessions.
@@ -147,7 +202,7 @@ export default function useSessionDraft(day, exMap, options) {
 
   return {
     exercises, order: draft.order, doneSet, doneCount, totalSets,
-    suggested, isCustomised,
-    toggleDone, move, swap, remove, add, resetToSuggested,
+    suggested, isCustomised, isInterleaved,
+    toggleDone, move, swap, remove, add, resetToSuggested, interleaveMobility,
   }
 }
