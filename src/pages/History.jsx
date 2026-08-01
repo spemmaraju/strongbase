@@ -5,6 +5,7 @@ import useStreak from '../hooks/useStreak'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { Icon } from '../components/Icons'
 import MobilityCheckCard from '../components/MobilityCheckCard'
+import CoverageCard from '../components/CoverageCard'
 import {
   buildHeatmapWeeks, groupLogsByWeek, getTopMuscles, getUniqueEquipment,
   formatDuration, formatDate, formatDateTime,
@@ -437,6 +438,7 @@ export default function History() {
               </div>
             </div>
 
+            <CoverageCard logs={logs} />
             <MobilityCheckCard />
           </div>
 
@@ -472,6 +474,8 @@ export default function History() {
           </div>
 
           <StatBar totalWorkouts={totalWorkouts} currentStreak={currentStreak} longestStreak={longestStreak} thisMonthCount={thisMonthCount} />
+
+          <CoverageCard logs={logs} />
 
           <MobilityCheckCard />
 

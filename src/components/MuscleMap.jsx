@@ -14,6 +14,17 @@ const STROKE = '#0a0e1a'   // separation between blocks — matches page bg
 const PRIMARY   = '#ec4899'
 const SECONDARY = 'rgba(236,72,153,0.30)'
 
+// Optional graded mode, used by the coverage mirror: level 0 = untouched,
+// 1–4 = how much it has actually been trained. Level 1 is deliberately visible
+// — "barely" and "never" must not look the same.
+const LEVEL_FILLS = [
+  BASE,
+  'rgba(236,72,153,0.18)',
+  'rgba(236,72,153,0.38)',
+  'rgba(236,72,153,0.64)',
+  PRIMARY,
+]
+
 // ── Path data ──────────────────────────────────────────────────────────────
 // viewBox 0 0 100 220 per figure. Regions keyed by canonical muscle key;
 // value is an array of paths (left/right sides).
@@ -126,20 +137,22 @@ const BASE_SHAPES = [
   { type: 'path', d: 'M65,206 Q66.5,213 62,214.5 L56,214.5 Q54.5,208 56.5,205.5 Z' },
 ]
 
-function Figure({ paths, primary, secondary, label }) {
+function Figure({ paths, primary, secondary, levels, maxWidth = 132, label }) {
   const prim = new Set(primary)
   const sec  = new Set(secondary)
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
-      <svg viewBox="0 0 100 220" style={{ width: '100%', maxWidth: 132, height: 'auto', display: 'block' }}>
+      <svg viewBox="0 0 100 220" style={{ width: '100%', maxWidth, height: 'auto', display: 'block' }}>
         {BASE_SHAPES.map((s, i) =>
           s.type === 'ellipse'
             ? <ellipse key={i} cx={s.cx} cy={s.cy} rx={s.rx} ry={s.ry} fill={BASE} stroke={STROKE} strokeWidth="0.8" />
             : <path    key={i} d={s.d} fill={BASE} stroke={STROKE} strokeWidth="0.8" />
         )}
         {Object.entries(paths).map(([key, ds]) => {
-          const fill = prim.has(key) ? PRIMARY : sec.has(key) ? SECONDARY : BASE
+          const fill = levels
+            ? LEVEL_FILLS[Math.max(0, Math.min(4, levels[key] ?? 0))]
+            : prim.has(key) ? PRIMARY : sec.has(key) ? SECONDARY : BASE
           return ds.map((d, i) => (
             <path key={`${key}-${i}`} d={d} fill={fill} stroke={STROKE} strokeWidth="0.8" strokeLinejoin="round" />
           ))
@@ -153,13 +166,20 @@ function Figure({ paths, primary, secondary, label }) {
   )
 }
 
-export default function MuscleMap({ primary = [], secondary = [], style }) {
+/**
+ * Two modes. Pass `primary`/`secondary` (region keys) for the per-exercise view,
+ * or `levels` ({ region: 0..4 }) for the graded coverage view. `levels` wins
+ * when present; the per-exercise call sites are untouched.
+ */
+export default function MuscleMap({ primary = [], secondary = [], levels, maxWidth, style }) {
   return (
     <div style={{ display: 'flex', gap: 10, justifyContent: 'center', ...style }}>
-      <Figure paths={FRONT} primary={primary} secondary={secondary} label="Front" />
-      <Figure paths={BACK}  primary={primary} secondary={secondary} label="Back" />
+      <Figure paths={FRONT} primary={primary} secondary={secondary} levels={levels} maxWidth={maxWidth} label="Front" />
+      <Figure paths={BACK}  primary={primary} secondary={secondary} levels={levels} maxWidth={maxWidth} label="Back" />
     </div>
   )
 }
+
+export { LEVEL_FILLS }
 
 export { REGIONS }
