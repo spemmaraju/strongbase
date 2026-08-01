@@ -171,7 +171,7 @@ export default function ExerciseModal({ exercise, onClose }) {
   if (!exercise) return null
 
   const catColor = CAT_COLORS[exercise.category] || K.purple
-  const catLabel = exercise.category.replace('-', ' ')
+  const catLabel = (exercise.category || 'strength').replace('-', ' ')
   const setsRepsLabel = exercise.durationSeconds
     ? `${exercise.sets} × ${exercise.durationSeconds}s hold`
     : `${exercise.sets} × ${exercise.reps} reps`
@@ -279,7 +279,7 @@ export default function ExerciseModal({ exercise, onClose }) {
         color: K.dim, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 8,
       }}>Equipment</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-        {exercise.equipment.map(eq => (
+        {(exercise.equipment || []).map(eq => (
           <span key={eq} style={{
             backgroundColor: 'rgba(45,212,191,0.08)', borderRadius: 99,
             padding: '4px 10px', fontSize: 12, color: K.teal,
@@ -306,7 +306,7 @@ export default function ExerciseModal({ exercise, onClose }) {
         color: K.dim, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 16,
       }}>How to do it</p>
       <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 28px' }}>
-        {exercise.instructions.map((step, i) => (
+        {(exercise.instructions || []).map((step, i) => (
           <li key={i} style={{ display: 'flex', gap: 14, marginBottom: 14 }}>
             <span style={{
               flexShrink: 0, width: 26, height: 26, borderRadius: '50%',
@@ -325,7 +325,7 @@ export default function ExerciseModal({ exercise, onClose }) {
         color: K.dim, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 12,
       }}>Coaching cues</p>
       <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px' }}>
-        {exercise.cues.map((cue, i) => (
+        {(exercise.cues || []).map((cue, i) => (
           <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10 }}>
             <Icon name="check" size={15} strokeWidth={2.5} style={{ color: K.violet, flexShrink: 0, marginTop: 3 }} />
             <p style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6, margin: 0 }}>{cue}</p>
