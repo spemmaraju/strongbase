@@ -592,7 +592,7 @@ function CompletionOverlay({ summary, saveStatus, onDone }) {
 
   return (
     <div style={{
-      position: 'fixed', inset: 0, zIndex: 80,
+      position: 'fixed', inset: 0, zIndex: 90,
       backgroundColor: 'rgba(3,6,14,0.9)', backdropFilter: 'blur(8px)',
       display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20,
     }}>

@@ -72,7 +72,7 @@ export default function SafetyCard({ onClose }) {
     <div
       onClick={e => { if (e.target === e.currentTarget) onClose() }}
       style={{
-        position: 'fixed', inset: 0, zIndex: 60,
+        position: 'fixed', inset: 0, zIndex: 80,
         backgroundColor: 'rgba(3,6,14,0.82)', backdropFilter: 'blur(6px)',
         display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20,
       }}

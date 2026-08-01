@@ -387,7 +387,7 @@ export default function ExerciseModal({ exercise, onClose }) {
     <div
       onClick={e => { if (e.target === e.currentTarget) onClose() }}
       style={{
-        position: 'fixed', inset: 0, zIndex: 50,
+        position: 'fixed', inset: 0, zIndex: 60,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         padding: isWide ? 20 : 0,
         backgroundColor: 'rgba(0,0,0,0.72)',
