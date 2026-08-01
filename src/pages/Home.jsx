@@ -42,6 +42,7 @@ const KCAT = {
   strength:    K.pink,
   stability:   K.purple,
   flexibility: K.teal,
+  power:       '#fb923c',
   cardio:      '#3b82f6',
 }
 

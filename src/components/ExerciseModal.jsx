@@ -33,6 +33,7 @@ const CAT_COLORS = {
   strength:    K.pink,
   stability:   K.purple,
   flexibility: K.teal,
+  power:       '#fb923c',
   cardio:      '#3b82f6',
 }
 
@@ -298,7 +299,7 @@ export default function ExerciseModal({ exercise, onClose }) {
       padding: isWide ? '28px 28px 28px 24px' : '20px 20px 40px',
     }}>
       {/* FIRST-TIME EQUIPMENT PRIMER */}
-      <EquipmentPrimer equipment={exercise.equipment} exerciseId={exercise.id} />
+      <EquipmentPrimer equipment={exercise.equipment} exerciseId={exercise.id} primerKey={exercise.primer} />
 
       {/* HOW TO DO IT */}
       <p style={{

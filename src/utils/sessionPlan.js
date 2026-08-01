@@ -17,16 +17,28 @@ export const SESSION_PRESETS = {
   full:     null, // as programmed
 }
 
+// How many power exercises survive a shortened session. Power is trimmed by
+// DROPPING exercises, never by capping sets — the whole quality lives in short
+// sets with long rest, so a capped power set trains something else entirely
+// while still looking fine on screen.
+const POWER_KEEP = { quick: 1, standard: 2 }
+
 export function applySessionLength(exercises, sessionLength) {
   const preset = SESSION_PRESETS[sessionLength]
   if (!preset) return exercises
 
-  const isWarm = e => e.category === 'warm-up'
-  const isCool = e => e.category === 'flexibility'
+  const isWarm  = e => e.category === 'warm-up'
+  const isCool  = e => e.category === 'flexibility'
+  const isPower = e => e.category === 'power'
 
   const warm = exercises.filter(isWarm).slice(0, preset.warmups)
+
+  // Power keeps its programmed sets and stays directly after the warm-up —
+  // it's the one quality that collapses under fatigue.
+  const power = exercises.filter(isPower).slice(0, POWER_KEEP[sessionLength] ?? 2)
+
   const main = exercises
-    .filter(e => !isWarm(e) && !isCool(e))
+    .filter(e => !isWarm(e) && !isCool(e) && !isPower(e))
     .slice(0, preset.mainCount)
     .map(e => ({ ...e, sets: Math.min(e.sets, preset.setsCap) }))
 
@@ -39,7 +51,7 @@ export function applySessionLength(exercises, sessionLength) {
     ...backCare,
   ]
 
-  return [...warm, ...main, ...cool]
+  return [...warm, ...power, ...main, ...cool]
 }
 
 // Rough session duration: work time (or ~40s per rep-based set) + rest between

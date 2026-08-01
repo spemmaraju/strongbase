@@ -23,6 +23,20 @@ const K = {
 
 const TIERS = [
   {
+    // Power-only, and unlike every other tier here it isn't about pain at all.
+    // In strength work slowing down is the point; in power work it means the
+    // training stimulus already stopped and only the risk is left.
+    tone:   { fg: '#fb923c', bg: 'rgba(251,146,60,0.07)', bd: 'rgba(251,146,60,0.25)' },
+    label:  'Power work only — the set is over',
+    items: [
+      'Any rep visibly slower or lower than the first',
+      'Any landing louder than the one before it',
+      'Any rep you had to grind through or re-brace mid-movement',
+      'Feeling out of breath — power work should never be cardio',
+    ],
+    footer: 'None of these are pain. They mean the fast quality has gone, and continuing only adds risk. Finish sharp, not tired.',
+  },
+  {
     tone:   { fg: '#fbbf24', bg: 'rgba(245,158,11,0.07)', bd: 'rgba(245,158,11,0.25)' },
     label:  'Stop this set and change something',
     items: [
@@ -56,6 +70,13 @@ const TIERS = [
     footer: 'Given your surgical history these need same-day emergency assessment. Nerve compression treated quickly usually recovers; left alone it can cause permanent damage.',
   },
 ]
+
+// Impact work is the one place where feeling fine during the session tells you
+// very little — this deserves its own line rather than a bullet in a list.
+const DELAYED_NOTE =
+  'After hops, jumps or landings, the useful signal is the next morning, not the session. ' +
+  'Irritation from impact typically shows up 12–24 hours later. Any tingling or heaviness ' +
+  'in a calf or foot the morning after is a limit you have found — not something to warm up out of.'
 
 export default function SafetyCard({ onClose }) {
   useEffect(() => {
@@ -119,6 +140,20 @@ export default function SafetyCard({ onClose }) {
             <p style={{ fontSize: 13, color: K.muted, lineHeight: 1.55, margin: 0 }}>{t.footer}</p>
           </div>
         ))}
+
+        {/* Delayed onset after impact */}
+        <div style={{
+          backgroundColor: 'rgba(251,146,60,0.06)', border: '1px solid rgba(251,146,60,0.2)',
+          borderRadius: 14, padding: 16, marginBottom: 12,
+        }}>
+          <p style={{
+            fontFamily: MONO, fontSize: 9, fontWeight: 700, color: '#fb923c',
+            letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 8px',
+          }}>The 24-hour rule</p>
+          <p style={{ fontSize: 13.5, color: 'rgba(254,215,170,0.88)', lineHeight: 1.6, margin: 0 }}>
+            {DELAYED_NOTE}
+          </p>
+        </div>
 
         {/* Centralisation — the single most useful self-check for this user */}
         <div style={{

@@ -1,0 +1,186 @@
+{
+  "kettlebell": {
+    "title": "First time with a kettlebell",
+    "intro": "A kettlebell puts the weight below your hand, which makes it uniquely good at teaching your hips to produce power and your core to resist being pulled around. Learn how it behaves first, and everything after it goes faster.",
+    "points": [
+      {
+        "heading": "The parts of the bell",
+        "body": "The handle is the metal loop on top. Its two curved sides are the horns. The round mass underneath is the bell or ball. Weights are in kilograms."
+      },
+      {
+        "heading": "It is not a dumbbell",
+        "body": "The mass hangs below your hand, not around it. That offset makes the bell pull, tip and keep travelling \u2014 so it must stay close to your body."
+      },
+      {
+        "heading": "Pick it up by hinging",
+        "body": "Push your hips back, keep your back flat, and reach down. Never stoop with a rounded back. Set it down the same way, every single time."
+      },
+      {
+        "heading": "Bailing out of a rep",
+        "body": "Never fight a bell that has gone wrong. Let go and step back \u2014 floors survive dropped bells, backs and wrists do not. Clear your space first."
+      },
+      {
+        "heading": "Picking a starting weight",
+        "body": "Start lighter than feels impressive: 12-16 kg for hinges and rows, 6-8 kg for halos. If your form changes on rep five, the bell is too heavy."
+      },
+      {
+        "heading": "Wrist and grip",
+        "body": "In racked positions the bell should rest gently on the back of your forearm, not bang the wrist bone. Keep knuckles stacked over the forearm."
+      }
+    ],
+    "ladder": [
+      "kb-deadlift",
+      "kb-good-morning",
+      "kb-hike-pass",
+      "kb-swing"
+    ],
+    "ladderNote": "The swing is a fast hinge. Each rung teaches the hinge at a higher speed, so by the time you swing, the pattern is already automatic under load.",
+    "ladderLabels": {
+      "kb-deadlift": "Deadlift",
+      "kb-good-morning": "Good morning",
+      "kb-hike-pass": "Hike pass",
+      "kb-swing": "Swing"
+    },
+    "matchEquipment": "kettlebell",
+    "eyebrow": "New equipment"
+  },
+  "power": {
+    "title": "Starting power work",
+    "intro": "Power is force produced quickly, and it's the physical quality that fades fastest with age \u2014 roughly twice as fast as raw strength. It's also what you actually use to catch yourself when you stumble. Ten to fifteen minutes a week is enough.",
+    "points": [
+      {
+        "heading": "Finish sharp, not tired",
+        "body": "The whole prescription in four words. Power work should leave you feeling quick, never wrung out. Breathless means it turned into conditioning."
+      },
+      {
+        "heading": "The set ends when speed drops",
+        "body": "In strength work, slowing down is the point. Here it means the stimulus already stopped and only the risk is left. Any rep slower than the first, any landing louder than the last \u2014 set over."
+      },
+      {
+        "heading": "Rest longer than feels necessary",
+        "body": "Two to three minutes between sets. If you aren't slightly bored waiting, you haven't rested enough and the next set won't be fast."
+      },
+      {
+        "heading": "It goes first",
+        "body": "Straight after the warm-up, before anything else. Power is the first quality to collapse under fatigue, so a power set done at the end of a session is just a slow set."
+      },
+      {
+        "heading": "One new thing, then wait 48 hours",
+        "body": "Irritation from impact usually shows up 12\u201324 hours later, not during. That delay is the single biggest difference from strength work, where feedback is immediate."
+      },
+      {
+        "heading": "Direction matters more than load",
+        "body": "Pushing, throwing and jumping upward are gentle on your spine. Landing is what isn't \u2014 a ballistic landing runs well over ten times bodyweight through the low back. That's why this ladder looks the way it does."
+      }
+    ],
+    "ladder": [
+      "fast-glute-bridge",
+      "speed-bodyweight-squat",
+      "quiet-landing-drill",
+      "pogo-hops",
+      "sled-push",
+      "low-box-jump",
+      "kb-swing"
+    ],
+    "ladderLabels": {
+      "fast-glute-bridge": "Supported",
+      "speed-bodyweight-squat": "Standing",
+      "quiet-landing-drill": "Landing",
+      "pogo-hops": "Hops",
+      "sled-push": "Sled",
+      "low-box-jump": "Jumping",
+      "kb-swing": "Swing"
+    },
+    "ladderNote": "Each rung earns the next. A rung isn't passed by doing it once \u2014 it's passed by doing it for a few weeks with nothing showing up the next morning.",
+    "rungs": [
+      {
+        "id": "supported",
+        "exercises": [
+          "fast-glute-bridge",
+          "band-fast-press",
+          "band-fast-row"
+        ],
+        "criteria": [
+          "Two weeks of it.",
+          "You can produce a genuinely fast rep on command without holding your breath or jerking the start."
+        ]
+      },
+      {
+        "id": "standing",
+        "exercises": [
+          "speed-bodyweight-squat",
+          "fast-step-up"
+        ],
+        "criteria": [
+          "Two to three weeks.",
+          "Every rep in a set of five looks the same speed.",
+          "No next-day low-back stiffness."
+        ]
+      },
+      {
+        "id": "landing",
+        "exercises": [
+          "quiet-landing-drill"
+        ],
+        "criteria": [
+          "Two to three weeks.",
+          "Landings are silent \u2014 if you can hear it, the step is too high.",
+          "You can hold the landing position for two seconds without wobbling."
+        ]
+      },
+      {
+        "id": "hops",
+        "exercises": [
+          "pogo-hops",
+          "skater-hops"
+        ],
+        "criteria": [
+          "Three to four weeks.",
+          "Sixty contacts in a session with nothing in your back or legs the next morning.",
+          "Landings still quiet at rep ten, not just rep one."
+        ]
+      },
+      {
+        "id": "gym",
+        "exercises": [
+          "sled-push",
+          "bike-sprint",
+          "battle-ropes"
+        ],
+        "criteria": [
+          "Two to three weeks.",
+          "Your torso stays braced through the whole bout \u2014 no low-back fatigue at the end."
+        ]
+      },
+      {
+        "id": "jumping",
+        "exercises": [
+          "low-box-jump",
+          "elevated-hands-off-push-up"
+        ],
+        "criteria": [
+          "Three to four weeks.",
+          "Take-off is symmetric and you land on the box softly, with no hesitation.",
+          "You never jump down. Step down, every single rep."
+        ]
+      },
+      {
+        "id": "hinge-speed",
+        "exercises": [
+          "kb-swing"
+        ],
+        "criteria": [
+          "The kettlebell ladder first: deadlift, good morning, hike pass.",
+          "You feel swings in your glutes and hamstrings \u2014 not your low back. Low-back fatigue from swings is the signal to drop back a rung."
+        ]
+      }
+    ],
+    "caveats": [
+      "There is no controlled research on power training in people who have had a discectomy. Every ranking here is worked out from how each movement loads the spine, plus general return-to-sport guidance \u2014 it's reasoning, not evidence.",
+      "Power fades about twice as fast as strength, not the three-to-five times you'll read online. And no trial has shown power training prevents falls better than strength training does. It's a worthwhile addition, not a replacement.",
+      "Most restrictive advice online is written for the first twelve weeks after surgery and doesn't apply to you ten years out. Most permissive fitness advice is written for people with no surgical history. Neither is aimed at you.",
+      "Three things genuinely need someone watching you move rather than a rule from an app: whether your L5-S1 tolerates the shear a kettlebell swing produces, whether ballistic twisting is safe for you, and drop landings from anything above about eight inches."
+    ],
+    "eyebrow": "New training quality"
+  }
+}

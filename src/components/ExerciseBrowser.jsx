@@ -25,10 +25,10 @@ const K = {
 
 const KCAT = {
   'warm-up': K.amber, strength: K.pink, stability: K.purple,
-  flexibility: K.teal, cardio: '#3b82f6',
+  flexibility: K.teal, cardio: '#3b82f6', power: '#fb923c',
 }
 
-const CATEGORIES = ['strength', 'stability', 'warm-up', 'flexibility', 'cardio']
+const CATEGORIES = ['strength', 'power', 'stability', 'warm-up', 'flexibility', 'cardio']
 
 export default function ExerciseBrowser({
   exercises, exclude = [], replacing = null,

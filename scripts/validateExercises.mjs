@@ -31,7 +31,7 @@ const ALIASES = new Set(
   [...aliasBlock.matchAll(/^\s*'([^']+)':\s*(?:\[|null)/gm)].map(m => m[1]),
 )
 
-const CATEGORIES = new Set(['strength', 'stability', 'warm-up', 'flexibility', 'cardio'])
+const CATEGORIES = new Set(['strength', 'stability', 'power', 'warm-up', 'flexibility', 'cardio'])
 const EQUIPMENT = new Set([
   'bodyweight', 'yoga-mat', 'resistance-band', 'trx',
   '10lb-dumbbells', '15lb-dumbbells',
@@ -84,6 +84,19 @@ for (const [i, ex] of exercises.entries()) {
 
   if (typeof ex.restSeconds !== 'number') errors.push(`${at}: restSeconds must be a number`)
   if (!ex.modification) warnings.push(`${at}: no modification`)
+
+  // Optional, but must be a known value when present. Set on the power
+  // exercises, where spinal load genuinely differentiates them; the older
+  // library predates it.
+  if ('spinalRisk' in ex && !['low', 'moderate', 'clinician-first'].includes(ex.spinalRisk)) {
+    errors.push(`${at}: spinalRisk "${ex.spinalRisk}" is not low | moderate | clinician-first`)
+  }
+
+  // Power sets are short with long rest — a short rest here means it isn't
+  // power work any more, whatever the category says.
+  if (ex.category === 'power' && ex.restSeconds < 90) {
+    errors.push(`${at}: power exercise with restSeconds=${ex.restSeconds} — power needs 90s+`)
+  }
 
   // youtubeId may be null — that is how new exercises ship.
   if (ex.youtubeId != null && !/^[A-Za-z0-9_-]{11}$/.test(ex.youtubeId)) {

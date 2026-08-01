@@ -122,6 +122,7 @@ export const CAT_COLORS = {
   'strength':   '#ec4899',
   'stability':  '#7C3AED',
   'flexibility':'#22C55E',
+  'power':      '#fb923c',
   'cardio':     '#3B82F6',
 }
 
@@ -130,6 +131,7 @@ export const CAT_LABELS = {
   'strength':   'Strength',
   'stability':  'Stability',
   'flexibility':'Flexibility',
+  'power':      'Power',
   'cardio':     'Cardio',
 }
 

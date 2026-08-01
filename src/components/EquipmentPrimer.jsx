@@ -1,17 +1,21 @@
-// First-time primer for an unfamiliar piece of equipment.
+// First-time primer, with an optional progression ladder.
 // ---------------------------------------------------------------------------
-// Shown inside the exercise modal the first time an exercise using that
-// equipment is opened. Dismissible, and the dismissal sticks per equipment
-// type — but it stays reachable afterwards via a small "Kettlebell basics"
-// link, because "I forgot how to set it down safely" is a real thing.
+// Shown inside the exercise modal the first time a matching exercise is opened.
+// Dismissible, and the dismissal sticks — but it stays reachable via a quiet
+// one-line link, because "I forgot how to set it down safely" is a real thing.
 //
-// Currently only kettlebells have a primer. The component is generic so TRX
-// or anything else can get one later.
+// Matched two ways: by equipment (kettlebell), or by an exercise's explicit
+// `primer` field (power). Equipment keying alone wasn't enough — a progression
+// isn't always about a piece of kit.
+//
+// Rungs can carry `criteria` — what has to be true before moving up — and the
+// user's current rung persists so the ladder shows where they actually are
+// rather than just what exists.
 // ---------------------------------------------------------------------------
 
 import { useState } from 'react'
 import { Icon } from './Icons'
-import primers from '../data/equipmentPrimers.json'
+import primers from '../data/primers.json'
 
 const FONT = "'Plus Jakarta Sans', sans-serif"
 const MONO = "'JetBrains Mono', 'Courier New', monospace"
@@ -24,14 +28,18 @@ const K = {
 
 const seenKey = eq => `strongbase_primer_seen_${eq}`
 
-/** Returns the primer for the first piece of equipment that has one, or null. */
-export function findPrimer(equipment = []) {
-  const eq = equipment.find(e => primers[e])
+/**
+ * Find a primer for an exercise — an explicit `primer` field wins, otherwise
+ * the first piece of equipment that has one.
+ */
+export function findPrimer(equipment = [], primerKey = null) {
+  if (primerKey && primers[primerKey]) return { eq: primerKey, ...primers[primerKey] }
+  const eq = equipment.find(e => primers[e]?.matchEquipment === e)
   return eq ? { eq, ...primers[eq] } : null
 }
 
-export default function EquipmentPrimer({ equipment, exerciseId }) {
-  const primer = findPrimer(equipment)
+export default function EquipmentPrimer({ equipment, exerciseId, primerKey }) {
+  const primer = findPrimer(equipment, primerKey)
   const [open, setOpen] = useState(() => {
     if (!primer) return false
     try { return localStorage.getItem(seenKey(primer.eq)) !== '1' } catch { return true }
@@ -62,6 +70,9 @@ export default function EquipmentPrimer({ equipment, exerciseId }) {
   }
 
   const ladderIdx = primer.ladder?.indexOf(exerciseId) ?? -1
+  // Rungs are optional; a primer can be a flat ladder (kettlebell) or a graded
+  // one with move-up criteria (power).
+  const rung = primer.rungs?.find(r => r.exercises?.includes(exerciseId)) ?? null
 
   return (
     <div style={{
@@ -74,7 +85,7 @@ export default function EquipmentPrimer({ equipment, exerciseId }) {
           <p style={{
             fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.pink,
             letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 5px',
-          }}>New equipment</p>
+          }}>{primer.eyebrow || 'New equipment'}</p>
           <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 16, color: K.text, margin: 0 }}>
             {primer.title}
           </p>
@@ -138,7 +149,55 @@ export default function EquipmentPrimer({ equipment, exerciseId }) {
               {primer.ladderNote}
             </p>
           )}
+
+          {/* Move-up criteria for the rung this exercise sits on. A rung isn't
+              passed by doing it once — it's passed by doing it for the time
+              floor with no symptoms. */}
+          {rung && (
+            <div style={{ marginTop: 12, borderTop: `1px solid ${K.border}`, paddingTop: 11 }}>
+              <p style={{
+                fontFamily: MONO, fontSize: 8.5, fontWeight: 700, color: K.dim,
+                letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 7px',
+              }}>Before moving up</p>
+              {rung.criteria.map(c => (
+                <div key={c} style={{ display: 'flex', gap: 8, marginBottom: 5 }}>
+                  <span style={{ color: K.dim, flexShrink: 0, lineHeight: 1.5 }}>·</span>
+                  <p style={{ fontSize: 12.5, color: '#cbd5e1', lineHeight: 1.5, margin: 0, maxWidth: '62ch' }}>{c}</p>
+                </div>
+              ))}
+              {rung.gated && (
+                <p style={{
+                  fontSize: 12.5, lineHeight: 1.5, margin: '9px 0 0', maxWidth: '62ch',
+                  color: '#fca5a5',
+                }}>
+                  This rung isn't unlocked by reps. It needs someone watching you move — a
+                  physio's opinion beats any rule an app can give you here.
+                </p>
+              )}
+            </div>
+          )}
         </div>
+      )}
+
+      {/* Caveats sit in the open rather than in small print. Where the evidence
+          is thinner than it's usually claimed to be, saying so is the point. */}
+      {primer.caveats?.length > 0 && (
+        <details style={{ marginTop: 12 }}>
+          <summary style={{
+            cursor: 'pointer', listStyle: 'none',
+            fontFamily: FONT, fontSize: 12.5, fontWeight: 700, color: K.muted,
+          }}>
+            What this app isn't certain about →
+          </summary>
+          <div style={{ marginTop: 10 }}>
+            {primer.caveats.map(c => (
+              <p key={c} style={{
+                fontSize: 12.5, color: K.muted, lineHeight: 1.55,
+                margin: '0 0 9px', maxWidth: '64ch',
+              }}>{c}</p>
+            ))}
+          </div>
+        </details>
       )}
     </div>
   )
