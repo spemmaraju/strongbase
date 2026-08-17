@@ -42,7 +42,8 @@
       "notHere": "A pinch at the very front point of the shoulder \u2014 that's the joint catching, not warming up.",
       "backNote": null,
       "stopIf": "Any sharp catch or clicking with pain, or tingling down either arm."
-    }
+    },
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "hip-circles",
@@ -87,7 +88,8 @@
       "notHere": "A pinch at the front of the hip crease at the top of the circle \u2014 that's a range problem, not warming up.",
       "backNote": "Keep the motion in your hips, not your low back. If your low back is doing the swaying, shrink the circle.",
       "stopIf": "Sharp pinching in the front of the hip, or any pain shooting into the leg."
-    }
+    },
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "leg-swings",
@@ -134,7 +136,8 @@
       "notHere": "A sharp tug in the groin at the top of the swing \u2014 that means you're forcing height, not letting momentum swing you.",
       "backNote": "Keep your torso upright through the swing. Leaning to compensate loads the low back for no reason.",
       "stopIf": "Any pinch that lingers after the swing stops, or tingling down the leg."
-    }
+    },
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "cat-cow",
@@ -181,7 +184,8 @@
       "notHere": "A pinch concentrated in one spot of the low back \u2014 the motion should spread evenly, not hinge at one point.",
       "backNote": "This is gentle, controlled spinal motion, not a loaded stretch \u2014 both directions should feel easy and free.",
       "stopIf": "Any sharp catch in the low back, or tingling or numbness anywhere in the legs."
-    }
+    },
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "thoracic-rotation",
@@ -228,7 +232,8 @@
       "notHere": "Rotation happening in your low back or hips instead \u2014 your hips should stay square and still throughout.",
       "backNote": "Keep the rotation above your waist. If your low back is twisting to make up range, shrink the movement.",
       "stopIf": "Any sharp low-back pain, or tingling down either arm or leg."
-    }
+    },
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "push-up",
@@ -310,7 +315,8 @@
         "wrong": "Partial range of motion",
         "right": "Lower until your chest is 1-2 inches from the floor, then press to full extension."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "glute-bridge",
@@ -376,7 +382,8 @@
       "nextDay": "A deep ache in the glutes for a day or two is exactly right.",
       "backNote": "One of the safest hip exercises for you, but only if the lift comes from the hips rather than an arched back. Height is not the goal \u2014 the squeeze is.",
       "stopIf": "You feel anything travel down your leg, or your low back pinches at the top."
-    }
+    },
+    "breathing": "Exhale as your hips lift, inhale as you lower. Ribs stay down \u2014 if your low back arches at the top, you went too high, not too strong."
   },
   {
     "id": "bodyweight-squat",
@@ -457,7 +464,8 @@
         "wrong": "Rising onto your toes",
         "right": "Keep weight through your full foot, heel included, as you drive back up."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "forward-lunge",
@@ -538,7 +546,8 @@
         "wrong": "Back knee crashing to floor",
         "right": "Lower under control and stop just short of the floor instead of dropping."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "wall-sit",
@@ -617,7 +626,8 @@
         "wrong": "Holding your breath",
         "right": "Breathe steadily throughout the hold instead of bracing and holding your breath."
       }
-    ]
+    ],
+    "breathing": "Legs burn, breath stays calm: in through the nose for 3, out for 4. Don't let the burn talk you into breath-holding."
   },
   {
     "id": "step-back-lunge",
@@ -698,7 +708,8 @@
         "wrong": "Rushing the tempo",
         "right": "Take 2 seconds lowering and 1 second driving back up instead of rushing."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "bird-dog",
@@ -780,7 +791,8 @@
         "wrong": "Sagging through the belly",
         "right": "Brace your core before each extension, like you're about to be poked in the stomach."
       }
-    ]
+    ],
+    "breathing": "Exhale as you reach arm and leg away; inhale as you return. If your low back arches, you've lost the brace \u2014 smaller reach, steadier breath."
   },
   {
     "id": "dead-bug",
@@ -860,7 +872,8 @@
         "wrong": "Both limbs collapsing together",
         "right": "Keep the opposite arm and leg steady while only the moving side lowers."
       }
-    ]
+    ],
+    "breathing": "The whole point: exhale slowly the entire time your arm and leg lower, ribs melting toward the floor. Inhale only when you're back at the start."
   },
   {
     "id": "bicep-curl",
@@ -937,7 +950,8 @@
         "wrong": "Dropping the weight on the way down",
         "right": "Lower over 2\u20133 seconds with control \u2014 the descent builds as much strength as the lift."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "shoulder-press",
@@ -1018,7 +1032,8 @@
         "wrong": "Shrugging at the top",
         "right": "Keep your shoulders pulled down away from your ears through the whole press."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "lateral-raise",
@@ -1095,7 +1110,8 @@
         "wrong": "Swinging the torso for momentum",
         "right": "Stand tall and still; go lighter if you need momentum to move the weight."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "bent-over-row",
@@ -1177,7 +1193,8 @@
         "wrong": "Yanking the weight up",
         "right": "Drive the elbows back with control instead of jerking the torso to help \u2014 that shifts load into the spine."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "goblet-squat",
@@ -1259,7 +1276,8 @@
         "wrong": "Bouncing at the bottom",
         "right": "Pause briefly at the bottom before driving back up, instead of springing out of the hole."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "tricep-kickback",
@@ -1336,7 +1354,8 @@
         "wrong": "Rushing the squeeze at the top",
         "right": "Pause and squeeze the triceps for one full second at full extension."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "chest-press-mat",
@@ -1416,7 +1435,8 @@
         "wrong": "Losing the shoulder blade squeeze",
         "right": "Keep your shoulder blades pressed into the mat for the entire set, not just at setup."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "single-leg-rdl",
@@ -1497,7 +1517,8 @@
         "wrong": "Torso and raised leg moving separately",
         "right": "Move them together like a seesaw \u2014 as the torso tips forward, the back leg rises in line with it."
       }
-    ]
+    ],
+    "breathing": "Inhale and brace before you hinge, keep it braced as you lower, exhale as you stand tall. One breath per rep, reset every time."
   },
   {
     "id": "reverse-fly",
@@ -1576,7 +1597,8 @@
         "wrong": "Raising arms above shoulder height",
         "right": "Stop the raise once your arms are parallel to the floor \u2014 higher recruits the traps instead."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "plank-dumbbell-pull-through",
@@ -1657,7 +1679,8 @@
         "wrong": "Sagging hips toward the floor",
         "right": "Brace your core and squeeze your glutes before each reach, and hold that tension the whole set."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "banded-glute-bridge",
@@ -1737,7 +1760,8 @@
         "wrong": "Feet too far from the hips",
         "right": "Walk the heels in until your fingertips can just graze them, shins vertical at the top."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "clamshell",
@@ -1818,7 +1842,8 @@
         "wrong": "Rushing through reps",
         "right": "Slow down and pause a full second at the top to let the outer glute do the work."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "banded-lateral-walk",
@@ -1897,7 +1922,8 @@
         "wrong": "Toes turning outward as you tire",
         "right": "Keep toes pointing forward throughout to keep the work in the outer hip, not the front of the hip."
       }
-    ]
+    ],
+    "breathing": "Move on the exhale, return on the inhale, brace light and constant throughout. If the breath stops, shrink the movement."
   },
   {
     "id": "banded-pull-apart",
@@ -1976,7 +2002,8 @@
         "wrong": "Rushing the reps",
         "right": "Slow down and hold the squeeze for a full second at the end of each pull."
       }
-    ]
+    ],
+    "breathing": "Exhale on the effort, inhale on the return. Keep a light brace and never hold your breath."
   },
   {
     "id": "dumbbell-rear-delt-fly",
@@ -2057,7 +2084,8 @@
         "wrong": "Using a weight too heavy to control on the way down",
         "right": "Go lighter \u2014 the slow lowering phase is where this exercise works the rear delts most."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "side-plank",
@@ -2139,7 +2167,8 @@
         "wrong": "Holding your breath",
         "right": "Breathe steadily throughout the hold instead of bracing by holding air in."
       }
-    ]
+    ],
+    "breathing": "Keep breathing the whole hold \u2014 steady nose-in, long hiss out. Holding your breath is the most common way this one goes wrong."
   },
   {
     "id": "forearm-plank",
@@ -2221,7 +2250,8 @@
         "wrong": "Chasing a longer hold time",
         "right": "Hold only as long as you can keep the tucked, level shape \u2014 a short good hold beats a long sagging one."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30% effort, then prove it by breathing: slow inhale through the nose, long hiss out through pursed lips. If you can't breathe, you're gripping too hard."
   },
   {
     "id": "single-leg-glute-bridge",
@@ -2303,7 +2333,8 @@
         "wrong": "Rushing the reps for balance",
         "right": "Slow down \u2014 a controlled tempo is what keeps the pelvis from rotating or dropping."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "glute-bridge-hold",
@@ -2383,7 +2414,8 @@
         "wrong": "Holding the breath",
         "right": "Breathe steadily throughout \u2014 inhale through the nose, exhale through the mouth, do not brace by holding air."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "modified-pigeon",
@@ -2430,7 +2462,8 @@
       "notHere": "Tingling, electric, or burning sensations travelling down the back of the leg \u2014 that's nerve tension, not a stretch.",
       "backNote": "Your low back stays flat on the floor throughout. If it's arching to compensate, pull the leg in less.",
       "stopIf": "Any tingling, numbness, or shooting sensation down the leg. Should feel like a firm pull, never a sharp one."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "supine-figure-4",
@@ -2477,7 +2510,8 @@
       "notHere": "Tingling or electric sensations running down the back of the leg \u2014 this stretch sits close to the sciatic nerve, so back off if you feel it.",
       "backNote": "Keep your back flat on the mat and hips square. If your hips rock to one side, pull the leg in less.",
       "stopIf": "Any tingling, numbness, or shooting pain down the leg. This is not a 'push through it' sensation \u2014 ease off immediately."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "childs-pose",
@@ -2524,7 +2558,8 @@
       "notHere": "Sharp pinching pain in the low back \u2014 this pose should feel restful, not straining.",
       "backNote": "This is a passive, supported position \u2014 let gravity do the work rather than actively pushing into it.",
       "stopIf": "Any sharp back pain, or tingling or numbness in the legs."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "doorway-chest-stretch",
@@ -2569,7 +2604,8 @@
       "notHere": "A pinch deep inside the shoulder joint \u2014 that means you're leaning too far or too fast, not stretching the muscle.",
       "backNote": "Stand tall as you lean. Don't let your low back arch to reach further into the doorway.",
       "stopIf": "Sharp shoulder pain, or tingling or numbness down the arm. Should feel like a firm pull, never a sharp one."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "seated-hamstring-stretch",
@@ -2615,7 +2651,8 @@
       "notHere": "Tingling, electric, or burning sensation running down the back of the leg \u2014 that's the sciatic nerve, not a hamstring stretch, and it means back off immediately.",
       "backNote": "Hinge from your hips with a long spine rather than rounding your low back to reach further.",
       "stopIf": "Any tingling, numbness, or shooting sensation down the leg. Should feel like a firm pull, never a sharp one."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "hip-flexor-stretch",
@@ -2661,7 +2698,8 @@
       "notHere": "Pain in the front of the kneeling knee \u2014 that's the joint being loaded, not the hip flexor stretching.",
       "backNote": "Tuck your pelvis under and keep your torso upright. Don't arch your low back to lean forward.",
       "stopIf": "Sharp knee or back pain, or any tingling down the leg. Should feel like a firm pull, never a sharp one."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "standing-quad-stretch",
@@ -2705,7 +2743,8 @@
       "notHere": "Sharp pain at the front of the knee \u2014 that means you're pulling the heel too hard, not lengthening the thigh.",
       "backNote": "Stand tall. Don't arch your low back to compensate for a tight hip.",
       "stopIf": "Sharp knee pain, or any tingling down the leg. Should feel like a firm pull, never a sharp one."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "dumbbell-single-arm-row",
@@ -2772,7 +2811,8 @@
       "nextDay": "Soreness under the armpit and along the side of the back for 1\u20132 days is a good sign.",
       "backNote": "Keep your spine still \u2014 the arm moves, the back does not. If your torso twists to finish a rep, that rep was too heavy.",
       "stopIf": "You get pain travelling down your leg, or any electric or burning sensation in the back."
-    }
+    },
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "prone-y-t-w",
@@ -2854,7 +2894,8 @@
         "wrong": "Lifting too high",
         "right": "A small 2\u20133 inch range is enough. Higher just recruits your low back instead of your upper back."
       }
-    ]
+    ],
+    "breathing": "Exhale on the effort, inhale on the return. Keep a light brace and never hold your breath."
   },
   {
     "id": "supine-twist",
@@ -2902,7 +2943,8 @@
       "notHere": "Sharp pinching pain in the low back \u2014 that means the twist has gone deeper than your spine is ready for today.",
       "backNote": "Keep both shoulders flat on the mat. If one lifts, you've twisted further than your back is ready for \u2014 let it settle less.",
       "stopIf": "Any sharp low-back pain, or tingling or numbness down either leg."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "hip-90-90",
@@ -2949,7 +2991,8 @@
       "notHere": "Sharp pinching pain deep in either hip joint \u2014 that's a range problem, not a muscle stretching.",
       "backNote": "Sit tall before you fold forward. Rounding your low back early pulls the stretch away from the hips.",
       "stopIf": "Sharp hip joint pain, or any tingling down either leg."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "single-leg-balance-hold",
@@ -3030,7 +3073,8 @@
         "wrong": "Letting the raised hip drop",
         "right": "Actively keep both hips level, resisting the raised-leg side sinking lower."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "bodyweight-calf-raise",
@@ -3109,7 +3153,8 @@
         "wrong": "Bending the knees",
         "right": "Keep your knees straight throughout so the calf, not the knee, does the work."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "trx-row",
@@ -3192,7 +3237,8 @@
         "wrong": "Feet too close to anchor for your level",
         "right": "Walk your feet back toward vertical until you can complete all reps with good form."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "trx-push-up",
@@ -3274,7 +3320,8 @@
         "wrong": "Fighting the strap swing with speed",
         "right": "Slow down. A controlled tempo lets your core and shoulders manage the instability."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "dumbbell-floor-press",
@@ -3339,7 +3386,8 @@
       "nextDay": "A broad ache across the chest is normal for 1\u20133 days. Sharp pinpoint pain is not.",
       "backNote": "This one is deliberately spine-friendly \u2014 the floor stops you arching. Keep your low back lightly touching the floor; do not arch to press more weight.",
       "stopIf": "Anything shoots down your arm, or your hand goes numb or tingly."
-    }
+    },
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "band-overhead-press",
@@ -3418,7 +3466,8 @@
         "wrong": "Standing too narrow for the load",
         "right": "Adjust your foot width on the band to match a resistance you can control with good form."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "band-lateral-raise",
@@ -3495,7 +3544,8 @@
         "wrong": "Swinging or using body momentum",
         "right": "Stand tall and still; shorten the band length rather than swinging to move it."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "band-bicep-curl",
@@ -3572,7 +3622,8 @@
         "wrong": "Standing off-center on the band",
         "right": "Keep your feet centered on the band so both sides feel even resistance throughout."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "band-squat",
@@ -3653,7 +3704,8 @@
         "wrong": "Snapping up at the top",
         "right": "Control the top of the rep instead of jerking to lockout against the band's pull."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "band-rdl",
@@ -3734,7 +3786,8 @@
         "wrong": "Rounding the back at the bottom",
         "right": "Stop wherever your spine stays neutral, even if that's a shorter range than the band allows."
       }
-    ]
+    ],
+    "breathing": "Inhale and brace before you hinge, keep it braced as you lower, exhale as you stand tall. One breath per rep, reset every time."
   },
   {
     "id": "dumbbell-overhead-tricep-extension",
@@ -3810,7 +3863,8 @@
         "wrong": "Arching the lower back",
         "right": "Brace your core and keep your ribs down instead of arching to lower the weight."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "db-bench-press",
@@ -3890,7 +3944,8 @@
         "wrong": "Bouncing dumbbells off the chest",
         "right": "Touch your chest lightly with control, then press again without a rebound."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "machine-chest-press",
@@ -3969,7 +4024,8 @@
         "wrong": "Arching away from the seat",
         "right": "Keep your back pressed against the pad for the entire set."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "machine-shoulder-press",
@@ -4048,7 +4104,8 @@
         "wrong": "Arching away from the pad",
         "right": "Sit tall and keep your back pressed against the seat for the entire set."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "lat-pulldown-machine",
@@ -4129,7 +4186,8 @@
         "wrong": "Not fully extending at the top",
         "right": "Let your arms fully straighten and lats stretch between every rep for full range of motion."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "single-arm-db-row",
@@ -4211,7 +4269,8 @@
         "wrong": "Rounding through the upper back",
         "right": "Keep your spine flat from head to tailbone \u2014 a rounded back reduces the pull's effectiveness."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "cable-face-pull",
@@ -4292,7 +4351,8 @@
         "wrong": "Going too heavy",
         "right": "Use a light weight \u2014 this should feel like a light squeeze and burn, not a grind."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "db-rdl",
@@ -4373,7 +4433,8 @@
         "wrong": "Locking the knees at the top",
         "right": "Keep a soft bend in the knees throughout; a hard lockout shifts strain toward the low back."
       }
-    ]
+    ],
+    "breathing": "Inhale and brace before you hinge, keep it braced as you lower, exhale as you stand tall. One breath per rep, reset every time."
   },
   {
     "id": "machine-leg-curl",
@@ -4450,7 +4511,8 @@
         "wrong": "Letting the weight stack slam down",
         "right": "Lower over 2\u20133 seconds under control instead of letting it drop."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "leg-press",
@@ -4529,7 +4591,8 @@
         "wrong": "Letting the plate drop fast",
         "right": "Lower over 2\u20133 seconds under control instead of letting the weight fall."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "kb-swing",
@@ -4614,7 +4677,8 @@
       }
     ],
     "primer": "power",
-    "spinalRisk": "moderate"
+    "spinalRisk": "moderate",
+    "breathing": "Inhale sharply through the nose as the bell swings back between your legs; snap a short, forceful exhale at the top of every swing. The breath times the hinge."
   },
   {
     "id": "kb-goblet-squat",
@@ -4695,7 +4759,8 @@
         "wrong": "Standing up hips-first",
         "right": "Drive up evenly through hips and knees together rather than shooting your hips up first."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "db-walking-lunge",
@@ -4778,7 +4843,8 @@
         "wrong": "Rushing between steps",
         "right": "Take 2 seconds to lower each step instead of rushing into the next one."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "seated-calf-raise",
@@ -4857,7 +4923,8 @@
         "wrong": "Letting knees shift",
         "right": "Keep your knee angle steady under the pad throughout the set."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "tricep-pushdown",
@@ -4934,7 +5001,8 @@
         "wrong": "Rushing the return",
         "right": "Let the weight come back up over 2 seconds instead of letting it snap back."
       }
-    ]
+    ],
+    "breathing": "Exhale on the effort, inhale on the return. Keep a light brace and never hold your breath."
   },
   {
     "id": "treadmill-walk",
@@ -4979,7 +5047,8 @@
       "notHere": "Sharp joint pain in the knees, hips, or low back with each step.",
       "backNote": null,
       "stopIf": "Sharp joint pain, dizziness, or chest pain. The goal is warm and slightly breathless, not tired."
-    }
+    },
+    "breathing": "Settle into a rhythm \u2014 in for two counts, out for two. You should be able to speak a short sentence; if not, ease off."
   },
   {
     "id": "rowing-machine-warmup",
@@ -5023,7 +5092,8 @@
       "notHere": "A rounding, straining pull in the low back at the catch position \u2014 that's a technique issue, not warm-up.",
       "backNote": "Keep your spine neutral at the catch \u2014 don't let your low back round forward to reach further. Sit tall instead.",
       "stopIf": "Sharp low-back pain, or tingling down either leg."
-    }
+    },
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "elliptical-warmup",
@@ -5068,7 +5138,8 @@
       "notHere": "Sharp pain in the knees or hips with each stride.",
       "backNote": null,
       "stopIf": "Sharp joint pain, dizziness, or chest pain. Aim for warm and slightly breathless, not tired."
-    }
+    },
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "sphinx-pose",
@@ -5116,7 +5187,8 @@
       "notHere": "Any sensation radiating down into the buttock or leg \u2014 that's a warning sign, not part of the stretch.",
       "backNote": "This is a McKenzie-style movement chosen deliberately for your back. If symptoms move toward your spine (centralise), that's good \u2014 keep going. If they move further down the leg, stop.",
       "stopIf": "Any pain or tingling radiating into the leg. Come down immediately and skip the exercise for today."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "cobra-pose",
@@ -5165,7 +5237,8 @@
       "notHere": "Any sensation radiating into the buttock or down the leg \u2014 that's a warning sign, not deeper progress.",
       "backNote": "Hips stay glued to the mat and legs stay relaxed. Watch for centralisation: symptoms moving toward your spine as you press up is good and means keep going; symptoms moving further down the leg is bad and means stop.",
       "stopIf": "Any pain or tingling radiating into the leg. Stop immediately and try Sphinx Pose instead today."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "pelvic-tilts",
@@ -5211,7 +5284,8 @@
       "notHere": "Any pain or a hard pinch at the end of either direction \u2014 the whole range should stay comfortable.",
       "backNote": "This is a deliberately gentle control drill for your back. Keep the whole motion inside a completely pain-free range \u2014 small is correct, not a limitation.",
       "stopIf": "Any pain, or tingling or numbness anywhere in the legs."
-    }
+    },
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "mcgill-curlup",
@@ -5287,7 +5361,8 @@
         "wrong": "Hands not under the low back",
         "right": "Keep both hands under your low back's natural arch the whole time to preserve that curve."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "kb-deadlift",
@@ -5370,7 +5445,8 @@
         "wrong": "Leaning back at the top",
         "right": "Finish standing straight with glutes squeezed and ribs down. Leaning back jams your lower spine."
       }
-    ]
+    ],
+    "breathing": "Big inhale and 360\u00b0 brace at the top, hold it while you lower the bell, exhale as you stand tall. Re-brace before every rep."
   },
   {
     "id": "kb-good-morning",
@@ -5451,7 +5527,8 @@
         "wrong": "Bending the knees like a squat",
         "right": "Knees stay softly unlocked and roughly still. Only the hips move backward."
       }
-    ]
+    ],
+    "breathing": "Inhale and brace before you hinge; keep the brace down and back up; exhale once you're standing tall. Never mid-rep."
   },
   {
     "id": "kb-hike-pass",
@@ -5534,7 +5611,8 @@
         "wrong": "Standing with a soft, unbraced middle",
         "right": "Brace your stomach before every hike. A loose middle passes the force straight into your spine."
       }
-    ]
+    ],
+    "breathing": "Inhale as you hike the bell back; exhale as it settles. Keep the brace on the whole time \u2014 the bell is trying to pull your back round."
   },
   {
     "id": "kb-halo",
@@ -5615,7 +5693,8 @@
         "wrong": "Using a heavy bell",
         "right": "This is a mobility drill. The lightest bell available is the right bell \u2014 heavier just risks your head and shoulders."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "kb-single-arm-row",
@@ -5696,7 +5775,8 @@
         "wrong": "Cutting the bottom short",
         "right": "Let the arm straighten fully each rep. That stretch at the bottom is where most of the back work happens."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "kb-suitcase-carry",
@@ -5779,7 +5859,8 @@
         "wrong": "Stooping to pick it up or set it down",
         "right": "Hinge at the hips with a flat back both ways. More backs are hurt picking bells up than carrying them."
       }
-    ]
+    ],
+    "breathing": "Moderate brace, steady shallow breaths as you walk. The bell pulls you sideways \u2014 resist with the brace, not with a held breath."
   },
   {
     "id": "hollow-hold",
@@ -5852,7 +5933,8 @@
         "wrong": "Holding your breath",
         "right": "Breathe steadily through the nose or mouth the entire hold; bracing does not require breath-holding."
       }
-    ]
+    ],
+    "breathing": "Exhale hard first to set the ribs down, then take small sips of air on top of the brace. If the low back pops off the floor, exhale again and shrink the shape."
   },
   {
     "id": "reverse-crunch",
@@ -5924,7 +6006,8 @@
         "wrong": "Letting the low back arch at the bottom",
         "right": "Stop the descent before your back lifts and reset your low back against the floor each rep."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or rotate, inhale on the way back. Ribs stay down \u2014 the exhale does half the work."
   },
   {
     "id": "plank-shoulder-tap",
@@ -5997,7 +6080,8 @@
         "wrong": "Rushing the taps",
         "right": "Treat each tap as a slow, controlled movement \u2014 speed is not the goal here."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "side-plank-rotation",
@@ -6069,7 +6153,8 @@
         "wrong": "Letting hips sag toward the floor",
         "right": "Keep your hips lifted throughout; if they drop, shorten the rotation."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "bear-crawl-hold",
@@ -6142,7 +6227,8 @@
         "wrong": "Letting the spine round",
         "right": "Reset to a flat back the moment you feel your low back rounding, rather than holding through it."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "db-farmers-carry",
@@ -6216,7 +6302,8 @@
         "wrong": "Rushing the walk",
         "right": "Keep a steady, controlled pace \u2014 this is a bracing exercise, not a race."
       }
-    ]
+    ],
+    "breathing": "Brace to about 30%, then breathe short and steady behind it while you walk. Never hold your breath on a carry \u2014 the brace and the breath must coexist."
   },
   {
     "id": "db-suitcase-carry",
@@ -6289,7 +6376,8 @@
         "wrong": "Overcorrecting away from the weight",
         "right": "Aim for dead level, not a lean in either direction."
       }
-    ]
+    ],
+    "breathing": "One-sided load, same rule: moderate brace, continuous shallow breathing. If you catch yourself breath-holding, stop, reset, resume."
   },
   {
     "id": "bird-dog-row",
@@ -6364,7 +6452,8 @@
         "wrong": "Rowing with a straight arm",
         "right": "Bend your elbow and pull it close to your ribs so your back does the work, not your arm swinging."
       }
-    ]
+    ],
+    "breathing": "Set a firm brace, then keep breathing behind it \u2014 exhale as you row, inhale as you lower. The brace holds still; only the arm moves."
   },
   {
     "id": "heel-taps",
@@ -6436,7 +6525,8 @@
         "wrong": "Kicking the heels down fast",
         "right": "Slow every tap down \u2014 control matters more than range here."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or rotate, inhale on the way back. Ribs stay down \u2014 the exhale does half the work."
   },
   {
     "id": "dead-bug-weighted",
@@ -6510,7 +6600,8 @@
         "wrong": "Letting the dumbbell drift or wobble",
         "right": "Keep your arms locked and steady overhead the entire time \u2014 the weight should not move at all."
       }
-    ]
+    ],
+    "breathing": "Exhale long and slow as the limbs lower \u2014 the weight will tempt you to hold your breath; don't. Inhale fully back at the top."
   },
   {
     "id": "copenhagen-plank-short",
@@ -6583,7 +6674,8 @@
         "wrong": "Letting hips sag to extend the hold time",
         "right": "Shorten the hold rather than let your shape collapse \u2014 good shape at a shorter time is the actual progress."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "standing-band-anti-rotation",
@@ -6654,7 +6746,8 @@
         "wrong": "Using momentum to press out",
         "right": "Press and return slowly, resisting the band's pull the whole way rather than snapping through it."
       }
-    ]
+    ],
+    "breathing": "Exhale as you press out, inhale as you pull back in. Ribs stay stacked over hips \u2014 the band wants to rotate you; your breath keeps you square."
   },
   {
     "id": "trx-plank",
@@ -6727,7 +6820,8 @@
         "wrong": "Fighting a sagging or piking hold",
         "right": "Shorten the hold and reset rather than hold through a shape that's already broken down."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "single-leg-stand-eyes-closed",
@@ -6800,7 +6894,8 @@
         "wrong": "Standing rigid and stiff",
         "right": "Let your foot and ankle move and adjust naturally rather than locking everything still."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "split-squat",
@@ -6877,7 +6972,8 @@
         "wrong": "Back knee slamming the floor",
         "right": "Control the descent and stop just short of the floor each rep."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "bulgarian-split-squat",
@@ -6954,7 +7050,8 @@
         "wrong": "Rear foot too high off the ground",
         "right": "Use a lower step until your balance and strength catch up."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "db-step-up",
@@ -7031,7 +7128,8 @@
         "wrong": "Dropping down instead of controlling it",
         "right": "Lower yourself with control on the way down instead of stepping off quickly."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "lateral-lunge",
@@ -7108,7 +7206,8 @@
         "wrong": "Step too short",
         "right": "Take a bigger step out to the side to get a real stretch through the inner thigh."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "curtsy-lunge",
@@ -7185,7 +7284,8 @@
         "wrong": "Weight shifting to the back foot",
         "right": "Keep most of your weight on the front leg throughout the rep."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "sumo-squat",
@@ -7260,7 +7360,8 @@
         "wrong": "Rising onto the toes",
         "right": "Push through your whole foot, heels included, to stand back up."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "db-sumo-deadlift",
@@ -7338,7 +7439,8 @@
         "wrong": "Standing up by yanking with the back",
         "right": "Drive your hips forward and squeeze your glutes to finish the rep instead."
       }
-    ]
+    ],
+    "breathing": "Inhale and brace before you hinge, keep it braced as you lower, exhale as you stand tall. One breath per rep, reset every time."
   },
   {
     "id": "db-hip-thrust",
@@ -7413,7 +7515,8 @@
         "wrong": "Feet too far from hips",
         "right": "Move your feet closer so your shins are near vertical when your hips are up, reducing hamstring cramping."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "glute-kickback",
@@ -7488,7 +7591,8 @@
         "wrong": "Momentum swinging the leg",
         "right": "Move slowly and pause at the top to keep the glute, not momentum, doing the work."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "fire-hydrant",
@@ -7564,7 +7668,8 @@
         "wrong": "Momentum swinging the leg",
         "right": "Move slowly and pause at the top to keep the outer hip, not momentum, doing the work."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "single-leg-calf-raise",
@@ -7640,7 +7745,8 @@
         "wrong": "Not rising fully",
         "right": "Rise as high onto your toes as you can to get the full range."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "band-good-morning",
@@ -7717,7 +7823,8 @@
         "wrong": "Knees bending too much",
         "right": "Keep them only softly bent \u2014 this is a hip hinge, not a squat."
       }
-    ]
+    ],
+    "breathing": "Inhale and brace before you hinge, keep it braced as you lower, exhale as you stand tall. One breath per rep, reset every time."
   },
   {
     "id": "trx-squat",
@@ -7794,7 +7901,8 @@
         "wrong": "Rushing the descent",
         "right": "Lower slowly and with control, leaning back against the strap tension."
       }
-    ]
+    ],
+    "breathing": "Inhale on the way down with a light brace, exhale as you drive back up. Re-brace at the top of every rep."
   },
   {
     "id": "trx-hamstring-curl",
@@ -7869,7 +7977,8 @@
         "wrong": "Stopping entirely at the first cramp",
         "right": "Pause, straighten your legs, and shake it out \u2014 cramping is common and not a reason to end the set."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "wall-sit-march",
@@ -7945,7 +8054,8 @@
         "wrong": "Hips tipping side to side",
         "right": "Slow the tempo down and keep hips square to the wall with each lift."
       }
-    ]
+    ],
+    "breathing": "Exhale on the effort, inhale on the return. Keep a light brace and never hold your breath."
   },
   {
     "id": "worlds-greatest-stretch",
@@ -8015,7 +8125,8 @@
         "wrong": "Rushing through all five steps",
         "right": "Pause briefly in the hip sink and again at the top of the rotation before moving on."
       }
-    ]
+    ],
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "inchworm-walkout",
@@ -8085,7 +8196,8 @@
         "wrong": "Letting the hips sag in plank",
         "right": "Keep a light brace through your stomach so your body stays in one line."
       }
-    ]
+    ],
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "wall-angel",
@@ -8153,7 +8265,8 @@
         "wrong": "Moving quickly through reps",
         "right": "Slide slowly enough that you'd notice the moment contact breaks anywhere."
       }
-    ]
+    ],
+    "breathing": "Breathe easy and continuously \u2014 in through the nose, out through the mouth. Warm-ups are for finding rhythm, never for breath-holding."
   },
   {
     "id": "open-book-rotation",
@@ -8221,7 +8334,8 @@
         "wrong": "Forcing the arm all the way to the floor",
         "right": "Go only as far as feels easy today; the range will open up over time."
       }
-    ]
+    ],
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "ankle-rock",
@@ -8289,7 +8403,8 @@
         "wrong": "Skipping ankle work entirely",
         "right": "Better ankle range means your torso can stay more upright in a squat, which takes load off your lower back."
       }
-    ]
+    ],
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "calf-stretch-wall",
@@ -8356,7 +8471,8 @@
         "wrong": "Bouncing to deepen the stretch",
         "right": "Lean in steadily and hold \u2014 let your breath ease you deeper, not bouncing."
       }
-    ]
+    ],
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "lat-stretch-kneeling",
@@ -8424,7 +8540,8 @@
         "wrong": "Forcing the chest lower with effort",
         "right": "Let gravity and your exhale do the work instead of pressing down."
       }
-    ]
+    ],
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "neck-side-stretch",
@@ -8491,7 +8608,8 @@
         "wrong": "Shrugging the opposite shoulder up",
         "right": "Keep it relaxed and down so the stretch isolates to the neck."
       }
-    ]
+    ],
+    "breathing": "Slow breaths through the nose. Each long exhale is permission to settle a little deeper \u2014 never force range on an inhale."
   },
   {
     "id": "jumping-jacks",
@@ -8560,7 +8678,8 @@
         "wrong": "Doing jumping jacks on a stiff-back day",
         "right": "Swap to march-in-place \u2014 it delivers the same warm-up without impact."
       }
-    ]
+    ],
+    "breathing": "Settle into a rhythm \u2014 in for two counts, out for two. You should be able to speak a short sentence; if not, ease off."
   },
   {
     "id": "march-in-place",
@@ -8627,7 +8746,8 @@
         "wrong": "Letting posture collapse as you tire",
         "right": "Keep your chest up and shoulders back for the full duration, even as you slow down."
       }
-    ]
+    ],
+    "breathing": "Settle into a rhythm \u2014 in for two counts, out for two. You should be able to speak a short sentence; if not, ease off."
   },
   {
     "id": "cable-seated-row",
@@ -8696,7 +8816,8 @@
         "wrong": "Letting the weight yank your arms forward on the return",
         "right": "Control the return over 2-3 seconds instead of letting it snap you forward."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "leg-extension-machine",
@@ -8761,7 +8882,8 @@
         "wrong": "Ignoring kneecap pain and pushing through",
         "right": "Shorten the range or lower the weight the moment you feel pain at the front of the knee."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "hip-abduction-machine",
@@ -8828,7 +8950,8 @@
         "wrong": "Jerking the legs open quickly",
         "right": "Push smoothly and control the return \u2014 speed doesn't add glute work, it just adds momentum."
       }
-    ]
+    ],
+    "breathing": "Exhale as you lift or squeeze, inhale as you return. Keep the ribs down so the low back doesn't do the glutes' job."
   },
   {
     "id": "chest-fly-machine",
@@ -8895,7 +9018,8 @@
         "wrong": "Letting the arms swing too far back",
         "right": "Stop the backward stretch at a comfortable point, well before you feel the shoulder joint."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "assisted-pull-up-machine",
@@ -8962,7 +9086,8 @@
         "wrong": "Swinging the legs for momentum",
         "right": "Keep the movement controlled and let your back do the work; increase assistance if you can't avoid swinging."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "db-pullover",
@@ -9038,7 +9163,8 @@
         "wrong": "Locking the elbows straight",
         "right": "Keep a slight, steady bend in your elbows through the whole arc to protect your shoulders."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "db-hammer-curl",
@@ -9111,7 +9237,8 @@
         "wrong": "Dropping the weight on descent",
         "right": "Lower over 2\u20133 seconds with control \u2014 that's where most of the strength gain happens."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "db-concentration-curl",
@@ -9184,7 +9311,8 @@
         "wrong": "Rushing through reps",
         "right": "Slow down \u2014 a one-second squeeze at the top and a 2\u20133 second lower is the point of this exercise."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "db-incline-curl",
@@ -9258,7 +9386,8 @@
         "wrong": "Choosing too steep an incline",
         "right": "Start shallower and increase the angle only once the stretch feels comfortable, not pinching."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "db-shrug",
@@ -9330,7 +9459,8 @@
         "wrong": "Rushing through without a pause",
         "right": "Hold the top position for a full second before lowering to get the full contraction."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "db-bent-over-reverse-fly",
@@ -9405,7 +9535,8 @@
         "wrong": "Leading with the hands",
         "right": "Lead every rep with your elbows moving out wide in an arc."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "band-seated-row",
@@ -9483,7 +9614,8 @@
         "wrong": "Rounding the spine on the return",
         "right": "Extend your arms back out slowly while keeping your spine long, not curled forward."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "band-bicep-curl-single",
@@ -9556,7 +9688,8 @@
         "wrong": "Standing off-balance on one foot",
         "right": "Keep your stance even and stable, weight balanced across both feet."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "band-reverse-fly-standing",
@@ -9631,7 +9764,8 @@
         "wrong": "Hinging too deep at the hips",
         "right": "Stay close to upright with just a small forward lean, not a full bend."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "superman-hold",
@@ -9706,7 +9840,8 @@
         "wrong": "Holding your breath",
         "right": "Breathe normally through the hold \u2014 bracing your breath adds unnecessary tension."
       }
-    ]
+    ],
+    "breathing": "Brace at about 30%, then keep breathing behind it \u2014 slow nose inhale, long hiss out. If the breath stops, the brace is too hard."
   },
   {
     "id": "prone-swimmer",
@@ -9782,7 +9917,8 @@
         "wrong": "Craning the neck upward",
         "right": "Keep your head in line with your spine, forehead toward the mat throughout."
       }
-    ]
+    ],
+    "breathing": "Exhale on the effort, inhale on the return. Keep a light brace and never hold your breath."
   },
   {
     "id": "trx-face-pull",
@@ -9859,7 +9995,8 @@
         "wrong": "Standing too close to the anchor",
         "right": "Walk your feet back for enough lean angle to create real resistance."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "trx-bicep-curl",
@@ -9932,7 +10069,8 @@
         "wrong": "Bending forward at the waist",
         "right": "Keep your body angle fixed \u2014 only your elbows should bend during the curl."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "trx-y-fly",
@@ -10006,7 +10144,8 @@
         "wrong": "Rushing the sweep",
         "right": "Move slowly in both directions; speed defeats the purpose of this control-focused exercise."
       }
-    ]
+    ],
+    "breathing": "Exhale as you pull, inhale as you return with control. Keep the neck long \u2014 breath in the ribs, not the shoulders."
   },
   {
     "id": "incline-push-up",
@@ -10075,7 +10214,8 @@
         "wrong": "Hips sagging toward the surface",
         "right": "Brace your core so your body stays one straight line, not a bent one."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "decline-push-up",
@@ -10144,7 +10284,8 @@
         "wrong": "Jumping to a high step too soon",
         "right": "Build up the step height gradually as your core control improves."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "diamond-push-up",
@@ -10211,7 +10352,8 @@
         "wrong": "Lowering into the deepest possible elbow bend",
         "right": "Lower only to a comfortable stretch \u2014 you don't need to touch your hands."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "wide-push-up",
@@ -10278,7 +10420,8 @@
         "wrong": "Dropping fast into the bottom position",
         "right": "Lower with control to a comfortable stretch, not a bounce."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "pike-push-up",
@@ -10346,7 +10489,8 @@
         "wrong": "Shrugging shoulders up toward your ears",
         "right": "Let your head hang and keep your shoulders pulled down away from your ears."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "scapular-push-up",
@@ -10413,7 +10557,8 @@
         "wrong": "Rushing through reps",
         "right": "Slow down. This drill works through control and range, not speed."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "db-incline-press-floor",
@@ -10486,7 +10631,8 @@
         "wrong": "Elbows flared past 45 degrees",
         "right": "Tuck them closer to your torso to keep the load on your chest, not your shoulder joint."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "db-floor-fly",
@@ -10552,7 +10698,8 @@
         "wrong": "Forcing the arms past the floor's natural stop",
         "right": "Let the floor be the bottom of your range \u2014 don't reach for extra stretch."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "db-arnold-press",
@@ -10621,7 +10768,8 @@
         "wrong": "Rushing the palm rotation",
         "right": "Let the rotation happen smoothly through the whole press, not as a snap at the top."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "db-front-raise",
@@ -10687,7 +10835,8 @@
         "wrong": "Leaning back to swing the weight up",
         "right": "Keep your torso upright and still; lighten the weight if you're leaning."
       }
-    ]
+    ],
+    "breathing": "Exhale on the lift, inhale on the way down. Slow the exhale to slow the rep."
   },
   {
     "id": "db-close-grip-floor-press",
@@ -10756,7 +10905,8 @@
         "wrong": "Using too much weight for a close grip",
         "right": "Go lighter than your regular floor press \u2014 the close grip changes the demand on your elbows."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "db-skull-crusher-floor",
@@ -10824,7 +10974,8 @@
         "wrong": "Letting the upper arms drift during the lower",
         "right": "Keep your upper arms fixed and vertical; only the elbow joint moves."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "trx-chest-press",
@@ -10893,7 +11044,8 @@
         "wrong": "Letting hips sag under instability",
         "right": "Brace your core harder to keep a straight line from head to heels."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "trx-tricep-press",
@@ -10959,7 +11111,8 @@
         "wrong": "Letting the upper arms drift away from the ears",
         "right": "Keep them fixed in place; only the elbow joint should move."
       }
-    ]
+    ],
+    "breathing": "Inhale as you lower, exhale through the press. A light brace keeps the ribs from flaring at lockout."
   },
   {
     "id": "fast-glute-bridge",
@@ -11029,7 +11182,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "band-fast-press",
@@ -11098,7 +11252,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "band-fast-row",
@@ -11169,7 +11324,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "speed-bodyweight-squat",
@@ -11239,7 +11395,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "fast-step-up",
@@ -11308,7 +11465,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "quiet-landing-drill",
@@ -11380,7 +11538,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "pogo-hops",
@@ -11452,7 +11611,8 @@
       }
     ],
     "spinalRisk": "moderate",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "skater-hops",
@@ -11524,7 +11684,8 @@
       }
     ],
     "spinalRisk": "moderate",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "low-box-jump",
@@ -11595,7 +11756,8 @@
       }
     ],
     "spinalRisk": "moderate",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "elevated-hands-off-push-up",
@@ -11666,7 +11828,8 @@
       }
     ],
     "spinalRisk": "moderate",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Inhale and brace before each rep, then a short sharp exhale as you explode. Full breath reset between reps \u2014 power hates rushing."
   },
   {
     "id": "sled-push",
@@ -11737,7 +11900,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Breathe in rhythm with your steps \u2014 exhale on each drive. Brace moderately; the sled rewards a steady trunk, not a held breath."
   },
   {
     "id": "bike-sprint",
@@ -11808,7 +11972,8 @@
       }
     ],
     "spinalRisk": "low",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Exhale hard through the sprint, recover with deep nose breaths between efforts. Never white-knuckle a held breath on the bike."
   },
   {
     "id": "battle-ropes",
@@ -11879,6 +12044,7 @@
       }
     ],
     "spinalRisk": "moderate",
-    "primer": "power"
+    "primer": "power",
+    "breathing": "Let the breath sync to the slams \u2014 exhale with each downstroke. When the rhythm falls apart, the set is over."
   }
 ]

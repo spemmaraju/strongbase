@@ -422,6 +422,32 @@ function VolumeTrend({ logs }) {
 }
 
 // Tiny avatar pill
+// Entry point for the Brace & Breathe trainer — the skill under every rep.
+function BreatheCard({ onPress }) {
+  return (
+    <button onClick={onPress} style={{
+      display: 'flex', alignItems: 'center', gap: 13, width: '100%',
+      backgroundColor: 'rgba(45,212,191,0.06)', border: '1px solid rgba(45,212,191,0.22)',
+      borderRadius: 16, padding: '13px 15px', marginTop: 16,
+      cursor: 'pointer', textAlign: 'left',
+    }}>
+      <span aria-hidden="true" style={{ fontSize: 24, flexShrink: 0 }}>🫁</span>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.teal, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 3px' }}>
+          Trainable skill
+        </p>
+        <p style={{ fontFamily: FONT, fontSize: 14.5, fontWeight: 800, color: K.text, margin: 0 }}>
+          Brace &amp; Breathe
+        </p>
+        <p style={{ fontSize: 12, color: K.muted, margin: '2px 0 0', lineHeight: 1.45 }}>
+          Guided drills with hands-on checks, so you know you're doing it right.
+        </p>
+      </div>
+      <span style={{ fontFamily: MONO, fontSize: 11, fontWeight: 700, color: K.teal, flexShrink: 0 }}>→</span>
+    </button>
+  )
+}
+
 function Avatar({ user, onClick }) {
   const initials = (user?.user_metadata?.display_name || user?.user_metadata?.full_name || user?.email || '?')
     .slice(0, 2).toUpperCase()
@@ -625,6 +651,7 @@ export default function Home() {
           {/* Right column */}
           <div>
             <LevelCard levelInfo={levelInfo} />
+            <BreatheCard onPress={() => navigate('/breathe')} />
             <StreakCard currentStreak={currentStreak} longestStreak={longestStreak} totalWorkouts={totalWorkouts} />
             <BadgesCard badges={badges} />
           </div>
@@ -645,6 +672,11 @@ export default function Home() {
           {/* Week */}
           <div style={{ padding: '0 16px' }}>
             <WeekPills {...weekProps} />
+          </div>
+
+          {/* Brace & breathe */}
+          <div style={{ padding: '0 16px' }}>
+            <BreatheCard onPress={() => navigate('/breathe')} />
           </div>
 
           {/* Streak row */}

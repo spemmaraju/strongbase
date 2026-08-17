@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Onboarding from './pages/Onboarding'
 import Library from './pages/Library'
+import BreathingTrainer from './pages/BreathingTrainer'
 import { ExerciseLibraryProvider } from './hooks/useExerciseLibrary'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/library" element={<AuthGuard><Layout><Library /></Layout></AuthGuard>} />
 
         {/* Protected routes without bottom nav (immersive) */}
+        <Route path="/breathe"             element={<AuthGuard><BreathingTrainer /></AuthGuard>} />
         <Route path="/day/:dayNumber"      element={<AuthGuard><DayOverview /></AuthGuard>} />
         <Route path="/workout/:dayNumber"  element={<AuthGuard><WorkoutPlayer /></AuthGuard>} />
         <Route path="/history/:logId"      element={<AuthGuard><WorkoutDetail /></AuthGuard>} />

@@ -334,6 +334,23 @@ export default function ExerciseModal({ exercise, onClose }) {
         ))}
       </ul>
 
+      {/* BRACE & BREATHE — when to inhale, exhale, and how hard to brace */}
+      {exercise.breathing && (
+        <div style={{
+          backgroundColor: 'rgba(45,212,191,0.06)',
+          border: '1px solid rgba(45,212,191,0.22)',
+          borderRadius: 14, padding: 16, marginBottom: 16,
+        }}>
+          <p style={{
+            fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.teal,
+            letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 8,
+          }}>Brace &amp; breathe</p>
+          <p style={{ fontSize: 13.5, lineHeight: 1.6, color: 'rgba(153,246,228,0.9)', margin: 0, maxWidth: '68ch' }}>
+            {exercise.breathing}
+          </p>
+        </div>
+      )}
+
       {/* WHERE YOU SHOULD FEEL IT */}
       {exercise.sensation && <SensationCard s={exercise.sensation} />}
 

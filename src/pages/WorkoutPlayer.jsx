@@ -334,8 +334,8 @@ function TransitionCard({ exercise }) {
 }
 
 // ── Coaching cues panel ───────────────────────────────────────────────────────
-function CuesPanel({ cues }) {
-  if (!cues || cues.length === 0) return null
+function CuesPanel({ cues, breathing }) {
+  if ((!cues || cues.length === 0) && !breathing) return null
   return (
     <div style={{
       width: '100%', maxWidth: 380,
@@ -344,7 +344,14 @@ function CuesPanel({ cues }) {
       borderLeft: `3px solid ${K.purple}`,
       textAlign: 'left',
     }}>
-      {cues.map((cue, i) => (
+      {/* Breath first — it's the cue you need mid-set, not after */}
+      {breathing && (
+        <div style={{ display: 'flex', gap: 10, marginBottom: cues?.length ? 10 : 0, alignItems: 'flex-start' }}>
+          <span aria-hidden="true" style={{ fontSize: 11, flexShrink: 0, marginTop: 1 }}>🫁</span>
+          <p style={{ fontSize: 12, color: K.teal, lineHeight: 1.5, margin: 0, fontWeight: 600 }}>{breathing}</p>
+        </div>
+      )}
+      {(cues || []).map((cue, i) => (
         <div key={i} style={{ display: 'flex', gap: 10, marginTop: i > 0 ? 8 : 0, alignItems: 'flex-start' }}>
           <span style={{
             fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet,
@@ -522,7 +529,7 @@ function ExerciseScreen({ workout, xpEarned, xpPop, onOpenModal, onBack, onSkipT
       )}
 
       {/* Coaching cues */}
-      <CuesPanel cues={ex.cues} />
+      <CuesPanel cues={ex.cues} breathing={ex.breathing} />
 
       {/* CTA button (inside pane on wide; footer handles narrow) */}
       {isWide && (
