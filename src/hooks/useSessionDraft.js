@@ -19,6 +19,19 @@ export const todayStr = () => new Date().toISOString().slice(0, 10)
 export const draftKey = (dayNumber, date = todayStr()) =>
   `strongbase_session_${date}_d${dayNumber}`
 
+// Adds made from outside the day screen (the Library) before the draft has
+// seeded. Merged in — after the programmed warm-up, before the cooldown — the
+// first time the draft is built for that (date, day), then cleared.
+const pendingKey = (dayNumber, date = todayStr()) =>
+  `strongbase_session_pending_${date}_d${dayNumber}`
+
+function readPending(dayNumber, date = todayStr()) {
+  try {
+    const p = JSON.parse(localStorage.getItem(pendingKey(dayNumber, date)) || '[]')
+    return Array.isArray(p) ? p : []
+  } catch { return [] }
+}
+
 function readDraft(key) {
   try {
     const raw = localStorage.getItem(key)
@@ -39,6 +52,48 @@ function writeDraft(key, draft) {
  */
 export function peekDraftOrder(dayNumber, date = todayStr()) {
   return readDraft(draftKey(dayNumber, date))?.order ?? null
+}
+
+/**
+ * What's currently planned for a day, viewed from outside the day screen.
+ * Draft if one exists, else any pending Library adds waiting to be merged.
+ */
+export function plannedIdsForDay(dayNumber, date = todayStr()) {
+  return readDraft(draftKey(dayNumber, date))?.order ?? readPending(dayNumber, date)
+}
+
+/**
+ * Add an exercise to a day's session from anywhere (the Library tab).
+ * Appends to the live draft when one exists; otherwise queues it so the draft
+ * picks it up when it first seeds. @returns 'added' | 'already'
+ */
+export function addExerciseToDay(dayNumber, exerciseId, date = todayStr()) {
+  const key = draftKey(dayNumber, date)
+  const draft = readDraft(key)
+  if (draft) {
+    if (draft.order.includes(exerciseId)) return 'already'
+    writeDraft(key, { ...draft, order: [...draft.order, exerciseId] })
+    return 'added'
+  }
+  const pending = readPending(dayNumber, date)
+  if (pending.includes(exerciseId)) return 'already'
+  try { localStorage.setItem(pendingKey(dayNumber, date), JSON.stringify([...pending, exerciseId])) } catch { /* quota */ }
+  return 'added'
+}
+
+/** Undo an addExerciseToDay from outside the day screen. */
+export function removeExerciseFromDay(dayNumber, exerciseId, date = todayStr()) {
+  const key = draftKey(dayNumber, date)
+  const draft = readDraft(key)
+  if (draft) {
+    writeDraft(key, {
+      order: draft.order.filter(x => x !== exerciseId),
+      done:  draft.done.filter(x => x !== exerciseId),
+    })
+    return
+  }
+  const pending = readPending(dayNumber, date)
+  try { localStorage.setItem(pendingKey(dayNumber, date), JSON.stringify(pending.filter(x => x !== exerciseId))) } catch { /* quota */ }
 }
 
 /**
@@ -67,17 +122,20 @@ export default function useSessionDraft(day, exMap, options) {
     (key && readDraft(key)) || { order: [], done: [] },
   )
 
-  // Seed once per (day, date) when there is nothing persisted yet.
+  // Seed once per (day, date) when there is nothing persisted yet. Anything
+  // added from the Library before first open is folded in at the end here.
   useEffect(() => {
     if (!key) return
     const existing = readDraft(key)
     if (existing) { setDraft(existing); return }
     if (suggested.length) {
-      const seeded = { order: suggested, done: [] }
+      const pending = readPending(dayNumber).filter(id => !suggested.includes(id))
+      const seeded = { order: [...suggested, ...pending], done: [] }
+      try { localStorage.removeItem(pendingKey(dayNumber)) } catch { /* fine */ }
       setDraft(seeded)
       writeDraft(key, seeded)
     }
-  }, [key, suggested])
+  }, [key, dayNumber, suggested])
 
   const update = useCallback(next => {
     setDraft(prev => {

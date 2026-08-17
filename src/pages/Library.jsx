@@ -1,15 +1,19 @@
-// Exercise library — browse everything, and attach your own video to any of it.
+// Exercise library — browse everything, build today's session from it.
 // ---------------------------------------------------------------------------
-// New exercises ship without a video. Find one on YouTube, paste the link here,
-// and it shows up everywhere in the app immediately.
+// Every exercise can be dropped straight into today's workout from here (the
+// + Today toggle), filtered by muscle group, and can carry your own video link
+// on top of the built-in one.
 // ---------------------------------------------------------------------------
 
 import { useState, useMemo } from 'react'
 import useExerciseLibrary from '../hooks/useExerciseLibrary'
+import useAuth from '../hooks/useAuth'
 import useMediaQuery from '../hooks/useMediaQuery'
 import ExerciseModal from '../components/ExerciseModal'
-import { Icon } from '../components/Icons'
 import { parseYouTubeId, watchUrl } from '../utils/youtube'
+import { REGIONS, toRegions } from '../data/muscleGroups'
+import { getProgramDayNumber } from '../utils/workoutStats'
+import { plannedIdsForDay, addExerciseToDay, removeExerciseFromDay } from '../hooks/useSessionDraft'
 
 const FONT = "'Plus Jakarta Sans', sans-serif"
 const MONO = "'JetBrains Mono', 'Courier New', monospace"
@@ -32,10 +36,12 @@ const CATEGORIES = ['strength', 'power', 'stability', 'warm-up', 'flexibility', 
 
 export default function Library() {
   const { exercises, overrides, setVideo, syncState } = useExerciseLibrary()
+  const { user } = useAuth()
   const isWide = useMediaQuery('(min-width: 768px)')
 
   const [q, setQ]         = useState('')
   const [cat, setCat]     = useState('all')
+  const [region, setRegion]   = useState('all')
   const [needsOnly, setNeeds] = useState(false)
   const [editing, setEditing] = useState(null)   // exercise id
   const [draft, setDraft]     = useState('')
@@ -44,12 +50,36 @@ export default function Library() {
   const [detail, setDetail]   = useState(null)
   const [copied, setCopied]   = useState(false)
 
+  // Today's session, so every row can toggle itself in and out of it.
+  // localStorage is the source of truth; `bump` just re-reads it after a toggle.
+  const todayDayNumber = getProgramDayNumber(user)
+  const [bump, setBump] = useState(0)
+  const inToday = useMemo(
+    () => new Set(plannedIdsForDay(todayDayNumber)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [todayDayNumber, bump],
+  )
+
+  function toggleToday(ex) {
+    if (inToday.has(ex.id)) removeExerciseFromDay(todayDayNumber, ex.id)
+    else addExerciseToDay(todayDayNumber, ex.id)
+    setBump(b => b + 1)
+  }
+
   const missingCount = exercises.filter(e => !e.youtubeId).length
+
+  // Muscle-group chips, derived from the library itself, most-covered first.
+  const regionOptions = useMemo(() => {
+    const c = new Map()
+    exercises.forEach(e => toRegions(e.primaryMuscles || []).forEach(r => c.set(r, (c.get(r) || 0) + 1)))
+    return [...c.entries()].sort((a, b) => b[1] - a[1]).map(x => x[0])
+  }, [exercises])
 
   const results = useMemo(() => {
     const needle = q.trim().toLowerCase()
     return exercises.filter(e => {
       if (cat !== 'all' && e.category !== cat) return false
+      if (region !== 'all' && !toRegions(e.primaryMuscles || []).includes(region)) return false
       if (needsOnly && e.youtubeId) return false
       if (!needle) return true
       return (
@@ -58,7 +88,7 @@ export default function Library() {
         (e.equipment || []).some(m => m.toLowerCase().includes(needle))
       )
     })
-  }, [exercises, q, cat, needsOnly])
+  }, [exercises, q, cat, region, needsOnly])
 
   function openEditor(ex) {
     setEditing(ex.id)
@@ -106,8 +136,9 @@ export default function Library() {
           {exercises.length} exercises
         </h1>
         <p style={{ fontSize: 14, color: K.muted, margin: '0 0 20px', maxWidth: '58ch', lineHeight: 1.55 }}>
-          Paste a YouTube link against any exercise and it appears everywhere in the app.
-          {missingCount > 0 && ` ${missingCount} still need one.`}
+          Tap <span style={{ color: K.violet, fontWeight: 700 }}>+ Today</span> to drop any exercise into
+          today&rsquo;s session (Day {todayDayNumber}). Filter by muscle group to find something new.
+          {missingCount > 0 && ` ${missingCount} exercises still need a video.`}
         </p>
 
         {/* Sync state — honest about whether this is syncing or device-only */}
@@ -149,6 +180,17 @@ export default function Library() {
           {chip(needsOnly, needsOnly ? '✓ NEEDS VIDEO' : 'NEEDS VIDEO', () => setNeeds(v => !v), 'needs')}
         </div>
 
+        {/* Muscle groups — the "what do I want to train?" axis */}
+        <div style={{ display: 'flex', gap: 6, marginTop: 6, overflowX: 'auto', paddingBottom: 2 }}>
+          {chip(region === 'all', 'ANY MUSCLE', () => setRegion('all'), 'r-all')}
+          {regionOptions.map(r => chip(
+            region === r,
+            (REGIONS[r]?.label || r).toUpperCase(),
+            () => setRegion(region === r ? 'all' : r),
+            `r-${r}`,
+          ))}
+        </div>
+
         {/* List */}
         <div style={{ marginTop: 18 }}>
           {results.map(ex => {
@@ -176,15 +218,16 @@ export default function Library() {
                     </p>
                   </button>
 
-                  {ex.youtubeId ? (
+                  {/* Videos are the norm now — only the exceptions get a badge. */}
+                  {ex.youtubeId && overridden && (
                     <span style={{
                       flexShrink: 0, fontFamily: MONO, fontSize: 8.5, fontWeight: 700,
-                      color: overridden ? K.violet : K.green,
-                      backgroundColor: overridden ? 'rgba(192,132,252,0.12)' : 'rgba(34,197,94,0.12)',
-                      border: `1px solid ${overridden ? 'rgba(192,132,252,0.28)' : 'rgba(34,197,94,0.28)'}`,
+                      color: K.violet, backgroundColor: 'rgba(192,132,252,0.12)',
+                      border: '1px solid rgba(192,132,252,0.28)',
                       borderRadius: 99, padding: '3px 8px', letterSpacing: '0.08em',
-                    }}>{overridden ? 'YOURS' : 'VIDEO'}</span>
-                  ) : (
+                    }}>YOURS</span>
+                  )}
+                  {!ex.youtubeId && (
                     <span style={{
                       flexShrink: 0, fontFamily: MONO, fontSize: 8.5, fontWeight: 700,
                       color: K.amber, backgroundColor: 'rgba(245,158,11,0.12)',
@@ -194,7 +237,20 @@ export default function Library() {
                   )}
 
                   <button
+                    onClick={() => toggleToday(ex)}
+                    aria-label={inToday.has(ex.id) ? `Remove ${ex.name} from today` : `Add ${ex.name} to today`}
+                    style={{
+                      flexShrink: 0, padding: '6px 11px', borderRadius: 9, cursor: 'pointer',
+                      background: inToday.has(ex.id) ? 'rgba(34,197,94,0.14)' : K.gradD,
+                      border: inToday.has(ex.id) ? '1px solid rgba(34,197,94,0.35)' : 'none',
+                      color: inToday.has(ex.id) ? K.green : '#fff',
+                      fontFamily: FONT, fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap',
+                    }}
+                  >{inToday.has(ex.id) ? '✓ Today' : '+ Today'}</button>
+
+                  <button
                     onClick={() => (isEditing ? setEditing(null) : openEditor(ex))}
+                    aria-label={`Edit video link for ${ex.name}`}
                     style={{
                       flexShrink: 0, padding: '6px 11px', borderRadius: 9,
                       backgroundColor: K.inset, border: `1px solid ${K.borderSt}`,
