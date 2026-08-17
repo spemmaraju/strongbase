@@ -12046,5 +12046,945 @@
     "spinalRisk": "moderate",
     "primer": "power",
     "breathing": "Let the breath sync to the slams \u2014 exhale with each downstroke. When the rhythm falls apart, the set is over."
+  },
+  {
+    "id": "mountain-climber",
+    "name": "Mountain Climber",
+    "category": "cardio",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "hip flexors",
+      "shoulders",
+      "cardiovascular system"
+    ],
+    "primaryMuscles": [
+      "core",
+      "hip flexors"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "quadriceps"
+    ],
+    "instructions": [
+      "Start in a high plank \u2014 hands under shoulders, body one straight line.",
+      "Drive one knee toward your chest, then switch legs, like running against the floor.",
+      "Keep your hips level and low; the legs move, the trunk does not.",
+      "Start slow and smooth. Speed comes only after the plank stays quiet."
+    ],
+    "cues": [
+      "Shoulders stacked over wrists the whole time",
+      "Hips stay low \u2014 no pike, no sag",
+      "Land the toes softly; quiet feet mean a controlled core"
+    ],
+    "sets": 3,
+    "reps": 20,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "modification": "Slow the tempo right down (step, don't run), or do them with hands on a raised surface like a bench or sofa arm.",
+    "sensation": {
+      "feelHere": "Deep belly working to keep the trunk still, plus heat in the shoulders and hip flexors.",
+      "notHere": "Lower back \u2014 if it aches, the hips have sagged or piked.",
+      "wrongSpot": [
+        {
+          "felt": "Aching low back",
+          "fix": "Raise your hips a touch and slow down \u2014 re-find the plank between switches."
+        },
+        {
+          "felt": "Wrists complaining",
+          "fix": "Spread your fingers and grip the floor; or elevate your hands."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Bouncing the hips up and down with each switch",
+        "right": "The trunk is a table; only the legs travel. Slower is better until it's quiet."
+      }
+    ],
+    "youtubeId": "ZhiCSdOVJp0",
+    "breathing": "Breathe in rhythm with the legs \u2014 exhale every time a knee drives in. If the breath stops, slow the feet."
+  },
+  {
+    "id": "high-knees",
+    "name": "High Knees",
+    "category": "cardio",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "quadriceps",
+      "calves",
+      "cardiovascular system"
+    ],
+    "primaryMuscles": [
+      "hip flexors",
+      "cardiovascular system"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "calves",
+      "core"
+    ],
+    "instructions": [
+      "Stand tall, feet hip-width apart, arms bent like you're jogging.",
+      "Run in place, driving each knee up toward hip height.",
+      "Stay on the balls of your feet and land softly.",
+      "Pump the arms in rhythm \u2014 opposite arm, opposite knee."
+    ],
+    "cues": [
+      "Tall chest \u2014 don't lean back to lift the knees",
+      "Land like it's a secret; soft and springy",
+      "Knees to hip height is plenty"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 45,
+    "modification": "March instead of run \u2014 same knee height, no impact. Every bit as useful for rhythm and breath practice.",
+    "sensation": {
+      "feelHere": "Heart rate up, thighs and hip flexors warming, calves springy.",
+      "notHere": "Knees or shins \u2014 impact pain means the landing is too hard.",
+      "wrongSpot": [
+        {
+          "felt": "Shins or knees jarring",
+          "fix": "Land more on the forefoot, softer, and shrink the height."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back and reaching with the feet",
+        "right": "Stay stacked \u2014 ribs over hips \u2014 and drive the knee up, not the foot out."
+      }
+    ],
+    "youtubeId": "oDdkytliOqE",
+    "breathing": "Settle into a rhythm \u2014 in for two knee-drives, out for two. Talking should stay possible; if not, march."
+  },
+  {
+    "id": "bear-crawl",
+    "name": "Bear Crawl",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "shoulders",
+      "quadriceps",
+      "hip flexors"
+    ],
+    "primaryMuscles": [
+      "core",
+      "shoulders"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "hip flexors",
+      "forearms"
+    ],
+    "instructions": [
+      "Start on all fours, then lift your knees an inch off the floor \u2014 flat back, hips level.",
+      "Crawl forward: move your right hand and left foot together, then left hand and right foot.",
+      "Take small steps and keep your hips as still as a table top.",
+      "Crawl 3\u20134 metres forward, then backward to where you started."
+    ],
+    "cues": [
+      "Knees skim just above the floor the whole way",
+      "Small, quiet steps beat big fast ones",
+      "Imagine a cup of water on your lower back \u2014 don't spill it"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 60,
+    "modification": "Crawl in place: just lift and set opposite hand and foot without travelling, or keep the knees down entirely.",
+    "sensation": {
+      "feelHere": "Deep core and shoulders sharing the work; thighs burning from the hover.",
+      "notHere": "Lower back \u2014 it should feel braced, never pinched.",
+      "wrongSpot": [
+        {
+          "felt": "Wrists sore",
+          "fix": "Grip the floor with your fingers, shorten the sets, and build up gradually."
+        },
+        {
+          "felt": "Hips swaying side to side",
+          "fix": "Slow down and shorten your steps \u2014 the sway is the core losing the race."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Butt high in the air, weight all in the hands",
+        "right": "Hips stay just above knee height \u2014 it should look like a table, not a tent."
+      }
+    ],
+    "youtubeId": "U3Y58Kyw7Xw",
+    "breathing": "Short steady breaths behind a light brace \u2014 the crawl never earns a held breath. If air stops, stop and reset."
+  },
+  {
+    "id": "plank-up-down",
+    "name": "Plank Up-Down",
+    "category": "strength",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "shoulders",
+      "triceps",
+      "chest"
+    ],
+    "primaryMuscles": [
+      "core",
+      "shoulders"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "chest"
+    ],
+    "instructions": [
+      "Start in a forearm plank, elbows under shoulders.",
+      "Press up onto your right hand, then your left \u2014 now you're in a high plank.",
+      "Lower back down to the right forearm, then the left.",
+      "Alternate which arm leads each rep, and keep your hips as still as you can."
+    ],
+    "cues": [
+      "Feet a little wider makes the hips easier to keep still",
+      "Push the floor away at the top \u2014 no saggy shoulders",
+      "Lead-arm swaps every rep so one side doesn't do all the work"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "modification": "Do it with knees on the floor \u2014 same arm pattern, much less load. Or hands on a raised surface.",
+    "sensation": {
+      "feelHere": "Shoulders and triceps working hard, deep core fighting the twist.",
+      "notHere": "Lower back or wrists \u2014 both mean the trunk is rotating too much.",
+      "wrongSpot": [
+        {
+          "felt": "Hips swinging like a pendulum",
+          "fix": "Widen your feet, slow way down, and think 'ribs locked to hips'."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Racing through reps with a wobbling trunk",
+        "right": "This is an anti-rotation drill wearing a push-up costume. Slow, square hips are the whole point."
+      }
+    ],
+    "youtubeId": "OZjX3gyca3c",
+    "breathing": "Exhale as you press up to the hand plank; inhale as you lower to the forearms. Never hold through the wobble."
+  },
+  {
+    "id": "russian-twist",
+    "name": "Russian Twist",
+    "category": "strength",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "core",
+      "hip flexors"
+    ],
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "hip flexors"
+    ],
+    "instructions": [
+      "Sit on the mat, knees bent, heels lightly on the floor.",
+      "Lean back until you feel your core switch on \u2014 roughly 45 degrees.",
+      "Clasp your hands and rotate your ribcage left, then right, tapping the floor beside your hip.",
+      "The chest turns; the head just comes along for the ride."
+    ],
+    "cues": [
+      "Sit tall out of the low back \u2014 long spine, then lean",
+      "Rotate from the ribs, not the arms",
+      "Slower rotation = more oblique, less momentum"
+    ],
+    "sets": 3,
+    "reps": 16,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "modification": "Keep your heels down and skip the floor tap \u2014 just rotate as far as comfortable. Add a dumbbell later, not sooner.",
+    "sensation": {
+      "feelHere": "Working down the sides of your waist \u2014 the obliques.",
+      "notHere": "Lower back \u2014 rounding under fatigue is the tell.",
+      "wrongSpot": [
+        {
+          "felt": "Low back aching",
+          "fix": "Sit up taller (less lean-back) and shorten the set. Height of the lean is the difficulty dial."
+        },
+        {
+          "felt": "Hip flexors cramping",
+          "fix": "Heels stay on the floor and lean back less \u2014 the legs are anchors, not the exercise."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Whipping the arms side to side",
+        "right": "Arms are a pointer for the ribcage. If the shirt logo doesn't turn, nothing twisted."
+      }
+    ],
+    "youtubeId": "9V9csctSKj0",
+    "breathing": "Exhale as you rotate to each side, quick inhale through the middle. The exhale keeps the ribs down and the twist honest."
+  },
+  {
+    "id": "bicycle-crunch",
+    "name": "Bicycle Crunch",
+    "category": "strength",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "rectus abdominis",
+      "hip flexors"
+    ],
+    "primaryMuscles": [
+      "obliques",
+      "rectus abdominis"
+    ],
+    "secondaryMuscles": [
+      "hip flexors"
+    ],
+    "instructions": [
+      "Lie on your back, hands lightly behind your ears, knees over hips.",
+      "Extend one leg out while rotating your opposite shoulder toward the bent knee.",
+      "Switch sides in a slow pedalling motion.",
+      "The shoulder blade lifts and rotates; the elbows stay wide and passive."
+    ],
+    "cues": [
+      "Shoulder toward knee, not elbow toward knee",
+      "The slower the pedal, the better the rep",
+      "Low back stays gently heavy on the mat"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "modification": "Keep both knees bent and just do the rotation, or pedal with feet high (less lever). Speed is never the fix.",
+    "sensation": {
+      "feelHere": "Upper abs and the sides of the waist doing slow, burning work.",
+      "notHere": "Neck \u2014 hands are a headrest, not a crane.",
+      "wrongSpot": [
+        {
+          "felt": "Neck strain",
+          "fix": "Rest your head into your hands and lead with the shoulder blade peeling off the mat."
+        },
+        {
+          "felt": "Low back arching as the leg extends",
+          "fix": "Extend the leg higher (toward the ceiling-ish) until your core can keep the back quiet."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Fast flailing elbows",
+        "right": "One slow rotation per exhale. The elbows never move relative to the head."
+      }
+    ],
+    "youtubeId": "HWX93vAoLvw",
+    "breathing": "Exhale as shoulder and knee come together; inhale on the switch. One breath per rep keeps the pace honest."
+  },
+  {
+    "id": "boat-hold",
+    "name": "Boat Hold",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "hip flexors",
+      "rectus abdominis"
+    ],
+    "primaryMuscles": [
+      "core"
+    ],
+    "secondaryMuscles": [
+      "hip flexors",
+      "rectus abdominis"
+    ],
+    "instructions": [
+      "Sit tall, knees bent, feet on the floor.",
+      "Lean back slightly and lift your feet until your shins are parallel to the floor.",
+      "Arms reach forward at shoulder height. Long spine, proud chest.",
+      "Hold \u2014 shaking a little is normal, folding is not."
+    ],
+    "cues": [
+      "Chest up and open \u2014 collapse is the enemy",
+      "Balance on the sit bones, not the tailbone",
+      "Shins parallel is plenty; straight legs are for later"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 20,
+    "restSeconds": 45,
+    "modification": "Keep your toes lightly on the floor, or hold behind your knees. Same shape, adjustable dose.",
+    "sensation": {
+      "feelHere": "Deep in the belly, with the hip flexors assisting.",
+      "notHere": "Lower back \u2014 if it rounds and aches, the hold has collapsed.",
+      "wrongSpot": [
+        {
+          "felt": "Rounding, aching low back",
+          "fix": "Toes down, sit taller, shorter hold. Tall-and-short beats slumped-and-long every time."
+        },
+        {
+          "felt": "All hip flexor, no abs",
+          "fix": "Tilt back a touch more through the ribs and think 'lift the chest', not 'lift the legs'."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Chin jutting, shoulders by the ears",
+        "right": "Neck long, shoulders down \u2014 effort lives in the belly, not the face."
+      }
+    ],
+    "youtubeId": "xmfJyheHY6w",
+    "breathing": "Exhale to set the ribs, then keep slow even breaths through the hold. If the breath stops, put the toes down."
+  },
+  {
+    "id": "band-woodchop",
+    "name": "Band Woodchop",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "core",
+      "shoulders"
+    ],
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "shoulders",
+      "glutes"
+    ],
+    "instructions": [
+      "Anchor the band high (over a door hinge or sturdy point) and stand side-on, feet wider than hips.",
+      "Grab the handle with both hands, arms long.",
+      "Pull diagonally across your body \u2014 high to low, like chopping wood \u2014 rotating through the hips and ribs.",
+      "Control the return; the band doesn't get to snap you back."
+    ],
+    "cues": [
+      "Arms stay long \u2014 the twist does the work, not the elbows",
+      "Pivot the back foot as you rotate",
+      "The return is half the exercise: slow it down"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "modification": "Stand closer to the anchor for less tension, or do it kneeling to take the legs out of it.",
+    "sensation": {
+      "feelHere": "The sides of your waist and deep core, plus glutes as you pivot.",
+      "notHere": "Lower back or shoulders \u2014 both mean arms are doing the rotating.",
+      "wrongSpot": [
+        {
+          "felt": "Shoulders doing everything",
+          "fix": "Lock the elbows nearly straight and turn your belt buckle with the movement."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Feet planted flat while the spine twists hard",
+        "right": "Let the back heel pivot \u2014 the hips rotate with you and the low back stays happy."
+      }
+    ],
+    "youtubeId": "2AvO-FyLiEY",
+    "breathing": "Exhale on the chop, inhale as you resist the band home. Each side, every rep."
+  },
+  {
+    "id": "db-renegade-row",
+    "name": "Dumbbell Renegade Row",
+    "category": "strength",
+    "equipment": [
+      "10lb-dumbbells",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "lats",
+      "rhomboids",
+      "shoulders"
+    ],
+    "primaryMuscles": [
+      "core",
+      "lats"
+    ],
+    "secondaryMuscles": [
+      "rhomboids",
+      "shoulders",
+      "triceps"
+    ],
+    "instructions": [
+      "Start in a high plank with a hand on each dumbbell, feet wide.",
+      "Shift your weight subtly onto one arm and row the other dumbbell to your hip.",
+      "Lower it with control, re-find your plank, then row the other side.",
+      "The plank is the exercise; the row is the test."
+    ],
+    "cues": [
+      "Feet wide = steadier hips",
+      "Row to the hip pocket, not the armpit",
+      "Hips stay square to the floor \u2014 no opening up"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "modification": "Do it from your knees, or row with hands on a low bench so there's less twist to fight.",
+    "sensation": {
+      "feelHere": "Mid-back pulling, deep core fighting the tilt.",
+      "notHere": "Lower back \u2014 twisting through it defeats the purpose.",
+      "wrongSpot": [
+        {
+          "felt": "Hips rotating open on every row",
+          "fix": "Widen the feet, lighten the bell, slow the row. Square hips outrank heavy rows."
+        },
+        {
+          "felt": "Wrist ache on the support arm",
+          "fix": "Use hex dumbbells on a mat and grip hard \u2014 or drop to knees."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Fast alternating rows with a rocking torso",
+        "right": "Pause a beat between rows to re-set the plank. Rock-free reps only."
+      }
+    ],
+    "youtubeId": "4qEIChzM4ZA",
+    "breathing": "Exhale through each row, inhale as you set the bell down and re-square. Brace stays on the whole set."
+  },
+  {
+    "id": "db-reverse-lunge",
+    "name": "Dumbbell Reverse Lunge",
+    "category": "strength",
+    "equipment": [
+      "10lb-dumbbells",
+      "15lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings"
+    ],
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "instructions": [
+      "Stand tall with a dumbbell in each hand at your sides.",
+      "Step one foot back and lower until both knees are near right angles.",
+      "Push through the front heel to stand, bringing the back foot home.",
+      "Alternate sides, or do all reps on one leg then switch."
+    ],
+    "cues": [
+      "Torso tall \u2014 the dumbbells hang, you don't tip",
+      "Front shin roughly vertical at the bottom",
+      "Push the floor away with the front heel"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "modification": "Do it without dumbbells, holding a chair back or wall for balance. Depth can be half-range while you learn.",
+    "sensation": {
+      "feelHere": "Front-leg thigh and glute doing the pushing.",
+      "notHere": "Front knee \u2014 pain there usually means the knee drifted past the toes.",
+      "wrongSpot": [
+        {
+          "felt": "Wobbling everywhere",
+          "fix": "Step back to a slightly wider 'railroad track' stance, not a tightrope."
+        },
+        {
+          "felt": "Back knee banging the floor",
+          "fix": "Shorten the drop \u2014 kiss the floor, don't knock on it."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning forward over the front leg",
+        "right": "Ribs stacked over hips all the way down and up. The legs lower you, not the waist."
+      }
+    ],
+    "youtubeId": "SXYrUTUwFoc",
+    "breathing": "Inhale as you lower, exhale as you drive back up. Re-brace lightly at the top of each rep."
+  },
+  {
+    "id": "db-thruster",
+    "name": "Dumbbell Thruster",
+    "category": "strength",
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "shoulders",
+      "cardiovascular system"
+    ],
+    "primaryMuscles": [
+      "quadriceps",
+      "shoulders"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "triceps",
+      "core"
+    ],
+    "instructions": [
+      "Hold the dumbbells at your shoulders, elbows forward, feet shoulder-width.",
+      "Squat down, keeping your chest tall.",
+      "Drive up out of the squat and use that momentum to press both bells overhead in one motion.",
+      "Lower the bells back to your shoulders as you sink into the next squat."
+    ],
+    "cues": [
+      "One fluid motion \u2014 the legs launch the press",
+      "Finish with biceps by your ears, ribs down",
+      "Find a rep rhythm you could keep for a minute"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "modification": "Split it: squat, stand, then press. Or thruster with no weight at all \u2014 the pattern is the workout.",
+    "sensation": {
+      "feelHere": "Whole body: thighs, glutes, shoulders \u2014 and your breath rate climbing fast.",
+      "notHere": "Lower back at the overhead finish \u2014 flared ribs are the usual culprit.",
+      "wrongSpot": [
+        {
+          "felt": "Low back arching overhead",
+          "fix": "Finish with ribs down and glutes lightly squeezed \u2014 press to where you can stay stacked."
+        },
+        {
+          "felt": "Gassed after five reps",
+          "fix": "That's thrusters. Lighter bells, smoother rhythm, and pace the breath."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Squatting, pausing, then strict pressing",
+        "right": "Let the leg drive flow into the press \u2014 that's the whole trick of the movement."
+      }
+    ],
+    "youtubeId": "u3wKkZjE8QM",
+    "breathing": "Inhale on the way down, exhale as legs and arms drive the bells up. One breath per rep, no stacking up an oxygen debt."
+  },
+  {
+    "id": "glute-bridge-march",
+    "name": "Glute Bridge March",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "core",
+      "hamstrings"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "core"
+    ],
+    "secondaryMuscles": [
+      "hamstrings"
+    ],
+    "instructions": [
+      "Set up a glute bridge: hips high, knees bent, ribs down.",
+      "Without letting the hips drop or tilt, lift one foot a few inches.",
+      "Set it down, re-level, and lift the other foot.",
+      "The bridge holds still the entire time \u2014 the march is the test."
+    ],
+    "cues": [
+      "Hips level like a table top; a phone would balance on your belt",
+      "Slow feet \u2014 floating, not stomping",
+      "Squeeze the standing-side glute hard as the other foot lifts"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "modification": "Shrink the march to a heel lift \u2014 toes stay down. Or just hold the bridge and alternate pressing heels.",
+    "sensation": {
+      "feelHere": "Standing-side glute working overtime, deep core keeping the pelvis level.",
+      "notHere": "Lower back or hamstring cramp \u2014 both mean the glutes handed off the job.",
+      "wrongSpot": [
+        {
+          "felt": "Hamstring cramping",
+          "fix": "Walk your feet a little closer to your hips and re-squeeze the glutes first."
+        },
+        {
+          "felt": "Hips dipping on every lift",
+          "fix": "Smaller, slower lifts. An inch of clean float beats a foot of wobble."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Bridging so high the ribs flare",
+        "right": "Hips to a straight knee-hip-shoulder line, no higher. The arch you add comes from the back, not the glutes."
+      }
+    ],
+    "youtubeId": "rXAbcneAr3I",
+    "breathing": "Exhale each time a foot floats up, inhale as it lands. The pelvis holds still partly because the breath keeps moving."
+  },
+  {
+    "id": "reverse-tabletop",
+    "name": "Reverse Tabletop Hold",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "shoulders",
+      "triceps",
+      "hamstrings"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "shoulders"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "triceps",
+      "core"
+    ],
+    "instructions": [
+      "Sit with knees bent, feet flat, hands behind you with fingers pointing toward your feet.",
+      "Press through hands and heels and lift your hips until your torso is flat like a table.",
+      "Chest open, gaze up or slightly forward, glutes squeezed.",
+      "Hold, then lower with control."
+    ],
+    "cues": [
+      "Push the floor away \u2014 no sunken shoulders",
+      "Knees track over ankles",
+      "Squeeze the glutes to keep the table flat"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 20,
+    "restSeconds": 45,
+    "modification": "Lift and hold for just a breath at a time, or keep the hips lower \u2014 a half-lift still opens the shoulders and wakes the glutes.",
+    "sensation": {
+      "feelHere": "Glutes and the back of the shoulders; a stretch across the chest.",
+      "notHere": "Wrists or low back \u2014 hands too far away or hips sagging.",
+      "wrongSpot": [
+        {
+          "felt": "Wrist pain",
+          "fix": "Turn the fingers slightly outward and bring hands a bit closer to your hips."
+        },
+        {
+          "felt": "Sagging middle",
+          "fix": "Squeeze glutes harder and think 'proud chest'. If it still sags, hold for less time."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Head thrown fully back",
+        "right": "Neck stays long \u2014 chin gently tucked or gaze up, never crunched backward."
+      }
+    ],
+    "youtubeId": "qpNDhXI-JEw",
+    "breathing": "Breathe steadily through the hold \u2014 open chest makes it easy. Exhale as you lower back down."
+  },
+  {
+    "id": "ninety-ninety-switch",
+    "name": "90/90 Hip Switch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hip external rotators",
+      "hip internal rotators",
+      "glutes",
+      "hips"
+    ],
+    "primaryMuscles": [
+      "hip external rotators",
+      "hips"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "adductors"
+    ],
+    "instructions": [
+      "Sit with your front leg bent at 90\u00b0 in front of you and the back leg bent at 90\u00b0 to the side.",
+      "Sit tall, then sweep both knees together across to the other side without using your hands.",
+      "Arrive in the mirror-image position and sit tall again.",
+      "Keep the transitions slow \u2014 the middle part IS the exercise."
+    ],
+    "cues": [
+      "Heels stay roughly planted; the knees do the traveling",
+      "Tall spine at each end position \u2014 slouching hides the stretch",
+      "Hands hover for balance, they don't push"
+    ],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "modification": "Lean back on your hands through the switch, or elevate your hips on a folded blanket \u2014 both make the sweep much easier.",
+    "sensation": {
+      "feelHere": "Deep in the hips \u2014 outer hip on the front leg, inner thigh and front of the hip on the back leg.",
+      "notHere": "Knees \u2014 twisting force there means the hips stopped rotating.",
+      "wrongSpot": [
+        {
+          "felt": "Pinch in the front of the hip",
+          "fix": "Sit on a cushion and shrink the range \u2014 the pinch is a range limit, not a target."
+        },
+        {
+          "felt": "Knees complaining",
+          "fix": "Slow down and let the feet pivot freely; locked feet crank the knees."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Collapsing sideways and yanking with momentum",
+        "right": "Move slow enough that you could freeze mid-switch. That control is the mobility being built."
+      }
+    ],
+    "youtubeId": "HUZimFZJZWU",
+    "breathing": "Exhale through each switch, inhale tall at the top. Long exhales buy range that force never will."
+  },
+  {
+    "id": "crocodile-breathing",
+    "name": "Crocodile Breathing",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "transverse abdominis",
+      "deep core"
+    ],
+    "primaryMuscles": [
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "deep core"
+    ],
+    "instructions": [
+      "Lie face down, forehead resting on your stacked hands, legs relaxed.",
+      "Breathe in through your nose and send the air low \u2014 your belly should press into the floor.",
+      "Feel your lower back rise gently on the inhale and settle on the exhale.",
+      "Exhale slowly through your mouth, longer than the inhale. Repeat, unhurried."
+    ],
+    "cues": [
+      "Belly into the floor, chest quiet",
+      "In through the nose 4 counts, out through the mouth 6",
+      "Whole body heavy \u2014 the floor does the holding"
+    ],
+    "sets": 1,
+    "reps": null,
+    "durationSeconds": 120,
+    "restSeconds": 30,
+    "modification": "Can't lie face down? Do the same breath on your back with a book on your belly \u2014 make the book rise.",
+    "sensation": {
+      "feelHere": "Belly pressing into the floor and the waist expanding sideways on each inhale.",
+      "notHere": "Shoulders and upper chest \u2014 they should barely move.",
+      "wrongSpot": [
+        {
+          "felt": "Only the chest moving",
+          "fix": "Exhale everything first, pause two counts, and let the next breath drop low on its own."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Forcing huge gulps of air",
+        "right": "Quiet, medium breaths in the right place beat big breaths in the wrong one."
+      }
+    ],
+    "youtubeId": "yOSmEVxP8kI",
+    "breathing": "This one IS the breathing: nose in for 4, belly to the floor; mouth out for 6. Guided version lives in Brace & Breathe."
+  },
+  {
+    "id": "ninety-ninety-breathing",
+    "name": "90/90 Wall Breathing",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "transverse abdominis",
+      "deep core"
+    ],
+    "primaryMuscles": [
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "deep core"
+    ],
+    "instructions": [
+      "Lie on your back with feet flat on a wall (or floor), knees and hips at right angles.",
+      "Rest your hands on the sides of your lower ribs.",
+      "Inhale through your nose and push your hands apart \u2014 ribs widening sideways and into the floor.",
+      "Exhale long and slow until the ribs feel stacked over your pelvis. Repeat."
+    ],
+    "cues": [
+      "Hands apart on the inhale \u2014 sideways, not up",
+      "Exhale twice as long as the inhale",
+      "Neck and jaw stay soft"
+    ],
+    "sets": 1,
+    "reps": null,
+    "durationSeconds": 120,
+    "restSeconds": 30,
+    "modification": "No wall needed \u2014 feet on a chair or flat on the floor works. The hands-on-ribs feedback is the important part.",
+    "sensation": {
+      "feelHere": "Ribs expanding into your hands in all directions; low back gently settling on the long exhale.",
+      "notHere": "Neck, shoulders, or an arching low back.",
+      "wrongSpot": [
+        {
+          "felt": "Low back arching off the floor on the inhale",
+          "fix": "Smaller inhale, longer exhale \u2014 you're over-breathing for now."
+        }
+      ]
+    },
+    "mistakes": [
+      {
+        "wrong": "Chasing a big chest breath",
+        "right": "The win is width \u2014 hands pushed apart \u2014 not height."
+      }
+    ],
+    "youtubeId": "Q1uWcKtJLMg",
+    "breathing": "The drill is the breath: in through the nose 4, hands pushed apart; out 8, ribs melting down. Paced version in Brace & Breathe."
   }
 ]
