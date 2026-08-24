@@ -21,15 +21,17 @@ Supabase pauses free-tier projects after 7 days without activity. The
 `.github/workflows/supabase-keepalive.yml` workflow prevents this by running a
 tiny read query against the database every Monday and Thursday.
 
-No setup needed — the project URL and publishable (anon) key are baked into
-the workflow as defaults. Those values are public by design (they ship in the
-app's browser bundle) and row-level security protects the data. If you ever
-rotate keys, either update the defaults in the workflow or add
-`SUPABASE_URL` / `SUPABASE_ANON_KEY` repository secrets
-(Settings → Secrets and variables → Actions), which take precedence.
+It reads the connection details from two GitHub Actions secrets
+(Settings → Secrets and variables → Actions):
 
-If a run ever fails, GitHub emails you; you can also trigger it manually from
-the **Actions** tab → **Supabase keep-alive** → **Run workflow**.
+| Secret | Value |
+| --- | --- |
+| `SUPABASE_URL` | Same as `VITE_SUPABASE_URL` in the local `.env` |
+| `SUPABASE_ANON_KEY` | Same as `VITE_SUPABASE_ANON_KEY` in the local `.env` |
+
+If a run ever fails (including missing secrets), GitHub emails you; you can
+also trigger it manually from the **Actions** tab → **Supabase keep-alive** →
+**Run workflow**.
 
 Note: GitHub disables scheduled workflows in repos with no commits for 60
 days. If that happens you'll get an email and can re-enable it with one click
