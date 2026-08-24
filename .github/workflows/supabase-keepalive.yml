@@ -1,12 +1,13 @@
 # Pings the Supabase project twice a week so the free tier never sees
 # 7 days of inactivity and never pauses the database.
 #
-# Works out of the box: the project URL and publishable (anon) key are set
-# below as defaults. These are public by design — the same values ship in the
-# app's browser bundle — and row-level security protects the data. To override
-# them (e.g. after rotating keys), add SUPABASE_URL / SUPABASE_ANON_KEY repo
-# secrets (Settings → Secrets and variables → Actions); secrets take
-# precedence over the defaults.
+# Setup: requires two GitHub Actions secrets (Settings → Secrets and
+# variables → Actions):
+#   SUPABASE_URL      — same value as VITE_SUPABASE_URL in the local .env
+#   SUPABASE_ANON_KEY — same value as VITE_SUPABASE_ANON_KEY in the local .env
+# Or set them from a terminal in the project folder:
+#   gh secret set SUPABASE_URL --body "<url>"
+#   gh secret set SUPABASE_ANON_KEY --body "<key>"
 
 name: Supabase keep-alive
 
@@ -24,10 +25,14 @@ jobs:
     steps:
       - name: Query Supabase REST API
         env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL || 'https://kucebiqstwuybebumnij.supabase.co' }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || 'sb_publishable_I3zFz7mxgrxQUDmnlGmh4g_vI7Wmajx' }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
           set -euo pipefail
+          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
+            echo "::error::SUPABASE_URL and SUPABASE_ANON_KEY repo secrets are not set."
+            exit 1
+          fi
           # A tiny select against the DB counts as activity. RLS may return
           # zero rows for the anon key — that's fine; the query still runs.
           status=$(curl --silent --show-error --output response.txt --write-out '%{http_code}' \
