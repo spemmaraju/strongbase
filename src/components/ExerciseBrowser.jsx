@@ -3,13 +3,20 @@
 // Opened two ways:
 //   Swap — pass `replacing` (an exercise). Defaults the muscle filter to that
 //          exercise's primary muscle so the alternatives on screen are ones
-//          that actually cover the same slot.
-//   Add  — no `replacing`; opens unfiltered.
+//          that actually cover the same slot. Picking closes the panel.
+//   Add  — no `replacing`. When a `day` is passed, opens on that day's focus
+//          (leg day → every leg exercise, most effective first) and stays
+//          open so several exercises can be added in one visit.
+// Every row shows difficulty and effectiveness at a glance.
 // ---------------------------------------------------------------------------
 
 import { useState, useMemo, useEffect } from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { canShowExercise } from '../utils/sessionPlan'
+import {
+  matchesDayFocus, byBangForBuck, DAY_FOCUS,
+  getDifficulty, getEffectiveness, DIFFICULTY_LABELS, DIFFICULTY_COLORS,
+} from '../utils/exerciseMeta'
 
 const FONT = "'Plus Jakarta Sans', sans-serif"
 const MONO = "'JetBrains Mono', 'Courier New', monospace"
@@ -31,15 +38,22 @@ const KCAT = {
 const CATEGORIES = ['strength', 'power', 'stability', 'warm-up', 'flexibility', 'cardio']
 
 export default function ExerciseBrowser({
-  exercises, exclude = [], replacing = null,
+  exercises, exclude = [], replacing = null, day = null,
   mode = 'home', userEquipment = ['bodyweight'],
-  onPick, onClose,
+  onPick, onRemove = null, onClose,
 }) {
   const isWide = useMediaQuery('(min-width: 768px)')
   const [q, setQ]             = useState('')
   const [cat, setCat]         = useState(replacing?.category || 'all')
   const [muscle, setMuscle]   = useState(replacing?.primaryMuscles?.[0] || 'all')
   const [ownedOnly, setOwned] = useState(mode === 'home')
+  // Add mode with a known day starts on that day's focus.
+  const [dayOnly, setDayOnly] = useState(!!day && !replacing)
+  // Added during this visit — kept visible (with an undo) instead of vanishing.
+  const [addedIds, setAdded]  = useState(() => new Set())
+
+  const multiAdd  = !replacing
+  const dayFocus  = day ? DAY_FOCUS[day.day] : null
 
   useEffect(() => {
     const h = e => { if (e.key === 'Escape') onClose() }
@@ -63,8 +77,11 @@ export default function ExerciseBrowser({
 
   const results = useMemo(() => {
     const needle = q.trim().toLowerCase()
-    return exercises.filter(e => {
-      if (excludeSet.has(e.id)) return false
+    const list = exercises.filter(e => {
+      // Rows added this visit stay on screen even though the session now
+      // excludes them — disappearing rows read as a bug mid-flow.
+      if (excludeSet.has(e.id) && !addedIds.has(e.id)) return false
+      if (dayOnly && day && !matchesDayFocus(e, day.day)) return false
       if (cat !== 'all' && e.category !== cat) return false
       if (muscle !== 'all' && !(e.primaryMuscles || []).includes(muscle)) return false
       if (ownedOnly && !canShowExercise(e, 'home', userEquipment)) return false
@@ -75,7 +92,20 @@ export default function ExerciseBrowser({
         (e.equipment || []).some(m => m.toLowerCase().includes(needle))
       )
     })
-  }, [exercises, excludeSet, cat, muscle, ownedOnly, userEquipment, q])
+    // The focused day view leads with the biggest payoff for that day.
+    return dayOnly && day ? [...list].sort(byBangForBuck) : list
+  }, [exercises, excludeSet, addedIds, dayOnly, day, cat, muscle, ownedOnly, userEquipment, q])
+
+  function handleRow(ex) {
+    if (!multiAdd) { onPick(ex.id); onClose(); return }
+    if (addedIds.has(ex.id)) {
+      onRemove?.(ex.id)
+      setAdded(prev => { const n = new Set(prev); n.delete(ex.id); return n })
+    } else {
+      onPick(ex.id)
+      setAdded(prev => new Set(prev).add(ex.id))
+    }
+  }
 
   const chip = (active, label, onClick, key) => (
     <button key={key ?? label} onClick={onClick} style={{
@@ -111,7 +141,7 @@ export default function ExerciseBrowser({
                 {replacing ? 'Swap out' : 'Add exercise'}
               </p>
               <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 19, color: K.text, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {replacing ? replacing.name : 'Browse the library'}
+                {replacing ? replacing.name : day ? day.theme : 'Browse the library'}
               </h2>
             </div>
             <button onClick={onClose} aria-label="Close" style={{
@@ -138,7 +168,13 @@ export default function ExerciseBrowser({
 
           {/* Filters */}
           <div style={{ display: 'flex', gap: 6, marginTop: 10, overflowX: 'auto', paddingBottom: 2 }}>
-            {chip(cat === 'all', 'ALL', () => setCat('all'), 'cat-all')}
+            {dayFocus && multiAdd && chip(
+              dayOnly,
+              `★ BEST FOR ${dayFocus.label.toUpperCase()}`,
+              () => setDayOnly(v => !v),
+              'day-focus',
+            )}
+            {chip(!dayOnly && cat === 'all', 'ALL', () => { setDayOnly(false); setCat('all') }, 'cat-all')}
             {CATEGORIES.map(c => chip(cat === c, c.replace('-', ' ').toUpperCase(), () => setCat(c), `cat-${c}`))}
           </div>
           <div style={{ display: 'flex', gap: 6, marginTop: 6, overflowX: 'auto', paddingBottom: 2 }}>
@@ -161,17 +197,21 @@ export default function ExerciseBrowser({
           )}
           {results.map(ex => {
             const accent = KCAT[ex.category] || K.violet
+            const diff   = getDifficulty(ex)
+            const eff    = getEffectiveness(ex)
+            const added  = addedIds.has(ex.id)
             return (
               <button
                 key={ex.id}
-                onClick={() => { onPick(ex.id); onClose() }}
+                onClick={() => handleRow(ex)}
                 style={{
                   width: '100%', display: 'flex', alignItems: 'center', gap: 12,
                   padding: '11px 10px', borderRadius: 12, cursor: 'pointer',
-                  background: 'none', border: 'none', textAlign: 'left',
+                  background: added ? 'rgba(34,197,94,0.07)' : 'none',
+                  border: 'none', textAlign: 'left',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.backgroundColor = K.inset }}
-                onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent' }}
+                onMouseEnter={e => { if (!added) e.currentTarget.style.backgroundColor = K.inset }}
+                onMouseLeave={e => { e.currentTarget.style.backgroundColor = added ? 'rgba(34,197,94,0.07)' : 'transparent' }}
               >
                 <div style={{ width: 7, height: 7, borderRadius: '50%', backgroundColor: accent, flexShrink: 0 }} />
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -181,6 +221,14 @@ export default function ExerciseBrowser({
                   <p style={{ fontSize: 11.5, color: K.dim, margin: '3px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     {(ex.primaryMuscles || []).join(' · ')}
                     {ex.equipment?.length ? ` — ${ex.equipment.map(q => q.replace(/-/g, ' ')).join(', ')}` : ''}
+                  </p>
+                  {/* How hard is it, and is it worth my time — at a glance */}
+                  <p style={{ fontFamily: MONO, fontSize: 9.5, fontWeight: 700, margin: '4px 0 0', letterSpacing: '0.06em' }}>
+                    <span style={{ color: DIFFICULTY_COLORS[diff] }}>{DIFFICULTY_LABELS[diff].toUpperCase()}</span>
+                    <span style={{ color: K.dim }}> · </span>
+                    <span style={{ color: K.violet }} title={`Effectiveness ${eff}/5`}>
+                      {'★'.repeat(eff)}<span style={{ opacity: 0.3 }}>{'★'.repeat(5 - eff)}</span>
+                    </span>
                   </p>
                 </div>
                 {!ex.youtubeId && (
@@ -194,15 +242,37 @@ export default function ExerciseBrowser({
                 <span style={{ flexShrink: 0, fontFamily: MONO, fontSize: 10, fontWeight: 700, color: accent }}>
                   {ex.durationSeconds ? `${ex.sets}×${ex.durationSeconds}s` : `${ex.sets}×${ex.reps}`}
                 </span>
+                {multiAdd && (
+                  <span aria-hidden="true" style={{
+                    flexShrink: 0, width: 30, height: 30, borderRadius: '50%',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    background: added ? 'rgba(34,197,94,0.16)' : K.grad,
+                    border: added ? '1px solid rgba(34,197,94,0.4)' : 'none',
+                    color: added ? '#22c55e' : '#fff',
+                    fontSize: 15, fontWeight: 700, lineHeight: 1,
+                  }}>{added ? '✓' : '＋'}</span>
+                )}
               </button>
             )
           })}
         </div>
 
-        <div style={{ padding: '10px 20px', borderTop: `1px solid ${K.border}` }}>
+        <div style={{
+          padding: '10px 20px', borderTop: `1px solid ${K.border}`,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12,
+        }}>
           <p style={{ fontFamily: MONO, fontSize: 9.5, fontWeight: 700, color: K.dim, letterSpacing: '0.1em', margin: 0 }}>
             {results.length} {results.length === 1 ? 'MATCH' : 'MATCHES'}
+            {addedIds.size > 0 && <span style={{ color: '#22c55e' }}> · {addedIds.size} ADDED</span>}
           </p>
+          {multiAdd && (
+            <button onClick={onClose} style={{
+              flexShrink: 0, minHeight: 36, padding: '0 18px', borderRadius: 10, border: 'none',
+              background: addedIds.size > 0 ? K.grad : K.inset,
+              color: addedIds.size > 0 ? '#fff' : K.muted,
+              fontFamily: FONT, fontWeight: 700, fontSize: 13, cursor: 'pointer',
+            }}>{addedIds.size > 0 ? `Done (${addedIds.size})` : 'Done'}</button>
+          )}
         </div>
       </div>
     </div>

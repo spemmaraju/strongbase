@@ -448,6 +448,32 @@ function BreatheCard({ onPress }) {
   )
 }
 
+// Entry point for Quick Burn — the escape hatch for no-energy days.
+function QuickBurnCard({ onPress }) {
+  return (
+    <button onClick={onPress} style={{
+      display: 'flex', alignItems: 'center', gap: 13, width: '100%',
+      backgroundColor: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.22)',
+      borderRadius: 16, padding: '13px 15px', marginTop: 16,
+      cursor: 'pointer', textAlign: 'left',
+    }}>
+      <span aria-hidden="true" style={{ fontSize: 24, flexShrink: 0 }}>⚡</span>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.amber, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 3px' }}>
+          No-energy day?
+        </p>
+        <p style={{ fontFamily: FONT, fontSize: 14.5, fontWeight: 800, color: K.text, margin: 0 }}>
+          Quick Burn
+        </p>
+        <p style={{ fontSize: 12, color: K.muted, margin: '2px 0 0', lineHeight: 1.45 }}>
+          Pick a body part — 5–6 simple, safe moves with exact counts. In and out.
+        </p>
+      </div>
+      <span style={{ fontFamily: MONO, fontSize: 11, fontWeight: 700, color: K.amber, flexShrink: 0 }}>→</span>
+    </button>
+  )
+}
+
 function Avatar({ user, onClick }) {
   const initials = (user?.user_metadata?.display_name || user?.user_metadata?.full_name || user?.email || '?')
     .slice(0, 2).toUpperCase()
@@ -651,6 +677,7 @@ export default function Home() {
           {/* Right column */}
           <div>
             <LevelCard levelInfo={levelInfo} />
+            <QuickBurnCard onPress={() => navigate('/quick')} />
             <BreatheCard onPress={() => navigate('/breathe')} />
             <StreakCard currentStreak={currentStreak} longestStreak={longestStreak} totalWorkouts={totalWorkouts} />
             <BadgesCard badges={badges} />
@@ -674,8 +701,9 @@ export default function Home() {
             <WeekPills {...weekProps} />
           </div>
 
-          {/* Brace & breathe */}
+          {/* Quick burn + Brace & breathe */}
           <div style={{ padding: '0 16px' }}>
+            <QuickBurnCard onPress={() => navigate('/quick')} />
             <BreatheCard onPress={() => navigate('/breathe')} />
           </div>
 

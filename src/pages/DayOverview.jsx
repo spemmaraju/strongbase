@@ -11,6 +11,7 @@ import useExerciseLibrary from '../hooks/useExerciseLibrary'
 import useSaveWorkoutLog from '../hooks/useSaveWorkoutLog'
 import useWakeLock from '../hooks/useWakeLock'
 import { estimateMinutes } from '../utils/sessionPlan'
+import { DAY_FOCUS } from '../utils/exerciseMeta'
 import { getDayComposition } from '../utils/workoutStats'
 import { Icon } from '../components/Icons'
 
@@ -512,7 +513,7 @@ export default function DayOverview() {
         }}
         onMouseEnter={e => { e.currentTarget.style.borderColor = K.violet; e.currentTarget.style.color = K.violet }}
         onMouseLeave={e => { e.currentTarget.style.borderColor = K.borderSt; e.currentTarget.style.color = K.muted }}
-      >＋ Add an exercise</button>
+      >＋ Add exercises · best for {DAY_FOCUS[day.day]?.label || 'today'}</button>
     </div>
   )
 
@@ -577,12 +578,14 @@ export default function DayOverview() {
           exercises={exercises}
           exclude={session.order}
           replacing={browsing.replacing || null}
+          day={day}
           mode={mode}
           userEquipment={userEquipment}
           onPick={id => {
             if (browsing.replacing) session.swap(browsing.replacing.id, id)
             else session.add(id)
           }}
+          onRemove={id => session.remove(id)}
           onClose={() => setBrowsing(null)}
         />
       )}
