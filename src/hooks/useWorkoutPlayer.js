@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import weeklyPlan from '../data/weeklyPlan.json'
+import { resolveDay } from '../utils/resolveDay'
 import { supabase } from '../lib/supabase'
 import { logToRow } from './useWorkoutLogs'
 
@@ -16,16 +16,18 @@ export default function useWorkoutPlayer(dayNumber, options = {}) {
     fitnessLevel = 'intermediate',
     sessionLength = 'full',
     userEquipment = ['bodyweight'],
+    user = null,
   } = options
 
-  const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
+  // A day of the active plan, or a saved custom workout ("c-…").
+  const day = resolveDay(dayNumber, user)
   // From the provider so the video pane picks up your own links.
   const { exMap } = useExerciseLibrary()
 
   // Prefer the session draft the user actually built on the day screen. Without
   // this the player silently rebuilds the programmed session and throws away
   // every reorder, swap and removal.
-  const draftOrder = peekDraftOrder(parseInt(dayNumber))
+  const draftOrder = day ? peekDraftOrder(day.day) : null
   const dayExercises = draftOrder?.length
     ? draftOrder.map(id => exMap[id]).filter(Boolean)
     : buildSessionExercises(day, exMap, { mode, userEquipment, sessionLength })
@@ -274,9 +276,9 @@ export default function useWorkoutPlayer(dayNumber, options = {}) {
 
     const date = new Date().toISOString().slice(0, 10)
     const log = {
-      dayNumber: day.day,
+      dayNumber: day.logDayNumber ?? day.day,
       date,
-      theme: day.theme,
+      theme: day.logTheme ?? day.theme,
       completedExerciseIds: completedIds,
       totalSets,
       totalTimeSeconds: elapsedRef.current,

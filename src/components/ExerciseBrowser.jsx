@@ -14,7 +14,7 @@ import { useState, useMemo, useEffect } from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { canShowExercise } from '../utils/sessionPlan'
 import {
-  matchesDayFocus, byBangForBuck, DAY_FOCUS,
+  matchesFocus, getDayFocus, byBangForBuck,
   getDifficulty, getEffectiveness, DIFFICULTY_LABELS, DIFFICULTY_COLORS,
 } from '../utils/exerciseMeta'
 
@@ -53,7 +53,7 @@ export default function ExerciseBrowser({
   const [addedIds, setAdded]  = useState(() => new Set())
 
   const multiAdd  = !replacing
-  const dayFocus  = day ? DAY_FOCUS[day.day] : null
+  const dayFocus  = getDayFocus(day)
 
   useEffect(() => {
     const h = e => { if (e.key === 'Escape') onClose() }
@@ -81,7 +81,7 @@ export default function ExerciseBrowser({
       // Rows added this visit stay on screen even though the session now
       // excludes them — disappearing rows read as a bug mid-flow.
       if (excludeSet.has(e.id) && !addedIds.has(e.id)) return false
-      if (dayOnly && day && !matchesDayFocus(e, day.day)) return false
+      if (dayOnly && day && !matchesFocus(e, dayFocus)) return false
       if (cat !== 'all' && e.category !== cat) return false
       if (muscle !== 'all' && !(e.primaryMuscles || []).includes(muscle)) return false
       if (ownedOnly && !canShowExercise(e, 'home', userEquipment)) return false
@@ -94,7 +94,7 @@ export default function ExerciseBrowser({
     })
     // The focused day view leads with the biggest payoff for that day.
     return dayOnly && day ? [...list].sort(byBangForBuck) : list
-  }, [exercises, excludeSet, addedIds, dayOnly, day, cat, muscle, ownedOnly, userEquipment, q])
+  }, [exercises, excludeSet, addedIds, dayOnly, day, dayFocus, cat, muscle, ownedOnly, userEquipment, q])
 
   function handleRow(ex) {
     if (!multiAdd) { onPick(ex.id); onClose(); return }

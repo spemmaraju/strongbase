@@ -256,7 +256,7 @@ function ReadyScreen({ day, onStart }) {
       }}>
         <Icon name="target" size={14} style={{ color: K.violet }} />
         <span style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-          Day {day.day} of 7
+          {day.custom ? 'Your workout' : `Day ${day.day} of 7`}
         </span>
       </div>
 
@@ -814,7 +814,7 @@ function SavingScreen() {
 // ── CompletionScreen ──────────────────────────────────────────────────────────
 function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
   const { day, completedExerciseIds, totalSetsCompleted, elapsedSeconds, logSaveStatus, setPerformance } = workout
-  const isWeekComplete = day.day === 7
+  const isWeekComplete = !day.custom && day.day === 7
 
   const [quote] = useState(() => randomQuote(quotesData, 'complete'))
   const { currentStreak, totalWorkouts } = useStreak(logs)
@@ -953,7 +953,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
             Workout complete!
           </h1>
           <p style={{ fontFamily: MONO, fontSize: 13, fontWeight: 700, color: K.violet, letterSpacing: '0.08em', marginBottom: 0 }}>
-            Day {day.day} — {day.theme} · +{xpEarned} XP earned
+            {day.custom ? day.theme : `Day ${day.day} — ${day.theme}`} · +{xpEarned} XP earned
           </p>
         </>
       )}
@@ -1237,7 +1237,7 @@ export default function WorkoutPlayer() {
   const fitnessLevel  = user?.user_metadata?.fitnessLevel || 'intermediate'
   const userEquipment = user?.user_metadata?.equipment || ['bodyweight']
 
-  const workout = useWorkoutPlayer(dayNumber, { mode, fitnessLevel, sessionLength, userEquipment })
+  const workout = useWorkoutPlayer(dayNumber, { mode, fitnessLevel, sessionLength, userEquipment, user })
   const { logs, refetch: refetchLogs } = useWorkoutLogs()
   const { playSound, speak, audioMode, cycleAudioMode } = useSound()
 

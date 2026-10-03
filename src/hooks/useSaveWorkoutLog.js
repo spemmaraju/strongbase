@@ -31,9 +31,9 @@ export default function useSaveWorkoutLog() {
 
     const date = new Date().toISOString().slice(0, 10)
     const log = {
-      dayNumber: day.day,
+      dayNumber: day.logDayNumber ?? day.day,
       date,
-      theme: day.theme,
+      theme: day.logTheme ?? day.theme,
       completedExerciseIds,
       totalSets,
       totalTimeSeconds,

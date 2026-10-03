@@ -73,6 +73,8 @@ export function buildSessionExercises(day, exMap, { mode, userEquipment, session
     ? (day.gymExerciseIds || day.exerciseIds || [])
     : (day.homeExerciseIds || day.exerciseIds || [])
   const all = ids.map(id => exMap[id]).filter(Boolean)
+  // A custom workout is exactly what you picked: no equipment filter, no trim.
+  if (day.custom) return all
   const owned = all.filter(ex => canShowExercise(ex, mode, userEquipment))
   return applySessionLength(owned, sessionLength)
 }

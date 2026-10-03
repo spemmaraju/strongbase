@@ -1,8 +1,8 @@
 // Reads per-set rep performance saved by useWorkoutPlayer.saveWorkoutLog under
-// localStorage keys `strongbase_perf_<YYYY-MM-DD>_d<day>`. Powers the
+// localStorage keys `strongbase_perf_<YYYY-MM-DD>_d<day>` (day may be a custom id like c-…). Powers the
 // "Last time: N reps" hint and the post-workout progress comparison.
 
-const KEY_RE = /^strongbase_perf_(\d{4}-\d{2}-\d{2})_d\d+$/
+const KEY_RE = /^strongbase_perf_(\d{4}-\d{2}-\d{2})_d[\w-]+$/
 
 // All past sessions containing this exercise, newest first
 export function getPerfHistory(exerciseId) {

@@ -15,7 +15,7 @@ import { buildCoverage, pickForGaps } from '../utils/coverage'
 import { canShowExercise } from '../utils/sessionPlan'
 import { draftKey } from '../hooks/useSessionDraft'
 import { getProgramDayNumber } from '../utils/workoutStats'
-import weeklyPlan from '../data/weeklyPlan.json'
+import { getActivePlan } from '../data/plans'
 
 const FONT = "'Plus Jakarta Sans', sans-serif"
 const MONO = "'JetBrains Mono', 'Courier New', monospace"
@@ -52,7 +52,8 @@ export default function CoverageCard({ logs = [], style }) {
   function buildFromGaps() {
     setBuilding(true)
     const dayNumber = getProgramDayNumber(user)
-    const day = weeklyPlan.days.find(d => d.day === dayNumber) || weeklyPlan.days[0]
+    const { days: planDays } = getActivePlan(user)
+    const day = planDays.find(d => d.day === dayNumber) || planDays[0]
 
     const canUse = ex => canShowExercise(ex, mode, userEquipment)
     const mains = pickForGaps(coverage, exercises, { canUse, count: 6 })

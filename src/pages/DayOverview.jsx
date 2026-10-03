@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import weeklyPlan from '../data/weeklyPlan.json'
+import { resolveDay } from '../utils/resolveDay'
 import ExerciseModal from '../components/ExerciseModal'
 import ExerciseBrowser from '../components/ExerciseBrowser'
 import useAuth from '../hooks/useAuth'
@@ -11,7 +11,7 @@ import useExerciseLibrary from '../hooks/useExerciseLibrary'
 import useSaveWorkoutLog from '../hooks/useSaveWorkoutLog'
 import useWakeLock from '../hooks/useWakeLock'
 import { estimateMinutes } from '../utils/sessionPlan'
-import { DAY_FOCUS } from '../utils/exerciseMeta'
+import { getDayFocus } from '../utils/exerciseMeta'
 import { getDayComposition } from '../utils/workoutStats'
 import { Icon } from '../components/Icons'
 
@@ -78,7 +78,7 @@ export default function DayOverview() {
     localStorage.setItem('strongbase_workout_mode', m)
   }
 
-  const day = weeklyPlan.days.find(d => d.day === parseInt(dayNumber))
+  const day = resolveDay(dayNumber, user)
 
   // From the provider, so your own video links are already merged in.
   const { exercises, exMap } = useExerciseLibrary()
@@ -187,7 +187,7 @@ export default function DayOverview() {
         border: '1px solid rgba(255,255,255,0.14)', alignSelf: 'flex-start', zIndex: 1,
       }}>
         <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.violet, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-          Day {day.day} of 7
+          {day.custom ? 'Your workout' : `Day ${day.day} of 7`}
         </span>
       </div>
 
@@ -513,7 +513,7 @@ export default function DayOverview() {
         }}
         onMouseEnter={e => { e.currentTarget.style.borderColor = K.violet; e.currentTarget.style.color = K.violet }}
         onMouseLeave={e => { e.currentTarget.style.borderColor = K.borderSt; e.currentTarget.style.color = K.muted }}
-      >＋ Add exercises · best for {DAY_FOCUS[day.day]?.label || 'today'}</button>
+      >＋ Add exercises · best for {getDayFocus(day)?.label || 'today'}</button>
     </div>
   )
 

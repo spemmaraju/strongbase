@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
-import weeklyPlan from '../data/weeklyPlan.json'
+import { getActivePlan } from '../data/plans'
 import exercisesData from '../data/exercises.json'
 import useStreak, { getMondayStr, dateAddDays } from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
@@ -536,8 +536,9 @@ export default function Home() {
     localStorage.setItem('strongbase_workout_mode', m)
   }
 
+  const plan           = getActivePlan(user)
   const todayDayNumber = getProgramDayNumber(user)
-  const todayDay       = weeklyPlan.days[todayDayNumber - 1]
+  const todayDay       = plan.days[todayDayNumber - 1]
 
   const {
     currentStreak, longestStreak, totalWorkouts, completedThisWeekDayNumbers,
@@ -551,7 +552,8 @@ export default function Home() {
 
   const programStartDate  = user?.user_metadata?.programStartDate || user?.created_at?.slice(0, 10) || null
   const logsThisCycle     = programStartDate ? logs.filter(l => l.date >= programStartDate) : logs
-  const isProgramComplete = [1,2,3,4,5,6,7].every(n => logsThisCycle.some(l => l.dayNumber === n))
+  // Recovery days are optional — skipping one shouldn't hold the cycle open.
+  const isProgramComplete = plan.days.filter(d => !d.optional).every(d => logsThisCycle.some(l => l.dayNumber === d.day))
 
   const isOverdue       = !todayDone && !isProgramComplete && totalWorkouts > 0 && currentStreak === 0
   const latestLogDate   = logs.length > 0 ? logs.reduce((max, l) => l.date > max ? l.date : max, logs[0].date) : null
@@ -581,7 +583,7 @@ export default function Home() {
   }
 
   const weekProps = {
-    days: weeklyPlan.days,
+    days: plan.days,
     todayDayNumber,
     completedThisWeekDayNumbers,
     onPress: n => navigate(`/day/${n}`),

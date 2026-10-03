@@ -104,15 +104,42 @@ export const DAY_FOCUS = {
 
 const AUX_CATEGORIES = new Set(['warm-up', 'flexibility'])
 
-export function matchesDayFocus(ex, dayNumber) {
-  const focus = DAY_FOCUS[dayNumber]
+const UPPER = ['chest', 'front-delts', 'side-delts', 'rear-delts', 'triceps', 'biceps', 'forearms', 'lats', 'mid-back', 'traps']
+const LOWER = ['glutes', 'hamstrings', 'quads', 'adductors', 'abductors', 'calves', 'hip-flexors']
+
+// What the workout builder offers as a starting point. Same shape as a
+// DAY_FOCUS entry, so one matcher serves plan days and custom workouts.
+export const FOCUS_PRESETS = [
+  { id: 'full',      label: 'Full body',        kind: 'all' },
+  { id: 'upper',     label: 'Upper body',       regions: UPPER },
+  { id: 'lower',     label: 'Legs & glutes',    regions: LOWER },
+  { id: 'push',      label: 'Push',             regions: DAY_FOCUS[2].regions },
+  { id: 'pull',      label: 'Pull',             regions: DAY_FOCUS[5].regions },
+  { id: 'core',      label: 'Core & stability', regions: DAY_FOCUS[6].regions, includeCategory: 'stability' },
+  { id: 'back-care', label: 'Back care',        kind: 'back-care' },
+  { id: 'mobility',  label: 'Mobility',         kind: 'mobility' },
+]
+
+/** True when an exercise belongs to a focus ({ kind?, regions?, includeCategory? }). */
+export function matchesFocus(ex, focus) {
   if (!focus) return true
   if (focus.kind === 'mobility') return AUX_CATEGORIES.has(ex.category)
+  if (focus.kind === 'back-care') return !!ex.backCare || (ex.backSafe && ['flexibility', 'stability'].includes(ex.category))
   if (AUX_CATEGORIES.has(ex.category)) return false
   if (focus.kind === 'all') return true
   if (focus.includeCategory && ex.category === focus.includeCategory) return true
   const regions = toRegions(ex.primaryMuscles || [])
-  return regions.some(r => focus.regions.includes(r))
+  return regions.some(r => (focus.regions || []).includes(r))
+}
+
+/** A day's focus: its own (plans, custom workouts) or the original plan's. */
+export function getDayFocus(day) {
+  if (!day) return null
+  return day.focus || DAY_FOCUS[day.day] || null
+}
+
+export function matchesDayFocus(ex, dayNumber) {
+  return matchesFocus(ex, DAY_FOCUS[dayNumber])
 }
 
 /** Sort for browsing: most effective first, easiest breaking ties. */
