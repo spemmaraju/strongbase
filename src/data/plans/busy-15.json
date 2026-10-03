@@ -1,0 +1,291 @@
+{
+  "id": "busy-15",
+  "name": "15-Minute Busy Weeks",
+  "tagline": "Five quick sessions that fit around a packed schedule.",
+  "whoFor": "Anyone short on time who still wants a structured week. Every session takes about 15 minutes.",
+  "why": "Short, focused sessions you will actually do beat long ones you skip. Each one has a quick warm-up, three or four key moves and a back-care cooldown. The week rotates between full body, upper, lower and core so nothing gets missed.",
+  "daysPerWeek": 5,
+  "level": "All levels",
+  "days": [
+    {
+      "day": 1,
+      "theme": "Full Body Express",
+      "emoji": "⏱️",
+      "focusArea": "Squat, push, pull and core in 15 minutes",
+      "durationMinutes": 15,
+      "homeExerciseIds": [
+        "hip-circles",
+        "goblet-squat",
+        "push-up",
+        "dumbbell-single-arm-row",
+        "dead-bug",
+        "childs-pose",
+        "hip-flexor-stretch"
+      ],
+      "gymExerciseIds": [
+        "hip-circles",
+        "leg-press",
+        "machine-chest-press",
+        "cable-seated-row",
+        "dead-bug",
+        "childs-pose",
+        "hip-flexor-stretch"
+      ],
+      "exerciseIds": [
+        "hip-circles",
+        "goblet-squat",
+        "push-up",
+        "dumbbell-single-arm-row",
+        "dead-bug",
+        "childs-pose",
+        "hip-flexor-stretch"
+      ],
+      "focus": {
+        "label": "full body",
+        "kind": "all"
+      }
+    },
+    {
+      "day": 2,
+      "theme": "Upper Push & Pull",
+      "emoji": "🤜",
+      "focusArea": "Shoulders, chest and back — quick",
+      "durationMinutes": 15,
+      "homeExerciseIds": [
+        "arm-circles",
+        "dumbbell-floor-press",
+        "band-seated-row",
+        "band-overhead-press",
+        "banded-pull-apart",
+        "doorway-chest-stretch",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "arm-circles",
+        "machine-chest-press",
+        "lat-pulldown-machine",
+        "machine-shoulder-press",
+        "cable-face-pull",
+        "doorway-chest-stretch",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "arm-circles",
+        "dumbbell-floor-press",
+        "band-seated-row",
+        "band-overhead-press",
+        "banded-pull-apart",
+        "doorway-chest-stretch",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "upper body",
+        "regions": [
+          "chest",
+          "front-delts",
+          "side-delts",
+          "rear-delts",
+          "triceps",
+          "biceps",
+          "forearms",
+          "lats",
+          "mid-back",
+          "traps"
+        ]
+      }
+    },
+    {
+      "day": 3,
+      "theme": "Legs & Glutes",
+      "emoji": "🍑",
+      "focusArea": "Hinge and squat patterns",
+      "durationMinutes": 15,
+      "homeExerciseIds": [
+        "leg-swings",
+        "band-rdl",
+        "split-squat",
+        "single-leg-glute-bridge",
+        "bodyweight-calf-raise",
+        "hip-flexor-stretch",
+        "supine-figure-4"
+      ],
+      "gymExerciseIds": [
+        "leg-swings",
+        "db-rdl",
+        "leg-press",
+        "machine-leg-curl",
+        "seated-calf-raise",
+        "hip-flexor-stretch",
+        "supine-figure-4"
+      ],
+      "exerciseIds": [
+        "leg-swings",
+        "band-rdl",
+        "split-squat",
+        "single-leg-glute-bridge",
+        "bodyweight-calf-raise",
+        "hip-flexor-stretch",
+        "supine-figure-4"
+      ],
+      "focus": {
+        "label": "legs & glutes",
+        "regions": [
+          "glutes",
+          "hamstrings",
+          "quads",
+          "adductors",
+          "abductors",
+          "calves",
+          "hip-flexors"
+        ]
+      }
+    },
+    {
+      "day": 4,
+      "theme": "Core & Posture",
+      "emoji": "🎯",
+      "focusArea": "McGill-style core and back care",
+      "durationMinutes": 15,
+      "homeExerciseIds": [
+        "cat-cow",
+        "bird-dog",
+        "dead-bug",
+        "side-plank",
+        "mcgill-curlup",
+        "cobra-pose",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "bird-dog",
+        "dead-bug",
+        "side-plank",
+        "mcgill-curlup",
+        "cobra-pose",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "bird-dog",
+        "dead-bug",
+        "side-plank",
+        "mcgill-curlup",
+        "cobra-pose",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "core & stability",
+        "regions": [
+          "abs",
+          "obliques",
+          "lower-back"
+        ],
+        "includeCategory": "stability"
+      }
+    },
+    {
+      "day": 5,
+      "theme": "Full Body Finisher",
+      "emoji": "⚡",
+      "focusArea": "Deadlift, row, press and carry",
+      "durationMinutes": 15,
+      "homeExerciseIds": [
+        "worlds-greatest-stretch",
+        "kb-deadlift",
+        "trx-row",
+        "incline-push-up",
+        "kb-suitcase-carry",
+        "seated-hamstring-stretch",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "worlds-greatest-stretch",
+        "kb-deadlift",
+        "cable-seated-row",
+        "machine-chest-press",
+        "kb-suitcase-carry",
+        "seated-hamstring-stretch",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "worlds-greatest-stretch",
+        "kb-deadlift",
+        "trx-row",
+        "incline-push-up",
+        "kb-suitcase-carry",
+        "seated-hamstring-stretch",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "full body",
+        "kind": "all"
+      }
+    },
+    {
+      "day": 6,
+      "theme": "Easy Walk & Stretch",
+      "emoji": "🌤️",
+      "focusArea": "Optional gentle movement",
+      "durationMinutes": 10,
+      "homeExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "standing-quad-stretch",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "treadmill-walk",
+        "standing-quad-stretch",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "standing-quad-stretch",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    },
+    {
+      "day": 7,
+      "theme": "Rest & Reset",
+      "emoji": "😌",
+      "focusArea": "Optional 10-minute back care",
+      "durationMinutes": 10,
+      "homeExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "id": "full-body-3",
+  "name": "Full Body Strength",
+  "tagline": "Three full-body days a week: simple, proven, effective.",
+  "whoFor": "Beginners and returners who want a classic strength plan with three solid sessions and days off between.",
+  "why": "Training every major movement (squat, hinge, push, pull, carry) three times a week builds strength fastest for beginners. Alternating A and B days keeps things fresh, and rest days in between give your body time to adapt. Core work and back-care stretches close every session.",
+  "daysPerWeek": 3,
+  "level": "All levels",
+  "days": [
+    {
+      "day": 1,
+      "theme": "Full Body A",
+      "emoji": "🏋️",
+      "focusArea": "Squat, hinge, push, pull and carry",
+      "durationMinutes": 45,
+      "homeExerciseIds": [
+        "arm-circles",
+        "hip-circles",
+        "cat-cow",
+        "speed-bodyweight-squat",
+        "goblet-squat",
+        "band-rdl",
+        "push-up",
+        "dumbbell-single-arm-row",
+        "db-farmers-carry",
+        "dead-bug",
+        "childs-pose",
+        "hip-flexor-stretch",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "arm-circles",
+        "hip-circles",
+        "cat-cow",
+        "sled-push",
+        "leg-press",
+        "db-rdl",
+        "db-bench-press",
+        "single-arm-db-row",
+        "kb-suitcase-carry",
+        "dead-bug",
+        "childs-pose",
+        "hip-flexor-stretch",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "arm-circles",
+        "hip-circles",
+        "cat-cow",
+        "speed-bodyweight-squat",
+        "goblet-squat",
+        "band-rdl",
+        "push-up",
+        "dumbbell-single-arm-row",
+        "db-farmers-carry",
+        "dead-bug",
+        "childs-pose",
+        "hip-flexor-stretch",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "full body",
+        "kind": "all"
+      }
+    },
+    {
+      "day": 2,
+      "theme": "Walk & Loosen",
+      "emoji": "🚶",
+      "focusArea": "Easy movement between lifting days — optional",
+      "durationMinutes": 15,
+      "homeExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "open-book-rotation",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "treadmill-walk",
+        "open-book-rotation",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "open-book-rotation",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    },
+    {
+      "day": 3,
+      "theme": "Full Body B",
+      "emoji": "🔥",
+      "focusArea": "A fresh mix: single-leg squat, deadlift, press, row, carry",
+      "durationMinutes": 45,
+      "homeExerciseIds": [
+        "leg-swings",
+        "thoracic-rotation",
+        "worlds-greatest-stretch",
+        "fast-glute-bridge",
+        "split-squat",
+        "kb-deadlift",
+        "dumbbell-floor-press",
+        "trx-row",
+        "kb-suitcase-carry",
+        "side-plank",
+        "bird-dog",
+        "supine-figure-4",
+        "seated-hamstring-stretch",
+        "cobra-pose"
+      ],
+      "gymExerciseIds": [
+        "leg-swings",
+        "thoracic-rotation",
+        "worlds-greatest-stretch",
+        "fast-glute-bridge",
+        "db-walking-lunge",
+        "kb-deadlift",
+        "machine-chest-press",
+        "lat-pulldown-machine",
+        "db-suitcase-carry",
+        "side-plank",
+        "bird-dog",
+        "supine-figure-4",
+        "seated-hamstring-stretch",
+        "cobra-pose"
+      ],
+      "exerciseIds": [
+        "leg-swings",
+        "thoracic-rotation",
+        "worlds-greatest-stretch",
+        "fast-glute-bridge",
+        "split-squat",
+        "kb-deadlift",
+        "dumbbell-floor-press",
+        "trx-row",
+        "kb-suitcase-carry",
+        "side-plank",
+        "bird-dog",
+        "supine-figure-4",
+        "seated-hamstring-stretch",
+        "cobra-pose"
+      ],
+      "focus": {
+        "label": "full body",
+        "kind": "all"
+      }
+    },
+    {
+      "day": 4,
+      "theme": "Mobility Flow",
+      "emoji": "🧘",
+      "focusArea": "Loosen hips and spine — optional",
+      "durationMinutes": 20,
+      "homeExerciseIds": [
+        "cat-cow",
+        "thoracic-rotation",
+        "hip-90-90",
+        "open-book-rotation",
+        "pelvic-tilts",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "thoracic-rotation",
+        "hip-90-90",
+        "open-book-rotation",
+        "pelvic-tilts",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "thoracic-rotation",
+        "hip-90-90",
+        "open-book-rotation",
+        "pelvic-tilts",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    },
+    {
+      "day": 5,
+      "theme": "Full Body A (Variation)",
+      "emoji": "⚡",
+      "focusArea": "Same pattern as A with new exercises",
+      "durationMinutes": 45,
+      "homeExerciseIds": [
+        "arm-circles",
+        "hip-circles",
+        "inchworm-walkout",
+        "band-fast-row",
+        "trx-squat",
+        "db-sumo-deadlift",
+        "trx-push-up",
+        "band-seated-row",
+        "db-suitcase-carry",
+        "mcgill-curlup",
+        "bird-dog",
+        "childs-pose",
+        "hip-flexor-stretch",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "arm-circles",
+        "hip-circles",
+        "inchworm-walkout",
+        "sled-push",
+        "kb-goblet-squat",
+        "db-rdl",
+        "machine-shoulder-press",
+        "cable-seated-row",
+        "db-farmers-carry",
+        "mcgill-curlup",
+        "bird-dog",
+        "childs-pose",
+        "hip-flexor-stretch",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "arm-circles",
+        "hip-circles",
+        "inchworm-walkout",
+        "band-fast-row",
+        "trx-squat",
+        "db-sumo-deadlift",
+        "trx-push-up",
+        "band-seated-row",
+        "db-suitcase-carry",
+        "mcgill-curlup",
+        "bird-dog",
+        "childs-pose",
+        "hip-flexor-stretch",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "full body",
+        "kind": "all"
+      }
+    },
+    {
+      "day": 6,
+      "theme": "Easy Walk & Stretch",
+      "emoji": "🌤️",
+      "focusArea": "Relaxed movement — optional",
+      "durationMinutes": 20,
+      "homeExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "standing-quad-stretch",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "treadmill-walk",
+        "standing-quad-stretch",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "standing-quad-stretch",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    },
+    {
+      "day": 7,
+      "theme": "Rest & Reset",
+      "emoji": "😌",
+      "focusArea": "A few minutes of back care — optional",
+      "durationMinutes": 10,
+      "homeExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    }
+  ]
+}

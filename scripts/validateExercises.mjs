@@ -17,7 +17,7 @@
 // Exits non-zero on any error so this can gate a commit.
 // ---------------------------------------------------------------------------
 
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
@@ -117,6 +117,54 @@ for (const [i, ex] of exercises.entries()) {
     if (!m.wrong || !m.right) errors.push(`${at}: mistakes entry needs both wrong and right`)
   }
 }
+
+
+// ── Plans (src/data/plans/*.json) ───────────────────────────────────────────
+const exById = new Map(exercises.map(e => [e.id, e]))
+const planDir = join(root, 'src/data/plans')
+const PLAN_FIELDS = ['id', 'name', 'tagline', 'whoFor', 'why', 'daysPerWeek', 'level']
+const DAY_FIELDS = ['theme', 'emoji', 'focusArea', 'durationMinutes']
+const ID_LISTS = ['homeExerciseIds', 'gymExerciseIds', 'exerciseIds']
+let planCount = 0
+
+for (const file of readdirSync(planDir).filter(f => f.endsWith('.json')).sort()) {
+  planCount++
+  const pat = `plan ${file}`
+  let plan
+  try { plan = JSON.parse(readFileSync(join(planDir, file), 'utf8')) }
+  catch (e) { errors.push(`${pat}: invalid JSON (${e.message})`); continue }
+
+  for (const f of PLAN_FIELDS) if (plan[f] == null || plan[f] === '') errors.push(`${pat}: missing "${f}"`)
+  if (plan.id && plan.id !== file.replace(/\.json$/, '')) errors.push(`${pat}: id "${plan.id}" does not match filename`)
+  if (!['Beginner', 'All levels', 'Intermediate'].includes(plan.level)) errors.push(`${pat}: bad level "${plan.level}"`)
+
+  const days = plan.days
+  if (!Array.isArray(days) || days.length !== 7) { errors.push(`${pat}: needs exactly 7 days (got ${days?.length})`); continue }
+  let training = 0
+  days.forEach((d, i) => {
+    const at = `${pat} day ${i + 1}`
+    if (d.day !== i + 1) errors.push(`${at}: day number is ${d.day}, expected ${i + 1}`)
+    for (const f of DAY_FIELDS) if (d[f] == null || d[f] === '') errors.push(`${at}: missing "${f}"`)
+    if (!d.focus || !d.focus.label) errors.push(`${at}: focus missing or has no label`)
+    if (!d.optional) training++
+    for (const key of ID_LISTS) {
+      const ids = d[key]
+      if (!Array.isArray(ids) || ids.length === 0) { errors.push(`${at}: ${key} missing or empty`); continue }
+      const dup = ids.filter((id, n) => ids.indexOf(id) !== n)
+      if (dup.length) errors.push(`${at}: ${key} has duplicate ids: ${[...new Set(dup)].join(', ')}`)
+      for (const id of ids) if (!exById.has(id)) errors.push(`${at}: ${key} unknown exercise "${id}"`)
+      const last = exById.get(ids[ids.length - 1])
+      if (last && last.category !== 'flexibility') {
+        errors.push(`${at}: ${key} must end with a flexibility move (ends with "${last.id}", ${last.category})`)
+      }
+    }
+    if (JSON.stringify(d.exerciseIds) !== JSON.stringify(d.homeExerciseIds)) {
+      errors.push(`${at}: exerciseIds must equal homeExerciseIds`)
+    }
+  })
+  if (training !== plan.daysPerWeek) errors.push(`${pat}: daysPerWeek is ${plan.daysPerWeek} but ${training} days are non-optional`)
+}
+console.log(`  plans checked: ${planCount}`)
 
 // ── Report ──────────────────────────────────────────────────────────────────
 const byCat = {}

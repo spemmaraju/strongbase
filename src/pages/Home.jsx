@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { getActivePlan } from '../data/plans'
+import MyWorkoutsCard from '../components/MyWorkoutsCard'
 import exercisesData from '../data/exercises.json'
 import useStreak, { getMondayStr, dateAddDays } from '../hooks/useStreak'
 import useBadges from '../hooks/useBadges'
@@ -521,6 +522,23 @@ function ModeToggle({ mode, onChange }) {
   )
 }
 
+// Which plan the week above belongs to, with the way to switch.
+function PlanStrip({ plan, onPress }) {
+  return (
+    <button onClick={onPress} style={{
+      marginTop: 12, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      padding: '12px 14px', borderRadius: 14, backgroundColor: K.card, border: `1px solid ${K.border}`,
+      cursor: 'pointer', textAlign: 'left',
+    }}>
+      <div>
+        <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', color: K.dim, textTransform: 'uppercase', margin: 0 }}>Your plan</p>
+        <p style={{ fontFamily: FONT, fontSize: 15, fontWeight: 700, color: K.text, margin: '3px 0 0' }}>{plan.name}</p>
+      </div>
+      <span style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet, letterSpacing: '0.08em' }}>CHANGE →</span>
+    </button>
+  )
+}
+
 // ── Main component ─────────────────────────────────────────────────────────────
 export default function Home() {
   const navigate = useNavigate()
@@ -645,6 +663,7 @@ export default function Home() {
               <KineticHeroCard {...heroProps} />
             )}
             <WeekPills {...weekProps} />
+            <PlanStrip plan={plan} onPress={() => navigate('/plans')} />
             <VolumeTrend logs={logs} />
 
             {/* Recent activity */}
@@ -678,6 +697,7 @@ export default function Home() {
 
           {/* Right column */}
           <div>
+            <MyWorkoutsCard compact />
             <LevelCard levelInfo={levelInfo} />
             <QuickBurnCard onPress={() => navigate('/quick')} />
             <BreatheCard onPress={() => navigate('/breathe')} />
@@ -701,6 +721,12 @@ export default function Home() {
           {/* Week */}
           <div style={{ padding: '0 16px' }}>
             <WeekPills {...weekProps} />
+            <PlanStrip plan={plan} onPress={() => navigate('/plans')} />
+          </div>
+
+          {/* Your own workouts */}
+          <div style={{ padding: '16px 16px 0' }}>
+            <MyWorkoutsCard compact />
           </div>
 
           {/* Quick burn + Brace & breathe */}

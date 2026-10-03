@@ -1,0 +1,399 @@
+{
+  "id": "upper-lower-4",
+  "name": "Upper / Lower Split",
+  "tagline": "Four days: upper, lower, upper, lower.",
+  "whoFor": "Those with a bit of training behind them who can commit to four sessions a week and want more volume per muscle.",
+  "why": "Splitting the body into upper and lower days lets you do more work for each muscle while the other half rests. Each half is trained twice a week, which is a proven rate for steady progress. Lower days include core and back-care work so your spine stays happy under load.",
+  "daysPerWeek": 4,
+  "level": "Intermediate",
+  "days": [
+    {
+      "day": 1,
+      "theme": "Upper A",
+      "emoji": "💪",
+      "focusArea": "Chest, back, shoulders and arms",
+      "durationMinutes": 45,
+      "homeExerciseIds": [
+        "arm-circles",
+        "thoracic-rotation",
+        "wall-angel",
+        "band-fast-press",
+        "push-up",
+        "dumbbell-single-arm-row",
+        "band-overhead-press",
+        "band-seated-row",
+        "banded-pull-apart",
+        "dumbbell-overhead-tricep-extension",
+        "doorway-chest-stretch",
+        "lat-stretch-kneeling",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "arm-circles",
+        "thoracic-rotation",
+        "wall-angel",
+        "band-fast-press",
+        "db-bench-press",
+        "lat-pulldown-machine",
+        "machine-shoulder-press",
+        "cable-seated-row",
+        "cable-face-pull",
+        "tricep-pushdown",
+        "doorway-chest-stretch",
+        "lat-stretch-kneeling",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "arm-circles",
+        "thoracic-rotation",
+        "wall-angel",
+        "band-fast-press",
+        "push-up",
+        "dumbbell-single-arm-row",
+        "band-overhead-press",
+        "band-seated-row",
+        "banded-pull-apart",
+        "dumbbell-overhead-tricep-extension",
+        "doorway-chest-stretch",
+        "lat-stretch-kneeling",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "upper body",
+        "regions": [
+          "chest",
+          "front-delts",
+          "side-delts",
+          "rear-delts",
+          "triceps",
+          "biceps",
+          "forearms",
+          "lats",
+          "mid-back",
+          "traps"
+        ]
+      }
+    },
+    {
+      "day": 2,
+      "theme": "Lower A",
+      "emoji": "🦵",
+      "focusArea": "Squat focus: quads, glutes and calves",
+      "durationMinutes": 45,
+      "homeExerciseIds": [
+        "hip-circles",
+        "leg-swings",
+        "cat-cow",
+        "speed-bodyweight-squat",
+        "goblet-squat",
+        "split-squat",
+        "band-rdl",
+        "banded-glute-bridge",
+        "bodyweight-calf-raise",
+        "dead-bug",
+        "hip-flexor-stretch",
+        "standing-quad-stretch",
+        "supine-figure-4",
+        "cobra-pose"
+      ],
+      "gymExerciseIds": [
+        "hip-circles",
+        "leg-swings",
+        "cat-cow",
+        "sled-push",
+        "leg-press",
+        "leg-extension-machine",
+        "db-rdl",
+        "machine-leg-curl",
+        "seated-calf-raise",
+        "dead-bug",
+        "hip-flexor-stretch",
+        "standing-quad-stretch",
+        "supine-figure-4",
+        "cobra-pose"
+      ],
+      "exerciseIds": [
+        "hip-circles",
+        "leg-swings",
+        "cat-cow",
+        "speed-bodyweight-squat",
+        "goblet-squat",
+        "split-squat",
+        "band-rdl",
+        "banded-glute-bridge",
+        "bodyweight-calf-raise",
+        "dead-bug",
+        "hip-flexor-stretch",
+        "standing-quad-stretch",
+        "supine-figure-4",
+        "cobra-pose"
+      ],
+      "focus": {
+        "label": "legs & glutes",
+        "regions": [
+          "glutes",
+          "hamstrings",
+          "quads",
+          "adductors",
+          "abductors",
+          "calves",
+          "hip-flexors"
+        ]
+      }
+    },
+    {
+      "day": 3,
+      "theme": "Recovery & Mobility",
+      "emoji": "🧘",
+      "focusArea": "Loosen up between big days — optional",
+      "durationMinutes": 20,
+      "homeExerciseIds": [
+        "cat-cow",
+        "thoracic-rotation",
+        "hip-90-90",
+        "open-book-rotation",
+        "pelvic-tilts",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "thoracic-rotation",
+        "hip-90-90",
+        "open-book-rotation",
+        "pelvic-tilts",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "thoracic-rotation",
+        "hip-90-90",
+        "open-book-rotation",
+        "pelvic-tilts",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    },
+    {
+      "day": 4,
+      "theme": "Upper B",
+      "emoji": "🤜",
+      "focusArea": "Press, row and arm variety",
+      "durationMinutes": 45,
+      "homeExerciseIds": [
+        "arm-circles",
+        "cat-cow",
+        "wall-angel",
+        "band-fast-row",
+        "dumbbell-floor-press",
+        "trx-row",
+        "shoulder-press",
+        "reverse-fly",
+        "bicep-curl",
+        "tricep-kickback",
+        "doorway-chest-stretch",
+        "neck-side-stretch",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "gymExerciseIds": [
+        "arm-circles",
+        "cat-cow",
+        "wall-angel",
+        "band-fast-row",
+        "machine-chest-press",
+        "single-arm-db-row",
+        "db-arnold-press",
+        "assisted-pull-up-machine",
+        "db-hammer-curl",
+        "tricep-pushdown",
+        "doorway-chest-stretch",
+        "neck-side-stretch",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "exerciseIds": [
+        "arm-circles",
+        "cat-cow",
+        "wall-angel",
+        "band-fast-row",
+        "dumbbell-floor-press",
+        "trx-row",
+        "shoulder-press",
+        "reverse-fly",
+        "bicep-curl",
+        "tricep-kickback",
+        "doorway-chest-stretch",
+        "neck-side-stretch",
+        "childs-pose",
+        "sphinx-pose"
+      ],
+      "focus": {
+        "label": "upper body",
+        "regions": [
+          "chest",
+          "front-delts",
+          "side-delts",
+          "rear-delts",
+          "triceps",
+          "biceps",
+          "forearms",
+          "lats",
+          "mid-back",
+          "traps"
+        ]
+      }
+    },
+    {
+      "day": 5,
+      "theme": "Lower B",
+      "emoji": "🍑",
+      "focusArea": "Hinge focus: glutes and hamstrings",
+      "durationMinutes": 45,
+      "homeExerciseIds": [
+        "hip-circles",
+        "leg-swings",
+        "worlds-greatest-stretch",
+        "fast-glute-bridge",
+        "kb-deadlift",
+        "db-step-up",
+        "single-leg-glute-bridge",
+        "banded-lateral-walk",
+        "single-leg-calf-raise",
+        "side-plank",
+        "bird-dog",
+        "modified-pigeon",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "cobra-pose"
+      ],
+      "gymExerciseIds": [
+        "hip-circles",
+        "leg-swings",
+        "worlds-greatest-stretch",
+        "fast-glute-bridge",
+        "db-rdl",
+        "db-walking-lunge",
+        "machine-leg-curl",
+        "hip-abduction-machine",
+        "seated-calf-raise",
+        "side-plank",
+        "bird-dog",
+        "modified-pigeon",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "cobra-pose"
+      ],
+      "exerciseIds": [
+        "hip-circles",
+        "leg-swings",
+        "worlds-greatest-stretch",
+        "fast-glute-bridge",
+        "kb-deadlift",
+        "db-step-up",
+        "single-leg-glute-bridge",
+        "banded-lateral-walk",
+        "single-leg-calf-raise",
+        "side-plank",
+        "bird-dog",
+        "modified-pigeon",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "cobra-pose"
+      ],
+      "focus": {
+        "label": "legs & glutes",
+        "regions": [
+          "glutes",
+          "hamstrings",
+          "quads",
+          "adductors",
+          "abductors",
+          "calves",
+          "hip-flexors"
+        ]
+      }
+    },
+    {
+      "day": 6,
+      "theme": "Easy Walk & Stretch",
+      "emoji": "🌤️",
+      "focusArea": "Relaxed movement — optional",
+      "durationMinutes": 20,
+      "homeExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "standing-quad-stretch",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "treadmill-walk",
+        "standing-quad-stretch",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "march-in-place",
+        "standing-quad-stretch",
+        "seated-hamstring-stretch",
+        "calf-stretch-wall",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    },
+    {
+      "day": 7,
+      "theme": "Rest & Reset",
+      "emoji": "😌",
+      "focusArea": "A few minutes of back care — optional",
+      "durationMinutes": 10,
+      "homeExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "gymExerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "exerciseIds": [
+        "cat-cow",
+        "hip-circles",
+        "supine-twist",
+        "hip-flexor-stretch",
+        "childs-pose"
+      ],
+      "focus": {
+        "label": "mobility",
+        "kind": "mobility"
+      },
+      "optional": true
+    }
+  ]
+}

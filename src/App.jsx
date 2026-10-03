@@ -13,6 +13,8 @@ import Onboarding from './pages/Onboarding'
 import Library from './pages/Library'
 import BreathingTrainer from './pages/BreathingTrainer'
 import QuickSession from './pages/QuickSession'
+import WorkoutBuilder from './pages/WorkoutBuilder'
+import Plans from './pages/Plans'
 import { ExerciseLibraryProvider } from './hooks/useExerciseLibrary'
 
 function App() {
@@ -36,6 +38,9 @@ function App() {
         {/* Protected routes without bottom nav (immersive) */}
         <Route path="/breathe"             element={<AuthGuard><BreathingTrainer /></AuthGuard>} />
         <Route path="/quick"               element={<AuthGuard><QuickSession /></AuthGuard>} />
+        <Route path="/build"               element={<AuthGuard><WorkoutBuilder /></AuthGuard>} />
+        <Route path="/build/:id"           element={<AuthGuard><WorkoutBuilder /></AuthGuard>} />
+        <Route path="/plans"               element={<AuthGuard><Plans /></AuthGuard>} />
         <Route path="/day/:dayNumber"      element={<AuthGuard><DayOverview /></AuthGuard>} />
         <Route path="/workout/:dayNumber"  element={<AuthGuard><WorkoutPlayer /></AuthGuard>} />
         <Route path="/history/:logId"      element={<AuthGuard><WorkoutDetail /></AuthGuard>} />
