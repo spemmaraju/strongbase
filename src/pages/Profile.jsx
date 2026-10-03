@@ -5,28 +5,7 @@ import useStreak from '../hooks/useStreak'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { Icon } from '../components/Icons'
 import { getTopMuscles, formatDuration } from '../utils/workoutStats'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg:      '#0a0e1a',
-  card:    '#101828',
-  inset:   '#16233a',
-  border:  'rgba(255,255,255,0.06)',
-  borderSt:'rgba(255,255,255,0.10)',
-  pink:    '#ec4899',
-  purple:  '#8b5cf6',
-  violet:  '#c084fc',
-  grad:    'linear-gradient(90deg, #ec4899, #8b5cf6)',
-  gradD:   'linear-gradient(135deg, #ec4899, #8b5cf6)',
-  amber:   '#f59e0b',
-  teal:    '#2dd4bf',
-  text:    '#f8fafc',
-  muted:   '#94a3b8',
-  subtle:  '#64748b',
-  dim:     '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 // Level system — mirrors Home.jsx
 const LEVEL_THRESHOLDS = [0, 400, 900, 1800, 3200, 5000, 7500, 11000, 15500, 21000]
@@ -105,7 +84,7 @@ export default function Profile() {
       <div style={{ backgroundColor: K.bg, minHeight: '100svh', color: K.text }}>
         {/* Header */}
         <div style={{ padding: '32px 28px 24px', borderBottom: `1px solid ${K.border}` }}>
-          <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: K.text, margin: 0 }}>Profile</h1>
+          <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.text, margin: 0 }}>Profile</h1>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 28, padding: '28px 28px 48px', alignItems: 'start' }}>
@@ -117,13 +96,13 @@ export default function Profile() {
               <div style={{
                 width: 72, height: 72, borderRadius: '50%',
                 background: K.gradD,
-                border: '3px solid rgba(192,132,252,0.3)',
+                border: '3px solid rgba(58,120,224,0.3)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
-                <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 26, color: '#fff' }}>{initials}</span>
+                <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: 26, color: '#fff' }}>{initials}</span>
               </div>
               <div>
-                <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 18, color: K.text, margin: 0 }}>{athleteName}</p>
+                <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 18, color: K.text, margin: 0 }}>{athleteName}</p>
                 <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.dim, letterSpacing: '0.08em', margin: '4px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 240 }}>{user?.email}</p>
                 <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.08em', margin: '3px 0 0' }}>SINCE {memberSince.toUpperCase()}</p>
               </div>
@@ -134,7 +113,7 @@ export default function Profile() {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <Icon name="xp" size={16} style={{ color: K.violet }} />
-                  <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 16, color: K.text }}>
+                  <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: 16, color: K.text }}>
                     Level {levelInfo.level} · {levelInfo.name}
                   </span>
                 </div>
@@ -155,11 +134,11 @@ export default function Profile() {
               onClick={handleSignOut}
               style={{
                 width: '100%', minHeight: 48, backgroundColor: K.inset,
-                borderRadius: 14, border: '1px solid rgba(239,68,68,0.2)',
-                color: '#fca5a5', fontSize: 13, fontWeight: 700,
+                borderRadius: 14, border: '1px solid rgba(224,108,108,0.2)',
+                color: '#eb9b9b', fontSize: 13, fontWeight: 700,
                 fontFamily: FONT, cursor: 'pointer', transition: 'background 0.15s',
               }}
-              onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgba(239,68,68,0.08)'}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgba(224,108,108,0.08)'}
               onMouseLeave={e => e.currentTarget.style.backgroundColor = K.inset}
             >
               Sign Out
@@ -189,9 +168,9 @@ export default function Profile() {
                     <span key={muscle} style={{
                       padding: '5px 12px', borderRadius: 999,
                       fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
-                      backgroundColor: i < 3 ? 'rgba(139,92,246,0.12)' : K.inset,
+                      backgroundColor: i < 3 ? 'rgba(58,120,224,0.12)' : K.inset,
                       color: i < 3 ? K.violet : K.subtle,
-                      border: `1px solid ${i < 3 ? 'rgba(139,92,246,0.28)' : K.border}`,
+                      border: `1px solid ${i < 3 ? 'rgba(58,120,224,0.28)' : K.border}`,
                     }}>{muscle}</span>
                   ))}
                 </div>
@@ -221,7 +200,7 @@ export default function Profile() {
     <div style={{ backgroundColor: K.bg, minHeight: '100svh', color: K.text }}>
       {/* Header */}
       <div style={{ padding: '52px 20px 20px', borderBottom: `1px solid ${K.border}` }}>
-        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: K.text, margin: 0 }}>Profile</h1>
+        <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.text, margin: 0 }}>Profile</h1>
       </div>
 
       <div style={{ padding: '20px 16px 100px', display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -230,13 +209,13 @@ export default function Profile() {
         <div style={{ ...CARD, display: 'flex', alignItems: 'center', gap: 16 }}>
           <div style={{
             width: 56, height: 56, borderRadius: '50%', flexShrink: 0,
-            background: K.gradD, border: '2.5px solid rgba(192,132,252,0.3)',
+            background: K.gradD, border: '2.5px solid rgba(58,120,224,0.3)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 20, color: '#fff' }}>{initials}</span>
+            <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: 20, color: '#fff' }}>{initials}</span>
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 16, color: K.text, margin: 0 }}>{athleteName}</p>
+            <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 16, color: K.text, margin: 0 }}>{athleteName}</p>
             <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.dim, letterSpacing: '0.06em', margin: '3px 0 0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{user?.email}</p>
             <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.06em', margin: '2px 0 0' }}>SINCE {memberSince.toUpperCase()}</p>
           </div>
@@ -247,7 +226,7 @@ export default function Profile() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
               <Icon name="xp" size={14} style={{ color: K.violet }} />
-              <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 15, color: K.text }}>
+              <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: 15, color: K.text }}>
                 Level {levelInfo.level} · {levelInfo.name}
               </span>
             </div>
@@ -284,9 +263,9 @@ export default function Profile() {
                 <span key={muscle} style={{
                   padding: '5px 11px', borderRadius: 999,
                   fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
-                  backgroundColor: i < 3 ? 'rgba(139,92,246,0.12)' : K.inset,
+                  backgroundColor: i < 3 ? 'rgba(58,120,224,0.12)' : K.inset,
                   color: i < 3 ? K.violet : K.subtle,
-                  border: `1px solid ${i < 3 ? 'rgba(139,92,246,0.28)' : K.border}`,
+                  border: `1px solid ${i < 3 ? 'rgba(58,120,224,0.28)' : K.border}`,
                 }}>{muscle}</span>
               ))}
             </div>
@@ -312,11 +291,11 @@ export default function Profile() {
           style={{
             width: '100%', minHeight: 52, marginTop: 6,
             backgroundColor: K.inset, borderRadius: 16,
-            border: '1px solid rgba(239,68,68,0.2)',
-            color: '#fca5a5', fontSize: 14, fontWeight: 700,
+            border: '1px solid rgba(224,108,108,0.2)',
+            color: '#eb9b9b', fontSize: 14, fontWeight: 700,
             fontFamily: FONT, cursor: 'pointer', transition: 'background 0.15s',
           }}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgba(239,68,68,0.08)'}
+          onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgba(224,108,108,0.08)'}
           onMouseLeave={e => e.currentTarget.style.backgroundColor = K.inset}
         >
           Sign Out

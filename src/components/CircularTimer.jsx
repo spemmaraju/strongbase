@@ -2,7 +2,7 @@
 // Ring color shifts to amber when ≤ 3 seconds remain.
 // `size` scales the whole component (200 = phone default, ~280 for tablet).
 
-export default function CircularTimer({ secondsRemaining, totalSeconds, ringColor = '#c084fc', size = 200 }) {
+export default function CircularTimer({ secondsRemaining, totalSeconds, ringColor = '#9cc2ff', size = 200 }) {
   const stroke = Math.max(6, Math.round(size * 0.04))
   const radius = (size - stroke) / 2
   const circumference = 2 * Math.PI * radius
@@ -12,7 +12,7 @@ export default function CircularTimer({ secondsRemaining, totalSeconds, ringColo
 
   // Amber when 3 seconds or fewer remain (and timer is actually running)
   const activeColor =
-    secondsRemaining > 0 && secondsRemaining <= 3 ? '#F59E0B' : ringColor
+    secondsRemaining > 0 && secondsRemaining <= 3 ? '#d9a441' : ringColor
 
   return (
     <div style={{ position: 'relative', width: size, height: size }}>
@@ -62,8 +62,8 @@ export default function CircularTimer({ secondsRemaining, totalSeconds, ringColo
         <span
           style={{
             fontSize: Math.round(size * 0.26),
-            fontWeight: 800,
-            color: '#F8FAFC',
+            fontWeight: 700,
+            color: '#f2f3f5',
             lineHeight: 1,
             fontFamily: 'Inter, sans-serif',
             fontVariantNumeric: 'tabular-nums',
@@ -74,7 +74,7 @@ export default function CircularTimer({ secondsRemaining, totalSeconds, ringColo
         <span
           style={{
             fontSize: Math.max(12, Math.round(size * 0.065)),
-            color: '#94A3B8',
+            color: '#a1a6ae',
             marginTop: 6,
             fontWeight: 600,
             letterSpacing: '0.05em',

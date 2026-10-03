@@ -14,23 +14,7 @@ import { parseYouTubeId, watchUrl } from '../utils/youtube'
 import { REGIONS, toRegions } from '../data/muscleGroups'
 import { getProgramDayNumber } from '../utils/workoutStats'
 import { plannedIdsForDay, addExerciseToDay, removeExerciseFromDay } from '../hooks/useSessionDraft'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg: '#0a0e1a', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  pink: '#ec4899', purple: '#8b5cf6', violet: '#c084fc',
-  gradD: 'linear-gradient(135deg,#ec4899,#8b5cf6)',
-  amber: '#f59e0b', teal: '#2dd4bf', green: '#22c55e',
-  text: '#f8fafc', muted: '#94a3b8', subtle: '#64748b', dim: '#475569',
-}
-
-const KCAT = {
-  'warm-up': K.amber, strength: K.pink, stability: K.purple,
-  flexibility: K.teal, cardio: '#3b82f6', power: '#fb923c',
-}
+import { K, FONT, MONO, CATEGORY_COLORS as KCAT } from '../theme'
 
 const CATEGORIES = ['strength', 'power', 'stability', 'warm-up', 'flexibility', 'cardio']
 
@@ -118,9 +102,9 @@ export default function Library() {
     <button key={key ?? label} onClick={onClick} style={{
       padding: '5px 11px', borderRadius: 99, cursor: 'pointer', whiteSpace: 'nowrap',
       fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
-      backgroundColor: active ? 'rgba(192,132,252,0.16)' : K.inset,
+      backgroundColor: active ? 'rgba(58,120,224,0.16)' : K.inset,
       color: active ? K.violet : K.muted,
-      border: `1px solid ${active ? 'rgba(192,132,252,0.4)' : K.border}`,
+      border: `1px solid ${active ? 'rgba(58,120,224,0.4)' : K.border}`,
     }}>{label}</button>
   )
 
@@ -132,7 +116,7 @@ export default function Library() {
         <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.dim, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 6px' }}>
           Exercise library
         </p>
-        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: K.text, margin: '0 0 6px' }}>
+        <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.text, margin: '0 0 6px' }}>
           {exercises.length} exercises
         </h1>
         <p style={{ fontSize: 14, color: K.muted, margin: '0 0 20px', maxWidth: '58ch', lineHeight: 1.55 }}>
@@ -144,8 +128,8 @@ export default function Library() {
         {/* Sync state — honest about whether this is syncing or device-only */}
         <div style={{
           display: 'flex', alignItems: 'center', gap: 9, marginBottom: 18,
-          backgroundColor: syncState === 'synced' ? 'rgba(34,197,94,0.06)' : 'rgba(245,158,11,0.06)',
-          border: `1px solid ${syncState === 'synced' ? 'rgba(34,197,94,0.22)' : 'rgba(245,158,11,0.22)'}`,
+          backgroundColor: syncState === 'synced' ? 'rgba(79,179,138,0.06)' : 'rgba(217,164,65,0.06)',
+          border: `1px solid ${syncState === 'synced' ? 'rgba(79,179,138,0.22)' : 'rgba(217,164,65,0.22)'}`,
           borderRadius: 12, padding: '10px 13px',
         }}>
           <div style={{
@@ -200,7 +184,7 @@ export default function Library() {
 
             return (
               <div key={ex.id} style={{
-                backgroundColor: K.card, border: `1px solid ${isEditing ? 'rgba(192,132,252,0.4)' : K.border}`,
+                backgroundColor: K.card, border: `1px solid ${isEditing ? 'rgba(58,120,224,0.4)' : K.border}`,
                 borderRadius: 14, padding: '12px 14px', marginBottom: 8,
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -222,16 +206,16 @@ export default function Library() {
                   {ex.youtubeId && overridden && (
                     <span style={{
                       flexShrink: 0, fontFamily: MONO, fontSize: 8.5, fontWeight: 700,
-                      color: K.violet, backgroundColor: 'rgba(192,132,252,0.12)',
-                      border: '1px solid rgba(192,132,252,0.28)',
+                      color: K.violet, backgroundColor: 'rgba(58,120,224,0.12)',
+                      border: '1px solid rgba(58,120,224,0.28)',
                       borderRadius: 99, padding: '3px 8px', letterSpacing: '0.08em',
                     }}>YOURS</span>
                   )}
                   {!ex.youtubeId && (
                     <span style={{
                       flexShrink: 0, fontFamily: MONO, fontSize: 8.5, fontWeight: 700,
-                      color: K.amber, backgroundColor: 'rgba(245,158,11,0.12)',
-                      border: '1px solid rgba(245,158,11,0.25)',
+                      color: K.amber, backgroundColor: 'rgba(217,164,65,0.12)',
+                      border: '1px solid rgba(217,164,65,0.25)',
                       borderRadius: 99, padding: '3px 8px', letterSpacing: '0.08em',
                     }}>NEEDS VIDEO</span>
                   )}
@@ -241,8 +225,8 @@ export default function Library() {
                     aria-label={inToday.has(ex.id) ? `Remove ${ex.name} from today` : `Add ${ex.name} to today`}
                     style={{
                       flexShrink: 0, padding: '6px 11px', borderRadius: 9, cursor: 'pointer',
-                      background: inToday.has(ex.id) ? 'rgba(34,197,94,0.14)' : K.gradD,
-                      border: inToday.has(ex.id) ? '1px solid rgba(34,197,94,0.35)' : 'none',
+                      background: inToday.has(ex.id) ? 'rgba(79,179,138,0.14)' : K.gradD,
+                      border: inToday.has(ex.id) ? '1px solid rgba(79,179,138,0.35)' : 'none',
                       color: inToday.has(ex.id) ? K.green : '#fff',
                       fontFamily: FONT, fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap',
                     }}
@@ -272,7 +256,7 @@ export default function Library() {
                         style={{
                           flex: 1, minWidth: 200, minHeight: 40, boxSizing: 'border-box',
                           backgroundColor: K.inset,
-                          border: `1px solid ${error ? 'rgba(239,68,68,0.5)' : K.border}`,
+                          border: `1px solid ${error ? 'rgba(224,108,108,0.5)' : K.border}`,
                           borderRadius: 10, padding: '0 12px', color: K.text,
                           fontSize: 13.5, outline: 'none', caretColor: K.violet,
                         }}
@@ -289,7 +273,7 @@ export default function Library() {
                     </div>
 
                     {error && (
-                      <p style={{ fontSize: 12.5, color: '#fca5a5', margin: '8px 0 0' }}>{error}</p>
+                      <p style={{ fontSize: 12.5, color: '#eb9b9b', margin: '8px 0 0' }}>{error}</p>
                     )}
 
                     {!error && draft.trim() !== '' && parseYouTubeId(draft) && (

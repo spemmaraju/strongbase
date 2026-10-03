@@ -118,12 +118,12 @@ export const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep
 // ── Today's Focus card helpers ─────────────────────────────────────────────
 
 export const CAT_COLORS = {
-  'warm-up':    '#F59E0B',
-  'strength':   '#ec4899',
-  'stability':  '#7C3AED',
-  'flexibility':'#22C55E',
-  'power':      '#fb923c',
-  'cardio':     '#3B82F6',
+  'warm-up':    '#d9a441',
+  'strength':   '#3a78e0',
+  'stability':  '#8f8cf0',
+  'flexibility':'#4fb38a',
+  'power':      '#d98a5b',
+  'cardio':     '#5bb0d9',
 }
 
 export const CAT_LABELS = {

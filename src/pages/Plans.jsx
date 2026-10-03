@@ -9,19 +9,7 @@ import { supabase } from '../lib/supabase'
 import useAuth from '../hooks/useAuth'
 import useExerciseLibrary from '../hooks/useExerciseLibrary'
 import { PLANS, getActivePlan } from '../data/plans'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg: '#0a0e1a', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  pink: '#ec4899', purple: '#8b5cf6', violet: '#c084fc',
-  grad: 'linear-gradient(90deg,#ec4899,#8b5cf6)',
-  gradH: 'linear-gradient(130deg, #fb923c 0%, #ec4899 48%, #8b5cf6 100%)',
-  amber: '#f59e0b', teal: '#2dd4bf', green: '#22c55e',
-  text: '#f8fafc', muted: '#94a3b8', subtle: '#64748b', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 const label = { fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' }
 
@@ -77,7 +65,7 @@ function PlanCard({ plan, isActive, onStart, exMap }) {
         <Pill>{plan.daysPerWeek} days/week</Pill>
         {isActive && <Pill color={K.green}>Current</Pill>}
       </div>
-      <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 20, margin: 0, color: K.text }}>{plan.name}</h2>
+      <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 20, margin: 0, color: K.text }}>{plan.name}</h2>
       <p style={{ fontFamily: FONT, fontSize: 13.5, color: K.muted, margin: '4px 0 14px', lineHeight: 1.45 }}>{plan.tagline}</p>
 
       <WeekStrip plan={plan} />
@@ -110,7 +98,7 @@ function PlanCard({ plan, isActive, onStart, exMap }) {
       {!isActive && (
         <button onClick={() => onStart(plan)} style={{
           marginTop: 6, width: '100%', border: 'none', borderRadius: 12, padding: '13px 16px', cursor: 'pointer',
-          background: K.grad, color: '#fff', fontFamily: FONT, fontWeight: 800, fontSize: 14,
+          background: K.grad, color: '#fff', fontFamily: FONT, fontWeight: 700, fontSize: 14,
         }}>
           Start this plan
         </button>
@@ -153,7 +141,7 @@ export default function Plans() {
           ← Back
         </button>
 
-        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, margin: 0, lineHeight: 1.1 }}>Plans</h1>
+        <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, margin: 0, lineHeight: 1.1 }}>Plans</h1>
         <p style={{ fontFamily: FONT, fontSize: 13.5, color: K.muted, margin: '6px 0 22px', lineHeight: 1.5 }}>
           Pick the weekly structure that fits your life. Each plan is a 7-day cycle.
         </p>
@@ -178,7 +166,7 @@ export default function Plans() {
             width: '100%', maxWidth: 480, background: K.card, border: `1px solid ${K.borderSt}`,
             borderRadius: '20px 20px 0 0', padding: '22px 20px 28px',
           }}>
-            <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 18, margin: 0 }}>Switch to {confirm.name}?</h3>
+            <h3 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 18, margin: 0 }}>Switch to {confirm.name}?</h3>
             <p style={{ fontFamily: FONT, fontSize: 13.5, color: K.muted, lineHeight: 1.55, margin: '8px 0 16px' }}>
               Starts today at Day 1. Your history is kept.
             </p>
@@ -190,7 +178,7 @@ export default function Plans() {
               }}>Cancel</button>
               <button disabled={busy} onClick={startPlan} style={{
                 flex: 1.4, background: K.grad, border: 'none', color: '#fff', borderRadius: 12,
-                padding: '13px 0', fontFamily: FONT, fontWeight: 800, fontSize: 14, cursor: 'pointer', opacity: busy ? 0.6 : 1,
+                padding: '13px 0', fontFamily: FONT, fontWeight: 700, fontSize: 14, cursor: 'pointer', opacity: busy ? 0.6 : 1,
               }}>{busy ? 'Starting…' : 'Start today'}</button>
             </div>
           </div>

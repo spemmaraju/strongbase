@@ -14,39 +14,7 @@ import { estimateMinutes } from '../utils/sessionPlan'
 import { getDayFocus } from '../utils/exerciseMeta'
 import { getDayComposition } from '../utils/workoutStats'
 import { Icon } from '../components/Icons'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg:      '#0a0e1a',
-  card:    '#101828',
-  inset:   '#16233a',
-  border:  'rgba(255,255,255,0.06)',
-  borderSt:'rgba(255,255,255,0.10)',
-  pink:    '#ec4899',
-  purple:  '#8b5cf6',
-  violet:  '#c084fc',
-  grad:    'linear-gradient(90deg, #ec4899, #8b5cf6)',
-  gradD:   'linear-gradient(135deg, #ec4899, #8b5cf6)',
-  gradH:   'linear-gradient(130deg, #fb923c 0%, #ec4899 48%, #8b5cf6 100%)',
-  amber:   '#f59e0b',
-  teal:    '#2dd4bf',
-  green:   '#22c55e',
-  text:    '#f8fafc',
-  muted:   '#94a3b8',
-  subtle:  '#64748b',
-  dim:     '#475569',
-}
-
-const KCAT = {
-  'warm-up':   K.amber,
-  strength:    K.pink,
-  stability:   K.purple,
-  flexibility: K.teal,
-  power:       '#fb923c',
-  cardio:      '#3b82f6',
-}
+import { K, FONT, MONO, CATEGORY_COLORS as KCAT } from '../theme'
 
 function formatSetsReps(ex) {
   if (ex.durationSeconds) {
@@ -153,17 +121,13 @@ export default function DayOverview() {
   // ── Left hero panel ────────────────────────────────────────────────────────
   const HeroPanel = (
     <div style={{
-      background: K.gradH,
+      background: K.card,
       borderRadius: isWide ? 0 : '0 0 20px 20px',
       position: 'relative', overflow: 'hidden',
       padding: isWide ? '28px 28px 32px' : '24px 20px 28px',
       minHeight: isWide ? '100%' : 'auto',
       display: 'flex', flexDirection: 'column',
     }}>
-      <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
-        backgroundImage: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 8px)',
-      }} />
       <div style={{ position: 'absolute', right: -20, bottom: -20, color: '#fff', opacity: 0.07, pointerEvents: 'none' }}>
         <Icon name="strength" size={160} strokeWidth={0.8} />
       </div>
@@ -171,18 +135,18 @@ export default function DayOverview() {
       <button
         onClick={() => navigate('/')}
         style={{
-          background: 'rgba(0,0,0,0.25)', border: '1px solid rgba(255,255,255,0.14)',
+          background: K.inset, border: `1px solid ${K.border}`,
           borderRadius: 10, color: 'rgba(255,255,255,0.8)',
           fontFamily: MONO, fontWeight: 700, fontSize: 11, letterSpacing: '0.1em',
           cursor: 'pointer', padding: '6px 12px', marginBottom: 20,
           display: 'inline-flex', alignItems: 'center', gap: 6,
-          backdropFilter: 'blur(4px)', alignSelf: 'flex-start', zIndex: 1,
+          alignSelf: 'flex-start', zIndex: 1,
         }}
       >← BACK</button>
 
       <div style={{
         display: 'inline-flex', alignItems: 'center', gap: 6,
-        backgroundColor: 'rgba(0,0,0,0.28)', backdropFilter: 'blur(6px)',
+        backgroundColor: K.inset, backdropFilter: 'blur(6px)',
         borderRadius: 99, padding: '5px 12px', marginBottom: 12,
         border: '1px solid rgba(255,255,255,0.14)', alignSelf: 'flex-start', zIndex: 1,
       }}>
@@ -191,7 +155,7 @@ export default function DayOverview() {
         </span>
       </div>
 
-      <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: '#fff', lineHeight: 1.1, margin: 0, zIndex: 1 }}>
+      <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: '#fff', lineHeight: 1.1, margin: 0, zIndex: 1 }}>
         {day.theme}
       </h1>
       <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.72)', marginTop: 6, lineHeight: 1.4, zIndex: 1 }}>
@@ -214,7 +178,7 @@ export default function DayOverview() {
       </div>
 
       {/* Progress bar — fills as you tick things off */}
-      <div style={{ height: 4, borderRadius: 999, overflow: 'hidden', marginTop: 14, backgroundColor: 'rgba(0,0,0,0.28)', zIndex: 1 }}>
+      <div style={{ height: 4, borderRadius: 999, overflow: 'hidden', marginTop: 14, backgroundColor: K.inset, zIndex: 1 }}>
         <div style={{
           height: '100%', borderRadius: 999, backgroundColor: '#fff',
           width: dayExercises.length ? `${(session.doneCount / dayExercises.length) * 100}%` : '0%',
@@ -225,7 +189,7 @@ export default function DayOverview() {
       {comp?.total > 0 && (
         <div style={{ height: 3, borderRadius: 999, overflow: 'hidden', display: 'flex', gap: 2, marginTop: 10, zIndex: 1 }}>
           {Object.entries(comp.counts).filter(([, n]) => n > 0).map(([cat, n]) => (
-            <div key={cat} style={{ flex: n / comp.total, backgroundColor: KCAT[cat] || '#475569', borderRadius: 1 }} />
+            <div key={cat} style={{ flex: n / comp.total, backgroundColor: KCAT[cat] || '#737882', borderRadius: 1 }} />
           ))}
         </div>
       )}
@@ -243,7 +207,7 @@ export default function DayOverview() {
               <span key={m} style={{
                 fontFamily: MONO, fontSize: 9, fontWeight: 700,
                 letterSpacing: '0.06em', textTransform: 'uppercase',
-                backgroundColor: 'rgba(0,0,0,0.24)', color: 'rgba(255,255,255,0.72)',
+                backgroundColor: K.inset, color: 'rgba(255,255,255,0.72)',
                 border: '1px solid rgba(255,255,255,0.14)',
                 borderRadius: 99, padding: '4px 9px', backdropFilter: 'blur(4px)',
               }}>{m}</span>
@@ -258,7 +222,7 @@ export default function DayOverview() {
         {/* Home / Gym */}
         <div style={{
           display: 'inline-flex', marginBottom: 14,
-          backgroundColor: 'rgba(0,0,0,0.28)', borderRadius: 99,
+          backgroundColor: K.inset, borderRadius: 99,
           padding: 3, border: '1px solid rgba(255,255,255,0.14)',
         }}>
           {['home', 'gym'].map(m => (
@@ -282,7 +246,7 @@ export default function DayOverview() {
               display: 'flex', alignItems: 'center', gap: 7, width: '100%',
               minHeight: 40, marginBottom: 10, borderRadius: 12, cursor: 'pointer',
               justifyContent: 'center',
-              backgroundColor: 'rgba(0,0,0,0.28)', color: 'rgba(255,255,255,0.85)',
+              backgroundColor: K.inset, color: 'rgba(255,255,255,0.85)',
               border: '1px solid rgba(255,255,255,0.18)',
               fontFamily: FONT, fontWeight: 700, fontSize: 13,
               backdropFilter: 'blur(4px)',
@@ -310,10 +274,10 @@ export default function DayOverview() {
               disabled={!canComplete || saveStatus === 'saving'}
               style={{
                 width: '100%', minHeight: 52, marginBottom: 8,
-                background: canComplete ? 'rgba(255,255,255,0.95)' : 'rgba(0,0,0,0.28)',
-                color: canComplete ? '#0a0e1a' : 'rgba(255,255,255,0.4)',
-                border: '1px solid rgba(255,255,255,0.2)', borderRadius: 14,
-                fontFamily: FONT, fontWeight: 800, fontSize: 15,
+                background: canComplete ? K.accent : K.inset,
+                color: canComplete ? '#fff' : K.subtle,
+                border: 'none', borderRadius: 12,
+                fontFamily: FONT, fontWeight: 700, fontSize: 15,
                 cursor: canComplete ? 'pointer' : 'not-allowed',
                 backdropFilter: 'blur(4px)',
               }}
@@ -324,7 +288,7 @@ export default function DayOverview() {
               onClick={() => navigate(`/workout/${day.day}`)}
               style={{
                 width: '100%', minHeight: 42,
-                background: 'rgba(0,0,0,0.28)', color: 'rgba(255,255,255,0.75)',
+                background: K.inset, color: 'rgba(255,255,255,0.75)',
                 border: '1px solid rgba(255,255,255,0.16)', borderRadius: 12,
                 fontFamily: FONT, fontWeight: 700, fontSize: 13,
                 cursor: 'pointer', backdropFilter: 'blur(4px)',
@@ -385,7 +349,7 @@ export default function DayOverview() {
                 transition: 'all 0.15s',
               }}
             >
-              {done && <Icon name="check" size={15} strokeWidth={3} style={{ color: '#0a0e1a' }} />}
+              {done && <Icon name="check" size={15} strokeWidth={3} style={{ color: '#0e0f11' }} />}
             </button>
 
             {/* Name + sets/reps */}
@@ -405,8 +369,8 @@ export default function DayOverview() {
                 {ex.backCare && (
                   <span style={{
                     marginLeft: 8, fontFamily: MONO, fontSize: 8, fontWeight: 700,
-                    color: K.purple, backgroundColor: 'rgba(139,92,246,0.14)',
-                    border: '1px solid rgba(139,92,246,0.28)',
+                    color: K.purple, backgroundColor: 'rgba(58,120,224,0.14)',
+                    border: '1px solid rgba(58,120,224,0.28)',
                     borderRadius: 99, padding: '2px 6px', letterSpacing: '0.08em',
                     verticalAlign: 'middle', whiteSpace: 'nowrap',
                   }}>BACK CARE</span>
@@ -428,7 +392,7 @@ export default function DayOverview() {
                 width: 44, height: 44, flexShrink: 0, borderRadius: 10,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: isDragging ? 'grabbing' : 'grab',
-                backgroundColor: isDragging ? 'rgba(192,132,252,0.16)' : 'transparent',
+                backgroundColor: isDragging ? 'rgba(58,120,224,0.16)' : 'transparent',
                 color: isDragging ? K.violet : K.dim,
                 transition: 'background-color 0.15s, color 0.15s',
                 WebkitUserSelect: 'none', userSelect: 'none',
@@ -479,7 +443,7 @@ export default function DayOverview() {
                         padding: '8px 10px', borderRadius: 8, cursor: 'pointer',
                         background: 'none', border: 'none',
                         fontFamily: FONT, fontSize: 13, fontWeight: 600,
-                        color: item.danger ? '#fca5a5' : K.text,
+                        color: item.danger ? '#eb9b9b' : K.text,
                       }}
                       onMouseEnter={e => { e.currentTarget.style.backgroundColor = K.inset }}
                       onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent' }}
@@ -548,7 +512,7 @@ export default function DayOverview() {
                   background: canComplete ? K.gradD : K.inset,
                   color: canComplete ? '#fff' : K.dim,
                   borderRadius: 16, border: 'none',
-                  fontFamily: FONT, fontWeight: 800, fontSize: 16,
+                  fontFamily: FONT, fontWeight: 700, fontSize: 16,
                   cursor: canComplete ? 'pointer' : 'not-allowed',
                 }}
               >
@@ -630,7 +594,7 @@ function CompletionOverlay({ summary, saveStatus, onDone }) {
           <Icon name="check" size={32} strokeWidth={2.5} />
         </div>
 
-        <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: K.text, margin: '0 0 6px' }}>
+        <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 24, color: K.text, margin: '0 0 6px' }}>
           Day complete
         </h2>
         <p style={{ fontSize: 14, color: K.muted, margin: '0 0 22px' }}>
@@ -642,7 +606,7 @@ function CompletionOverlay({ summary, saveStatus, onDone }) {
         <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>
           {stats.map(([label, value]) => (
             <div key={label} style={{ flex: 1, backgroundColor: K.inset, borderRadius: 12, padding: '12px 6px' }}>
-              <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 19, color: K.text, margin: 0 }}>{value}</p>
+              <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 19, color: K.text, margin: 0 }}>{value}</p>
               <p style={{ fontFamily: MONO, fontSize: 8.5, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', margin: '3px 0 0' }}>
                 {label}
               </p>

@@ -7,74 +7,74 @@
 // ── Color palette ─────────────────────────────────────────────────────────────
 export const C = {
   // Backgrounds
-  bg:         '#0F172A',   // page background (legacy screens)
-  surface:    '#1E293B',   // card / elevated surface
-  surfaceHi:  '#243147',   // hover / pressed surface
+  bg:         '#0e0f11',   // page background (legacy screens)
+  surface:    '#1e2126',   // card / elevated surface
+  surfaceHi:  '#262a31',   // hover / pressed surface
 
   // Borders
   border:     'rgba(255,255,255,0.07)',
   borderMid:  'rgba(51,65,85,0.5)',    // slightly stronger separator
 
   // Primary accent — teal (legacy screens keep this)
-  teal:       '#14B8A6',
-  tealDim:    '#0D9488',   // hover / pressed
-  tealSoft:   '#134E4A',   // teal-tinted background fill
-  tealBright: '#2DD4BF',   // high-contrast teal text
+  teal:       '#4fb3a5',
+  tealDim:    '#4fb3a5',   // hover / pressed
+  tealSoft:   '#1e2126',   // teal-tinted background fill
+  tealBright: '#4fb3a5',   // high-contrast teal text
 
   // Semantic accents
-  amber:      '#F59E0B',
-  amberDim:   '#D97706',
-  amberSoft:  '#2C1A00',
-  purple:     '#7C3AED',
-  purpleSoft: '#1E0A50',
-  green:      '#22C55E',
-  greenSoft:  '#042D10',
-  blue:       '#3B82F6',
-  blueSoft:   '#071840',
-  red:        '#EF4444',
+  amber:      '#d9a441',
+  amberDim:   '#d9a441',
+  amberSoft:  '#1e2126',
+  purple:     '#8f8cf0',
+  purpleSoft: '#1e2126',
+  green:      '#4fb38a',
+  greenSoft:  '#1e2126',
+  blue:       '#5bb0d9',
+  blueSoft:   '#1e2126',
+  red:        '#e06c6c',
 
   // Text
-  white:      '#F8FAFC',   // primary text
-  muted:      '#94A3B8',   // secondary text
-  subtle:     '#64748B',   // tertiary text
-  dim:        '#475569',   // very subtle / disabled
-  navy:       '#334155',   // border / divider
+  white:      '#f2f3f5',   // primary text
+  muted:      '#a1a6ae',   // secondary text
+  subtle:     '#7a8089',   // tertiary text
+  dim:        '#737882',   // very subtle / disabled
+  navy:       '#2a2d33',   // border / divider
 
   // ── Kinetic Momentum palette (new screens) ─────────────────────────────────
   // Surfaces
-  kBg:        '#0a0e1a',   // app background
-  kRail:      '#0c1322',   // left nav rail
-  kPanel:     '#0a111e',   // left panel / modal column
-  kCard:      '#101828',   // standard cards
-  kCardAlt:   '#121a2b',   // week pills, secondary cards
-  kInset:     '#16233a',   // control buttons, inset wells
+  kBg:        '#0e0f11',   // app background
+  kRail:      '#121417',   // left nav rail
+  kPanel:     '#121417',   // left panel / modal column
+  kCard:      '#16181c',   // standard cards
+  kCardAlt:   '#16181c',   // week pills, secondary cards
+  kInset:     '#1e2126',   // control buttons, inset wells
 
   // Borders
   kBorder:    'rgba(255,255,255,0.06)',
   kBorderStr: 'rgba(255,255,255,0.10)',
 
-  // Brand accent — pink→purple
-  accentPink:   '#ec4899',
-  accentPurple: '#8b5cf6',
-  accentViolet: '#c084fc',  // text/icon tint on dark
-  gradPrimary:  'linear-gradient(90deg, #ec4899, #8b5cf6)',
-  gradPrimaryD: 'linear-gradient(135deg, #ec4899, #8b5cf6)',
-  gradHero:     'linear-gradient(130deg, #fb923c 0%, #ec4899 48%, #8b5cf6 100%)',
+  // Brand accent — single calm blue
+  accentPink:   '#3a78e0',
+  accentPurple: '#3a78e0',
+  accentViolet: '#9cc2ff',  // text/icon tint on dark
+  gradPrimary:  '#3a78e0',
+  gradPrimaryD: '#3a78e0',
+  gradHero:     '#3a78e0',
 
   // Category semantic colors
-  catWarmup:    '#f59e0b',   // warm-up (amber)
-  catStrength:  '#ec4899',   // strength (pink)
-  catFlex:      '#2dd4bf',   // cool-down / flexibility (teal)
-  catStability: '#8b5cf6',   // stability (purple)
-  catSuccess:   '#22c55e',   // improved vs last session
+  catWarmup:    '#d9a441',   // warm-up (amber)
+  catStrength:  '#3a78e0',   // strength
+  catFlex:      '#4fb3a5',   // cool-down / flexibility (teal)
+  catStability: '#8f8cf0',   // stability
+  catSuccess:   '#4fb38a',   // improved vs last session
 }
 
 // ── Typography ────────────────────────────────────────────────────────────────
-export const FONT = "'Plus Jakarta Sans', sans-serif"
+export const FONT = "'Inter', system-ui, sans-serif"
 
 // Pre-composed type styles — spread into style objects
 export const T = {
-  hero:  { fontFamily: FONT, fontWeight: 800, fontSize: 28, color: C.white, lineHeight: 1.15 },
+  hero:  { fontFamily: FONT, fontWeight: 700, fontSize: 28, color: C.white, lineHeight: 1.15 },
   title: { fontFamily: FONT, fontWeight: 700, fontSize: 20, color: C.white },
   body:  {                   fontWeight: 500, fontSize: 16, color: C.white },
   label: {                   fontWeight: 600, fontSize: 13, color: C.muted },

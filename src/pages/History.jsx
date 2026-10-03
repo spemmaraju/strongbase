@@ -11,35 +11,14 @@ import {
   formatDuration, formatDate, formatDateTime,
   getMonthIdx, MONTH_NAMES,
 } from '../utils/workoutStats'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg:      '#0a0e1a',
-  card:    '#101828',
-  inset:   '#16233a',
-  border:  'rgba(255,255,255,0.06)',
-  borderSt:'rgba(255,255,255,0.10)',
-  pink:    '#ec4899',
-  purple:  '#8b5cf6',
-  violet:  '#c084fc',
-  grad:    'linear-gradient(90deg, #ec4899, #8b5cf6)',
-  gradD:   'linear-gradient(135deg, #ec4899, #8b5cf6)',
-  amber:   '#f59e0b',
-  teal:    '#2dd4bf',
-  text:    '#f8fafc',
-  muted:   '#94a3b8',
-  subtle:  '#64748b',
-  dim:     '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 // ── Heatmap ────────────────────────────────────────────────────────────────
 
 function HeatmapCell({ day, onTap }) {
   let bg, border
   if (day.isFuture)            { bg = 'transparent';         border = `1px solid ${K.border}` }
-  else if (day.logs.length > 0){ bg = K.purple;              border = `1px solid rgba(139,92,246,0.5)` }
+  else if (day.logs.length > 0){ bg = K.purple;              border = `1px solid rgba(58,120,224,0.5)` }
   else if (day.isToday)        { bg = K.inset;               border = `1px solid rgba(255,255,255,0.14)` }
   else                         { bg = K.inset;               border = `1px solid ${K.border}` }
 
@@ -174,7 +153,7 @@ function StatBar({ totalWorkouts, currentStreak, longestStreak, thisMonthCount }
           borderRight: i < stats.length - 1 ? `1px solid ${K.border}` : 'none',
         }}>
           <Icon name={s.icon} size={16} style={{ color: K.violet, marginBottom: 6 }} />
-          <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 22, color: K.text, lineHeight: 1 }}>{s.value}</span>
+          <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: 22, color: K.text, lineHeight: 1 }}>{s.value}</span>
           <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 5 }}>
             {s.label}
           </span>
@@ -292,8 +271,8 @@ function WeeklyCard({ weekStart, weekEnd, logs, navigate }) {
           {topMuscles.map(m => (
             <span key={m} style={{
               fontFamily: MONO, fontSize: 9, fontWeight: 700,
-              backgroundColor: 'rgba(139,92,246,0.1)', color: K.violet,
-              border: '1px solid rgba(139,92,246,0.22)',
+              backgroundColor: 'rgba(58,120,224,0.1)', color: K.violet,
+              border: '1px solid rgba(58,120,224,0.22)',
               borderRadius: 99, padding: '2px 8px', letterSpacing: '0.08em',
             }}>{m}</span>
           ))}
@@ -325,7 +304,7 @@ function EmptyState({ navigate }) {
       <div style={{ marginBottom: 24, color: K.purple, opacity: 0.4 }}>
         <Icon name="trophy" size={72} strokeWidth={1} />
       </div>
-      <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: K.text, marginBottom: 8 }}>
+      <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 24, color: K.text, marginBottom: 8 }}>
         No workouts yet
       </h2>
       <p style={{ fontSize: 14, color: K.subtle, maxWidth: 280, lineHeight: 1.6, marginBottom: 28 }}>
@@ -380,7 +359,7 @@ export default function History() {
         padding: isWide ? '32px 28px 24px' : '52px 20px 20px',
         borderBottom: `1px solid ${K.border}`,
       }}>
-        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: K.text, margin: 0 }}>History</h1>
+        <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.text, margin: 0 }}>History</h1>
         <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.dim, letterSpacing: '0.1em', marginTop: 5 }}>
           {loading ? '…' : `${totalWorkouts} WORKOUT${totalWorkouts !== 1 ? 'S' : ''} COMPLETED`}
         </p>
@@ -390,12 +369,12 @@ export default function History() {
       {logsError && (
         <div style={{
           margin: '12px 20px 0', padding: '10px 14px',
-          backgroundColor: 'rgba(239,68,68,0.08)', borderRadius: 12,
-          border: '1px solid rgba(239,68,68,0.2)',
+          backgroundColor: 'rgba(224,108,108,0.08)', borderRadius: 12,
+          border: '1px solid rgba(224,108,108,0.2)',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         }}>
-          <p style={{ fontSize: 13, color: '#fca5a5', fontWeight: 600, margin: 0 }}>⚠️ Couldn't load data</p>
-          <button onClick={refetchLogs} style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: '#fca5a5', background: 'none', border: 'none', cursor: 'pointer' }}>RETRY</button>
+          <p style={{ fontSize: 13, color: '#eb9b9b', fontWeight: 600, margin: 0 }}>⚠️ Couldn't load data</p>
+          <button onClick={refetchLogs} style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: '#eb9b9b', background: 'none', border: 'none', cursor: 'pointer' }}>RETRY</button>
         </div>
       )}
 

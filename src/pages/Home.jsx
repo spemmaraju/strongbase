@@ -11,41 +11,7 @@ import useAuth from '../hooks/useAuth'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { getDayComposition, CAT_COLORS, getProgramDayNumber } from '../utils/workoutStats'
 import { Icon } from '../components/Icons'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg:      '#0a0e1a',
-  rail:    '#0c1322',
-  card:    '#101828',
-  panel:   '#0a111e',
-  inset:   '#16233a',
-  border:  'rgba(255,255,255,0.06)',
-  borderSt:'rgba(255,255,255,0.10)',
-  pink:    '#ec4899',
-  purple:  '#8b5cf6',
-  violet:  '#c084fc',
-  grad:    'linear-gradient(90deg, #ec4899, #8b5cf6)',
-  gradD:   'linear-gradient(135deg, #ec4899, #8b5cf6)',
-  gradH:   'linear-gradient(130deg, #fb923c 0%, #ec4899 48%, #8b5cf6 100%)',
-  amber:   '#f59e0b',
-  teal:    '#2dd4bf',
-  text:    '#f8fafc',
-  muted:   '#94a3b8',
-  subtle:  '#64748b',
-  dim:     '#475569',
-}
-
-// Per-category Kinetic colors (used in composition bar + dots)
-const KCAT = {
-  'warm-up':   K.amber,
-  strength:    K.pink,
-  stability:   K.purple,
-  flexibility: K.teal,
-  power:       '#fb923c',
-  cardio:      '#3b82f6',
-}
+import { K, FONT, MONO, CATEGORY_COLORS as KCAT } from '../theme'
 
 // Level system — each workout ≈ 12 sets × 25 XP = 300 XP
 const LEVEL_THRESHOLDS = [0, 400, 900, 1800, 3200, 5000, 7500, 11000, 15500, 21000]
@@ -91,7 +57,7 @@ function getDayAccentColor(day) {
 
 // ── Sub-components ─────────────────────────────────────────────────────────────
 
-// Kinetic hero card — gradHero bg, watermark icon, gradient CTA
+// Hero card — card surface, watermark icon, accent CTA
 function KineticHeroCard({
   day, dayNumber, accentColor, todayDone, isOverdue, daysSinceLast,
   isProgramComplete, onStart, onPreviewNext, nextDayNumber, onRestart, restarting,
@@ -117,15 +83,9 @@ function KineticHeroCard({
   return (
     <div style={{
       borderRadius: 22, overflow: 'hidden', position: 'relative',
-      background: K.gradH, border: `1px solid rgba(255,255,255,0.08)`,
+      background: K.card, border: `1px solid ${K.border}`,
       padding: '24px 22px 22px',
     }}>
-      {/* Hatch overlay — adds texture without obscuring gradient */}
-      <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
-        backgroundImage: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 8px)',
-      }} />
-
       {/* Watermark icon */}
       <div style={{
         position: 'absolute', right: -16, bottom: -16,
@@ -137,9 +97,9 @@ function KineticHeroCard({
       {/* DAY N OF 7 chip */}
       <div style={{
         display: 'inline-flex', alignItems: 'center', gap: 6,
-        backgroundColor: 'rgba(0,0,0,0.28)', backdropFilter: 'blur(6px)',
+        backgroundColor: K.inset,
         borderRadius: 99, padding: '5px 11px', marginBottom: 14,
-        border: '1px solid rgba(255,255,255,0.14)',
+        border: `1px solid ${K.border}`,
       }}>
         <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.violet, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
           {isProgramComplete ? 'Program Complete' : `Day ${dayNumber} of 7`}
@@ -147,7 +107,7 @@ function KineticHeroCard({
       </div>
 
       {/* Workout name */}
-      <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: '#fff', lineHeight: 1.1, margin: 0 }}>
+      <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: '#fff', lineHeight: 1.1, margin: 0 }}>
         {isProgramComplete ? 'Week 1 — Done!' : day?.theme}
       </h2>
 
@@ -178,7 +138,7 @@ function KineticHeroCard({
       {!isProgramComplete && comp?.total > 0 && (
         <div style={{ height: 3, borderRadius: 999, overflow: 'hidden', display: 'flex', gap: 2, marginTop: 14 }}>
           {Object.entries(comp.counts).filter(([, n]) => n > 0).map(([cat, n]) => (
-            <div key={cat} style={{ flex: n / comp.total, backgroundColor: KCAT[cat] || '#475569', borderRadius: 1 }} />
+            <div key={cat} style={{ flex: n / comp.total, backgroundColor: KCAT[cat] || K.dim, borderRadius: 1 }} />
           ))}
         </div>
       )}
@@ -187,7 +147,7 @@ function KineticHeroCard({
       {isProgramComplete && (
         <div style={{
           marginTop: 14, padding: '10px 14px', borderRadius: 12,
-          backgroundColor: 'rgba(0,0,0,0.32)', border: '1px solid rgba(255,255,255,0.12)',
+          backgroundColor: K.inset, border: `1px solid ${K.border}`,
           display: 'flex', alignItems: 'center', gap: 10,
         }}>
           <Icon name="lock" size={16} style={{ color: 'rgba(255,255,255,0.5)', flexShrink: 0 }} />
@@ -205,7 +165,7 @@ function KineticHeroCard({
         style={{
           marginTop: 18, width: '100%', minHeight: 52,
           background: isAmberCta ? K.amber : isDoneOutline ? 'transparent' : K.gradD,
-          color: isAmberCta ? '#0f172a' : isDoneOutline ? K.violet : '#fff',
+          color: isAmberCta ? K.bg : isDoneOutline ? K.violet : '#fff',
           border: isDoneOutline ? `1px solid ${K.violet}50` : 'none',
           borderRadius: 14,
           fontFamily: FONT, fontWeight: 700, fontSize: 15,
@@ -262,8 +222,8 @@ function WeekPills({ days, todayDayNumber, completedThisWeekDayNumbers, onPress 
               <div style={{
                 width: 34, height: 34, borderRadius: '50%',
                 background: isToday ? K.gradD : 'transparent',
-                backgroundColor: isToday ? undefined : isDone ? 'rgba(139,92,246,0.15)' : K.inset,
-                border: `1.5px solid ${isToday ? 'transparent' : isDone ? 'rgba(139,92,246,0.35)' : K.border}`,
+                backgroundColor: isToday ? undefined : isDone ? 'rgba(58,120,224,0.15)' : K.inset,
+                border: `1.5px solid ${isToday ? 'transparent' : isDone ? 'rgba(58,120,224,0.35)' : K.border}`,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 transition: 'all 0.15s',
               }}>
@@ -286,59 +246,21 @@ function WeekPills({ days, todayDayNumber, completedThisWeekDayNumbers, onPress 
   )
 }
 
-// Level card — XP bar + name
-function LevelCard({ levelInfo }) {
-  return (
-    <div style={{
-      backgroundColor: K.card, borderRadius: 20, border: `1px solid ${K.borderSt}`,
-      padding: 18, marginBottom: 14,
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <div style={{ width: 32, height: 32, borderRadius: 10, background: K.gradD, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Icon name="trophy" size={16} style={{ color: '#fff' }} />
-          </div>
-          <div>
-            <p style={{ fontFamily: MONO, fontSize: 8, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', margin: 0 }}>Level</p>
-            <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 18, color: K.text, margin: 0, lineHeight: 1.1 }}>
-              {levelInfo.level} · {levelInfo.name}
-            </p>
-          </div>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 4, backgroundColor: 'rgba(192,132,252,0.12)', borderRadius: 99, padding: '4px 10px', border: '1px solid rgba(192,132,252,0.22)' }}>
-          <Icon name="xp" size={11} style={{ color: K.violet }} />
-          <span style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet }}>{levelInfo.totalXP} XP</span>
-        </div>
-      </div>
-      {/* XP progress bar */}
-      <div style={{ height: 5, borderRadius: 999, backgroundColor: K.inset, overflow: 'hidden' }}>
-        <div style={{ height: '100%', width: `${Math.round(levelInfo.progress * 100)}%`, background: K.gradD, borderRadius: 999, transition: 'width 0.6s ease' }} />
-      </div>
-      {levelInfo.xpToNext > 0 && (
-        <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.dim, letterSpacing: '0.08em', marginTop: 7 }}>
-          {levelInfo.xpToNext} XP to level {levelInfo.level + 1}
-        </p>
-      )}
-    </div>
-  )
-}
-
 // Streak card — amber tint
 function StreakCard({ currentStreak, longestStreak, totalWorkouts }) {
   return (
     <div style={{
       backgroundColor: K.card, borderRadius: 20, border: `1px solid ${K.borderSt}`,
       padding: 18, marginBottom: 14,
-      background: 'linear-gradient(145deg, rgba(245,158,11,0.08), rgba(16,24,40,0))',
-      borderColor: 'rgba(245,158,11,0.18)',
+      borderColor: K.border,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <Icon name="streak" size={22} style={{ color: K.amber }} />
           <div>
-            <p style={{ fontFamily: MONO, fontSize: 8, fontWeight: 700, color: 'rgba(245,158,11,0.5)', letterSpacing: '0.12em', textTransform: 'uppercase', margin: 0 }}>Streak</p>
-            <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 26, color: K.amber, lineHeight: 1, margin: 0 }}>
-              {currentStreak} <span style={{ fontSize: 14, fontWeight: 500, color: 'rgba(245,158,11,0.65)' }}>days</span>
+            <p style={{ fontFamily: MONO, fontSize: 8, fontWeight: 700, color: 'rgba(217,164,65,0.5)', letterSpacing: '0.12em', textTransform: 'uppercase', margin: 0 }}>Streak</p>
+            <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 26, color: K.amber, lineHeight: 1, margin: 0 }}>
+              {currentStreak} <span style={{ fontSize: 14, fontWeight: 500, color: 'rgba(217,164,65,0.65)' }}>days</span>
             </p>
           </div>
         </div>
@@ -368,8 +290,8 @@ function BadgesCard({ badges }) {
           }}>
             <div style={{
               width: 44, height: 44, borderRadius: 12,
-              backgroundColor: b.earned ? 'rgba(139,92,246,0.12)' : K.inset,
-              border: b.earned ? '1px solid rgba(139,92,246,0.28)' : `1px solid ${K.border}`,
+              backgroundColor: b.earned ? 'rgba(58,120,224,0.12)' : K.inset,
+              border: b.earned ? '1px solid rgba(58,120,224,0.28)' : `1px solid ${K.border}`,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: b.earned ? K.violet : K.dim,
             }}>
@@ -437,7 +359,7 @@ function BreatheCard({ onPress }) {
         <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.teal, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 3px' }}>
           Trainable skill
         </p>
-        <p style={{ fontFamily: FONT, fontSize: 14.5, fontWeight: 800, color: K.text, margin: 0 }}>
+        <p style={{ fontFamily: FONT, fontSize: 14.5, fontWeight: 700, color: K.text, margin: 0 }}>
           Brace &amp; Breathe
         </p>
         <p style={{ fontSize: 12, color: K.muted, margin: '2px 0 0', lineHeight: 1.45 }}>
@@ -454,7 +376,7 @@ function QuickBurnCard({ onPress }) {
   return (
     <button onClick={onPress} style={{
       display: 'flex', alignItems: 'center', gap: 13, width: '100%',
-      backgroundColor: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.22)',
+      backgroundColor: 'rgba(217,164,65,0.06)', border: '1px solid rgba(217,164,65,0.22)',
       borderRadius: 16, padding: '13px 15px', marginTop: 16,
       cursor: 'pointer', textAlign: 'left',
     }}>
@@ -463,7 +385,7 @@ function QuickBurnCard({ onPress }) {
         <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.amber, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 3px' }}>
           No-energy day?
         </p>
-        <p style={{ fontFamily: FONT, fontSize: 14.5, fontWeight: 800, color: K.text, margin: 0 }}>
+        <p style={{ fontFamily: FONT, fontSize: 14.5, fontWeight: 700, color: K.text, margin: 0 }}>
           Quick Burn
         </p>
         <p style={{ fontSize: 12, color: K.muted, margin: '2px 0 0', lineHeight: 1.45 }}>
@@ -483,7 +405,7 @@ function Avatar({ user, onClick }) {
       onClick={onClick}
       style={{
         width: 38, height: 38, borderRadius: '50%',
-        background: K.gradD, border: `1.5px solid rgba(192,132,252,0.3)`,
+        background: K.gradD, border: `1.5px solid rgba(58,120,224,0.3)`,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         cursor: 'pointer', padding: 0, flexShrink: 0,
       }}
@@ -620,29 +542,21 @@ export default function Home() {
           <p style={{ fontFamily: MONO, fontSize: 11, fontWeight: 700, color: K.dim, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 4 }}>
             {getGreeting()}{firstName ? `, ${firstName}` : ''}
           </p>
-          <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: K.text, lineHeight: 1, margin: 0 }}>
+          <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.text, lineHeight: 1, margin: 0 }}>
             Let's move.
           </h1>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <ModeToggle mode={workoutMode} onChange={handleModeChange} />
-          {/* LVL pill */}
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: 4,
-            background: K.gradD, borderRadius: 99, padding: '5px 10px',
-          }}>
-            <Icon name="xp" size={11} style={{ color: '#fff' }} />
-            <span style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: '#fff' }}>LVL {levelInfo.level}</span>
-          </div>
           <Avatar user={user} onClick={() => navigate('/profile')} />
         </div>
       </div>
 
       {/* Error / syncing banners */}
       {logsError && (
-        <div style={{ margin: '12px 20px 0', padding: '10px 14px', backgroundColor: 'rgba(239,68,68,0.1)', borderRadius: 12, border: '1px solid rgba(239,68,68,0.25)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <p style={{ fontSize: 13, color: '#fca5a5', fontWeight: 600, margin: 0 }}>⚠️ Couldn't load your data</p>
-          <button onClick={refetchLogs} style={{ fontSize: 12, fontWeight: 700, color: '#fca5a5', background: 'none', border: 'none', cursor: 'pointer' }}>Retry</button>
+        <div style={{ margin: '12px 20px 0', padding: '10px 14px', backgroundColor: 'rgba(224,108,108,0.1)', borderRadius: 12, border: '1px solid rgba(224,108,108,0.25)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <p style={{ fontSize: 13, color: '#e06c6c', fontWeight: 600, margin: 0 }}>⚠️ Couldn't load your data</p>
+          <button onClick={refetchLogs} style={{ fontSize: 12, fontWeight: 700, color: '#e06c6c', background: 'none', border: 'none', cursor: 'pointer' }}>Retry</button>
         </div>
       )}
       {syncing && (
@@ -698,7 +612,6 @@ export default function Home() {
           {/* Right column */}
           <div>
             <MyWorkoutsCard compact />
-            <LevelCard levelInfo={levelInfo} />
             <QuickBurnCard onPress={() => navigate('/quick')} />
             <BreatheCard onPress={() => navigate('/breathe')} />
             <StreakCard currentStreak={currentStreak} longestStreak={longestStreak} totalWorkouts={totalWorkouts} />
@@ -742,10 +655,10 @@ export default function Home() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <Icon name="streak" size={20} style={{ color: K.amber }} />
-              <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: K.amber, lineHeight: 1 }}>
+              <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: 24, color: K.amber, lineHeight: 1 }}>
                 {currentStreak}
               </span>
-              <span style={{ fontSize: 14, color: 'rgba(245,158,11,0.65)', fontWeight: 500 }}>
+              <span style={{ fontSize: 14, color: 'rgba(217,164,65,0.65)', fontWeight: 500 }}>
                 day streak
               </span>
             </div>
@@ -785,7 +698,7 @@ export default function Home() {
                     flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5,
                     opacity: b.earned ? 1 : 0.22, filter: b.earned ? 'none' : 'grayscale(1)',
                   }}>
-                    <div style={{ width: 46, height: 46, borderRadius: 12, backgroundColor: b.earned ? 'rgba(139,92,246,0.12)' : K.inset, border: b.earned ? '1px solid rgba(139,92,246,0.28)' : `1px solid ${K.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: b.earned ? K.violet : K.dim }}>
+                    <div style={{ width: 46, height: 46, borderRadius: 12, backgroundColor: b.earned ? 'rgba(58,120,224,0.12)' : K.inset, border: b.earned ? '1px solid rgba(58,120,224,0.28)' : `1px solid ${K.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: b.earned ? K.violet : K.dim }}>
                       <Icon name={b.iconName || 'badge'} size={24} />
                     </div>
                     <span style={{ fontSize: 9, fontWeight: 600, color: b.earned ? K.muted : K.dim, textAlign: 'center', maxWidth: 48 }}>{b.name}</span>

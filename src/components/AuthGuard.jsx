@@ -6,7 +6,7 @@ function LoadingScreen() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center gap-4"
-      style={{ backgroundColor: '#0a0e1a' }}
+      style={{ backgroundColor: '#0e0f11' }}
     >
       <div
         style={{
@@ -14,11 +14,11 @@ function LoadingScreen() {
           height: 48,
           borderRadius: '50%',
           border: '4px solid rgba(255,255,255,0.08)',
-          borderTopColor: '#c084fc',
+          borderTopColor: '#9cc2ff',
           animation: 'spin 0.8s linear infinite',
         }}
       />
-      <p className="text-sm font-semibold" style={{ color: '#64748B' }}>Loading…</p>
+      <p className="text-sm font-semibold" style={{ color: '#7a8089' }}>Loading…</p>
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   )

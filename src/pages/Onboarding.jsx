@@ -3,26 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import useAuth from '../hooks/useAuth'
 import { Icon } from '../components/Icons'
+import { K, FONT } from '../theme'
 
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-const K = {
-  bg: '#0a0e1a', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  violet: '#c084fc', pink: '#ec4899', purple: '#8b5cf6',
-  grad: 'linear-gradient(135deg,#ec4899,#8b5cf6)',
-  gradH: 'linear-gradient(130deg,#fb923c 0%,#ec4899 48%,#8b5cf6 100%)',
-  text: '#f8fafc', muted: '#94a3b8', dim: '#64748b',
-  selBg: 'rgba(192,132,252,0.10)', selBorder: 'rgba(192,132,252,0.45)',
-}
-
-const HEADING = { fontFamily: FONT, fontWeight: 800, color: K.text }
+const HEADING = { fontFamily: FONT, fontWeight: 700, color: K.text }
 
 // ── Step 1: Welcome ───────────────────────────────────────────────────────────
 function StepWelcome({ onNext }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', paddingTop: 48 }}>
-      <div style={{ width: 80, height: 80, borderRadius: 24, background: K.grad, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 32, color: '#fff', boxShadow: '0 0 40px rgba(236,72,153,0.3)' }}>
+      <div style={{ width: 80, height: 80, borderRadius: 24, background: K.grad, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 32, color: '#fff' }}>
         <Icon name="strength" size={40} strokeWidth={1.5} />
       </div>
 
@@ -41,7 +30,7 @@ function StepWelcome({ onNext }) {
         ].map(({ iconName, text }) => (
           <div key={text} style={{ display: 'flex', alignItems: 'center', gap: 14, backgroundColor: K.card, borderRadius: 12, padding: '14px 16px', border: `1px solid ${K.border}` }}>
             <span style={{ color: K.violet, flexShrink: 0 }}><Icon name={iconName} size={20} /></span>
-            <span style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.4 }}>{text}</span>
+            <span style={{ fontSize: 14, color: '#c2c6cc', lineHeight: 1.4 }}>{text}</span>
           </div>
         ))}
       </div>
@@ -121,7 +110,7 @@ function StepEquipment({ value, onChange, onNext }) {
                 <p style={{ fontSize: 12, color: K.muted, margin: 0, marginTop: 1 }}>{opt.sub}</p>
               </div>
               <div style={{ width: 22, height: 22, borderRadius: 6, border: `2px solid ${sel ? K.violet : K.dim}`, backgroundColor: sel ? K.violet : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                {sel && <Icon name="check" size={13} strokeWidth={3} style={{ color: '#0a0e1a' }} />}
+                {sel && <Icon name="check" size={13} strokeWidth={3} style={{ color: '#0e0f11' }} />}
               </div>
             </button>
           )
@@ -178,7 +167,7 @@ function StepReady({ answers, onStart, saving }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-      <div style={{ width: 96, height: 96, borderRadius: '50%', background: K.grad, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 28, color: '#fff', boxShadow: '0 0 50px rgba(236,72,153,0.35)', animation: 'kPulse 2s ease-in-out infinite' }}>
+      <div style={{ width: 96, height: 96, borderRadius: '50%', background: K.grad, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 28, color: '#fff' }}>
         <Icon name="target" size={48} strokeWidth={1.3} />
       </div>
 
@@ -190,7 +179,7 @@ function StepReady({ answers, onStart, saving }) {
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center', marginTop: 24 }}>
         {['7-day program', '20 min/session', 'Home-based', 'Beginner-friendly'].map(tag => (
-          <span key={tag} style={{ padding: '7px 14px', borderRadius: 999, fontSize: 13, fontWeight: 600, backgroundColor: 'rgba(192,132,252,0.12)', color: K.violet, border: '1px solid rgba(192,132,252,0.25)' }}>
+          <span key={tag} style={{ padding: '7px 14px', borderRadius: 999, fontSize: 13, fontWeight: 600, backgroundColor: 'rgba(58,120,224,0.12)', color: K.violet, border: '1px solid rgba(58,120,224,0.25)' }}>
             {tag}
           </span>
         ))}
@@ -200,12 +189,6 @@ function StepReady({ answers, onStart, saving }) {
         <PrimaryButton onClick={onStart} disabled={saving}>{saving ? 'Setting up…' : 'Start Day 1 →'}</PrimaryButton>
       </div>
 
-      <style>{`
-        @keyframes kPulse {
-          0%, 100% { box-shadow: 0 0 40px rgba(236,72,153,0.3); }
-          50%       { box-shadow: 0 0 70px rgba(139,92,246,0.5); }
-        }
-      `}</style>
     </div>
   )
 }

@@ -6,16 +6,7 @@ import useCustomWorkouts from '../hooks/useCustomWorkouts'
 import useExerciseLibrary from '../hooks/useExerciseLibrary'
 import { FOCUS_PRESETS } from '../utils/exerciseMeta'
 import { estimateMinutes } from '../utils/sessionPlan'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  violet: '#c084fc', grad: 'linear-gradient(90deg,#ec4899,#8b5cf6)',
-  text: '#f8fafc', muted: '#94a3b8', subtle: '#64748b',
-}
+import { K, FONT, MONO } from '../theme'
 
 export default function MyWorkoutsCard({ compact = false }) {
   const navigate = useNavigate()
@@ -40,7 +31,7 @@ export default function MyWorkoutsCard({ compact = false }) {
       padding: compact ? 14 : 18, fontFamily: FONT,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: items.length ? 10 : 6 }}>
-        <h2 style={{ fontSize: compact ? 16 : 18, fontWeight: 800, color: K.text, margin: 0 }}>My workouts</h2>
+        <h2 style={{ fontSize: compact ? 16 : 18, fontWeight: 700, color: K.text, margin: 0 }}>My workouts</h2>
         {items.length > 0 && (
           <button onClick={() => navigate('/build')} style={buildBtn}>＋ Build a workout</button>
         )}
@@ -86,5 +77,5 @@ export default function MyWorkoutsCard({ compact = false }) {
 
 const buildBtn = {
   height: 40, padding: '0 16px', borderRadius: 12, border: 'none', cursor: 'pointer',
-  background: K.grad, color: '#fff', fontFamily: FONT, fontSize: 14, fontWeight: 800,
+  background: K.grad, color: '#fff', fontFamily: FONT, fontSize: 14, fontWeight: 700,
 }

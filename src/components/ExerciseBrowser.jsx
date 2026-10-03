@@ -17,23 +17,7 @@ import {
   matchesFocus, getDayFocus, byBangForBuck,
   getDifficulty, getEffectiveness, DIFFICULTY_LABELS, DIFFICULTY_COLORS,
 } from '../utils/exerciseMeta'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  panel: '#0a111e', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  pink: '#ec4899', purple: '#8b5cf6', violet: '#c084fc',
-  grad: 'linear-gradient(90deg,#ec4899,#8b5cf6)',
-  amber: '#f59e0b', teal: '#2dd4bf',
-  text: '#f8fafc', muted: '#94a3b8', dim: '#475569',
-}
-
-const KCAT = {
-  'warm-up': K.amber, strength: K.pink, stability: K.purple,
-  flexibility: K.teal, cardio: '#3b82f6', power: '#fb923c',
-}
+import { K, FONT, MONO, CATEGORY_COLORS as KCAT } from '../theme'
 
 const CATEGORIES = ['strength', 'power', 'stability', 'warm-up', 'flexibility', 'cardio']
 
@@ -111,9 +95,9 @@ export default function ExerciseBrowser({
     <button key={key ?? label} onClick={onClick} style={{
       padding: '5px 11px', borderRadius: 99, cursor: 'pointer', whiteSpace: 'nowrap',
       fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
-      backgroundColor: active ? 'rgba(192,132,252,0.16)' : K.inset,
+      backgroundColor: active ? 'rgba(58,120,224,0.16)' : K.inset,
       color: active ? K.violet : K.muted,
-      border: `1px solid ${active ? 'rgba(192,132,252,0.4)' : K.border}`,
+      border: `1px solid ${active ? 'rgba(58,120,224,0.4)' : K.border}`,
     }}>{label}</button>
   )
 
@@ -140,7 +124,7 @@ export default function ExerciseBrowser({
               <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.violet, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 4px' }}>
                 {replacing ? 'Swap out' : 'Add exercise'}
               </p>
-              <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 19, color: K.text, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 19, color: K.text, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {replacing ? replacing.name : day ? day.theme : 'Browse the library'}
               </h2>
             </div>
@@ -207,11 +191,11 @@ export default function ExerciseBrowser({
                 style={{
                   width: '100%', display: 'flex', alignItems: 'center', gap: 12,
                   padding: '11px 10px', borderRadius: 12, cursor: 'pointer',
-                  background: added ? 'rgba(34,197,94,0.07)' : 'none',
+                  background: added ? 'rgba(79,179,138,0.07)' : 'none',
                   border: 'none', textAlign: 'left',
                 }}
                 onMouseEnter={e => { if (!added) e.currentTarget.style.backgroundColor = K.inset }}
-                onMouseLeave={e => { e.currentTarget.style.backgroundColor = added ? 'rgba(34,197,94,0.07)' : 'transparent' }}
+                onMouseLeave={e => { e.currentTarget.style.backgroundColor = added ? 'rgba(79,179,138,0.07)' : 'transparent' }}
               >
                 <div style={{ width: 7, height: 7, borderRadius: '50%', backgroundColor: accent, flexShrink: 0 }} />
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -234,8 +218,8 @@ export default function ExerciseBrowser({
                 {!ex.youtubeId && (
                   <span style={{
                     flexShrink: 0, fontFamily: MONO, fontSize: 8.5, fontWeight: 700,
-                    color: K.amber, backgroundColor: 'rgba(245,158,11,0.12)',
-                    border: '1px solid rgba(245,158,11,0.25)',
+                    color: K.amber, backgroundColor: 'rgba(217,164,65,0.12)',
+                    border: '1px solid rgba(217,164,65,0.25)',
                     borderRadius: 99, padding: '3px 7px', letterSpacing: '0.08em',
                   }}>NO VIDEO</span>
                 )}
@@ -246,9 +230,9 @@ export default function ExerciseBrowser({
                   <span aria-hidden="true" style={{
                     flexShrink: 0, width: 30, height: 30, borderRadius: '50%',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: added ? 'rgba(34,197,94,0.16)' : K.grad,
-                    border: added ? '1px solid rgba(34,197,94,0.4)' : 'none',
-                    color: added ? '#22c55e' : '#fff',
+                    background: added ? 'rgba(79,179,138,0.16)' : K.grad,
+                    border: added ? '1px solid rgba(79,179,138,0.4)' : 'none',
+                    color: added ? '#4fb38a' : '#fff',
                     fontSize: 15, fontWeight: 700, lineHeight: 1,
                   }}>{added ? '✓' : '＋'}</span>
                 )}
@@ -263,7 +247,7 @@ export default function ExerciseBrowser({
         }}>
           <p style={{ fontFamily: MONO, fontSize: 9.5, fontWeight: 700, color: K.dim, letterSpacing: '0.1em', margin: 0 }}>
             {results.length} {results.length === 1 ? 'MATCH' : 'MATCHES'}
-            {addedIds.size > 0 && <span style={{ color: '#22c55e' }}> · {addedIds.size} ADDED</span>}
+            {addedIds.size > 0 && <span style={{ color: '#4fb38a' }}> · {addedIds.size} ADDED</span>}
           </p>
           {multiAdd && (
             <button onClick={onClose} style={{

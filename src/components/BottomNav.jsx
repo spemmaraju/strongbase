@@ -1,19 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { Icon } from './Icons'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  rail:    '#0c1322',
-  inset:   '#16233a',
-  border:  'rgba(255,255,255,0.06)',
-  grad:    'linear-gradient(135deg, #ec4899, #8b5cf6)',
-  violet:  '#c084fc',
-  dim:     '#475569',
-  subtle:  '#64748b',
-}
+import { K, FONT, MONO } from '../theme'
 
 const TABS = [
   { path: '/',        iconName: 'home',    label: 'Home'    },
@@ -42,7 +30,7 @@ export default function BottomNav() {
           width: 46, height: 46, borderRadius: 14, marginBottom: 12,
           background: K.grad,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontFamily: FONT, fontWeight: 800, fontSize: 22, color: '#fff',
+          fontFamily: FONT, fontWeight: 700, fontSize: 22, color: '#fff',
           flexShrink: 0, cursor: 'pointer',
         }} onClick={() => navigate('/')}>S</div>
 

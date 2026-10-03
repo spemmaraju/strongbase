@@ -7,17 +7,7 @@
 import { useState } from 'react'
 import useMobilityCheck, { QUESTIONS, answerRank, answerLabel } from '../hooks/useMobilityCheck'
 import { Icon } from './Icons'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  violet: '#c084fc', teal: '#2dd4bf', green: '#22c55e', amber: '#f59e0b',
-  gradD: 'linear-gradient(135deg,#ec4899,#8b5cf6)',
-  text: '#f8fafc', muted: '#94a3b8', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 function agoLabel(days) {
   if (days == null) return 'never checked'
@@ -70,7 +60,7 @@ export default function MobilityCheckCard({ style }) {
                     : q.id === 'behindBack' ? 'Behind back'
                     : q.id === 'lunge' ? 'Lunge heel' : 'Balance'}
                 </span>
-                <span style={{ fontSize: 12.5, color: '#cbd5e1', flex: 1 }}>
+                <span style={{ fontSize: 12.5, color: '#c2c6cc', flex: 1 }}>
                   {answerLabel(q.id, now)}
                 </span>
                 {delta !== 0 && (
@@ -112,7 +102,7 @@ export default function MobilityCheckCard({ style }) {
               fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.violet,
               letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 6px',
             }}>Mobility check</p>
-            <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 21, color: K.text, margin: '0 0 6px' }}>
+            <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 21, color: K.text, margin: '0 0 6px' }}>
               Four questions
             </h2>
             <p style={{ fontSize: 13, color: K.muted, margin: '0 0 20px', lineHeight: 1.55 }}>
@@ -122,7 +112,7 @@ export default function MobilityCheckCard({ style }) {
 
             {QUESTIONS.map((q, qi) => (
               <div key={q.id} style={{ marginBottom: 18 }}>
-                <p style={{ fontSize: 13.5, color: '#cbd5e1', margin: '0 0 8px', lineHeight: 1.5 }}>
+                <p style={{ fontSize: 13.5, color: '#c2c6cc', margin: '0 0 8px', lineHeight: 1.5 }}>
                   <span style={{ color: K.dim, fontFamily: MONO, fontSize: 11, marginRight: 7 }}>
                     {qi + 1}
                   </span>
@@ -138,9 +128,9 @@ export default function MobilityCheckCard({ style }) {
                         style={{
                           padding: '7px 12px', borderRadius: 99, cursor: 'pointer',
                           fontFamily: FONT, fontSize: 12.5, fontWeight: 600,
-                          backgroundColor: sel ? 'rgba(192,132,252,0.16)' : K.inset,
+                          backgroundColor: sel ? 'rgba(58,120,224,0.16)' : K.inset,
                           color: sel ? K.violet : K.muted,
-                          border: `1px solid ${sel ? 'rgba(192,132,252,0.45)' : K.border}`,
+                          border: `1px solid ${sel ? 'rgba(58,120,224,0.45)' : K.border}`,
                         }}
                       >{o.label}</button>
                     )

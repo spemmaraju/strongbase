@@ -67,7 +67,7 @@ export function getDifficulty(ex) {
 }
 
 export const DIFFICULTY_LABELS = { 1: 'Easy', 2: 'Moderate', 3: 'Hard' }
-export const DIFFICULTY_COLORS = { 1: '#22c55e', 2: '#f59e0b', 3: '#ec4899' }
+export const DIFFICULTY_COLORS = { 1: '#4fb38a', 2: '#d9a441', 3: '#3a78e0' }
 
 // ── Effectiveness ──────────────────────────────────────────────────────────
 

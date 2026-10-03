@@ -9,19 +9,19 @@
 
 import { REGIONS } from '../data/muscleGroups'
 
-const BASE   = '#1c2740'   // unworked muscle
-const STROKE = '#0a0e1a'   // separation between blocks — matches page bg
-const PRIMARY   = '#ec4899'
-const SECONDARY = 'rgba(236,72,153,0.30)'
+const BASE   = '#23272d'   // unworked muscle
+const STROKE = '#0e0f11'   // separation between blocks — matches page bg
+const PRIMARY   = '#3a78e0'
+const SECONDARY = 'rgba(58,120,224,0.30)'
 
 // Optional graded mode, used by the coverage mirror: level 0 = untouched,
 // 1–4 = how much it has actually been trained. Level 1 is deliberately visible
 // — "barely" and "never" must not look the same.
 const LEVEL_FILLS = [
   BASE,
-  'rgba(236,72,153,0.18)',
-  'rgba(236,72,153,0.38)',
-  'rgba(236,72,153,0.64)',
+  'rgba(58,120,224,0.18)',
+  'rgba(58,120,224,0.38)',
+  'rgba(58,120,224,0.64)',
   PRIMARY,
 ]
 
@@ -160,7 +160,7 @@ function Figure({ paths, primary, secondary, levels, maxWidth = 132, label }) {
       </svg>
       <span style={{
         fontFamily: "'JetBrains Mono', monospace", fontSize: 8, fontWeight: 700,
-        letterSpacing: '0.16em', color: '#475569', textTransform: 'uppercase',
+        letterSpacing: '0.16em', color: '#737882', textTransform: 'uppercase',
       }}>{label}</span>
     </div>
   )

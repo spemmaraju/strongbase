@@ -7,7 +7,7 @@
 // Usage:
 //   import { Icon } from './Icons'
 //   <Icon name="streak" size={20} />                       // inherits color
-//   <Icon name="xp" size={16} style={{ color: '#c084fc' }} />
+//   <Icon name="xp" size={16} style={{ color: '#9cc2ff' }} />
 //   <Icon name="strength" size={30} className="badge-icon" />
 //
 // These are the exact marks chosen during design review:

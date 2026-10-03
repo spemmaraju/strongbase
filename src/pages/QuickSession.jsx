@@ -20,20 +20,7 @@ import { getProgramDayNumber } from '../utils/workoutStats'
 import {
   getDifficulty, getEffectiveness, DIFFICULTY_LABELS, DIFFICULTY_COLORS,
 } from '../utils/exerciseMeta'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg: '#0a0e1a', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  pink: '#ec4899', purple: '#8b5cf6', violet: '#c084fc',
-  grad: 'linear-gradient(90deg,#ec4899,#8b5cf6)',
-  gradD: 'linear-gradient(135deg,#ec4899,#8b5cf6)',
-  gradH: 'linear-gradient(130deg, #fb923c 0%, #ec4899 48%, #8b5cf6 100%)',
-  amber: '#f59e0b', teal: '#2dd4bf', green: '#22c55e',
-  text: '#f8fafc', muted: '#94a3b8', subtle: '#64748b', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 const SECTION_LABELS = { warm: 'Warm up', main: 'The work', cool: 'Wind down · back care' }
 
@@ -126,7 +113,7 @@ export default function QuickSession() {
           <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 6px' }}>
             Quick Burn
           </p>
-          <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: K.text, margin: '0 0 8px', lineHeight: 1.1 }}>
+          <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: K.text, margin: '0 0 8px', lineHeight: 1.1 }}>
             No-energy day? No problem.
           </h1>
           <p style={{ fontSize: 14, color: K.muted, margin: '0 0 24px', lineHeight: 1.55, maxWidth: '52ch' }}>
@@ -146,11 +133,11 @@ export default function QuickSession() {
                   display: 'flex', flexDirection: 'column', gap: 8,
                   transition: 'border-color 0.15s',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(192,132,252,0.5)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(58,120,224,0.5)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = K.borderSt }}
               >
                 <span aria-hidden="true" style={{ fontSize: 28 }}>{qs.emoji}</span>
-                <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 17, color: K.text, margin: 0 }}>
+                <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 17, color: K.text, margin: 0 }}>
                   {qs.label}
                 </p>
                 <p style={{ fontSize: 12.5, color: K.muted, margin: 0, lineHeight: 1.5 }}>
@@ -179,17 +166,13 @@ export default function QuickSession() {
 
         {/* Hero */}
         <div style={{
-          background: K.gradH, borderRadius: 20, padding: '20px 20px 18px',
+          background: K.card, borderRadius: 20, padding: '20px 20px 18px',
           position: 'relative', overflow: 'hidden', marginBottom: 20,
         }}>
-          <div style={{
-            position: 'absolute', inset: 0, pointerEvents: 'none',
-            backgroundImage: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 8px)',
-          }} />
           <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, color: 'rgba(255,255,255,0.75)', letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 6px' }}>
             Quick Burn {picked.emoji}
           </p>
-          <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 26, color: '#fff', margin: 0, lineHeight: 1.1 }}>
+          <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 26, color: '#fff', margin: 0, lineHeight: 1.1 }}>
             {picked.label}
           </h1>
           <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.75)', margin: '6px 0 0', lineHeight: 1.45 }}>
@@ -221,7 +204,7 @@ export default function QuickSession() {
               )}
               <div style={{
                 display: 'flex', alignItems: 'center', gap: 12,
-                backgroundColor: K.card, border: `1px solid ${isDone ? 'rgba(34,197,94,0.3)' : K.border}`,
+                backgroundColor: K.card, border: `1px solid ${isDone ? 'rgba(79,179,138,0.3)' : K.border}`,
                 borderRadius: 14, padding: '12px 14px', marginBottom: 8,
                 opacity: isDone ? 0.65 : 1, transition: 'opacity 0.15s',
               }}>
@@ -235,7 +218,7 @@ export default function QuickSession() {
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}
                 >
-                  {isDone && <Icon name="check" size={16} strokeWidth={3} style={{ color: '#0a0e1a' }} />}
+                  {isDone && <Icon name="check" size={16} strokeWidth={3} style={{ color: '#0e0f11' }} />}
                 </button>
 
                 <button
@@ -280,7 +263,7 @@ export default function QuickSession() {
                 background: canComplete ? K.gradD : K.inset,
                 color: canComplete ? '#fff' : K.dim,
                 borderRadius: 16, border: 'none',
-                fontFamily: FONT, fontWeight: 800, fontSize: 16,
+                fontFamily: FONT, fontWeight: 700, fontSize: 16,
                 cursor: canComplete ? 'pointer' : 'not-allowed',
               }}
             >
@@ -312,7 +295,7 @@ export default function QuickSession() {
             }}>
               <Icon name="check" size={32} strokeWidth={2.5} />
             </div>
-            <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: K.text, margin: '0 0 6px' }}>
+            <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 24, color: K.text, margin: '0 0 6px' }}>
               That counts.
             </h2>
             <p style={{ fontSize: 14, color: K.muted, margin: '0 0 22px', lineHeight: 1.5 }}>

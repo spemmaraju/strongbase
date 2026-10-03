@@ -1,17 +1,7 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { getExercisesForLog, formatDuration, formatDateTime } from '../utils/workoutStats'
 import { Icon } from '../components/Icons'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-const K = {
-  bg: '#0a0e1a', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  violet: '#c084fc', pink: '#ec4899', purple: '#8b5cf6',
-  grad: 'linear-gradient(90deg,#ec4899,#8b5cf6)',
-  gradHero: 'linear-gradient(130deg,#fb923c 0%,#ec4899 48%,#8b5cf6 100%)',
-  text: '#f8fafc', muted: '#94a3b8', dim: '#64748b',
-}
+import { K, FONT, MONO } from '../theme'
 
 function Stat({ label, value }) {
   return (
@@ -33,7 +23,7 @@ function ExerciseRow({ exercise }) {
         <p style={{ fontFamily: FONT, fontSize: 14, fontWeight: 700, color: K.text, margin: 0, lineHeight: 1.3 }}>{exercise.name}</p>
         <p style={{ fontSize: 11, color: K.dim, marginTop: 3 }}>{exercise.targetMuscles.join(' · ')}</p>
       </div>
-      <span style={{ flexShrink: 0, fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet, backgroundColor: 'rgba(192,132,252,0.12)', border: '1px solid rgba(192,132,252,0.2)', borderRadius: 20, padding: '3px 10px', whiteSpace: 'nowrap' }}>
+      <span style={{ flexShrink: 0, fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet, backgroundColor: 'rgba(58,120,224,0.12)', border: '1px solid rgba(58,120,224,0.2)', borderRadius: 20, padding: '3px 10px', whiteSpace: 'nowrap' }}>
         {repLabel}
       </span>
     </div>
@@ -65,7 +55,7 @@ export default function WorkoutDetail() {
   return (
     <div style={{ minHeight: '100svh', backgroundColor: K.bg }}>
       {/* Hero header */}
-      <div style={{ background: K.gradHero, padding: '52px 20px 28px' }}>
+      <div style={{ background: K.card, borderBottom: `1px solid ${K.border}`, padding: '52px 20px 28px' }}>
         <button
           onClick={() => navigate(-1)}
           style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 18, fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.8)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
@@ -75,7 +65,7 @@ export default function WorkoutDetail() {
         <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', color: 'rgba(255,255,255,0.7)', marginBottom: 6 }}>
           DAY {log.dayNumber}
         </p>
-        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 28, color: '#fff', lineHeight: 1.15, margin: '0 0 8px' }}>{log.theme}</h1>
+        <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: '#fff', lineHeight: 1.15, margin: '0 0 8px' }}>{log.theme}</h1>
         <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>{formatDateTime(log.completedAt)}</p>
       </div>
 

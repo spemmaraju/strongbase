@@ -16,15 +16,7 @@ import { canShowExercise } from '../utils/sessionPlan'
 import { draftKey } from '../hooks/useSessionDraft'
 import { getProgramDayNumber } from '../utils/workoutStats'
 import { getActivePlan } from '../data/plans'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  violet: '#c084fc', text: '#f8fafc', muted: '#94a3b8', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 const WINDOWS = [
   { days: 7,  label: '7D'  },
@@ -97,9 +89,9 @@ export default function CoverageCard({ logs = [], style }) {
               style={{
                 padding: '3px 7px', borderRadius: 7, cursor: 'pointer',
                 fontFamily: MONO, fontSize: 9, fontWeight: 700,
-                backgroundColor: days === w.days ? 'rgba(192,132,252,0.16)' : 'transparent',
+                backgroundColor: days === w.days ? 'rgba(58,120,224,0.16)' : 'transparent',
                 color: days === w.days ? K.violet : K.dim,
-                border: `1px solid ${days === w.days ? 'rgba(192,132,252,0.35)' : 'transparent'}`,
+                border: `1px solid ${days === w.days ? 'rgba(58,120,224,0.35)' : 'transparent'}`,
               }}
             >{w.label}</button>
           ))}
@@ -126,7 +118,7 @@ export default function CoverageCard({ logs = [], style }) {
       {hasData && coverage.observations.map((o, i) => (
         <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
           <div style={{ width: 4, height: 4, borderRadius: '50%', backgroundColor: K.violet, flexShrink: 0, marginTop: 7 }} />
-          <p style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.5, margin: 0 }}>{o}</p>
+          <p style={{ fontSize: 13, color: '#c2c6cc', lineHeight: 1.5, margin: 0 }}>{o}</p>
         </div>
       ))}
 

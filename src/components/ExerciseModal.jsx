@@ -5,37 +5,7 @@ import MuscleMap from './MuscleMap'
 import { resolveMuscles } from '../data/muscleGroups'
 import SafetyCard from './SafetyCard'
 import EquipmentPrimer from './EquipmentPrimer'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg:      '#0a0e1a',
-  panel:   '#0a111e',
-  card:    '#101828',
-  inset:   '#16233a',
-  border:  'rgba(255,255,255,0.06)',
-  borderSt:'rgba(255,255,255,0.10)',
-  pink:    '#ec4899',
-  purple:  '#8b5cf6',
-  violet:  '#c084fc',
-  grad:    'linear-gradient(90deg, #ec4899, #8b5cf6)',
-  amber:   '#f59e0b',
-  teal:    '#2dd4bf',
-  text:    '#f8fafc',
-  muted:   '#94a3b8',
-  subtle:  '#64748b',
-  dim:     '#475569',
-}
-
-const CAT_COLORS = {
-  'warm-up':   K.amber,
-  strength:    K.pink,
-  stability:   K.purple,
-  flexibility: K.teal,
-  power:       '#fb923c',
-  cardio:      '#3b82f6',
-}
+import { K, FONT, MONO, CATEGORY_COLORS as CAT_COLORS } from '../theme'
 
 // ── Sensation card ──────────────────────────────────────────────────────────
 // Collapsed by default to the two lines that matter mid-set (feel here / not
@@ -53,7 +23,7 @@ function SensationCard({ s }) {
   const Row = ({ dot, label, text }) => (
     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
       <div style={{ width: 7, height: 7, borderRadius: '50%', backgroundColor: dot, flexShrink: 0, marginTop: 6 }} />
-      <p style={{ fontSize: 13.5, lineHeight: 1.55, margin: 0, color: '#cbd5e1', maxWidth: '68ch' }}>
+      <p style={{ fontSize: 13.5, lineHeight: 1.55, margin: 0, color: '#c2c6cc', maxWidth: '68ch' }}>
         <span style={{ color: K.text, fontWeight: 700 }}>{label} </span>{text}
       </p>
     </div>
@@ -61,8 +31,8 @@ function SensationCard({ s }) {
 
   return (
     <div style={{
-      backgroundColor: 'rgba(139,92,246,0.06)',
-      border: '1px solid rgba(139,92,246,0.22)',
+      backgroundColor: 'rgba(58,120,224,0.06)',
+      border: '1px solid rgba(58,120,224,0.22)',
       borderRadius: 14, padding: 16, marginBottom: 16,
     }}>
       <p style={{
@@ -70,8 +40,8 @@ function SensationCard({ s }) {
         letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 12,
       }}>Where you should feel it</p>
 
-      <Row dot="#22c55e" label="Feel it here —" text={s.feelHere} />
-      <Row dot="#f59e0b" label="Not here —"     text={s.notHere} />
+      <Row dot="#4fb38a" label="Feel it here —" text={s.feelHere} />
+      <Row dot="#d9a441" label="Not here —"     text={s.notHere} />
 
       {hasDetail && (
         <button
@@ -93,7 +63,7 @@ function SensationCard({ s }) {
       {open && hasDetail && (
         <div style={{ marginTop: 14, borderTop: `1px solid ${K.border}`, paddingTop: 14 }}>
           {s.firstCue && (
-            <p style={{ fontSize: 13.5, lineHeight: 1.55, color: '#cbd5e1', margin: '0 0 14px', maxWidth: '68ch' }}>
+            <p style={{ fontSize: 13.5, lineHeight: 1.55, color: '#c2c6cc', margin: '0 0 14px', maxWidth: '68ch' }}>
               <span style={{ color: K.text, fontWeight: 700 }}>Try this first — </span>{s.firstCue}
             </p>
           )}
@@ -104,7 +74,7 @@ function SensationCard({ s }) {
               padding: '10px 12px', marginBottom: 8,
             }}>
               <p style={{ fontSize: 12.5, fontWeight: 700, color: K.amber, margin: '0 0 3px' }}>{w.felt}</p>
-              <p style={{ fontSize: 13, lineHeight: 1.5, color: '#cbd5e1', margin: 0, maxWidth: '66ch' }}>{w.fix}</p>
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: '#c2c6cc', margin: 0, maxWidth: '66ch' }}>{w.fix}</p>
             </div>
           ))}
 
@@ -128,16 +98,16 @@ function SensationCard({ s }) {
 
           {s.stopIf && (
             <div style={{
-              marginTop: 10, backgroundColor: 'rgba(239,68,68,0.07)',
-              border: '1px solid rgba(239,68,68,0.25)', borderRadius: 10, padding: '10px 12px',
+              marginTop: 10, backgroundColor: 'rgba(224,108,108,0.07)',
+              border: '1px solid rgba(224,108,108,0.25)', borderRadius: 10, padding: '10px 12px',
             }}>
-              <p style={{ fontSize: 13, lineHeight: 1.5, color: '#fca5a5', margin: 0, maxWidth: '66ch' }}>
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: '#eb9b9b', margin: 0, maxWidth: '66ch' }}>
                 <span style={{ fontWeight: 700 }}>Stop if </span>{s.stopIf}{' '}
                 <button
                   onClick={() => setSafety(true)}
                   style={{
                     background: 'none', border: 'none', padding: 0, cursor: 'pointer',
-                    color: '#fca5a5', fontSize: 13, fontWeight: 700,
+                    color: '#eb9b9b', fontSize: 13, fontWeight: 700,
                     textDecoration: 'underline', textUnderlineOffset: 3,
                   }}
                 >When to stop →</button>
@@ -201,7 +171,7 @@ export default function ExerciseModal({ exercise, onClose }) {
 
       {/* Exercise name */}
       <h2 style={{
-        fontFamily: FONT, fontWeight: 800, fontSize: 28,
+        fontFamily: FONT, fontWeight: 700, fontSize: 28,
         color: K.text, lineHeight: 1.1, marginBottom: 8, paddingRight: 40,
       }}>
         {exercise.name}
@@ -268,9 +238,9 @@ export default function ExerciseModal({ exercise, onClose }) {
         ))}
         {secondaryNames.map(m => (
           <span key={m} style={{
-            backgroundColor: 'rgba(236,72,153,0.13)', borderRadius: 99,
-            padding: '4px 10px', fontSize: 11, color: '#f9a8d4',
-            border: '1px solid rgba(236,72,153,0.26)',
+            backgroundColor: 'rgba(58,120,224,0.13)', borderRadius: 99,
+            padding: '4px 10px', fontSize: 11, color: '#9cc2ff',
+            border: '1px solid rgba(58,120,224,0.26)',
           }}>{m}</span>
         ))}
       </div>
@@ -315,7 +285,7 @@ export default function ExerciseModal({ exercise, onClose }) {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontFamily: MONO, fontWeight: 700, fontSize: 11, color: '#fff', marginTop: 1,
             }}>{i + 1}</span>
-            <p style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6, margin: 0 }}>{step}</p>
+            <p style={{ fontSize: 14, color: '#c2c6cc', lineHeight: 1.6, margin: 0 }}>{step}</p>
           </li>
         ))}
       </ol>
@@ -329,7 +299,7 @@ export default function ExerciseModal({ exercise, onClose }) {
         {(exercise.cues || []).map((cue, i) => (
           <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10 }}>
             <Icon name="check" size={15} strokeWidth={2.5} style={{ color: K.violet, flexShrink: 0, marginTop: 3 }} />
-            <p style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6, margin: 0 }}>{cue}</p>
+            <p style={{ fontSize: 14, color: '#c2c6cc', lineHeight: 1.6, margin: 0 }}>{cue}</p>
           </li>
         ))}
       </ul>
@@ -365,15 +335,15 @@ export default function ExerciseModal({ exercise, onClose }) {
             <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 12 }}>
               <span style={{
                 flexShrink: 0, width: 18, height: 18, borderRadius: '50%', marginTop: 2,
-                backgroundColor: 'rgba(239,68,68,0.14)', color: '#f87171',
+                backgroundColor: 'rgba(224,108,108,0.14)', color: '#e06c6c',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 11, fontWeight: 700, lineHeight: 1,
               }}>✕</span>
               <div style={{ flex: 1 }}>
-                <p style={{ fontSize: 13.5, fontWeight: 700, color: '#fca5a5', margin: '0 0 3px', lineHeight: 1.45 }}>
+                <p style={{ fontSize: 13.5, fontWeight: 700, color: '#eb9b9b', margin: '0 0 3px', lineHeight: 1.45 }}>
                   {m.wrong}
                 </p>
-                <p style={{ fontSize: 13.5, color: '#cbd5e1', lineHeight: 1.55, margin: 0, maxWidth: '68ch' }}>
+                <p style={{ fontSize: 13.5, color: '#c2c6cc', lineHeight: 1.55, margin: 0, maxWidth: '68ch' }}>
                   {m.right}
                 </p>
               </div>
@@ -385,8 +355,8 @@ export default function ExerciseModal({ exercise, onClose }) {
       {/* EASIER MODIFICATION */}
       {exercise.modification && (
         <div style={{
-          backgroundColor: 'rgba(245,158,11,0.07)',
-          border: '1px solid rgba(245,158,11,0.2)',
+          backgroundColor: 'rgba(217,164,65,0.07)',
+          border: '1px solid rgba(217,164,65,0.2)',
           borderRadius: 14, padding: 16,
         }}>
           <p style={{
@@ -411,8 +381,8 @@ export default function ExerciseModal({ exercise, onClose }) {
           }}>Common mistakes</p>
           {exercise.mistakes.map((m, i) => (
             <div key={i} style={{ marginBottom: i < exercise.mistakes.length - 1 ? 10 : 0 }}>
-              <p style={{ fontSize: 13, color: '#fca5a5', margin: 0, lineHeight: 1.5 }}>✕ {m.wrong}</p>
-              <p style={{ fontSize: 13, color: '#86efac', margin: '2px 0 0', lineHeight: 1.5 }}>✓ {m.right}</p>
+              <p style={{ fontSize: 13, color: '#eb9b9b', margin: 0, lineHeight: 1.5 }}>✕ {m.wrong}</p>
+              <p style={{ fontSize: 13, color: '#8fd3b3', margin: '2px 0 0', lineHeight: 1.5 }}>✓ {m.right}</p>
             </div>
           ))}
         </div>

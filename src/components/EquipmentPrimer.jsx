@@ -16,15 +16,7 @@
 import { useState } from 'react'
 import { Icon } from './Icons'
 import primers from '../data/primers.json'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  inset: '#16233a', border: 'rgba(255,255,255,0.06)',
-  violet: '#c084fc', pink: '#ec4899', amber: '#f59e0b',
-  text: '#f8fafc', muted: '#94a3b8', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 const seenKey = eq => `strongbase_primer_seen_${eq}`
 
@@ -76,8 +68,8 @@ export default function EquipmentPrimer({ equipment, exerciseId, primerKey }) {
 
   return (
     <div style={{
-      backgroundColor: 'rgba(236,72,153,0.06)',
-      border: '1px solid rgba(236,72,153,0.24)',
+      backgroundColor: 'rgba(58,120,224,0.06)',
+      border: '1px solid rgba(58,120,224,0.24)',
       borderRadius: 14, padding: 16, marginBottom: 18,
     }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}>
@@ -86,7 +78,7 @@ export default function EquipmentPrimer({ equipment, exerciseId, primerKey }) {
             fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.pink,
             letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 5px',
           }}>{primer.eyebrow || 'New equipment'}</p>
-          <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 16, color: K.text, margin: 0 }}>
+          <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 16, color: K.text, margin: 0 }}>
             {primer.title}
           </p>
         </div>
@@ -101,14 +93,14 @@ export default function EquipmentPrimer({ equipment, exerciseId, primerKey }) {
         >Got it</button>
       </div>
 
-      <p style={{ fontSize: 13.5, color: '#cbd5e1', lineHeight: 1.6, margin: '0 0 14px', maxWidth: '66ch' }}>
+      <p style={{ fontSize: 13.5, color: '#c2c6cc', lineHeight: 1.6, margin: '0 0 14px', maxWidth: '66ch' }}>
         {primer.intro}
       </p>
 
       {primer.points?.map(p => (
         <div key={p.heading} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
           <div style={{ width: 5, height: 5, borderRadius: '50%', backgroundColor: K.pink, flexShrink: 0, marginTop: 7 }} />
-          <p style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.55, margin: 0, maxWidth: '66ch' }}>
+          <p style={{ fontSize: 13, color: '#c2c6cc', lineHeight: 1.55, margin: 0, maxWidth: '66ch' }}>
             <span style={{ color: K.text, fontWeight: 700 }}>{p.heading} — </span>{p.body}
           </p>
         </div>
@@ -162,13 +154,13 @@ export default function EquipmentPrimer({ equipment, exerciseId, primerKey }) {
               {rung.criteria.map(c => (
                 <div key={c} style={{ display: 'flex', gap: 8, marginBottom: 5 }}>
                   <span style={{ color: K.dim, flexShrink: 0, lineHeight: 1.5 }}>·</span>
-                  <p style={{ fontSize: 12.5, color: '#cbd5e1', lineHeight: 1.5, margin: 0, maxWidth: '62ch' }}>{c}</p>
+                  <p style={{ fontSize: 12.5, color: '#c2c6cc', lineHeight: 1.5, margin: 0, maxWidth: '62ch' }}>{c}</p>
                 </div>
               ))}
               {rung.gated && (
                 <p style={{
                   fontSize: 12.5, lineHeight: 1.5, margin: '9px 0 0', maxWidth: '62ch',
-                  color: '#fca5a5',
+                  color: '#eb9b9b',
                 }}>
                   This rung isn't unlocked by reps. It needs someone watching you move — a
                   physio's opinion beats any rule an app can give you here.

@@ -14,18 +14,7 @@ import { FOCUS_PRESETS, getDifficulty, DIFFICULTY_LABELS, DIFFICULTY_COLORS } fr
 import { estimateMinutes } from '../utils/sessionPlan'
 import { suggestWorkout } from '../utils/suggestWorkout'
 import { getCustomWorkout } from '../utils/customWorkouts'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg: '#0a0e1a', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  pink: '#ec4899', purple: '#8b5cf6', violet: '#c084fc',
-  grad: 'linear-gradient(90deg,#ec4899,#8b5cf6)',
-  amber: '#f59e0b', teal: '#2dd4bf', green: '#22c55e', red: '#ef4444',
-  text: '#f8fafc', muted: '#94a3b8', subtle: '#64748b', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 const SIZES = [
   { id: 'short', label: 'Short' },
@@ -49,9 +38,9 @@ function defaultName(focus) {
 const chipStyle = active => ({
   padding: '9px 16px', borderRadius: 99, cursor: 'pointer', whiteSpace: 'nowrap',
   fontFamily: FONT, fontSize: 14, fontWeight: 700,
-  backgroundColor: active ? 'rgba(192,132,252,0.16)' : K.inset,
+  backgroundColor: active ? 'rgba(58,120,224,0.16)' : K.inset,
   color: active ? K.violet : K.muted,
-  border: `1px solid ${active ? 'rgba(192,132,252,0.45)' : K.border}`,
+  border: `1px solid ${active ? 'rgba(58,120,224,0.45)' : K.border}`,
 })
 
 const smallBtn = {
@@ -168,7 +157,7 @@ export default function WorkoutBuilder() {
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18 }}>
           <button onClick={() => navigate(-1)} aria-label="Back" style={{ ...smallBtn, width: 44, height: 44, fontSize: 24, color: K.muted }}>‹</button>
-          <h1 style={{ fontSize: 22, fontWeight: 800, margin: 0 }}>{initial ? 'Edit workout' : 'Build a workout'}</h1>
+          <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>{initial ? 'Edit workout' : 'Build a workout'}</h1>
         </div>
 
         {/* Name */}
@@ -293,7 +282,7 @@ export default function WorkoutBuilder() {
           style={{
             width: '100%', marginTop: 16, padding: '15px', borderRadius: 14, cursor: 'pointer',
             backgroundColor: 'transparent', color: K.violet, fontFamily: FONT, fontSize: 16, fontWeight: 700,
-            border: '1px dashed rgba(192,132,252,0.45)',
+            border: '1px dashed rgba(58,120,224,0.45)',
           }}
         >＋ Add exercises</button>
       </div>
@@ -307,14 +296,14 @@ export default function WorkoutBuilder() {
       }}>
         <div style={{ maxWidth: 760, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 10 }}>
           {(initial || savedId) && (
-            <button onClick={() => setConfirmDel(true)} style={{ ...ghostBtn, color: K.red, borderColor: 'rgba(239,68,68,0.35)', height: 52 }}>Delete</button>
+            <button onClick={() => setConfirmDel(true)} style={{ ...ghostBtn, color: K.red, borderColor: 'rgba(224,108,108,0.35)', height: 52 }}>Delete</button>
           )}
           <button onClick={onSave} disabled={!canGo} style={{ ...ghostBtn, height: 52, padding: '0 22px', opacity: canGo ? 1 : 0.4 }}>Save</button>
           <button
             onClick={onStart} disabled={!canGo}
             style={{
               flex: 1, height: 52, borderRadius: 14, border: 'none', cursor: canGo ? 'pointer' : 'default',
-              background: K.grad, color: '#fff', fontFamily: FONT, fontSize: 17, fontWeight: 800,
+              background: K.grad, color: '#fff', fontFamily: FONT, fontSize: 17, fontWeight: 700,
               opacity: canGo ? 1 : 0.4,
             }}
           >Start workout</button>
@@ -336,7 +325,7 @@ export default function WorkoutBuilder() {
           display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20,
         }}>
           <div style={{ width: '100%', maxWidth: 380, backgroundColor: K.card, border: `1px solid ${K.borderSt}`, borderRadius: 18, padding: 22 }}>
-            <p style={{ fontSize: 18, fontWeight: 800, margin: '0 0 8px' }}>Delete this workout?</p>
+            <p style={{ fontSize: 18, fontWeight: 700, margin: '0 0 8px' }}>Delete this workout?</p>
             <p style={{ fontSize: 14, color: K.muted, margin: '0 0 18px', lineHeight: 1.5 }}>
               “{name.trim() || 'Untitled'}” will be removed from your saved workouts. Past logs are kept.
             </p>

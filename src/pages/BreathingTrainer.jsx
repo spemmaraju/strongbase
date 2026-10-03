@@ -19,19 +19,7 @@ import { addExerciseToDay } from '../hooks/useSessionDraft'
 import {
   BREATHING_LADDER, BREATHING_RULES, SAFETY_FLAGS, SELF_TESTS,
 } from '../data/breathingDrills'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  bg: '#0a0e1a', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  pink: '#ec4899', purple: '#8b5cf6', violet: '#c084fc',
-  gradD: 'linear-gradient(135deg,#ec4899,#8b5cf6)',
-  gradT: 'linear-gradient(135deg,#2dd4bf,#8b5cf6)',
-  amber: '#f59e0b', teal: '#2dd4bf', green: '#22c55e',
-  text: '#f8fafc', muted: '#94a3b8', subtle: '#64748b', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 const DONE_KEY = 'strongbase_breathe_done'   // { [drillId]: completions }
 
@@ -110,14 +98,14 @@ function Pacer({ drill, onClose, onComplete }) {
           transition: `transform ${finished ? 0.4 : phase.seconds}s ease-in-out`,
         }}>
           <div style={{ textAlign: 'center' }}>
-            <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 40, color: '#fff', margin: 0, lineHeight: 1 }}>
+            <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 40, color: '#fff', margin: 0, lineHeight: 1 }}>
               {finished ? '✓' : left}
             </p>
           </div>
         </div>
       </div>
 
-      <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 22, color: K.text, margin: '0 0 8px', textAlign: 'center', maxWidth: 420 }}>
+      <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 22, color: K.text, margin: '0 0 8px', textAlign: 'center', maxWidth: 420 }}>
         {finished ? 'Nicely done.' : phase.label}
       </p>
       {!finished && (
@@ -197,7 +185,7 @@ export default function BreathingTrainer() {
         <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.teal, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 6px' }}>
           Trainable skill · ~9 min
         </p>
-        <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 30, color: K.text, margin: '0 0 10px', lineHeight: 1.1 }}>
+        <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 30, color: K.text, margin: '0 0 10px', lineHeight: 1.1 }}>
           Brace &amp; Breathe
         </h1>
         <p style={{ fontSize: 14.5, color: K.muted, lineHeight: 1.6, margin: 0, maxWidth: '60ch' }}>
@@ -218,7 +206,7 @@ export default function BreathingTrainer() {
           <div style={{ display: 'grid', gridTemplateColumns: isWide ? '1fr 1fr' : '1fr', gap: 8 }}>
             {BREATHING_RULES.map(r => (
               <div key={r.rule} style={{ backgroundColor: K.card, border: `1px solid ${K.border}`, borderRadius: 14, padding: '13px 15px' }}>
-                <p style={{ fontFamily: FONT, fontSize: 13.5, fontWeight: 800, color: K.text, margin: '0 0 4px' }}>{r.rule}</p>
+                <p style={{ fontFamily: FONT, fontSize: 13.5, fontWeight: 700, color: K.text, margin: '0 0 4px' }}>{r.rule}</p>
                 <p style={{ fontSize: 12.5, color: K.muted, lineHeight: 1.55, margin: 0 }}>{r.detail}</p>
               </div>
             ))}
@@ -247,14 +235,14 @@ export default function BreathingTrainer() {
                 >
                   <div style={{
                     width: 30, height: 30, borderRadius: '50%', flexShrink: 0,
-                    background: runs > 0 ? 'rgba(34,197,94,0.16)' : K.inset,
-                    border: runs > 0 ? '1px solid rgba(34,197,94,0.4)' : `1px solid ${K.borderSt}`,
+                    background: runs > 0 ? 'rgba(79,179,138,0.16)' : K.inset,
+                    border: runs > 0 ? '1px solid rgba(79,179,138,0.4)' : `1px solid ${K.borderSt}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontFamily: MONO, fontSize: 12, fontWeight: 700,
                     color: runs > 0 ? K.green : K.subtle,
                   }}>{runs > 0 ? '✓' : i + 1}</div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <p style={{ fontFamily: FONT, fontSize: 15.5, fontWeight: 800, color: K.text, margin: 0 }}>{d.name}</p>
+                    <p style={{ fontFamily: FONT, fontSize: 15.5, fontWeight: 700, color: K.text, margin: 0 }}>{d.name}</p>
                     <p style={{ fontSize: 12, color: K.subtle, margin: '2px 0 0' }}>
                       {d.subtitle} · ~{d.minutes} min{runs > 0 ? ` · done ×${runs}` : ''}
                     </p>
@@ -274,7 +262,7 @@ export default function BreathingTrainer() {
                     {d.setup.map((s, j) => (
                       <div key={j} style={{ display: 'flex', gap: 10, marginBottom: 7 }}>
                         <span style={{ fontFamily: MONO, fontSize: 11, fontWeight: 700, color: K.teal, flexShrink: 0, marginTop: 2 }}>{j + 1}</span>
-                        <p style={{ fontSize: 13.5, color: '#cbd5e1', lineHeight: 1.55, margin: 0 }}>{s}</p>
+                        <p style={{ fontSize: 13.5, color: '#c2c6cc', lineHeight: 1.55, margin: 0 }}>{s}</p>
                       </div>
                     ))}
 
@@ -284,7 +272,7 @@ export default function BreathingTrainer() {
                     {d.rightWhen.map((s, j) => (
                       <div key={j} style={{ display: 'flex', gap: 9, marginBottom: 6 }}>
                         <span style={{ color: K.green, fontSize: 12, flexShrink: 0, marginTop: 1 }}>✓</span>
-                        <p style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.5, margin: 0 }}>{s}</p>
+                        <p style={{ fontSize: 13, color: '#c2c6cc', lineHeight: 1.5, margin: 0 }}>{s}</p>
                       </div>
                     ))}
 
@@ -294,15 +282,15 @@ export default function BreathingTrainer() {
                     {d.wrongSigns.map((w, j) => (
                       <div key={j} style={{ backgroundColor: K.inset, borderRadius: 10, padding: '9px 12px', marginBottom: 6 }}>
                         <p style={{ fontSize: 12.5, fontWeight: 700, color: K.amber, margin: '0 0 3px' }}>{w.felt}</p>
-                        <p style={{ fontSize: 12.5, color: '#cbd5e1', lineHeight: 1.5, margin: 0 }}>{w.fix}</p>
+                        <p style={{ fontSize: 12.5, color: '#c2c6cc', lineHeight: 1.5, margin: 0 }}>{w.fix}</p>
                       </div>
                     ))}
 
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 14 }}>
                       <button onClick={() => setActive(d)} style={{
                         flex: 1, minWidth: 170, minHeight: 46, borderRadius: 12, border: 'none',
-                        background: K.gradT, color: '#062024',
-                        fontFamily: FONT, fontWeight: 800, fontSize: 14.5, cursor: 'pointer',
+                        background: K.gradT, color: '#fff',
+                        fontFamily: FONT, fontWeight: 700, fontSize: 14.5, cursor: 'pointer',
                       }}>▶ Start guided timer</button>
                       {libraryEx && (
                         <button
@@ -329,7 +317,7 @@ export default function BreathingTrainer() {
           <div style={{ display: 'grid', gridTemplateColumns: isWide ? '1fr 1fr 1fr' : '1fr', gap: 8 }}>
             {SELF_TESTS.map(t => (
               <div key={t.name} style={{ backgroundColor: K.card, border: `1px solid ${K.border}`, borderRadius: 14, padding: '13px 15px' }}>
-                <p style={{ fontFamily: FONT, fontSize: 13.5, fontWeight: 800, color: K.text, margin: '0 0 5px' }}>{t.name}</p>
+                <p style={{ fontFamily: FONT, fontSize: 13.5, fontWeight: 700, color: K.text, margin: '0 0 5px' }}>{t.name}</p>
                 <p style={{ fontSize: 12.5, color: K.muted, lineHeight: 1.5, margin: '0 0 8px' }}>{t.how}</p>
                 <p style={{ fontSize: 12, color: K.green, lineHeight: 1.5, margin: '0 0 4px' }}>✓ {t.pass}</p>
                 <p style={{ fontSize: 12, color: K.amber, lineHeight: 1.5, margin: 0 }}>✕ {t.fail}</p>
@@ -339,10 +327,10 @@ export default function BreathingTrainer() {
         </Section>
 
         {/* Safety */}
-        <Section eyebrow="Keep it safe" color="#f87171">
-          <div style={{ backgroundColor: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.22)', borderRadius: 14, padding: '14px 16px' }}>
+        <Section eyebrow="Keep it safe" color="#e06c6c">
+          <div style={{ backgroundColor: 'rgba(224,108,108,0.06)', border: '1px solid rgba(224,108,108,0.22)', borderRadius: 14, padding: '14px 16px' }}>
             {SAFETY_FLAGS.map((s, i) => (
-              <p key={i} style={{ fontSize: 13, color: '#fecaca', lineHeight: 1.6, margin: i > 0 ? '10px 0 0' : 0 }}>
+              <p key={i} style={{ fontSize: 13, color: '#eeb4b4', lineHeight: 1.6, margin: i > 0 ? '10px 0 0' : 0 }}>
                 {s}
               </p>
             ))}

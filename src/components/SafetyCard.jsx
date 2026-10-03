@@ -10,23 +10,14 @@
 // ---------------------------------------------------------------------------
 
 import { useEffect } from 'react'
-
-const FONT = "'Plus Jakarta Sans', sans-serif"
-const MONO = "'JetBrains Mono', 'Courier New', monospace"
-
-const K = {
-  panel: '#0a111e', card: '#101828', inset: '#16233a',
-  border: 'rgba(255,255,255,0.06)', borderSt: 'rgba(255,255,255,0.10)',
-  violet: '#c084fc', amber: '#f59e0b', teal: '#2dd4bf',
-  text: '#f8fafc', muted: '#94a3b8', dim: '#475569',
-}
+import { K, FONT, MONO } from '../theme'
 
 const TIERS = [
   {
     // Power-only, and unlike every other tier here it isn't about pain at all.
     // In strength work slowing down is the point; in power work it means the
     // training stimulus already stopped and only the risk is left.
-    tone:   { fg: '#fb923c', bg: 'rgba(251,146,60,0.07)', bd: 'rgba(251,146,60,0.25)' },
+    tone:   { fg: '#d98a5b', bg: 'rgba(217,138,91,0.07)', bd: 'rgba(217,138,91,0.25)' },
     label:  'Power work only — the set is over',
     items: [
       'Any rep visibly slower or lower than the first',
@@ -37,7 +28,7 @@ const TIERS = [
     footer: 'None of these are pain. They mean the fast quality has gone, and continuing only adds risk. Finish sharp, not tired.',
   },
   {
-    tone:   { fg: '#fbbf24', bg: 'rgba(245,158,11,0.07)', bd: 'rgba(245,158,11,0.25)' },
+    tone:   { fg: '#d9a441', bg: 'rgba(217,164,65,0.07)', bd: 'rgba(217,164,65,0.25)' },
     label:  'Stop this set and change something',
     items: [
       'Sharp, pinching, or catching pain right at a joint',
@@ -48,7 +39,7 @@ const TIERS = [
     footer: 'Drop the weight, shorten the range, and try one set. If it is still there, skip the exercise today. That is not a setback — it is the system working.',
   },
   {
-    tone:   { fg: '#fb923c', bg: 'rgba(251,146,60,0.07)', bd: 'rgba(251,146,60,0.28)' },
+    tone:   { fg: '#d98a5b', bg: 'rgba(217,138,91,0.07)', bd: 'rgba(217,138,91,0.28)' },
     label:  'Stop the session — contact a clinician this week',
     items: [
       'Pain that travels down your leg or arm, past the knee or elbow',
@@ -60,7 +51,7 @@ const TIERS = [
     footer: 'These are nerve and tissue signals. They are not form problems, and no cue in this app will fix them.',
   },
   {
-    tone:   { fg: '#f87171', bg: 'rgba(239,68,68,0.09)', bd: 'rgba(239,68,68,0.32)' },
+    tone:   { fg: '#e06c6c', bg: 'rgba(224,108,108,0.09)', bd: 'rgba(224,108,108,0.32)' },
     label:  'Get emergency care now — do not wait',
     items: [
       'Loss of control of your bladder or bowels',
@@ -117,7 +108,7 @@ export default function SafetyCard({ onClose }) {
           fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.violet,
           letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px',
         }}>Reference</p>
-        <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 24, color: K.text, margin: '0 0 20px' }}>
+        <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 24, color: K.text, margin: '0 0 20px' }}>
           When to stop
         </h2>
 
@@ -133,7 +124,7 @@ export default function SafetyCard({ onClose }) {
               {t.items.map(i => (
                 <li key={i} style={{ display: 'flex', gap: 9, marginBottom: 6 }}>
                   <span style={{ color: t.tone.fg, flexShrink: 0, lineHeight: 1.55 }}>•</span>
-                  <span style={{ fontSize: 13.5, color: '#cbd5e1', lineHeight: 1.55 }}>{i}</span>
+                  <span style={{ fontSize: 13.5, color: '#c2c6cc', lineHeight: 1.55 }}>{i}</span>
                 </li>
               ))}
             </ul>
@@ -143,11 +134,11 @@ export default function SafetyCard({ onClose }) {
 
         {/* Delayed onset after impact */}
         <div style={{
-          backgroundColor: 'rgba(251,146,60,0.06)', border: '1px solid rgba(251,146,60,0.2)',
+          backgroundColor: 'rgba(217,138,91,0.06)', border: '1px solid rgba(217,138,91,0.2)',
           borderRadius: 14, padding: 16, marginBottom: 12,
         }}>
           <p style={{
-            fontFamily: MONO, fontSize: 9, fontWeight: 700, color: '#fb923c',
+            fontFamily: MONO, fontSize: 9, fontWeight: 700, color: '#d98a5b',
             letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 8px',
           }}>The 24-hour rule</p>
           <p style={{ fontSize: 13.5, color: 'rgba(254,215,170,0.88)', lineHeight: 1.6, margin: 0 }}>

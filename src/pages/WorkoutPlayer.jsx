@@ -17,41 +17,9 @@ import { Icon } from '../components/Icons'
 import quotesData from '../data/quotes.json'
 import { randomQuote } from '../utils/workoutStats'
 import { getLastReps, compareToLastSession } from '../utils/perfHistory'
+import { K, FONT, MONO, CATEGORY_COLORS as CAT_COLOR } from '../theme'
 
 // ── Kinetic design constants ──────────────────────────────────────────────────
-const K = {
-  bg:       '#0a0e1a',
-  card:     '#101828',
-  inset:    '#16233a',
-  border:   'rgba(255,255,255,0.06)',
-  borderSt: 'rgba(255,255,255,0.10)',
-  pink:     '#ec4899',
-  purple:   '#8b5cf6',
-  violet:   '#c084fc',
-  grad:     'linear-gradient(90deg, #ec4899, #8b5cf6)',
-  gradD:    'linear-gradient(135deg, #ec4899, #8b5cf6)',
-  hero:     'linear-gradient(130deg, #fb923c 0%, #ec4899 48%, #8b5cf6 100%)',
-  amber:    '#f59e0b',
-  teal:     '#2dd4bf',
-  green:    '#22c55e',
-  text:     '#f8fafc',
-  muted:    '#94a3b8',
-  subtle:   '#64748b',
-  dim:      '#475569',
-}
-
-const FONT  = "'Plus Jakarta Sans', sans-serif"
-const MONO  = "'JetBrains Mono', 'Courier New', monospace"
-
-// Category → color mapping for Kinetic
-const CAT_COLOR = {
-  'warm-up':    K.amber,
-  strength:     K.pink,
-  stability:    K.purple,
-  flexibility:  K.teal,
-  power:        '#fb923c',
-  cardio:       '#3b82f6',
-}
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function formatTime(seconds) {
@@ -67,7 +35,6 @@ const ANIM_STYLES = `
 @keyframes bouncePop    { 0%{transform:scale(0)} 60%{transform:scale(1.22)} 100%{transform:scale(1)} }
 @keyframes greenFlash   { 0%{opacity:1} 100%{opacity:0} }
 @keyframes xpPop        { 0%{transform:scale(1) translateY(0);opacity:1} 60%{transform:scale(1.5) translateY(-10px);opacity:1} 100%{transform:scale(1) translateY(-14px);opacity:0} }
-@keyframes glowPulse    { 0%,100%{box-shadow:0 16px 30px -10px rgba(236,72,153,.65)} 50%{box-shadow:0 20px 50px -8px rgba(236,72,153,.9)} }
 @keyframes flamePulse   { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
 @keyframes dotPulse     { 0%,100%{opacity:0.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.4)} }
 @keyframes formDemoPulse{ 0%,100%{opacity:1} 50%{opacity:0.4} }
@@ -127,9 +94,9 @@ function ProgressSegments({ exercises, exerciseIndex, completedIds, phase }) {
       {exercises.map((ex, i) => {
         const isPast = i < exerciseIndex || completedIds.includes(ex.id)
         const isCurrent = i === exerciseIndex
-        let bg = '#1e293b'
+        let bg = '#1e2126'
         if (isPast) bg = K.purple
-        else if (isCurrent) bg = phase === 'rest' ? 'rgba(139,92,246,0.5)' : K.pink
+        else if (isCurrent) bg = phase === 'rest' ? 'rgba(58,120,224,0.5)' : K.pink
         return (
           <div key={ex.id + i} style={{
             flex: 1, height: '100%', backgroundColor: bg,
@@ -185,9 +152,9 @@ function TopBar({ day, exerciseIndex, totalExercises, xpEarned, xpPop, onExit, a
       <div style={{ position: 'relative', flexShrink: 0 }}>
         <div style={{
           display: 'flex', alignItems: 'center', gap: 5,
-          backgroundColor: 'rgba(139,92,246,0.15)',
+          backgroundColor: 'rgba(58,120,224,0.15)',
           borderRadius: 99, padding: '5px 10px',
-          border: '1px solid rgba(139,92,246,0.3)',
+          border: '1px solid rgba(58,120,224,0.3)',
         }}>
           <Icon name="xp" size={13} style={{ color: K.violet }} />
           <span style={{
@@ -211,7 +178,7 @@ function TopBar({ day, exerciseIndex, totalExercises, xpEarned, xpPop, onExit, a
         style={{
           minHeight: 36, paddingLeft: 10, paddingRight: 10,
           backgroundColor: K.inset, borderRadius: 10, flexShrink: 0,
-          border: `1px solid ${audioMode === 'voice' ? 'rgba(236,72,153,0.4)' : K.border}`,
+          border: `1px solid ${audioMode === 'voice' ? 'rgba(58,120,224,0.4)' : K.border}`,
           cursor: 'pointer',
           display: 'flex', alignItems: 'center', gap: 5,
         }}
@@ -251,8 +218,8 @@ function ReadyScreen({ day, onStart }) {
       {/* Day identity chip */}
       <div style={{
         display: 'flex', alignItems: 'center', gap: 8, marginBottom: 24,
-        backgroundColor: 'rgba(139,92,246,0.12)', borderRadius: 99,
-        padding: '6px 16px', border: `1px solid rgba(139,92,246,0.25)`,
+        backgroundColor: 'rgba(58,120,224,0.12)', borderRadius: 99,
+        padding: '6px 16px', border: `1px solid rgba(58,120,224,0.25)`,
       }}>
         <Icon name="target" size={14} style={{ color: K.violet }} />
         <span style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, color: K.violet, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
@@ -260,7 +227,7 @@ function ReadyScreen({ day, onStart }) {
         </span>
       </div>
 
-      <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 42, color: K.text, lineHeight: 1.05, marginBottom: 12 }}>
+      <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 42, color: K.text, lineHeight: 1.05, marginBottom: 12 }}>
         {day.theme}
       </h1>
       <p style={{ fontSize: 15, color: K.muted, maxWidth: 320, lineHeight: 1.5, marginBottom: 36 }}>
@@ -272,9 +239,8 @@ function ReadyScreen({ day, onStart }) {
         style={{
           width: '100%', maxWidth: 340, minHeight: 60,
           background: K.grad, border: 'none', borderRadius: 16,
-          fontFamily: FONT, fontWeight: 800, fontSize: 17, color: '#fff',
-          cursor: 'pointer', animation: 'glowPulse 2.6s ease-in-out infinite',
-        }}
+          fontFamily: FONT, fontWeight: 700, fontSize: 17, color: '#fff',
+          cursor: 'pointer',}}
       >
         Let's go →
       </button>
@@ -305,7 +271,7 @@ function TransitionCard({ exercise }) {
         </span>
       </div>
 
-      <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 34, color: K.text, lineHeight: 1.1, marginBottom: 10 }}>
+      <h2 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 34, color: K.text, lineHeight: 1.1, marginBottom: 10 }}>
         {exercise.name}
       </h2>
       <p style={{ fontSize: 14, color: K.subtle, marginBottom: 28 }}>
@@ -339,7 +305,7 @@ function CuesPanel({ cues, breathing }) {
   return (
     <div style={{
       width: '100%', maxWidth: 380,
-      backgroundColor: 'rgba(139,92,246,0.07)',
+      backgroundColor: 'rgba(58,120,224,0.07)',
       borderRadius: 12, padding: '12px 16px',
       borderLeft: `3px solid ${K.purple}`,
       textAlign: 'left',
@@ -406,8 +372,8 @@ function ExerciseScreen({ workout, xpEarned, xpPop, onOpenModal, onBack, onSkipT
         style={{
           position: 'absolute', top: 12, right: isWide ? 20 : 16,
           width: 44, height: 44, borderRadius: 22,
-          backgroundColor: 'rgba(139,92,246,0.15)',
-          border: `1px solid rgba(139,92,246,0.3)`,
+          backgroundColor: 'rgba(58,120,224,0.15)',
+          border: `1px solid rgba(58,120,224,0.3)`,
           color: K.violet, fontSize: 18, fontWeight: 700,
           cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}
@@ -436,7 +402,7 @@ function ExerciseScreen({ workout, xpEarned, xpPop, onOpenModal, onBack, onSkipT
       <h2
         key={exerciseIndex}
         style={{
-          fontFamily: FONT, fontWeight: 800,
+          fontFamily: FONT, fontWeight: 700,
           fontSize: isWide ? 38 : 28,
           color: K.text, lineHeight: 1.1,
           marginBottom: 6,
@@ -490,7 +456,7 @@ function ExerciseScreen({ workout, xpEarned, xpPop, onOpenModal, onBack, onSkipT
               width: isWide ? 200 : 170, height: isWide ? 200 : 170,
               borderRadius: '50%',
               border: `7px solid ${atTarget ? K.pink : K.amber}`,
-              backgroundColor: atTarget ? 'rgba(236,72,153,0.08)' : 'rgba(245,158,11,0.06)',
+              backgroundColor: atTarget ? 'rgba(58,120,224,0.08)' : 'rgba(217,164,65,0.06)',
               transition: 'border-color 0.2s, background-color 0.2s',
               cursor: 'pointer',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -499,7 +465,7 @@ function ExerciseScreen({ workout, xpEarned, xpPop, onOpenModal, onBack, onSkipT
           >
             <div style={{ textAlign: 'center' }}>
               <p style={{
-                fontFamily: FONT, fontWeight: 800,
+                fontFamily: FONT, fontWeight: 700,
                 fontSize: isWide ? 84 : 68,
                 color: K.text, lineHeight: 1,
                 fontVariantNumeric: 'tabular-nums',
@@ -564,8 +530,7 @@ function ExerciseScreen({ workout, xpEarned, xpPop, onOpenModal, onBack, onSkipT
                 width: '100%', height: 56, borderRadius: 14,
                 background: K.grad, border: 'none',
                 fontFamily: FONT, fontWeight: 700, fontSize: 15, color: '#fff',
-                cursor: 'pointer', animation: 'glowPulse 2.6s ease-in-out infinite',
-              }}
+                cursor: 'pointer',}}
             >
               Complete set · +25 XP
             </button>
@@ -683,9 +648,9 @@ function RestScreen({ workout }) {
       {/* Heading chip — always amber */}
       <div style={{
         display: 'inline-flex', alignItems: 'center', gap: 7,
-        backgroundColor: 'rgba(245,158,11,0.12)',
+        backgroundColor: 'rgba(217,164,65,0.12)',
         borderRadius: 99, padding: '5px 14px', marginBottom: 16,
-        border: '1px solid rgba(245,158,11,0.25)',
+        border: '1px solid rgba(217,164,65,0.25)',
       }}>
         <span style={{
           fontFamily: MONO, fontSize: 10, fontWeight: 700,
@@ -696,7 +661,7 @@ function RestScreen({ workout }) {
 
       {isBetweenExercises && nextExercise && (
         <>
-          <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 26, color: K.text, marginBottom: 4, lineHeight: 1.1 }}>
+          <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 26, color: K.text, marginBottom: 4, lineHeight: 1.1 }}>
             {nextExercise.name}
           </p>
           <p style={{ fontSize: 13, color: K.subtle, marginBottom: 20 }}>
@@ -853,7 +818,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
   useEffect(() => {
     confetti({
       particleCount: 140, spread: 80, origin: { y: 0.3 },
-      colors: [K.pink, K.purple, K.amber, '#fff'],
+      colors: [K.accent, K.teal, K.amber, '#fff'],
     })
   }, [])
 
@@ -905,7 +870,6 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
       justifyContent: 'flex-start', minHeight: '100svh',
       padding: '48px 20px 60px', textAlign: 'center',
       backgroundColor: K.bg,
-      backgroundImage: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139,92,246,0.15) 0%, transparent 70%)',
     }}>
 
       {/* Toast */}
@@ -923,14 +887,13 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
         <>
           <div style={{
             width: 92, height: 92, borderRadius: '50%',
-            background: K.hero,
+            background: K.accent,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             animation: 'bouncePop 500ms ease-out', marginBottom: 18,
-            boxShadow: `0 0 40px rgba(236,72,153,0.4)`,
           }}>
             <Icon name="trophy" size={44} style={{ color: '#fff' }} />
           </div>
-          <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 36, color: K.text, marginBottom: 8 }}>
+          <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 36, color: K.text, marginBottom: 8 }}>
             Week 1 Complete!
           </h1>
           <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 17, color: K.amber, marginBottom: 6 }}>
@@ -945,14 +908,13 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
             background: K.gradD,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             animation: 'bouncePop 500ms ease-out', marginBottom: 18,
-            boxShadow: `0 0 40px rgba(236,72,153,0.4)`,
           }}>
             <Icon name="check" size={40} strokeWidth={2.5} style={{ color: '#fff' }} />
           </div>
-          <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 36, color: K.text, marginBottom: 8 }}>
+          <h1 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 36, color: K.text, marginBottom: 8 }}>
             Workout complete!
           </h1>
-          <p style={{ fontFamily: MONO, fontSize: 13, fontWeight: 700, color: K.violet, letterSpacing: '0.08em', marginBottom: 0 }}>
+          <p style={{ fontFamily: FONT, fontSize: 13, fontWeight: 500, color: K.muted, marginBottom: 0 }}>
             {day.custom ? day.theme : `Day ${day.day} — ${day.theme}`} · +{xpEarned} XP earned
           </p>
         </>
@@ -965,11 +927,11 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
       }}>
         {statCards.map(s => (
           <div key={s.label} style={{
-            backgroundColor: s.amber ? 'rgba(245,158,11,0.1)' : K.card,
+            backgroundColor: s.amber ? 'rgba(217,164,65,0.1)' : K.card,
             borderRadius: 14, padding: '14px 8px',
-            border: `1px solid ${s.amber ? 'rgba(245,158,11,0.2)' : K.border}`,
+            border: `1px solid ${s.amber ? 'rgba(217,164,65,0.2)' : K.border}`,
           }}>
-            <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 22, color: s.amber ? K.amber : K.text, lineHeight: 1 }}>
+            <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 22, color: s.amber ? K.amber : K.text, lineHeight: 1 }}>
               {s.value}
             </p>
             <p style={{ fontFamily: MONO, fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: K.dim, marginTop: 5 }}>
@@ -1022,7 +984,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
               style={{
                 flex: 1, minHeight: 36, borderRadius: 8, cursor: 'pointer',
                 fontFamily: MONO, fontSize: 11, fontWeight: 700,
-                backgroundColor: n <= (rpe ?? 0) ? 'rgba(139,92,246,0.2)' : K.inset,
+                backgroundColor: n <= (rpe ?? 0) ? 'rgba(58,120,224,0.2)' : K.inset,
                 color: n <= (rpe ?? 0) ? K.violet : K.dim,
                 border: `1px solid ${n === rpe ? K.purple : K.border}`,
                 transition: 'all 0.15s',
@@ -1054,10 +1016,10 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
           <>
             <div style={{
               backgroundColor: K.card, borderRadius: 14, padding: '12px 16px',
-              border: '1px solid rgba(245,158,11,0.2)',
+              border: '1px solid rgba(217,164,65,0.2)',
               display: 'flex', alignItems: 'center', gap: 14,
             }}>
-              <div style={{ width: 40, height: 40, borderRadius: 12, backgroundColor: 'rgba(245,158,11,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: 40, height: 40, borderRadius: 12, backgroundColor: 'rgba(217,164,65,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Icon name="strength" size={20} style={{ color: K.amber }} />
               </div>
               <div style={{ textAlign: 'left' }}>
@@ -1071,7 +1033,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
               style={{
                 width: '100%', minHeight: 56, borderRadius: 14, border: 'none',
                 backgroundColor: restarting ? K.inset : K.amber,
-                color: restarting ? K.subtle : '#0F172A',
+                color: restarting ? K.subtle : '#0e0f11',
                 fontFamily: FONT, fontWeight: 700, fontSize: 16, cursor: restarting ? 'default' : 'pointer',
               }}
             >{restarting ? 'Saving…' : 'Restart Week 1 →'}</button>
@@ -1091,8 +1053,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
               width: '100%', minHeight: 56, borderRadius: 14, border: 'none',
               background: K.grad,
               fontFamily: FONT, fontWeight: 700, fontSize: 16, color: '#fff',
-              cursor: 'pointer', animation: 'glowPulse 2.6s ease-in-out infinite',
-            }}
+              cursor: 'pointer',}}
           >Back to Home</button>
         )}
         <button
@@ -1114,7 +1075,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
         }}>
           <div style={{
             width: '100%', maxWidth: 320, borderRadius: 22, padding: 28, textAlign: 'center',
-            background: K.gradD, boxShadow: '0 0 50px rgba(236,72,153,0.4)',
+            background: K.gradD,
             animation: 'bouncePop 400ms ease-out',
           }}>
             <p style={{ fontFamily: MONO, fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', marginBottom: 16 }}>
@@ -1123,7 +1084,7 @@ function CompletionScreen({ workout, navigate, logs, prevLogs, xpEarned }) {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12, animation: 'bouncePop 500ms ease-out', color: '#fff' }}>
               <Icon name={newBadges[badgeIdx].iconName || 'badge'} size={64} strokeWidth={1.2} />
             </div>
-            <p style={{ fontFamily: FONT, fontWeight: 800, fontSize: 20, color: '#fff', marginBottom: 6 }}>
+            <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: 20, color: '#fff', marginBottom: 6 }}>
               {newBadges[badgeIdx].name}
             </p>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', marginBottom: 24, lineHeight: 1.5 }}>
@@ -1156,7 +1117,7 @@ function ExitConfirmDialog({ onCancel, onExit }) {
         width: '100%', maxWidth: 400, borderRadius: 22, padding: 24,
         backgroundColor: K.card, border: `1px solid ${K.borderSt}`,
       }}>
-        <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 20, color: K.text, marginBottom: 8 }}>
+        <h3 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 20, color: K.text, marginBottom: 8 }}>
           Exit workout?
         </h3>
         <p style={{ fontSize: 14, color: K.muted, marginBottom: 24 }}>
@@ -1167,9 +1128,9 @@ function ExitConfirmDialog({ onCancel, onExit }) {
             onClick={onExit}
             style={{
               width: '100%', minHeight: 52, borderRadius: 12,
-              backgroundColor: 'rgba(239,68,68,0.12)',
-              border: '1px solid rgba(239,68,68,0.3)',
-              color: '#fca5a5', fontFamily: FONT, fontWeight: 700, fontSize: 15, cursor: 'pointer',
+              backgroundColor: 'rgba(224,108,108,0.12)',
+              border: '1px solid rgba(224,108,108,0.3)',
+              color: '#eb9b9b', fontFamily: FONT, fontWeight: 700, fontSize: 15, cursor: 'pointer',
             }}
           >Exit workout</button>
           <button
@@ -1198,7 +1159,7 @@ function PreviousConfirmDialog({ exerciseName, onConfirm, onCancel }) {
         width: '100%', maxWidth: 400, borderRadius: 22, padding: 24,
         backgroundColor: K.card, border: `1px solid ${K.borderSt}`,
       }}>
-        <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 20, color: K.text, marginBottom: 8 }}>
+        <h3 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 20, color: K.text, marginBottom: 8 }}>
           Go back?
         </h3>
         <p style={{ fontSize: 14, color: K.muted, marginBottom: 24 }}>
@@ -1372,7 +1333,7 @@ export default function WorkoutPlayer() {
       {flashComplete && (
         <div style={{
           position: 'fixed', inset: 0, zIndex: 40,
-          backgroundColor: 'rgba(34,197,94,0.15)',
+          backgroundColor: 'rgba(79,179,138,0.15)',
           animation: 'greenFlash 200ms ease-out forwards',
           pointerEvents: 'none',
         }} />
