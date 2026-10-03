@@ -45,6 +45,21 @@ const DIFFICULTY_OVERRIDES = {
   'plank-up-down': 3, 'db-renegade-row': 3, 'db-thruster': 3,
   'copenhagen-plank-short': 3, 'hollow-hold': 3, 'boat-hold': 3,
   'bear-crawl': 3, 'side-plank-rotation': 3, 'trx-plank': 3,
+  // Library expansion: gentle, guided or supported
+  'chin-tuck': 1, 'neck-isometric-rotation': 1, 'neck-isometric-flexion': 1, 'neck-isometric-extension': 1,
+  'wall-slide': 1, 'band-face-pull': 1, 'prone-trap-raise': 1, 'adduction-machine': 1, 'band-sumo-walk': 1,
+  'prone-alternating-leg-lift': 1, 'supine-psoas-march': 1, 'band-standing-march': 1, 'side-lying-leg-raise': 1,
+  'band-monster-walk': 1, 'cable-hip-abduction': 1, 'cable-bicep-curl': 1, 'band-hammer-curl': 1,
+  'cable-overhead-tricep-extension': 1, 'band-tricep-pushdown': 1, 'standing-calf-raise-machine': 1,
+  'db-calf-raise': 1, 'tibialis-raise': 1, 'cable-reverse-fly': 1, 'reverse-pec-deck': 1,
+  'db-chest-supported-reverse-fly': 1, 'chest-supported-db-row': 1, 'straight-arm-pulldown': 1,
+  'band-lat-pulldown': 1, 'pallof-press': 1, 'banded-hip-thrust': 1, 'cable-pull-through': 1,
+  'lying-leg-curl': 1, 'band-chest-press': 1, 'cable-lateral-raise': 1, 'pallof-press-hold': 1,
+  'db-reverse-curl': 1, 'db-wrist-curl': 1, 'band-shrug': 1,
+  // Library expansion: harder than their category suggests
+  'cossack-squat': 3, 'side-plank-leg-lift': 3, 'close-grip-push-up': 3, 'inverted-row': 3,
+  'single-leg-hip-thrust': 3, 'front-foot-elevated-split-squat': 3, 'trx-fallout': 3,
+  'bear-plank-shoulder-tap': 3, 'side-plank-hip-dip': 3, 'pallof-overhead-reach': 3, 'bridge-walkout': 3,
 }
 
 export function getDifficulty(ex) {
@@ -72,6 +87,9 @@ const EFFECTIVENESS_OVERRIDES = {
   'wall-sit': 3, 'fire-hydrant': 3, 'glute-kickback': 3, 'heel-taps': 3,
   'russian-twist': 3, 'bicycle-crunch': 3, 'reverse-crunch': 3,
   'single-leg-balance-hold': 3, 'single-leg-stand-eyes-closed': 3,
+  // Library expansion: core staples and accessories
+  'dead-bug-band': 5, 'pallof-press-hold': 5, 'bear-plank-shoulder-tap': 4, 'trx-fallout': 4,
+  'straight-arm-pulldown': 4, 'cable-crossover': 3, 'db-calf-raise': 3, 'neck-flexion-stretch': 3,
 }
 
 export function getEffectiveness(ex) {

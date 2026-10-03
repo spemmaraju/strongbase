@@ -398,6 +398,25 @@ export default function ExerciseModal({ exercise, onClose }) {
           </p>
         </div>
       )}
+
+      {/* COMMON MISTAKES — only some exercises carry these */}
+      {exercise.mistakes?.length > 0 && (
+        <div style={{
+          backgroundColor: K.card, border: `1px solid ${K.border}`,
+          borderRadius: 14, padding: 16, marginTop: 12,
+        }}>
+          <p style={{
+            fontFamily: MONO, fontSize: 9, fontWeight: 700, color: K.muted,
+            letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 10,
+          }}>Common mistakes</p>
+          {exercise.mistakes.map((m, i) => (
+            <div key={i} style={{ marginBottom: i < exercise.mistakes.length - 1 ? 10 : 0 }}>
+              <p style={{ fontSize: 13, color: '#fca5a5', margin: 0, lineHeight: 1.5 }}>✕ {m.wrong}</p>
+              <p style={{ fontSize: 13, color: '#86efac', margin: '2px 0 0', lineHeight: 1.5 }}>✓ {m.right}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 

@@ -12986,5 +12986,4838 @@
     ],
     "youtubeId": "Q1uWcKtJLMg",
     "breathing": "The drill is the breath: in through the nose 4, hands pushed apart; out 8, ribs melting down. Paced version in Brace & Breathe."
+  },
+  {
+    "id": "chin-tuck",
+    "name": "Chin Tuck",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "neck",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "neck"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius"
+    ],
+    "sets": 2,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 20,
+    "instructions": [
+      "Sit or stand tall with your ribs stacked over your hips and your eyes looking straight ahead. Let your shoulders drop away from your ears.",
+      "Without tilting your head up or down, glide your chin straight back as if you are making a double chin. Your head should slide backward along a flat line, like a drawer closing.",
+      "Hold the end position for 3 seconds. You should feel a gentle effort at the front of the neck and a light stretch at the base of the skull.",
+      "Release slowly back to neutral and repeat for all reps, keeping every rep small and controlled."
+    ],
+    "cues": [
+      "Slide the head straight back \u2014 do not nod it down",
+      "Keep your eyes level on the horizon",
+      "Think long neck, not tight neck \u2014 gentle effort only"
+    ],
+    "youtubeId": "7rnlAVhAK-8",
+    "modification": "Practice lying on your back with a small rolled towel under your neck, which takes gravity out of it. Use half the range if you feel any pinching.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A mild muscular effort deep at the front of the neck and a soft stretch at the back of the skull.",
+      "notHere": "Sharp pinching at the base of the neck or tingling in the arms \u2014 you are pushing too far.",
+      "backNote": "Tall posture keeps your spine stacked, so there is no load on the low back. Do not arch your lower back to look 'straighter'.",
+      "stopIf": "Any dizziness, tingling or numbness into the arms or hands."
+    },
+    "mistakes": [
+      {
+        "wrong": "Tipping the head down",
+        "right": "Keep the gaze level and slide the head back instead."
+      },
+      {
+        "wrong": "Jamming the chin back hard",
+        "right": "Gentle effort only \u2014 about 30 percent of your max."
+      }
+    ],
+    "breathing": "Breathe slowly and normally. Exhale as the chin glides back, inhale as you release."
+  },
+  {
+    "id": "neck-isometric-rotation",
+    "name": "Isometric Neck Rotation Hold",
+    "category": "strength",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "neck",
+      "upper trapezius"
+    ],
+    "primaryMuscles": [
+      "neck"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 10,
+    "restSeconds": 20,
+    "instructions": [
+      "Sit tall with your chin level and place one palm lightly against the side of your jaw on that same side, hand beside the cheekbone.",
+      "Gently try to turn your head toward the hand while the hand resists, so your head does not actually move. Build the push over 2 seconds to about a third of your strength.",
+      "Hold the push for the full time, keeping your shoulders down and your breathing easy.",
+      "Ease off slowly, rest, then repeat on the other side. Alternate sides each set."
+    ],
+    "cues": [
+      "Push gently \u2014 this is a quiet hold, not a fight",
+      "Head stays still; only the muscles work",
+      "Shoulders down and soft"
+    ],
+    "youtubeId": "tbNtU66KzmE",
+    "modification": "Reduce the push to a very light pressure, or hold for 5 seconds instead of 10.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A steady, mild effort along the side and front of the neck.",
+      "notHere": "Pain in the joints at the base of the skull or any sharp pull \u2014 ease the push right off.",
+      "backNote": "Seated and static, so there is almost no spinal load. Keep your ribs stacked over your hips.",
+      "stopIf": "Dizziness, headache, or tingling and numbness into the arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Pushing as hard as possible",
+        "right": "About 30 percent effort is plenty for isometric neck work."
+      },
+      {
+        "wrong": "Shrugging toward the ears",
+        "right": "Keep your shoulders relaxed and low."
+      }
+    ],
+    "breathing": "Keep breathing steadily \u2014 do not hold your breath while you push."
+  },
+  {
+    "id": "neck-isometric-flexion",
+    "name": "Isometric Neck Flexion Hold",
+    "category": "strength",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "neck",
+      "upper trapezius"
+    ],
+    "primaryMuscles": [
+      "neck"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 10,
+    "restSeconds": 20,
+    "instructions": [
+      "Sit tall with your head level and place the heel of one hand, or both palms stacked, flat on your forehead.",
+      "Gently nod your head forward into your hand while the hand resists, so the head stays in place. Build the effort smoothly over 2 seconds.",
+      "Hold, keeping your chin slightly tucked and your jaw relaxed.",
+      "Release slowly and rest for the full break before the next hold."
+    ],
+    "cues": [
+      "Head stays still \u2014 the muscles do the work",
+      "Slight chin tuck, jaw relaxed",
+      "Gentle push, around a third of your effort"
+    ],
+    "youtubeId": "4rK-m6GvNCk",
+    "modification": "Use a lighter push or shorten the hold to 5 seconds. Stop if you feel any pinching at the throat or jaw.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A mild effort at the front of the neck, just below the chin.",
+      "notHere": "Pressure in the throat or tension in the jaw \u2014 soften the push and unclench your teeth.",
+      "backNote": "Seated and static, so the low back is not loaded. Stay tall rather than slumping into the push.",
+      "stopIf": "Dizziness, headache, or tingling and numbness into the arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Clenching the jaw",
+        "right": "Rest your tongue on the roof of your mouth and keep your teeth apart."
+      },
+      {
+        "wrong": "Letting the head slowly move",
+        "right": "Match your hand's resistance so the head stays still."
+      }
+    ],
+    "breathing": "Breathe steadily through the hold. Never hold your breath during an isometric."
+  },
+  {
+    "id": "neck-isometric-extension",
+    "name": "Isometric Neck Extension Hold",
+    "category": "strength",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "neck",
+      "upper trapezius",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "neck"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius",
+      "upper back"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 10,
+    "restSeconds": 20,
+    "instructions": [
+      "Sit tall and interlace your fingers behind the back of your head, with your elbows relaxed to the sides.",
+      "Gently press the back of your head into your hands while your hands resist, so the head stays level and still. Build the effort over 2 seconds.",
+      "Hold with your chin slightly tucked and your gaze straight ahead \u2014 do not let your head tip back.",
+      "Release slowly, rest, then repeat."
+    ],
+    "cues": [
+      "Press back, but keep your chin level",
+      "Hands resist, head stays put",
+      "Soft shoulders, long spine"
+    ],
+    "youtubeId": "iCiOE7pKVRk",
+    "modification": "Reduce the pressure, or do the hold with your back against a wall and a folded towel behind your head.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A mild effort in the muscles along the back of the neck and the base of the skull.",
+      "notHere": "Pinching at the base of the skull \u2014 tuck your chin a little and lower the pressure.",
+      "backNote": "A tall, seated position keeps the spine neutral. Do not arch your lower back as you press.",
+      "stopIf": "Dizziness, headache, or tingling and numbness into the arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Tipping the head back",
+        "right": "Keep the chin level so the neck stays long."
+      },
+      {
+        "wrong": "Shrugging",
+        "right": "Let the shoulders drop and the elbows stay relaxed."
+      }
+    ],
+    "breathing": "Keep breathing \u2014 a steady in and out through the whole hold."
+  },
+  {
+    "id": "levator-scapulae-stretch",
+    "name": "Levator Scapulae Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "neck",
+      "upper trapezius"
+    ],
+    "primaryMuscles": [
+      "neck"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Sit tall and tuck the hand of the side being stretched behind your back, or hold the seat edge, to keep that shoulder down.",
+      "Turn your head about 45 degrees toward the opposite side, as if looking at your armpit.",
+      "Use your free hand on the back of your head to add a gentle forward and down pull, tipping your chin toward your collarbone area.",
+      "Hold for the full time with the shoulder kept low, then repeat on the other side."
+    ],
+    "cues": [
+      "Keep the stretching shoulder pinned down",
+      "Look toward the opposite armpit",
+      "Pull with the weight of your hand only \u2014 never yank"
+    ],
+    "youtubeId": "GSoXPJRnR6E",
+    "modification": "Skip the hand assist and just let the head rest in the turned-down position. Shorten the hold if it feels sharp.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch along the back and side of the neck, down toward the top of the shoulder blade.",
+      "notHere": "Pinching at the front of the neck or tingling down the arm.",
+      "backNote": "Seated and tall, so the low back is not involved.",
+      "stopIf": "Tingling, numbness or shooting pain into the arm, or any dizziness."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hiking the shoulder up",
+        "right": "Keep that shoulder blade heavy and low."
+      },
+      {
+        "wrong": "Pulling hard on the head",
+        "right": "Use gentle weight only; the stretch should feel easy."
+      }
+    ],
+    "breathing": "Slow nose breaths. Each exhale, let the head sink a little further without forcing it."
+  },
+  {
+    "id": "upper-trap-stretch",
+    "name": "Upper Trapezius Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "upper trapezius",
+      "neck"
+    ],
+    "primaryMuscles": [
+      "upper trapezius"
+    ],
+    "secondaryMuscles": [
+      "neck"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Sit tall with your feet flat. Hold the seat edge with one hand to keep that shoulder down, or tuck it behind your back.",
+      "Tilt your head sideways, ear toward the opposite shoulder, without turning or twisting your face.",
+      "Rest your other hand lightly on your head so its weight deepens the stretch. Do not pull.",
+      "Hold, breathing slowly, then come up slowly and switch sides."
+    ],
+    "cues": [
+      "Ear toward shoulder \u2014 nose stays forward",
+      "The anchored shoulder stays down",
+      "Weight of the hand only, no pulling"
+    ],
+    "youtubeId": "-r0eoFS7_5Q",
+    "modification": "Do it without the hand assist, or lie on your back and let gravity help while you tilt the head to the side.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A broad stretch from the side of the neck across the top of the shoulder.",
+      "notHere": "A pinch at the base of the neck or tingling down the arm.",
+      "backNote": "Seated and tall \u2014 no stress on the low back. Keep your ribs stacked, don't lean the whole torso.",
+      "stopIf": "Tingling, numbness or sharp pain into the arm or hand."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning the whole body sideways",
+        "right": "Keep the torso upright and tilt only the head."
+      },
+      {
+        "wrong": "Shoulder creeping up",
+        "right": "Hold the seat edge and press the shoulder down."
+      }
+    ],
+    "breathing": "Breathe slowly. Exhale to soften the shoulder further away from your ear."
+  },
+  {
+    "id": "neck-flexion-stretch",
+    "name": "Chin-to-Chest Neck Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "neck",
+      "upper trapezius",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "neck"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius",
+      "upper back"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Sit tall with your shoulders relaxed and your gaze straight ahead.",
+      "Slowly lower your chin toward your chest, letting your head nod forward until you feel a gentle stretch along the back of the neck.",
+      "For more stretch, rest your hands lightly on the back of your head and let their weight, not a pull, deepen it.",
+      "Hold, then roll your head back up to neutral slowly."
+    ],
+    "cues": [
+      "Nod down slowly \u2014 never drop the head",
+      "Keep your upper back tall, not rounded",
+      "Stop at a gentle pull"
+    ],
+    "youtubeId": "GjS3i2-BlxA",
+    "modification": "Keep your hands off your head and just nod as far as is comfortable. Avoid this if it gives you arm tingling.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A soft stretch along the back of the neck and between the shoulder blades.",
+      "notHere": "Sharp pain or tingling down the arms.",
+      "backNote": "Stay tall through your torso; don't slouch into the stretch, which rounds the lower back too.",
+      "stopIf": "Tingling, numbness or sharp pain in the arms or hands, or dizziness."
+    },
+    "mistakes": [
+      {
+        "wrong": "Slumping the whole spine",
+        "right": "Sit tall and only nod the head."
+      },
+      {
+        "wrong": "Pulling on the head",
+        "right": "Let gravity or light hand weight do the work."
+      }
+    ],
+    "breathing": "Slow breaths. Let each exhale lengthen the back of the neck a touch more."
+  },
+  {
+    "id": "wall-slide",
+    "name": "Wall Slide",
+    "category": "stability",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "lower trapezius",
+      "serratus anterior",
+      "shoulders"
+    ],
+    "primaryMuscles": [
+      "lower trapezius",
+      "serratus anterior"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "upper back"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Stand with your back, head and hips against a wall and your feet a short step out. Put your forearms and the backs of your hands on the wall in a goalpost position.",
+      "Keep your ribs down and your lower back gently flat to the wall. Press your forearms lightly into the wall.",
+      "Slide your arms up the wall as high as you can while keeping contact, leading with the elbows and keeping shoulders away from the ears.",
+      "Lower slowly back to the goalpost position and repeat."
+    ],
+    "cues": [
+      "Ribs down \u2014 don't flare them or arch the back",
+      "Shoulders away from the ears",
+      "Keep forearms and hands in light contact with the wall"
+    ],
+    "youtubeId": "c1rn3sjgbfY",
+    "modification": "Slide through a smaller range, or step your feet further from the wall to ease the arch.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A light effort along the shoulder blades and the sides of the ribcage, with an open feeling across the chest.",
+      "notHere": "A pinch at the front of the shoulder, or the low back lifting off the wall.",
+      "backNote": "Keep your lower back close to the wall and your ribs down. If your back arches away, shorten the range.",
+      "stopIf": "Sharp shoulder pain or tingling down the arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the low back to get higher",
+        "right": "Stop where the back stays flat and ribs stay down."
+      },
+      {
+        "wrong": "Shrugging up",
+        "right": "Think shoulder blades gliding down and wide."
+      }
+    ],
+    "breathing": "Inhale as you slide up, exhale as you lower with control."
+  },
+  {
+    "id": "band-face-pull",
+    "name": "Band Face Pull",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "upper back",
+      "rotator cuff"
+    ],
+    "primaryMuscles": [
+      "rear deltoids",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "rotator cuff",
+      "middle trapezius"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a resistance band at about chest height. Hold an end in each hand with palms facing in, step back until there is tension, and stand tall with a soft bend in your knees.",
+      "Brace your core and keep your ribs down. Pull the band toward your face, leading with your hands out wide and your elbows high.",
+      "As your hands reach your face, rotate your fists back and apart so your thumbs point behind you. Squeeze your shoulder blades gently.",
+      "Pause for one second, then return slowly until your arms are straight again."
+    ],
+    "cues": [
+      "Elbows high and wide, hands to the sides of the face",
+      "Ribs down \u2014 don't lean back to pull",
+      "Squeeze the shoulder blades, don't shrug"
+    ],
+    "youtubeId": "2RX2OYWlHcU",
+    "modification": "Use a lighter band or stand closer to the anchor. Reduce the range if the shoulders feel pinchy.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The back of the shoulders and between the shoulder blades working hard.",
+      "notHere": "Neck and upper-trap tension, or pain in the front of the shoulder.",
+      "wrongSpot": [
+        {
+          "felt": "Neck and top of the shoulders",
+          "fix": "You're shrugging. Drop the shoulders and think about pulling the elbows apart."
+        }
+      ],
+      "backNote": "Brace, keep ribs over hips and avoid leaning back as the band pulls \u2014 that arches the low back.",
+      "stopIf": "Sharp shoulder pain or pins and needles in the hands."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back to yank the band",
+        "right": "Take a lighter band and keep your torso still."
+      },
+      {
+        "wrong": "Elbows dropping low",
+        "right": "Keep the elbows at or above hand height."
+      }
+    ],
+    "breathing": "Exhale as you pull, inhale as you return slowly."
+  },
+  {
+    "id": "prone-trap-raise",
+    "name": "Prone Trap Raise (Y Position)",
+    "category": "strength",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "lower trapezius",
+      "middle trapezius",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "lower trapezius",
+      "middle trapezius"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "upper back"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Lie face down on your mat with your forehead resting on a folded towel or hovering just off the floor. Reach your arms out overhead in a Y shape with thumbs pointing to the ceiling.",
+      "Gently squeeze your glutes and brace your core so your low back stays quiet.",
+      "Lift your arms a few inches off the floor by pulling your shoulder blades down and toward your spine. Keep your neck long.",
+      "Hold for a count of two, then lower slowly with control."
+    ],
+    "cues": [
+      "Thumbs up, arms in a Y shape",
+      "Lift from the shoulder blades, not the low back",
+      "Keep the neck long \u2014 chin slightly tucked"
+    ],
+    "youtubeId": "5mC9jCjA1Vw",
+    "modification": "Do it without any hold, or rest your forehead on a rolled towel. Bend the elbows slightly if the shoulders feel tight.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A working feeling along the lower shoulder blades and between them.",
+      "notHere": "Pinching in the low back or the top of the shoulders.",
+      "backNote": "Lie flat and keep your glutes lightly tight so you don't arch the low back. Lift the arms only \u2014 the chest stays down.",
+      "stopIf": "Sharp shoulder or low-back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Lifting the chest off the floor",
+        "right": "Keep the chest down; only the arms rise."
+      },
+      {
+        "wrong": "Shrugging to the ears",
+        "right": "Slide the shoulder blades down toward your back pockets."
+      }
+    ],
+    "breathing": "Exhale as you lift, inhale as you lower."
+  },
+  {
+    "id": "db-incline-y-raise",
+    "name": "Incline Bench Y Raise",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "lower trapezius",
+      "middle trapezius",
+      "rear deltoids"
+    ],
+    "primaryMuscles": [
+      "lower trapezius",
+      "middle trapezius"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "upper back"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set an incline bench to about 30 degrees and lie face down on it with your chest supported and a light dumbbell in each hand, arms hanging straight down.",
+      "Brace your core and keep your head in line with your spine, looking at the floor.",
+      "With thumbs pointing up, raise your arms forward and up in a Y shape until they line up with your ears, pulling the shoulder blades down and in.",
+      "Pause briefly, then lower with control."
+    ],
+    "cues": [
+      "Light weight, perfect form",
+      "Chest stays glued to the bench",
+      "Thumbs up, shoulder blades down"
+    ],
+    "youtubeId": "RRjKNPyeKmE",
+    "modification": "Use no weight at all. Lower the bench angle or use soup cans if the dumbbells feel too heavy.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The lower part of the shoulder blades and the back of the shoulders.",
+      "notHere": "Neck tension or a pinch at the top of the shoulder.",
+      "backNote": "Because the bench supports your trunk, the low back stays unloaded \u2014 keep your core braced and don't arch.",
+      "stopIf": "Sharp shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Using heavy dumbbells",
+        "right": "Go light; this muscle is small and responds to control."
+      },
+      {
+        "wrong": "Swinging the weights",
+        "right": "Slow lift, slow lower, no momentum."
+      }
+    ],
+    "breathing": "Exhale as you lift, inhale as you lower."
+  },
+  {
+    "id": "adduction-machine",
+    "name": "Seated Hip Adduction Machine",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "adductors"
+    ],
+    "primaryMuscles": [
+      "adductors"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Sit on the machine with your back flat against the pad and set the legs apart to a comfortable starting width. Hold the handles and keep your feet on the footrests.",
+      "Brace your core and sit tall without rounding forward.",
+      "Squeeze your thighs together smoothly until the pads meet, without jerking the weight.",
+      "Pause for one second, then open the legs back out slowly under control."
+    ],
+    "cues": [
+      "Smooth squeeze \u2014 no slamming the pads",
+      "Back flat against the pad",
+      "Slow return, don't let the weight pull you open"
+    ],
+    "youtubeId": "CjAVezAggkI",
+    "modification": "Reduce the weight or limit the starting range so you are not stretched too wide.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep burn along the inner thighs.",
+      "notHere": "A pull in the groin when opening \u2014 reduce the starting width.",
+      "backNote": "Keep your back flat against the pad and your core lightly braced, so the pelvis does not tilt.",
+      "stopIf": "A sharp groin pain or pull."
+    },
+    "mistakes": [
+      {
+        "wrong": "Setting the starting width too wide",
+        "right": "Choose a range that never strains the groin."
+      },
+      {
+        "wrong": "Dropping the weight on the return",
+        "right": "Control the return for 2 to 3 seconds."
+      }
+    ],
+    "breathing": "Exhale as you squeeze together, inhale as you open."
+  },
+  {
+    "id": "cossack-squat",
+    "name": "Cossack Squat",
+    "category": "strength",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "adductors",
+      "glutes",
+      "quadriceps",
+      "hip abductors"
+    ],
+    "primaryMuscles": [
+      "adductors",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "hamstrings"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with your feet about twice shoulder-width apart and your toes turned slightly out. Hold your hands together at your chest.",
+      "Shift your weight to the right and sit back and down into the right hip, bending that knee while the left leg stays straight with the toes lifted or the foot flat.",
+      "Keep your chest tall and your right heel down. Go only as deep as you can with control.",
+      "Push through the right foot to slide back to center, then shift to the left side. Alternate sides."
+    ],
+    "cues": [
+      "Sit back into the hip, chest tall",
+      "Keep the bent-side heel on the floor",
+      "Straight leg's toes up, knee soft"
+    ],
+    "youtubeId": "nLNqEQ4B6XI",
+    "modification": "Hold a post or door frame for balance and use a shallower range. Pivot the straight foot's toes up to ease the adductor stretch.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep stretch and effort through the inner thigh of the straight leg and the glute of the bending leg.",
+      "notHere": "Knee pain on the bending side, or a pinch deep in the hip.",
+      "backNote": "Keep your torso tall; letting the lower back round at the bottom is the sign you've gone too deep.",
+      "stopIf": "Sharp knee, groin or low-back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Heel lifting and knee collapsing in",
+        "right": "Reduce depth and keep the knee tracking over the toes."
+      },
+      {
+        "wrong": "Rounding the lower back at the bottom",
+        "right": "Stop higher and keep the chest lifted."
+      }
+    ],
+    "breathing": "Inhale on the way down, exhale as you drive back to center."
+  },
+  {
+    "id": "frog-stretch",
+    "name": "Frog Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "adductors",
+      "hip stabilizers"
+    ],
+    "primaryMuscles": [
+      "adductors"
+    ],
+    "secondaryMuscles": [
+      "hip stabilizers"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Come onto hands and knees on your mat with a pad under your knees. Slowly slide your knees out wide to the sides, keeping them in line with your hips.",
+      "Turn your feet out so the insides of your lower legs rest on the floor, ankles in line with your knees.",
+      "Keep your spine neutral and slowly rock your hips back toward your heels until you feel a stretch in the inner thighs.",
+      "Hold, then bring your knees back together slowly."
+    ],
+    "cues": [
+      "Knees only as wide as feels easy",
+      "Hips back, spine long",
+      "Ease out \u2014 never force the range"
+    ],
+    "youtubeId": "1wpyPsr0Rx0",
+    "modification": "Use less width, or rest on your forearms. Place a pillow under your knees if they feel pressured.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep stretch along the inner thighs and groin.",
+      "notHere": "Pressure or pinching at the knees, or pain in the groin.",
+      "backNote": "Keep the low back long and flat \u2014 don't let it sag into an arch.",
+      "stopIf": "Sharp groin or knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Forcing the knees wide",
+        "right": "Stop where the stretch is firm but easy."
+      },
+      {
+        "wrong": "Arching the lower back",
+        "right": "Keep the spine long and neutral."
+      }
+    ],
+    "breathing": "Slow breathing. Exhale to let the hips sink further back."
+  },
+  {
+    "id": "side-lunge-stretch",
+    "name": "Side Lunge Adductor Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "adductors",
+      "hamstrings"
+    ],
+    "primaryMuscles": [
+      "adductors"
+    ],
+    "secondaryMuscles": [
+      "hamstrings"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand with your feet wide, toes pointing forward or slightly out, and your hands clasped in front of your chest.",
+      "Shift your weight onto your right foot and bend the right knee, sitting your hips back and down while the left leg stays straight.",
+      "Keep your chest tall and your right heel down. Feel the stretch along the inside of the straight leg.",
+      "Hold, then shift across to the other side."
+    ],
+    "cues": [
+      "Weight over the bent leg, chest tall",
+      "Heel of the bent leg stays down",
+      "Straight leg's toes can point up"
+    ],
+    "youtubeId": "zejTuBTEkfY",
+    "modification": "Hold a chair or wall for balance and reduce how far you sit down.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch along the inner thigh and groin of the straight leg.",
+      "notHere": "Pain at the knee of the bent leg or in the groin.",
+      "backNote": "Stay tall, with the lower back neutral. Don't fold forward.",
+      "stopIf": "Sharp groin, knee or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Folding forward",
+        "right": "Keep the chest lifted and your weight in your hips."
+      },
+      {
+        "wrong": "Heel lifting",
+        "right": "Take a smaller range until the heel stays down."
+      }
+    ],
+    "breathing": "Breathe slowly. Exhale as you sit deeper."
+  },
+  {
+    "id": "band-sumo-walk",
+    "name": "Banded Sumo Walk",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "adductors",
+      "glutes",
+      "hip abductors"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "hip abductors"
+    ],
+    "secondaryMuscles": [
+      "adductors",
+      "quadriceps"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Place a loop band just above your knees or around your ankles and stand with your feet shoulder-width apart in a quarter-squat.",
+      "Brace your core and keep your chest tall, toes slightly out, with tension on the band throughout.",
+      "Step sideways with one foot, then follow with the other, keeping the band taut and feet about shoulder-width apart.",
+      "Take 6 steps in one direction, then 6 back to start. Count a full lap as one rep."
+    ],
+    "cues": [
+      "Stay low in the quarter squat",
+      "Knees push out against the band",
+      "Small steps, never let the feet touch"
+    ],
+    "youtubeId": "uDHnLUHSyPw",
+    "modification": "Use a lighter band or stand more upright. Place the band above the knees for a gentler challenge.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn through the outer hips and glutes, plus the inner thighs controlling the return.",
+      "notHere": "Knee pain, or the knees collapsing inward.",
+      "backNote": "Hold the brace and a tall chest; do not let your torso lean or the low back round as you step.",
+      "stopIf": "Sharp knee, hip or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Standing up tall between steps",
+        "right": "Stay in the quarter squat the whole time."
+      },
+      {
+        "wrong": "Knees caving in",
+        "right": "Press the knees out against the band."
+      }
+    ],
+    "breathing": "Breathe steadily; exhale slightly with each step."
+  },
+  {
+    "id": "prone-alternating-leg-lift",
+    "name": "Prone Alternating Leg Lift",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "lower back",
+      "glutes",
+      "hamstrings"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "lower back"
+    ],
+    "secondaryMuscles": [
+      "hamstrings"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Lie face down on your mat with your arms resting by your sides or stacked under your forehead, and your legs straight.",
+      "Gently tighten your glutes and brace your core to keep the pelvis pressed into the mat.",
+      "Lift one leg a few inches off the floor, keeping it straight, then lower it slowly under control.",
+      "Alternate legs. Keep your hips level and your low back quiet."
+    ],
+    "cues": [
+      "Tiny lift \u2014 squeeze from the glute",
+      "Hips stay flat on the floor",
+      "Slow lower, no dropping"
+    ],
+    "youtubeId": "mdfvC0S4Kxc",
+    "modification": "Place a thin pillow under your hips. Lift the leg only an inch or two.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The glute and the muscles beside the spine switching on lightly.",
+      "notHere": "A pinching sensation in the low back \u2014 you are lifting too high.",
+      "backNote": "Keep the lift small; going high arches the low back. Squeeze the glute and keep the pelvis pinned.",
+      "stopIf": "Sharp low-back pain or pain down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Lifting the leg as high as possible",
+        "right": "A few inches is plenty; height just arches the back."
+      },
+      {
+        "wrong": "Rocking the hips side to side",
+        "right": "Keep the pelvis still and glutes tight."
+      }
+    ],
+    "breathing": "Exhale as you lift each leg, inhale as you lower."
+  },
+  {
+    "id": "knee-to-chest",
+    "name": "Single Knee-to-Chest Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "lower back",
+      "glutes",
+      "hip flexors"
+    ],
+    "primaryMuscles": [
+      "lower back"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hip flexors"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie on your back with your knees bent and your feet flat on the mat.",
+      "Bring one knee toward your chest, clasping your hands behind the thigh or around the shin.",
+      "Keep the other foot flat, or extend that leg along the floor for a deeper hip-flexor stretch.",
+      "Hold, then lower the leg and switch sides."
+    ],
+    "cues": [
+      "Pull gently, no yanking",
+      "Head and shoulders stay relaxed on the floor",
+      "Keep the opposite foot grounded"
+    ],
+    "youtubeId": "n6_Z3I0zBcI",
+    "modification": "Hold behind the thigh rather than the shin if your knee is sensitive. Keep the other leg bent.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A gentle stretch across the low back and the back of the hip.",
+      "notHere": "Pinching in the front of the hip or knee.",
+      "backNote": "This is a gentle flexion stretch \u2014 stay relaxed and don't force the knee. Skip it if bending forward aggravates your back.",
+      "stopIf": "Sharp back pain or tingling down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Pulling hard on the knee",
+        "right": "Let the arms guide, not force."
+      },
+      {
+        "wrong": "Lifting the head off the floor",
+        "right": "Keep the neck long and head down."
+      }
+    ],
+    "breathing": "Slow breathing. Exhale to let the leg draw in a little further."
+  },
+  {
+    "id": "double-knee-to-chest",
+    "name": "Double Knee-to-Chest Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "lower back",
+      "glutes"
+    ],
+    "primaryMuscles": [
+      "lower back"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie on your back with your knees bent and your feet flat on the floor.",
+      "Draw both knees up toward your chest and hold behind your thighs or shins.",
+      "Keep your head and shoulders resting on the floor and your breathing slow.",
+      "Hold, then lower one foot at a time back to the floor."
+    ],
+    "cues": [
+      "Hold behind the thighs, easy grip",
+      "Head and shoulders stay relaxed",
+      "Lower the legs one at a time"
+    ],
+    "youtubeId": "5R7eWaNWO3U",
+    "modification": "Do one leg at a time instead. Hold behind the thighs to take stress off the knees.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A broad, gentle stretch across the whole low back.",
+      "notHere": "Sharp pain in the hips or knees.",
+      "backNote": "Gentle flexion only. Stop if it increases back pain, and always lower the legs one at a time.",
+      "stopIf": "Sharp back pain, or tingling and numbness down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Forcing the knees to the chest",
+        "right": "Draw them only as far as is comfortable."
+      },
+      {
+        "wrong": "Holding the breath",
+        "right": "Keep breathing slowly through the hold."
+      }
+    ],
+    "breathing": "Slow breaths. Feel the low back melt toward the floor on each exhale."
+  },
+  {
+    "id": "lumbar-rotation-stretch",
+    "name": "Supine Lumbar Rotation",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "lower back mobility",
+      "spine",
+      "obliques"
+    ],
+    "primaryMuscles": [
+      "lower back mobility"
+    ],
+    "secondaryMuscles": [
+      "obliques",
+      "spine"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Lie on your back with your knees bent and feet flat, and your arms out to the sides in a T shape.",
+      "Keeping your shoulders flat on the floor, let both knees drop slowly to one side, moving only as far as is comfortable.",
+      "Rest in the position and let gravity do the work. Keep your breathing slow.",
+      "Bring the knees back to center and repeat on the other side."
+    ],
+    "cues": [
+      "Shoulders stay on the floor",
+      "Small range is fine",
+      "Let gravity do the work"
+    ],
+    "youtubeId": "VK75m-l3RSY",
+    "modification": "Place a pillow between the knees or under the knees at the bottom to make the range smaller.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A gentle twist and stretch through the low back and the sides of the waist.",
+      "notHere": "A pinch on one side of the low back \u2014 reduce the range.",
+      "backNote": "Rotate within a pain-free range and move slowly. Don't let the knees flop heavily.",
+      "stopIf": "Sharp low-back pain or tingling down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Letting the knees drop quickly",
+        "right": "Lower slowly and with control."
+      },
+      {
+        "wrong": "Shoulders lifting off the floor",
+        "right": "Reduce the range so shoulders stay grounded."
+      }
+    ],
+    "breathing": "Exhale as the knees lower, inhale at the middle."
+  },
+  {
+    "id": "standing-back-extension",
+    "name": "Standing Back Extension",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "lower back mobility",
+      "lumbar extensors",
+      "hip flexors"
+    ],
+    "primaryMuscles": [
+      "lower back mobility"
+    ],
+    "secondaryMuscles": [
+      "hip flexors",
+      "lumbar extensors"
+    ],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand tall with your feet hip-width apart and place your hands on the back of your hips with the fingers pointing down.",
+      "Squeeze your glutes lightly and keep your knees straight but not locked.",
+      "Gently lean back, using your hands to support your low back, only as far as is comfortable. Keep your gaze forward.",
+      "Return to upright and repeat slowly."
+    ],
+    "cues": [
+      "Small, gentle lean only",
+      "Squeeze the glutes to protect the back",
+      "Eyes forward, neck relaxed"
+    ],
+    "youtubeId": "xKIuvqXeqsE",
+    "modification": "Lean back just an inch or two. Stop if you feel any pinching or if the back tightens.",
+    "backSafe": false,
+    "sensation": {
+      "feelHere": "A mild, opening feeling across the lower back and the front of the hips.",
+      "notHere": "A sharp pinch or pain in the low back.",
+      "backNote": "Extension can aggravate some backs. Keep the movement small, squeeze the glutes, and skip it if it pinches or if you've been told to avoid arching.",
+      "stopIf": "Sharp low-back pain, pain down a leg, or tingling and numbness."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning far back with locked knees",
+        "right": "Keep a soft knee bend and a small range."
+      },
+      {
+        "wrong": "Tilting the head back",
+        "right": "Keep the eyes forward and neck neutral."
+      }
+    ],
+    "breathing": "Exhale as you lean back, inhale as you return upright."
+  },
+  {
+    "id": "couch-stretch",
+    "name": "Couch Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "quadriceps",
+      "iliopsoas"
+    ],
+    "primaryMuscles": [
+      "hip flexors"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "iliopsoas"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Kneel facing away from a wall or couch with one knee on a folded mat near the base and the shin of that leg pressed up against it, foot pointing up the wall.",
+      "Step the other foot forward into a half-kneeling lunge, with that knee over the ankle.",
+      "Squeeze the glute of the back leg and tuck the pelvis under, ribs down, then raise your torso as upright as you can.",
+      "Hold, staying tall, then step out and switch sides."
+    ],
+    "cues": [
+      "Tuck the pelvis, squeeze the glute",
+      "Ribs down \u2014 don't arch",
+      "Move closer to the wall only as far as is comfortable"
+    ],
+    "youtubeId": "Fg-lwNBzVV8",
+    "modification": "Move your knee further from the wall and keep a hand on the floor or a chair. Skip the shin-on-wall setup and use the standard kneeling stretch.",
+    "backSafe": false,
+    "sensation": {
+      "feelHere": "A deep stretch down the front of the thigh and hip of the back leg.",
+      "notHere": "Knee pain, or the low back arching.",
+      "backNote": "This is easy to do with an arched lower back. Tuck the pelvis hard and keep the ribs down, or use the gentler kneeling hip flexor stretch if you can't hold that.",
+      "stopIf": "Sharp knee, groin or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the low back to get tall",
+        "right": "Squeeze the glute and tuck the pelvis."
+      },
+      {
+        "wrong": "Forcing the heel to the glute",
+        "right": "Move out from the wall until the stretch is firm but easy."
+      }
+    ],
+    "breathing": "Slow nose breaths. Exhale to deepen the pelvic tuck."
+  },
+  {
+    "id": "supine-psoas-march",
+    "name": "Supine Psoas March",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "iliopsoas",
+      "core"
+    ],
+    "primaryMuscles": [
+      "hip flexors",
+      "iliopsoas"
+    ],
+    "secondaryMuscles": [
+      "transverse abdominis"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Lie on your back with your knees bent and feet flat, and gently flatten your lower back toward the floor.",
+      "Lift one foot a few inches off the floor and bring the knee toward 90 degrees at the hip, keeping your pelvis still.",
+      "Pause, then lower the foot back down slowly and lightly.",
+      "Alternate legs, keeping the core quiet and the pelvis from rocking."
+    ],
+    "cues": [
+      "Pelvis stays perfectly still",
+      "Lift slowly, lower slowly",
+      "Lightly brace through the belly"
+    ],
+    "youtubeId": "MezNdAcVfZE",
+    "modification": "Lift the foot only an inch off the floor, or rest the foot on a towel and slide it.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep effort at the front of the hip, with the lower belly steady.",
+      "notHere": "The low back arching or the front of the thigh cramping.",
+      "backNote": "Keep the low back gently pressed down; if it lifts, make the movement smaller.",
+      "stopIf": "Sharp hip or low-back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rocking the pelvis",
+        "right": "Slow down and lift only as high as you can with a still pelvis."
+      },
+      {
+        "wrong": "Holding the breath",
+        "right": "Breathe steadily throughout."
+      }
+    ],
+    "breathing": "Exhale as the knee lifts, inhale as you lower."
+  },
+  {
+    "id": "half-kneeling-hip-flexor-reach",
+    "name": "Half-Kneeling Hip Flexor Stretch with Reach",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "iliopsoas",
+      "obliques"
+    ],
+    "primaryMuscles": [
+      "hip flexors"
+    ],
+    "secondaryMuscles": [
+      "iliopsoas",
+      "obliques"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Kneel on one knee on your mat, with the other foot flat in front and the front knee over the ankle. Pad the back knee if needed.",
+      "Squeeze the glute of the back leg and tuck the pelvis under so the stretch starts at the front of the hip.",
+      "Reach the arm on the same side as the back leg overhead and tilt gently away from it, keeping the ribs down.",
+      "Hold, then lower the arm and switch sides."
+    ],
+    "cues": [
+      "Tuck the pelvis first, reach second",
+      "Ribs down \u2014 don't arch the back",
+      "Squeeze the back glute"
+    ],
+    "youtubeId": "Xp-J3fRRduY",
+    "modification": "Keep your hands on your hips instead of reaching, or use a cushion under the back knee.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A long stretch from the hip up through the side of the waist.",
+      "notHere": "Pain in the back knee, or a pinch in the lower back.",
+      "backNote": "Tuck the pelvis before you reach, and keep ribs down. Reach only as far as the low back stays quiet.",
+      "stopIf": "Sharp back or knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the back to reach",
+        "right": "Tuck the pelvis and keep the ribs down."
+      },
+      {
+        "wrong": "Leaning forward over the front knee",
+        "right": "Stay tall through the torso."
+      }
+    ],
+    "breathing": "Slow breaths. Exhale as you reach and tilt."
+  },
+  {
+    "id": "band-standing-march",
+    "name": "Banded Standing Hip Flexor March",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "hip flexors",
+      "iliopsoas",
+      "core"
+    ],
+    "primaryMuscles": [
+      "hip flexors",
+      "iliopsoas"
+    ],
+    "secondaryMuscles": [
+      "transverse abdominis",
+      "glute medius"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Place a loop band around both feet, just above the toes or around the arches, and stand tall holding a wall or chair for support if needed.",
+      "Brace your core and keep your hips level.",
+      "Lift one knee toward hip height against the band, keeping your standing leg strong and your torso upright.",
+      "Lower slowly and repeat on the other leg."
+    ],
+    "cues": [
+      "Torso stays tall \u2014 no leaning back",
+      "Hips level",
+      "Lift the knee, don't swing it"
+    ],
+    "youtubeId": "RYQ4sXMFrYM",
+    "modification": "Use no band, or a very light one, and hold on to a wall for balance.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn at the front of the lifted hip.",
+      "notHere": "Pain in the front of the hip, or the back arching.",
+      "backNote": "Stay tall and braced; leaning back to lift the knee arches your low back.",
+      "stopIf": "Sharp hip or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back to lift higher",
+        "right": "Keep your torso tall and lift only as high as you can with control."
+      },
+      {
+        "wrong": "Swinging the leg",
+        "right": "Lift the knee smoothly, no momentum."
+      }
+    ],
+    "breathing": "Exhale as the knee lifts, inhale as it lowers."
+  },
+  {
+    "id": "side-lying-leg-raise",
+    "name": "Side-Lying Leg Raise",
+    "category": "strength",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glute medius",
+      "hip abductors",
+      "glutes"
+    ],
+    "primaryMuscles": [
+      "glute medius",
+      "hip abductors"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Lie on your side with your legs stacked and straight, your head on your lower arm and your top hand on the floor in front of you for balance.",
+      "Brace your core so your pelvis stays stacked, hips pointing slightly forward rather than rolling back.",
+      "Lift your top leg toward the ceiling, keeping the toes pointing forward or slightly down, until it's about 45 degrees.",
+      "Lower slowly with control and repeat, then switch sides."
+    ],
+    "cues": [
+      "Toes forward, not up",
+      "Hips stay stacked \u2014 no rolling back",
+      "Slow lift, slower lower"
+    ],
+    "youtubeId": "g9FtnmsIYgI",
+    "modification": "Bend your bottom knee for a more stable base. Lift only a few inches.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn on the outer side of the top hip, high on the buttock.",
+      "notHere": "The front of the hip or the low back doing the work.",
+      "backNote": "Keep your pelvis stacked and brace the core \u2014 rolling back arches the low back.",
+      "stopIf": "Sharp hip or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rolling the hips backward",
+        "right": "Keep hips stacked and stay in a smaller range."
+      },
+      {
+        "wrong": "Leading with the toes up",
+        "right": "Keep the toes forward so the glute does the lifting."
+      }
+    ],
+    "breathing": "Exhale as you lift, inhale as you lower."
+  },
+  {
+    "id": "band-monster-walk",
+    "name": "Banded Monster Walk",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hip abductors",
+      "glute medius"
+    ],
+    "primaryMuscles": [
+      "glute medius",
+      "hip abductors"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "quadriceps"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Place a loop band just above your knees or around your ankles and stand with your feet hip-width apart in a quarter-squat.",
+      "Brace your core, keep your chest tall, and keep tension on the band the entire time.",
+      "Step forward and diagonally outward with one foot, then the other, so the feet stay hip-width or wider with the band tight.",
+      "Take 6 steps forward, then walk 6 steps backward. A full lap is one rep."
+    ],
+    "cues": [
+      "Keep the band tight throughout",
+      "Stay low in the quarter squat",
+      "Knees push out, not in"
+    ],
+    "youtubeId": "iLP_Y-sdj6s",
+    "modification": "Use a lighter band, or place it above the knees. Stand more upright.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong burn in the outer hip and glutes.",
+      "notHere": "Knee pain or the knees collapsing inward.",
+      "backNote": "Keep the chest tall and core braced; avoid leaning forward and rounding the lower back.",
+      "stopIf": "Sharp knee, hip or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Feet coming together between steps",
+        "right": "Keep the band tight by stepping wide each time."
+      },
+      {
+        "wrong": "Leaning the torso side to side",
+        "right": "Keep the hips level and chest tall."
+      }
+    ],
+    "breathing": "Steady breathing; exhale on each step."
+  },
+  {
+    "id": "side-plank-leg-lift",
+    "name": "Side Plank with Leg Lift",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glute medius",
+      "obliques",
+      "hip abductors"
+    ],
+    "primaryMuscles": [
+      "glute medius",
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "hip abductors",
+      "transverse abdominis"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set up in a forearm side plank with your elbow under your shoulder and your feet stacked. Lift your hips to form a straight line from head to heels.",
+      "Brace your core and keep your hips lifted and facing forward.",
+      "Raise your top leg toward the ceiling, keeping it straight and toes forward, only as high as you can without your hips dropping or rolling.",
+      "Lower the leg with control and repeat, then switch sides."
+    ],
+    "cues": [
+      "Hips high and stacked",
+      "Lift the leg from the outer hip",
+      "Straight line from head to heels"
+    ],
+    "youtubeId": "PAD7sMmIgts",
+    "modification": "Bend the bottom knee for a shorter lever and drop the knee to the floor. Skip the leg lift and hold the plank.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The side of your waist and the outer hip of the top leg working together.",
+      "notHere": "Your shoulder or neck straining, or your low back sagging.",
+      "backNote": "Keep the hips lifted in a straight line; a sagging hip is the sign to stop or bend the bottom knee.",
+      "stopIf": "Sharp shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips dropping toward the floor",
+        "right": "Brace harder or bend the bottom knee."
+      },
+      {
+        "wrong": "Rolling the top hip back",
+        "right": "Stack your hips and keep them facing forward."
+      }
+    ],
+    "breathing": "Breathe steadily, with a slow exhale as the leg lifts."
+  },
+  {
+    "id": "cable-hip-abduction",
+    "name": "Cable Hip Abduction",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "glute medius",
+      "hip abductors",
+      "glutes"
+    ],
+    "primaryMuscles": [
+      "glute medius",
+      "hip abductors"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Attach an ankle cuff to a low cable pulley and strap it to the leg closest to the far side. Stand side-on to the machine and hold the frame for balance.",
+      "Brace your core, keep your torso tall, and stand on the leg nearest to the machine with a soft knee.",
+      "Move the cuffed leg out and across to the side without leaning, keeping the toes forward.",
+      "Pause, then return slowly without letting the weight stack touch down."
+    ],
+    "cues": [
+      "Torso stays tall \u2014 don't lean away",
+      "Toes forward",
+      "Slow return, control the stack"
+    ],
+    "youtubeId": "vSqhrbzZb7A",
+    "modification": "Use lighter weight and a smaller range, holding the frame firmly.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn in the outer hip of the working leg.",
+      "notHere": "Standing-leg knee strain or low-back tightness.",
+      "backNote": "Stand tall and braced. Leaning away to swing the leg bends the lower back sideways.",
+      "stopIf": "Sharp hip, knee or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning the torso to move the leg",
+        "right": "Keep the torso still and the range smaller."
+      },
+      {
+        "wrong": "Swinging with momentum",
+        "right": "Slow, controlled reps with a pause at the top."
+      }
+    ],
+    "breathing": "Exhale as the leg moves out, inhale as it returns."
+  },
+  {
+    "id": "cable-bicep-curl",
+    "name": "Cable Bicep Curl",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "biceps",
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "biceps"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Attach a straight or EZ bar to a low cable pulley. Stand facing the machine, feet hip-width apart, with a soft bend in your knees, holding the bar with an underhand grip.",
+      "Brace your core, pin your elbows to your sides and stand tall with your ribs stacked over your hips.",
+      "Curl the bar up toward your shoulders by bending only at the elbows, squeezing your biceps at the top.",
+      "Lower slowly until your arms are almost straight, keeping the cable tension on."
+    ],
+    "cues": [
+      "Elbows pinned to your sides",
+      "No swinging \u2014 torso stays still",
+      "Slow lower, constant tension"
+    ],
+    "youtubeId": "rfRdD5PKrko",
+    "modification": "Use a lighter weight or a single-arm handle. Stand with your back against a wall to stop swaying.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn through the front of the upper arm.",
+      "notHere": "Your low back or shoulders taking over as you swing.",
+      "wrongSpot": [
+        {
+          "felt": "Low back",
+          "fix": "You're leaning back to swing the bar up. Brace your core and drop the weight."
+        }
+      ],
+      "backNote": "Brace and keep your ribs over your hips. Leaning back to curl heavier arches the low back \u2014 drop the weight instead.",
+      "stopIf": "Sharp elbow, shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Swinging the torso to lift",
+        "right": "Lower the weight and keep your body still."
+      },
+      {
+        "wrong": "Elbows drifting forward",
+        "right": "Keep them pinned to your sides."
+      }
+    ],
+    "breathing": "Exhale as you curl up, inhale as you lower."
+  },
+  {
+    "id": "db-zottman-curl",
+    "name": "Zottman Curl",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells"
+    ],
+    "targetMuscles": [
+      "biceps",
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "biceps",
+      "forearms"
+    ],
+    "secondaryMuscles": [
+      "rotator cuff"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand tall holding a dumbbell in each hand at your sides, palms facing forward, feet hip-width apart with soft knees.",
+      "Brace your core and pin your elbows to your sides. Curl both dumbbells up with palms facing you.",
+      "At the top, rotate your wrists so your palms face down (overhand grip).",
+      "Lower the dumbbells slowly in that overhand position, then rotate back to palms-up at the bottom and repeat."
+    ],
+    "cues": [
+      "Curl up palms up, lower palms down",
+      "Elbows pinned to your sides",
+      "Slow, controlled lowering"
+    ],
+    "youtubeId": "D7bMA4WEKMI",
+    "modification": "Use lighter dumbbells, or do it one arm at a time seated, to keep your torso still.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The front of the arm on the way up and the forearms on the way down.",
+      "notHere": "Wrist pain, or your shoulders rolling forward.",
+      "backNote": "Brace and stand tall \u2014 leaning back to cheat the weight up arches your low back.",
+      "stopIf": "Sharp wrist, elbow or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Swinging the weights",
+        "right": "Lower the weight and slow the tempo."
+      },
+      {
+        "wrong": "Rushing the wrist rotation",
+        "right": "Rotate smoothly at the top, then lower slowly."
+      }
+    ],
+    "breathing": "Exhale on the curl up, inhale on the slow lowering."
+  },
+  {
+    "id": "band-hammer-curl",
+    "name": "Band Hammer Curl",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "biceps",
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "biceps",
+      "forearms"
+    ],
+    "secondaryMuscles": [
+      "rotator cuff"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand on the middle of a resistance band with your feet hip-width apart and hold an end in each hand, palms facing each other.",
+      "Brace your core and pin your elbows to your sides, standing tall with soft knees.",
+      "Curl your hands up toward your shoulders with your thumbs pointing up, without letting the elbows drift forward.",
+      "Lower slowly against the tension until your arms are nearly straight."
+    ],
+    "cues": [
+      "Thumbs up, palms facing in",
+      "Elbows stay by your ribs",
+      "Slow return against the band"
+    ],
+    "youtubeId": "bcond2tqWg0",
+    "modification": "Use a lighter band or step in from the ends to reduce tension.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn along the front of the arm and the top of the forearm.",
+      "notHere": "Wrist strain or your shoulders hunching.",
+      "backNote": "Stand tall and braced. Don't lean back to finish the rep.",
+      "stopIf": "Sharp wrist, elbow or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back to finish the rep",
+        "right": "Choose a lighter band and keep ribs stacked."
+      },
+      {
+        "wrong": "Elbows swinging forward",
+        "right": "Pin them to your sides."
+      }
+    ],
+    "breathing": "Exhale on the curl, inhale on the lowering."
+  },
+  {
+    "id": "cable-overhead-tricep-extension",
+    "name": "Cable Overhead Tricep Extension",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "triceps"
+    ],
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "front deltoids"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Attach a rope to a high cable, face away from the machine and take a staggered stance with one foot forward, holding the rope with both hands behind your head, elbows bent.",
+      "Brace your core, keep your ribs down and lean slightly forward from the hips rather than arching your back.",
+      "Straighten your elbows to extend your arms overhead, keeping your upper arms close to your ears.",
+      "Return slowly until you feel a stretch in the triceps."
+    ],
+    "cues": [
+      "Ribs down \u2014 don't arch",
+      "Elbows point forward, upper arms still",
+      "Slow return into the stretch"
+    ],
+    "youtubeId": "ns-RGsbzqok",
+    "modification": "Use a lighter weight, or do the single-arm version with a handle.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong burn and stretch at the back of the upper arm.",
+      "notHere": "Elbow or shoulder pinching, or your lower back arching.",
+      "backNote": "Stagger your stance and brace. Arching the lower back to press overhead is the main thing to avoid.",
+      "stopIf": "Sharp elbow, shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the lower back",
+        "right": "Brace, ribs down, lean forward slightly."
+      },
+      {
+        "wrong": "Elbows flaring wide",
+        "right": "Keep them pointing forward near your ears."
+      }
+    ],
+    "breathing": "Exhale as you extend, inhale as you return."
+  },
+  {
+    "id": "bench-dip",
+    "name": "Bench Dip",
+    "category": "strength",
+    "equipment": [
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "triceps",
+      "chest",
+      "front deltoids"
+    ],
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "chest",
+      "front deltoids"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Sit on the edge of a bench with your hands gripping the edge beside your hips, fingers forward. Walk your feet out with knees bent to 90 degrees.",
+      "Slide your hips off the bench and straighten your arms to hold yourself up, shoulders away from your ears.",
+      "Lower your body by bending your elbows straight back (not flaring out) until your upper arms are about parallel with the floor.",
+      "Press through your palms to straighten your arms and return."
+    ],
+    "cues": [
+      "Elbows point straight back",
+      "Hips stay close to the bench",
+      "Shoulders down, away from your ears"
+    ],
+    "youtubeId": "c3ZGl4pAwZ4",
+    "modification": "Keep your knees bent and feet closer, or reduce the depth. Stop if the front of your shoulders feel pinched.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn at the back of the upper arms.",
+      "notHere": "A pinch at the front of the shoulder \u2014 shallow your depth.",
+      "backNote": "Keep the hips tight to the bench and your chest tall so your lower back stays neutral.",
+      "stopIf": "Sharp shoulder or wrist pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Dropping too deep",
+        "right": "Stop when your upper arms are parallel to the floor."
+      },
+      {
+        "wrong": "Hips drifting away from the bench",
+        "right": "Keep your back close to the bench the whole time."
+      }
+    ],
+    "breathing": "Inhale as you lower, exhale as you press up."
+  },
+  {
+    "id": "band-tricep-pushdown",
+    "name": "Band Tricep Pushdown",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "triceps"
+    ],
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a resistance band high, over the top of a door or to a high bar. Stand facing it with a soft bend in your knees and hold the band with both hands at chest height.",
+      "Brace your core and pin your elbows to your sides.",
+      "Press your hands down by straightening your elbows until your arms are fully extended, squeezing your triceps.",
+      "Return slowly until your hands reach chest height."
+    ],
+    "cues": [
+      "Elbows stay pinned at your sides",
+      "Squeeze at the bottom",
+      "Control the band on the way up"
+    ],
+    "youtubeId": "p1pmKGJgcr0",
+    "modification": "Use a lighter band, or stand closer to the anchor to reduce tension.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn along the back of the upper arm.",
+      "notHere": "Shoulder or upper-back involvement \u2014 your elbows are drifting forward.",
+      "backNote": "Brace and stand tall. Leaning over the band can round the low back.",
+      "stopIf": "Sharp elbow, shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Elbows drifting forward",
+        "right": "Pin them at your sides."
+      },
+      {
+        "wrong": "Leaning over the band",
+        "right": "Stay tall with ribs over hips."
+      }
+    ],
+    "breathing": "Exhale as you press down, inhale as you return."
+  },
+  {
+    "id": "close-grip-push-up",
+    "name": "Close-Grip Push-Up",
+    "category": "strength",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "triceps",
+      "chest",
+      "front deltoids",
+      "core"
+    ],
+    "primaryMuscles": [
+      "triceps",
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Start in a high plank with your hands directly under your shoulders, or just inside them, and your body in a straight line from head to heels.",
+      "Brace your core and squeeze your glutes so your hips don't sag.",
+      "Lower your chest toward the floor, keeping your elbows tucked close to your ribs rather than flaring out.",
+      "Press back up to the start, keeping the plank intact."
+    ],
+    "cues": [
+      "Elbows tucked close to your ribs",
+      "Body in one straight line",
+      "Glutes and core braced"
+    ],
+    "youtubeId": "F1Lq9LnyvVc",
+    "modification": "Drop to your knees or place your hands on a bench or counter to make it easier.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong burn at the back of the arms plus the inner chest.",
+      "notHere": "Wrist pain or the hips sagging toward the floor.",
+      "backNote": "Brace your core hard and keep your hips in line. A sagging hip means a swayed lower back \u2014 use an incline.",
+      "stopIf": "Sharp wrist, elbow, shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging",
+        "right": "Squeeze glutes and core, or move to an incline."
+      },
+      {
+        "wrong": "Elbows flaring",
+        "right": "Tuck them close to the body."
+      }
+    ],
+    "breathing": "Inhale as you lower, exhale as you press up."
+  },
+  {
+    "id": "standing-calf-raise-machine",
+    "name": "Standing Calf Raise Machine",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "calves",
+      "gastrocnemius"
+    ],
+    "primaryMuscles": [
+      "calves",
+      "gastrocnemius"
+    ],
+    "secondaryMuscles": [
+      "soleus"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Step into the machine with the balls of your feet on the platform and your shoulders under the pads. Stand tall with your knees straight but not locked.",
+      "Brace your core and keep your hips under your shoulders.",
+      "Push through the balls of your feet to rise as high as you can, squeezing your calves at the top.",
+      "Lower slowly until you feel a stretch in the calves, then repeat."
+    ],
+    "cues": [
+      "Rise high, pause, lower slowly",
+      "Knees soft, not locked",
+      "Stay tall \u2014 don't lean forward"
+    ],
+    "youtubeId": "g_E7_q1z2bo",
+    "modification": "Use a lighter weight, or do a bodyweight calf raise on a step instead.",
+    "backSafe": false,
+    "sensation": {
+      "feelHere": "A deep burn in the calf muscles.",
+      "notHere": "Pain in the Achilles tendon or the arch of the foot.",
+      "backNote": "This loads your spine through the shoulder pads. If you have back stiffness, choose the seated or bodyweight versions instead.",
+      "stopIf": "Sharp Achilles, calf or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bouncing at the bottom",
+        "right": "Pause at the stretch and lift under control."
+      },
+      {
+        "wrong": "Cutting the range short",
+        "right": "Go full range, from deep stretch to full rise."
+      }
+    ],
+    "breathing": "Exhale as you rise, inhale as you lower."
+  },
+  {
+    "id": "db-calf-raise",
+    "name": "Dumbbell Calf Raise",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells"
+    ],
+    "targetMuscles": [
+      "calves",
+      "gastrocnemius",
+      "soleus"
+    ],
+    "primaryMuscles": [
+      "calves",
+      "gastrocnemius"
+    ],
+    "secondaryMuscles": [
+      "soleus",
+      "ankle stabilizers"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand tall holding a dumbbell in each hand at your sides, feet hip-width apart. Place the balls of your feet on a step or weight plate if you want more range.",
+      "Brace your core and keep your hips under your shoulders.",
+      "Rise up onto the balls of your feet as high as you can, pausing at the top.",
+      "Lower slowly until your heels are below the platform or touch the floor."
+    ],
+    "cues": [
+      "Pause and squeeze at the top",
+      "Slow lowering",
+      "Stay tall, ribs stacked"
+    ],
+    "youtubeId": "hPA98_r-6e4",
+    "modification": "Hold a wall for balance and use no weights.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn through the back of the lower leg.",
+      "notHere": "Ankle wobbling or pain in the Achilles.",
+      "backNote": "Light dumbbells at your sides keep the load off the spine. Brace and stay tall.",
+      "stopIf": "Sharp Achilles, calf or ankle pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bouncing the reps",
+        "right": "Slow down, pause at the top."
+      },
+      {
+        "wrong": "Rolling the ankles outward",
+        "right": "Press evenly through the big toe side."
+      }
+    ],
+    "breathing": "Exhale as you rise, inhale as you lower."
+  },
+  {
+    "id": "tibialis-raise",
+    "name": "Wall Tibialis Raise",
+    "category": "strength",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "ankle stabilizers",
+      "calves"
+    ],
+    "primaryMuscles": [
+      "ankle stabilizers"
+    ],
+    "secondaryMuscles": [
+      "calves"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Stand with your back against a wall and your heels about a foot and a half in front of it, feet hip-width apart. Lean back so the wall supports you.",
+      "Keep your legs straight and your core lightly braced.",
+      "Lift the front of both feet toward your shins as high as you can, keeping your heels on the floor.",
+      "Lower the toes slowly and repeat."
+    ],
+    "cues": [
+      "Heels stay on the floor",
+      "Toes up high, pause at the top",
+      "Slow lowering"
+    ],
+    "youtubeId": "VzIcGAgBiaM",
+    "modification": "Move your feet closer to the wall for less load, or do one foot at a time seated.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn along the front of the shin.",
+      "notHere": "Pain on the very front of the ankle joint.",
+      "backNote": "Leaning on the wall keeps the lower back supported. Stay braced and don't arch off the wall.",
+      "stopIf": "Sharp shin or ankle pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bending the knees to cheat",
+        "right": "Keep your legs straight."
+      },
+      {
+        "wrong": "Not lifting high enough",
+        "right": "Pull the toes toward the shins fully."
+      }
+    ],
+    "breathing": "Exhale as the toes lift, inhale as they lower."
+  },
+  {
+    "id": "soleus-stretch",
+    "name": "Bent-Knee Calf Stretch (Soleus)",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "soleus",
+      "calves",
+      "Achilles tendon"
+    ],
+    "primaryMuscles": [
+      "soleus"
+    ],
+    "secondaryMuscles": [
+      "Achilles tendon",
+      "calves"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand facing a wall with your hands on it. Step one foot back with the heel flat and toes pointing forward.",
+      "Bend both knees, keeping the back heel down, until you feel a stretch low in the back calf.",
+      "Keep your torso upright and your hips square to the wall.",
+      "Hold, then switch legs."
+    ],
+    "cues": [
+      "Bend the knee \u2014 keep the heel down",
+      "Toes straight ahead",
+      "Torso upright"
+    ],
+    "youtubeId": "si9ZbZ9XVlk",
+    "modification": "Place a rolled towel under the toes of the back foot, or reduce the knee bend.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A low stretch deep in the calf, just above the Achilles tendon.",
+      "notHere": "A pull directly in the Achilles tendon or the heel.",
+      "backNote": "Stand tall with a neutral spine; don't lean forward from the waist.",
+      "stopIf": "Sharp Achilles or calf pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Heel lifting",
+        "right": "Keep the back heel on the floor."
+      },
+      {
+        "wrong": "Straightening the knee",
+        "right": "Keep both knees bent to target the deeper calf muscle."
+      }
+    ],
+    "breathing": "Breathe slowly. Exhale to sink a touch deeper."
+  },
+  {
+    "id": "cable-reverse-fly",
+    "name": "Cable Reverse Fly",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "upper back",
+      "rhomboids"
+    ],
+    "primaryMuscles": [
+      "rear deltoids",
+      "rhomboids"
+    ],
+    "secondaryMuscles": [
+      "upper back",
+      "middle trapezius"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set two cable handles at shoulder height. Cross the cables so your right hand holds the left handle and your left hand holds the right one, then stand in the middle of the machine.",
+      "Brace your core and take a split stance with soft knees. Start with your arms straight in front of you, palms facing down or in.",
+      "Pull your arms apart and back in a wide arc until they're in line with your shoulders, squeezing your shoulder blades together.",
+      "Return slowly, keeping the tension on."
+    ],
+    "cues": [
+      "Slight bend in the elbows",
+      "Lead with the elbows, squeeze the blades",
+      "Stand tall, don't lean back"
+    ],
+    "youtubeId": "JENKmsEZQO8",
+    "modification": "Use a lighter weight, or stay seated or lie on an incline bench for support.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The back of your shoulders and between your shoulder blades.",
+      "notHere": "Neck and upper-trap tension, or your lower back arching.",
+      "backNote": "Stand tall with ribs stacked over hips. Leaning back to pull heavier arches the low back.",
+      "stopIf": "Sharp shoulder pain or pins and needles in the arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Shrugging up",
+        "right": "Drop your shoulders and pull from the blades."
+      },
+      {
+        "wrong": "Using momentum",
+        "right": "Slow down and lighten the weight."
+      }
+    ],
+    "breathing": "Exhale as you pull apart, inhale as you return."
+  },
+  {
+    "id": "reverse-pec-deck",
+    "name": "Reverse Pec Deck",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "upper back",
+      "rhomboids"
+    ],
+    "primaryMuscles": [
+      "rear deltoids",
+      "rhomboids"
+    ],
+    "secondaryMuscles": [
+      "middle trapezius",
+      "upper back"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Sit facing the pad of the reverse pec deck with your chest against it, and set the handles to shoulder height with a comfortable reach.",
+      "Grip the handles with a soft elbow bend and sit tall.",
+      "Pull your arms back and out wide in an arc until they're in line with your torso, squeezing your shoulder blades together.",
+      "Pause, then return slowly under control."
+    ],
+    "cues": [
+      "Chest stays on the pad",
+      "Pull wide, lead with the elbows",
+      "Squeeze the blades, don't shrug"
+    ],
+    "youtubeId": "v0rJuhEa59c",
+    "modification": "Use a lighter weight and a smaller range.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn in the rear shoulders and between the shoulder blades.",
+      "notHere": "Neck or upper-trap tension \u2014 drop your shoulders.",
+      "backNote": "The chest pad supports your trunk, so your lower back stays neutral. Keep your core lightly braced.",
+      "stopIf": "Sharp shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Shrugging toward the ears",
+        "right": "Keep the shoulders low and pull with your back."
+      },
+      {
+        "wrong": "Letting the weight stack slam",
+        "right": "Control the return for 2 to 3 seconds."
+      }
+    ],
+    "breathing": "Exhale as you pull back, inhale as you return."
+  },
+  {
+    "id": "db-chest-supported-reverse-fly",
+    "name": "Chest-Supported Dumbbell Reverse Fly",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "rear deltoids",
+      "upper back",
+      "rhomboids"
+    ],
+    "primaryMuscles": [
+      "rear deltoids",
+      "rhomboids"
+    ],
+    "secondaryMuscles": [
+      "middle trapezius",
+      "upper back"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set an incline bench to about 30 to 45 degrees and lie face down with your chest supported and your feet on the floor. Hold a light dumbbell in each hand, arms hanging down with a soft elbow bend.",
+      "Look at the floor to keep your neck in line with your spine, and lightly brace your core.",
+      "Raise your arms out to the sides until they're in line with your shoulders, leading with the elbows and squeezing the shoulder blades.",
+      "Lower slowly to the start."
+    ],
+    "cues": [
+      "Light weight, strict form",
+      "Chest stays on the bench",
+      "Lead with the elbows, soft bend"
+    ],
+    "youtubeId": "iCbVhDNpG-Y",
+    "modification": "Use very light dumbbells or no weight.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The back of the shoulders and between the shoulder blades.",
+      "notHere": "Neck tension, or upper-trap taking over.",
+      "backNote": "Because the bench supports your trunk, the lower back is unloaded. Just keep your core lightly braced.",
+      "stopIf": "Sharp shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Using heavy weights and swinging",
+        "right": "Go lighter and move slowly."
+      },
+      {
+        "wrong": "Shrugging",
+        "right": "Keep the shoulders down and away from the ears."
+      }
+    ],
+    "breathing": "Exhale as you lift, inhale as you lower."
+  },
+  {
+    "id": "chest-supported-db-row",
+    "name": "Chest-Supported Dumbbell Row",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "upper back",
+      "lats",
+      "rhomboids",
+      "rear deltoids"
+    ],
+    "primaryMuscles": [
+      "upper back",
+      "rhomboids"
+    ],
+    "secondaryMuscles": [
+      "lats",
+      "rear deltoids",
+      "biceps"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Set an incline bench to about 30 to 45 degrees and lie face down on it with your chest supported. Hold a dumbbell in each hand, arms hanging straight down.",
+      "Brace your core and keep your head in line with your spine, looking at the floor.",
+      "Row the dumbbells up toward your hips, driving your elbows back and squeezing your shoulder blades together.",
+      "Pause for a second at the top, then lower slowly to full arm extension."
+    ],
+    "cues": [
+      "Elbows drive back and slightly in",
+      "Chest stays on the bench",
+      "Squeeze the blades, don't shrug"
+    ],
+    "youtubeId": "0-DXJiceG-0",
+    "modification": "Use lighter dumbbells, or row one arm at a time.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong working feeling between the shoulder blades and across the mid-back.",
+      "notHere": "Your neck or low back doing the work.",
+      "backNote": "The chest support removes the demand on your lower back, making this a great back-friendly row. Keep your core braced anyway.",
+      "stopIf": "Sharp shoulder, neck or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Lifting the chest off the bench",
+        "right": "Keep your chest pressed into the pad."
+      },
+      {
+        "wrong": "Using momentum",
+        "right": "Slow the tempo and lighten the weight."
+      }
+    ],
+    "breathing": "Exhale as you row up, inhale as you lower."
+  },
+  {
+    "id": "thread-the-needle",
+    "name": "Thread the Needle",
+    "category": "warm-up",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "thoracic spine",
+      "upper back",
+      "rear deltoids"
+    ],
+    "primaryMuscles": [
+      "thoracic spine"
+    ],
+    "secondaryMuscles": [
+      "upper back",
+      "rear deltoids"
+    ],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Start on hands and knees with your wrists under your shoulders and your knees under your hips.",
+      "Slide your right arm underneath your body along the floor, palm facing up, and let your right shoulder and the side of your head rest gently on the mat.",
+      "Reach through until you feel a stretch between the shoulder blades and upper back, hips staying over your knees.",
+      "Return by pressing the left hand into the floor and unwind. Do all reps on one side, then switch."
+    ],
+    "cues": [
+      "Hips stay over your knees",
+      "Reach long, rotate from the upper back",
+      "Move slowly and breathe"
+    ],
+    "youtubeId": "SkQhKf74nZk",
+    "modification": "Slide the arm only part of the way, or rest your head on a folded towel.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch between the shoulder blades and through the upper back and shoulder.",
+      "notHere": "Pain in the shoulder joint or the neck.",
+      "backNote": "Rotate from the upper back, not the low back. Keep the hips stacked over the knees and don't push your bottom back.",
+      "stopIf": "Sharp shoulder, neck or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips shifting back",
+        "right": "Keep them stacked over the knees."
+      },
+      {
+        "wrong": "Forcing the shoulder to the floor",
+        "right": "Go only as far as is comfortable."
+      }
+    ],
+    "breathing": "Exhale as you thread through, inhale as you return."
+  },
+  {
+    "id": "seated-thoracic-extension",
+    "name": "Seated Thoracic Extension",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "thoracic extensors",
+      "thoracic spine",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "thoracic extensors"
+    ],
+    "secondaryMuscles": [
+      "thoracic spine"
+    ],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Sit on a sturdy chair with a backrest that comes to around the bottom of your shoulder blades. Place your hands behind your head with your elbows forward.",
+      "Brace your core lightly so your ribs stay down and your low back is quiet.",
+      "Gently lean back over the top of the backrest, letting the upper back (not the low back) bend backward, and look slightly up.",
+      "Return upright and repeat, moving the contact point slightly up or down the back between reps."
+    ],
+    "cues": [
+      "Bend through the upper back only",
+      "Ribs down \u2014 protect the low back",
+      "Move slowly, lean back gently"
+    ],
+    "youtubeId": "4DgM17tIwtw",
+    "modification": "Do not lean as far back; keep your hands lightly supporting your head and neck.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A gentle opening across the upper back and between the shoulder blades.",
+      "notHere": "A pinch in the lower back or neck.",
+      "backNote": "Make sure the chair's backrest is under your shoulder blades so your lower back does not bend. Keep your ribs down.",
+      "stopIf": "Sharp low-back or neck pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bending in the low back instead",
+        "right": "Brace and keep ribs down so the upper back moves."
+      },
+      {
+        "wrong": "Dropping the head back",
+        "right": "Support the head with your hands and keep the neck long."
+      }
+    ],
+    "breathing": "Inhale as you lean back, exhale as you return upright."
+  },
+  {
+    "id": "band-pass-through",
+    "name": "Band Shoulder Pass-Through",
+    "category": "warm-up",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "shoulders",
+      "rotator cuff",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "shoulders",
+      "rotator cuff"
+    ],
+    "secondaryMuscles": [
+      "upper back"
+    ],
+    "sets": 2,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Stand tall holding a long resistance band with a wide grip in front of your thighs, arms straight, palms facing down.",
+      "Brace your core and keep your ribs down.",
+      "Keeping your arms straight, lift the band up and over your head, then continue back behind you as far as is comfortable.",
+      "Reverse the path slowly back to the front. Widen your grip if it feels too tight."
+    ],
+    "cues": [
+      "Arms straight, grip wide",
+      "Ribs down \u2014 no arching as you reach back",
+      "Slow and smooth"
+    ],
+    "youtubeId": "nikVq2pMVg4",
+    "modification": "Use a wider grip or a lighter band, or hold a towel instead of a band.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch across the chest and a gentle working feeling around the shoulders.",
+      "notHere": "A pinch at the front of the shoulder, or your back arching.",
+      "backNote": "Keep your ribs down and your core braced. Arching the low back to get the band behind you is the biggest watch-out.",
+      "stopIf": "Sharp shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the lower back",
+        "right": "Widen your grip and keep your ribs down."
+      },
+      {
+        "wrong": "Bending the elbows",
+        "right": "Keep the arms straight through the arc."
+      }
+    ],
+    "breathing": "Inhale as you lift the band overhead, exhale as it passes behind you."
+  },
+  {
+    "id": "inverted-row",
+    "name": "Inverted Row",
+    "category": "strength",
+    "equipment": [
+      "trx"
+    ],
+    "targetMuscles": [
+      "lats",
+      "upper back",
+      "rear deltoids",
+      "biceps"
+    ],
+    "primaryMuscles": [
+      "lats",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "rear deltoids",
+      "biceps",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Set the TRX handles at around waist height. Hold the handles, walk your feet forward and lean back until your arms are straight, body in a plank-like line.",
+      "Brace your core and squeeze your glutes so your hips don't sag.",
+      "Row your chest toward the handles by pulling your elbows back, squeezing your shoulder blades together.",
+      "Lower with control back to straight arms."
+    ],
+    "cues": [
+      "Body stays in one straight line",
+      "Pull your chest to the handles",
+      "Squeeze the blades, elbows by the ribs"
+    ],
+    "youtubeId": "OYUxXMGVuuU",
+    "modification": "Walk your feet back so you're more upright, which lightens the load. Bend your knees if you need.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your upper back and lats working hard, with the biceps assisting.",
+      "notHere": "Low back sagging, or your neck straining.",
+      "backNote": "Squeeze the glutes and brace to keep your hips from sagging, which would arch the low back.",
+      "stopIf": "Sharp shoulder, elbow or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sagging toward the floor",
+        "right": "Brace your core and squeeze the glutes."
+      },
+      {
+        "wrong": "Shrugging the shoulders",
+        "right": "Pull the blades down and back."
+      }
+    ],
+    "breathing": "Exhale as you pull up, inhale as you lower."
+  },
+  {
+    "id": "straight-arm-pulldown",
+    "name": "Straight-Arm Pulldown",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "lats",
+      "triceps",
+      "core"
+    ],
+    "primaryMuscles": [
+      "lats"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Attach a straight bar or rope to a high cable. Stand facing the machine with your feet hip-width apart, a slight hinge at the hips, and your arms extended in front of you.",
+      "Brace your core and keep your spine neutral, with a soft bend in your elbows.",
+      "Pull the bar down in an arc toward your thighs with straight arms, squeezing your lats.",
+      "Return slowly until your arms are overhead at shoulder height or above, keeping tension on."
+    ],
+    "cues": [
+      "Soft elbows, arms stay mostly straight",
+      "Pull with your lats, not your hands",
+      "Core braced, ribs down"
+    ],
+    "youtubeId": "98W63pVdW38",
+    "modification": "Use a lighter weight, or stand closer to the machine to reduce the hinge.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong squeeze along the sides of your back, under the armpits.",
+      "notHere": "Your triceps or lower back doing the work.",
+      "backNote": "Brace and keep a flat back as you hinge slightly. Don't arch your lower back as the bar goes overhead.",
+      "stopIf": "Sharp shoulder, elbow or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Bending the elbows into a pushdown",
+        "right": "Keep them soft and mostly straight."
+      },
+      {
+        "wrong": "Arching the lower back",
+        "right": "Brace and keep ribs down."
+      }
+    ],
+    "breathing": "Exhale as you pull down, inhale as you return."
+  },
+  {
+    "id": "band-lat-pulldown",
+    "name": "Band Lat Pulldown",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "lats",
+      "biceps",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "lats"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "upper back",
+      "rear deltoids"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a resistance band high, over a door or pull-up bar. Kneel or sit facing the anchor and hold the band with both hands, arms extended overhead and a little wider than shoulder-width.",
+      "Brace your core and sit tall, ribs down.",
+      "Pull your elbows down and toward your sides until your hands are near your upper chest, squeezing your lats.",
+      "Return slowly with control until your arms are straight again."
+    ],
+    "cues": [
+      "Pull the elbows to your pockets",
+      "Chest tall, no leaning back",
+      "Slow return"
+    ],
+    "youtubeId": "MDAk3N1wEfI",
+    "modification": "Use a lighter band, or sit closer to the anchor to reduce tension.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong working feeling along the sides of your back.",
+      "notHere": "Neck tension or your biceps taking over.",
+      "backNote": "Stay tall and braced. Leaning back to cheat the pull arches the low back.",
+      "stopIf": "Sharp shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back to pull",
+        "right": "Use a lighter band and keep your chest tall."
+      },
+      {
+        "wrong": "Shrugging",
+        "right": "Pull the shoulder blades down first."
+      }
+    ],
+    "breathing": "Exhale as you pull down, inhale as you return."
+  },
+  {
+    "id": "lat-prayer-stretch",
+    "name": "Bench Lat Prayer Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "lats",
+      "thoracic spine",
+      "shoulders"
+    ],
+    "primaryMuscles": [
+      "lats"
+    ],
+    "secondaryMuscles": [
+      "thoracic spine",
+      "shoulders"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Kneel in front of a bench or sturdy chair and place your elbows (or forearms) on the seat with your palms together as if praying.",
+      "Brace your core lightly and keep your hips over your knees.",
+      "Sink your chest toward the floor, letting your head drop between your arms and feeling a stretch under the armpits and across your upper back.",
+      "Hold, breathing slowly, then walk back up."
+    ],
+    "cues": [
+      "Sink the chest down, hips stay over knees",
+      "Don't force it \u2014 let gravity do the work",
+      "Soft neck, head between the arms"
+    ],
+    "youtubeId": "6Fc0u9xPkL8",
+    "modification": "Use a higher surface, or reduce how far you sink.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A long stretch along the sides of your back and under your arms.",
+      "notHere": "A pinch in the shoulder joint.",
+      "backNote": "Keep your hips over your knees and your ribs gently drawn in. Don't let the lower back sag into an arch.",
+      "stopIf": "Sharp shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips sliding back",
+        "right": "Keep them over your knees."
+      },
+      {
+        "wrong": "Arching the low back",
+        "right": "Draw the ribs in and sink through the upper back."
+      }
+    ],
+    "breathing": "Slow breaths. Exhale to sink deeper."
+  },
+  {
+    "id": "pallof-press",
+    "name": "Pallof Press",
+    "category": "stability",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "core",
+      "transverse abdominis"
+    ],
+    "primaryMuscles": [
+      "obliques",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "shoulders"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a resistance band at chest height and stand sideways to it, feet shoulder-width apart, knees soft. Hold the band with both hands at your chest and step away until there is tension.",
+      "Brace your core, stack your ribs over your hips and square your shoulders forward \u2014 the band will try to twist you toward the anchor.",
+      "Press your hands straight out in front of your chest until your arms are fully extended, resisting the pull.",
+      "Pause for a second, then bring your hands back to your chest slowly. Finish all reps, then switch sides."
+    ],
+    "cues": [
+      "Don't let the band twist you",
+      "Ribs down, hips and shoulders square",
+      "Press straight out from the middle of the chest"
+    ],
+    "youtubeId": "y1fOBVtANdM",
+    "modification": "Stand closer to the anchor to reduce tension, or use a lighter band. Do it half-kneeling for a stable base.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your side abs and deep core working to keep you from rotating.",
+      "notHere": "Low back or shoulders straining.",
+      "backNote": "This trains the core to resist twisting, which protects the spine. Keep ribs down and your lower back neutral.",
+      "stopIf": "Sharp back or shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Letting the band rotate your torso",
+        "right": "Step closer to the anchor to reduce the tension."
+      },
+      {
+        "wrong": "Leaning away from the anchor",
+        "right": "Stand tall with your weight even."
+      }
+    ],
+    "breathing": "Exhale slowly as you press out, inhale as you return."
+  },
+  {
+    "id": "half-kneeling-pallof",
+    "name": "Half-Kneeling Pallof Press",
+    "category": "stability",
+    "equipment": [
+      "resistance-band",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "transverse abdominis",
+      "glutes"
+    ],
+    "primaryMuscles": [
+      "obliques",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hip stabilizers"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a band at chest height and kneel sideways to it with the knee closest to the anchor down and the other foot flat. Pad the kneeling knee if needed.",
+      "Hold the band at your chest, brace your core and squeeze the glute of the kneeling leg so your pelvis stays square.",
+      "Press your hands straight out in front of your chest, resisting the band's pull to rotate you.",
+      "Hold briefly, then return to the chest slowly. Complete the reps, then switch sides."
+    ],
+    "cues": [
+      "Squeeze the back glute",
+      "Don't let the band turn you",
+      "Ribs down, pelvis square"
+    ],
+    "youtubeId": "LpBNsIv2olo",
+    "modification": "Use a lighter band, or perform the standing version.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The deep side abs and the glute of the kneeling leg.",
+      "notHere": "Low back arching or knee discomfort.",
+      "backNote": "Squeeze the kneeling-side glute to keep the pelvis tucked and the low back from arching.",
+      "stopIf": "Sharp back or knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the lower back",
+        "right": "Tuck the pelvis slightly and squeeze the glute."
+      },
+      {
+        "wrong": "Leaning away from the band",
+        "right": "Stay tall with shoulders level."
+      }
+    ],
+    "breathing": "Exhale as you press, inhale as you return."
+  },
+  {
+    "id": "pallof-press-hold",
+    "name": "Pallof Press Hold",
+    "category": "stability",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "transverse abdominis",
+      "core"
+    ],
+    "primaryMuscles": [
+      "obliques",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "shoulders"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 20,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a band at chest height and stand sideways to it with your feet shoulder-width apart. Hold the band at your chest and step away until there's tension.",
+      "Brace your core and stack your ribs over your hips.",
+      "Press your hands straight out in front of you and hold the arms extended, resisting the pull to rotate.",
+      "Hold for the full time, breathing steadily, then bring the hands back in. Switch sides each set."
+    ],
+    "cues": [
+      "Resist, don't rotate",
+      "Arms straight out, shoulders level",
+      "Breathe \u2014 don't hold your breath"
+    ],
+    "youtubeId": "rNibuqewmYI",
+    "modification": "Hold for 10 seconds, or use a lighter band or a closer stance.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The side of your abs and deep core locking in to resist the twist.",
+      "notHere": "Low back strain or shoulder fatigue.",
+      "backNote": "Keep ribs down and don't lean away from the band. Stay tall and stable.",
+      "stopIf": "Sharp back or shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rotating toward the band",
+        "right": "Step closer or use a lighter band."
+      },
+      {
+        "wrong": "Holding the breath",
+        "right": "Keep breathing slowly during the hold."
+      }
+    ],
+    "breathing": "Breathe slowly and steadily throughout the hold."
+  },
+  {
+    "id": "pallof-overhead-reach",
+    "name": "Pallof Press with Overhead Reach",
+    "category": "stability",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "transverse abdominis",
+      "shoulders"
+    ],
+    "primaryMuscles": [
+      "obliques",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "lower trapezius"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Anchor a band at chest height and stand sideways to it, holding the band at your chest. Step out until there is tension.",
+      "Brace your core and press your hands straight out in front of you.",
+      "Keeping your ribs down, raise your arms overhead in a smooth arc while resisting the band's twist.",
+      "Lower your arms back to the front, then return to the chest. Complete all reps, then switch sides."
+    ],
+    "cues": [
+      "Ribs down \u2014 don't arch as you reach",
+      "Resist the twist the whole time",
+      "Smooth, controlled arc"
+    ],
+    "youtubeId": "pd6ScSE3wtU",
+    "modification": "Use a lighter band or reduce how high the arms reach.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your side abs working hard, plus the shoulders.",
+      "notHere": "Low back arching as your arms go overhead.",
+      "backNote": "The overhead reach can arch the low back \u2014 keep ribs down and stop the reach where the back stays neutral.",
+      "stopIf": "Sharp back or shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the low back overhead",
+        "right": "Keep ribs down and reach only as high as you can stay stable."
+      },
+      {
+        "wrong": "Letting the torso rotate",
+        "right": "Use a lighter band."
+      }
+    ],
+    "breathing": "Exhale as you reach overhead, inhale as you return."
+  },
+  {
+    "id": "cable-woodchop",
+    "name": "Cable Wood Chop",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "core",
+      "shoulders"
+    ],
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "shoulders",
+      "glutes"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set a cable at about shoulder height or higher. Stand sideways to the machine, feet shoulder-width apart, and hold the handle with both hands.",
+      "Brace your core. Start with your arms extended toward the machine.",
+      "Rotate from the hips and ribcage, pivoting your back foot, and pull the handle diagonally down across your body to the opposite hip, with straight arms.",
+      "Control the return back to the start, then complete the reps and switch sides."
+    ],
+    "cues": [
+      "Turn from the hips, not just the arms",
+      "Arms stay mostly straight",
+      "Control the return \u2014 don't let the cable yank you"
+    ],
+    "youtubeId": "PCQCwP1Xy0g",
+    "modification": "Use a lighter weight, or a band at a lower setting. Keep the range smaller.",
+    "backSafe": false,
+    "sensation": {
+      "feelHere": "Your side abs and hips working to rotate and control.",
+      "notHere": "Low back or knee twisting.",
+      "backNote": "Rotation under load can stress the lower back. Pivot your feet and hips, keep a neutral spine, and skip this move if rotation bothers your back.",
+      "stopIf": "Sharp back or knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Twisting only through the lower back",
+        "right": "Pivot the back foot and turn through the hips."
+      },
+      {
+        "wrong": "Letting the cable pull you back",
+        "right": "Control the return slowly."
+      }
+    ],
+    "breathing": "Exhale as you chop down, inhale as you return."
+  },
+  {
+    "id": "side-plank-hip-dip",
+    "name": "Side Plank Hip Dip",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "obliques",
+      "core",
+      "hip abductors"
+    ],
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "hip abductors",
+      "transverse abdominis",
+      "shoulders"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set up in a forearm side plank with your elbow under your shoulder and your feet stacked or staggered. Lift your hips so your body forms a straight line.",
+      "Brace your core and keep your gaze forward.",
+      "Lower your hips a few inches toward the floor, then lift them back up to the straight line, squeezing your side abs.",
+      "Complete the reps on one side, then switch."
+    ],
+    "cues": [
+      "Small dips, straight line at the top",
+      "Hips stay stacked, not rolling",
+      "Lift from the side of your waist"
+    ],
+    "youtubeId": "BWQRVB4LyFI",
+    "modification": "Stagger your feet for a wider base, or drop to your bottom knee.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn along the side of your waist.",
+      "notHere": "Shoulder pain or the neck straining.",
+      "backNote": "Keep the hips lifted and in line; if they sag with the dip, make the dip smaller.",
+      "stopIf": "Sharp shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Dipping too deep",
+        "right": "Take small dips; keep the core braced."
+      },
+      {
+        "wrong": "Rolling the hips forward or back",
+        "right": "Keep hips stacked."
+      }
+    ],
+    "breathing": "Exhale as you lift the hips, inhale as you lower."
+  },
+  {
+    "id": "dead-bug-band",
+    "name": "Banded Dead Bug",
+    "category": "stability",
+    "equipment": [
+      "resistance-band",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "transverse abdominis",
+      "core",
+      "rectus abdominis"
+    ],
+    "primaryMuscles": [
+      "transverse abdominis",
+      "core"
+    ],
+    "secondaryMuscles": [
+      "rectus abdominis",
+      "hip flexors"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Lie on your back with a looped band around both feet and your knees raised over your hips at 90 degrees. Hold your arms straight up over your shoulders.",
+      "Press your lower back gently into the floor and brace your core.",
+      "Slowly extend one leg away against the band while lowering the opposite arm overhead, keeping your low back flat.",
+      "Return to the start and repeat on the other side, alternating."
+    ],
+    "cues": [
+      "Low back stays glued to the floor",
+      "Slow and controlled",
+      "Exhale as you extend"
+    ],
+    "youtubeId": "bmB-QsTNTMQ",
+    "modification": "Use a light band or no band, and keep the legs higher and the range smaller.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your deep core working to hold the torso still while limbs move.",
+      "notHere": "Your low back arching off the floor.",
+      "backNote": "The goal is a flat low back. If it arches, shorten the range until you can keep it still.",
+      "stopIf": "Sharp back or hip pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Low back arching off the floor",
+        "right": "Shorten the range and brace harder."
+      },
+      {
+        "wrong": "Moving too fast",
+        "right": "Slow down \u2014 each rep takes 3 seconds."
+      }
+    ],
+    "breathing": "Exhale as the leg and arm extend, inhale as they return."
+  },
+  {
+    "id": "bear-plank-shoulder-tap",
+    "name": "Bear Plank Shoulder Tap",
+    "category": "stability",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "core",
+      "transverse abdominis",
+      "shoulders",
+      "obliques"
+    ],
+    "primaryMuscles": [
+      "core",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "obliques",
+      "quadriceps"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Start on hands and knees with your wrists under your shoulders and knees under your hips. Tuck your toes.",
+      "Brace your core and lift your knees about an inch off the floor, keeping your back flat like a tabletop.",
+      "Without letting your hips rock, lift one hand and tap the opposite shoulder, then return it to the floor.",
+      "Alternate sides, keeping your hips level and your knees hovering."
+    ],
+    "cues": [
+      "Knees hover an inch up",
+      "Hips don't rock side to side",
+      "Back flat like a tabletop"
+    ],
+    "youtubeId": "eMi7w4W4Vnk",
+    "modification": "Keep your knees on the floor, or widen your feet and knees for a wider base.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your deep core, shoulders and thighs working to keep still.",
+      "notHere": "Wrist or shoulder strain, or hips swaying.",
+      "backNote": "Keep the back flat and avoid sagging; if the hips sag, return the knees to the floor.",
+      "stopIf": "Sharp wrist, shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips rocking as you tap",
+        "right": "Widen your base and slow down."
+      },
+      {
+        "wrong": "Hips lifting too high",
+        "right": "Keep the back flat like a tabletop."
+      }
+    ],
+    "breathing": "Steady, continuous breathing \u2014 don't hold your breath."
+  },
+  {
+    "id": "trx-fallout",
+    "name": "TRX Fallout",
+    "category": "stability",
+    "equipment": [
+      "trx"
+    ],
+    "targetMuscles": [
+      "core",
+      "transverse abdominis",
+      "rectus abdominis",
+      "shoulders"
+    ],
+    "primaryMuscles": [
+      "core",
+      "transverse abdominis"
+    ],
+    "secondaryMuscles": [
+      "rectus abdominis",
+      "lats",
+      "shoulders"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Set the TRX handles at about knee height. Kneel or stand facing away from the anchor, holding the handles with your forearms on the straps or hands on the handles, arms bent in front of you.",
+      "Brace your core, squeeze your glutes and keep your body in a straight line.",
+      "Slowly lean forward, letting your arms extend overhead while your body stays rigid, until you feel your core working hard.",
+      "Pull yourself back to the start with your abs and lats."
+    ],
+    "cues": [
+      "Body stays in one rigid line",
+      "Brace hard, squeeze the glutes",
+      "Only go as far as you can without arching"
+    ],
+    "youtubeId": "HmyWstLop08",
+    "modification": "Use a shorter range, and step your feet closer to the anchor to make it easier.",
+    "backSafe": false,
+    "sensation": {
+      "feelHere": "A deep, intense burn through the abs and the sides of your back.",
+      "notHere": "Your low back arching or sagging.",
+      "backNote": "This is a demanding anti-extension move and it's easy to let the lower back sag. Skip it when your back is stiff, and use dead bugs or planks instead.",
+      "stopIf": "Sharp back or shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Low back sagging",
+        "right": "Shorten the range and brace harder."
+      },
+      {
+        "wrong": "Hips piking up",
+        "right": "Keep a straight line from head to knees or heels."
+      }
+    ],
+    "breathing": "Exhale as you pull back to the start, inhale as you lean forward."
+  },
+  {
+    "id": "db-front-rack-carry",
+    "name": "Dumbbell Front-Rack Carry",
+    "category": "stability",
+    "equipment": [
+      "gym-dumbbells"
+    ],
+    "targetMuscles": [
+      "core",
+      "upper back",
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "core",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "forearms",
+      "glutes",
+      "shoulders"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 60,
+    "instructions": [
+      "Pick up two dumbbells and lift them to your shoulders in a front rack, with elbows pointing forward and dumbbells resting on your upper chest and shoulders.",
+      "Stand tall with ribs down, core braced, glutes lightly squeezed and elbows slightly lifted.",
+      "Walk forward with slow, steady steps, keeping your torso upright and not leaning back.",
+      "Set the weights down safely after the time is up."
+    ],
+    "cues": [
+      "Ribs down \u2014 don't lean back",
+      "Elbows slightly up and in front",
+      "Tall posture, smooth steps"
+    ],
+    "youtubeId": "RoXR4dhtiD8",
+    "modification": "Use lighter weights, or carry one dumbbell on one shoulder at a time.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your core and upper back working hard to keep you tall.",
+      "notHere": "Your low back arching or your wrists sore.",
+      "backNote": "Brace and keep your ribs down. If you notice yourself leaning back or arching, the weights are too heavy.",
+      "stopIf": "Sharp back, wrist or shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back under the load",
+        "right": "Brace and use lighter weights."
+      },
+      {
+        "wrong": "Shuffling or rushing",
+        "right": "Take slow, controlled steps."
+      }
+    ],
+    "breathing": "Keep breathing steadily; don't hold your breath."
+  },
+  {
+    "id": "goblet-carry",
+    "name": "Goblet Carry",
+    "category": "stability",
+    "equipment": [
+      "15lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "core",
+      "upper back",
+      "forearms",
+      "glutes"
+    ],
+    "primaryMuscles": [
+      "core",
+      "upper back"
+    ],
+    "secondaryMuscles": [
+      "forearms",
+      "glutes",
+      "biceps"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 60,
+    "instructions": [
+      "Hold a dumbbell vertically at your chest with both hands cupped under the top end, elbows tucked close to your ribs.",
+      "Stand tall with your ribs down, core braced and glutes lightly tight.",
+      "Walk forward with small, steady steps, keeping the dumbbell against your chest and your torso upright.",
+      "Turn around slowly and walk back, or set the weight down at the end."
+    ],
+    "cues": [
+      "Dumbbell hugged to the chest",
+      "Ribs down, torso tall",
+      "Small, smooth steps"
+    ],
+    "youtubeId": "9Xv_5oevuqw",
+    "modification": "Use a lighter weight, or hold it at your chest for a marching in place instead of walking.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your core, upper back and forearms bracing hard.",
+      "notHere": "Your low back arching, or neck and shoulders tensing.",
+      "backNote": "Keep ribs down and don't lean back. A tall, braced torso keeps the load off the lower back.",
+      "stopIf": "Sharp back, shoulder or wrist pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning back",
+        "right": "Keep ribs down and chest tall."
+      },
+      {
+        "wrong": "Letting the weight drift away from the chest",
+        "right": "Hug it close the whole time."
+      }
+    ],
+    "breathing": "Breathe steadily; short exhales with each few steps."
+  },
+  {
+    "id": "goblet-reverse-lunge",
+    "name": "Goblet Reverse Lunge",
+    "category": "strength",
+    "equipment": [
+      "15lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Hold a dumbbell vertically against your chest with both hands, elbows close to your ribs. Stand tall with your feet hip-width apart.",
+      "Brace your core and step one foot back, landing on the ball of the foot.",
+      "Lower your back knee toward the floor while keeping your front shin vertical and your torso upright.",
+      "Push through the front heel to return to standing, then repeat on the other leg."
+    ],
+    "cues": [
+      "Torso tall, dumbbell hugged to the chest",
+      "Front shin vertical",
+      "Push through the front heel"
+    ],
+    "youtubeId": "g5bphe5eFu8",
+    "modification": "Hold no weight, or hold a wall or chair for balance. Take a shorter step back.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The front of the working thigh and the glute of the front leg.",
+      "notHere": "Front knee pain or the knee collapsing inward.",
+      "backNote": "Keep the torso upright and ribs down; leaning forward under load shifts stress to the lower back.",
+      "stopIf": "Sharp knee or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Torso leaning forward",
+        "right": "Hug the weight and stay tall."
+      },
+      {
+        "wrong": "Front knee collapsing inward",
+        "right": "Keep the knee in line with the toes."
+      }
+    ],
+    "breathing": "Inhale as you step back and lower, exhale as you drive up."
+  },
+  {
+    "id": "goblet-lateral-lunge",
+    "name": "Goblet Lateral Lunge",
+    "category": "strength",
+    "equipment": [
+      "15lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "adductors",
+      "quadriceps"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "adductors"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "hamstrings"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Hold a dumbbell vertically at your chest, feet together and toes forward, standing tall.",
+      "Brace your core. Step wide to one side and sit your hips back and down over that leg, keeping the other leg straight.",
+      "Keep your chest tall and your bent-leg heel down, going only as deep as you can control.",
+      "Push through the bent leg to return to standing, then repeat on the other side."
+    ],
+    "cues": [
+      "Sit hips back and down into the lunge",
+      "Straight leg stays straight, toes forward",
+      "Chest tall, heel down"
+    ],
+    "youtubeId": "eP-4bV7QHyE",
+    "modification": "Hold no weight and reduce the depth, or hold a chair for support.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The glute and inner thigh of the stepping side, plus a stretch in the straight leg.",
+      "notHere": "Knee pain or a pinch in the hip.",
+      "backNote": "Keep your chest tall; rounding forward under load loads the lower back. Sit back and down instead of folding.",
+      "stopIf": "Sharp knee, groin or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Folding forward",
+        "right": "Keep your chest tall and sit your hips back."
+      },
+      {
+        "wrong": "Heel lifting",
+        "right": "Reduce the depth until the heel stays down."
+      }
+    ],
+    "breathing": "Inhale as you step out and lower, exhale as you push back."
+  },
+  {
+    "id": "goblet-box-squat",
+    "name": "Goblet Box Squat",
+    "category": "strength",
+    "equipment": [
+      "15lb-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "core"
+    ],
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Place a bench or sturdy chair behind you at about knee height. Hold a dumbbell vertically at your chest with your elbows close to your ribs, feet shoulder-width apart.",
+      "Brace your core and push your hips back toward the box while bending your knees.",
+      "Lower yourself under control until you lightly touch the box without relaxing, keeping your torso tall.",
+      "Drive through your whole foot to stand back up, squeezing your glutes at the top."
+    ],
+    "cues": [
+      "Sit back to touch the box, don't plop",
+      "Chest tall, weight at the chest",
+      "Drive through the whole foot"
+    ],
+    "youtubeId": "mIJub2k6YNg",
+    "modification": "Use a higher box or no weight. You can also hold onto a doorframe for balance.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The front of your thighs and glutes working through a controlled range.",
+      "notHere": "Knee pain, or the low back rounding.",
+      "backNote": "The box sets your depth so you can keep your torso upright and avoid rounding. Brace on every rep.",
+      "stopIf": "Sharp knee or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Dropping onto the box",
+        "right": "Lower slowly and just kiss the box."
+      },
+      {
+        "wrong": "Rocking back to stand",
+        "right": "Lean forward slightly and drive through the foot."
+      }
+    ],
+    "breathing": "Inhale on the way down, exhale as you stand."
+  },
+  {
+    "id": "tempo-goblet-squat",
+    "name": "Tempo Goblet Squat",
+    "category": "strength",
+    "equipment": [
+      "15lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "quadriceps",
+      "glutes",
+      "core"
+    ],
+    "primaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Hold a dumbbell vertically at your chest with elbows close to your ribs, feet slightly wider than shoulder-width and toes turned out a little.",
+      "Brace your core and lower down for a slow count of 3, sitting hips back and down while keeping your chest tall.",
+      "Pause for 2 seconds at the bottom with your heels flat and knees tracking over your toes.",
+      "Drive up through your whole foot to stand, then repeat."
+    ],
+    "cues": [
+      "3 seconds down, 2 seconds pause",
+      "Chest tall, heels down",
+      "Knees track over the toes"
+    ],
+    "youtubeId": "PCCfSO7-rUc",
+    "modification": "Shorten the tempo (2 down, 1 pause) or use a lighter weight. A box behind you can set your depth.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The front of your thighs and glutes working harder through the slow tempo.",
+      "notHere": "Knee pain, or your lower back rounding at the bottom.",
+      "backNote": "Stop the descent where your lower back stays neutral \u2014 if it starts to tuck under, that's your depth limit today.",
+      "stopIf": "Sharp knee or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rushing the lowering",
+        "right": "Count 1-2-3 on the way down."
+      },
+      {
+        "wrong": "Heels lifting",
+        "right": "Reduce depth and keep the heels flat."
+      }
+    ],
+    "breathing": "Inhale as you lower slowly, exhale as you drive up."
+  },
+  {
+    "id": "banded-hip-thrust",
+    "name": "Banded Hip Thrust",
+    "category": "strength",
+    "equipment": [
+      "resistance-band",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Lie on your back with your knees bent, feet flat and hip-width apart, and a loop band just above your knees. Rest your arms by your sides.",
+      "Press your knees gently out into the band and tuck your pelvis slightly, bracing your core.",
+      "Drive through your heels to lift your hips until your body forms a straight line from your shoulders to your knees, squeezing your glutes hard at the top.",
+      "Lower slowly without letting the hips drop, keeping tension on the band."
+    ],
+    "cues": [
+      "Knees press out against the band",
+      "Squeeze the glutes at the top",
+      "Ribs down \u2014 don't arch"
+    ],
+    "youtubeId": "0XXUdRSTBxA",
+    "modification": "Use a lighter band or no band. Pause for only one second at the top.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong squeeze in the glutes and a little at the back of the thigh.",
+      "notHere": "Hamstrings cramping or your low back taking over.",
+      "backNote": "Stop at a straight line from shoulders to knees. Pushing the hips higher just arches the lower back.",
+      "stopIf": "Sharp back, hip or knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the lower back at the top",
+        "right": "Stop when the hips are level with the shoulders and knees."
+      },
+      {
+        "wrong": "Knees caving in",
+        "right": "Press them out against the band."
+      }
+    ],
+    "breathing": "Exhale as you lift, inhale as you lower."
+  },
+  {
+    "id": "single-leg-hip-thrust",
+    "name": "Single-Leg Hip Thrust",
+    "category": "strength",
+    "equipment": [
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Sit on the floor with your upper back against the edge of a bench and your knees bent. Extend one leg straight out and plant the other foot on the floor.",
+      "Brace your core and tuck your ribs down.",
+      "Drive through the planted heel and lift your hips until your body forms a straight line from shoulders to knee, squeezing the glute hard.",
+      "Lower slowly with control. Complete the reps, then switch legs."
+    ],
+    "cues": [
+      "Hips stay level \u2014 don't rotate",
+      "Ribs down, chin slightly tucked",
+      "Drive through the heel"
+    ],
+    "youtubeId": "KW7yo5x7-HI",
+    "modification": "Do the two-leg version, or keep the non-working foot lightly on the floor for support.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep burn in the glute of the working leg.",
+      "notHere": "Hamstring cramping or your low back doing the work.",
+      "backNote": "Stop where your torso and thigh line up; pushing higher arches the lower back. Brace and keep the ribs down.",
+      "stopIf": "Sharp back, hip or knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips tilting to one side",
+        "right": "Keep them level and reduce the range."
+      },
+      {
+        "wrong": "Over-arching at the top",
+        "right": "Stop at a straight line."
+      }
+    ],
+    "breathing": "Exhale as you lift, inhale as you lower."
+  },
+  {
+    "id": "cable-pull-through",
+    "name": "Cable Pull-Through",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "lower back stabilizers"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "lower back stabilizers"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Attach a rope to a low cable. Stand facing away from the machine, straddling the cable, and grab the rope between your legs with both hands.",
+      "Walk forward a couple of steps until there's tension, feet shoulder-width apart with a soft knee bend.",
+      "Brace your core and hinge back by pushing your hips behind you with a flat back, letting the rope pass between your legs.",
+      "Drive your hips forward and squeeze your glutes to stand tall, pulling the rope along with you."
+    ],
+    "cues": [
+      "Hinge \u2014 push hips back, spine flat",
+      "Squeeze the glutes to stand",
+      "Arms stay long, they just hold the rope"
+    ],
+    "youtubeId": "pv8e6OSyETE",
+    "modification": "Use a lighter weight and a shorter range of hinge.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch in the hamstrings and a strong squeeze in the glutes.",
+      "notHere": "Your low back doing the work or your arms pulling.",
+      "backNote": "Brace and hinge from the hips with a flat back. If your back rounds, stop higher and lighten the weight.",
+      "stopIf": "Sharp low-back pain or pain down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Squatting instead of hinging",
+        "right": "Push the hips back, keep the shins close to vertical."
+      },
+      {
+        "wrong": "Leaning back at the top",
+        "right": "Stand tall and stop with hips under shoulders."
+      }
+    ],
+    "breathing": "Inhale as you hinge back, exhale as you drive the hips forward."
+  },
+  {
+    "id": "front-foot-elevated-split-squat",
+    "name": "Front-Foot-Elevated Split Squat",
+    "category": "strength",
+    "equipment": [
+      "10lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "quadriceps",
+      "hamstrings"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "adductors",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand in a split stance with your front foot on a low step or weight plate (2 to 4 inches), the back foot behind you on the ball of the foot. Hold a dumbbell in each hand at your sides, or none.",
+      "Brace your core and keep your torso tall or slightly forward.",
+      "Lower your back knee toward the floor until your front thigh is about parallel, keeping your front knee tracking over your toes.",
+      "Press through the front heel to stand. Complete the reps, then switch legs."
+    ],
+    "cues": [
+      "Front heel stays planted",
+      "Torso tall, core braced",
+      "Knee tracks over the toes"
+    ],
+    "youtubeId": "wBahkeIwDyA",
+    "modification": "Skip the step and the weights, and hold a wall for balance.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The front of the thigh and glute of the front leg working hard, with a stretch in the back hip.",
+      "notHere": "Front knee pain, or wobbling.",
+      "backNote": "Stay tall with ribs down; leaning too far forward or arching shifts load to the lower back.",
+      "stopIf": "Sharp knee or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Front heel lifting",
+        "right": "Shorten your stance and keep the heel down."
+      },
+      {
+        "wrong": "Knee collapsing inward",
+        "right": "Push it out over the little toe."
+      }
+    ],
+    "breathing": "Inhale as you lower, exhale as you press up."
+  },
+  {
+    "id": "lying-leg-curl",
+    "name": "Lying Leg Curl Machine",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "calves"
+    ],
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "calves"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Lie face down on the machine with the pad resting just above your heels and your knees just off the edge of the bench. Grip the handles.",
+      "Brace your core and press your hips into the pad to keep your pelvis down.",
+      "Curl your heels toward your glutes by bending your knees, squeezing your hamstrings at the top.",
+      "Lower slowly with control until your legs are almost straight."
+    ],
+    "cues": [
+      "Hips pressed into the pad",
+      "Slow lowering",
+      "Squeeze at the top"
+    ],
+    "youtubeId": "QjNFk4F5dAs",
+    "modification": "Use a lighter weight, or use the seated leg curl instead.",
+    "backSafe": false,
+    "sensation": {
+      "feelHere": "A strong burn at the back of your thighs.",
+      "notHere": "Your low back arching or your hip flexors cramping.",
+      "backNote": "Lying face down encourages arching. Keep your hips pressed down and lower the weight if your back lifts \u2014 or choose the seated leg curl on stiff days.",
+      "stopIf": "Sharp back, hip or knee pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips lifting off the pad",
+        "right": "Lower the weight and press the hips down."
+      },
+      {
+        "wrong": "Dropping the weight quickly",
+        "right": "Control the lowering for 2 to 3 seconds."
+      }
+    ],
+    "breathing": "Exhale as you curl, inhale as you lower."
+  },
+  {
+    "id": "b-stance-rdl",
+    "name": "B-Stance Dumbbell RDL",
+    "category": "strength",
+    "equipment": [
+      "15lb-dumbbells"
+    ],
+    "targetMuscles": [
+      "glutes",
+      "hamstrings",
+      "lower back stabilizers"
+    ],
+    "primaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "lower back stabilizers",
+      "core"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 60,
+    "instructions": [
+      "Stand with feet hip-width apart, then step one foot back a few inches so only the ball of that foot touches the floor, like a kickstand. Hold a dumbbell in each hand in front of your thighs.",
+      "Put most of your weight (about 80 percent) on the front leg and brace your core.",
+      "Hinge at your hips by pushing them back, lowering the weights down your front leg with a flat back and a soft knee.",
+      "Squeeze your glutes to stand tall. Complete the reps, then switch legs."
+    ],
+    "cues": [
+      "Hinge \u2014 hips back, spine flat",
+      "Front leg does most of the work",
+      "Dumbbells stay close to your legs"
+    ],
+    "youtubeId": "KoXAfvFB-YY",
+    "modification": "Use lighter weights, or hold on to a rack. Use less depth if you feel it in your low back.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep stretch in the hamstring and a squeeze in the glute of the front leg.",
+      "notHere": "Lower back tension, or the back leg taking over.",
+      "backNote": "Keep a flat, braced back and stop the lowering where your spine starts to round. Keep the weights light.",
+      "stopIf": "Sharp low-back pain or pain down a leg."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rounding the back",
+        "right": "Stop higher and keep the weights close."
+      },
+      {
+        "wrong": "Using the back leg too much",
+        "right": "Keep it as a kickstand."
+      }
+    ],
+    "breathing": "Inhale as you hinge, exhale as you stand."
+  },
+  {
+    "id": "bridge-walkout",
+    "name": "Glute Bridge Walkout",
+    "category": "strength",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "glutes",
+      "core"
+    ],
+    "primaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "calves"
+    ],
+    "sets": 3,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Lie on your back with your knees bent and heels close to your glutes, arms at your sides.",
+      "Brace your core and lift your hips into a glute bridge, squeezing your glutes at the top.",
+      "Keeping your hips high, walk your feet forward a few small steps until your legs are nearly straight, then walk them back in.",
+      "Lower your hips slowly after the last rep."
+    ],
+    "cues": [
+      "Hips stay high and level",
+      "Small steps, glutes squeezing",
+      "Ribs down, don't arch"
+    ],
+    "youtubeId": "jQ9BcglfyVo",
+    "modification": "Do fewer steps, or stay in a regular glute bridge.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A deep burn at the back of the thighs and glutes.",
+      "notHere": "Hamstring cramping or your low back arching.",
+      "backNote": "Keep the hips level and ribs down. If the lower back arches, take smaller steps.",
+      "stopIf": "Sharp back or hamstring pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Hips dropping as you walk out",
+        "right": "Take fewer steps and keep them high."
+      },
+      {
+        "wrong": "Arching the low back",
+        "right": "Tuck the pelvis slightly and keep the ribs down."
+      }
+    ],
+    "breathing": "Exhale as you walk out, inhale as you walk in."
+  },
+  {
+    "id": "db-incline-press",
+    "name": "Dumbbell Incline Press",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "chest",
+      "front deltoids",
+      "triceps"
+    ],
+    "primaryMuscles": [
+      "chest",
+      "front deltoids"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Set a bench to about 30 degrees and lie back with a dumbbell in each hand at your shoulders, feet flat on the floor and shoulder blades pinched back and down.",
+      "Brace your core and keep your lower back in its natural arch with your glutes on the bench.",
+      "Press the dumbbells up and slightly together until your arms are straight above your chest.",
+      "Lower slowly until your elbows are just below the bench level, with your forearms vertical."
+    ],
+    "cues": [
+      "Shoulder blades pinched, chest up",
+      "Elbows at about 45 degrees",
+      "Slow lower, controlled press"
+    ],
+    "youtubeId": "8iPEnn-ltC8",
+    "modification": "Use lighter dumbbells or a lower incline. Have a spotter for heavy weights.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The upper chest and front of your shoulders working.",
+      "notHere": "Pain at the front of the shoulder or your low back arching excessively.",
+      "backNote": "Keep feet planted, glutes on the bench and ribs down. A small natural arch is fine but avoid a big one.",
+      "stopIf": "Sharp shoulder, elbow or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Elbows flared wide",
+        "right": "Keep them at about 45 degrees to your body."
+      },
+      {
+        "wrong": "Bouncing the dumbbells",
+        "right": "Control the lowering and pause briefly."
+      }
+    ],
+    "breathing": "Inhale as you lower, exhale as you press."
+  },
+  {
+    "id": "band-chest-press",
+    "name": "Band Chest Press",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "chest",
+      "front deltoids",
+      "triceps"
+    ],
+    "primaryMuscles": [
+      "chest",
+      "front deltoids"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "serratus anterior"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Wrap a band behind your upper back, or anchor it behind you at chest height, and hold the ends with your elbows bent at about chest level. Step forward into a staggered stance.",
+      "Brace your core and keep your ribs down, standing tall.",
+      "Press your hands straight forward until your arms are fully extended, squeezing your chest.",
+      "Return slowly, keeping tension on the band."
+    ],
+    "cues": [
+      "Ribs down \u2014 don't lean into the press",
+      "Squeeze the chest at the end",
+      "Slow return"
+    ],
+    "youtubeId": "6-86jEAXA08",
+    "modification": "Use a lighter band or place both feet side by side. Reduce the range if the shoulders feel strained.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A working feeling across the chest and the front of the shoulders.",
+      "notHere": "Shoulder pinching or shrugging.",
+      "backNote": "Brace and stand tall; don't lean forward or arch against the band.",
+      "stopIf": "Sharp shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning forward into the press",
+        "right": "Stagger your stance and stay tall."
+      },
+      {
+        "wrong": "Shrugging up",
+        "right": "Keep your shoulders down."
+      }
+    ],
+    "breathing": "Exhale as you press, inhale as you return."
+  },
+  {
+    "id": "cable-crossover",
+    "name": "Cable Crossover",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "chest",
+      "front deltoids"
+    ],
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "front deltoids",
+      "biceps"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set two cable pulleys at about shoulder height or above. Stand in the middle holding a handle in each hand, take a staggered stance and lean slightly forward with a soft bend in your elbows.",
+      "Brace your core and keep your chest up.",
+      "Bring your hands together in front of your chest in a wide hugging arc, squeezing your chest.",
+      "Return slowly until you feel a stretch across the chest, without letting your shoulders roll forward."
+    ],
+    "cues": [
+      "Soft elbows, hugging arc",
+      "Squeeze the chest at the center",
+      "Slow return, no stack slamming"
+    ],
+    "youtubeId": "taI4XduLpTk",
+    "modification": "Use lighter weight and a shorter range. Sit on a bench if standing is challenging.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong squeeze through the middle of your chest.",
+      "notHere": "The front of the shoulders or biceps overworking.",
+      "backNote": "Brace and avoid arching the low back as you lean. Keep a slight forward lean and ribs down.",
+      "stopIf": "Sharp shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rounding the shoulders forward",
+        "right": "Keep your chest up and shoulders back."
+      },
+      {
+        "wrong": "Bending and straightening the elbows",
+        "right": "Keep the elbow bend fixed."
+      }
+    ],
+    "breathing": "Exhale as you squeeze together, inhale as you return."
+  },
+  {
+    "id": "db-seated-overhead-press",
+    "name": "Seated Dumbbell Overhead Press",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "front deltoids",
+      "lateral deltoids",
+      "triceps"
+    ],
+    "primaryMuscles": [
+      "front deltoids",
+      "lateral deltoids"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "upper trapezius"
+    ],
+    "sets": 3,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 75,
+    "instructions": [
+      "Sit on a bench with a backrest set at 80 to 90 degrees, a dumbbell in each hand at shoulder height, palms facing forward and feet flat on the floor.",
+      "Brace your core and keep your lower back and shoulder blades against the pad, ribs down.",
+      "Press the dumbbells straight up until your arms are fully extended overhead, without shrugging.",
+      "Lower slowly back to shoulder height under control."
+    ],
+    "cues": [
+      "Back stays on the pad, ribs down",
+      "Press straight up, not forward",
+      "No shrugging at the top"
+    ],
+    "youtubeId": "TsduLWuhlFM",
+    "modification": "Use lighter dumbbells, or press one arm at a time. Use a machine press if shoulder mobility limits you.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "The front and sides of your shoulders working.",
+      "notHere": "Pinching at the top of the shoulder or your low back arching.",
+      "backNote": "The backrest supports your spine. Keep your ribs down and back on the pad so you don't arch under load.",
+      "stopIf": "Sharp shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Arching the lower back",
+        "right": "Brace, ribs down, lighter weights."
+      },
+      {
+        "wrong": "Pressing forward instead of up",
+        "right": "Keep your elbows under your wrists."
+      }
+    ],
+    "breathing": "Exhale as you press up, inhale as you lower."
+  },
+  {
+    "id": "cable-lateral-raise",
+    "name": "Cable Lateral Raise",
+    "category": "strength",
+    "equipment": [
+      "gym-machine"
+    ],
+    "targetMuscles": [
+      "lateral deltoids"
+    ],
+    "primaryMuscles": [
+      "lateral deltoids"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius",
+      "rotator cuff"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Set a cable at the lowest position and stand side-on to the machine, holding the handle with the hand farther from the machine across your body. Hold the machine with the other hand for balance.",
+      "Brace your core and stand tall with a soft elbow bend.",
+      "Raise your arm out to the side until it reaches shoulder height, leading with the elbow.",
+      "Lower slowly, keeping tension on the cable."
+    ],
+    "cues": [
+      "Lead with the elbow, not the hand",
+      "Stop at shoulder height",
+      "Slow lowering, no swinging"
+    ],
+    "youtubeId": "Z5FA9aq3L6A",
+    "modification": "Use a lighter weight, or sit on a bench to remove any swing.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn on the outside of the shoulder.",
+      "notHere": "Neck and upper-trap tension, or pain at the top of the shoulder.",
+      "backNote": "Stand tall and braced. Leaning to swing the weight up bends the lower back sideways.",
+      "stopIf": "Sharp shoulder pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Swinging the torso",
+        "right": "Lower the weight and stand tall."
+      },
+      {
+        "wrong": "Raising above shoulder height",
+        "right": "Stop at shoulder height."
+      }
+    ],
+    "breathing": "Exhale as you raise, inhale as you lower."
+  },
+  {
+    "id": "downward-dog",
+    "name": "Downward Dog",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hamstrings",
+      "calves",
+      "shoulders",
+      "upper back"
+    ],
+    "primaryMuscles": [
+      "hamstrings",
+      "calves"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "upper back"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Start on hands and knees with your hands slightly ahead of your shoulders and your toes tucked under.",
+      "Press into your hands and lift your hips up and back, straightening your legs as far as comfortable (bend the knees if needed).",
+      "Keep your spine long and your head between your arms, pressing your chest toward your thighs.",
+      "Hold, breathing slowly, then lower your knees to the floor."
+    ],
+    "cues": [
+      "Bend the knees to keep the back long",
+      "Press the floor away, hips up and back",
+      "Head relaxed between the arms"
+    ],
+    "youtubeId": "Aqt5ooM-pn4",
+    "modification": "Keep your knees bent, and rest in child's pose between holds. Pedal the heels for a gentler stretch.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch along the back of the legs and the shoulders and upper back.",
+      "notHere": "Wrist pain, or a rounded lower back.",
+      "backNote": "Bend your knees as much as needed so your back stays long and flat \u2014 never round the lower back to straighten the legs.",
+      "stopIf": "Sharp wrist, shoulder or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rounded lower back",
+        "right": "Bend the knees and lift the tailbone."
+      },
+      {
+        "wrong": "Heels forced to the floor",
+        "right": "Let the heels float; it's not required."
+      }
+    ],
+    "breathing": "Slow breaths. Exhale to lengthen the spine and sink the heels."
+  },
+  {
+    "id": "quadruped-rock-back",
+    "name": "Quadruped Rock Back",
+    "category": "warm-up",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "hips",
+      "hip rotators",
+      "lower back mobility"
+    ],
+    "primaryMuscles": [
+      "hips"
+    ],
+    "secondaryMuscles": [
+      "lower back mobility",
+      "hip rotators"
+    ],
+    "sets": 2,
+    "reps": 10,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Start on hands and knees with your wrists under your shoulders and knees under your hips, and a neutral spine.",
+      "Brace your core and keep your back flat as if a tray were balanced on it.",
+      "Sit your hips back toward your heels slowly, only as far as you can while keeping your spine neutral.",
+      "Rock forward to the start with control and repeat."
+    ],
+    "cues": [
+      "Spine stays neutral \u2014 flat back",
+      "Hips back toward the heels",
+      "Slow and smooth"
+    ],
+    "youtubeId": "GImwCsuBLyo",
+    "modification": "Go only as far as is comfortable, and pad your knees with a folded towel.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A gentle opening in the hips and a light stretch in the back of the hips and glutes.",
+      "notHere": "Pinching in the front of the hip or the low back rounding.",
+      "backNote": "Stop the rock-back where the lower back starts to round. A neutral spine is the point of the drill.",
+      "stopIf": "Sharp hip or back pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rounding the lower back at the end",
+        "right": "Stop earlier and keep the spine flat."
+      },
+      {
+        "wrong": "Moving too quickly",
+        "right": "Slow down; take 2 seconds each way."
+      }
+    ],
+    "breathing": "Exhale as you rock back, inhale as you return."
+  },
+  {
+    "id": "neck-rotation-stretch",
+    "name": "Seated Neck Rotation",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight",
+      "yoga-mat"
+    ],
+    "targetMuscles": [
+      "neck",
+      "upper trapezius"
+    ],
+    "primaryMuscles": [
+      "neck"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius"
+    ],
+    "sets": 2,
+    "reps": 8,
+    "durationSeconds": null,
+    "restSeconds": 15,
+    "instructions": [
+      "Sit tall with your shoulders relaxed and your chin level, eyes forward.",
+      "Slowly turn your head to the right as far as is comfortable, as if looking over your shoulder, without tilting or nodding.",
+      "Pause for a breath at the end of the range, then turn slowly back to center and to the left.",
+      "Alternate sides, keeping every movement small and smooth."
+    ],
+    "cues": [
+      "Turn, don't tilt \u2014 chin stays level",
+      "Slow and smooth, no jerking",
+      "Shoulders stay down and relaxed"
+    ],
+    "youtubeId": "PruXF-NE2zI",
+    "modification": "Reduce the range, or do it lying on your back with your head supported on a pillow.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A mild stretch along the side of the neck and into the upper shoulder.",
+      "notHere": "Pinching at the base of the neck or tingling down the arm.",
+      "backNote": "Seated and tall \u2014 the low back isn't involved. Don't slump forward to turn.",
+      "stopIf": "Dizziness, or tingling and numbness into the arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Cranking past the comfortable range",
+        "right": "Stop where it feels easy."
+      },
+      {
+        "wrong": "Lifting the shoulder to meet the chin",
+        "right": "Keep shoulders down."
+      }
+    ],
+    "breathing": "Breathe slowly; exhale as you turn."
+  },
+  {
+    "id": "db-reverse-curl",
+    "name": "Dumbbell Reverse Curl",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells"
+    ],
+    "targetMuscles": [
+      "forearms",
+      "biceps"
+    ],
+    "primaryMuscles": [
+      "forearms"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "sets": 3,
+    "reps": 12,
+    "durationSeconds": null,
+    "restSeconds": 45,
+    "instructions": [
+      "Stand tall holding a dumbbell in each hand with an overhand grip (palms facing down) at your thighs, feet hip-width apart.",
+      "Brace your core and pin your elbows to your sides, wrists straight.",
+      "Curl the dumbbells up toward your shoulders while keeping your palms facing down.",
+      "Lower slowly under control until your arms are almost straight."
+    ],
+    "cues": [
+      "Wrists stay straight and strong",
+      "Elbows pinned to your sides",
+      "Light weight, slow tempo"
+    ],
+    "youtubeId": "rV2asdIdXF0",
+    "modification": "Use very light dumbbells or a resistance band.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A working feeling along the top of the forearm and the outside of the elbow.",
+      "notHere": "Wrist or elbow pain.",
+      "backNote": "Brace and stand tall \u2014 no swinging the torso to lift the weights.",
+      "stopIf": "Sharp wrist or elbow pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Wrists bending back",
+        "right": "Keep them neutral and straight."
+      },
+      {
+        "wrong": "Swinging the weights",
+        "right": "Slow down and use lighter weights."
+      }
+    ],
+    "breathing": "Exhale as you curl, inhale as you lower."
+  },
+  {
+    "id": "wrist-flexor-stretch",
+    "name": "Wrist Flexor Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "forearms"
+    ],
+    "secondaryMuscles": [
+      "shoulder stabilizers"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Extend one arm straight out in front of you at shoulder height with the palm facing up.",
+      "With your other hand, gently pull the fingers of the extended hand down and back toward you until you feel a stretch on the underside of the forearm.",
+      "Keep your elbow straight and your shoulder relaxed.",
+      "Hold, then switch arms."
+    ],
+    "cues": [
+      "Elbow straight, shoulder relaxed",
+      "Gentle pull \u2014 never force",
+      "Palm up, fingers back"
+    ],
+    "youtubeId": "x5PjwxuLPos",
+    "modification": "Bend the elbow slightly to reduce the stretch.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch along the underside of the forearm to the elbow.",
+      "notHere": "Pain in the wrist joint or numbness in the fingers.",
+      "backNote": "Stand or sit tall; the back is not involved.",
+      "stopIf": "Sharp wrist pain or tingling in the fingers."
+    },
+    "mistakes": [
+      {
+        "wrong": "Pulling too hard",
+        "right": "Gentle pressure only."
+      },
+      {
+        "wrong": "Shrugging the shoulder",
+        "right": "Keep it down and relaxed."
+      }
+    ],
+    "breathing": "Breathe slowly. Exhale to relax into the stretch."
+  },
+  {
+    "id": "wrist-extensor-stretch",
+    "name": "Wrist Extensor Stretch",
+    "category": "flexibility",
+    "equipment": [
+      "bodyweight"
+    ],
+    "targetMuscles": [
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "forearms"
+    ],
+    "secondaryMuscles": [
+      "shoulder stabilizers"
+    ],
+    "sets": 2,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 15,
+    "instructions": [
+      "Extend one arm straight out in front of you at shoulder height with the palm facing down.",
+      "With your other hand, gently press the back of the extended hand and fingers down and toward you until you feel a stretch along the top of the forearm.",
+      "Keep your elbow straight and your shoulder relaxed.",
+      "Hold, then switch arms."
+    ],
+    "cues": [
+      "Elbow straight, palm down",
+      "Gentle pressure only",
+      "Shoulder relaxed"
+    ],
+    "youtubeId": "yj7QdBxvHzQ",
+    "modification": "Bend the elbow slightly to reduce the stretch.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A stretch along the top of the forearm to the elbow.",
+      "notHere": "Pain in the wrist joint or numbness in the fingers.",
+      "backNote": "Stand or sit tall; the back is not involved.",
+      "stopIf": "Sharp wrist pain or tingling in the fingers."
+    },
+    "mistakes": [
+      {
+        "wrong": "Forcing the stretch",
+        "right": "Gentle pressure only."
+      },
+      {
+        "wrong": "Bending the elbow fully",
+        "right": "Keep the elbow straight."
+      }
+    ],
+    "breathing": "Breathe slowly. Exhale to relax into the stretch."
+  },
+  {
+    "id": "db-wrist-curl",
+    "name": "Dumbbell Wrist Curl",
+    "category": "strength",
+    "equipment": [
+      "gym-dumbbells",
+      "gym-bench"
+    ],
+    "targetMuscles": [
+      "forearms"
+    ],
+    "primaryMuscles": [
+      "forearms"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Sit on a bench with your forearms resting on your thighs (or the bench), palms facing up, holding a light dumbbell with your wrists hanging just over the edge.",
+      "Keep your forearms still and your back tall.",
+      "Curl the dumbbell up by bending only at the wrists, squeezing your forearms at the top.",
+      "Lower slowly until the dumbbell is as low as comfortable, letting the fingers roll open slightly if needed."
+    ],
+    "cues": [
+      "Only the wrists move",
+      "Forearms stay glued down",
+      "Light weight, slow reps"
+    ],
+    "youtubeId": "3VLTzIrnb5g",
+    "modification": "Use a very light dumbbell, or a resistance band.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A burn along the underside of the forearm.",
+      "notHere": "Pain in the wrist joint.",
+      "backNote": "Sit tall with ribs over hips; don't hunch over the dumbbell.",
+      "stopIf": "Sharp wrist or elbow pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Lifting the forearms",
+        "right": "Keep them pinned to your thighs."
+      },
+      {
+        "wrong": "Using weights that are too heavy",
+        "right": "Use a lighter weight and move slowly."
+      }
+    ],
+    "breathing": "Exhale as you curl, inhale as you lower."
+  },
+  {
+    "id": "kb-farmers-walk",
+    "name": "Kettlebell Farmer's Walk",
+    "category": "stability",
+    "equipment": [
+      "kettlebell"
+    ],
+    "targetMuscles": [
+      "forearms",
+      "core",
+      "upper trapezius",
+      "glutes"
+    ],
+    "primaryMuscles": [
+      "forearms",
+      "core"
+    ],
+    "secondaryMuscles": [
+      "upper trapezius",
+      "glutes"
+    ],
+    "sets": 3,
+    "reps": null,
+    "durationSeconds": 30,
+    "restSeconds": 60,
+    "instructions": [
+      "Pick up a kettlebell in each hand by the handles and stand tall with the bells at your sides, shoulders back and down.",
+      "Brace your core and squeeze the handles firmly, with your ribs stacked over your hips.",
+      "Walk forward with short, steady steps, keeping your torso upright and the bells from swinging.",
+      "Set the kettlebells down carefully with a flat back when you're done."
+    ],
+    "cues": [
+      "Tall posture, shoulders down",
+      "Squeeze the handles hard",
+      "Short, steady steps"
+    ],
+    "youtubeId": "CiN1iw856rQ",
+    "modification": "Use lighter kettlebells, or carry a single bell in one hand (suitcase carry).",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "Your forearms and grip burning, with your core and upper back holding you tall.",
+      "notHere": "Low back tightness or the bells swinging into your legs.",
+      "backNote": "Pick the bells up with a hinge and a flat back, brace before you lift, and stay tall through the walk.",
+      "stopIf": "Sharp back, shoulder or wrist pain."
+    },
+    "mistakes": [
+      {
+        "wrong": "Leaning to one side",
+        "right": "Use equal weights and stand tall."
+      },
+      {
+        "wrong": "Rushing",
+        "right": "Take short, controlled steps."
+      }
+    ],
+    "breathing": "Breathe steadily; don't hold your breath."
+  },
+  {
+    "id": "band-shrug",
+    "name": "Band Shrug",
+    "category": "strength",
+    "equipment": [
+      "resistance-band"
+    ],
+    "targetMuscles": [
+      "upper trapezius",
+      "neck"
+    ],
+    "primaryMuscles": [
+      "upper trapezius"
+    ],
+    "secondaryMuscles": [
+      "neck",
+      "forearms"
+    ],
+    "sets": 3,
+    "reps": 15,
+    "durationSeconds": null,
+    "restSeconds": 30,
+    "instructions": [
+      "Stand on the middle of a resistance band with feet hip-width apart and hold an end in each hand at your sides, arms straight.",
+      "Brace your core and stand tall with your chest lifted and your gaze forward.",
+      "Lift your shoulders straight up toward your ears, squeezing your upper traps at the top without rolling them.",
+      "Pause for a second, then lower slowly back down against the band."
+    ],
+    "cues": [
+      "Straight up and down \u2014 no rolling",
+      "Pause and squeeze at the top",
+      "Slow lowering, arms stay straight"
+    ],
+    "youtubeId": "xVfGa9EpHyU",
+    "modification": "Use a lighter band or step in from the ends to reduce tension.",
+    "backSafe": true,
+    "sensation": {
+      "feelHere": "A strong squeeze across the tops of your shoulders and the sides of your neck.",
+      "notHere": "Neck pinching, or your arms bending to help.",
+      "backNote": "Stand tall and braced; don't lean back or let the band pull you forward.",
+      "stopIf": "Sharp neck or shoulder pain, or tingling in the arms."
+    },
+    "mistakes": [
+      {
+        "wrong": "Rolling the shoulders",
+        "right": "Lift straight up and down."
+      },
+      {
+        "wrong": "Bending the elbows",
+        "right": "Keep the arms straight."
+      }
+    ],
+    "breathing": "Exhale as you shrug, inhale as you lower."
   }
 ]
